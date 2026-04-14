@@ -15,6 +15,7 @@ export default function App() {
           <Route path="/library" element={<Library />} />
           <Route path="/theory" element={<Theory />} />
           <Route path="/ableton" element={<Ableton />} />
+          <Route path="*" element={<Navigate to="/builder" replace />} />
         </Routes>
       </Layout>
     </BrowserRouter>
