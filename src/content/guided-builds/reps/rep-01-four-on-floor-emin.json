@@ -1,0 +1,100 @@
+{
+  "id": "rep-01-four-on-floor-emin",
+  "title": "4-on-the-Floor Kick",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 25,
+  "bpm": 132,
+  "key": "E minor",
+  "source_track_id": "interplanetary-criminal-slow-burner",
+  "spinoff_level": null,
+  "description": "Build the most fundamental drum pattern in UK garage: a kick on every beat, clap on 2 and 4, off-beat hats. Isolated from all harmony so you can focus purely on the groove.",
+  "what_youll_learn": [
+    "How to set up a Drum Rack from scratch",
+    "What 4-on-the-floor means and why it works",
+    "How to layer kick, clap, and hi-hat into a locked groove",
+    "Basic kick EQ: punch without mud"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up your project",
+      "category": "ableton",
+      "instruction": "Open a new Ableton project. Set BPM to 132. Set time signature to 4/4. Save it as 'rep-01-four-floor'.",
+      "why": "132 BPM sits in the IC Slow Burner range — enough energy to feel urgent without rushing. 4/4 means 4 beats per bar; this is the grid every other element will lock to.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Cmd+S (Mac) or Ctrl+S (Win) to save immediately. Ableton doesn't auto-save."
+    },
+    {
+      "id": 2,
+      "title": "Load a Drum Rack and find your kick",
+      "category": "drums",
+      "instruction": "Create a new MIDI track. Drag 'Drum Rack' from Instruments > Drum Rack onto it. Search Splice or your sample library for a short, punchy kick — something under 500ms with a clear low-end thump. Drag it onto the C1 pad.",
+      "why": "C1 (MIDI note 36) is the standard kick position in a Drum Rack. A punchy kick — not boomy or long — sits cleanly in a garage mix. IC Slow Burner uses a tight kick that doesn't swell into the bass range.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "punchy uk garage kick",
+      "tip": "Preview samples in Ableton's browser with the headphone icon before committing. You're listening for: short decay, clear attack, defined pitch center."
+    },
+    {
+      "id": 3,
+      "title": "Program the 4-on-the-floor kick",
+      "category": "drums",
+      "instruction": "Create a 2-bar MIDI clip on the Drum Rack track. Open the piano roll. Place a C1 note on every beat: positions 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4. Set each note length to 1/8 note. Set velocity to 100 for all.",
+      "why": "4-on-the-floor = kick on all 4 beats of every bar. This creates relentless forward momentum. At 132 BPM the kicks arrive every 454ms — just fast enough to feel driving. This is the foundation IC Slow Burner is built on.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Hold Shift while drawing notes in the piano roll to snap to the grid. Set the grid to 1/4 to make beat placement precise."
+    },
+    {
+      "id": 4,
+      "title": "Add clap on beats 2 and 4",
+      "category": "drums",
+      "instruction": "Find a clap or snare sample. Drag it onto the D1 pad. In the piano roll, place D1 notes on positions 1.2 and 1.4 in each bar. Set velocity to 95.",
+      "why": "The backbeat (2 and 4) is where the groove is anchored. Clapping on 2 and 4 is instinctive — every music listener does it. The clap gives the listener something to lock onto while the kick drives forward. IC uses a tight clap; MPH uses a looser UK clap.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": "uk garage clap",
+      "tip": "The clap should be slightly quieter than the kick — it's the rhythmic anchor, not the loudest element. Start at velocity 95 and adjust by ear."
+    },
+    {
+      "id": 5,
+      "title": "Program off-beat closed hi-hats",
+      "category": "drums",
+      "instruction": "Find a closed hi-hat sample. Drag it onto the F#1 pad. In the piano roll, place F#1 notes on every off-beat: 1.1.3, 1.2.3, 1.3.3, 1.4.3 (the '+' of each beat — exactly halfway between beats). That's 8 per bar. Set velocity to 75.",
+      "why": "Off-beat hats land between kicks, filling the rhythmic space. Because they never land on a beat, they create motion without competing with the kick. IC Slow Burner runs hats on every off-beat — this is what makes the groove feel continuous rather than just 4 thumps per bar.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": "closed hi hat crisp garage",
+      "tip": "Set the grid to 1/8 in the piano roll to snap precisely to off-beats. Hats should feel like they're pushing the kick forward, not competing with it."
+    },
+    {
+      "id": 6,
+      "title": "Add an open hat accent on beat 2.5",
+      "category": "drums",
+      "instruction": "Find an open hi-hat sample. Drag it onto the G#1 pad. Place a single G#1 note per bar on position 1.2.3 (the '+' of beat 2). Set it to a short note length (1/8). Set velocity to 85. In the Drum Rack pad view, set the open hat's Choke Group to 1 — and the closed hat's Choke Group to 1 as well.",
+      "why": "The open hat accent on beat 2.5 is a classic UK garage texture — it adds 'air' between the backbeats. The choke group means a closed hat immediately cuts the open hat ring, just like a real hi-hat. Without choke groups, both sustain simultaneously and sound unrealistic.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Choke groups are in the pad view bottom panel — the small number box next to each pad. Both open and closed hat need the same number (e.g. '1') to choke each other."
+    },
+    {
+      "id": 7,
+      "title": "EQ the kick",
+      "category": "mix",
+      "instruction": "Click the kick pad in the Drum Rack to select its chain. Add EQ Eight from Audio Effects to this chain. Activate band 1 as a High Pass at 40Hz — this removes sub rumble. Add a bell band at 65Hz, Q=1.5, boost +3dB for punch. If the kick sounds boxy or muddy, add a bell cut at 250Hz around -4dB.",
+      "why": "Sub rumble below 40Hz takes up headroom without adding audible weight. The 65Hz boost adds the physical kick thump you feel in a club. 250Hz is the 'cardboard box' frequency — cutting it tightens the kick. IC's kick is present but never bloated.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "Toggle the EQ on/off (the power button) to compare with and without. If you can't hear a difference, the cut/boost is too subtle — increase it until it's obvious, then back off slightly."
+    },
+    {
+      "id": 8,
+      "title": "Loop and listen",
+      "category": "ableton",
+      "instruction": "Set your loop brace over bars 1–2. Hit play and loop. Close your eyes and listen for: does the kick lock with the off-beat hats? Does the clap feel grounded on 2 and 4? Adjust velocities until the groove feels right, not mechanical.",
+      "why": "Drum programming is ear work. The velocities you set by hand never feel as natural as what you hear when you tune them. Small adjustments — kick at 105 instead of 100, hat at 70 instead of 75 — change the feel significantly. This is the rep: loop, listen, adjust.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the groove feels stiff, try applying a light swing to the MIDI clip. Right-click the clip > select a Swing groove from the Groove Pool. Start at 54% swing."
+    }
+  ]
+}

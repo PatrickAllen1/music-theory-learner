@@ -1,0 +1,100 @@
+{
+  "id": "rep-03-phrygian-bass-emin",
+  "title": "Phrygian b2 Bass Tension",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 30,
+  "bpm": 132,
+  "key": "E minor",
+  "source_track_id": "mph-raw",
+  "spinoff_level": null,
+  "description": "Learn the tension technique that defines MPH's Raw — a bass line that moves from the root (E) up one semitone to the flat-2 (F), then releases back. One interval, enormous tension. The phrygian b2 is the most immediately usable theory concept in dark UK garage.",
+  "what_youll_learn": [
+    "What phrygian mode is and why the b2 creates such strong tension",
+    "How to program a bass line around a single tension interval",
+    "How note length and velocity shape the feeling of tension vs release",
+    "Why MPH Raw has no chord progression — and how bass alone carries the harmony"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up your project",
+      "category": "ableton",
+      "instruction": "Open a new Ableton project. Set BPM to 132. Set time signature to 4/4. Save it as 'rep-03-phrygian-bass'.",
+      "why": "132 BPM is MPH Raw's tempo. This exercise is purely about the bass line — no drums yet. You're training your ear to hear one interval in isolation.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Add a metronome click track if you find it hard to place notes rhythmically without drums. Set a simple click in Ableton's metronome (top bar) and loop over 4 bars."
+    },
+    {
+      "id": 2,
+      "title": "Understand the phrygian b2",
+      "category": "ableton",
+      "instruction": "On a MIDI keyboard (or the Ableton piano roll), find E3. Play it. Now find F3 — the very next key up, one semitone higher. Play E3, then F3. That interval — E to F — is the phrygian b2. It is the entire harmonic concept of MPH Raw.",
+      "why": "In E natural minor, the scale is E F# G A B C D. The 2nd note is F# (2 semitones up). In E phrygian, the 2nd note is F (1 semitone up — a 'flat 2', hence b2). That half-step distance from E to F creates maximum harmonic tension. It wants to resolve back to E immediately.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Sing or hum E, then move to F. That slight upward discomfort you feel — that's the phrygian b2 doing its job. The smaller the interval, the stronger the pull."
+    },
+    {
+      "id": 3,
+      "title": "Load a sub bass sound",
+      "category": "ableton",
+      "instruction": "Create a new MIDI track. Load Operator (or any synth) with a simple sub bass patch — a sine wave with slow attack and moderate release. Alternatively, find a 'sub bass' preset and use that. Lower the octave so notes play in the E2–F2 range.",
+      "why": "A sub bass is purely low-end — sine wave, no harmonics. This lets you hear the pitch interval clearly without timbre getting in the way. MPH Raw uses a deep, clean sub as the primary bass voice — the tension comes from pitch movement, not from distortion or texture.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": "deep sub bass dark garage",
+      "tip": "In Operator: Osc A = Sine, set the octave to -1 or -2. Turn off all other oscillators. Start with attack 0ms, decay 200ms, sustain 80%, release 300ms."
+    },
+    {
+      "id": 4,
+      "title": "Program the tension phrase: E stays, F hits",
+      "category": "bass",
+      "instruction": "Create a 4-bar MIDI clip. Program the following: Bar 1 — E2 for the full bar (held whole note). Bar 2 — E2 for beats 1–2 (half note), then F2 on beat 3 (half note). Bar 3 — E2 full bar. Bar 4 — E2 full bar. Set all velocities to 90.",
+      "why": "The F appears on bar 2, beat 3 — two full beats of E have established the root before the tension arrives. This timing is crucial: you need the listener to settle on E before the F disturbs it. MPH Raw uses this delayed arrival of the b2 to make the tension feel earned rather than immediate.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "In the piano roll, set the grid to 1/2 note for easier whole and half note placement. Drag note lengths to fit exactly 1 or 2 beats."
+    },
+    {
+      "id": 5,
+      "title": "Shape the F note: shorter and slightly quieter",
+      "category": "bass",
+      "instruction": "In the piano roll, reduce the F2 note length from a half note to a dotted quarter (3/8). Reduce the F2 velocity from 90 to 75. Extend the following E2 note to start immediately after the F2 ends.",
+      "why": "The tension note (F) should feel like it passes through, not sits down. Making it slightly shorter and quieter gives it a 'reaching' quality — the bass climbs to F and immediately falls back to E. A loud, long F would sound like a mistake; a quiet, short F sounds like intention.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Listen to how the shorter F changes the phrase. The 'pull back to E' becomes more audible because the F decays before E sounds — you hear the resolution as a separate event."
+    },
+    {
+      "id": 6,
+      "title": "Add the drums from rep-01",
+      "category": "ableton",
+      "instruction": "Drag in your drum MIDI clip and Drum Rack from rep-01 (or program a quick 4-on-floor: kick on every beat, clap on 2+4, off-beat hats). Loop all 4 bars with the bass. Listen to how the phrygian bass sounds over a driving kick.",
+      "why": "Hearing the bass in context with drums reveals whether the tension reads as intentional or as an error. A locked groove underneath the bass makes the F feel like an accent — the drums give the listener a rhythmic anchor so the harmony can take risks.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the bass feels disconnected from the kick, check that the bass note E starts exactly on beat 1. Quantise the bass MIDI clip (Cmd+U / Ctrl+U) to lock it to the grid."
+    },
+    {
+      "id": 7,
+      "title": "Vary the tension: try F on different beats",
+      "category": "bass",
+      "instruction": "Duplicate the 4-bar bass clip. In the duplicate, move the F2 note from bar 2 beat 3 to: (a) bar 1 beat 4, (b) bar 2 beat 2. Loop each version and listen. Notice how the tension landing on different beats changes the feel completely.",
+      "why": "Where tension lands relative to the kick is as important as the interval itself. F on beat 3 (off the kick) creates a floating tension. F on beat 4 (right before the bar resolves back to 1) creates anticipation. This is how you develop the same idea into multiple phrases — same two notes, different rhythmic placement.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Save each version as a separate clip. Name them 'phrygian-b3', 'phrygian-b2-beat4' etc. You're building a vocabulary of phrases, not just one correct answer."
+    },
+    {
+      "id": 8,
+      "title": "Transpose to D minor and A minor",
+      "category": "bass",
+      "instruction": "Select all notes in your original 4-bar bass clip. Use Shift+Down arrow to transpose the clip down 2 semitones — now the root is D and the tension note is Eb (the phrygian b2 of D). Play it. Then transpose up 7 semitones from D to get A minor — root A, tension note Bb.",
+      "why": "The interval relationship (root → one semitone up → root) is the same in every key. Transposing the phrase teaches your ear to recognise the phrygian b2 sound independent of pitch. This is how you build musical vocabulary: learn the concept in one key, then immediately apply it to others.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "After transposing, the bass may sit in an odd octave. Hold Shift+Ctrl (Mac: Shift+Cmd) and press Up/Down arrow to transpose by octave while keeping the pattern."
+    }
+  ]
+}

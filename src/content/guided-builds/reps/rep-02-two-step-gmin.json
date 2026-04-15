@@ -1,0 +1,100 @@
+{
+  "id": "rep-02-two-step-gmin",
+  "title": "2-Step Drum Feel",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 25,
+  "bpm": 136,
+  "key": "G minor",
+  "source_track_id": "sammy-virji-cops-and-robbers",
+  "spinoff_level": null,
+  "description": "Program the signature UK garage 2-step kick pattern. The kick only hits beats 1 and 3 — the open space on 2 and 4 is where the groove actually lives. Based on Sammy Virji's Cops & Robbers kick structure.",
+  "what_youll_learn": [
+    "The difference between 4-on-floor and 2-step — and when each feels right",
+    "How the open space in a 2-step creates rhythm rather than destroying it",
+    "How to use a rim shot instead of a snare for a sharper backbeat",
+    "Light swing application to a MIDI clip"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up your project",
+      "category": "ableton",
+      "instruction": "Open a new Ableton project. Set BPM to 136. Set time signature to 4/4. Save it as 'rep-02-two-step'.",
+      "why": "136 BPM matches Sammy Virji's Cops & Robbers tempo. Slightly faster than rep-01 — at this speed the 2-step's lighter kick pattern prevents it from feeling overwhelming.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "You can reuse your Drum Rack setup from rep-01 — just save that project and open it here, or drag the same samples into a new rack."
+    },
+    {
+      "id": 2,
+      "title": "Load your drum samples",
+      "category": "drums",
+      "instruction": "Create a Drum Rack MIDI track. Load: a punchy kick onto C1, a rim shot or clap onto D1, a closed hi-hat onto F#1. A rim shot (a thin, sharp crack) works better than a full snare for 2-step — it sits in the mix without getting heavy.",
+      "why": "Sammy Virji uses a rim on beats 2 and 4 rather than a full snare. A rim has less low-mid weight — this keeps the groove light and skippy, which is core to the 2-step feel. Full snares can make 2-step feel lumbering at 136 BPM.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "rimshot uk garage",
+      "tip": "Can't find a rim? Use a snare sample but cut 200–400Hz heavily with EQ Eight to strip out the body and leave just the crack."
+    },
+    {
+      "id": 3,
+      "title": "Program the 2-step kick",
+      "category": "drums",
+      "instruction": "Create a 2-bar MIDI clip. Open the piano roll with the grid at 1/4. Place C1 notes ONLY on beats 1 and 3: positions 1.1, 1.3, 2.1, 2.3. Leave beats 2 and 4 completely empty. Set velocity to 105.",
+      "why": "This is the defining difference from 4-on-floor — the kick is missing from beats 2 and 4. That empty space is not silence, it's tension. The listener's ear expects the kick to land; when it doesn't, the groove creates a 'skip'. This is the UK garage feeling.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Loop and listen before adding anything else. The 2-bar pattern with only 4 kick hits sounds sparse at first — that's correct. The hats will fill it in."
+    },
+    {
+      "id": 4,
+      "title": "Program rim on beats 2 and 4",
+      "category": "drums",
+      "instruction": "Place D1 notes on beats 2 and 4: positions 1.2, 1.4, 2.2, 2.4. Set velocity to 90.",
+      "why": "The rim fills the exact space the kick left open. Together, kick on 1+3 and rim on 2+4 create a 'conversation' — neither lands on the same beat. The kick provides weight; the rim provides the snap and rhythm marker. Sammy Virji's groove is built on this pairing.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Loop kick + rim together now. Tap along to the rim on beats 2 and 4. If it feels natural to tap with it, the placement is right."
+    },
+    {
+      "id": 5,
+      "title": "Program off-beat closed hats",
+      "category": "drums",
+      "instruction": "Place F#1 notes on every off-beat across 2 bars: 1.1.3, 1.2.3, 1.3.3, 1.4.3, 2.1.3, 2.2.3, 2.3.3, 2.4.3. Set velocity to 70. Add two extra ghost hat notes at velocity 45 on positions 1.2.1 and 2.2.1 (just before the rim on beats 2 and 4).",
+      "why": "The off-beat hats connect the kick and rim rhythmically. The ghost notes just before the rim anticipate it — this is a common UK garage technique that makes the backbeat feel 'approached' rather than dropped abruptly. Ghost notes at low velocity (40–50) are felt more than heard.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If adding ghost notes makes the groove feel cluttered, remove them — they're a refinement, not a requirement. Master the core pattern first."
+    },
+    {
+      "id": 6,
+      "title": "Compare to 4-on-floor",
+      "category": "ableton",
+      "instruction": "Duplicate the Drum Rack MIDI clip. In the duplicate, add kick hits on beats 2 and 4 (making it 4-on-floor). Loop each version back to back — 4 bars of 2-step, then 4 bars of 4-on-floor. Listen to the difference.",
+      "why": "Theory is easiest to hear through contrast. The same tempo, same samples, same hats — but the kick pattern changes the entire feel. 4-on-floor is relentless; 2-step breathes. This comparison is the actual lesson of this rep.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "After the comparison, delete the 4-on-floor version and go back to 2-step. Then ask: for the track idea in your head, which serves it better?"
+    },
+    {
+      "id": 7,
+      "title": "Apply swing",
+      "category": "ableton",
+      "instruction": "Click the 2-step MIDI clip to select it. In Ableton's browser, find Groove Pool (press B). Drag 'Swing 54%' from Swing & Groove > Swing onto the clip. In the clip properties (bottom left), set the Groove amount to 60–70%.",
+      "why": "Straight 8th-note hats at 136 BPM sound mechanical. Swing pushes every even 8th note slightly later — this is what makes the groove feel human. At 54% swing, the push is subtle but the difference is real. Try 0% vs 100% to hear the extremes.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Don't apply swing to the kick and rim — only to the hat clip. If swing affects all parts equally, the kick starts to feel drunk rather than grounded."
+    },
+    {
+      "id": 8,
+      "title": "Final listen and velocity shaping",
+      "category": "mix",
+      "instruction": "Loop 8 bars. Adjust: kick velocity 100–110, rim 85–95, off-beat hats 65–75, ghost hats 40–50. The kick should be the loudest element, rim next, hats as texture.",
+      "why": "Velocity hierarchy shapes how the brain hears the groove. Loud elements feel rhythmically 'heavy'; quiet ones feel like texture. Getting this hierarchy right is what makes a programmed drum pattern feel like it's played rather than entered.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Try slightly randomising hat velocities — select all hat notes, right-click > Randomize Velocity ±10. A tiny variation makes them feel alive."
+    }
+  ]
+}
