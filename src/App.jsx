@@ -2,6 +2,7 @@ import { BrowserRouter, Routes, Route, Navigate } from "react-router-dom";
 import Layout from "./components/Layout";
 import Builder from "./pages/Builder";
 import Library from "./pages/Library";
+import TrackDetail from "./pages/TrackDetail";
 import Theory from "./pages/Theory";
 import Ableton from "./pages/Ableton";
 
@@ -13,6 +14,7 @@ export default function App() {
           <Route path="/" element={<Navigate to="/builder" replace />} />
           <Route path="/builder" element={<Builder />} />
           <Route path="/library" element={<Library />} />
+          <Route path="/library/:id" element={<TrackDetail />} />
           <Route path="/theory" element={<Theory />} />
           <Route path="/ableton" element={<Ableton />} />
           <Route path="*" element={<Navigate to="/builder" replace />} />
