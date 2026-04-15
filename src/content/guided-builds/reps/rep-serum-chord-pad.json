@@ -1,0 +1,142 @@
+{
+  "id": "rep-serum-chord-pad",
+  "title": "Chord Pad in Serum V2",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 30,
+  "bpm": 140,
+  "key": "Bb minor",
+  "source_track_id": "kettama-it-gets-better",
+  "spinoff_level": null,
+  "description": "Build the lush, warm chord pad from Kettama's 'It Gets Better' using Serum V2 from Init Preset. Full OSC → FILTER → ENV → FX chain. By the end you'll understand every parameter that makes a garage pad feel alive.",
+  "what_youll_learn": [
+    "How WT POS and OSC B detune create warmth and beating",
+    "Why HYPR unison sounds bigger than standard unison at the same voice count",
+    "How MG Low 24 filter shapes brightness without harshness",
+    "How slow ENV 1 attack transforms a stab into a pad",
+    "How LFO 1 on filter cutoff creates the living, breathing quality",
+    "How CHORUS + REVERB in Serum's FX complete the pad sound"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Open Serum V2 and load Init Preset",
+      "category": "serum",
+      "instruction": "Create a new MIDI track in Ableton. Load Serum V2. Right-click the preset name → Init Preset. You start with a default saw patch — you'll build over it from scratch.",
+      "why": "Every parameter you set yourself is a decision you'll remember. Patches loaded from a library hide those decisions. Starting from Init Preset means you understand the whole sound, not just the interesting parts.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Save your project immediately after loading Init Preset. Save again after each step — Ableton does not auto-save, and it's easy to lose work."
+    },
+    {
+      "id": 2,
+      "title": "Set OSC A — warm sawtooth territory",
+      "category": "serum",
+      "instruction": "Click the wavetable name on OSC A → select 'Basic Shapes'. Drag WT POS to approximately 20–25% — past the pure sine but before the full sawtooth. The waveform display should show a slightly asymmetric wave with rounded edges. This is the core tonal character of the pad.",
+      "why": "At 0% WT POS you have a pure sine (smooth, no harmonics). At ~50% you have a full sawtooth (bright, buzzy). The ~20–25% position gives you warmth and some harmonic presence without the harshness of a full saw. Kettama's pad has body but never scratches — this position is why.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Hold a chord (Gb3, Bb3, Db4, F4) while slowly dragging WT POS from 0% to 50%. You'll hear the sound go from hollow/smooth to increasingly bright and buzzy. The 20–25% region is where warmth and presence balance."
+    },
+    {
+      "id": 3,
+      "title": "Enable OSC B — detune for beating",
+      "category": "serum",
+      "instruction": "Click the OSC B power button to enable it. Set it to the same wavetable: Basic Shapes. Set WT POS to the same 20–25% position as OSC A. Now find the FINE tuning knob on OSC B and drag it to +7 cents (fine tuning, not coarse). Lower OSC B's volume level by approximately 3dB — drag its level knob slightly down from centre.",
+      "why": "Two oscillators very slightly out of tune with each other create a gentle beating — a natural chorus-like movement as their frequencies interact. This is the warmth and movement you hear in all lush analogue pads. +7 cents on OSC B is a tight detune that feels cohesive rather than obvious.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Toggle OSC B on and off while holding a chord. You should hear the sound go from clean/direct to warm/breathing. If the difference is dramatic rather than subtle, OSC B's level might be too loud — back it off further."
+    },
+    {
+      "id": 4,
+      "title": "Set UNISON on OSC A — try HYPR mode",
+      "category": "serum",
+      "instruction": "Find the UNISON section on OSC A. Set voices to 4. Set Detune to 12 cents. Set Blend to 50%. Now find the UNISON mode dropdown (in V2 it appears as a small mode selector near the unison section) — change it from Standard to HYPR. Listen to the difference.",
+      "why": "4 voices at 12 cents means 4 copies of OSC A, all slightly detuned from each other. This creates the wide, warm chorus effect. HYPR mode in V2 stacks unison voices in a way that sounds bigger and more organic than Standard mode at the same voice count. It's one of the V2-specific improvements over V1.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Hold a single note and toggle between Standard and HYPR unison modes. HYPR sounds wider and more lush. If you can't find the mode selector, look for a small button near the unison section — it may say 'STD' with HYPR as an alternative."
+    },
+    {
+      "id": 5,
+      "title": "Enable the FILTER — MG Low 24",
+      "category": "serum",
+      "instruction": "Click the FILTER power button to enable it. Click the filter type dropdown and select 'MG Low 24'. Set CUTOFF to approximately 60% of the dial (about 10–11 o'clock). Set RES (resonance) to 8% — just a hair above 0%. The sound should immediately become warmer and less harsh in the upper frequencies.",
+      "why": "The MG Low 24 is a Moog-modelled lowpass filter — smooth and warm, not harsh or clinical. At 60% cutoff (roughly 1–2kHz) it removes the harshest upper harmonics while keeping the character of the oscillators. 8% resonance adds just enough 'voice' to the filter without any squeal.",
+      "ableton_cheatsheet_id": "serum-v2-filter",
+      "splice_search": null,
+      "tip": "After setting the filter, sweep the CUTOFF knob while holding a chord — hear how the sound changes from completely muffled (far left) to fully bright (far right). Park it in the 55–65% range for the pad sound. Toggle the filter on/off to hear how much it's doing."
+    },
+    {
+      "id": 6,
+      "title": "Shape ENV 1 — slow attack, long release",
+      "category": "serum",
+      "instruction": "ENV 1 controls volume over time. Set: Attack 300ms (drag the A knob until tooltip reads ~300ms). Decay 0ms. Sustain 100% (all the way right). Release 1500ms (drag R until tooltip reads ~1500ms, or about 1.5 seconds). Hold a chord and listen to the pad bloom in slowly and ring out for a long time after release.",
+      "why": "The slow attack is the single most important decision in pad design. It transforms the sound from a stab (instant on) to a pad (swells in). 300ms means the pad reaches full volume after 0.3 seconds — you hear it bloom rather than hit. Release 1500ms means chords overlap slightly as they change, creating the seamless wash effect.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "Try Attack at 0ms vs 300ms back to back. At 0ms you have a pluck or stab. At 300ms you have a pad. This single parameter changes the category of sound more than any other. Kettama's pad has roughly this 300ms swell."
+    },
+    {
+      "id": 7,
+      "title": "Add LFO 1 to filter cutoff — make it breathe",
+      "category": "serum",
+      "instruction": "Find LFO 1 in the modulation section. Set its shape to Sine. Set the Rate to 0.25 Hz (one slow cycle every 4 seconds) — make sure Sync is OFF so the LFO runs freely rather than locking to tempo. Now hover over the FILTER CUTOFF knob. A mod drag handle should appear. Drag the LFO 1 label onto the CUTOFF knob. A coloured ring appears around the knob. Drag the ring to set depth at approximately 5% (very subtle).",
+      "why": "A very slow LFO on filter cutoff makes the pad's brightness gently rise and fall. At 5% depth the movement is almost imperceptible — you just feel that the sound is alive rather than static. This 'breathing' quality is what separates a flat synth pad from the organic, living quality of Kettama's pads.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "To see all modulation connections, click the MATRIX tab at the top of Serum. Your LFO 1 → Cutoff connection will appear as a row. You can adjust the modulation depth here numerically. Try increasing to 10–15% and hear the breathing become more obvious — then decide which subtlety level you prefer."
+    },
+    {
+      "id": 8,
+      "title": "FX tab — CHORUS and REVERB",
+      "category": "serum",
+      "instruction": "Click the FX tab at the top of Serum. Enable CHORUS: Rate 0.40, Depth 25%, Mix 40%. Enable REVERB: Size 0.75, Decay 0.65, Pre-delay 15ms, Mix 30%. Enable EQ: set a high-pass at 120Hz (pads don't need anything below that — the sub bass handles the low end). Leave all other FX off.",
+      "why": "CHORUS adds width — multiple slightly detuned copies spread the sound across the stereo field without making it sound like more oscillators. REVERB adds depth — the pad exists in a space rather than sitting flat. Pre-delay 15ms lets the attack be heard before the reverb bloom. HP at 120Hz keeps the pad from competing with the sub bass.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "In V2, try the HYPR effect in the FX tab as an alternative to standard CHORUS. Set it to 30% mix — it creates a richer, more vintage ensemble width. Toggle between CHORUS and HYPR to decide which feels closer to the Kettama reference."
+    },
+    {
+      "id": 9,
+      "title": "Program the Gbmaj7 chord",
+      "category": "ableton",
+      "instruction": "Create a 4-bar MIDI clip on the Serum track. Open the piano roll. Program these four notes held for the full 4 bars: Gb3, Bb3, Db4, F4. All four notes on at the same time, same velocity (about 90). Hit play and loop. Listen to how the chord blooms in and rings out.",
+      "why": "Gbmaj7 (Gb, Bb, Db, F) is the VI chord in Bb minor — the launch chord in Kettama's progression. This spread voicing (D3–F4 range, F4 as the major 7th on top) is the exact character of the Kettama pad. The F4 ringing out above the chord is the major 7th — that shimmer is the emotional signature of the sound.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the chord sounds muddy, check that no notes are below C3. All pad chord tones should sit above C3 — below that belongs to the bass line. If it sounds thin, check that WT POS is at 20–25% and not at 0% (sine)."
+    },
+    {
+      "id": 10,
+      "title": "Add Saturator in Ableton — analogue warmth",
+      "category": "ableton",
+      "instruction": "After Serum in the Ableton device chain, add a Saturator (Audio Effects > Saturator). Set Drive to 12%. Select 'Soft Clip' mode (the default). Set Dry/Wet to 30%. Toggle the Saturator on/off while the pad plays and listen to the difference.",
+      "why": "Serum is a digital synthesizer — it sounds precise and clean. Saturator adds subtle harmonic distortion that mimics analogue equipment. At 12% drive and 30% mix the effect is transparent but present — the pad feels warmer and less digital. This is the difference between a synth patch and a produced sound.",
+      "ableton_cheatsheet_id": "saturator",
+      "splice_search": null,
+      "tip": "The Soft Clip mode in Saturator curves the distortion gently at high levels rather than hard-clipping. This is what makes it sound warm rather than crunchy. Waveshaper view (button in Saturator) shows the saturation curve — the S-curve of Soft Clip vs the sharp corner of Hard Clip."
+    },
+    {
+      "id": 11,
+      "title": "Program the full VI→III→i loop",
+      "category": "ableton",
+      "instruction": "Extend your MIDI clip to 4 bars. Program: Gbmaj7 (Gb3 Bb3 Db4 F4) for bars 1–2. Dbmaj (Db3 F3 Ab3) for bar 3. Bbm (Bb3 Db4 F4) for bar 4. Each chord held for its full duration. Set BPM to 140. Loop the 4 bars.",
+      "why": "This is the complete VI→III→i loop from the Kettama spinoff. Gbmaj7 gets 2 bars because it's the most emotionally loaded chord — the brightness needs time to bloom and settle. Dbmaj and Bbm get 1 bar each. The loop lands back on Gbmaj7 and the cycle repeats. This is the deep dive in your hands.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The chord change between Gbmaj7 and Dbmaj happens at bar 3. With Release 1500ms, the Gbmaj7 notes will still be ringing when Dbmaj starts — they'll overlap briefly. This is intentional and exactly how Kettama's pads behave. The overlap creates a blended transition, not a hard cut."
+    },
+    {
+      "id": 12,
+      "title": "Compare against the Kettama reference",
+      "category": "mix",
+      "instruction": "Open Kettama — It Gets Better in a media player or as a reference track in Ableton. Set both at the same volume. Solo your pad and play it alongside the Kettama original at the pad section (~0:32). Listen for: How does the warmth compare? Is the attack bloom similar? Does the reverb depth feel comparable? Adjust FILTER CUTOFF, ENV 1 Attack, or REVERB mix to narrow the gap.",
+      "why": "The reference track is the final teacher. Your pad is technically correct but the ear makes the final judgment. Small adjustments — a bit more filter cutoff, slightly longer attack, a touch more reverb — are how you close the gap between technically right and perceptually right.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Focus on one parameter at a time when comparing. First: does the bloom speed feel right? If not, adjust Attack. Second: does the brightness feel right? If not, adjust Cutoff. Third: does the space feel right? If not, adjust Reverb Mix. One dimension at a time."
+    }
+  ]
+}

@@ -1,0 +1,121 @@
+{
+  "id": "rep-serum-sub-bass",
+  "title": "Sub Bass in Serum V2",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 20,
+  "bpm": 136,
+  "key": "E minor",
+  "source_track_id": "mph-raw",
+  "spinoff_level": null,
+  "description": "Build a clean, punchy sub bass in Serum V2 from Init Preset — no presets, no shortcuts. Every step explained. You'll learn exactly why a sub bass needs to be mono, filtered-off, and effect-free.",
+  "what_youll_learn": [
+    "How to navigate to Init Preset in Serum V2",
+    "Why the sub bass uses a pure sine wave (WT POS 0%)",
+    "Why unison must be off on anything below 200Hz",
+    "How ENV 1 shapes the sub's punch and note separation",
+    "How to verify your sub is mono before it hits the mix"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Open Serum V2 and load Init Preset",
+      "category": "serum",
+      "instruction": "Create a new MIDI track in Ableton. From your instruments library, load Serum V2. Once it opens, right-click the preset name at the top of Serum and choose 'Init Preset'. You start with a basic saw wave — you'll replace everything.",
+      "why": "Starting from Init Preset means you understand every decision you're making. Presets are other people's decisions. You need to know why each parameter is where it is — that's what this rep teaches.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "If you don't see 'Init Preset' when you right-click, try clicking on the preset name area (top-centre of Serum) instead of the menu bar."
+    },
+    {
+      "id": 2,
+      "title": "Set OSC A to Basic Shapes — pure sine",
+      "category": "serum",
+      "instruction": "Click the wavetable name on OSC A (it will say something like 'Saw' or 'Basic Shapes'). In the browser that opens, select 'Basic Shapes'. Now drag the WT POS knob all the way left to 0%. The waveform display should show a smooth, round curve — a pure sine wave.",
+      "why": "The sine wave has no harmonics — only the fundamental frequency. Sub bass lives below 100Hz where overtones would create muddiness and compete with kick drum energy. WT POS 0% is the cleanest signal Serum can produce.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Hold Shift while dragging a knob in Serum for fine control. WT POS 0% is exactly at the leftmost position — watch the waveform display to confirm you have a smooth round shape, not a saw or square."
+    },
+    {
+      "id": 3,
+      "title": "Disable UNISON — subs must be mono",
+      "category": "serum",
+      "instruction": "Find the UNISON section on OSC A. Set voices to 1. Make sure the Detune amount is 0. Turn OSC B off (click the OSC B power button to deactivate it). The sub must come from a single oscillator with no detuning.",
+      "why": "Unison creates multiple copies of the oscillator, each slightly detuned. In the sub bass range, those detuned copies beat against each other and cause phase cancellation — the sub literally disappears when you check the track in mono. Always 1 voice on anything below 200Hz.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Play a low note (E1) while toggling the UNISON voice count between 1 and 4. You'll immediately hear the sub lose body and consistency at 4 voices. That's the phase cancellation. Toggle back to 1."
+    },
+    {
+      "id": 4,
+      "title": "Disable the FILTER",
+      "category": "serum",
+      "instruction": "Find the FILTER section (bottom-left area of Serum). Click its power button to turn it OFF. The filter indicator should be grey/inactive.",
+      "why": "A filter on a sub bass introduces unnecessary processing and phase shift at low frequencies. The sub should be as clean and pure as possible — the sine wave already has the exact character you need. Filtering is for shaping timbre; the sine has no timbre to shape.",
+      "ableton_cheatsheet_id": "serum-v2-filter",
+      "splice_search": null,
+      "tip": "If the filter power button is already off (common in Init Preset), skip ahead. Check by looking at the FILTER header — it should appear dimmed."
+    },
+    {
+      "id": 5,
+      "title": "Shape ENV 1 — instant on, clean off",
+      "category": "serum",
+      "instruction": "In the ENV 1 section (bottom-left, always connected to amplitude): Attack 0ms. Decay 0ms. Sustain 100%. Release 150ms. To set Attack to 0ms, drag the knob fully left. Do the same for Decay. Drag Sustain fully right (100%). Drag Release to a position that reads approximately 150ms.",
+      "why": "Attack 0ms means the note responds immediately when you press a key — the sub hits exactly on time with the kick. Release 150ms means the note decays cleanly over 150ms after you release the key. Too long and notes blur together; too short and the sub sounds clipped.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "To see exact millisecond values, hover your mouse over the knob — a tooltip will show the current value. Adjust slowly and watch the tooltip to land on 150ms for Release."
+    },
+    {
+      "id": 6,
+      "title": "Enable the SUB oscillator",
+      "category": "serum",
+      "instruction": "Find the SUB oscillator section (below OSC B, to the left). Click its power button to enable it. Set its waveform to Sine. Set the SUB level to approximately -6dB below OSC A's level — find the small level knob on the SUB and set it to roughly the 8 o'clock position.",
+      "why": "The SUB oscillator plays one octave below OSC A. It reinforces the fundamental frequency without adding any harmonics — you feel it more than hear it. It's the physical weight of the sub. Toggle it on and off while holding a low note to hear the difference.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "The SUB oscillator works best at low notes (below G2). On higher notes it can push the fundamental too low to be useful. For sub bass lines that go down to E1–B1, the SUB adds real body."
+    },
+    {
+      "id": 7,
+      "title": "FX tab — turn everything off",
+      "category": "serum",
+      "instruction": "Click the FX tab at the top of Serum. Go through each effect slot: DISTORT, HYPR, DIMENSION, CHORUS, FLANGER, PHASER, COMPRESSOR, DELAY, REVERB, EQ, FILTER. Turn every one OFF by clicking its power dot. The FX chain should show all slots greyed out.",
+      "why": "Any FX on a sub bass introduces phase shift, harmonics, and smear in the low end. Reverb on sub = muddy bloom. Chorus on sub = phase cancellation. Distortion on sub = uncontrolled harmonics competing with the kick. The sub's job is to be clean and pure. FX are for sounds that need character — the sub is already exactly what it needs to be.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The EQ in Serum's FX tab is particularly easy to leave on by accident. Double-check it's off — a default high-pass could cut the very frequencies the sub bass depends on."
+    },
+    {
+      "id": 8,
+      "title": "Program the bass line",
+      "category": "ableton",
+      "instruction": "Create a 2-bar MIDI clip on the Serum track. Open the piano roll. Set the grid to 1/8 note. Program this root movement, each note held for 2 beats: Gb1 → Db1 → Bb1. This maps to the Kettama chord roots (VI→III→i in Bb minor), transposed down. Hold each note for exactly 2 beats. Listen to how the pitch movement alone implies the chord changes — no chord pad needed yet.",
+      "why": "Bass lines define harmony through pitch movement alone. Even a pure sine wave at Gb1→Db1→Bb1 makes your ear hear VI→III→i motion. This is bass-implied harmony — one note per chord, carrying the full emotional weight of the progression.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Gb1 is below E1 — make sure your MIDI clip can display notes this low. Scroll the piano roll down. If you can't hear anything, the notes may be below your system's audible range on headphones — try Gb2→Db2→Bb1 to start, then drop an octave once you confirm the patch is working."
+    },
+    {
+      "id": 9,
+      "title": "Add Utility in Ableton — force mono",
+      "category": "ableton",
+      "instruction": "After Serum in the device chain, add a Utility device (Audio Effects > Utility). Set Width to 0%. This forces the sub bass to true mono. Watch the stereo meter in Ableton — the sub should show a solid centre signal, not a wide stereo spread.",
+      "why": "Even with UNISON at 1 voice, subtle stereo can creep in through Serum's internal processing or slight monitoring differences. A sub bass that's wide will collapse to near-silence when played on a mono system (phone speaker, small Bluetooth speaker, club PA in some zones). Utility at Width 0% is the guarantee.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "To test: route your output to a mono bus or use Utility's own mono button. You can also use the Phase Correlation meter in EQ Eight — positive correlation = mono-safe, negative correlation = phase issues."
+    },
+    {
+      "id": 10,
+      "title": "Compare against the reference",
+      "category": "mix",
+      "instruction": "Open the MPH Raw track in another Ableton window or in a media player. Set both to the same volume (or use Ableton's reference track feature). Play your sub bass alongside the MPH sub. Listen for: How clean is yours compared to the reference? Is the attack as tight? Does it feel as punchy? Adjust ENV 1 Release between 100ms and 250ms until the note separation matches.",
+      "why": "You can set parameters all day but the real calibration is the reference. Every professional producer compares against reference tracks. Your sub may be technically correct but perceptually softer, harder, or muddier than the reference. Use your ears to close that gap.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Use MPH Raw from 0:00–0:16 — the sub bass enters early and sits alone with just the kick. This is the clearest section to compare against."
+    }
+  ]
+}
