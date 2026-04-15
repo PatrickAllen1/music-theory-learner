@@ -1,0 +1,100 @@
+{
+  "id": "original-04-static-amber",
+  "title": "Static Amber",
+  "build_type": "original",
+  "difficulty": "advanced",
+  "estimated_time_mins": 120,
+  "bpm": 136,
+  "key": "A minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "A minor, 136 BPM. All five source track techniques in one track: 2-step kick (Sammy), bass-implied harmony (BL3SS), borrowed major chord in the drop (Sammy Picardy), Reese bass in the breakdown (IC), phrygian riff in the outro (MPH). The final original — every technique learned in Phase 2 contributing to one cohesive track.",
+  "what_youll_learn": [
+    "How to integrate multiple production techniques from different sources without losing coherence",
+    "A minor: i→bIII→bVI→iv bass-implied (A→C→F→D roots)",
+    "How to build a complete advanced track from scratch using all learned techniques",
+    "How to let the track concept guide which technique to use in each section"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Concept and architecture",
+      "category": "ableton",
+      "instruction": "Static Amber is the culmination of Phase 2 — a track that uses every technique without sounding like a patchwork. The concept: 'A minor, slightly tense, building toward a brighter second drop, with a dark Reese breakdown and a phrygian outro that feels like something unresolved.' Before building, map the technique to the section: INTRO/DROP 1: 2-step kick + bass-implied harmony (A minor i→bIII→bVI→iv). BREAKDOWN: Reese bass + sparse pads, no kick. DROP 2: same bass roots but a brief Am→A major Picardy moment (borrow major tonic). OUTRO: phrygian bass riff (A root, Bb tension). New project BPM 136. Tracks: DRUMS, SUB BASS, REESE BASS, PAD. Save as 'original-04-static-amber'.",
+      "why": "Mapping technique to section before building is how professional producers approach complex tracks. You're not using all techniques simultaneously — each technique appears in its designated section. The track has an emotional arc: anticipation (2-step + bass-implied) → darkness (Reese breakdown) → brief light (Picardy drop 2) → unresolved tension (phrygian outro). Static Amber.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Print or write the section map: INTRO=2step+bass-implied, BREAKDOWN=Reese, DROP2=Picardy, OUTRO=phrygian. This is your architecture. When you're unsure of a decision during the build, check the map."
+    },
+    {
+      "id": 2,
+      "title": "2-step drums",
+      "category": "drums",
+      "instruction": "Load Drum Rack. 2-step pattern: kick at beat 1 and the and-of-2. Clap on beat 3. Closed hats 4 per bar. Find a kick with warmth and weight — search 'uk garage kick warm'. The 2-step should feel like it belongs in the BL3SS/Sammy Virji territory. Velocities: kick downbeat 100, kick off-beat 85, clap 85, hats 65. Group to DRUMS. GlueCompressor on DRUMS group: Ratio 4:1, Attack 3ms, Release Auto.",
+      "why": "The 2-step kick at 136 BPM creates the specific blend of urgency and looseness that is Static Amber's rhythmic character — faster than Sammy's 130 BPM but with the same rolling groove feel. The GlueCompressor on the drum bus glues the 2-step pattern into a cohesive groove.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "uk garage kick warm rolling",
+      "tip": "This drum pattern stays consistent from Drop 1 through Drop 2. It changes only in the breakdown (drops to sparse kick-on-1 only) and the outro (where a simpler kick-on-1-and-3 takes over). Consistent drum feel = all the other changes feel more dramatic."
+    },
+    {
+      "id": 3,
+      "title": "Bass-implied harmony for Drop 1",
+      "category": "bass",
+      "instruction": "Sub bass (sine, Saturator 20% Soft Clip, mono, EQ HP 30Hz). A minor i→bIII→bVI→iv roots: 4-bar clip. Bar 1: A1 (3 beats + rest). Bar 2: C1 (3 beats + rest). Bar 3: F1 (3 beats + rest). Bar 4: D1 (2 beats) then A1 return (2 beats). Velocities: A1=90, C1=83, F1=86, D1=80, A1 return=88. Ghost PAD at -16dB: Am (A3, C4, E4) → Cmaj (C3, E3, G3) → Fmaj (F3, A3, C4) → Dm (D3, F3, A3) following bass roots.",
+      "why": "The bass-implied approach means the 2-step kick and bass carry the full musical content of Drop 1. The ghost pad at -16dB adds subtle harmonic warmth. The ear should construct Am→Cmaj→Fmaj→Dm from the bass roots alone — verifiable by soloing the bass and listening for chord changes.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "After programming, solo the sub bass only and loop 8 bars. Can you hear the chord changes? You should hear A (dark), C (slight lift), F (suspension), D (returning). If the chord changes are not audible from bass alone, adjust velocity and note length: each root needs to hold long enough to register (at least 2 beats)."
+    },
+    {
+      "id": 4,
+      "title": "Build the Reese bass for the breakdown",
+      "category": "bass",
+      "instruction": "REESE BASS: Serum V2, two detuned saws, same settings as spinoff-03 step 4 (OSC A and B both saw, ~25 cents apart, filter MG Low 24 at 40%, ENV 2 filter pluck). Mute this track — it's breakdown only. Reese MIDI for breakdown: same A→C→F→D roots but simplified — just A1 for 2 bars, F1 for 1 bar, D1 for 1 bar (3-chord version, slightly simpler than the 4-chord main loop). This gives the breakdown a slightly different harmonic pattern from the drop — same key, different rhythm.",
+      "why": "The Reese bass plays a simplified version of the A minor progression in the breakdown. The difference in chord rhythm (not all 4 chords) plus the Reese's complex, growling timbre creates maximum contrast from the clean sub bass of the drop. Same key, radically different texture.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Set the Reese BASS fader to -3dB in the breakdown section (louder than in spinoff-03 where it was a textural element — here it's the main bass). The breakdown has no kick and no sub bass, so the Reese carries full bass responsibility."
+    },
+    {
+      "id": 5,
+      "title": "Drop 2 — Picardy on the Am arrival",
+      "category": "chords",
+      "instruction": "Drop 2 PAD clip: same i→bIII→bVI→iv root movement, but on bar 1 (the Am bar) the pad briefly uses A major (A3, C#4, E4) instead of A minor (A3, C4, E4). The Picardy moment: C#4 instead of C4. Just for bars 1–2 of each 4-bar loop. Bars 3–4 revert to Cmaj and Fmaj (unchanged from Drop 1). The bass stays on A1 — same root. Only the pad's 3rd changes (C→C#). This is the static amber's one moment of light.",
+      "why": "The A major tonic (Picardy third) in an A minor track is the most jarring Picardy possible — you've spent the whole track in A minor, and for 2 bars the tonic chord becomes major. The C# is conspicuous. That single note change — C natural to C# — is the emotional centre of Static Amber. The 'amber' is that flash of warmth in an otherwise tense, minor-key track.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Play the Drop 1 loop (Am at the tonic). Then play the Drop 2 loop (A major at the tonic). The difference of one semitone (C to C#) should be immediately noticeable. If it's not clear, increase the velocity of the C#4 note by 10 in the Drop 2 clip."
+    },
+    {
+      "id": 6,
+      "title": "Outro — phrygian riff",
+      "category": "bass",
+      "instruction": "OUTRO: replace the 4-chord bass loop with a 2-chord phrygian pattern. Bass MIDI for outro: A1 (root, 3 beats), Bb1 (tension — the bII of A minor = phrygian flat-2, 1 beat), A1 (return, 4 beats). This is the 4-bar outro pattern: bar 1 A1→Bb1→A1, bar 2 A1 sustained, bar 3 A1→Bb1→A1, bar 4 A1 then silence. Remove PAD in the outro — phrygian bass only, no chords. Kick returns to kick-on-1-and-3 (sparse, like rep-01 intro).",
+      "why": "The outro returns to the most minimal technique (phrygian bass) after the full complexity of the track. The Bb1 tension note (one semitone above A1) is the phrygian b2 — same interval relationship as MPH's F above E. The 'unresolved' feeling of the outro is that after the Picardy flash of major light in Drop 2, the track ends on phrygian tension rather than tonic resolution. It ends mid-air — static, hanging.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The outro's phrygian riff uses Bb1 — make sure it's Bb1 (one semitone above A1), not B natural (two semitones above). Bb and B natural are very different. Bb = phrygian tension. B natural = a step in the harmonic minor scale. The one-semitone distance is what creates the phrygian character."
+    },
+    {
+      "id": 7,
+      "title": "Full arrangement",
+      "category": "ableton",
+      "instruction": "Arrangement: Bars 1–8: INTRO — 2-step drums only. Bars 9–24: BUILD — sub bass enters (bass-implied, ghost pad -16dB). Bar 24 beat 4: 1-beat silence. Bars 25–56: DROP 1 — 2-step drums, sub bass, ghost pad. Bars 57–72: BREAKDOWN — no kick, no sub bass. Reese bass + PAD at -6dB (louder in breakdown — the harmony is more exposed). Bars 73–76: REBUILD — kick re-enters bar 73, sub bass re-enters bar 74. Bars 77–108: DROP 2 — Picardy tonic. Bars 109–124: OUTRO — phrygian riff, no pad. Sparse kick-on-1-and-3. Bars 122–124: strip everything. End on silence.",
+      "why": "The arrangement arc: drums alone (anticipation) → bass-implied drop (restrained) → Reese breakdown (dark, exposed) → Picardy drop 2 (brief light) → phrygian outro (unresolved). This is a complete emotional journey using every technique in its natural place. Each technique appears where its emotional character is most useful.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Listen through the entire arrangement from start to finish without stopping. This is a 3-minute track. Does it feel like a journey? The test: when you reach the phrygian outro, does it feel like a natural landing or an abrupt change? If abrupt, the outro may need a transitional bar where the bass-implied loop simplifies before the phrygian arrives."
+    },
+    {
+      "id": 8,
+      "title": "Mix, master, and final export",
+      "category": "mix",
+      "instruction": "Final mix pass. EQ Eight on all tracks: PAD HP 130Hz. REESE HP 40Hz. Bass HP 30Hz. Levels in Drop 1: DRUMS 0dB, SUB BASS -2dB, PAD -16dB. Levels in Breakdown: REESE BASS -3dB, PAD -6dB. Levels in Drop 2: same as Drop 1 but PAD slightly louder at -14dB (the Picardy moment needs to be heard). Limiter on master: Ceiling -0.3dB. Export full 3-minute track: 'original-04-static-amber-v1.wav'. Listen on earbuds. Write 3 sentences: (1) what worked technically, (2) what worked emotionally, (3) what you'd do differently. Save session.",
+      "why": "Static Amber is the end of Phase 2. The final export represents everything you've learned across the full guided build curriculum. The 3-sentence reflection is the synthesis — converting production experience into articulated knowledge that you can apply to original work going forward.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Compare Static Amber against original-01 (Slow Fade). Both are A minor. Both use sparse production. But Static Amber has 5 times the harmonic and structural complexity. The distance between these two originals shows the arc of Phase 2."
+    }
+  ]
+}

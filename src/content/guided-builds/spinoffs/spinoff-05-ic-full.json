@@ -1,0 +1,159 @@
+{
+  "id": "spinoff-05-ic-full",
+  "title": "IC DNA — Full Transform (B Minor)",
+  "build_type": "spinoff",
+  "spinoff_level": "full",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 120,
+  "bpm": 138,
+  "key": "B minor",
+  "source_track_id": "interplanetary-criminal-slow-burner",
+  "source_track_changes": [
+    "New key: B minor (original was E minor area)",
+    "BPM 138 — between IC's 136 and Kettama's 140",
+    "Drum pattern: alternating 4-on-floor bars with 2-step bars (hybrid pattern)",
+    "Bass texture: layered sub + mid bass (two separate bass instruments)",
+    "Structure: longer intro (16 bars), no breakdown — goes straight drop to outro",
+    "bVI chord in B minor = G major"
+  ],
+  "production_brief": "This is a full IC-DNA transform — same emotional philosophy (bVI lift in a dark minor key, restrained drums, space-forward mix) but every specific element is different. New key (B minor), hybrid drum pattern mixing 4-on-floor and 2-step bars, a layered bass (sub + mid layer), and a stripped structure with no breakdown. The longer intro builds tension slowly. The drop goes hard because of what you withheld in the intro. This spinoff teaches you to think about structure as tension management, not just section labels.",
+  "what_youll_learn": [
+    "B minor bVI: G major (count 8 semitones up from B)",
+    "How to layer a sub bass and mid bass for frequency-separated depth",
+    "How to program a hybrid drum pattern (alternating 4-on-floor and 2-step bars)",
+    "How a longer intro and no breakdown changes the structural arc of a track",
+    "How restraint in the intro makes the drop feel earned"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Derive the B minor chord and set up",
+      "category": "ableton",
+      "instruction": "Derive bVI in B minor: root B, count 8 semitones up — B→C→Db→D→Eb→E→F→Gb→G. bVI = G major. Chord notes: Bm (B, D, F#) and Gmaj (G, B, D). Common tones: B and D. New project, BPM 138, tracks: DRUMS, SUB BASS, MID BASS, PAD. Save as 'spinoff-05-ic-bmin-full'.",
+      "why": "B minor sits between the keys you've worked in most (E minor, D minor, G minor) — it's a less comfortable key, which is the point. Working in unfamiliar keys forces you to derive rather than recall. G major as the bVI has a particular warmth — it's a very 'open' major chord, which contrasts strongly with B minor's tense, narrow character.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "F# is the 5th of B minor — it's a sharp, not a flat. B minor is one of the few minor keys in this series with sharps rather than flats. Bm = B, D, F# (not F natural). Double-check your chord voicings later."
+    },
+    {
+      "id": 2,
+      "title": "Find samples — IC character",
+      "category": "drums",
+      "instruction": "Splice searches for IC DNA: kick — 'minimal kick deep house punchy' or 'uk bass kick dry'. You want a kick with a defined low thud and a short tail — nothing heavy or boomy. Clap — 'crisp clap dry minimal'. Hat — 'tight closed hat garage'. At 138 BPM every kick lands 435ms apart — find a kick that sounds decisive at that tempo. Download 3 kick candidates.",
+      "why": "IC's drum character is more minimal and spacious than Kettama's — the kick doesn't dominate, it punctuates. A kick that sounds slightly understated in isolation often sounds perfect in a minimal IC-style arrangement where the bass carries most of the energy.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "minimal kick deep house punchy",
+      "tip": "Preview at least 15 kicks before choosing. Filter by duration — you want under 350ms total tail. Longer kicks blur the rhythm at 138 BPM."
+    },
+    {
+      "id": 3,
+      "title": "Program the hybrid drum pattern",
+      "category": "drums",
+      "instruction": "Load Drum Rack. Create a 4-bar MIDI clip. Bar 1: 4-on-floor — kick on every beat (1, 2, 3, 4). Bar 2: 2-step — kick on beat 1 and the and-of-2 only. Bar 3: 4-on-floor again. Bar 4: 2-step again. Clap on beat 3 of every bar. Hats: 8 per bar every bar (consistent — the hats don't change between pattern bars). Kick velocities: 4-on-floor bars 100, 2-step downbeats 100, 2-step off-beat kicks 82 (slightly lighter).",
+      "why": "Alternating 4-on-floor and 2-step bars creates a push-pull groove — the listener feels the 4-on-floor driving forward, then the 2-step releasing some pressure, then back. The hats staying consistent between pattern types provide a steady anchor that makes the kick variation feel intentional rather than random.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Loop just the 4-bar drum pattern. Tap your foot to it. Does it feel like it breathes differently on bars 2 and 4? The 4-on-floor bars should feel more locked-in, the 2-step bars slightly looser. If you can't hear the difference, check bar 2 — it should have only 2 kicks, not 4."
+    },
+    {
+      "id": 4,
+      "title": "Build the sub bass layer",
+      "category": "bass",
+      "instruction": "SUB BASS: Serum V2, pure sine, no FX, no filter, Utility Width 0%, Saturator Drive 20% Soft Clip Dry/Wet 50%, EQ Eight HP 30Hz. 4-bar MIDI clip: Bars 1–2 B0/B1 (bVI root = G1 for bars 3-4 below). Wait — sub bass follows TONIC root first: Bars 1–2: B1 (tonic), Bar 3: G1 (bVI root), Bar 4: B1 return. Hold each root nearly full bar with a small gap at end. Velocities: B1=90, G1=85.",
+      "why": "The sub bass plays the chord root for each chord. B1 (61Hz) for the Bm tonic, G1 (49Hz) for the G major bVI. The G1 is lower in pitch — the bVI root drops below the tonic root. This downward movement of the bass root while the chord brightens (major chord arriving) creates an interesting tension: the bass goes lower but the harmony gets brighter.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "G1 at 49Hz is very low — check it on headphones. If G1 sounds weak or disappears, increase Saturator Drive to 25% to add audible harmonics. The fundamental may be below your speaker's range."
+    },
+    {
+      "id": 5,
+      "title": "Build the mid bass layer",
+      "category": "bass",
+      "instruction": "MID BASS: Serum V2 second instance. OSC A: Basic Shapes, WT POS 75% toward saw (not full sine, not full saw — a rounded saw shape). Unison: 2 voices, detune 8 cents, blend 40%. Filter: MG Low 24, Cutoff 35%, Resonance 10%. ENV 1: Attack 5ms, Release 300ms. ENV 2 → Filter Cutoff: Amount +30%, Attack 0ms, Decay 150ms, Sustain 0% (filter pluck on each note). Add EQ Eight: HP 60Hz (sub bass handles below), LP 800Hz (remove harsh high frequencies). Add Saturator: Drive 20%, Soft Clip. Width 30% (slight stereo). MIDI: same notes as sub bass (B1 and G1) but one octave up: B2 and G2.",
+      "why": "The mid bass plays one octave above the sub bass. The sub handles the fundamental (B1/G1), the mid bass handles the 60–800Hz range where bass has texture and definition. Together they create a bass sound that works on all speaker systems — the sub for club systems, the mid bass for small speakers. The 8-cent unison detune on the mid bass adds width and movement without affecting the sub (which stays mono).",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Solo the MID BASS alone. It should sound like a warm, slightly growling bass tone — not as pure as the sub, not as aggressive as a Reese. Then solo the SUB BASS alone. Pure and clean. Then play both together — the combination should feel fuller than either alone."
+    },
+    {
+      "id": 6,
+      "title": "Voice the Bm and Gmaj pads",
+      "category": "chords",
+      "instruction": "PAD track: Serum V2 chord pad with slow attack (300ms). 4-bar MIDI clip. Bars 1–2: Bm — B3, D4, F#4. Bar 3: Gmaj — G3, B3, D4. Bar 4: Bm return — B3, D4, F#4. Velocity 78. Note that Gmaj uses G3 as its lowest note (a step below B3 in the Bm chord). The bVI chord shifts the register down slightly, creating space — then the Bm return brings F#4 back as the top note. Add reverb return send at -10dB (decay 3.5s). EQ Eight HP 130Hz on PAD.",
+      "why": "F#4 on top of Bm is the 5th of the chord — it gives B minor its characteristic open quality. When the chord moves to G major, that F# disappears (it's not in G major) and the chord settles into G3, B3, D4 — a lower, warmer voicing. The harmonic content of G major IS partially shared with B minor (B and D appear in both), making the transition smooth.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Check: Gmaj = G, B, D. Bm = B, D, F#. B and D are common tones. F# drops out and G arrives. Listen for F#4 leaving and G3 arriving as the only movement when the chord changes."
+    },
+    {
+      "id": 7,
+      "title": "Sidechain both bass layers and pads",
+      "category": "mix",
+      "instruction": "SUB BASS compressor sidechain from DRUMS: Ratio 5:1, Attack 0.5ms, Release 100ms, Threshold -16dB. MID BASS compressor sidechain from DRUMS: Ratio 3:1, Attack 1ms, Release 150ms, Threshold -20dB (gentler — the mid bass can breathe a little more). PAD compressor sidechain from DRUMS: Ratio 4:1, Attack 1ms, Release 280ms, Threshold -22dB. Levels: DRUMS 0dB, SUB BASS -2dB, MID BASS -8dB, PAD -7dB.",
+      "why": "Three separate sidechain settings for three separate elements: sub ducks hard (it's in the same frequency range as the kick), mid bass ducks moderately, pad ducks gently. This layered sidechain creates a complex pumping effect — different elements recover at different rates, which gives the groove a textured, living quality rather than everything ducking in unison.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Mute each sidechain compressor one at a time and listen. You should hear three different levels of pumping. The sub should be the most dramatic, the pad the most subtle. All three together should feel like a breathing organism."
+    },
+    {
+      "id": 8,
+      "title": "Build the arrangement — long intro, no breakdown",
+      "category": "ableton",
+      "instruction": "Switch to Arrangement view. Layout: Bars 1–16: INTRO — drums only (no bass, no pad). Bars 9–16: drums + sub bass enters quietly (-6dB, quieter than drop level). Bar 17: mid bass enters (still at -10dB, quieter). Bar 21: pad enters (at -14dB, ghost level). Bar 25: 1-beat silence on bar 25 beat 4. Bars 25–56: DROP — all elements at full level. Bars 57–64: OUTRO — reverse the intro, strip elements one by one. No breakdown section.",
+      "why": "A 16-bar intro at 138 BPM = 27 seconds. That's a long intro by modern standards — it's building tension through delayed gratification. Each element entering quietly before the drop is a 'promise' — the listener hears what's coming but can't have it yet. No breakdown means the drop sustains uninterrupted — once the tension breaks, it doesn't let up.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "When the sub bass enters at bar 9 at -6dB, it should feel like a hint, not a reveal. If it sounds too prominent, lower it to -8dB. The drop should feel like a 6dB volume increase even though the actual level change is smaller — the addition of mid bass and pad creates the perceived jump."
+    },
+    {
+      "id": 9,
+      "title": "The 1-beat silence before the drop",
+      "category": "ableton",
+      "instruction": "At bar 25 beat 4: mute all tracks for exactly 1 beat (1/4 note = 435ms at 138 BPM). In Arrangement view, create a 1-beat gap by splitting the clips at bar 25.4 and bar 26.1, then deleting those 1-beat segments. Drop begins on bar 26 beat 1. Play the section from bar 23 through bar 28 and listen to the silence landing. It should feel like a held breath.",
+      "why": "The 1-beat silence is one of the most effective production techniques in UK garage and house. Total silence for 435ms makes everything that follows feel louder and more impactful — your brain registers the contrast. The silence doesn't interrupt the music; it punctuates it. A skilled DJ will often extend this moment with a loop — the silence is musical content.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The silence must be exactly 1 beat — not 2 beats (too long, loses tension) and not half a beat (too short, barely noticeable). At 138 BPM, 1 beat = 435ms. Use Ableton's grid to make the cut clean."
+    },
+    {
+      "id": 10,
+      "title": "EQ and mix the drop section",
+      "category": "mix",
+      "instruction": "Loop the drop section. EQ Eight on PAD: HP 130Hz, gentle high shelf +1.5dB at 8kHz. EQ Eight on MID BASS: HP 60Hz, cut -2dB at 300Hz if it sounds nasal. EQ Eight on DRUMS group: gentle high shelf +1dB at 10kHz (adds air to hats). Master: Limiter last in chain, Ceiling -0.3dB. Target levels in the drop: kick peaks at -3dBFS, sub bass at -5dBFS, mid bass at -10dBFS, pad at -8dBFS on the master meter. Check mono compatibility with Utility (Width 0%) on the master temporarily — the kick and sub should be solid in mono.",
+      "why": "The sub and mid bass occupy different frequency ranges by design (sub = 30–60Hz, mid bass = 60–800Hz). The EQ reinforces these boundaries. Checking mono on the master temporarily reveals phase issues — if the bass loses power in mono, there may be phase cancellation between the two layers.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "The layered bass approach (sub + mid) should feel fuller than a single bass at the same volume. If it doesn't feel notably fuller, check that the mid bass is audible without the sub — it should have its own presence in the 100–400Hz range."
+    },
+    {
+      "id": 11,
+      "title": "Compare against IC source track",
+      "category": "mix",
+      "instruction": "Play IC — Slow Burner for 30 seconds at the drop. Then play your spinoff from the drop. Switch 3 times. Listen for: the IC track's restraint (it never feels cluttered — every element has space), how the bVI lift works in their version vs yours (different keys, same function), whether your layered bass feels right for the IC vibe or too dense. Adjust one thing if needed.",
+      "why": "The IC reference calibrates whether your interpretation is in the right emotional territory. IC's sound is spacious and controlled — not minimal, but nothing is crowded. If your version feels busier or more cluttered, the mid bass level may be too high or the pad reverb too wet.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Common IC characteristic: there's always space to hear the room. Nothing overlaps aggressively. If your mix feels like elements are competing, lower the mid bass by 2dB and increase the reverb pre-delay to 25ms."
+    },
+    {
+      "id": 12,
+      "title": "Add atmosphere and finalise",
+      "category": "ableton",
+      "instruction": "Create ATMOSPHERE track. Find a subtle pad drone on Splice: 'dark atmosphere drone B minor' or neutral key. Volume -20dB throughout. Automate it rising slightly (+3dB) in the intro as tension builds. Final arrangement check: does the 16-bar intro feel tense? Does the silence hit? Does the drop feel like a release? Export the full arrangement (about 90 seconds: 16-bar intro + 32-bar drop + 8-bar outro). Name: 'spinoff-05-ic-bmin-full-v1.wav'. Save session.",
+      "why": "The atmosphere drone at -20dB adds harmonic context to the intro drums — the listener hears tonal content even when no bass or pad is playing. The gradual +3dB automation mimics a real tension build. When the drop hits, the atmosphere drops back to -20dB — the density change reinforces the drop's impact.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": "dark atmosphere drone minimal",
+      "tip": "Listen to the full 90 seconds from start to finish without stopping. The intro should feel like anticipation, not boredom. If it feels boring, shorten it to 12 bars. If it feels perfectly tense, keep 16 bars."
+    },
+    {
+      "id": 13,
+      "title": "Reflect: what did the transforms teach you",
+      "category": "ableton",
+      "instruction": "Before finishing: write or think through these questions. (1) What was unfamiliar about working in B minor vs E or D minor? (2) How did the hybrid drum pattern change the groove feel vs pure 4-on-floor? (3) Did the layered bass (sub + mid) feel different from a single sub bass? (4) Did the long intro with no breakdown create a different kind of tension than a standard arrangement? These aren't exam questions — the point is to articulate your experience so the next creative decision comes more consciously.",
+      "why": "Reflecting on creative decisions converts experience into transferable knowledge. The hybrid drum pattern, the layered bass, the structure without breakdown — each of these was a specific creative choice. Understanding why they worked (or didn't) means you can deploy them intentionally on your own tracks.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Save your answers as a text note in the project folder. When you're working on originals and want this kind of build — longer intro, layered bass, hybrid drums — these notes are faster to consult than memory."
+    }
+  ]
+}

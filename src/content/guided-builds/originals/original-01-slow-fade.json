@@ -1,0 +1,90 @@
+{
+  "id": "original-01-slow-fade",
+  "title": "Slow Fade",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 45,
+  "bpm": 132,
+  "key": "D minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "Dark, minimal, phrygian bass only — no chords. Late-night, hypnotic. Borrowed from MPH's phrygian tension approach and BL3SS's bass-implied philosophy: let the bass do everything.",
+  "what_youll_learn": [
+    "How to write an original track using only phrygian bass tension — no chord pad",
+    "How creative restraint (using fewer elements) creates a distinctive sound",
+    "Combining MPH phrygian technique with BL3SS's minimalist approach",
+    "How to make a complete-feeling track from just drums and bass"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Concept and setup",
+      "category": "ableton",
+      "instruction": "This is your first original. There is no source track to reference — this track is entirely your creative decision. The concept: dark, minimal, phrygian tension in D minor, no chord pad at all. Target sound: late-night, hypnotic, makes the listener feel slightly unsettled. BPM 132, key D minor, phrygian tension note Eb. Tracks: DRUMS and BASS only. Save as 'original-01-slow-fade'.",
+      "why": "Starting with a concept before touching any instrument is a professional production habit. 'Dark, minimal, hypnotic, no chords' is a clear enough brief to make every subsequent decision from. When you're uncertain about a choice, ask: does this make the track darker and more minimal, or does it make it busier and more complex? Keep the former, remove the latter.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Write the concept somewhere visible — a sticky note, a text file. 'Dark. Minimal. Phrygian. No chords. Late-night.' Read it before each decision. The concept is your filter."
+    },
+    {
+      "id": 2,
+      "title": "Choose and program drums that serve the concept",
+      "category": "drums",
+      "instruction": "Find a kick that sounds heavy and slightly slow — not a sharp, clicking garage kick, but something with weight. Search Splice: 'deep kick dark heavy' or 'sub kick minimal techno'. Program: kick on beats 1 and 3 only (sparse — this is the BL3SS approach from rep-13). Clap/snare on beat 3 only (one per bar). NO hats if you can resist them — if you need them, use 2 per bar at very low velocity (50). Velocities: kick 90, clap 75. Group to DRUMS.",
+      "why": "Every drum decision should serve the concept. Kick on 1 and 3 (not 4-on-floor) creates a heavier, slower feeling. One clap per bar instead of beats 2 and 4 creates more space. Eliminating or minimising hats removes the high-frequency busyness that would distract from the bass line. This is a track where the silence between hits is as important as the hits themselves.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "deep kick dark heavy minimal",
+      "tip": "If the drums feel too sparse and empty, that is the correct feeling. You're building a late-night track — it should feel like 3am, not a peak-time set. Resist the urge to add more drum elements."
+    },
+    {
+      "id": 3,
+      "title": "Write your phrygian bass line",
+      "category": "bass",
+      "instruction": "Sub bass (sine, Saturator 20% Soft Clip 50%, mono). This is your track — design your own phrygian pattern. Requirements: (1) Root D1 must be the primary note. (2) Eb1 (the phrygian bII, one semitone up from D) must appear as a tension note. (3) The pattern should be 2–4 bars long. (4) The Eb1 should arrive and then resolve back to D1. Beyond these requirements, the rhythm and duration of each note are your choice. Try at least 2 different patterns before committing.",
+      "why": "You've been given phrygian patterns in reps 03–05. Now it's your turn to write one. The requirements (root dominant, tension note present, resolution back to root) define the technique. Everything else is creative expression. Your pattern may be identical to rep-03 — that's fine. But try at least one variation that feels like yours.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Some options: longer Eb (held for 2 beats instead of 1 = more tension). Earlier Eb (beat 2 instead of beat 4 = tension arrives faster). Eb higher up (Eb2 instead of Eb1 = tension in a different register). Multiple Ebs in one phrase. The interval is D→Eb — everything else is your decision."
+    },
+    {
+      "id": 4,
+      "title": "Shape the bass for the track concept",
+      "category": "bass",
+      "instruction": "Loop 8 bars of drums + bass. Listen for 2 minutes without changing anything. Ask: does this sound like 3am? Does the Eb1 create a feeling of unease? Is the silence between notes working? If yes, proceed. If no: (a) if too busy — remove notes. (b) if too empty — the silence is correct, keep it. (c) if the Eb doesn't feel tense enough — increase its velocity to 85 (vs D1 at 90). (d) if the whole thing feels too safe — try moving the Eb to an unexpected rhythmic position.",
+      "why": "This step is entirely about your ears and your concept. There is no right answer. The diagnostic questions are: does it match the 3am concept? If yes, trust it. If no, make one change at a time and listen again.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Play it in a dark room at moderate volume. Close your eyes. This is a better test than staring at the piano roll."
+    },
+    {
+      "id": 5,
+      "title": "Add one optional atmospheric layer",
+      "category": "ableton",
+      "instruction": "Optional: create an ATMOSPHERE track. Splice search: 'dark drone D minor' or 'bass rumble texture'. Volume -20dB or quieter. If you add it: it should make the track feel deeper, not busier. If it draws attention to itself, it's too loud. If you're not sure whether it's there when listening, it's at the right level. You may also decide not to add anything and keep it purely drums and bass — that is a valid artistic choice.",
+      "why": "The option is here. The choice is yours. The concept was 'dark, minimal, no chords'. A sub-audible atmosphere drone fits within that concept. A melodic atmosphere would violate it. Trust the concept as your filter.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": "dark drone minimal bass rumble",
+      "tip": "Decide in one listen. Add the atmosphere, listen once, decide keep or remove. Don't spend more than 5 minutes on this decision — it's a texture detail, not a structural one."
+    },
+    {
+      "id": 6,
+      "title": "Build the arrangement",
+      "category": "ableton",
+      "instruction": "Arrangement view. Layout: Bars 1–8: INTRO — drums only (no bass). The listener hears nothing but the sparse kick and clap for 8 bars. Bars 9–24: MAIN — bass enters. 16 bars of drums + bass. Bar 24 beat 4: 1-beat silence. Bars 25–40: MAIN 2 — same elements, atmosphere enters at bar 25 (if using). Bars 41–48: OUTRO — strip back. Bass stops at bar 44. Kick continues alone until bar 47. Bar 48: everything ends. Total: about 90 seconds at 132 BPM.",
+      "why": "An 8-bar intro of drums-only at 132 BPM is a long wait. That's intentional — it creates tension through delayed gratification. The bass arriving at bar 9 should feel like a release. A 90-second track is appropriate for a minimal, looping concept — this isn't a 6-minute DJ tool, it's a study in restraint.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "When the bass enters at bar 9, the kick on beat 1 of bar 9 and the D1 bass note should land simultaneously. If they don't align exactly, the entry won't feel like a release — it'll feel like an accident."
+    },
+    {
+      "id": 7,
+      "title": "Mix and export",
+      "category": "mix",
+      "instruction": "Levels: kick 0dB, bass -2dB, atmosphere -20dB. EQ Eight on bass: HP 30Hz. Utility on bass: Width 0%. Add Limiter to master: Ceiling -0.3dB. Export 90 seconds: 'original-01-slow-fade-v1.wav'. Listen on earbuds. Ask: does this sound like a complete track? Not a complete song — a complete track. The concept was 'slow fade, dark, minimal'. Did you achieve it? Write one sentence on what worked and one on what you'd change next time. Save session.",
+      "why": "This is your first original export. It doesn't need to sound like a finished release — it needs to demonstrate that you can execute a concept from scratch. The self-evaluation (what worked, what to change) is the learning. Most producers' first originals sound similar to what they've been studying — that's correct.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Keep the export. Keep the self-evaluation. Return to this track in 6 months and listen again. The gap between what it sounds like now and what you hear in 6 months will show you how much you've learned."
+    }
+  ]
+}

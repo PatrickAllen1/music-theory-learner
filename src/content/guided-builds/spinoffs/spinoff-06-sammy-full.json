@@ -1,0 +1,129 @@
+{
+  "id": "spinoff-06-sammy-full",
+  "title": "Sammy Virji DNA — Full Transform (C Minor)",
+  "build_type": "spinoff",
+  "spinoff_level": "full",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 120,
+  "bpm": 130,
+  "key": "C minor",
+  "source_track_id": "sammy-virji-cops-and-robbers",
+  "source_track_changes": [
+    "New key: C minor",
+    "BPM 130 (Sammy Virji's tempo range is slower and groovier)",
+    "Picardy third: i chord briefly becomes C major instead of C minor on the drop",
+    "Ascending melodic riff on a Rhodes-style patch instead of strings",
+    "2-step kick pattern throughout",
+    "Chord progression: Cm → Bb → Ab (i→bVII→bVI)"
+  ],
+  "production_brief": "Sammy Virji's DNA is warmth and melody — a soulful, sample-influenced approach where the chord loop has a human, almost jazzy quality. In this full transform we take that DNA to C minor with three changes: a Picardy third (the tonic chord briefly becoming C major, creating a flash of unexpected brightness), a Rhodes-style ascending riff instead of strings, and the i→bVII→bVI progression that gives his tracks their flowing, descending quality. At 130 BPM the groove is slower and more intentional than Kettama or IC.",
+  "what_youll_learn": [
+    "What a Picardy third is and how to use it as a harmonic surprise",
+    "i→bVII→bVI in C minor: Cm→Bb→Ab (all diatonic to C natural minor)",
+    "How to build a simple ascending melodic riff over a chord loop",
+    "How slower BPM (130) changes the emotional register of identical techniques",
+    "How a major tonic chord in a minor key track creates a moment of unexpected light"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Derive the C minor chord progression and set up",
+      "category": "ableton",
+      "instruction": "C natural minor scale: C, D, Eb, F, G, Ab, Bb. Derive the three chords: i = Cm (C, Eb, G). bVII = 10 semitones up from C = Bb major (Bb, D, F). bVI = 8 semitones up from C = Ab major (Ab, C, Eb). Root movement: C → Bb → Ab. Write: Cm → Bbmaj → Abmaj. The Picardy third: on one bar every 4 bars, the Cm chord becomes C major (C, E natural, G) — just the Eb becomes E. New project, BPM 130, tracks: DRUMS, BASS, PAD, RHODES. Save as 'spinoff-06-sammy-cmin-full'.",
+      "why": "i→bVII→bVI is a descending root movement — C down to Bb down to Ab. This descending stepwise motion creates a flowing, almost inevitable quality. The Picardy third (brief C major) interrupts the pattern with unexpected brightness — in a descending minor progression, a sudden major tonic chord is a flash of light in a darker journey.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "C→Bb = 2 semitones down (descending). Bb→Ab = 2 semitones down. The progression descends by whole steps. This is different from VI→III→i (which has a more angular motion). Descending stepwise root movement feels like exhaling."
+    },
+    {
+      "id": 2,
+      "title": "Program the 2-step drums at 130 BPM",
+      "category": "drums",
+      "instruction": "Load Drum Rack. Find samples on Splice: 'uk garage kick warm' or 'deep house kick rolling'. At 130 BPM the kicks land every 462ms — the slowest tempo in this series. 2-step pattern in a 2-bar clip: Bar 1 — kick at 1.1 and 1.2.3 (the and-of-2). Bar 2 — kick at 2.1 and 2.2.3. Clap on beat 3 every bar. Add an open hat on the and-of-4 (position 1.4.3) in bar 1 — adds a splash of space. Hats: 4 closed per bar. Velocities: kick 100/85 (down/off-beat), clap 88, closed hat 65, open hat 75.",
+      "why": "At 130 BPM the 2-step feels noticeably looser and more relaxed than at 136 or 140. The open hat on the and-of-4 adds a garage-soul characteristic — it lifts at the end of each bar, giving the groove a bouncing quality. Sammy Virji's tracks often have a live, organic drum feel — the velocity variation creates that.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "uk garage kick warm rolling",
+      "tip": "The open hat on the and-of-4 is optional but changes the feel significantly. Loop just the drums with and without that open hat — with it feels more soulful and open, without it feels tighter and more minimal. Choose based on your desired feel."
+    },
+    {
+      "id": 3,
+      "title": "Program bass root movement with Picardy third",
+      "category": "bass",
+      "instruction": "Sub bass (sine, Saturator, mono). 4-bar MIDI clip. The progression repeats every 4 bars with the Picardy on bar 4: Bar 1: C1 (Cm tonic — 2 beats + rest). Bar 2: Bb0/Bb1 (bVII — 2 beats + rest). Bar 3: Ab0/Ab1 (bVI — 2 beats + rest). Bar 4: C1 again BUT check — this is the Picardy bar. The bass still plays C1 (the root is the same for C minor and C major). Velocity on bar 4 C1: bump it to 95 (slightly louder to signal the Picardy arrival). The bass note doesn't change — only the pad chord above it changes on bar 4.",
+      "why": "The bass root stays on C for both the Cm chord and the C major Picardy chord — C is the root of both. The harmony change from minor to major happens entirely in the upper voices (the Eb becoming E natural in the pad). The bass landing louder on bar 4 subtly signals 'something different is happening here' without the listener consciously knowing why.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Ab0 is very low (26Hz) — use Ab1 (52Hz) instead if Ab0 disappears on your system. At 130 BPM the bass notes have time to breathe — the 2-beat durations with rests between them create a punchy, deliberate quality."
+    },
+    {
+      "id": 4,
+      "title": "Voice the three chords and the Picardy",
+      "category": "chords",
+      "instruction": "PAD: Serum V2, slow attack 350ms (slower than previous reps — at 130 BPM the slower attack feels right). 4-bar MIDI clip. Bar 1: Cm — C3, Eb3, G3. Bar 2: Bbmaj — Bb3, D4, F4. Bar 3: Abmaj — Ab3, C4, Eb4. Bar 4: C MAJOR (Picardy) — C3, E3, G3. Note: E3, not Eb3. That single semitone change (Eb→E) is the Picardy third. Velocity: bars 1–3 at 78, bar 4 Picardy at 88 (noticeably louder — the brightness should feel like a sudden light).",
+      "why": "The Picardy third has been used in European music for 500 years — a minor key piece ending or punctuating with a major tonic chord. In garage, it creates a flash of unexpected warmth. At bar 4, the Abmaj (which was the darkest chord, the bVI) resolves back to C — but instead of the expected Cm, the listener hears C major. That one changed note (Eb→E) is a small change with a large emotional impact.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Play bars 3 and 4 back to back with the pad soloed: Ab major → C major. Then try: Ab major → C minor. The difference between those two bars is one semitone (E vs Eb) but the emotional effect is completely different. C major feels like sunshine. C minor feels like returning home but staying in the dark."
+    },
+    {
+      "id": 5,
+      "title": "Build the Rhodes-style ascending riff",
+      "category": "chords",
+      "instruction": "RHODES track: Serum V2 Init Preset. OSC A: Basic Shapes, WT POS 30% (slightly rounded shape). Unison: OFF (1 voice — Rhodes sounds are mono/narrow). ENV 1: Attack 5ms (quick — Rhodes has an immediate attack), Decay 500ms, Sustain 20%, Release 300ms (punchy decay with a tail). Filter: off. Add to Serum FX: Chorus at 20% mix, Rate 0.5Hz, Depth 20% (subtle width). Ableton: add Reverb (Decay 1.5s) at -18dB send. MIDI: program an ascending riff over the 4-bar loop. Suggested: C4 (bar 1 beat 1) → Eb4 (bar 2 beat 1) → F4 (bar 2 beat 3) → G4 (bar 3 beat 1) → Ab4 (bar 3 beat 3) → C5 (bar 4 beat 1 — the Picardy bar, landing on the octave). All notes 1 beat long. Velocity 70.",
+      "why": "The ascending riff (C→Eb→F→G→Ab→C) follows the C natural minor scale upward and arrives at the octave on bar 4 — the Picardy bar. The riff ascending into the Picardy chord makes the C major chord feel like a destination, not just a change. The single-voice Rhodes sound (no unison) keeps the riff clear and melodic rather than washy.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "The riff is a suggestion — adjust the rhythm and voicing to taste. The key principle: an ascending riff that arrives on the root (C5) on the Picardy bar feels intentional and earned. If the riff arrives elsewhere, the Picardy chord may feel disconnected from the riff."
+    },
+    {
+      "id": 6,
+      "title": "Sidechain, reverb, and mix",
+      "category": "mix",
+      "instruction": "PAD sidechain from DRUMS: Ratio 4:1, Attack 1ms, Release 300ms. SUB BASS sidechain from DRUMS: Ratio 4:1, Attack 0.5ms, Release 120ms. RHODES: no sidechain (leave the melody uncompressed). Create REVERB return: Decay 3s, HP at 200Hz. PAD send: -10dB. RHODES send: -14dB (less reverb on the melody — keeps it clear). EQ Eight on PAD: HP 130Hz. EQ Eight on RHODES: HP 200Hz, gentle presence boost +1.5dB at 3kHz. Levels: DRUMS 0dB, SUB BASS -3dB, PAD -6dB, RHODES -9dB.",
+      "why": "The Rhodes should sit below the pads in the mix — it's a detail layer, not the lead. -9dB gives it presence without dominating. No sidechain on the Rhodes means it doesn't pump with the kick — its melodic character should float above the groove rather than being locked into the beat.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Solo the RHODES and listen to the ascending riff with its reverb. Does it feel melodic and present? Too wet = melodic notes blur together. Too dry = the riff sounds harsh against the pads. -14dB reverb send on the Rhodes is relatively dry — adjust if needed."
+    },
+    {
+      "id": 7,
+      "title": "Build arrangement — focus on Picardy moments",
+      "category": "ableton",
+      "instruction": "Arrangement: Bars 1–8: INTRO — drums + bass (no pad, no Rhodes). Bars 9–16: BUILD — add pad at -14dB (ghost), bass at drop level. Bar 16 beat 4: 1-beat silence. Bars 17–48: DROP — all elements, pad at -6dB. Rhodes enters from bar 17. Bars 49–56: BREAKDOWN — remove kick. Pad + Rhodes + bass only. This is where the listener first clearly hears the Rhodes riff without the kick competing. Bars 57–60: REBUILD — add kick back. Bars 61–80: DROP 2. Bars 81–88: OUTRO.",
+      "why": "The breakdown without kick is where the Picardy third makes its strongest emotional impact — the listener can hear the Cm→Bbmaj→Abmaj→Cmaj chord cycle clearly without the kick's energy. In the full drop the Picardy might be felt rather than consciously heard. In the breakdown it's clearly audible — a moment of grace in the arrangement.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "In the breakdown, increase the reverb send on the PAD from -10dB to -7dB for extra depth. The harmonic content (especially the Picardy) sounds more impactful in a wetter, more spacious mix."
+    },
+    {
+      "id": 8,
+      "title": "Tune the Picardy timing",
+      "category": "ableton",
+      "instruction": "In the MIDI clip, experiment with where the Picardy falls. Option A (current): bar 4 of every 4-bar loop. Option B: bar 8 of every 8-bar loop (Picardy every 8 bars instead of 4 — less frequent, more surprising). Option C: bar 4 of every 4-bar loop in the breakdown only, not the drop (the drop stays all-minor, breakdown reveals the Picardy). Loop each option for 2 minutes. Which creates the best moment of surprise?",
+      "why": "Frequency of a harmonic device changes its emotional impact. Every 4 bars = familiar, expected (the Picardy becomes part of the pattern). Every 8 bars = less expected (listener may have half-forgotten about it). Breakdown only = the most surprising, since the drop never revealed it. Choose based on how much surprise you want.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Most garage producers use a 4-bar loop in the drop and let the pattern repeat — the Picardy every 4 bars becomes part of the groove rather than a surprise. The breakdown version is a different creative choice — more dramatic."
+    },
+    {
+      "id": 9,
+      "title": "Compare Picardy on/off",
+      "category": "ableton",
+      "instruction": "In the PAD MIDI clip, duplicate the bar 4 Picardy notes and replace them with the standard Cm (C3, Eb3, G3). Loop the minor-only version for 30 seconds. Then switch to the Picardy version and loop for 30 seconds. Describe the difference in one sentence before continuing.",
+      "why": "The Picardy third's effect is only fully understood in contrast. Minor-only sounds like a continuous dark loop. The Picardy version has a moment of light that makes everything before and after it feel darker by contrast. The minor is darker because you've heard the major.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Common descriptions: minor-only = consistent, steady, dark. Picardy version = same darkness but with a breath of warmth that makes the darkness deeper. The Picardy is not a relief from the minor — it intensifies the minor."
+    },
+    {
+      "id": 10,
+      "title": "Final export",
+      "category": "mix",
+      "instruction": "Final levels check: is the Rhodes melody audible without being prominent? Does the ascending riff feel like it belongs in the track rather than sitting on top? Is the Picardy clearly audible in the breakdown? Export full arrangement: 'spinoff-06-sammy-cmin-full-v1.wav'. Listen on earbuds. The ascending Rhodes riff should be audible even on small speakers. Save session.",
+      "why": "The Rhodes at -9dB with a light reverb should be present without competing. If it disappears on earbuds, increase the 3kHz shelf on the Rhodes EQ by 2dB — this frequency range carries well on small speakers. Save the session with both Picardy-on and Picardy-off versions in separate clips so you can revisit the decision.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "This is the most melodically complex spinoff so far — drums, bass, chord pads, AND a Rhodes riff. If the mix feels cluttered, the Rhodes is probably too loud. The mix should feel like pads with a whisper of melody on top, not a melody with pads underneath."
+    }
+  ]
+}

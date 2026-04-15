@@ -1,0 +1,101 @@
+{
+  "id": "original-03-midnight-circuit",
+  "title": "Midnight Circuit",
+  "build_type": "original",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 75,
+  "bpm": 138,
+  "key": "G minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "G minor, 138 BPM. Evolving chord structure — the chord progression changes in the second drop. Drop 1 uses bVI→iv. Drop 2 uses bVI→bVII. Same opening chord (bVI = Eb major), different resolution creates two distinct emotional characters within one track.",
+  "what_youll_learn": [
+    "How to use two different chord progressions in different sections of one track",
+    "bVI→iv in G minor: Eb→Cm (resolves to the iv minor — darker, more resigned)",
+    "bVI→bVII in G minor: Eb→F (resolves to a major chord — brighter, more open)",
+    "How same starting chord + different resolution = completely different emotional arc",
+    "Advanced arrangement: harmonic evolution across sections"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Derive both progressions and concept",
+      "category": "ableton",
+      "instruction": "G natural minor scale: G, A, Bb, C, D, Eb, F. Derive Drop 1 chords: Gm tonic stays as drone/bass. bVI = Eb major (8 semitones up from G). iv = Cm (5 semitones up from G: C, Eb, G). Drop 1 pattern: Gm bass holds, pads alternate Eb → Cm (2 bars each). Derive Drop 2 chords: bVI = Eb major (same). bVII = F major (10 semitones up from G: F, A, C). Drop 2 pattern: Gm bass holds, pads alternate Eb → F (2 bars each). Concept: the track has two different emotional characters in its two drops — Drop 1 darker, Drop 2 brighter. New project, BPM 138, tracks: DRUMS, BASS, PAD. Save as 'original-03-midnight-circuit'.",
+      "why": "Midnight Circuit's concept is structural harmonic evolution — a track that reveals a different emotional face in its second drop. Eb major is the constant (the track's brightest moment, same in both drops). What changes is what comes after: Cm (darker, more minor, more resigned) in Drop 1 vs F major (brighter, major, more open) in Drop 2. Same launch chord, different landing.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Verify: Cm = C, Eb, G. F major = F, A, C. Both follow Eb major in the respective drops. Eb major → Cm shares Eb as a common tone. Eb major → F major shares C as a common tone (in the Eb, C is the 6th; in F major, C is the 5th). Both transitions are smooth — different destinations, similar smoothness."
+    },
+    {
+      "id": 2,
+      "title": "Program drums — hybrid feel",
+      "category": "drums",
+      "instruction": "138 BPM drum pattern. Alternate between 4-on-floor and 2-step bars as in spinoff-05 (every other bar changes). Or choose full 4-on-floor if that's your preference — this is your creative decision. Find a kick on Splice: 'punchy kick garage house'. Clap on beats 2 and 4. Hats 8 per bar. Group to DRUMS. The drum pattern is consistent across both drops — the evolution comes from the harmony, not the drums.",
+      "why": "Keeping the drum pattern consistent across Drop 1 and Drop 2 makes the harmonic change in Drop 2 more striking — everything rhythmic is familiar, and only the chord resolution changes. If the drums also changed between drops the harmonic evolution would be buried under too many variables.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "punchy kick garage house 138",
+      "tip": "Once you've settled on a drum pattern, commit to it for the whole track. Changing drums between drops introduces complexity that may work against the harmonic evolution concept."
+    },
+    {
+      "id": 3,
+      "title": "Program the bass — G minor root throughout",
+      "category": "bass",
+      "instruction": "Sub bass (sine, Saturator, mono). The bass in Midnight Circuit stays mostly on G1 (the tonic) throughout — the harmonic evolution happens entirely in the pads, not the bass. 4-bar clip: G1 for 4 bars (simple). OR: G1 for 2 bars, then Eb1 for 1 bar, G1 for 1 bar (brief Eb root arrival mirrors the pad's Eb chord). Decide which approach sounds better to your ear. The constraint: the bass should not telegraph the drop 2 harmonic change — listeners should hear it first in the pads.",
+      "why": "Keeping the bass rooted on G while the pads change above it creates a pedal tone effect — the tonic is sustained and the harmony moves above it. This is a specific harmonic device that creates tension and release differently from root movement: the bass is stable, the pad harmony is unstable.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Try the G1-only option first. Does the harmonic evolution in the pads come through clearly even with the static bass? It should — the bass acts as a grounding anchor that makes the pad changes feel more dramatic by contrast."
+    },
+    {
+      "id": 4,
+      "title": "Program Drop 1 pads — Eb→Cm",
+      "category": "chords",
+      "instruction": "PAD: Serum V2, Attack 300ms. Drop 1 MIDI clip (for DROP 1 section): 4-bar loop. Bars 1–2: Ebmaj — Eb3, G3, Bb3. Bars 3–4: Cm — C3, Eb3, G3. Notice: G3 appears in both chords (common tone). When the chord moves from Eb to Cm, G3 stays and Bb3 drops while C3 arrives. Velocity 80. This is the darker version — Cm has a resigned, inward quality after the brightness of Eb major.",
+      "why": "Eb major → Cm in G minor: the bright bVI chord gives way to the iv minor chord — a minor chord that includes the same Eb as the bVI but feels much darker. The resolution to a minor chord (Cm) after a major chord (Eb) is emotionally like a sigh. The brightness was temporary.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Hum along with the chord change: hum a note that fits with Eb major (try Bb or G). Then hum that same note as the Cm arrives — does it still fit? Bb is the minor 7th of Cm, G is the 5th. Both fit. This common-tone humming shows how smooth the transition is."
+    },
+    {
+      "id": 5,
+      "title": "Program Drop 2 pads — Eb→F",
+      "category": "chords",
+      "instruction": "Create a SEPARATE PAD MIDI clip for DROP 2. Same 4-bar structure. Bars 1–2: Ebmaj — Eb3, G3, Bb3 (identical to Drop 1). Bars 3–4: Fmaj — F3, A3, C4. Notice: Bb3 appears in both chords (Bb is the 3rd of Ebmaj and the bVII of F major). When the chord moves from Eb to F, Bb3 stays and G3 drops while F3 and A3 arrive. A3 is a natural A — not Ab. A natural note in a G minor key context is the 'borrowed' note from Dorian mode, giving F major in G minor a brighter, more elevated quality than Cm.",
+      "why": "F major → Eb major creates a different resolution than Cm. F major is brighter — it uses the natural A (not the Ab of the natural minor scale). A natural in G minor context is a Dorian inflection, historically associated with brightness and uplift. The progression Eb→F in G minor sounds like resolution upward, not inward.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The natural A in F major is the note that makes Drop 2 feel different. Play the Drop 1 chord (Cm) and hum along. Then play Drop 2's F major and hum — the A natural is conspicuously brighter than the Eb/Bb/C territory of Drop 1. One note, large emotional difference."
+    },
+    {
+      "id": 6,
+      "title": "Sidechain, reverb, and mix",
+      "category": "mix",
+      "instruction": "PAD sidechain from DRUMS: Ratio 5:1, Attack 0.5ms, Release 250ms. BASS sidechain: Ratio 4:1, Attack 0.5ms, Release 100ms. REVERB return: Decay 3.5s, HP 200Hz. PAD send -10dB. Levels: DRUMS 0dB, BASS -3dB, PAD -6dB. Apply same FX chain to both Drop 1 and Drop 2 pad clips — the production approach is identical, only the notes change.",
+      "why": "Using identical production settings for Drop 1 and Drop 2 ensures the harmonic evolution is the only variable the listener experiences in the second drop. If the reverb length, sidechain ratio, and levels all changed too, the drop 2 change would feel like a production change, not a harmonic one.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Add both pad MIDI clips to your Ableton session — one for Drop 1 section, one for Drop 2. The pad track has two different clips in arrangement view; they use the same instrument and FX chain."
+    },
+    {
+      "id": 7,
+      "title": "Build the arrangement — reveal the evolution",
+      "category": "ableton",
+      "instruction": "Arrangement: Bars 1–8 INTRO (drums only). Bars 9–24 BUILD (bass enters, pads enter quietly at -14dB using Drop 1 voicings). Bar 24 beat 4: 1-beat silence. Bars 25–56 DROP 1 (Eb→Cm pads at full level). Bars 57–72 BREAKDOWN (remove kick and bass, pads + reverb only — Drop 1 voicings exposed in the breakdown). Bars 73–76 REBUILD (kick returns, bass returns). Bars 77–108 DROP 2 (Eb→F pads — the harmonic evolution is revealed). Bars 109–116 OUTRO.",
+      "why": "The breakdown uses Drop 1 voicings (Eb→Cm) so the listener is fully familiar with the darker progression before Drop 2 reveals the brighter version. The breakdown is the 'before' — Drop 2 is the 'after'. The contrast is maximised by hearing the dark version clearly in the breakdown and then the bright version in Drop 2.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Listen through the breakdown → rebuild → Drop 2 transition as a continuous sequence. The breakdown's Eb→Cm (dark, resigned). The rebuild's tension. Drop 2's Eb→F (brighter, lifted). This should feel like the track changing its mind — and the listener should feel that change in their body before they understand it intellectually."
+    },
+    {
+      "id": 8,
+      "title": "Export both drops for comparison",
+      "category": "mix",
+      "instruction": "Export two 30-second clips: (A) Drop 1 section (Eb→Cm): 'midnight-circuit-drop1.wav'. (B) Drop 2 section (Eb→F): 'midnight-circuit-drop2.wav'. Play both back-to-back 3 times. Can you hear the harmonic difference? The Drop 1 version should feel more brooding, the Drop 2 version more lifted. If the difference isn't audible, check that Drop 2 is using F major (F, A, C) and not accidentally repeating the Cm. Export the full track: 'original-03-midnight-circuit-v1.wav'. Save session.",
+      "why": "Two exports for the same concept isolate the harmonic variable — you can A/B the exact emotional difference that one chord change creates. This is the practical demonstration of what Midnight Circuit was designed to teach.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Keep both exports. When working on originals where you want a track to evolve across two drops, these are your reference points for the technique."
+    }
+  ]
+}

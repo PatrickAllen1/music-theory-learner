@@ -1,0 +1,128 @@
+{
+  "id": "spinoff-07-bl3ss-full",
+  "title": "BL3SS DNA — Full Transform (A Minor)",
+  "build_type": "spinoff",
+  "spinoff_level": "full",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 120,
+  "bpm": 132,
+  "key": "A minor",
+  "source_track_id": "bl3ss-camrinwatsin-kisses",
+  "source_track_changes": [
+    "New key: A minor",
+    "Vocal chop element: a vocal loop from Splice chopped to a Drum Rack",
+    "Bass-implied harmony: bass roots carry the harmony, minimal pad",
+    "Time feel disruption: a subtle metric shift bar every 8 bars (one 3/4 bar inserted)",
+    "i→bIII→bVI→iv in A minor: Am→C→F→Dm"
+  ],
+  "production_brief": "BL3SS's DNA is space, restraint, and harmonic sophistication from minimal means. In this full transform we take that philosophy to A minor with a vocal chop element (a chopped vocal loop on the Drum Rack, triggering rhythmically), bass-implied harmony (Am→C→F→Dm roots only, no explicit chord pad), and a subtle time feel disruption: every 8 bars, one bar of 3/4 is inserted before returning to 4/4. The listener won't consciously notice the 3/4 bar — they'll just feel something briefly shift, like a step missed on a staircase. That subtle rhythmic uncanny valley is BL3SS territory.",
+  "what_youll_learn": [
+    "i→bIII→bVI→iv in A minor: Am→C→F→Dm root movement",
+    "How to chop a vocal loop to a Drum Rack for rhythmic vocal percussion",
+    "How to insert a single 3/4 bar to create subliminal rhythmic disruption",
+    "Bass-implied harmony: bass roots only carry full chord changes",
+    "How every BL3SS technique works together in a cohesive track"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Derive A minor chords and set up",
+      "category": "ableton",
+      "instruction": "A natural minor scale: A, B, C, D, E, F, G. i→bIII→bVI→iv: i = Am (A, C, E). bIII = 3 semitones up from A = C major (C, E, G). bVI = 8 semitones up from A = F major (F, A, C). iv = 5 semitones up from A = Dm (D, F, A). Root movement: A→C→F→D. Write this down. New project, BPM 132, tracks: DRUMS, VOCAL CHOP, SUB BASS, PAD. Save as 'spinoff-07-bl3ss-amin-full'.",
+      "why": "i→bIII→bVI→iv in A minor has a wide arc — the bass moves from A (tonic, lowest) up to C (minor 3rd, slight lift) then up to F (flat 6, furthest from home) then down to D (slightly grounding, iv chord) before returning to A. Each step of the root movement has a different emotional quality: A=home, C=slight warmth, F=most suspended, D=returning.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Compare this to rep-13 (D minor i→bIII→bVI→iv: D→F→Bb→G). Same interval pattern, different key. A→C→F→D is the A minor version. The emotional arc of the root movement is identical — tonic → minor 3rd → flat-6 → fourth — but the specific pitches give it a different timbre."
+    },
+    {
+      "id": 2,
+      "title": "Find and prepare the vocal chop source",
+      "category": "drums",
+      "instruction": "Splice search: 'vocal chop loop house' or 'vocal sample loop garage' or 'vocal riff loop'. Filter: Loops, Vocals. Find a loop that's roughly 1–2 bars at 132 BPM (or close — the loop will be sliced). You want a loop with clear, distinct syllables — not a smooth pad vocal or a singing melody, but something with consonants and rhythm. Download the loop. In Ableton, drag it to an empty audio track to audition it. Make sure it has at least 4–6 distinct sounds within it.",
+      "why": "The vocal chop layer gives the BL3SS sound its human, sample-influenced character. Rather than just using the vocal as a loop, you'll chop it to individual hits on a Drum Rack — giving you rhythmic control over where each vocal syllable lands. This is a core UK garage and house production technique.",
+      "ableton_cheatsheet_id": "simpler",
+      "splice_search": "vocal chop loop house garage",
+      "tip": "At 132 BPM a 1-bar loop = 1.8 seconds. When auditioning, count the syllables — you want at least 4 distinct sounds you could map to separate pads. A loop with too many sounds or a smooth singing tone will be harder to chop usefully."
+    },
+    {
+      "id": 3,
+      "title": "Chop the vocal loop to Drum Rack",
+      "category": "drums",
+      "instruction": "Drag the vocal loop directly onto a Drum Rack pad (any empty pad). In the Simpler that appears, go to the Slicing tab (the scissors icon in the mode selector). Set Slice by: Transient (this detects syllables automatically). Adjust sensitivity until you see 4–8 slices in the waveform view. Click Apply. Ableton creates a new MIDI clip with each slice mapped to a separate pad in the Drum Rack. Play through the auto-generated MIDI clip — you should hear the original loop reconstructed from slices. Now edit the MIDI clip: mute some hits, rearrange others, create a rhythmic pattern from the slices that fits the groove.",
+      "why": "Simpler's Slicing mode is one of Ableton's most powerful tools for vocal chops. It automatically detects transients (attacks) in the audio and maps each slice to its own MIDI note. You then treat the vocal as a percussion instrument — triggering individual syllables rhythmically. This is how classic UK garage vocal chops are made.",
+      "ableton_cheatsheet_id": "simpler",
+      "splice_search": null,
+      "tip": "After slicing, try the auto-generated MIDI clip first — it often creates interesting rhythmic patterns by itself. Then edit it: keep the slices that work rhythmically, remove ones that interrupt the flow. A good vocal chop pattern has 4–8 hits per 2 bars that feel like they belong in the groove."
+    },
+    {
+      "id": 4,
+      "title": "Program the main drums",
+      "category": "drums",
+      "instruction": "Add kick, clap, hat pads to the Drum Rack (or create a separate Drum Rack for the kit). BL3SS-style sparse drums: kick on beats 1 and 3 only (no beat 2, no beat 4). Clap on beat 3 only. Hats: 4 per bar, off-beats, low velocity 55. Add the vocal chop MIDI pattern running alongside. Set vocal chop volume to -6dB relative to the kick — the vocal chops should feel like percussion, not like a vocal performance. Velocities: kick 95, clap 80.",
+      "why": "BL3SS uses sparse drums — the space between hits is part of the groove. Kick on 1 and 3 (not 4-on-floor) keeps the energy restrained. The vocal chop layer adds rhythmic texture that fills the spaces without making the drums feel busy.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Loop 8 bars of drums + vocal chop. The vocal chops should feel like they're part of the drum pattern, not floating above it. If they feel separate, lower their velocity and reverb. They should blur slightly into the groove."
+    },
+    {
+      "id": 5,
+      "title": "Program bass-implied harmony in A minor",
+      "category": "bass",
+      "instruction": "Sub bass (sine, Saturator 20% Soft Clip 50%, mono). 4-bar MIDI clip: Bar 1: A1 (Am root — 3 beats, rest beat 4). Bar 2: C1 (bIII root — 3 beats, rest beat 4). Bar 3: F1 (bVI root — 3 beats, rest beat 4). Bar 4: D1 (iv root, 2 beats) then A1 (tonic return, 2 beats). Velocities: A1=92, C1=85, F1=88, D1=80, A1 return=90. The beat-4 rest before each new root is critical.",
+      "why": "i→bIII→bVI→iv in A minor has the widest root range in this series: A1 (55Hz) → C1 (33Hz) → F1 (44Hz) → D1 (37Hz). The C1 is lower than A1 — the bass descends when moving to the bIII. This is unusual; most progressions move the bass upward for the first step. That dip down to C1 creates a feeling of sinking before the suspension of F1.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "C1 at 33Hz is very low — almost infrasonic on small speakers. The Saturator is essential for this note to translate. Check C1 specifically on headphones: does it have audible harmonic content (warmth above the fundamental) or does it just disappear? If it disappears, increase Saturator Drive to 25%."
+    },
+    {
+      "id": 6,
+      "title": "Add ghost pad at -16dB",
+      "category": "chords",
+      "instruction": "PAD: Serum V2, slow attack 400ms. 4-bar MIDI clip with full chord voicings: Am (A3, C4, E4), Cmaj (C3, E3, G3), Fmaj (F3, A3, C4), Dm (D3, F3, A3). Set PAD fader to -16dB. Toggle on/off several times while the full loop plays. At -16dB the pad should add warmth without being identifiable as a pad — it's felt, not heard. If you can clearly hear it as a pad, lower to -18dB.",
+      "why": "Same ghost pad philosophy as rep-13 and spinoff-04 — the bass-implied harmony carries the full harmonic statement, the pad is purely textural reinforcement. At -16dB the pad adds presence to each chord arrival without competing with the bass as the harmonic anchor.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The test: can a listener identify what chords are playing from the bass alone? They should be able to. If they need the pad to identify the chords, the pad is too loud or the bass too quiet."
+    },
+    {
+      "id": 7,
+      "title": "The 3/4 bar insertion — subliminal disruption",
+      "category": "ableton",
+      "instruction": "This step requires switching to Arrangement view. Every 8 bars, insert a single 3/4 bar (3 beats instead of 4) before returning to 4/4. In Ableton: at bar 9 (the 9th bar of your arrangement), go to the Time Signature section in the Control Bar — click the time signature and change it to 3/4. Then at bar 10 change it back to 4/4. This creates one 3/4 bar every 8 bars. In the bass MIDI clip for the 3/4 bar, shorten the last beat — the root note holds for 2 beats only, no rest. Everything else plays normally.",
+      "why": "A single 3/4 bar in a 4/4 track is a rhythmic disruption that most listeners won't consciously notice — they'll feel a brief sense of 'something shifted' and then the 4/4 resumes. It's the musical equivalent of a momentary uneven step. BL3SS's tracks have this quality of controlled restlessness — nothing stays fully settled.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "When you first hear the 3/4 bar it will feel obviously wrong. After 5–10 loop cycles it will start to feel intentional. After 20 cycles it will feel natural. The subliminal disruption only works at a listening tempo — the brain habituates to it quickly."
+    },
+    {
+      "id": 8,
+      "title": "Reverb and atmosphere",
+      "category": "mix",
+      "instruction": "REVERB return: Decay 4s, HP 200Hz, Dry/Wet 100%. PAD send: -8dB. Drums send (clap only — not kick): -16dB. Vocal chop send: -20dB (the lightest reverb — just a shimmer of space). Sub bass: NO reverb. Add an ATMOSPHERE track: Splice search 'dark texture loop drone A minor'. Volume -22dB. Loop it throughout. The atmosphere should be the quietest element — barely audible but contributing to the sense of depth.",
+      "why": "Each element gets a different amount of reverb: pad gets the most (it's the harmonic texture layer), clap gets a medium amount (it exists in the room), vocal chops get just a shimmer (keeps them percussive but not dry). The varying reverb depths place different elements at different distances from the listener — creating a sense of 3D space.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": "dark atmosphere drone A minor",
+      "tip": "Mute the ATMOSPHERE track and listen to the mix. Then unmute it. If you can't hear a clear difference, the atmosphere is doing its job — adding depth rather than content. If the difference is very obvious, lower it by 3dB."
+    },
+    {
+      "id": 9,
+      "title": "Full arrangement",
+      "category": "ableton",
+      "instruction": "Bars 1–8: INTRO — drums + atmosphere only (the 3/4 bar is at bar 9, so listeners first encounter it right as the bass enters). Bar 9: bass enters (this is the first 3/4 bar — the bass arriving at the same moment the time feel shifts is intentional disorientation). Bars 9–24: build with bass + ghost pad. Bar 24 beat 4: 1-beat silence. Bars 25–56: DROP — all elements, vocal chops prominent. Bar 33: the 3/4 bar in the drop — bass, drums, vocal chops all experience it. Bars 57–64: BREAKDOWN — no kick, double reverb, atmospheric. Bars 65–80: DROP 2. Bars 81–88: OUTRO.",
+      "why": "The bass entering on the first 3/4 bar creates an immediate feeling of slight dislocation — the track announces its personality before the listener has settled. The 3/4 bar in the drop (bar 33) is the most exposed version of the disruption — the full groove temporarily stumbles. This is the track's signature moment.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the 3/4 bar in the drop feels too disruptive and breaks the dancer's groove too much, move it to the breakdown only. In the breakdown (no kick) the 3/4 bar is subtler — the kick's absence means the metric disruption is less jarring."
+    },
+    {
+      "id": 10,
+      "title": "Mix and export",
+      "category": "mix",
+      "instruction": "EQ Eight on all tracks: PAD HP 130Hz. VOCAL CHOP HP 200Hz (remove low-end mud from the vocal sample). ATMOSPHERE HP 300Hz. SUB BASS HP 30Hz. Levels: kick 0dB, sub bass -2dB, vocal chop -6dB, pad -16dB, atmosphere -22dB. Master Limiter: Ceiling -0.3dB. Export full arrangement: 'spinoff-07-bl3ss-amin-full-v1.wav'. Listen on earbuds. Check: does the vocal chop feel percussive? Does the bass-implied harmony read? Can you feel the 3/4 bar disruption without quite knowing what it is? Save session.",
+      "why": "The earbud check on this track is particularly important because BL3SS tracks are mastered for headphone and small-speaker listening — the sub bass harmonics from the Saturator need to carry the harmonic content. If the chord changes aren't audible on earbuds, the bass-implied approach has failed.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "This is the most technique-dense spinoff — bass-implied harmony, vocal chop percussion, metric disruption, ghost pad. If any element feels like it's fighting for attention, mute it and listen to the rest. The track should work without any one element. The vocal chop should be optional, not load-bearing."
+    }
+  ]
+}

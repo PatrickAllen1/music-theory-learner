@@ -1,0 +1,90 @@
+{
+  "id": "original-02-glass-road",
+  "title": "Glass Road",
+  "build_type": "original",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 60,
+  "bpm": 134,
+  "key": "F minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "F minor, 134 BPM. Chord progression i→bVI→bIII — a different motion than Kettama's VI→III→i. Long reverb tails, synth strings layer. Brighter and more spacious than the beginner originals.",
+  "what_youll_learn": [
+    "i→bVI→bIII in F minor: Fm→Db→Ab (a two-chord descent from tonic to bVI to bIII)",
+    "How this progression differs emotionally from VI→III→i (same chords, different starting point and direction)",
+    "How to layer synth strings over a chord pad for harmonic depth",
+    "How long reverb tails (5+ seconds) change the density and spaciousness of a mix"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Concept and chord derivation",
+      "category": "ableton",
+      "instruction": "Concept: 'Glass Road' — clear, crystalline, melancholic. F minor is brighter in register than D or B minor; the chords have a more open, exposed quality. Derive i→bVI→bIII in F minor: i = Fm (F, Ab, C). bVI = 8 semitones up from F = Db major (Db, F, Ab). bIII = 3 semitones up from F = Ab major (Ab, C, Eb). Root movement: F → Db → Ab. Notice: this is a descending stepwise movement (F→Db = down a major 3rd, Db→Ab = down a perfect 4th). New project, BPM 134, tracks: DRUMS, BASS, PAD, STRINGS. Save as 'original-02-glass-road'.",
+      "why": "i→bVI→bIII starts from the tonic and moves through the two brightest major chords in the minor key. Fm is the dark anchor, Db major is the furthest from home (the brightest moment), Ab major is a resolution step — not back to the tonic, but to a stable major chord. The progression feels like starting from a stable dark place, moving through light, and settling in a halfway point.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Compare i→bVI→bIII against Kettama's VI→III→i (same chords in Bb minor: Gb→Db→Bb). They use similar chord types (major chords in a minor key) but in different order and starting point. i→bVI→bIII starts at home and moves toward brightness. VI→III→i starts at brightness and moves toward home. The emotional journey is reversed."
+    },
+    {
+      "id": 2,
+      "title": "Program drums — 4-on-floor with open hat character",
+      "category": "drums",
+      "instruction": "Standard 4-on-floor at 134 BPM. Find a clap with slightly more space and air than the minimal IC-style clap — search Splice 'warm clap house reverb'. Program: kick every beat, clap beats 2 and 4. Add an OPEN HAT on the and-of-4 of every bar (position 1.4.3). This open hat splash gives the groove a slightly more soulful quality — it lifts at the end of each bar. Hat velocities: closed hats 68, open hat 80. This drum pattern should feel driving but not relentless.",
+      "why": "The open hat on the and-of-4 is the signature rhythmic element of Glass Road — it lifts the groove slightly, giving it an upward momentum that matches the chord progression's movement toward brightness. A fully minimal drum pattern (kick-only or kick-on-1-and-3) would feel too dark for this concept.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "warm clap house slight reverb",
+      "tip": "If the open hat feels too prominent, lower its velocity to 72. It should add a lift without dominating. Preview it against the full mix — the hat should enhance the groove's upward feeling, not call attention to itself."
+    },
+    {
+      "id": 3,
+      "title": "Bass root movement",
+      "category": "bass",
+      "instruction": "Sub bass (sine, Saturator 20% Soft Clip 50%, mono). 4-bar MIDI clip: Bars 1–2: F1 (tonic root, 2 full bars). Bar 3: Db1 (bVI root). Bar 4: Ab0/Ab1 (bIII root). Velocities: F1=88, Db1=85, Ab1=83 (descending velocity mirrors the descending root motion — each chord arrives with slightly less force, like a graceful descent). Small gaps between notes.",
+      "why": "The descending velocity (88→85→83) matches the emotional arc: the tonic is the most grounded (most force), the bVI is slightly suspended (less force), the bIII is the most open/suspended (least force). When the 4-bar loop repeats, F1 arrives back at 88 — a return to groundedness that creates the loop's sense of cyclical resolution.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Db1 is 35Hz and Ab0/Ab1 are 26/52Hz — both quite low. Check on headphones. If either feels weak, increase Saturator Drive to 25% for those specific notes (or apply throughout)."
+    },
+    {
+      "id": 4,
+      "title": "Voice the chord pad with long reverb",
+      "category": "chords",
+      "instruction": "PAD: Serum V2 with Attack 400ms (slowest yet — the chords swell in gradually). 4-bar MIDI clip: Bars 1–2: Fm — F3, Ab3, C4. Bar 3: Dbmaj — Db3, F3, Ab3. Bar 4: Abmaj — Ab3, C4, Eb4. Velocity 75. Create REVERB return: Decay 5.5s (very long — the longest reverb in this series). HP on return at 200Hz. Set PAD send to -8dB. The reverb tail from bar 1's Fm chord should still be audible when bar 3's Db chord starts. This chord overlap from long reverb is intentional — Glass Road should feel like chords blending into each other.",
+      "why": "At 134 BPM a 5.5-second reverb tail lasts 12 beats — 3 full bars of reverb from one chord. When the next chord arrives, the previous chord's reverb is still ringing. This creates a dense, layered harmonic texture where multiple chords sound simultaneously — not as a cluster, but as a wash. The chord changes feel more like shifts in a continuous harmonic landscape than distinct arrivals.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Solo the PAD + reverb return. Does the reverb tail from bar 1 still audibly ring when bar 3 starts? At -8dB send with 5.5s decay it should. If not, increase the send level. The long reverb tail is the defining characteristic of Glass Road's sound."
+    },
+    {
+      "id": 5,
+      "title": "Build the synth strings layer",
+      "category": "chords",
+      "instruction": "STRINGS: Serum V2 Init Preset. OSC A: Basic Shapes at 60% WT POS (toward saw but with rounded harmonics). Unison: 6 voices (maximum lush width), detune 15 cents, blend 60%. Filter: MG Low 24, Cutoff 50%, Resonance 5%. ENV 1: Attack 800ms (very slow — strings swell in over 2 beats), Release 2000ms. STRINGS FX: REVERB Size 0.8, Decay 0.7, Mix 40%. Ableton: add Chorus-Ensemble to STRINGS track (Rate 0.3Hz, Mix 35%). MIDI: same chord voicings as PAD but one octave up (Fm: F4, Ab4, C5. Db: Db4, F4, Ab4. Ab: Ab4, C5, Eb5). Volume -9dB.",
+      "why": "The strings layer doubles the pad an octave up, adding brightness and 'air' to the chords without cluttering the mid-range. 6 unison voices at 15 cents creates extreme width and the characteristic lush strings sound. The 800ms attack means the strings take 2 beats to reach full volume — they swell in under the pad's more immediate arrival.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Solo the STRINGS layer alone. Does it sound like strings? If it sounds more like a pad, the attack may be too short or the filter too open. Increase attack to 1000ms and reduce filter cutoff to 40% if needed. The strings should feel like they're arriving late and breathing."
+    },
+    {
+      "id": 6,
+      "title": "Sidechain and mix",
+      "category": "mix",
+      "instruction": "PAD sidechain from DRUMS: Ratio 3:1 (gentle — Glass Road has a less aggressive pump than Kettama), Attack 1ms, Release 350ms (longer release = slower return = more spacious feel). STRINGS: NO sidechain (let the strings be free of the pump). SUB BASS sidechain: Ratio 5:1, Attack 0.5ms, Release 100ms. Levels: DRUMS 0dB, SUB BASS -3dB, PAD -6dB, STRINGS -9dB. Check: does the reverb of the strings + pad combined feel too dense? If yes, increase the HP on the reverb return to 300Hz.",
+      "why": "A gentler sidechain ratio (3:1) creates a softer pump that fits the more spacious concept. The strings without sidechain float above the groove — they're not locked to the kick's rhythm. This creates a two-layer feel: a rhythmic bass + pad layer (with pump) and a free strings layer (without pump). Glass Road should feel like two simultaneous tempos: the rhythmic and the timeless.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Toggle the STRINGS track's sidechain on (add a compressor) and compare with off. With sidechain: strings pulse with the kick — rhythmic, locked. Without sidechain: strings float freely above the groove — spacious, timeless. Glass Road's concept calls for the timeless version."
+    },
+    {
+      "id": 7,
+      "title": "Arrangement and export",
+      "category": "ableton",
+      "instruction": "Arrangement: Bars 1–8 INTRO — drums + bass. Bars 9–16 BUILD — add pad at ghost level (-14dB), bass at drop level. Bars 13–16: strings enter at -14dB (very quiet — building). Bar 16 beat 4: 1-beat silence. Bars 17–48 DROP — all at full levels. Strings at -9dB. Bars 49–64 BREAKDOWN — remove kick and bass. Pads + strings + reverb + atmosphere only. This is where Glass Road's long reverb is most audible — in the breakdown without the rhythm section, the long chord tails are fully exposed. Bars 65–80 DROP 2. Export: 'original-02-glass-road-v1.wav'. Save session.",
+      "why": "The breakdown without kick/bass is the emotional peak of Glass Road — the long reverb tails, strings, and overlapping chords create a wash of harmonic texture. This is the 'glass' in Glass Road — clear, transparent, resonant. The drop return is the 'road' — grounded, forward-moving.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "In the breakdown, the 5.5-second reverb from the last drop chord is still fading as the breakdown starts. This means the breakdown begins with a ghost of the last chord still ringing — don't cut the reverb abruptly. Let it fade naturally into the breakdown."
+    }
+  ]
+}

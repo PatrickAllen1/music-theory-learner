@@ -21,6 +21,13 @@ import spinoff01 from "./spinoffs/spinoff-01-mph-dmin-entry.json";
 import spinoff02 from "./spinoffs/spinoff-02-ic-amin-entry.json";
 import spinoff03 from "./spinoffs/spinoff-03-ic-dmin-mid.json";
 import spinoff04 from "./spinoffs/spinoff-04-kettama-fmin-mid.json";
+import spinoff05 from "./spinoffs/spinoff-05-ic-full.json";
+import spinoff06 from "./spinoffs/spinoff-06-sammy-full.json";
+import spinoff07 from "./spinoffs/spinoff-07-bl3ss-full.json";
+import original01 from "./originals/original-01-slow-fade.json";
+import original02 from "./originals/original-02-glass-road.json";
+import original03 from "./originals/original-03-midnight-circuit.json";
+import original04 from "./originals/original-04-static-amber.json";
 
 export const builds = [
   rep01,
@@ -46,6 +53,13 @@ export const builds = [
   spinoff02,
   spinoff03,
   spinoff04,
+  spinoff05,
+  spinoff06,
+  spinoff07,
+  original01,
+  original02,
+  original03,
+  original04,
 ];
 
 export const buildById = Object.fromEntries(builds.map((b) => [b.id, b]));
