@@ -2,9 +2,11 @@ import { useState } from "react";
 import { useLocation } from "react-router-dom";
 import BuildSelector from "../components/BuildSelector";
 import BuildStep from "../components/BuildStep";
+import DailyPractice from "../components/DailyPractice";
 import { entryById } from "../content/cheatsheet";
 import { buildById } from "../content/guided-builds";
 import { useProgress } from "../hooks/useProgress";
+import { usePracticeStreak } from "../hooks/usePracticeStreak";
 
 export default function Builder() {
   const location = useLocation();
@@ -25,16 +27,30 @@ export default function Builder() {
     isStepComplete,
   } = useProgress();
 
+  const { streak, practicedToday, recordPractice } = usePracticeStreak();
+
+  const handleSelect = (b) => {
+    setBuild(b);
+    setStepIndex(0);
+    recordPractice();
+  };
+
   if (!build)
     return (
-      <BuildSelector
-        onSelect={(b) => {
-          setBuild(b);
-          setStepIndex(0);
-        }}
-        stepsComplete={stepsComplete}
-        isBuildComplete={isBuildComplete}
-      />
+      <div>
+        <DailyPractice
+          onSelect={handleSelect}
+          stepsComplete={stepsComplete}
+          streak={streak}
+          practicedToday={practicedToday}
+          recordPractice={recordPractice}
+        />
+        <BuildSelector
+          onSelect={handleSelect}
+          stepsComplete={stepsComplete}
+          isBuildComplete={isBuildComplete}
+        />
+      </div>
     );
 
   const step = build.steps[stepIndex];
