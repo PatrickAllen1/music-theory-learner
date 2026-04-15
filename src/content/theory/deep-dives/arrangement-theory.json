@@ -1,0 +1,89 @@
+{
+  "id": "arrangement-theory",
+  "title": "Arrangement — Structure as Emotion",
+  "subtitle": "The sections in a garage track are not arbitrary. Each one does a specific psychological job.",
+  "difficulty": "beginner",
+  "read_time_mins": 9,
+  "track_references": ["kettama-it-gets-better"],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Most producers think about arrangement as a list of sections: intro, build, drop, breakdown, drop again. That's the map — not the territory. The real question is why those sections exist in that order, and what each one is doing to the listener. A garage track is a journey of tension and release managed over 4–6 minutes. The arrangement is the system that controls when that tension builds and when it breaks. Once you understand what each section is for psychologically, you can make better decisions about length, what to add, what to strip away, and when to subvert the pattern."
+    },
+    {
+      "id": "the-sections",
+      "heading": "What each section actually does",
+      "body": "Intro: introduces the listener to the world of the track without full commitment. Usually kicks and a hint of bass. Pads may be present but filtered or distant. Duration: 8–16 bars. Job: orient, not excite.\n\nBuild: energy accumulates. Elements add in — more percussion, the full bass enters, a rising synth, a filter sweep. Duration: 8 bars. Job: make the listener anticipate the drop. Every element added is a promise that something is coming.\n\nDrop: everything the track has is present. Full drums, full bass, full pads. Duration: 16–32 bars (often two passes of the main loop). Job: deliver on every promise the build made. The emotional peak.\n\nBreakdown: most elements are stripped away. Often just a pad and/or bass. Duration: 8–16 bars. Job: create space. After the energy of the drop, the listener's nervous system needs a release. The breakdown is a breath. It also resets expectation — so the rebuild can do its job again.\n\nRebuild: same as build but shorter (4–8 bars), because the listener already knows what's coming. The anticipation is faster the second time.\n\nSecond drop: same as the first drop, or a slight variation (different drum pattern in one bar, a new filter position on the pads, a slightly louder or different mix). Duration: 16–32 bars. Job: validate the emotional journey — everything that was released in the breakdown comes back.\n\nOutro: gradual strip-down, reversal of the build. Often mirrors the intro. Duration: 8–16 bars. Job: let the listener leave."
+    },
+    {
+      "id": "silence-before-drop",
+      "heading": "The 1-beat silence before the drop",
+      "body": "The most powerful moment in a garage track is not the drop — it's the beat of silence immediately before it. After the build has created maximum expectation, removing all sound for exactly 1 beat (sometimes 2) triggers an involuntary physical response. The listener's nervous system, primed for impact, receives nothing for a moment — and then everything hits simultaneously. This is called the 'negative space drop' or 'false floor'. The silence is a psychological device, not a production error. Without it, the drop is a continuation. With it, the drop is a detonation. Kettama uses it precisely at the end of the 8-bar build — the drums, bass, and pads cut simultaneously for exactly 1 beat, then hit at bar 1 of the drop. If you find the 1-beat silence in a Kettama track, you've found the heart of the arrangement."
+    },
+    {
+      "id": "bar-counts",
+      "heading": "Bar counts and why they work",
+      "body": "Garage tracks almost always use powers of 2 for section lengths: 4, 8, 16, 32 bars. This is not arbitrary — it's because 4/4 music creates an expectation of resolution at every multiple of 4. An 8-bar loop feels complete. A 16-bar section feels substantial. A 7-bar section feels unresolved in an uncomfortable way (unless that's intentional).\n\nTypical Kettama-style structure:\n- Intro: 8–16 bars\n- Build 1: 8 bars\n- Drop 1: 32 bars (two 16-bar passes of the main loop)\n- Breakdown: 8–16 bars\n- Rebuild: 4–8 bars\n- Drop 2: 32 bars\n- Outro: 8–16 bars\n- Total: ~4:30–5:30 at 140 BPM\n\nThe 32-bar drop is long enough that the listener fully inhabits the groove before it ends. A 16-bar drop can feel unsatisfying — you've just settled in when it's over. A 32-bar drop gives the producer room to add small variations in the second 16 bars (a slightly different hat pattern, a filter sweep on the pads) that keep interest without disrupting the groove."
+    },
+    {
+      "id": "layering-as-build",
+      "heading": "Adding elements is the build",
+      "body": "The build works by adding elements incrementally, each one increasing anticipation. The wrong approach: adding everything at once halfway through. The right approach: one new element every 2 bars, each one completing the picture slightly more.\n\nA typical 8-bar build for a garage track:\n- Bar 1: bass + hats only (stripped)\n- Bar 3: add clap\n- Bar 5: add pads (low in the mix, filtered)\n- Bar 7: pads come up in volume, filter opens\n- Bar 8, beat 4: silence\n- Bar 9 (drop): everything at full level simultaneously\n\nEach addition is a new piece of information that tells the listener: we're building toward something. The listener's brain is tracking the incomplete picture and feeling tension until the picture is complete. The drop completes it."
+    },
+    {
+      "id": "breakdown-space",
+      "heading": "The breakdown is not a break — it's a reset",
+      "body": "Many producers treat the breakdown as a pause — a place where nothing interesting happens. This is wrong. The breakdown is the emotional setup for the second drop. Its job is to create space and then slowly refill it, so that by the time the rebuild arrives, the listener's nervous system has reset and can feel the drop a second time as if for the first time.\n\nA good breakdown in a garage track often has: a pad that carries the chord progression alone, a very quiet or absent bass, and either complete silence or a very minimal texture (a single shaker, a distant vocal sample). The harmonic content (the chords) often stays present throughout the breakdown — it's the rhythm that strips away, not the melody. This is important: the listener stays in the emotional world of the track through the chords, even as the energy drops away."
+    },
+    {
+      "id": "kettama-map",
+      "heading": "How Kettama structures 'It Gets Better'",
+      "body": "Kettama's 'It Gets Better' is a masterclass in tension management. The intro runs long — the groove is established before anything else. The build uses a rising pad filter sweep (an AutoFilter cutoff sweep from ~500Hz up to fully open over 8 bars). The 1-beat silence arrives exactly at bar 16 of the build (bar 1 of the drop section). The first drop runs 32 bars. The breakdown is minimal — just the pad and bass root notes. The rebuild is shorter than the first build — only 4 bars — because the listener knows what's coming. The second drop is virtually identical to the first, which is intentional: the second drop should feel like a return, a confirmation.\n\nNote that Kettama does not vary the chord progression between drop 1 and drop 2. The VI→III→i loop is identical in both. The emotional variation comes from the arrangement — the breakdown and rebuild change how the drop lands emotionally, not the notes."
+    }
+  ],
+  "midi_examples": [
+    {
+      "label": "Drop hit — all elements together",
+      "notes": ["kick", "bass-root", "pad-chord"],
+      "context": "Every element lands on beat 1 of bar 1 after the 1-beat silence. The simultaneous onset is what creates the physical impact."
+    },
+    {
+      "label": "Build layer order — 8 bars",
+      "notes": [
+        "bar1: bass+hats",
+        "bar3: +clap",
+        "bar5: +pads-filtered",
+        "bar7: pads-open",
+        "bar8-beat4: silence"
+      ],
+      "context": "Each pair of bars adds one element. The incomplete picture creates anticipation at each step."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:00",
+      "what_to_hear": "The intro: the kick and hats run alone for several bars before anything harmonic enters. Count the bars and note how long Kettama waits before the bass arrives. The groove is established before the harmony.",
+      "technique": "intro — groove before harmony"
+    },
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:24",
+      "what_to_hear": "The build: find where the pads first enter, filtered and low in the mix. Then hear them open up gradually over 8 bars. Find the exact moment of the 1-beat silence before the drop. The silence is jarring even though you're anticipating it.",
+      "technique": "build — filter sweep into 1-beat silence"
+    },
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:32",
+      "what_to_hear": "The drop: everything arrives simultaneously. Count 32 bars — notice that Kettama holds the same VI→III→i loop without variation for the entire first drop. The groove is the content. The arrangement is what makes it feel like progression.",
+      "technique": "drop — 32 bars of consistent groove"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Listen to Kettama — It Gets Better from start to finish. Write down: (1) what bar the intro ends (when the first element beyond kick+bass enters), (2) what bar the build starts, (3) what bar the drop hits, (4) what bar the breakdown begins, (5) what bar the second drop hits. Count in bars — each bar at 140 BPM is approximately 1.7 seconds long.",
+    "answer_hint": "Approximate structure: Intro bars 1–16, Build bars 17–24, Drop 1 bars 25–56 (32 bars), Breakdown bars 57–72 (16 bars), Rebuild bars 73–76 (4 bars), Drop 2 bars 77–108 (32 bars), Outro bars 109+. Your counts may differ slightly — this is approximate and Kettama may vary the exact bar counts.",
+    "linked_rep_id": "rep-06-mini-track-emin"
+  },
+  "key_takeaway": "Arrangement is tension management over time. Every section has a job: intro orients, build promises, drop delivers, breakdown resets, rebuild re-promises, second drop confirms. The 1-beat silence is the most powerful moment in the track."
+}

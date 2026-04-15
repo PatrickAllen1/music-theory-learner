@@ -1,0 +1,95 @@
+{
+  "id": "transposing-concepts",
+  "title": "Transposing — Moving Techniques to Any Key",
+  "subtitle": "The most valuable skill in production is not knowing what to play — it's being able to play it in any key, on demand.",
+  "difficulty": "beginner",
+  "read_time_mins": 8,
+  "track_references": ["mph-raw", "kettama-it-gets-better"],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Every technique you learn is only half-learned until you can move it to a new key. If you know VI→III→i in Bb minor but can only play it in Bb minor, you've memorised a pattern — not understood a concept. Transposing is the process of moving that pattern to a new root note, preserving all the interval relationships. It's not about knowing music theory from a textbook. It's about having a repeatable method that works every time, regardless of which key you need."
+    },
+    {
+      "id": "semitone-map",
+      "heading": "The semitone map",
+      "body": "The piano keyboard (and the MIDI piano roll) is a map of semitones. A semitone is the smallest interval — the distance from any key to its immediate neighbour. C to C# is 1 semitone. C to D is 2 semitones. C to Eb is 3 semitones.\n\nSome important intervals expressed in semitones:\n- 1 semitone = b2 (minor second) — the tension note in phrygian. E to F.\n- 2 semitones = whole step (major second). E to F#.\n- 3 semitones = minor third (b3). The distance from a root to the first chord of a minor scale. E to G.\n- 4 semitones = major third. E to G#.\n- 5 semitones = perfect fourth. E to A.\n- 7 semitones = perfect fifth. E to B.\n- 9 semitones = major sixth (or b7 depending on direction). E to C#.\n- 10 semitones = minor seventh (b7). The bVI chord starts here from the i. E to D.\n- 12 semitones = octave. E to E an octave up.\n\nYou don't need to memorise all of these at once. You need the ones relevant to what you're building. For UK garage, the essential intervals are: 3 (minor third), 7 (perfect fifth), 8 (minor sixth / bVI root), 10 (minor seventh / bVII root)."
+    },
+    {
+      "id": "count-from-root",
+      "heading": "The 'count from the root' method",
+      "body": "The most practical transposing method is: find the root in your piano roll, then count semitones up (or down) to find every other note.\n\nWorked example — VI→III→i in Bb minor:\n\nBb minor root = Bb. Count from Bb:\n- i chord = Bb (the root itself)\n- III chord = Db (3 semitones up from Bb: Bb → B → C → Db)\n- VI chord = Gb (9 semitones up from Bb: Bb → B → C → Db → D → Eb → E → F → Gb)\n\nSo VI→III→i from Bb = Gb → Db → Bb. That's exactly Kettama.\n\nNow transpose to E minor. Root = E. Count from E:\n- i chord = Em (root)\n- III chord = G (3 semitones up: E → F → F# → G)\n- VI chord = C (9 semitones up: E → F → F# → G → G# → A → A# → B → C)\n\nVI→III→i in E minor = Cmaj → Gmaj → Em.\n\nThe counting method works for any key, any chord formula. You never need to memorise which keys have which chords — you count from the root every time."
+    },
+    {
+      "id": "minor-scale-formula",
+      "heading": "Finding any chord in any minor key",
+      "body": "The natural minor scale has a fixed formula: W H W W H W W (where W = 2 semitones, H = 1 semitone). Starting from any root and applying this formula gives you the 7 notes of that minor key.\n\nPractical shortcut — the chord roots in a minor key:\n- i chord = root (0 semitones)\n- ii° chord = 2 semitones up\n- bIII chord = 3 semitones up\n- iv chord = 5 semitones up\n- v/V chord = 7 semitones up\n- bVI chord = 8 semitones up\n- bVII chord = 10 semitones up\n\nThese numbers never change for minor keys — they're the same regardless of which minor key you're in. So if you need bVI in G minor: G + 8 semitones = Eb. The bVI in G minor is Eb major. No circle of fifths required.\n\nFor the tracks you're studying:\n- VI→III→i uses intervals 9, 3, and 0 (VI is 9 semitones up, III is 3 semitones up, i is the root)\n- i→bIII→bVI→iv uses intervals 0, 3, 8, 5\n- Phrygian b2 uses interval 1 (1 semitone up from the root)"
+    },
+    {
+      "id": "vi-iii-i-transposed",
+      "heading": "VI→III→i in three keys — worked examples",
+      "body": "VI→III→i in Bb minor (Kettama's key):\n- Root Bb. VI = Gb (9 up). III = Db (3 up). i = Bbm.\n- Progression: Gbmaj7 → Dbmaj → Bbm\n- Gbmaj7 voicing: Gb3 Bb3 Db4 F4\n\nVI→III→i in E minor (4-on-floor rep key):\n- Root E. VI = C (9 up). III = G (3 up). i = Em.\n- Progression: Cmaj7 → Gmaj → Em\n- Cmaj7 voicing: C3 E3 G3 B3\n\nVI→III→i in G minor (2-step rep key):\n- Root G. VI = Eb (9 up). III = Bb (3 up). i = Gm.\n- Progression: Ebmaj7 → Bbmaj → Gm\n- Ebmaj7 voicing: Eb3 G3 Bb3 D4\n\nNotice the emotional similarity between all three progressions despite the different keys. The major 7th on top of the VI chord (B3 in E minor, D4 in G minor) is what creates the shimmer in each case. The interval relationships are identical — only the pitch level changes."
+    },
+    {
+      "id": "phrygian-transposed",
+      "heading": "Phrygian b2 in three keys",
+      "body": "The phrygian b2 bass technique is always root + 1 semitone above + back to root. The semitone interval is fixed. Only the root changes.\n\nPhrygian b2 in E minor (MPH Raw):\n- Root = E. Tension note = F (1 semitone up).\n- Bass line: E1 → F1 → E1 (or E1 → F1 held)\n\nPhrygian b2 in A minor (exercise key):\n- Root = A. Tension note = Bb (1 semitone up).\n- Bass line: A1 → Bb1 → A1\n\nPhrygian b2 in D minor:\n- Root = D. Tension note = Eb (1 semitone up).\n- Bass line: D1 → Eb1 → D1\n\nThe emotional character is identical in all three keys. The tension comes from the 1-semitone interval, not from any specific pitch. Transposing phrygian to a new key doesn't change what it feels like — it just changes where it sits in the frequency range."
+    },
+    {
+      "id": "practical-workflow",
+      "heading": "How to transpose in Ableton",
+      "body": "Method 1 — Piano roll transposition: Select all notes in the MIDI clip (Cmd+A). Hold Shift and press the up or down arrow key. Each arrow press moves all notes by 1 semitone. 12 presses = 1 octave. This is the fastest method for moving an existing line to a new key.\n\nMethod 2 — Count and place: Keep the original MIDI clip as a reference. Create a new clip. Count the semitone intervals between notes in the original and place new notes at the same intervals from your new root. Useful when you want to think about what you're doing rather than just shifting everything.\n\nMethod 3 — Instrument pitch: On the instrument itself (Serum, Simpler, etc.), use the global transpose or pitch knob. This transposes the whole instrument without changing the MIDI. Useful for quick key experiments, not for final content.\n\nFor the reps in this app: always use Method 1 (select all + shift+arrow). It's fast, accurate, and you'll learn to think in semitones as you count how many presses it takes to reach the new key."
+    }
+  ],
+  "midi_examples": [
+    {
+      "label": "VI→III→i in Bb minor (Kettama)",
+      "notes": [
+        "Gbmaj7: Gb3 Bb3 Db4 F4",
+        "Dbmaj: Db3 F3 Ab3",
+        "Bbm: Bb3 Db4 F4"
+      ],
+      "context": "Root = Bb. VI = 9 semitones up = Gb. III = 3 semitones up = Db."
+    },
+    {
+      "label": "VI→III→i in E minor",
+      "notes": ["Cmaj7: C3 E3 G3 B3", "Gmaj: G3 B3 D4", "Em: E3 G3 B3"],
+      "context": "Root = E. VI = 9 semitones up = C. III = 3 semitones up = G. Same interval relationships, different pitch level."
+    },
+    {
+      "label": "Phrygian b2 — E minor vs A minor",
+      "notes": ["E minor: E1 → F1 → E1", "A minor: A1 → Bb1 → A1"],
+      "context": "Always root + 1 semitone. Only the root changes between keys."
+    },
+    {
+      "label": "Semitone counting from any root",
+      "notes": [
+        "bVI from G: G + 8 = Eb",
+        "bVI from D: D + 8 = Bb",
+        "bVI from A: A + 8 = F"
+      ],
+      "context": "bVI is always 8 semitones up from the root, regardless of key."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:32",
+      "what_to_hear": "The VI→III→i loop in Bb minor. Hum the root note of each chord as it changes: Gb → Db → Bb. That three-note root movement is all you need to transpose — find those same three intervals from a new root and you've moved the whole progression.",
+      "technique": "VI→III→i root movement — Gb→Db→Bb"
+    },
+    {
+      "track_id": "mph-raw",
+      "timestamp": "~0:00",
+      "what_to_hear": "The phrygian b2 in E minor: hear the bass move up by a semitone to the tension note and resolve back. Now mentally transpose it: what would the same pattern sound like if the root were A instead of E? The interval relationship — root to 1 semitone above — is identical. Only the pitch level changes.",
+      "technique": "phrygian b2 in E — transposable to any root"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Choose any three keys from this list: C minor, F minor, G minor, A minor, D minor. For each key, work out (1) the VI→III→i chord names using the count-from-root method, and (2) the phrygian b2 tension note. Write down both answers for each key before checking. Then program the VI→III→i loop in one of your chosen keys in Ableton — use Shift+arrow to transpose from the Bb minor version in rep-11.",
+    "answer_hint": "C minor: VI=Ab, III=Eb, i=Cm. b2=Db. F minor: VI=Db, III=Ab, i=Fm. b2=Gb. G minor: VI=Eb, III=Bb, i=Gm. b2=Ab. A minor: VI=F, III=C, i=Am. b2=Bb. D minor: VI=Bb, III=F, i=Dm. b2=Eb. The pattern: VI is always 9 semitones up, III is always 3 semitones up, b2 is always 1 semitone up.",
+    "linked_rep_id": "rep-11-VI-III-i-loop-bbmin"
+  },
+  "key_takeaway": "You never need to memorise chord names. Count from the root: bVI = 8 semitones up, bIII = 3 semitones up, phrygian b2 = 1 semitone up. These intervals are the same in every key. The technique is the interval — the key is just where it lives."
+}

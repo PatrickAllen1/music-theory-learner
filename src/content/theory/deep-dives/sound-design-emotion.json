@@ -1,0 +1,88 @@
+{
+  "id": "sound-design-emotion",
+  "title": "Sound Design and Emotion",
+  "subtitle": "Timbre is the emotional character of a sound. These are the decisions that make a pad feel lush, a bass feel tense, and a kick feel light.",
+  "difficulty": "beginner",
+  "read_time_mins": 10,
+  "track_references": ["kettama-it-gets-better", "mph-raw"],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "You can write the same chord progression in two different timbres and produce completely different emotional responses. A Gbmaj7 voiced on a bright, plucked synth with no reverb sounds clinical — maybe even cold. The same Gbmaj7 on a detuned, soft-attack pad with a long reverb tail sounds lush and bittersweet. The notes are identical. The emotion is completely different. This is timbre — the tonal character of a sound — and it's often more important to the emotional impact of a track than the specific chords or pitches. The tracks you're learning from were built by producers who understood this intuitively. This deep dive makes it explicit."
+    },
+    {
+      "id": "attack-as-category",
+      "heading": "Attack: the single most powerful parameter",
+      "body": "Of all the synthesis parameters that affect emotion, attack time has the most dramatic effect for the least adjustment. Attack is the time it takes a sound to reach full volume from silence after a note starts.\n\nAttack 0ms: the sound appears instantly at full volume. This is a stab, a pluck, or a hit. It feels immediate, percussive, and assertive. The listener's nervous system registers it as an event — something happening right now.\n\nAttack 50–150ms: the sound swells in over a short time. This is a pluck with a soft edge, or a delayed hit. It feels slightly softer and less aggressive but still present.\n\nAttack 200–400ms: the sound blooms in over about a quarter second. This is a pad. It doesn't announce itself — it arrives. The listener doesn't hear a new thing starting; they become aware that something is already there. This is the swell quality that defines lush pads.\n\nAttack 500ms+: the sound fades in so slowly it feels like it's always been present. The entrance is almost imperceptible. This is used for ambient textures, backgrounds, and atmospheric elements.\n\nKettama's pad has roughly 300ms attack. MPH's bass has 0ms attack. Those two numbers explain most of the emotional difference between the two tracks."
+    },
+    {
+      "id": "waveform-emotion",
+      "heading": "Waveform shapes and what they feel like",
+      "body": "The waveform of an oscillator determines which harmonics are present — and harmonics are what the ear hears as brightness, warmth, hollowness, or edge.\n\nSine wave (WT POS 0% in Basic Shapes): pure fundamental frequency, no harmonics. Sounds smooth, round, almost subconscious. You don't hear a sine wave as a distinct timbral character — you feel it. Sub bass lives here. Pure and physical.\n\nSawtooth wave (WT POS ~50% in Basic Shapes): full harmonic series — every harmonic, decreasing in volume. Sounds bright, buzzy, rich with presence. Aggressive without being harsh. This is the bread-and-butter waveform for basses and leads. Reese bass is two detuned saws. Most analogue synth leads are saws.\n\nSquare wave (WT POS ~75% in Basic Shapes): odd harmonics only. Sounds hollow and nasal — like a reed instrument or a slightly muffled saw. Hollow in a way that sits interestingly in a mix. Used for pads that need to not dominate, or for bass sounds that need a slightly woody character.\n\nIn-between positions blend these characters. The ~20–25% position used for Kettama's pad (just past the sine, approaching the saw) gives warmth and slight brightness — enough to fill a mix without aggression."
+    },
+    {
+      "id": "unison-detune",
+      "heading": "Unison and detune — the source of warmth",
+      "body": "Warmth in a synthesized pad almost always comes from unison detuning. When multiple copies of the same oscillator are played simultaneously, each slightly out of tune with the others, they create beating — a slow, pulsing interference pattern as the slightly different frequencies interact. This beating is not an artefact or a flaw. It is the warmth.\n\nA single oscillator sounds thin and precise — you can hear exactly what it is. Multiple detuned oscillators sound rich and alive — you hear the texture of the interactions. A small amount of detune (8–15 cents) sounds warm and lush. A large amount (25–50 cents) sounds obvious and chorus-like. Very large detune (50+ cents) starts to sound deliberately strange.\n\nKettama's pad uses 4 voices at 12 cents detune. MPH's bass uses 1 voice at 0 detune. The warmth in Kettama vs the precise tension in MPH comes directly from this choice. Detune on a sub bass causes phase cancellation and is never used. Detune on a pad is the primary source of its lush character."
+    },
+    {
+      "id": "reverb-depth",
+      "heading": "Reverb: physical space vs dry presence",
+      "body": "A dry sound (no reverb) feels immediate and close — it's in the same room as you, demanding attention. A reverberant sound feels distant and large — it exists in a space that's bigger than you. The emotional distinction is roughly: dry = urgent, assertive, present. Wet = dreamy, spacious, ambient.\n\nMost elements in a UK garage track live somewhere on this spectrum. The kick is almost always dry or barely reverbed — it needs to punch, not bloom. Pads are usually heavily reverbed — they need to feel like they occupy a large space around the listener. Bass is dry or lightly reverbed — it anchors the track physically.\n\nKettama's pad has a long reverb tail (1–2 seconds). This means each chord continues to ring in the space even after the next chord has started. The reverb creates overlap — the old chord is still audible in the room when the new chord hits. This overlap is part of what makes the progression feel smooth rather than abrupt.\n\nMPH's bass has essentially no reverb. The phrygian tension comes from the pitch — if you add reverb to a phrygian bass it sounds confused, not tense. Dryness keeps the tension focused."
+    },
+    {
+      "id": "kick-feel",
+      "heading": "Why 2-step feels lighter than 4-on-floor",
+      "body": "At the same tempo, a 2-step drum pattern and a 4-on-floor pattern create completely different emotional registers. 4-on-floor: kick on every beat = relentless, industrial, driving. No rest. The forward momentum is constant. This creates urgency and physical energy. It's the sound of commitment.\n\n2-step: kick on beats 1 and 3 (sometimes 1 only), with additional ghost kicks and snare accents filling in a syncopated pattern. The kick is no longer on every beat — it has gaps. Those gaps create a feeling of lift and playfulness. The rhythm breathes. It feels human, like a drummer who's choosing when to land rather than mechanically keeping the pulse.\n\nThe emotional difference is: 4-on-floor = intensity. 2-step = lift. Same tempo, completely different feeling. IC Slow Burner is built on 4-on-floor because the phrygian tension needs the relentless kick underneath it. Sammy Virji uses 2-step because the major chord lifts are naturally lighter and the 2-step matches that lightness."
+    },
+    {
+      "id": "putting-it-together",
+      "heading": "Reading sound design in the source tracks",
+      "body": "Now listen to the five source tracks with these frameworks in mind:\n\nKettama — It Gets Better: slow attack pad (blooms in) + long reverb + detuned unison + 4-on-floor kick. The emotion is: warm, bittersweet, physical. The pad's slow attack means the harmony is felt rather than announced. The kick drives forward underneath it.\n\nMPH Raw: 0ms attack sine bass + no reverb + no detune + 4-on-floor kick. The emotion is: tense, precise, hypnotic. The bass is a single clean frequency with no warmth — just pitch movement. The phrygian tension is maximised because there's nothing else to soften it.\n\nIC Slow Burner: 4-on-floor kick + bass-implied harmony (roots only) + minimal pad presence. The emotion is: restrained, driving, underground. The minimalism is the point. Less sound = more tension.\n\nSammy Virji: 2-step kick + major chord stabs (0ms attack, short decay) + ascending riff. The emotion is: euphoric, lifted, optimistic. The stabs are bright and immediate. The 2-step kick is light. The major chords are unambiguously uplifting.\n\nBL3SS Deeper: sub bass roots only + very few other elements + slow tempo. The emotion is: spacious, heavy, atmospheric. The emptiness is intentional — space is the texture."
+    }
+  ],
+  "midi_examples": [
+    {
+      "label": "Pad — slow attack vs stab",
+      "notes": ["Gbmaj7: Gb3", "Bb3", "Db4", "F4"],
+      "context": "Same chord, same notes. At Attack 0ms it's a stab. At Attack 300ms it blooms in as a pad. Try both back to back."
+    },
+    {
+      "label": "Detuned unison — 1 voice vs 4 voices",
+      "notes": ["E3"],
+      "context": "Single note, 1 voice vs 4 voices at 12 cents detune. The difference between thin/precise and warm/wide."
+    },
+    {
+      "label": "Sine vs sawtooth — same note",
+      "notes": ["Gb2"],
+      "context": "WT POS 0% (sine) = smooth, physical. WT POS 50% (saw) = bright, buzzy. Same pitch, completely different character."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:32",
+      "what_to_hear": "The pad enters at the drop. Listen specifically to the first second: you hear the chord blooming in rather than hitting. That slow attack (roughly 300ms) is the difference between a pad and a stab. Then notice the long reverb tail — the chord is still audible in the space even after the next chord starts.",
+      "technique": "slow attack bloom + reverb overlap"
+    },
+    {
+      "track_id": "mph-raw",
+      "timestamp": "~0:00",
+      "what_to_hear": "The MPH bass enters with no attack — it's instantly at full volume. Compare that precise, immediate arrival with Kettama's pad bloom. Both are at 0ms and slow attack respectively. Notice how the instant onset of the sine bass creates a different emotional feeling than Kettama's pad bloom — urgent vs dreaming.",
+      "technique": "0ms attack on sub bass — instant vs bloom"
+    },
+    {
+      "track_id": "mph-raw",
+      "timestamp": "~0:30",
+      "what_to_hear": "Listen to the MPH bass in isolation if possible (or listen with the kick muted mentally). The bass is a single, clean sine wave. There is no warmth, no chorus, no reverb. The pitch movement alone carries all the tension. This is what 'dry and precise' sounds like — and how it serves the phrygian emotional register.",
+      "technique": "dry sine bass — pitch movement as sole emotional carrier"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Open Serum V2 with Init Preset, Basic Shapes wavetable, WT POS at 25%, FILTER off. Hold a single note (E3). Slowly increase the Attack knob from 0ms to 500ms while the note sustains. At each of these settings — 0ms, 50ms, 150ms, 300ms, 500ms — describe in one word what emotion the sound conveys. Then try the same test with the wavetable at WT POS 0% (sine) vs 50% (saw). Notice how the waveform interacts with the attack setting.",
+    "answer_hint": "Typical responses: 0ms = aggressive/sharp/present. 50ms = soft-hit. 150ms = pluck. 300ms = pad/blooming. 500ms = ambient. Sine at 300ms = dreamy/subconscious. Saw at 300ms = warm/present. Sine at 0ms = punchy. Saw at 0ms = aggressive. No single correct answer — the exercise is about making the connection between parameters and emotional response.",
+    "linked_rep_id": "rep-serum-chord-pad"
+  },
+  "key_takeaway": "Timbre shapes emotion more than notes. Attack time changes the category of a sound (stab vs pad). Waveform sets its character (smooth vs bright). Detune adds warmth. Reverb adds space. Dryness adds urgency. You have complete control over all of these."
+}
