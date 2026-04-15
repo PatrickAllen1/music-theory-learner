@@ -10,7 +10,8 @@
       "MPH — Raw"
     ],
     "bpm_range": "128–145",
-    "analytical_note": "The most fundamental house pattern. Every beat receives a kick, creating a metronomic pulse that locks the body into the groove. At 136 BPM the hits come fast enough to feel urgent. Use Drum Rack with a short, punchy kick sample."
+    "analytical_note": "The most fundamental house pattern. Every beat receives a kick, creating a metronomic pulse that locks the body into the groove. At 136 BPM the hits come fast enough to feel urgent. Use Drum Rack with a short, punchy kick sample.",
+    "linked_rep_ids": ["rep-01-four-on-floor-emin", "rep-06-mini-track-emin"]
   },
   {
     "id": "two-step",
@@ -24,7 +25,12 @@
       "Classic UK garage from the late 90s"
     ],
     "bpm_range": "130–140",
-    "analytical_note": "The signature UK garage kick pattern. Only kicks on 1 and 3, leaving beats 2 and 4 to the snare/rim. This creates a 'lighter' feel than 4-on-floor and more room for syncopated hi-hat rolls. The open space between kicks is where the groove lives."
+    "analytical_note": "The signature UK garage kick pattern. Only kicks on 1 and 3, leaving beats 2 and 4 to the snare/rim. This creates a 'lighter' feel than 4-on-floor and more room for syncopated hi-hat rolls. The open space between kicks is where the groove lives.",
+    "linked_rep_ids": [
+      "rep-02-two-step-gmin",
+      "rep-07-mini-track-gmin",
+      "spinoff-02-ic-amin-entry"
+    ]
   },
   {
     "id": "offbeat-hats",
@@ -36,7 +42,8 @@
       "MPH — Raw"
     ],
     "bpm_range": "120–145",
-    "analytical_note": "Off-beats land exactly halfway between beats. At 136 BPM there are 8 hat hits per bar. This pattern works against or with the kick to create drive. In IC Slow Burner, the hat never lands on a beat — only on the off-beats — making the kick hits feel heavier by contrast."
+    "analytical_note": "Off-beats land exactly halfway between beats. At 136 BPM there are 8 hat hits per bar. This pattern works against or with the kick to create drive. In IC Slow Burner, the hat never lands on a beat — only on the off-beats — making the kick hits feel heavier by contrast.",
+    "linked_rep_ids": ["rep-01-four-on-floor-emin", "rep-06-mini-track-emin"]
   },
   {
     "id": "velocity-swing",
@@ -48,7 +55,8 @@
       "BL3SS — Kisses (hat velocities cycle 93→110→127→113 across 16th-note grid)"
     ],
     "bpm_range": "140–145",
-    "analytical_note": "Instead of using Ableton's groove pool or swing %, BL3SS programs hats at every 16th note but varies velocity in a repeating 4-note cycle. The louder notes (127) feel like downbeats, the quieter ones (93) recede. This creates perceived swing without actually shifting note timing."
+    "analytical_note": "Instead of using Ableton's groove pool or swing %, BL3SS programs hats at every 16th note but varies velocity in a repeating 4-note cycle. The louder notes (127) feel like downbeats, the quieter ones (93) recede. This creates perceived swing without actually shifting note timing.",
+    "linked_rep_ids": ["spinoff-07-bl3ss-full"]
   },
   {
     "id": "open-hat-rhythm",
@@ -60,7 +68,8 @@
       "Classic UK garage rolls"
     ],
     "bpm_range": "128–145",
-    "analytical_note": "Use choke groups in Drum Rack so the closed hat mutes the open hat on contact. The ring of the open hat decays into the next closed hat hit. Placing open hats on the off-beat of beat 2 or 4 creates a classic garage accent. Don't overuse — one or two per bar is enough."
+    "analytical_note": "Use choke groups in Drum Rack so the closed hat mutes the open hat on contact. The ring of the open hat decays into the next closed hat hit. Placing open hats on the off-beat of beat 2 or 4 creates a classic garage accent. Don't overuse — one or two per bar is enough.",
+    "linked_rep_ids": ["rep-01-four-on-floor-emin"]
   },
   {
     "id": "clap-placement",
@@ -72,6 +81,7 @@
       "BL3SS — Kisses (Clap on A#3 — non-standard pitch, beats 2+4)"
     ],
     "bpm_range": "all tempos",
-    "analytical_note": "The backbeat is universal in electronic music. In garage, the clap sample choice matters more than placement — a tight, crispy UK clap sits differently to a room snare. BL3SS uses A#3 (not the standard C4 clap pitch) — experiment with pitch to shape the character of the hit."
+    "analytical_note": "The backbeat is universal in electronic music. In garage, the clap sample choice matters more than placement — a tight, crispy UK clap sits differently to a room snare. BL3SS uses A#3 (not the standard C4 clap pitch) — experiment with pitch to shape the character of the hit.",
+    "linked_rep_ids": ["rep-01-four-on-floor-emin", "rep-02-two-step-gmin"]
   }
 ]

@@ -11,91 +11,93 @@
   "time_sig": "4/4",
   "total_bars": 109,
   "difficulty": "beginner",
-
   "structure": [
     {
       "section": "Intro",
-      "bars": "1–4",
-      "description": "Vocal only — no beat yet"
+      "bars": "1\u20134",
+      "description": "Vocal only \u2014 no beat yet"
     },
     {
       "section": "Intro Drop",
-      "bars": "5–8",
+      "bars": "5\u20138",
       "description": "Kick + hats + riser kick in, no bass"
     },
     {
       "section": "Breakdown 1",
-      "bars": "9–16",
+      "bars": "9\u201316",
       "description": "Drone synth E4 + clock loop, no kick"
     },
     {
       "section": "Build 1",
-      "bars": "17–22",
+      "bars": "17\u201322",
       "description": "Groove loop + shaker + snare roll build"
     },
     {
       "section": "Transition",
-      "bars": "23–24",
+      "bars": "23\u201324",
       "description": "Stab chord + pre-fill"
     },
     {
       "section": "Drop 1",
-      "bars": "25–32",
-      "description": "Full arrangement — kick, bass, lead, groove loop. Reese enters bar 31."
+      "bars": "25\u201332",
+      "description": "Full arrangement \u2014 kick, bass, lead, groove loop. Reese enters bar 31."
     },
     {
       "section": "Drop 2",
-      "bars": "33–40",
+      "bars": "33\u201340",
       "description": "Identical to Drop 1. Reese enters bar 39."
     },
     {
       "section": "Breakdown 2",
-      "bars": "41–46",
+      "bars": "41\u201346",
       "description": "Drone + groove loop + shaker + snare roll"
     },
     {
       "section": "Transition",
-      "bars": "47–48",
+      "bars": "47\u201348",
       "description": "Stab + pre-fill"
     },
     {
       "section": "Drop 3",
-      "bars": "49–56",
+      "bars": "49\u201356",
       "description": "Full drop, same structure. Reese bar 55."
     },
     {
       "section": "Drop 4",
-      "bars": "57–64",
-      "description": "Bass variation — Eb3 enters, adds harmonic colour"
+      "bars": "57\u201364",
+      "description": "Bass variation \u2014 Eb3 enters, adds harmonic colour"
     },
     {
       "section": "Long Breakdown",
-      "bars": "65–72",
-      "description": "Drone synth only — maximum tension, no percussion"
+      "bars": "65\u201372",
+      "description": "Drone synth only \u2014 maximum tension, no percussion"
     },
     {
       "section": "Big Build",
-      "bars": "73–82",
+      "bars": "73\u201382",
       "description": "Siren + riser + lazer down + snare roll escalation"
     },
     {
       "section": "Transition",
-      "bars": "83–84",
+      "bars": "83\u201384",
       "description": "Pre-fills + stab"
     },
     {
       "section": "Drop 5",
-      "bars": "85–92",
+      "bars": "85\u201392",
       "description": "Final drop cycle begins. Reese bar 91."
     },
-    { "section": "Drop 6", "bars": "93–100", "description": "Reese bar 99." },
+    {
+      "section": "Drop 6",
+      "bars": "93\u2013100",
+      "description": "Reese bar 99."
+    },
     {
       "section": "Drop 7 / Outro",
-      "bars": "101–109",
+      "bars": "101\u2013109",
       "description": "Reese from bar 107 through end"
     }
   ],
-
   "tracks": [
     {
       "name": "Kick Clap",
@@ -105,7 +107,7 @@
     {
       "name": "Tops",
       "type": "MIDI",
-      "role": "Hi-hat pattern — open hat + closed hat"
+      "role": "Hi-hat pattern \u2014 open hat + closed hat"
     },
     {
       "name": "Snare Roll",
@@ -115,7 +117,7 @@
     {
       "name": "Bass",
       "type": "MIDI",
-      "role": "Main bass riff — E3 dominant with F3 tension"
+      "role": "Main bass riff \u2014 E3 dominant with F3 tension"
     },
     {
       "name": "Pluck Bass",
@@ -130,12 +132,12 @@
     {
       "name": "Reese Basic",
       "type": "MIDI",
-      "role": "Reese bass sub layer (F3→E3 movement)"
+      "role": "Reese bass sub layer (F3\u2192E3 movement)"
     },
     {
       "name": "Reese",
       "type": "MIDI",
-      "role": "Reese bass main layer (F3→E3 movement)"
+      "role": "Reese bass main layer (F3\u2192E3 movement)"
     },
     {
       "name": "Drone Synth",
@@ -150,12 +152,12 @@
     {
       "name": "Riser Basic",
       "type": "MIDI",
-      "role": "Big build riser (E4 sustained, bars 73–82)"
+      "role": "Big build riser (E4 sustained, bars 73\u201382)"
     },
     {
       "name": "Vocal",
       "type": "AUDIO",
-      "role": "Main vocal sample — runs almost entire track (bar 4.8–111)"
+      "role": "Main vocal sample \u2014 runs almost entire track (bar 4.8\u2013111)"
     },
     {
       "name": "Groove Loop",
@@ -175,7 +177,7 @@
     {
       "name": "White Noise SC",
       "type": "AUDIO",
-      "role": "Sidechained white noise — adds air + pump"
+      "role": "Sidechained white noise \u2014 adds air + pump"
     },
     {
       "name": "Crash R",
@@ -215,80 +217,101 @@
     {
       "name": "Siren",
       "type": "AUDIO",
-      "role": "Siren FX in big build (bars 73–82)"
+      "role": "Siren FX in big build (bars 73\u201382)"
     },
-    { "name": "Riser", "type": "AUDIO", "role": "Audio riser sweep" }
+    {
+      "name": "Riser",
+      "type": "AUDIO",
+      "role": "Audio riser sweep"
+    }
   ],
-
   "drum_pattern": {
     "kick": {
       "note": "C3",
-      "pattern": "4-on-the-floor — beats 1, 2, 3, 4 every bar",
+      "pattern": "4-on-the-floor \u2014 beats 1, 2, 3, 4 every bar",
       "velocity": 127,
       "note_duration_beats": 1.0
     },
     "open_hat": {
       "note": "C3 (Tops track)",
-      "pattern": "Every off-beat — 0.5, 1.5, 2.5, 3.5 per bar (8th note off-beats)",
+      "pattern": "Every off-beat \u2014 0.5, 1.5, 2.5, 3.5 per bar (8th note off-beats)",
       "velocity": 127,
       "note_duration_beats": 0.5
     },
     "closed_hat": {
       "note": "C#3 (Tops track)",
       "pattern": "16th note positions with heavily humanised velocity",
-      "velocities": [127, 58, 24, 80, 111, 20, 55, 40],
+      "velocities": [
+        127,
+        58,
+        24,
+        80,
+        111,
+        20,
+        55,
+        40
+      ],
       "note_duration_beats": 0.125,
       "swing_offset": 0.051
     }
   },
-
   "bass_pattern": {
-    "notes_used": ["E3", "F3", "Eb4", "E5"],
+    "notes_used": [
+      "E3",
+      "F3",
+      "Eb4",
+      "E5"
+    ],
     "root": "E3",
     "loop_length_bars": 2,
-    "description": "E3 is the dominant bass note throughout. F3 arrives at beat 7 of the 2-bar phrase (one semitone above root) creating phrygian tension. Eb4 hits on beat 3 of each bar as an accent — this is the minor 7th, adds harmonic colour. E5 is a brief high accent at bar position 11.5.",
-    "bar1_pattern": "E3(0.25)→E3(0.83)→E3(1.5)→E3(2.0)→E3(2.5)→Eb4(3.0, accent)→E3(3.81)→E3(4.31)→E3(4.81)→E3(5.5)→E3(6.0)→F3(7.0, tension)",
-    "theory_note": "The E→F movement is phrygian — the flat 2nd (b2) creates an aggressive, dark tension before the phrase resets. This is a hallmark of hard UK garage and bassline."
+    "description": "E3 is the dominant bass note throughout. F3 arrives at beat 7 of the 2-bar phrase (one semitone above root) creating phrygian tension. Eb4 hits on beat 3 of each bar as an accent \u2014 this is the minor 7th, adds harmonic colour. E5 is a brief high accent at bar position 11.5.",
+    "bar1_pattern": "E3(0.25)\u2192E3(0.83)\u2192E3(1.5)\u2192E3(2.0)\u2192E3(2.5)\u2192Eb4(3.0, accent)\u2192E3(3.81)\u2192E3(4.31)\u2192E3(4.81)\u2192E3(5.5)\u2192E3(6.0)\u2192F3(7.0, tension)",
+    "theory_note": "The E\u2192F movement is phrygian \u2014 the flat 2nd (b2) creates an aggressive, dark tension before the phrase resets. This is a hallmark of hard UK garage and bassline."
   },
-
   "reese_pattern": {
-    "notes": ["F3", "E3"],
+    "notes": [
+      "F3",
+      "E3"
+    ],
     "description": "F3 held for 3.5 beats, then resolves down to E3 for 2.5 beats. Appears in the final 2 bars of each 8-bar drop section for peak intensity.",
-    "theory_note": "The Reese is a detuned sawtooth bass (Serum). The F→E movement mirrors the main bass tension — it's the same phrygian b2→root resolution but held longer, making the drop feel like it's resolving and collapsing at the same time."
+    "theory_note": "The Reese is a detuned sawtooth bass (Serum). The F\u2192E movement mirrors the main bass tension \u2014 it's the same phrygian b2\u2192root resolution but held longer, making the drop feel like it's resolving and collapsing at the same time."
   },
-
   "lead_pattern": {
-    "notes": ["E5"],
-    "description": "Single-note E5 melodic phrase spanning 6 bars, with syncopated rhythm. Enters just before the drop. Simple but effective — everything is in the bass, the lead just reinforces the root.",
+    "notes": [
+      "E5"
+    ],
+    "description": "Single-note E5 melodic phrase spanning 6 bars, with syncopated rhythm. Enters just before the drop. Simple but effective \u2014 everything is in the bass, the lead just reinforces the root.",
     "entry_bar": 24.9
   },
-
   "key_techniques": [
-    "4-on-the-floor kick with humanised hi-hat velocities — feels alive, not robotic",
-    "Phrygian b2 tension: E→F semitone in bass creates aggression without a chord progression",
-    "Reese bass (Serum detuned sawtooth) used only in last 2 bars of each drop — restraint amplifies impact",
-    "Drone synth sustains root (E4) through breakdowns — holds harmonic context while percussion drops",
+    "4-on-the-floor kick with humanised hi-hat velocities \u2014 feels alive, not robotic",
+    "Phrygian b2 tension: E\u2192F semitone in bass creates aggression without a chord progression",
+    "Reese bass (Serum detuned sawtooth) used only in last 2 bars of each drop \u2014 restraint amplifies impact",
+    "Drone synth sustains root (E4) through breakdowns \u2014 holds harmonic context while percussion drops",
     "Sidechained white noise (White Noise SC) adds pumping air to the drops",
-    "Lazer hits in rapid sequence (0.2 bar intervals) immediately before crash cymbal — tension build trick",
-    "No chord loop — entire harmonic language is in the single bass note and its phrygian neighbour F"
+    "Lazer hits in rapid sequence (0.2 bar intervals) immediately before crash cymbal \u2014 tension build trick",
+    "No chord loop \u2014 entire harmonic language is in the single bass note and its phrygian neighbour F"
   ],
-
-  "plugins_required": ["Xfer Serum v2.0.16+", "Nicky Romero Kickstart 2"],
-
-  "theory_notes": "MPH Raw is harmonically minimalist — there is no chord progression. The entire track is built on a single pedal note (E) with the phrygian b2 (F) providing all the tension. Analytically: think of the E→F movement as a 1-semitone oscillation around the root, like a pendulum. The energy comes entirely from rhythm, timbre (the Reese), and arrangement — not harmony. This makes it a perfect first track to recreate because you don't need to understand chords at all. You need to understand groove, tension, and when to withhold elements.",
-
+  "plugins_required": [
+    "Xfer Serum v2.0.16+",
+    "Nicky Romero Kickstart 2"
+  ],
+  "theory_notes": "MPH Raw is harmonically minimalist \u2014 there is no chord progression. The entire track is built on a single pedal note (E) with the phrygian b2 (F) providing all the tension. Analytically: think of the E\u2192F movement as a 1-semitone oscillation around the root, like a pendulum. The energy comes entirely from rhythm, timbre (the Reese), and arrangement \u2014 not harmony. This makes it a perfect first track to recreate because you don't need to understand chords at all. You need to understand groove, tension, and when to withhold elements.",
   "spinoff_potential": {
-    "key_changes": ["F minor", "D minor", "G minor"],
-    "bpm_range": "128–138",
+    "key_changes": [
+      "F minor",
+      "D minor",
+      "G minor"
+    ],
+    "bpm_range": "128\u2013138",
     "elements_to_transplant": [
-      "The phrygian b2 bass movement (any key: root→semitone above)",
+      "The phrygian b2 bass movement (any key: root\u2192semitone above)",
       "The humanised hi-hat velocity pattern",
       "The 2-bar Reese resolution at drop peak",
       "The drone-only long breakdown structure",
       "The lazer-sequence-to-crash transition trick"
     ]
   },
-
   "splice_searches": [
     "punchy uk garage kick 132bpm",
     "reese bass one shot",
@@ -297,6 +320,20 @@
     "lazer down fx",
     "siren build up"
   ],
-
-  "guided_build_id": "mph-raw-recreation"
+  "guided_build_id": "mph-raw-recreation",
+  "related_content": {
+    "deep_dive_ids": [
+      "phrygian-tension",
+      "transposing-concepts"
+    ],
+    "rep_ids": [
+      "rep-03-phrygian-bass-emin",
+      "rep-04-phrygian-bass-dmin",
+      "rep-05-phrygian-bass-amin",
+      "rep-serum-sub-bass"
+    ],
+    "spinoff_ids": [
+      "spinoff-01-mph-dmin-entry"
+    ]
+  }
 }

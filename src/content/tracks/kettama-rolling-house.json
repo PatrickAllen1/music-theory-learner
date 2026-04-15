@@ -1,0 +1,35 @@
+{
+  "id": "kettama-rolling-house",
+  "title": "Rolling House (Kettama Style)",
+  "artist": "Kettama",
+  "bpm": 130,
+  "key": "F minor",
+  "scale": "natural minor",
+  "swing_pct": 54,
+  "time_sig": "4/4",
+  "structure": ["intro", "build", "drop1", "breakdown", "drop2", "outro"],
+  "chords": ["Fmin7", "Ebmaj7", "Dbmaj7", "Cm7"],
+  "signature_elements": [
+    "4-on-the-floor kick locked to the beat with a tight, punchy transient (~60ms decay) — the backbone that keeps it house rather than pure garage",
+    "2-step hi-hat pattern: open hats on the off-16ths (the 'e' and 'ah' subdivisions) with the groove sitting slightly behind the grid at 54% swing",
+    "Filtered rolling bassline that climbs and falls through the chord tones — the bass is melodic, not just root notes, often walking in minor thirds",
+    "One-bar chord loop with the Fmin7 on beat 1 acting as a tonal anchor; the Dbmaj7 is the emotional pivot, creating a bVI sound that feels both melancholic and forward-moving",
+    "Reverb-drenched vocal chops pitched to chord tones, gated to hit on the off-beat 2.5 — this is the signature UK garage 'skip' feeling"
+  ],
+  "ableton_techniques": [
+    "Draw the kick on beats 1, 2, 3, 4 in a MIDI drum rack; set the kick sample's Simpler transient shaper to Attack 0ms, Decay 60ms so it punches without muddying the bassline",
+    "In the hi-hat MIDI clip, place open hats at positions 1.1.3, 1.2.1, 1.2.3, 1.3.1 etc. then enable Groove Pool with a 54% swing groove — drag the groove from the pool onto the clip to embed it",
+    "For the chord loop: stack a Rhodes-style instrument and a pad on separate MIDI tracks, both playing the same chord progression but with the pad filtered low (low-pass ~800Hz) to sit under the Rhodes",
+    "Sidechain compress the bass to the kick using a Ghost sidechain (silent kick bus into a Compressor on the bass channel) — ratio 4:1, attack 1ms, release 80ms keeps the low end clean and pumping",
+    "Automate a High-Pass Filter on the full mix from 400Hz down to 20Hz over 16 bars during the intro build — this 'filter sweep in' is the classic Kettama tension builder before the drop"
+  ],
+  "theory_notes": "This progression is a I–bVII–bVI–bVII pivot back to I in F natural minor — think of it as a sequence of stacked thirds that always resolves home. In natural minor, the bVII (Eb) and bVI (Db) chords are 'borrowed' from the parallel major's relative keys, which is why they feel simultaneously familiar and slightly melancholic. Analytically, each chord is a seventh chord: min7 on I gives you the characteristic minor-jazz quality; maj7 on bVII and bVI adds the 'dreamy' high-frequency tension from the major 7th interval (a half-step below the root when you resolve up). Cm7 on bV is the surprise — in strict F natural minor the bV would be Cb, but here we use the natural minor's v chord (Cm, not Cdim) which is a borrowed chord from Dorian mode, and its maj7 extension resolves beautifully back to Fmin7. At 130 BPM with 54% swing, the rhythmic feel is roughly equivalent to a dotted-eighth-note offset for every other 16th note — this is what creates the 'rolling' lilt rather than a robotic grid. The swing percentage is like a blend knob between 50% (perfectly quantized) and 66.7% (full triplet swing); 54% sits in the 'lazy shuffle' zone that defines UK garage's feel without sounding like straight jazz or hip-hop.",
+  "splice_searches": [
+    "UK garage house kick punchy 130bpm",
+    "rolling 2-step hi-hat groove 130",
+    "Rhodes electric piano chord stab warm",
+    "vocal chop UK garage female pitched",
+    "filtered bassline house minor rolling"
+  ],
+  "guided_build_id": "kettama-rolling-garage"
+}

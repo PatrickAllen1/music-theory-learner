@@ -9,93 +9,115 @@
   "time_sig": "4/4",
   "total_bars": 93,
   "difficulty": "intermediate",
-
   "chord_progression": {
-    "chords": ["G#maj", "Emaj", "Bmaj"],
-    "roman_numerals": "I (borrowed major) → VI → III",
+    "chords": [
+      "G#maj",
+      "Emaj",
+      "Bmaj"
+    ],
+    "roman_numerals": "I (borrowed major) \u2192 VI \u2192 III",
     "loop_length_beats": 8,
     "voicings": {
-      "G#maj": ["G#4", "C4", "D#4"],
-      "Emaj": ["G#4", "B4", "E5"],
-      "Bmaj": ["F#4", "B4", "D#5"]
+      "G#maj": [
+        "G#4",
+        "C4",
+        "D#4"
+      ],
+      "Emaj": [
+        "G#4",
+        "B4",
+        "E5"
+      ],
+      "Bmaj": [
+        "F#4",
+        "B4",
+        "D#5"
+      ]
     },
-    "chord_stab_style": "Quick rhythmic stabs — G# on beat 1, rapid E and B movement on beats 2–4, not slow sustained chords",
-    "theory_notes": "G# natural minor: G#, A#, B, C#, D#, E, F#. The G# major chord (C in MIDI = B# enharmonically = major 3rd from G#) uses the raised 3rd — this is the Picardy third / harmonic minor borrowing. In G# minor: G#maj=I(borrowed), E=VI(major), B=III(major). The quick stab sequence G#→E→B implies a motion from V to III to I if you shift perspective: these three major chords all share notes and create a bright, driving harmonic loop. The Skepta grime influence pushes toward the darker stab delivery vs. the soulful Kettama approach."
+    "chord_stab_style": "Quick rhythmic stabs \u2014 G# on beat 1, rapid E and B movement on beats 2\u20134, not slow sustained chords",
+    "theory_notes": "G# natural minor: G#, A#, B, C#, D#, E, F#. The G# major chord (C in MIDI = B# enharmonically = major 3rd from G#) uses the raised 3rd \u2014 this is the Picardy third / harmonic minor borrowing. In G# minor: G#maj=I(borrowed), E=VI(major), B=III(major). The quick stab sequence G#\u2192E\u2192B implies a motion from V to III to I if you shift perspective: these three major chords all share notes and create a bright, driving harmonic loop. The Skepta grime influence pushes toward the darker stab delivery vs. the soulful Kettama approach."
   },
-
   "strings_riff": {
-    "notes": ["G3", "G#3", "C4", "D#4", "G4", "G#4", "C5", "D#5", "E5"],
-    "description": "Ascending chromatic/arpeggio run that defines the track's melodic identity. Pattern: G→G#→C→D# repeating over 2 octaves. This outlines the Ab(G#) major chord (G# C D# = Ab, C, Eb in flat notation) with a passing G tone below. Strings play this as a rising melodic hook rather than sustained pads — aggressive, forward-moving."
+    "notes": [
+      "G3",
+      "G#3",
+      "C4",
+      "D#4",
+      "G4",
+      "G#4",
+      "C5",
+      "D#5",
+      "E5"
+    ],
+    "description": "Ascending chromatic/arpeggio run that defines the track's melodic identity. Pattern: G\u2192G#\u2192C\u2192D# repeating over 2 octaves. This outlines the Ab(G#) major chord (G# C D# = Ab, C, Eb in flat notation) with a passing G tone below. Strings play this as a rising melodic hook rather than sustained pads \u2014 aggressive, forward-moving."
   },
-
   "structure": [
     {
       "section": "Intro",
-      "bars": "1–4",
+      "bars": "1\u20134",
       "description": "Strings 1+2 chord riff, Chord stabs, Acapella vocal starts immediately. Drill FX audio texture. LFO Sweep."
     },
     {
       "section": "Kick Intro",
-      "bars": "5–8",
-      "description": "Kick enters with Uplifter building into bar 9. Still no bass — drums and strings only."
+      "bars": "5\u20138",
+      "description": "Kick enters with Uplifter building into bar 9. Still no bass \u2014 drums and strings only."
     },
     {
       "section": "Drop 1",
-      "bars": "9–16",
+      "bars": "9\u201316",
       "description": "Bass enters bar 10 (G#4 root section). Strings 3 adds another layer. Open Hat accent hits every 4 bars. Saw riff enters at bar 9. Downlifter FX shapes the drop energy."
     },
     {
       "section": "Drop 2",
-      "bars": "17–24",
+      "bars": "17\u201324",
       "description": "Bass shifts to C#4 root section (more rooted, heavier). Saw continues. Hat pattern consistent."
     },
     {
       "section": "Drop 3",
-      "bars": "25–32",
+      "bars": "25\u201332",
       "description": "G#4 bass section returns. Bass riff continues with same rhythmic pattern."
     },
     {
       "section": "Peak Drop",
-      "bars": "33–40",
+      "bars": "33\u201340",
       "description": "Strings 3 enters for maximum density. All three string layers active. Saw prominent. This is the heaviest section of the track."
     },
     {
       "section": "Extended Drop",
-      "bars": "41–48",
+      "bars": "41\u201348",
       "description": "Saw carries on, Downlifter FX used between sections for energy modulation."
     },
     {
       "section": "Break",
-      "bars": "49–56",
+      "bars": "49\u201356",
       "description": "Vinyl crackle returns (from intro). LFO Sweep re-enters. Uplifter builds. Strings continue but arrangement strips back."
     },
     {
       "section": "Final Drop 1",
-      "bars": "57–64",
+      "bars": "57\u201364",
       "description": "Strings 3 + Saw return at full intensity. Uplifter. Drill FX at transitions."
     },
     {
       "section": "Final Drop 2",
-      "bars": "65–72",
+      "bars": "65\u201372",
       "description": "Saw and Bass continue. Extended run."
     },
     {
       "section": "Final Drop 3",
-      "bars": "73–88",
+      "bars": "73\u201388",
       "description": "Chord track sustains through to end. Strings phase out."
     },
     {
       "section": "Outro",
-      "bars": "89–93",
+      "bars": "89\u201393",
       "description": "Strings fade. Vocal tail."
     }
   ],
-
   "tracks": [
     {
       "name": "Kick",
       "type": "MIDI",
-      "role": "2-step pattern — kick on beats 1 and 3 per bar (not 4-on-the-floor). Ghost notes at humanised velocities between downbeats. C4."
+      "role": "2-step pattern \u2014 kick on beats 1 and 3 per bar (not 4-on-the-floor). Ghost notes at humanised velocities between downbeats. C4."
     },
     {
       "name": "Hat",
@@ -115,22 +137,22 @@
     {
       "name": "Bass",
       "type": "MIDI",
-      "role": "Main bass — alternates between two pitch centres: G#4 root sections and C#4 root sections. Long held notes with rhythmic subdivision. All notes in G# minor."
+      "role": "Main bass \u2014 alternates between two pitch centres: G#4 root sections and C#4 root sections. Long held notes with rhythmic subdivision. All notes in G# minor."
     },
     {
       "name": "Strings 1",
       "type": "MIDI",
-      "role": "Main string riff — ascending G→G#→C→D# arpeggio across 2 octaves. Runs entire track from bar 1."
+      "role": "Main string riff \u2014 ascending G\u2192G#\u2192C\u2192D# arpeggio across 2 octaves. Runs entire track from bar 1."
     },
     {
       "name": "Strings 2",
       "type": "MIDI",
-      "role": "Second string layer — same ascending riff, layered for thickness."
+      "role": "Second string layer \u2014 same ascending riff, layered for thickness."
     },
     {
       "name": "Strings 3",
       "type": "MIDI",
-      "role": "Third string layer — enters at bar 9 and select peak sections. Maximum string density."
+      "role": "Third string layer \u2014 enters at bar 9 and select peak sections. Maximum string density."
     },
     {
       "name": "Saw",
@@ -140,55 +162,60 @@
     {
       "name": "Chord",
       "type": "MIDI",
-      "role": "Chord stabs — G#maj→Emaj→Bmaj quick progression. Quick rhythmic hits rather than sustained chords. Runs throughout."
+      "role": "Chord stabs \u2014 G#maj\u2192Emaj\u2192Bmaj quick progression. Quick rhythmic hits rather than sustained chords. Runs throughout."
     },
     {
       "name": "Crash",
       "type": "MIDI",
-      "role": "Crash hits at 2-bar intervals (every even bar from bar 11) — constant rhythmic marker"
+      "role": "Crash hits at 2-bar intervals (every even bar from bar 11) \u2014 constant rhythmic marker"
     },
     {
       "name": "Acapella",
       "type": "AUDIO",
-      "role": "Vocal — entire track bars 1–93"
+      "role": "Vocal \u2014 entire track bars 1\u201393"
     },
     {
       "name": "Vinyl",
       "type": "AUDIO",
-      "role": "Vinyl crackle texture — intro (bars 1–9) and break (bars 49–57)"
+      "role": "Vinyl crackle texture \u2014 intro (bars 1\u20139) and break (bars 49\u201357)"
     },
     {
       "name": "LFO Sweep",
       "type": "AUDIO",
-      "role": "LFO modulation sweep — intro and break sections. Creates wobbly, filter-sweep effect."
+      "role": "LFO modulation sweep \u2014 intro and break sections. Creates wobbly, filter-sweep effect."
     },
     {
       "name": "Uplifter",
       "type": "AUDIO",
-      "role": "Rising sweep before drops (bars 5–9, 9–13, 53–61)"
+      "role": "Rising sweep before drops (bars 5\u20139, 9\u201313, 53\u201361)"
     },
     {
       "name": "Drill FX",
       "type": "AUDIO",
-      "role": "Drill/metal FX hits at bar transitions (bars 1–3, 9–11, 13–15, etc.) — grime-influenced texture"
+      "role": "Drill/metal FX hits at bar transitions (bars 1\u20133, 9\u201311, 13\u201315, etc.) \u2014 grime-influenced texture"
     },
     {
       "name": "Downlifter",
       "type": "AUDIO",
-      "role": "Falling sweep — used after drop peaks to signal energy change (bars 17–45 area)"
+      "role": "Falling sweep \u2014 used after drop peaks to signal energy change (bars 17\u201345 area)"
     }
   ],
-
   "drum_pattern": {
     "kick": {
       "note": "C4",
-      "pattern": "2-step: beats 1 and 3 (positions 0.0, 2.0 per bar) in 2-bar phrase. Ghost notes between — velocity humanised.",
-      "main_velocities": [127],
-      "ghost_velocities": [38, 1, 127]
+      "pattern": "2-step: beats 1 and 3 (positions 0.0, 2.0 per bar) in 2-bar phrase. Ghost notes between \u2014 velocity humanised.",
+      "main_velocities": [
+        127
+      ],
+      "ghost_velocities": [
+        38,
+        1,
+        127
+      ]
     },
     "hat": {
       "note": "C4",
-      "pattern": "Off-beats — 0.5, 1.5, 2.5, 3.5 per bar (8th-note off-beats)",
+      "pattern": "Off-beats \u2014 0.5, 1.5, 2.5, 3.5 per bar (8th-note off-beats)",
       "velocity": 127
     },
     "rim": {
@@ -197,31 +224,34 @@
       "velocity": 127
     }
   },
-
   "bass_pattern": {
-    "notes_used": ["G#4", "E4", "C#4"],
+    "notes_used": [
+      "G#4",
+      "E4",
+      "C#4"
+    ],
     "key_notes": "G# = root (1st), E = major 6th (VI of G# minor), C# = minor 4th (iv of G# minor)",
-    "description": "Bass alternates between two-note root sections: clips with G#4 and E4 alternating (bars 10–24, 25–31) and single-root C#4 clips (bar 17–24, 32+). The G#→E movement in the first section creates a pendulum between root and major 6th — similar to how MPH Raw uses E→F phrygian tension, but softer. Long held notes (1.88 beats) with smaller fills (1.35 beats). All in G# minor.",
+    "description": "Bass alternates between two-note root sections: clips with G#4 and E4 alternating (bars 10\u201324, 25\u201331) and single-root C#4 clips (bar 17\u201324, 32+). The G#\u2192E movement in the first section creates a pendulum between root and major 6th \u2014 similar to how MPH Raw uses E\u2192F phrygian tension, but softer. Long held notes (1.88 beats) with smaller fills (1.35 beats). All in G# minor.",
     "technique": "Long held basses (nearly 2 beats each) create a smooth, legato bass feel rather than punchy stabs. This gives the track its 'slow burner' rolling quality despite the 2-step kick."
   },
-
   "key_techniques": [
-    "2-step kick (beats 1+3 only) vs. 4-on-the-floor — gives a more garage/grime feel than house",
-    "Ascending string arpeggio as melodic hook — G→G#→C→D# identifies the track immediately",
+    "2-step kick (beats 1+3 only) vs. 4-on-the-floor \u2014 gives a more garage/grime feel than house",
+    "Ascending string arpeggio as melodic hook \u2014 G\u2192G#\u2192C\u2192D# identifies the track immediately",
     "Triple string layering (Strings 1+2+3) for maximum harmonic density at peak sections",
-    "Chord stabs as rhythmic device, not harmonic backdrop — quick G#→E→B in 4 beats",
-    "Drill FX at bar transitions — grime influence adds aggression",
-    "Vinyl crackle in intro and break — roots the sound in UK dance culture",
-    "Open Hat used as section marker (every 4 bars) rather than groove element — architectural use"
+    "Chord stabs as rhythmic device, not harmonic backdrop \u2014 quick G#\u2192E\u2192B in 4 beats",
+    "Drill FX at bar transitions \u2014 grime influence adds aggression",
+    "Vinyl crackle in intro and break \u2014 roots the sound in UK dance culture",
+    "Open Hat used as section marker (every 4 bars) rather than groove element \u2014 architectural use"
   ],
-
-  "theory_notes": "Cops & Robbers operates in G# minor at 136 BPM. The harmonic material (G# major, E major, B major) creates a bright, aggressive minor key sound using borrowed major chords throughout. Analytically: G# minor gives you i(G#m), III(B), iv(C#m), VI(E), VII(F#). By using G# major (the Picardy third), E major (VI), and B major (III), the track avoids any actual minor-sounding chords — everything is major, but the G# root makes it feel fundamentally minor. This is a common grime/UK garage technique: major chords over a minor root gives aggression without darkness. Compare to Kettama who uses explicit minor chords (Bbm) for warmth — Cops & Robbers is harder and more confrontational.",
-
-  "vs_mph_raw": "MPH Raw: 4-on-the-floor, E minor pedal, phrygian tension, no chords. Cops & Robbers: 2-step kick, G# minor, quick major chord stabs, ascending string riff. Both aggressive but in different ways — MPH is rhythmic aggression, C&R is harmonic aggression.",
-
+  "theory_notes": "Cops & Robbers operates in G# minor at 136 BPM. The harmonic material (G# major, E major, B major) creates a bright, aggressive minor key sound using borrowed major chords throughout. Analytically: G# minor gives you i(G#m), III(B), iv(C#m), VI(E), VII(F#). By using G# major (the Picardy third), E major (VI), and B major (III), the track avoids any actual minor-sounding chords \u2014 everything is major, but the G# root makes it feel fundamentally minor. This is a common grime/UK garage technique: major chords over a minor root gives aggression without darkness. Compare to Kettama who uses explicit minor chords (Bbm) for warmth \u2014 Cops & Robbers is harder and more confrontational.",
+  "vs_mph_raw": "MPH Raw: 4-on-the-floor, E minor pedal, phrygian tension, no chords. Cops & Robbers: 2-step kick, G# minor, quick major chord stabs, ascending string riff. Both aggressive but in different ways \u2014 MPH is rhythmic aggression, C&R is harmonic aggression.",
   "spinoff_potential": {
-    "key_changes": ["D minor", "B minor", "C# minor"],
-    "bpm_range": "132–140",
+    "key_changes": [
+      "D minor",
+      "B minor",
+      "C# minor"
+    ],
+    "bpm_range": "132\u2013140",
     "elements_to_transplant": [
       "2-step kick (beats 1+3) with ghost notes for humanization",
       "Ascending arpeggio string riff as main melodic hook",
@@ -230,7 +260,6 @@
       "Drill FX at bar transitions for grime texture"
     ]
   },
-
   "splice_searches": [
     "uk garage strings riff 136bpm",
     "2 step garage kick pattern",
@@ -239,6 +268,19 @@
     "uplifter uk garage",
     "drill fx grime transition"
   ],
-
-  "guided_build_id": "sammy-virji-cops-robbers-recreation"
+  "guided_build_id": "sammy-virji-cops-robbers-recreation",
+  "related_content": {
+    "deep_dive_ids": [
+      "arrangement-theory",
+      "sound-design-emotion"
+    ],
+    "rep_ids": [
+      "rep-02-two-step-gmin",
+      "rep-07-mini-track-gmin",
+      "rep-14-bass-implied-gmin"
+    ],
+    "spinoff_ids": [
+      "spinoff-06-sammy-full"
+    ]
+  }
 }

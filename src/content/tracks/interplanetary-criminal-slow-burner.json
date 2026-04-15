@@ -9,67 +9,83 @@
   "time_sig": "4/4",
   "total_bars": 131,
   "difficulty": "beginner",
-
   "chord_progression": {
-    "chords": ["Em", "Bm", "C"],
-    "roman_numerals": "i → v → bVI",
+    "chords": [
+      "Em",
+      "Bm",
+      "C"
+    ],
+    "roman_numerals": "i \u2192 v \u2192 bVI",
     "loop_length_beats": 16,
     "voicings": {
-      "Em": ["B3", "E4", "G4", "B4"],
-      "Bm": ["D4", "F#4", "B4", "D5"],
-      "C": ["C4", "E4", "G4", "C5"]
+      "Em": [
+        "B3",
+        "E4",
+        "G4",
+        "B4"
+      ],
+      "Bm": [
+        "D4",
+        "F#4",
+        "B4",
+        "D5"
+      ],
+      "C": [
+        "C4",
+        "E4",
+        "G4",
+        "C5"
+      ]
     },
-    "theory_notes": "E natural minor: E F# G A B C D. The progression i→v→bVI is one of the most emotionally resonant in minor key music. Em (root, dark) → Bm (5th, tension) → C major (major chord built on the flat-6th) gives a dramatic lift that defines IC's sound. The C major (bVI) is borrowed from the parallel major scale — it's a moment of brightness inside the darkness. The v chord (Bm) is minor rather than the classical V (B major), giving a softer, more melancholic tension than hard UK garage. This is deeply Interplanetary Criminal: emotional, brooding, with that one beam of light in the C major."
+    "theory_notes": "E natural minor: E F# G A B C D. The progression i\u2192v\u2192bVI is one of the most emotionally resonant in minor key music. Em (root, dark) \u2192 Bm (5th, tension) \u2192 C major (major chord built on the flat-6th) gives a dramatic lift that defines IC's sound. The C major (bVI) is borrowed from the parallel major scale \u2014 it's a moment of brightness inside the darkness. The v chord (Bm) is minor rather than the classical V (B major), giving a softer, more melancholic tension than hard UK garage. This is deeply Interplanetary Criminal: emotional, brooding, with that one beam of light in the C major."
   },
-
   "structure": [
     {
       "section": "Intro",
-      "bars": "1–13",
-      "description": "Piano and organ only — no vocal, no beat. Establishes the emotional chord loop."
+      "bars": "1\u201313",
+      "description": "Piano and organ only \u2014 no vocal, no beat. Establishes the emotional chord loop."
     },
     {
       "section": "Vocal Intro",
-      "bars": "14–30",
-      "description": "Vocal enters (bar 14). Clap on 2+4 and open hat enter (bar 11). Perc Akcent audio loop adds texture. Still no kick — pure atmosphere."
+      "bars": "14\u201330",
+      "description": "Vocal enters (bar 14). Clap on 2+4 and open hat enter (bar 11). Perc Akcent audio loop adds texture. Still no kick \u2014 pure atmosphere."
     },
     {
       "section": "Drop 1",
-      "bars": "31–46",
+      "bars": "31\u201346",
       "description": "Kick (C4) and bass enter together. Full arrangement: kick + clap + open hat + bass + piano + organ. Shaker audio adds groove."
     },
     {
       "section": "Drop 2",
-      "bars": "47–62",
-      "description": "Tambourine enters at bar 47 — adds rhythmic energy on top of the existing groove. Bass continues same 4-bar pattern."
+      "bars": "47\u201362",
+      "description": "Tambourine enters at bar 47 \u2014 adds rhythmic energy on top of the existing groove. Bass continues same 4-bar pattern."
     },
     {
       "section": "Breakdown",
-      "bars": "63–78",
-      "description": "Kick/clap/hat drop out. Break Bass enters with a busier, more fragmented version of the bass riff. Organ sustains the chord context. Breaks audio sample (bars 71–79) adds textural percussion."
+      "bars": "63\u201378",
+      "description": "Kick/clap/hat drop out. Break Bass enters with a busier, more fragmented version of the bass riff. Organ sustains the chord context. Breaks audio sample (bars 71\u201379) adds textural percussion."
     },
     {
       "section": "Atmospheric Break",
-      "bars": "79–96",
-      "description": "Clock Fx loop (bars 79–94) creates a ticking, minimal backdrop. Piano returns. Impact audio hits on downbeats. Pure tension — no kick."
+      "bars": "79\u201396",
+      "description": "Clock Fx loop (bars 79\u201394) creates a ticking, minimal backdrop. Piano returns. Impact audio hits on downbeats. Pure tension \u2014 no kick."
     },
     {
       "section": "Drop 3",
-      "bars": "97–112",
+      "bars": "97\u2013112",
       "description": "Kick and full arrangement return. Bass variation (clip 3) with additional 16th-note articulations and higher register accents (E5, G5, E6)."
     },
     {
       "section": "Drop 4",
-      "bars": "113–128",
+      "bars": "113\u2013128",
       "description": "Same as Drop 3. Perc Akcent and Shaker continue through final section."
     },
     {
       "section": "Outro",
-      "bars": "129–131",
+      "bars": "129\u2013131",
       "description": "Vocal tail-out."
     }
   ],
-
   "tracks": [
     {
       "name": "Kick",
@@ -84,12 +100,12 @@
     {
       "name": "Open Hat",
       "type": "MIDI",
-      "role": "Open hat on every off-beat (0.5, 1.5, 2.5, 3.5), C4, velocity 100 — UK garage signature"
+      "role": "Open hat on every off-beat (0.5, 1.5, 2.5, 3.5), C4, velocity 100 \u2014 UK garage signature"
     },
     {
       "name": "Snare",
       "type": "MIDI",
-      "role": "Snare rolls during builds (bars 27–31, 75–79)"
+      "role": "Snare rolls during builds (bars 27\u201331, 75\u201379)"
     },
     {
       "name": "Crash Delayed",
@@ -104,29 +120,33 @@
     {
       "name": "Bass",
       "type": "MIDI",
-      "role": "Main melodic bass — walks E minor pentatonic (E4→G4→C5→E5→A4→G4) over 4-bar phrase. Bars 31–62, 97–128."
+      "role": "Main melodic bass \u2014 walks E minor pentatonic (E4\u2192G4\u2192C5\u2192E5\u2192A4\u2192G4) over 4-bar phrase. Bars 31\u201362, 97\u2013128."
     },
     {
       "name": "Break Bass",
       "type": "MIDI",
-      "role": "Busier bass variation in breakdown (bars 63–71) — more fragmented 16th-note pattern"
+      "role": "Busier bass variation in breakdown (bars 63\u201371) \u2014 more fragmented 16th-note pattern"
     },
     {
       "name": "90s Piano",
       "type": "MIDI",
-      "role": "Main chord instrument — plays Em→Bm→C→Bm loop as block chords. Present bars 11–30, 47–62, 79–94, 105–128."
+      "role": "Main chord instrument \u2014 plays Em\u2192Bm\u2192C\u2192Bm loop as block chords. Present bars 11\u201330, 47\u201362, 79\u201394, 105\u2013128."
     },
     {
       "name": "Organ",
       "type": "MIDI",
-      "role": "Single-note organ melody over the chord loop. E4→G4→C5→A4→G4 melodic line. Bars 11–30, 63–79."
+      "role": "Single-note organ melody over the chord loop. E4\u2192G4\u2192C5\u2192A4\u2192G4 melodic line. Bars 11\u201330, 63\u201379."
     },
     {
       "name": "Laser Fx",
       "type": "MIDI",
-      "role": "Laser FX stabs in breakdown (bars 75–77, 91–93) — tension device"
+      "role": "Laser FX stabs in breakdown (bars 75\u201377, 91\u201393) \u2014 tension device"
     },
-    { "name": "Vocals", "type": "AUDIO", "role": "Vocal runs bars 14–131" },
+    {
+      "name": "Vocals",
+      "type": "AUDIO",
+      "role": "Vocal runs bars 14\u2013131"
+    },
     {
       "name": "Perc Akcent",
       "type": "AUDIO",
@@ -140,12 +160,12 @@
     {
       "name": "Breaks",
       "type": "AUDIO",
-      "role": "Breakbeat loop in breakdown (bars 71–79)"
+      "role": "Breakbeat loop in breakdown (bars 71\u201379)"
     },
     {
       "name": "Clock Fx",
       "type": "AUDIO",
-      "role": "Ticking/clock texture loop in atmospheric break (bars 79–94)"
+      "role": "Ticking/clock texture loop in atmospheric break (bars 79\u201394)"
     },
     {
       "name": "Impact",
@@ -153,11 +173,10 @@
       "role": "Impact hit on downbeats through drops and break"
     }
   ],
-
   "drum_pattern": {
     "kick": {
       "note": "C4",
-      "pattern": "4-on-the-floor — beats 1, 2, 3, 4 (positions 0, 1, 2, 3 per bar)",
+      "pattern": "4-on-the-floor \u2014 beats 1, 2, 3, 4 (positions 0, 1, 2, 3 per bar)",
       "velocity": 100
     },
     "clap": {
@@ -167,44 +186,48 @@
     },
     "open_hat": {
       "note": "C4",
-      "pattern": "Every off-beat — 0.5, 1.5, 2.5, 3.5 per bar (8th-note off-beats)",
+      "pattern": "Every off-beat \u2014 0.5, 1.5, 2.5, 3.5 per bar (8th-note off-beats)",
       "velocity": 100
     }
   },
-
   "bass_pattern": {
-    "notes_used": ["E4", "G4", "A4", "C5", "E5"],
+    "notes_used": [
+      "E4",
+      "G4",
+      "A4",
+      "C5",
+      "E5"
+    ],
     "key_notes": "E minor pentatonic: E, G, A, B (implied), C (bVI colour), E (octave)",
-    "description": "The bass plays a 4-bar (16-beat) melodic loop — not a simple root pattern but a walking melody. E4 on the downbeat, rises through G4→C5 over bar 2, peaks at E5 then descends through A4→G4 back to E4. It outlines the chord changes (E root over Em, C5 accent over Cmaj) while staying inside E minor pentatonic.",
-    "bar1_pattern": "E4(0.0, 2 beats)→G4(2.5, 1.5)→C5(4.0, 1.5)→E5(8.0, 1.5)→A4(9.5, 1.5)→G4(11.0, 1.0)→E4(12.0, 2 beats)"
+    "description": "The bass plays a 4-bar (16-beat) melodic loop \u2014 not a simple root pattern but a walking melody. E4 on the downbeat, rises through G4\u2192C5 over bar 2, peaks at E5 then descends through A4\u2192G4 back to E4. It outlines the chord changes (E root over Em, C5 accent over Cmaj) while staying inside E minor pentatonic.",
+    "bar1_pattern": "E4(0.0, 2 beats)\u2192G4(2.5, 1.5)\u2192C5(4.0, 1.5)\u2192E5(8.0, 1.5)\u2192A4(9.5, 1.5)\u2192G4(11.0, 1.0)\u2192E4(12.0, 2 beats)"
   },
-
   "key_techniques": [
-    "i→v→bVI chord loop — Em→Bm→C — the major VI chord inside minor creates that IC emotional 'lift'",
-    "4-on-the-floor kick with open hat on every off-beat (not 2-step) — closer to house than garage",
-    "Piano enters 20 bars before the kick — establishes chords first, beat second",
-    "No kick in breakdown for 35 bars (bars 63–96) — maximum tension through restraint",
+    "i\u2192v\u2192bVI chord loop \u2014 Em\u2192Bm\u2192C \u2014 the major VI chord inside minor creates that IC emotional 'lift'",
+    "4-on-the-floor kick with open hat on every off-beat (not 2-step) \u2014 closer to house than garage",
+    "Piano enters 20 bars before the kick \u2014 establishes chords first, beat second",
+    "No kick in breakdown for 35 bars (bars 63\u201396) \u2014 maximum tension through restraint",
     "Break Bass variation in breakdown uses busier 16th-note runs vs. the clean main bass",
-    "Clock Fx loop in atmospheric break — textural tension without percussion",
+    "Clock Fx loop in atmospheric break \u2014 textural tension without percussion",
     "Tambourine as energy upgrade between drop 1 and drop 2 (enters bar 47)"
   ],
-
-  "theory_notes": "Slow Burner is built on E natural minor at 136 BPM. The chord progression Em→Bm→C (i→v→bVI) runs as a looping 4-bar phrase throughout the track. Analytically: the v chord (Bm, not B major) keeps the harmonic tension 'soft' — you're never resolving to a dominant V. The real emotional weight is in the C major (bVI), which borrows from the parallel E major scale. It sounds like a chord that 'doesn't belong' but creates an achingly beautiful lift. Compare to MPH Raw which has zero chords — IC Slow Burner is the melodic, emotional end of the UK garage spectrum. Both tracks are 136 BPM; the difference is entirely in harmonic content.",
-
+  "theory_notes": "Slow Burner is built on E natural minor at 136 BPM. The chord progression Em\u2192Bm\u2192C (i\u2192v\u2192bVI) runs as a looping 4-bar phrase throughout the track. Analytically: the v chord (Bm, not B major) keeps the harmonic tension 'soft' \u2014 you're never resolving to a dominant V. The real emotional weight is in the C major (bVI), which borrows from the parallel E major scale. It sounds like a chord that 'doesn't belong' but creates an achingly beautiful lift. Compare to MPH Raw which has zero chords \u2014 IC Slow Burner is the melodic, emotional end of the UK garage spectrum. Both tracks are 136 BPM; the difference is entirely in harmonic content.",
   "vs_mph_raw": "MPH Raw: no chords, phrygian tension, rhythmic aggression. IC Slow Burner: beautiful minor chord loop, emotional atmosphere, 35-bar breakdowns. Same BPM (136), completely different emotional worlds. MPH = floor energy, IC = feelings.",
-
   "spinoff_potential": {
-    "key_changes": ["A minor", "D minor", "F# minor"],
-    "bpm_range": "130–140",
+    "key_changes": [
+      "A minor",
+      "D minor",
+      "F# minor"
+    ],
+    "bpm_range": "130\u2013140",
     "elements_to_transplant": [
-      "i→v→bVI chord loop (transpose to any minor key — e.g. Am→Em→F in A minor)",
+      "i\u2192v\u2192bVI chord loop (transpose to any minor key \u2014 e.g. Am\u2192Em\u2192F in A minor)",
       "Open hat on every off-beat for driving 4/4 feel",
       "20+ bar chord-only intro before kick drops",
       "Break Bass technique: vary bass density/rhythm in breakdown vs. drops",
       "Atmospheric break with texture loop instead of drums"
     ]
   },
-
   "splice_searches": [
     "interplanetary criminal style bass",
     "uk garage piano chords minor",
@@ -212,6 +235,23 @@
     "uk garage organ melody",
     "percussion accent loop garage"
   ],
-
-  "guided_build_id": "interplanetary-criminal-slow-burner-recreation"
+  "guided_build_id": "interplanetary-criminal-slow-burner-recreation",
+  "related_content": {
+    "deep_dive_ids": [
+      "vi-iii-i-loop",
+      "chord-voicing",
+      "serum-layering"
+    ],
+    "rep_ids": [
+      "rep-08-bVI-lift-emin",
+      "rep-09-bVI-lift-amin",
+      "rep-10-bVI-lift-dmin",
+      "rep-serum-chord-pad"
+    ],
+    "spinoff_ids": [
+      "spinoff-02-ic-amin-entry",
+      "spinoff-03-ic-dmin-mid",
+      "spinoff-05-ic-full"
+    ]
+  }
 }

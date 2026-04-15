@@ -1,5 +1,7 @@
-import { useParams, Link } from "react-router-dom";
+import { useParams, Link, useNavigate } from "react-router-dom";
 import { trackById } from "../content/tracks";
+import { buildById } from "../content/guided-builds";
+import { deepDiveById } from "../content/theory";
 
 function StatBox({ label, value }) {
   return (
@@ -22,6 +24,7 @@ function SectionTag({ label }) {
 
 export default function TrackDetail() {
   const { id } = useParams();
+  const navigate = useNavigate();
   const track = trackById[id];
 
   if (!track)
@@ -235,6 +238,102 @@ export default function TrackDetail() {
           ))}
         </div>
       </section>
+
+      {/* Related Content */}
+      {track.related_content && (
+        <div className="border-t border-zinc-800 mt-8 pt-8 space-y-8">
+          {/* Deep Dives */}
+          {track.related_content.deep_dive_ids?.length > 0 && (
+            <section>
+              <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-3">
+                Related Deep Dives
+              </h2>
+              <div className="flex gap-3 overflow-x-auto pb-2">
+                {track.related_content.deep_dive_ids
+                  .map((did) => deepDiveById[did])
+                  .filter(Boolean)
+                  .map((d) => (
+                    <Link
+                      key={d.id}
+                      to={`/theory?deepdive=${d.id}`}
+                      className="shrink-0 w-52 p-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-600 rounded-lg transition-colors"
+                    >
+                      <p className="text-xs font-mono text-zinc-500 mb-1">
+                        {d.read_time_mins} min read
+                      </p>
+                      <p className="font-mono text-sm font-bold text-zinc-100 leading-tight mb-1">
+                        {d.title}
+                      </p>
+                      <p className="text-xs text-zinc-500 leading-relaxed line-clamp-2">
+                        {d.subtitle}
+                      </p>
+                    </Link>
+                  ))}
+              </div>
+            </section>
+          )}
+
+          {/* Practice Reps */}
+          {track.related_content.rep_ids?.length > 0 && (
+            <section>
+              <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-3">
+                Practice This Sound
+              </h2>
+              <div className="flex gap-3 overflow-x-auto pb-2">
+                {track.related_content.rep_ids
+                  .map((rid) => buildById[rid])
+                  .filter(Boolean)
+                  .map((rep) => (
+                    <button
+                      key={rep.id}
+                      onClick={() =>
+                        navigate("/builder", { state: { buildId: rep.id } })
+                      }
+                      className="shrink-0 w-48 p-3 bg-zinc-900 border border-zinc-800 hover:border-zinc-600 rounded-lg text-left transition-colors"
+                    >
+                      <p className="text-xs font-mono text-zinc-500 mb-1">
+                        {rep.bpm} BPM · {rep.key}
+                      </p>
+                      <p className="font-mono text-sm font-bold text-zinc-100 leading-tight">
+                        {rep.title}
+                      </p>
+                    </button>
+                  ))}
+              </div>
+            </section>
+          )}
+
+          {/* Spinoffs */}
+          {track.related_content.spinoff_ids?.length > 0 && (
+            <section>
+              <h2 className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-3">
+                Spinoffs of This Track
+              </h2>
+              <div className="flex gap-3 overflow-x-auto pb-2">
+                {track.related_content.spinoff_ids
+                  .map((sid) => buildById[sid])
+                  .filter(Boolean)
+                  .map((sp) => (
+                    <button
+                      key={sp.id}
+                      onClick={() =>
+                        navigate("/builder", { state: { buildId: sp.id } })
+                      }
+                      className="shrink-0 w-48 p-3 bg-zinc-900 border border-purple-900 hover:border-purple-700 rounded-lg text-left transition-colors"
+                    >
+                      <p className="text-xs font-mono text-purple-500 mb-1">
+                        spinoff · {sp.spinoff_level}
+                      </p>
+                      <p className="font-mono text-sm font-bold text-zinc-100 leading-tight">
+                        {sp.title}
+                      </p>
+                    </button>
+                  ))}
+              </div>
+            </section>
+          )}
+        </div>
+      )}
     </div>
   );
 }

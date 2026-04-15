@@ -12,7 +12,12 @@
       "BL3SS — Kisses (D minor)"
     ],
     "common_keys": ["E minor", "F minor", "Bb minor", "D minor", "G minor"],
-    "analytical_note": "The flatted 3rd, 6th, and 7th give the dark quality vs major. In E minor: E F# G A B C D. Most garage tracks live here — it's the default emotional register."
+    "analytical_note": "The flatted 3rd, 6th, and 7th give the dark quality vs major. In E minor: E F# G A B C D. Most garage tracks live here — it's the default emotional register.",
+    "linked_rep_ids": [
+      "rep-11-VI-III-i-loop-bbmin",
+      "rep-12-VI-III-i-loop-fmin",
+      "spinoff-kettama-bbmin-full"
+    ]
   },
   {
     "id": "dorian",
@@ -27,7 +32,8 @@
       "Soul Mass Transit System"
     ],
     "common_keys": ["D dorian", "G dorian", "A dorian"],
-    "analytical_note": "Same as natural minor but the 6th is 1 semitone higher. In E dorian: E F# G A B C# D. That raised 6th adds brightness. The iv chord becomes a minor (not diminished), which sounds warmer."
+    "analytical_note": "Same as natural minor but the 6th is 1 semitone higher. In E dorian: E F# G A B C# D. That raised 6th adds brightness. The iv chord becomes a minor (not diminished), which sounds warmer.",
+    "linked_rep_ids": []
   },
   {
     "id": "phrygian",
@@ -38,7 +44,13 @@
     "feel": "Tense, dark, Arabic flavour. The b2 creates a half-step pull back to root.",
     "examples": ["MPH — Raw (E phrygian bass line: E→F)"],
     "common_keys": ["E phrygian", "A phrygian"],
-    "analytical_note": "The b2 (just one semitone above root) creates instant tension. In E phrygian: E F G A B C D. The MPH bass moves E→F — that F is the b2 (phrygian note). One semitone up, immediately pulls back down. That's the signature tension."
+    "analytical_note": "The b2 (just one semitone above root) creates instant tension. In E phrygian: E F G A B C D. The MPH bass moves E→F — that F is the b2 (phrygian note). One semitone up, immediately pulls back down. That's the signature tension.",
+    "linked_rep_ids": [
+      "rep-03-phrygian-bass-emin",
+      "rep-04-phrygian-bass-dmin",
+      "rep-05-phrygian-bass-amin",
+      "spinoff-01-mph-dmin-entry"
+    ]
   },
   {
     "id": "harmonic-minor",
@@ -51,6 +63,11 @@
       "Sammy Virji — Cops & Robbers (G# minor, V major chord = harmonic minor influence)"
     ],
     "common_keys": ["G# minor", "C minor", "A minor"],
-    "analytical_note": "Raise the 7th by 1 semitone vs natural minor. This makes the V chord major (not minor), which creates a strong dominant resolution. Sammy Virji's G#maj stab (instead of G#m) comes from this — the B# in the G# major chord is the raised 7th of G# harmonic minor."
+    "analytical_note": "Raise the 7th by 1 semitone vs natural minor. This makes the V chord major (not minor), which creates a strong dominant resolution. Sammy Virji's G#maj stab (instead of G#m) comes from this — the B# in the G# major chord is the raised 7th of G# harmonic minor.",
+    "linked_rep_ids": [
+      "rep-08-bVI-lift-emin",
+      "rep-09-bVI-lift-amin",
+      "rep-10-bVI-lift-dmin"
+    ]
   }
 ]

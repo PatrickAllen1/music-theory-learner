@@ -242,5 +242,20 @@
     "4x4 house kick 140bpm"
   ],
 
-  "guided_build_id": "kettama-it-gets-better-recreation"
+  "guided_build_id": "kettama-it-gets-better-recreation",
+
+  "related_content": {
+    "deep_dive_ids": [
+      "vi-iii-i-loop",
+      "chord-voicing",
+      "arrangement-theory",
+      "sound-design-emotion"
+    ],
+    "rep_ids": [
+      "rep-11-VI-III-i-loop-bbmin",
+      "rep-12-VI-III-i-loop-fmin",
+      "rep-serum-chord-pad"
+    ],
+    "spinoff_ids": ["spinoff-kettama-bbmin-full", "spinoff-04-kettama-fmin-mid"]
+  }
 }

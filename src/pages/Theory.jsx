@@ -13,7 +13,29 @@ const difficultyStyles = {
 
 // ─── Existing reference cards ─────────────────────────────────────────────
 
-function ScaleCard({ entry }) {
+function PracticePills({ repIds, onPractice }) {
+  if (!repIds?.length) return null;
+  const reps = repIds.map((id) => buildById[id]).filter(Boolean);
+  if (!reps.length) return null;
+  return (
+    <div className="pt-3 border-t border-zinc-800">
+      <p className="text-xs font-mono text-zinc-600 mb-2">practice in:</p>
+      <div className="flex gap-2 flex-wrap">
+        {reps.map((rep) => (
+          <button
+            key={rep.id}
+            onClick={() => onPractice(rep)}
+            className="text-xs font-mono px-2 py-1 bg-zinc-800 hover:bg-zinc-700 text-zinc-300 hover:text-zinc-100 rounded transition-colors"
+          >
+            → {rep.title}
+          </button>
+        ))}
+      </div>
+    </div>
+  );
+}
+
+function ScaleCard({ entry, onPractice }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="p-4 bg-zinc-900 border border-zinc-800 rounded-lg">
@@ -64,13 +86,17 @@ function ScaleCard({ entry }) {
               </span>
             ))}
           </div>
+          <PracticePills
+            repIds={entry.linked_rep_ids}
+            onPractice={onPractice}
+          />
         </div>
       )}
     </div>
   );
 }
 
-function ChordCard({ entry }) {
+function ChordCard({ entry, onPractice }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="p-4 bg-zinc-900 border border-zinc-800 rounded-lg">
@@ -131,13 +157,17 @@ function ChordCard({ entry }) {
               </ul>
             </div>
           )}
+          <PracticePills
+            repIds={entry.linked_rep_ids}
+            onPractice={onPractice}
+          />
         </div>
       )}
     </div>
   );
 }
 
-function RhythmCard({ entry }) {
+function RhythmCard({ entry, onPractice }) {
   const [open, setOpen] = useState(false);
   return (
     <div className="p-4 bg-zinc-900 border border-zinc-800 rounded-lg">
@@ -182,6 +212,10 @@ function RhythmCard({ entry }) {
               ))}
             </ul>
           </div>
+          <PracticePills
+            repIds={entry.linked_rep_ids}
+            onPractice={onPractice}
+          />
         </div>
       )}
     </div>
@@ -454,11 +488,17 @@ export default function Theory() {
       {tab !== "Deep Dives" && (
         <div className="space-y-3">
           {tab === "Scales" &&
-            scales.map((s) => <ScaleCard key={s.id} entry={s} />)}
+            scales.map((s) => (
+              <ScaleCard key={s.id} entry={s} onPractice={handlePractice} />
+            ))}
           {tab === "Chords" &&
-            chords.map((c) => <ChordCard key={c.id} entry={c} />)}
+            chords.map((c) => (
+              <ChordCard key={c.id} entry={c} onPractice={handlePractice} />
+            ))}
           {tab === "Rhythms" &&
-            rhythms.map((r) => <RhythmCard key={r.id} entry={r} />)}
+            rhythms.map((r) => (
+              <RhythmCard key={r.id} entry={r} onPractice={handlePractice} />
+            ))}
         </div>
       )}
 

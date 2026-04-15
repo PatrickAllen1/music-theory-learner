@@ -9,90 +9,112 @@
   "time_sig": "4/4",
   "total_bars": 83,
   "difficulty": "intermediate",
-
   "chord_progression": {
-    "chords": ["Dm", "F", "Bb", "Gm"],
-    "roman_numerals": "i → bIII → bVI → iv",
+    "chords": [
+      "Dm",
+      "F",
+      "Bb",
+      "Gm"
+    ],
+    "roman_numerals": "i \u2192 bIII \u2192 bVI \u2192 iv",
     "loop_length_beats": 16,
-    "implied_by": "bass line — no block chord instrument; harmony implied by Organ Bass, FM Bass, and Pluck melody",
+    "implied_by": "bass line \u2014 no block chord instrument; harmony implied by Organ Bass, FM Bass, and Pluck melody",
     "voicings": {
-      "Dm": ["D3"],
-      "F": ["F3"],
-      "Bb": ["A#3"],
-      "Gm": ["G3"]
+      "Dm": [
+        "D3"
+      ],
+      "F": [
+        "F3"
+      ],
+      "Bb": [
+        "A#3"
+      ],
+      "Gm": [
+        "G3"
+      ]
     },
     "full_melody_voicings": {
-      "over_Dm": ["D4", "A4"],
-      "over_F": ["F3", "C5"],
-      "over_Bb": ["A#3", "F4"],
-      "over_Gm": ["G3", "D4"]
+      "over_Dm": [
+        "D4",
+        "A4"
+      ],
+      "over_F": [
+        "F3",
+        "C5"
+      ],
+      "over_Bb": [
+        "A#3",
+        "F4"
+      ],
+      "over_Gm": [
+        "G3",
+        "D4"
+      ]
     },
-    "theory_notes": "D natural minor: D, E, F, G, A, Bb, C. The bass-implied chord loop i→bIII→bVI→iv (Dm→F→Bb→Gm) is one of the most emotional progressions in soul, R&B, and UK garage. Each chord is 4 beats (one bar), creating a 4-bar cycle. Dm = dark home. F major (bIII) = unexpected brightness, lifts the mood. Bb major (bVI) = the warmth peak — major chord on the flat 6th is the most 'soulful' moment. Gm (iv) = return toward darkness before the loop resets. The Pluck melody outlines these changes note by note: D→A over Dm, F→C over F, Bb→F over Bb, G→D over Gm. This is harmony through melody, not chords — very BL3SS."
+    "theory_notes": "D natural minor: D, E, F, G, A, Bb, C. The bass-implied chord loop i\u2192bIII\u2192bVI\u2192iv (Dm\u2192F\u2192Bb\u2192Gm) is one of the most emotional progressions in soul, R&B, and UK garage. Each chord is 4 beats (one bar), creating a 4-bar cycle. Dm = dark home. F major (bIII) = unexpected brightness, lifts the mood. Bb major (bVI) = the warmth peak \u2014 major chord on the flat 6th is the most 'soulful' moment. Gm (iv) = return toward darkness before the loop resets. The Pluck melody outlines these changes note by note: D\u2192A over Dm, F\u2192C over F, Bb\u2192F over Bb, G\u2192D over Gm. This is harmony through melody, not chords \u2014 very BL3SS."
   },
-
   "structure": [
     {
       "section": "Intro",
-      "bars": "1–8",
-      "description": "Vocal only (bbyclose). No instruments. Sets the emotional tone completely dry — voice and silence."
+      "bars": "1\u20138",
+      "description": "Vocal only (bbyclose). No instruments. Sets the emotional tone completely dry \u2014 voice and silence."
     },
     {
       "section": "Organ Bass Intro",
-      "bars": "9–16",
-      "description": "Organ Bass enters — plays the full chord loop (Dm→F→Bb→Gm). No kick yet. Establishes harmonic identity."
+      "bars": "9\u201316",
+      "description": "Organ Bass enters \u2014 plays the full chord loop (Dm\u2192F\u2192Bb\u2192Gm). No kick yet. Establishes harmonic identity."
     },
     {
       "section": "Build",
-      "bars": "17–24",
-      "description": "Kick intro (sparse pattern, not 4-on-the-floor yet). Open Hat 2 enters. Snare 2 with ghost notes. FX 1 audio at bars 17–25."
+      "bars": "17\u201324",
+      "description": "Kick intro (sparse pattern, not 4-on-the-floor yet). Open Hat 2 enters. Snare 2 with ghost notes. FX 1 audio at bars 17\u201325."
     },
     {
       "section": "Drop 1",
-      "bars": "25–32",
+      "bars": "25\u201332",
       "description": "FM Bass enters (4-on-the-floor bass drive). Kick goes to full 4-on-the-floor (every beat). FX 2 transition hits."
     },
     {
       "section": "Full Drop",
-      "bars": "33–40",
+      "bars": "33\u201340",
       "description": "Clap, Hat (16th-note grid), Open Hat 1 (off-beats), Pluck 1 melody all enter. Full arrangement. FX 1 audio at bar 33."
     },
     {
       "section": "Snare Fill",
-      "bars": "40–41",
+      "bars": "40\u201341",
       "description": "Snare 1 fills (16th-note roll) at bar 40 for transition into bar 41."
     },
     {
       "section": "Drop 2",
-      "bars": "41–48",
-      "description": "Saws 1 enters — adds harmonic colour to the mix. FM Bass + Saws together = warmer, fuller drop. FX 1 at bar 41."
+      "bars": "41\u201348",
+      "description": "Saws 1 enters \u2014 adds harmonic colour to the mix. FM Bass + Saws together = warmer, fuller drop. FX 1 at bar 41."
     },
     {
       "section": "Snare Fill",
-      "bars": "48–49",
+      "bars": "48\u201349",
       "description": "Snare fill again at bar 48 transition."
     },
     {
       "section": "Break",
-      "bars": "49–64",
-      "description": "FM Bass drops. Organ Bass returns (same as bars 9–16). Saws 1 continues for harmonic interest. Pads enter: Pad 3 (bar 49), Pad 1 (bar 53), Pad 2 (bar 56) — layered atmospheric pads building tension. Open Hat 2 re-enters. FX 3 and FX 4 swells. FX 5 drone (bar 57–64)."
+      "bars": "49\u201364",
+      "description": "FM Bass drops. Organ Bass returns (same as bars 9\u201316). Saws 1 continues for harmonic interest. Pads enter: Pad 3 (bar 49), Pad 1 (bar 53), Pad 2 (bar 56) \u2014 layered atmospheric pads building tension. Open Hat 2 re-enters. FX 3 and FX 4 swells. FX 5 drone (bar 57\u201364)."
     },
     {
       "section": "Final Drop",
-      "bars": "65–80",
+      "bars": "65\u201380",
       "description": "Full arrangement returns: FM Bass, Kick (4-on-the-floor), Clap, Hat, Open Hat 1+3, Saws 1+2, Lead (= same notes as Pluck). FX 1 at bar 65. Maximum energy."
     },
     {
       "section": "Outro",
-      "bars": "81–83",
+      "bars": "81\u201383",
       "description": "FX 2 and FX 3 fade. Vocal tail out."
     }
   ],
-
   "tracks": [
     {
       "name": "Kick",
       "type": "MIDI",
-      "role": "Sparse pattern bars 17–24 (intro), full 4-on-the-floor (every beat) from bar 25. C4, velocity 127."
+      "role": "Sparse pattern bars 17\u201324 (intro), full 4-on-the-floor (every beat) from bar 25. C4, velocity 127."
     },
     {
       "name": "Clap",
@@ -112,42 +134,42 @@
     {
       "name": "Open Hat 2",
       "type": "MIDI",
-      "role": "Same off-beat open hat — active in build (bars 17–24) and break (bars 49–64)"
+      "role": "Same off-beat open hat \u2014 active in build (bars 17\u201324) and break (bars 49\u201364)"
     },
     {
       "name": "Open Hat 3",
       "type": "MIDI",
-      "role": "Third open hat layer in final drop (bars 57–64, 65+)"
+      "role": "Third open hat layer in final drop (bars 57\u201364, 65+)"
     },
     {
       "name": "Snare 1",
       "type": "MIDI",
-      "role": "16th-note snare roll fills at bar transitions (bars 40–41, 48–49, 72–73, 80–81)"
+      "role": "16th-note snare roll fills at bar transitions (bars 40\u201341, 48\u201349, 72\u201373, 80\u201381)"
     },
     {
       "name": "Snare 2",
       "type": "MIDI",
-      "role": "Humanised snare with ghost notes — active in build and break. Pattern: strong hits on 2+4, ghost notes at 16th positions between."
+      "role": "Humanised snare with ghost notes \u2014 active in build and break. Pattern: strong hits on 2+4, ghost notes at 16th positions between."
     },
     {
       "name": "Organ Bass",
       "type": "MIDI",
-      "role": "Bass in intro and break (bars 9–17, 17–24, 49–57, 57–64). Plays walking Dm→F→Bb→G pattern with 16th-note articulations. Note range: C3–G3 with D4 accent octave."
+      "role": "Bass in intro and break (bars 9\u201317, 17\u201324, 49\u201357, 57\u201364). Plays walking Dm\u2192F\u2192Bb\u2192G pattern with 16th-note articulations. Note range: C3\u2013G3 with D4 accent octave."
     },
     {
       "name": "FM Bass",
       "type": "MIDI",
-      "role": "Main drop bass (bars 25–49, 65–81). Plays same Dm→F→Bb→Gm root pattern but with tighter 16th-note articulation (each note 0.49 beat duration, 0.5 beat offset). FM synthesis — brighter, more metallic than the Organ Bass."
+      "role": "Main drop bass (bars 25\u201349, 65\u201381). Plays same Dm\u2192F\u2192Bb\u2192Gm root pattern but with tighter 16th-note articulation (each note 0.49 beat duration, 0.5 beat offset). FM synthesis \u2014 brighter, more metallic than the Organ Bass."
     },
     {
       "name": "Pluck 1",
       "type": "MIDI",
-      "role": "Main melodic hook — outlines chord progression note by note: D4→A4 (Dm), F3→C5 (F), Bb3→F4 (Bb), E4→G3→D4 (Gm). Enters bar 33. Creates the track's signature melodic identity."
+      "role": "Main melodic hook \u2014 outlines chord progression note by note: D4\u2192A4 (Dm), F3\u2192C5 (F), Bb3\u2192F4 (Bb), E4\u2192G3\u2192D4 (Gm). Enters bar 33. Creates the track's signature melodic identity."
     },
     {
       "name": "Saws 1",
       "type": "MIDI",
-      "role": "Saw synth — dense 16th-note sustained notes outlining A3, C4, F3 (Am/F chord fragments from D minor). Enters bar 41. Adds harmonic warmth and weight."
+      "role": "Saw synth \u2014 dense 16th-note sustained notes outlining A3, C4, F3 (Am/F chord fragments from D minor). Enters bar 41. Adds harmonic warmth and weight."
     },
     {
       "name": "Saws 2",
@@ -157,23 +179,27 @@
     {
       "name": "Lead",
       "type": "MIDI",
-      "role": "Lead synth in final drop (bars 65–81) — same melody as Pluck 1 but different timbre. Doubles the melodic hook."
+      "role": "Lead synth in final drop (bars 65\u201381) \u2014 same melody as Pluck 1 but different timbre. Doubles the melodic hook."
     },
     {
       "name": "Pad 1",
       "type": "MIDI",
-      "role": "Soft pad — D4 and A4 sustained (bars 53–64). Adds harmonic warmth in break."
+      "role": "Soft pad \u2014 D4 and A4 sustained (bars 53\u201364). Adds harmonic warmth in break."
     },
-    { "name": "Pad 2", "type": "MIDI", "role": "Sub-pad at D3 (bars 56–64)" },
+    {
+      "name": "Pad 2",
+      "type": "MIDI",
+      "role": "Sub-pad at D3 (bars 56\u201364)"
+    },
     {
       "name": "Pad 3",
       "type": "MIDI",
-      "role": "Sustained D3 pad (bars 49–61). Layered with Pad 1 and 2 for break texture."
+      "role": "Sustained D3 pad (bars 49\u201361). Layered with Pad 1 and 2 for break texture."
     },
     {
       "name": "Vocals",
       "type": "AUDIO",
-      "role": "bbyclose vocal — entire track (bars 1–83). Starts dry for 8 bars before any instruments."
+      "role": "bbyclose vocal \u2014 entire track (bars 1\u201383). Starts dry for 8 bars before any instruments."
     },
     {
       "name": "FX 1",
@@ -183,29 +209,28 @@
     {
       "name": "FX 2",
       "type": "AUDIO",
-      "role": "Transition FX — short hits at section changes throughout"
+      "role": "Transition FX \u2014 short hits at section changes throughout"
     },
     {
       "name": "FX 3",
       "type": "AUDIO",
-      "role": "Sweep/riser FX in break (bars 49–51) and outro (bars 81–83)"
+      "role": "Sweep/riser FX in break (bars 49\u201351) and outro (bars 81\u201383)"
     },
     {
       "name": "FX 4",
       "type": "AUDIO",
-      "role": "Sustained build FX in break (bars 49–53)"
+      "role": "Sustained build FX in break (bars 49\u201353)"
     },
     {
       "name": "FX 5",
       "type": "AUDIO",
-      "role": "Drone/texture in second half of break (bars 57–64)"
+      "role": "Drone/texture in second half of break (bars 57\u201364)"
     }
   ],
-
   "drum_pattern": {
     "kick": {
       "note": "C4",
-      "pattern": "4-on-the-floor — beats 1, 2, 3, 4 (every beat) from bar 25. Sparse intro pattern bars 17–24.",
+      "pattern": "4-on-the-floor \u2014 beats 1, 2, 3, 4 (every beat) from bar 25. Sparse intro pattern bars 17\u201324.",
       "velocity": 127
     },
     "clap": {
@@ -216,50 +241,61 @@
     "hat": {
       "note": "C4",
       "pattern": "16th notes with cycling velocity pattern: [93, 110, 127, 113] repeating every 4 16th notes",
-      "velocity_pattern": [93, 110, 127, 113],
+      "velocity_pattern": [
+        93,
+        110,
+        127,
+        113
+      ],
       "note_duration_beats": 0.25
     },
     "open_hat": {
       "note": "C4",
-      "pattern": "Every off-beat — 0.5, 1.5, 2.5, 3.5 per bar (8th-note off-beats)",
+      "pattern": "Every off-beat \u2014 0.5, 1.5, 2.5, 3.5 per bar (8th-note off-beats)",
       "velocity": 100
     }
   },
-
   "bass_pattern": {
-    "notes_used": ["D3", "F3", "G3", "A#3", "C3", "D4"],
+    "notes_used": [
+      "D3",
+      "F3",
+      "G3",
+      "A#3",
+      "C3",
+      "D4"
+    ],
     "key_notes": "D natural minor: D=root, F=b3, G=4, Bb(A#)=b6, C=b7",
     "description": "Bass walks a 4-bar loop (16 beats) through the D minor chord tones: 4 beats on D, 4 beats on F, 4 beats on Bb, 4 beats on G. Each root note is played with 16th-note articulation (3 quick notes per chord = walking triplet feel) plus a D4 octave accent on beat 4 of each bar. Creates rhythmic momentum through rapid repeated notes rather than long holds.",
-    "organ_bass_bar1": "D3×3 (beats 0-3) → D4 accent (beat 3.5) → F3 next bar",
-    "fm_bass_technique": "Same root notes but with each note offset by 0.5 beats and duration 0.49 beats — creates a slight syncopated 'pushing ahead' feel. FM synthesis gives sharper attack than Organ Bass.",
-    "theory_note": "The bass creates the full harmony with no chord instrument — listener implies Dm, F, Bb, Gm from the single notes. This is economy: one MIDI track creates the entire harmonic journey."
+    "organ_bass_bar1": "D3\u00d73 (beats 0-3) \u2192 D4 accent (beat 3.5) \u2192 F3 next bar",
+    "fm_bass_technique": "Same root notes but with each note offset by 0.5 beats and duration 0.49 beats \u2014 creates a slight syncopated 'pushing ahead' feel. FM synthesis gives sharper attack than Organ Bass.",
+    "theory_note": "The bass creates the full harmony with no chord instrument \u2014 listener implies Dm, F, Bb, Gm from the single notes. This is economy: one MIDI track creates the entire harmonic journey."
   },
-
   "key_techniques": [
-    "8-bar vocal-only intro — creates maximum intimacy before any instrument enters",
-    "Harmonic chord loop implied by bass alone — no chord instrument needed",
+    "8-bar vocal-only intro \u2014 creates maximum intimacy before any instrument enters",
+    "Harmonic chord loop implied by bass alone \u2014 no chord instrument needed",
     "16th-note hat velocity cycling [93, 110, 127, 113] creates swinging groove without groove pool setting",
-    "Two bass voices (Organ Bass + FM Bass) cover different sections — Organ in break, FM in drops",
+    "Two bass voices (Organ Bass + FM Bass) cover different sections \u2014 Organ in break, FM in drops",
     "Snare 1 fills (16th-note rolls) used as precise bar-transition triggers",
-    "Pads built up in three layers through the break (Pad 3 → Pad 1 → Pad 2) for progressive build",
+    "Pads built up in three layers through the break (Pad 3 \u2192 Pad 1 \u2192 Pad 2) for progressive build",
     "Lead doubles Pluck melody in final drop for extra weight without new notes",
-    "FX 5 drone sustains through bars 57–64 bridging break to final drop"
+    "FX 5 drone sustains through bars 57\u201364 bridging break to final drop"
   ],
-
-  "theory_notes": "Kisses is built on D natural minor at 142 BPM — the highest BPM of the tracks in this library. The chord loop Dm→F→Bb→Gm (i→bIII→bVI→iv) is all implied by the bass line — no chord instrument plays block chords. Analytically: i (Dm) = home, bIII (F major) = emotional lift, bVI (Bb major) = the peak of warmth, iv (Gm) = gentle pull back. This exact progression (or variations) appears throughout R&B, neo-soul, and UK garage because each step creates forward momentum without needing to 'resolve' — it just loops. The Pluck melody outlines these changes explicitly by landing on the root and 5th of each implied chord. At 142 BPM this feels urgent rather than melancholic — faster BPM transforms the same minor progression into something more driven.",
-
+  "theory_notes": "Kisses is built on D natural minor at 142 BPM \u2014 the highest BPM of the tracks in this library. The chord loop Dm\u2192F\u2192Bb\u2192Gm (i\u2192bIII\u2192bVI\u2192iv) is all implied by the bass line \u2014 no chord instrument plays block chords. Analytically: i (Dm) = home, bIII (F major) = emotional lift, bVI (Bb major) = the peak of warmth, iv (Gm) = gentle pull back. This exact progression (or variations) appears throughout R&B, neo-soul, and UK garage because each step creates forward momentum without needing to 'resolve' \u2014 it just loops. The Pluck melody outlines these changes explicitly by landing on the root and 5th of each implied chord. At 142 BPM this feels urgent rather than melancholic \u2014 faster BPM transforms the same minor progression into something more driven.",
   "spinoff_potential": {
-    "key_changes": ["A minor", "E minor", "G minor"],
-    "bpm_range": "138–148",
+    "key_changes": [
+      "A minor",
+      "E minor",
+      "G minor"
+    ],
+    "bpm_range": "138\u2013148",
     "elements_to_transplant": [
-      "i→bIII→bVI→iv bass-implied chord loop (works in any minor key)",
+      "i\u2192bIII\u2192bVI\u2192iv bass-implied chord loop (works in any minor key)",
       "Vocal-only intro (8+ bars) for maximum intimacy",
       "16th-note hat velocity cycling [93, 110, 127, 113] for swing without groove pool",
       "Two-bass-voice technique (Organ Bass in breaks, FM Bass in drops)",
       "Pluck melody that outlines bass-implied chords note by note"
     ]
   },
-
   "splice_searches": [
     "uk garage bass melody 142bpm",
     "emotional uk garage pluck",
@@ -267,6 +303,18 @@
     "fm bass uk garage",
     "soulful garage female vocal"
   ],
-
-  "guided_build_id": "bl3ss-kisses-recreation"
+  "guided_build_id": "bl3ss-kisses-recreation",
+  "related_content": {
+    "deep_dive_ids": [
+      "bass-implied-harmony",
+      "transposing-concepts"
+    ],
+    "rep_ids": [
+      "rep-13-bass-implied-dmin",
+      "rep-14-bass-implied-gmin"
+    ],
+    "spinoff_ids": [
+      "spinoff-07-bl3ss-full"
+    ]
+  }
 }

@@ -12,7 +12,12 @@
       "Dm in BL3SS Kisses"
     ],
     "in_progressions": ["i chord in minor key", "iv chord", "ii° occasionally"],
-    "analytical_note": "Root + 3 semitones + 7 semitones. The minor 3rd (vs major 3rd at 4 semitones) is what makes it sound dark/sad. Every minor key centers on this chord."
+    "analytical_note": "Root + 3 semitones + 7 semitones. The minor 3rd (vs major 3rd at 4 semitones) is what makes it sound dark/sad. Every minor key centers on this chord.",
+    "linked_rep_ids": [
+      "rep-11-VI-III-i-loop-bbmin",
+      "rep-12-VI-III-i-loop-fmin",
+      "rep-13-bass-implied-dmin"
+    ]
   },
   {
     "id": "major-7",
@@ -29,7 +34,12 @@
       "bVI chord in minor key (e.g. Gbmaj7 in Bb minor)",
       "bIII chord"
     ],
-    "analytical_note": "The major 7th sits 1 semitone below the octave. That tension against the root gives the chord its wistful quality. Kettama's Gbmaj7→Dbmaj→Bbm loop uses this as the 'lift' chord — same function as a bVI."
+    "analytical_note": "The major 7th sits 1 semitone below the octave. That tension against the root gives the chord its wistful quality. Kettama's Gbmaj7→Dbmaj→Bbm loop uses this as the 'lift' chord — same function as a bVI.",
+    "linked_rep_ids": [
+      "rep-11-VI-III-i-loop-bbmin",
+      "rep-12-VI-III-i-loop-fmin",
+      "spinoff-kettama-bbmin-full"
+    ]
   },
   {
     "id": "bVI-lift",
@@ -46,7 +56,12 @@
       "i → v → bVI (IC pattern: Em → Bm → C)",
       "VI → III → i (Kettama: Gbmaj7 → Dbmaj → Bbm)"
     ],
-    "analytical_note": "The bVI is a major chord built on the 6th note of the natural minor scale. In E minor the 6th note is C, so C major is the bVI. It's 'borrowed' — C major isn't diatonic to E minor (C would naturally be minor). The major quality gives the lift."
+    "analytical_note": "The bVI is a major chord built on the 6th note of the natural minor scale. In E minor the 6th note is C, so C major is the bVI. It's 'borrowed' — C major isn't diatonic to E minor (C would naturally be minor). The major quality gives the lift.",
+    "linked_rep_ids": [
+      "rep-08-bVI-lift-emin",
+      "rep-09-bVI-lift-amin",
+      "rep-10-bVI-lift-dmin"
+    ]
   },
   {
     "id": "bass-implied",
@@ -59,7 +74,12 @@
       "BL3SS — Kisses: Dm→F→Bb→Gm bass line implies full chord progression with no chord instrument"
     ],
     "in_progressions": ["i → bIII → bVI → iv (BL3SS: Dm → F → Bb → Gm)"],
-    "analytical_note": "When a bass note moves through D→F→Bb→G, the ear fills in Dm→Fmaj→Bbmaj→Gm even without chords being played. This is how BL3SS creates harmony — two bass tracks (organ + FM) carry all harmonic information. Powerful for minimalist productions."
+    "analytical_note": "When a bass note moves through D→F→Bb→G, the ear fills in Dm→Fmaj→Bbmaj→Gm even without chords being played. This is how BL3SS creates harmony — two bass tracks (organ + FM) carry all harmonic information. Powerful for minimalist productions.",
+    "linked_rep_ids": [
+      "rep-13-bass-implied-dmin",
+      "rep-14-bass-implied-gmin",
+      "spinoff-07-bl3ss-full"
+    ]
   },
   {
     "id": "borrowed-major",
@@ -74,7 +94,8 @@
     "in_progressions": [
       "G#maj → Emaj → Bmaj (V-III-VII in G# minor with all majors)"
     ],
-    "analytical_note": "In G# minor, the natural tonic chord is G#m. Sammy Virji uses G# major instead — the Picardy-third equivalent. All three stab chords are major (G#maj, Emaj, Bmaj), creating an anthemic, triumphant feel despite the minor key context. The raised 3rd (B# = C) on G#maj comes from harmonic minor."
+    "analytical_note": "In G# minor, the natural tonic chord is G#m. Sammy Virji uses G# major instead — the Picardy-third equivalent. All three stab chords are major (G#maj, Emaj, Bmaj), creating an anthemic, triumphant feel despite the minor key context. The raised 3rd (B# = C) on G#maj comes from harmonic minor.",
+    "linked_rep_ids": ["spinoff-06-sammy-full"]
   },
   {
     "id": "suspended",
@@ -89,6 +110,7 @@
       "Used on synth pads to avoid committing to major/minor"
     ],
     "in_progressions": ["Often used as passing chord: Em → Esus4 → Em"],
-    "analytical_note": "Replace the 3rd with a 2nd (sus2) or 4th (sus4). No 3rd = no major/minor identity. Sus chords float harmonically — they want to resolve. Often used in breakdowns to build tension before the drop."
+    "analytical_note": "Replace the 3rd with a 2nd (sus2) or 4th (sus4). No 3rd = no major/minor identity. Sus chords float harmonically — they want to resolve. Often used in breakdowns to build tension before the drop.",
+    "linked_rep_ids": []
   }
 ]

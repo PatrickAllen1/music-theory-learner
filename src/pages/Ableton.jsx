@@ -1,7 +1,10 @@
 import { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { entries } from "../content/cheatsheet";
+import { buildById } from "../content/guided-builds";
 
 export default function Ableton() {
+  const navigate = useNavigate();
   const [query, setQuery] = useState("");
 
   const filtered = entries.filter(
@@ -53,6 +56,27 @@ export default function Ableton() {
                     → {tip}
                   </p>
                 ))}
+              </div>
+            )}
+            {entry.practice_rep_id && buildById[entry.practice_rep_id] && (
+              <div className="mt-4 pt-4 border-t border-zinc-800">
+                <button
+                  onClick={() =>
+                    navigate("/builder", {
+                      state: { buildId: entry.practice_rep_id },
+                    })
+                  }
+                  className="text-xs font-mono text-zinc-100 bg-zinc-700 hover:bg-zinc-600 px-3 py-1.5 rounded transition-colors"
+                >
+                  Try it in a build → {buildById[entry.practice_rep_id].title}
+                </button>
+              </div>
+            )}
+            {!entry.practice_rep_id && entry.practice_hint && (
+              <div className="mt-4 pt-4 border-t border-zinc-800">
+                <p className="text-xs font-mono text-zinc-500">
+                  → Practice: {entry.practice_hint}
+                </p>
               </div>
             )}
           </div>
