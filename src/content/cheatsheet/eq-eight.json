@@ -1,0 +1,30 @@
+{
+  "id": "eq-eight",
+  "title": "EQ Eight — Frequency Carving",
+  "category": "Effects",
+  "tags": [
+    "eq",
+    "eq eight",
+    "frequency",
+    "carving",
+    "mix",
+    "low cut",
+    "high shelf"
+  ],
+  "summary": "Use EQ Eight to carve space in your mix and remove mud. Every track in UK garage needs at least a high-pass filter.",
+  "steps": [
+    "Add EQ Eight to any track you want to shape",
+    "Double-click a band dot to activate it, or click the numbered band buttons at the bottom",
+    "For most non-kick tracks: activate band 1, switch to High Pass (HP), set frequency to 60–120Hz to remove sub rumble",
+    "For hi-hats or cymbals: add a Low Pass (LP) on band 8 around 12–15kHz to soften harsh highs",
+    "To cut mud (200–400Hz): activate a bell band, set to around 300Hz, pull gain down 3–6dB",
+    "Toggle the 'Spectrum' button (bottom right) to see a live frequency display and identify problem frequencies"
+  ],
+  "tips": [
+    "Narrow Q (high value) = surgical cut on a specific frequency. Wide Q = broader, smoother shape",
+    "Cut with EQ, boost with caution — boosts amplify noise too. Prefer narrow boosts under 3dB",
+    "Side-chain EQ: click the small headphone icon to solo the EQ band and hear only that frequency range while sweeping",
+    "On your kick: high-pass around 40Hz, add a slight bell boost at 60–80Hz for punch, notch at 200–300Hz if it sounds boxy"
+  ],
+  "ableton_version_note": "Works in all modern Ableton versions. Spectrum display available in Live 9+"
+}

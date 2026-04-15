@@ -1,0 +1,30 @@
+{
+  "id": "drum-rack",
+  "title": "Drum Rack Setup",
+  "category": "Instruments",
+  "tags": [
+    "drum rack",
+    "drums",
+    "sampler",
+    "simpler",
+    "kit",
+    "velocity",
+    "layers"
+  ],
+  "summary": "Build a Drum Rack from scratch to load individual samples onto pads, control velocity layers, and apply per-pad effects chains.",
+  "steps": [
+    "Drag 'Drum Rack' from Instruments > Drum Rack in the browser into a new MIDI track",
+    "Click a pad to select it, then drag a sample (wav/aiff) from the browser onto that pad — or drag directly onto a pad",
+    "Double-click the pad to open the Simpler inside and adjust sample start point, loop, and pitch",
+    "Repeat for each drum sound: kick on C1, snare/clap on D1, closed hat on F#1, open hat on G#1 (standard GM layout)",
+    "Click the 'Show/Hide Chain List' button (vertical bars icon) to see each pad as a chain — you can add FX per pad here",
+    "In the 'Pad View' (bottom left), set Velocity > Volume to respond to note velocity, or fix volume by removing the velocity mod"
+  ],
+  "tips": [
+    "Right-click a pad > 'Slice to New MIDI Track' to chop a loop and map each slice to its own pad automatically",
+    "Use 'Choke Groups' (the number in the pad view) so open hat chokes closed hat — just like a real hi-hat",
+    "Stack two samples on the same pad using 'Add Chain' in the chain list for layered sounds (e.g. sub + click for kick)",
+    "Hold Ctrl/Cmd when dragging a sample to a pad to replace the existing sample instead of stacking"
+  ],
+  "ableton_version_note": "Drum Rack available since Ableton Live 7. Slicing requires Live Standard or Suite."
+}

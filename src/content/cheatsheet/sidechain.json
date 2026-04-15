@@ -1,0 +1,22 @@
+{
+  "id": "sidechain-compression",
+  "title": "Sidechain Compression",
+  "category": "Effects",
+  "tags": ["compression", "sidechain", "kick", "pump", "duck", "garage"],
+  "summary": "Ducking your pads/bass in time with the kick for that pumping garage feel.",
+  "steps": [
+    "Add a Compressor to the pad or synth track you want to duck",
+    "Click the triangle (sidechain) button in the Compressor header to expand the sidechain section",
+    "Enable the sidechain section by clicking the small power button next to 'Sidechain'",
+    "Set the 'Audio From' dropdown to your kick track (e.g. 'Drum Rack' or '1-Kick')",
+    "Set Ratio to 4:1, Attack to 0.1ms, Release to 100–200ms",
+    "Lower the Threshold until the pad ducks noticeably on each kick hit — watch the gain reduction meter"
+  ],
+  "tips": [
+    "Longer release = slower, breathier pump. Shorter = tighter, more mechanical duck",
+    "For subtle glue compression, use 2:1 ratio. For obvious garage pump, try 8:1 or higher",
+    "If the sidechain is too obvious, automate the dry/wet knob on the compressor to only activate on drops",
+    "Try routing a ghost kick (inaudible, volume all the way down) as the sidechain source for more precise triggering without drum bleed"
+  ],
+  "ableton_version_note": "Works in Ableton Live 10+"
+}
