@@ -1,0 +1,100 @@
+{
+  "id": "rep-12-VI-III-i-loop-fmin",
+  "title": "VI→III→i Loop — F Minor",
+  "build_type": "rep",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 35,
+  "bpm": 140,
+  "key": "F minor",
+  "source_track_id": "kettama-it-gets-better",
+  "spinoff_level": null,
+  "description": "VI→III→i in F minor — Dbmaj7 → Abmaj → Fm. You derive every chord name from the F minor scale using the count-from-root method, rather than memorising. This is the method that makes any key accessible.",
+  "what_youll_learn": [
+    "Deriving VI→III→i chord names from F minor using semitone counting",
+    "How Dbmaj7 → Abmaj → Fm voicings differ from the Bb minor versions",
+    "The method (count from root) over the result (specific chord names)",
+    "How the same progression in a different key retains the same emotional function"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Derive the F minor chord names — don't look them up",
+      "category": "ableton",
+      "instruction": "Before opening Ableton: work out the VI→III→i chord names in F minor. Root = F. VI = 9 semitones up from F (count: F→Gb→G→Ab→A→Bb→B→C→Db→D = 9). VI = Db major. III = 3 semitones up from F = Ab major. i = Fm. Write down: Dbmaj7 → Abmaj → Fm. Now open Ableton, BPM 140, tracks DRUMS/BASS/PAD.",
+      "why": "Working out the chord names before opening Ableton is the entire point. If you look them up first, you've skipped the method. The method is: root + semitone counting. That method works in any key. The specific chords are just the output.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Verify: Db major has 3 notes: Db, F, Ab. F minor has 3 notes: F, Ab, C. Abmaj has 3 notes: Ab, C, Eb. All of these notes are in the F natural minor scale (F, G, Ab, Bb, C, Db, Eb). You can verify any chord is in-key by checking its notes against the scale."
+    },
+    {
+      "id": 2,
+      "title": "Program drums",
+      "category": "drums",
+      "instruction": "Copy 4-on-floor drum pattern at 140 BPM from rep-11. Identical setup.",
+      "why": "Same tempo, same drums. The only thing changing from rep-11 is the key. This isolates the key variable.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Copy the whole drum track from rep-11 if possible."
+    },
+    {
+      "id": 3,
+      "title": "Program F minor bass roots",
+      "category": "bass",
+      "instruction": "Sub bass. 4-bar clip: bars 1–2 Db1 (VI root), bar 3 Ab0/Ab1 (III root), bar 4 F1 (i root). Hold each root for its full chord duration. This is the VI→III→i root movement in F minor.",
+      "why": "Same relative motion as rep-11 but at different pitches. Db1 is slightly higher than Gb1 — the Kettama rep. F1 is higher than Bb0. The progression feels similar in quality but sits at a different register.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Compare: Bb minor roots (Gb1→Db1→Bb0) vs F minor roots (Db1→Ab1→F1). The F minor roots are 7 semitones higher. At 140 BPM both feel equally driving."
+    },
+    {
+      "id": 4,
+      "title": "Voice the Dbmaj7 chord",
+      "category": "ableton",
+      "instruction": "Serum chord pad on PAD. Dbmaj7 voicing: Db3, F3, Ab3, C4. Major 7th (C) on top. Spread across 1.5 octaves. Hold for 2 full bars.",
+      "why": "Dbmaj7 = Db, F, Ab, C. The voicing puts C4 on top (major 7th). This is the same structural decision as Gbmaj7 in rep-11 — 7th on top, spread voicing, nothing below C3.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Check: is Db3 your lowest pad note? Good. Is C4 your highest? Good. Spread: Db3 to C4 = approximately 1 octave. This is slightly narrower than Gbmaj7's spread but still a spread voicing."
+    },
+    {
+      "id": 5,
+      "title": "Voice Abmaj and Fm",
+      "category": "ableton",
+      "instruction": "Bar 3: Abmaj — Ab3, C4, Eb4. Bar 4: Fm — F3, Ab3, C4. Notice Fm shares Ab3 and C4 with Abmaj — those two notes stay as the chord resolves to the tonic. Hold each for 1 bar.",
+      "why": "The common tones between Abmaj and Fm (Ab and C) make the final chord change smooth. This is the same common tone principle as in rep-11 — the progression moves but something familiar remains in place.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Listen to bar 3 → bar 4 transition. Ab and C stay. F3 arrives as the new root below them on bar 4. The bass confirms F by moving to F1. Together they create an unambiguous tonic arrival."
+    },
+    {
+      "id": 6,
+      "title": "Apply sidechain + reverb (full setup from memory)",
+      "category": "ableton",
+      "instruction": "Without referring to previous reps: set up kick sidechain on PAD (ratio 6:1, attack 0.5ms, release 300ms), reverb return (HP 200Hz, decay 4s, pre-delay 20ms), pad send at -10dB, EQ pad HP at 130Hz. This should take under 3 minutes.",
+      "why": "By rep-12 this is the standard garage pad setup. It should be muscle memory. If it takes more than 5 minutes you need to revisit reps 08–11.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Time yourself: sidechain setup, reverb return creation, EQ. Target: under 3 minutes total."
+    },
+    {
+      "id": 7,
+      "title": "Compare F minor vs Bb minor side by side",
+      "category": "ableton",
+      "instruction": "Export this loop. Play rep-11 (Bb minor) and rep-12 (F minor) back to back. Listen for: the emotional similarity (both use VI→III→i, both have the same pump and reverb), the timbral difference (Db/Ab/F vs Gb/Db/Bb — different specific pitches), the register difference (F minor sits slightly higher).",
+      "why": "This comparison confirms that you've transposed the technique correctly. Both loops should feel like they come from the same musical world — same progression, same production approach, different key. If one sounds fundamentally different, there's a voicing or timing error.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If they sound too similar (boring) rather than similar-but-distinct, you've got it right. The technique is the same — the key creates the distinction."
+    },
+    {
+      "id": 8,
+      "title": "Transpose the full Bb minor rep to F minor using Shift+Arrow",
+      "category": "ableton",
+      "instruction": "Optional: copy all MIDI clips from rep-11. Select all pad notes (Cmd+A). Press Shift+Up arrow 7 times (7 semitones up = a perfect fifth = Bb to F). Compare this transposed version against your hand-built version from step 3–5. They should produce identical or near-identical results.",
+      "why": "This verifies your hand-built voicings are correct. If the Shift+Arrow transposition and your hand-built version produce the same chords, your count-from-root method was accurate. If they differ, work out which notes are correct and why.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "7 semitones = perfect fifth = Bb to F. This is a useful transposition to memorise: +7 semitones moves any pattern up a fifth."
+    }
+  ]
+}

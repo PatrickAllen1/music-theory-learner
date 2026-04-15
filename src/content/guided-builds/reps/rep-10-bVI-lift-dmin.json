@@ -1,0 +1,90 @@
+{
+  "id": "rep-10-bVI-lift-dmin",
+  "title": "bVI Lift Chord — D Minor",
+  "build_type": "rep",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 30,
+  "bpm": 132,
+  "key": "D minor",
+  "source_track_id": "interplanetary-criminal-slow-burner",
+  "spinoff_level": null,
+  "description": "bVI lift in D minor — bVI is Bb major. This is the third and final bVI rep. Bb major appears in both this rep and in Kettama's VI→III→i loop (where Bb minor is the tonic). Cross-referencing between techniques reveals the shared harmonic vocabulary.",
+  "what_youll_learn": [
+    "bVI in D minor is Bb major (8 semitones up from D)",
+    "How Bb major appears in two completely different contexts: bVI lift in D minor AND VI chord in Bb minor",
+    "Cross-referencing bVI lift with the VI→III→i loop — same chord, different function",
+    "Third application of sidechain + reverb workflow from memory"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up project",
+      "category": "ableton",
+      "instruction": "New project, BPM 132, tracks DRUMS/BASS/PAD. Copy drum pattern from rep-08/09. Save as 'rep-10-bVI-lift-dmin'.",
+      "why": "132 BPM. D minor at 132 is heavier and darker than A minor at 134 — lower root, same tempo.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Third bVI rep. The setup should feel automatic now. Focus your attention on the cross-referencing step — that's the new learning here."
+    },
+    {
+      "id": 2,
+      "title": "Dm bass line with Bb root on bar 3",
+      "category": "bass",
+      "instruction": "Sub bass. 8-bar clip: bars 1–2 D1, bar 3 Bb0 or Bb1 (bVI of D minor — count 8 semitones up from D: D→Eb→E→F→Gb→G→Ab→A→Bb), bar 4 A1 (the 5th of Dm), repeat. Velocities: D1 at 90, Bb1 at 85.",
+      "why": "Bb is the bVI of D minor. The bass following root→bVI→5th is a classic garage bass movement — it implies the chord changes clearly while moving through only three notes.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Bb1 is a black key. In the piano roll, count up from D: D, Eb, E, F, Gb, G, Ab, A, Bb = 8 semitones. Alternatively: Bb is the note immediately to the left of B on the keyboard."
+    },
+    {
+      "id": 3,
+      "title": "Program Dm and Bb major pad chords",
+      "category": "ableton",
+      "instruction": "Load chord pad on PAD. Bars 1–2: Dm — D3, F3, A3. Bar 3: Bb major — Bb3, D4, F4. Bar 4: A major — A3, C#4, E4 (the V chord in D minor creates strong pull back to Dm). Bars 5–8 repeat.",
+      "why": "Bb major is the bVI lift. The V chord (A major) on bar 4 is borrowed from D harmonic minor — it has a raised 7th (C#) that creates a strong pull back to Dm. This is an optional detail: you could also use Am (natural minor V) for a gentler feel.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Listen carefully to bar 3. Bb major with D4 and F4 on top. Notice that F4 appears in this chord — F is also the top note you've been using for Gbmaj7 in the Kettama rep. The note F4 carries warmth in multiple chord contexts."
+    },
+    {
+      "id": 4,
+      "title": "Cross-reference: Bb major as bVI vs as VI in Bb minor",
+      "category": "ableton",
+      "instruction": "While your Dm bVI loop plays, note: the Bb major chord you're using as a lift chord in D minor is the SAME chord that appears as the VI in Kettama's Bb minor progression (where it's spelled Gbmaj7/Bbmaj depending on enharmonic context). Open the VI→III→i deep dive in Theory to confirm. This is not a coincidence — Bb major has the same notes regardless of context.",
+      "why": "This cross-referencing reveals that garage harmony uses a small vocabulary of chords in different functional roles. Bb major is a lift (bVI in Dm), a launch chord (VI in Bbm). The same chord. Different emotional context. Understanding this prevents you from treating each technique as isolated — they're all part of the same harmonic world.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Bb major = Bb, D, F. Gbmaj7 = Gb, Bb, Db, F. They share Bb and F — hence the similar warmth. The added major 7th (Db) in Gbmaj7 is what gives it extra shimmer."
+    },
+    {
+      "id": 5,
+      "title": "Apply sidechain + reverb (from memory)",
+      "category": "ableton",
+      "instruction": "Apply the sidechain and reverb setup from rep-08 and rep-09. Compressor on PAD, kick sidechain, ratio 3:1, attack 2ms, release 200ms. Reverb return with HP at 200Hz, Decay 3.5s. EQ pad with HP at 130Hz. Do this without referring to the previous reps — try from memory.",
+      "why": "By rep-10 this setup should be memorised. If you have to look it up, review rep-08 step 6 and 7 once, then set it by memory here. The goal is for this to become automatic — a standard setup you apply without thinking.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "If you can set up sidechain and reverb send from memory in under 2 minutes, you've internalised the technique. Time yourself."
+    },
+    {
+      "id": 6,
+      "title": "Three-key bVI comparison",
+      "category": "ableton",
+      "instruction": "You now have three bVI lift loops: E minor (C major lift), A minor (F major lift), D minor (Bb major lift). Arrange all three as back-to-back audio exports or MIDI clips in a new session. Listen to all three in sequence. Notice the common quality (brightness arriving at bar 3) and the different colour (C, F, Bb each have their own character).",
+      "why": "This is the completion of the bVI trilogy. You've heard the same technique in three keys at three different registers. The structural function (lift in bar 3) is consistent. The emotional colour is key-dependent. This is what understanding a technique looks like — not memorising one instance, but recognising the pattern in multiple contexts.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the three lifts sound similar but different, you've got it. If they sound like three unrelated things, revisit the cross-reference step — the common pattern is the bVI interval, not the specific notes."
+    },
+    {
+      "id": 7,
+      "title": "Export and close",
+      "category": "mix",
+      "instruction": "Set standard levels (kick 0dB, bass -3dB, pad -6dB, hats -9dB). Export 30 seconds. Save the session.",
+      "why": "Consistent export standards across all three bVI reps means you can reference them in future sessions.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "File these three exports in a folder called 'bVI-trilogy'. When you work on your own tracks and want to use a bVI lift, these are your reference sounds."
+    }
+  ]
+}

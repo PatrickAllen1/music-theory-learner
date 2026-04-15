@@ -1,0 +1,90 @@
+{
+  "id": "rep-09-bVI-lift-amin",
+  "title": "bVI Lift Chord — A Minor",
+  "build_type": "rep",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 30,
+  "bpm": 134,
+  "key": "A minor",
+  "source_track_id": "interplanetary-criminal-slow-burner",
+  "spinoff_level": null,
+  "description": "The bVI lift in A minor — bVI is F major. Same technique as rep-08, new key. F major in A minor feels slightly warmer and more melancholic than C major in E minor — same interval relationship, different emotional colour.",
+  "what_youll_learn": [
+    "bVI in A minor is F major (8 semitones up from A)",
+    "How F major creates a different emotional colour than C major despite the same interval",
+    "How to voice Am and F major pads in the D3–F4 register",
+    "Applying sidechain and reverb from rep-08 without re-learning them"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up project and drums",
+      "category": "ableton",
+      "instruction": "New project, BPM 134, tracks DRUMS/BASS/PAD. Copy drum pattern from rep-08 (4-on-floor + open hat on 2.5). Save as 'rep-09-bVI-lift-amin'.",
+      "why": "134 BPM, slightly faster. A minor sits a fourth above E minor — the higher root and faster tempo give this rep a more restless feeling than rep-08.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Copy the Drum Rack device and MIDI clip directly from rep-08 if possible. You're reusing the tool, not relearning it."
+    },
+    {
+      "id": 2,
+      "title": "Program Am bass line with bVI root",
+      "category": "bass",
+      "instruction": "Sub bass on BASS. 8-bar clip: bars 1–2 A1, bar 3 F1 (bVI root — 8 semitones below A2, or count: A→Bb→B→C→Db→D→Eb→E→F = 8 semitones down), bar 4 E1 (the 5th — creates movement back to Am), bars 5–8 repeat.",
+      "why": "F1 is the bVI root in A minor. The bass moving from A to F and back is exactly the same relative motion as E to C in rep-08 — 8 semitones up to bVI. The lower pitch of F creates more weight.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Count up from A: A=0, Bb=1, B=2, C=3, Db=4, D=5, Eb=6, E=7, F=8. F is 8 semitones above A. In the bass you play it an octave down: F1."
+    },
+    {
+      "id": 3,
+      "title": "Program Am and F major pad chords",
+      "category": "ableton",
+      "instruction": "Load Serum chord pad on PAD. 8-bar clip. Bars 1–2: Am voicing — A3, C4, E4. Bar 3: F major voicing — F3, A3, C4. Bar 4: Em voicing — E3, G3, B3 (the v chord, sets up return to Am). Bars 5–8 repeat. Slow attack 300ms, release 1200ms.",
+      "why": "Am→F→Em→Am is a full chord loop. The F (bVI) arrives in bar 3. Note that both Am and F major share the note A — this common tone makes the transition between them smooth. Your ear hears a chord change while something familiar remains in place.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Notice F3 is the lowest pad note on bar 3. Keep it above C3 to avoid mud. The voicing F3, A3, C4 is spread over a 5th — correct for garage pads."
+    },
+    {
+      "id": 4,
+      "title": "Apply sidechain and reverb send",
+      "category": "ableton",
+      "instruction": "Add Compressor to PAD with kick sidechain: ratio 3:1, attack 2ms, release 200ms, threshold for 4–6dB GR. Create reverb return (HP at 200Hz, Decay 3.5s, Pre-delay 15ms), send PAD at -12dB. EQ PAD: HP at 130Hz.",
+      "why": "Same setup as rep-08. You're not learning the technique — you're applying it to confirm it works in a different key. The sidechain pump feels the same regardless of key.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "This step should be faster than rep-08 since you know the setup. Focus on listening to whether the pump feels right in A minor — the bVI lift should still feel like a moment of brightness despite the different key."
+    },
+    {
+      "id": 5,
+      "title": "Compare: C major (E minor) vs F major (A minor)",
+      "category": "ableton",
+      "instruction": "With both rep-08 and rep-09 running (or bounced audio), alternate between the two. Listen specifically to bar 3 in each — the bVI lift bar. Describe in one word what C major (rep-08) feels like vs what F major (rep-09) feels like.",
+      "why": "C major in E minor tends to feel like sudden brightness or hope. F major in A minor often feels warmer, more melancholic, or wistful. Same interval, different emotional colour — because the specific pitches involved (C, E, G vs F, A, C) have their own timbral character regardless of function.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Descriptions will vary. Common: C in Em = bright/hopeful. F in Am = warm/bittersweet. Neither is more correct. The point is that the technique (bVI lift) creates a consistent structural function while the specific key produces distinct emotional flavour."
+    },
+    {
+      "id": 6,
+      "title": "Try the lift in different bar positions",
+      "category": "ableton",
+      "instruction": "Duplicate your 8-bar pad clip. In version B, move the F major chord to bar 2 instead of bar 3. In version C, move it to bar 4. Loop each version for 30 seconds. Which position feels most satisfying?",
+      "why": "Bar 3 of a 4-bar loop is the classic bVI position. Bar 2 creates the lift too early — before the minor has settled. Bar 4 creates the lift right before the loop point — which feels like a breath or a last moment of brightness before the minor returns.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Some producers prefer the bVI on bar 2 for a more urgent feel. The 'correct' answer is whichever position the loop tells you."
+    },
+    {
+      "id": 7,
+      "title": "Final balance and export",
+      "category": "mix",
+      "instruction": "Set levels: kick 0dB, bass -3dB, pad -6dB, hats -9dB. Export 30s. Listen on phone.",
+      "why": "Consistent mix targets across reps means you can compare them accurately. If all reps use the same starting levels, any emotional difference is from the music, not from one being louder.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Save both rep-08 and rep-09 exports. When you work on spinoffs and originals, you'll have two reference loops you can pull from."
+    }
+  ]
+}

@@ -1,0 +1,120 @@
+{
+  "id": "rep-11-VI-III-i-loop-bbmin",
+  "title": "VI→III→i Loop — Bb Minor (Kettama)",
+  "build_type": "rep",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 40,
+  "bpm": 140,
+  "key": "Bb minor",
+  "source_track_id": "kettama-it-gets-better",
+  "spinoff_level": null,
+  "description": "Build Kettama's complete VI→III→i chord loop in Bb minor using Serum V2. The three chords: Gbmaj7 (2 bars), Dbmaj (1 bar), Bbm (1 bar). Full sidechain, reverb, and bass root movement. This is the heart of the Kettama spinoff.",
+  "what_youll_learn": [
+    "How to voice all three VI→III→i chords in the correct register",
+    "The chord rhythm: Gbmaj7 × 2 bars, Dbmaj and Bbm × 1 bar each",
+    "How the bass roots confirm each chord change",
+    "How to connect Theory → Builder: these chords are from the chord-voicing deep dive"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up the project",
+      "category": "ableton",
+      "instruction": "New project. BPM 140. Tracks: DRUMS, BASS (sub bass), PAD (Serum chord pad). Save as 'rep-11-VI-III-i-bbmin'. Load your Serum chord pad patch from rep-serum-chord-pad.",
+      "why": "140 BPM is Kettama's tempo. You've built this pad in rep-serum-chord-pad — now you're using it in a musical context.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Load the pad patch you built in rep-serum-chord-pad. Don't use a preset — you understand every parameter in your own patch."
+    },
+    {
+      "id": 2,
+      "title": "Program 4-on-floor drums at 140 BPM",
+      "category": "drums",
+      "instruction": "Copy your standard drum pattern. At 140 BPM the groove will feel slightly more urgent than at 132. Adjust hat velocity down by 5 (to 65) to keep them from dominating at the higher tempo.",
+      "why": "140 BPM makes the kick land faster — the groove becomes more driving. Lowering hat velocity compensates so they don't feel rushed.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "At 140 BPM, 4-on-floor kicks arrive every 429ms vs 454ms at 132. The difference feels significant — more relentless, which fits the Kettama emotional register."
+    },
+    {
+      "id": 3,
+      "title": "Program the VI→III→i chord rhythm",
+      "category": "ableton",
+      "instruction": "Create a 4-bar pad MIDI clip. Chord rhythm: Bars 1–2: Gbmaj7 — Gb3, Bb3, Db4, F4 (held 2 full bars). Bar 3: Dbmaj — Db3, F3, Ab3. Bar 4: Bbm — Bb3, Db4, F4. Hold each chord for its full duration. Set all notes to velocity 85.",
+      "why": "Gbmaj7 gets 2 bars because it's the most emotionally loaded chord — the brightness needs time. Dbmaj and Bbm get 1 bar each. The loop always starts with Gbmaj7, giving the listener a moment of light before moving through the progression and returning.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Notice that Bb3 and Db4 and F4 appear in both Gbmaj7 and Bbm — these are the common tones. When the chord changes from Gbmaj7 to Bbm, those notes staying in place is what makes the transition feel smooth."
+    },
+    {
+      "id": 4,
+      "title": "Program the bass root movement",
+      "category": "bass",
+      "instruction": "Sub bass on BASS. 4-bar clip: bars 1–2 Gb1, bar 3 Db1, bar 4 Bb0 (or Bb1). Each root held for its full chord duration. This is the VI→III→i root movement: Gb→Db→Bb.",
+      "why": "The bass confirms each chord change with its root. Even though the pad voices the full chord, the bass moving to Gb, Db, and Bb tells the listener exactly what chord is happening. Roots in the bass = harmonic clarity.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Gb1 is below E1 (the lowest note in most reps). Make sure your MIDI clip scrolls down far enough. Gb1 = 42Hz. Bb0 = 29Hz — sub-bass range, felt rather than heard on most systems."
+    },
+    {
+      "id": 5,
+      "title": "Sidechain pad to kick",
+      "category": "ableton",
+      "instruction": "Add Compressor to PAD. Sidechain from DRUMS group. Ratio 6:1 (stronger than bVI reps — Kettama's pump is pronounced), attack 0.5ms, release 300ms. Threshold for 6–8dB GR. The pad should pump hard on each kick but recover quickly.",
+      "why": "Kettama uses a strong sidechain pump — it's a defining character of the track. Ratio 6:1 with fast attack and moderate release creates the audible breath-and-return effect. The pad ducks deep on each kick then rushes back up.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Too much sidechain (threshold too low or ratio too high) makes the pad disappear on every kick. You should hear the chord during the attack of each kick, then feel it pulse back. The pump should feel rhythmic, not destructive."
+    },
+    {
+      "id": 6,
+      "title": "Reverb send",
+      "category": "ableton",
+      "instruction": "Create reverb return. HP at 200Hz, Decay 4s (longer than previous reps — Kettama's pads ring long), Pre-delay 20ms. Send PAD at -10dB. Send clap at -16dB.",
+      "why": "4 second reverb at 140 BPM means the tail of each chord lasts over 9 beats — chord notes are still ringing when the next chord starts. This is intentional: the overlap between chords creates the lush, blended quality.",
+      "ableton_cheatsheet_id": "reverb-send",
+      "splice_search": null,
+      "tip": "At -10dB send the reverb is prominent. If it feels too wet, reduce to -14dB. The Kettama sound has very present reverb — more than you might expect."
+    },
+    {
+      "id": 7,
+      "title": "EQ pad + bass",
+      "category": "mix",
+      "instruction": "PAD: EQ Eight, HP at 130Hz, gentle high shelf +1.5dB at 8kHz. BASS: EQ Eight, HP at 30Hz, light dip at 65Hz (-1.5dB) to give kick punch room.",
+      "why": "HP pad at 130Hz: leaves bass room. High shelf on pad: adds air that comes through the reverb. HP bass at 30Hz: removes sub-sub rumble. 65Hz dip on bass: the Gb1 fundamental sits near 46Hz — lower than the kick's 65Hz punch, so there's less conflict than in E minor reps. But check with your ears.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "Gb1 fundamental is around 46Hz. Db1 is 34Hz. Bb0 is 29Hz. These are very low fundamentals. Make sure your sub bass patch isn't losing audible content — add the Saturator from rep-serum-sub-bass if the sub feels weak."
+    },
+    {
+      "id": 8,
+      "title": "Compare against Kettama reference",
+      "category": "mix",
+      "instruction": "Open Kettama — It Gets Better in a player at the same volume. Play your loop. Play Kettama at ~0:32 (the drop). Switch between them 3 times. What's different: depth of pad reverb, pump intensity, bass weight. Adjust to close the gap.",
+      "why": "This is the rep completion benchmark. Your loop should feel emotionally similar to the reference — same progression, similar depth, similar pump. It won't be identical (your patch, your samples, your mix). But it should feel like the same world.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Kettama's pad sits slightly further back in the mix than most beginners expect — more reverb, slightly lower fader. If yours sounds closer/dryer than the reference, increase the reverb send."
+    },
+    {
+      "id": 9,
+      "title": "Arrangement hint: which chord starts the drop?",
+      "category": "ableton",
+      "instruction": "In Kettama and most VI→III→i tracks, the drop starts on bar 1 of the Gbmaj7 chord. Try starting the drop on Bbm instead (the tonic). Loop from bar 4. How does the emotional feel change? Which entry point feels more powerful?",
+      "why": "Starting the drop on the VI chord (Gbmaj7) gives the immediate brightness and lift — maximum impact at the downbeat. Starting on the i chord (Bbm) gives a darker, more grounded drop. Kettama uses the VI entry. Your choice on your track.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "This decision has a huge effect on the emotional character of the drop. Try both. Listen to the difference with the full loop running, not in silence."
+    },
+    {
+      "id": 10,
+      "title": "Export and compare with rep-08",
+      "category": "mix",
+      "instruction": "Final levels: kick 0dB, bass -3dB, pad -5dB. Export 30 seconds. Then play rep-08 (bVI lift, E minor) and rep-11 (VI→III→i, Bb minor) back to back. Both use multiple chords. Both use sidechain pump. Describe how the emotional arc of each loop differs.",
+      "why": "Rep-08 has one moment of brightness (the bVI lift). Rep-11 has a cycle of brightness and resolution — it moves from VI to tonic and loops. Rep-08 feels like a flash. Rep-11 feels like a journey. These are two different harmonic strategies.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If rep-11 feels more 'complete' than rep-08, that's because the VI→III→i has a clear tonal journey (major → intermediate → tonic minor) rather than just a colour shift."
+    }
+  ]
+}

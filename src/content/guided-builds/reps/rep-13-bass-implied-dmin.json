@@ -1,0 +1,120 @@
+{
+  "id": "rep-13-bass-implied-dmin",
+  "title": "Bass-Implied Harmony — D Minor",
+  "build_type": "rep",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 35,
+  "bpm": 130,
+  "key": "D minor",
+  "source_track_id": "bl3ss-deeper",
+  "spinoff_level": null,
+  "description": "BL3SS technique: sub bass roots only carry the harmony — no chord pad. i→bIII→bVI→iv in D minor (Dm→F→Bb→Gm roots). The ear fills in the implied chords from the bass movement alone. Final step adds a ghost pad at -18dB to hear how little you actually need.",
+  "what_youll_learn": [
+    "How bass roots imply full chord changes without any pad",
+    "i→bIII→bVI→iv root movement in D minor: D→F→Bb→G",
+    "How note length and velocity make bass-only sound harmonically full",
+    "How little pad you actually need once the bass is doing harmonic work"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up project — bass-only intentionally",
+      "category": "ableton",
+      "instruction": "New project. BPM 130 (BL3SS is slower — space is part of the sound). Create only TWO tracks: DRUMS and BASS. No pad track yet. Save as 'rep-13-bass-implied-dmin'. The absence of a pad track is a decision, not an oversight.",
+      "why": "130 BPM with only drums and bass forces you to hear whether the bass is carrying the harmony on its own. If it doesn't feel harmonically coherent without a pad, the bass line needs work.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Resist the urge to add a pad. The entire rep proves that you don't need one. If the harmony feels incomplete at the end, that's useful information about what the pad actually contributes."
+    },
+    {
+      "id": 2,
+      "title": "Program sparse drums",
+      "category": "drums",
+      "instruction": "Load Drum Rack on DRUMS. Program a minimal pattern: kick on beats 1 and 3 only (no beat 2, no beat 4 kick), clap on beat 3 (once per bar), sparse off-beat closed hats (4 per bar, not 8). Low velocities throughout: kick 90, clap 80, hats 60. 8-bar clip.",
+      "why": "BL3SS uses minimal, spacious drums. Fewer drum hits = more space for the bass to breathe. The kick on 1 and 3 (not 4-on-floor) gives the groove a heavier, half-time feel that fits the bass-implied harmonic approach.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "deep minimal garage kick",
+      "tip": "This is the most minimal drum pattern in the rep series so far. The space between hits is part of the groove. Don't fill it in — let it breathe."
+    },
+    {
+      "id": 3,
+      "title": "Derive the D minor i→bIII→bVI→iv roots",
+      "category": "ableton",
+      "instruction": "Before programming: work out the roots. Root = D. bIII = 3 semitones up = F. bVI = 8 semitones up = Bb. iv = 5 semitones up = G (Gm). The progression: Dm → F → Bb → Gm. Root movement: D → F → Bb → G. Write these down. These are the only four notes in the bass line.",
+      "why": "i→bIII→bVI→iv is one of the most emotionally complete root movements in minor keys. Each step moves away from the tonic and returns. D (dark ground) → F (slight lift) → Bb (furthest from tonic, most tension) → G (suspension before return).",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Verify: bIII of D = F (3 semitones). bVI of D = Bb (8 semitones). iv of D = G (5 semitones). G minor is the iv chord: G, Bb, D — all in D natural minor scale."
+    },
+    {
+      "id": 4,
+      "title": "Program the bass root movement",
+      "category": "bass",
+      "instruction": "Load sub bass (rep-serum-sub-bass settings). 4-bar clip: Bar 1 — D1 for 3 beats (long hold), rest beat 4. Bar 2 — F1 for 3 beats, rest beat 4. Bar 3 — Bb0/Bb1 for 3 beats, rest beat 4. Bar 4 — G1 for 2 beats, D1 for 2 beats (the return to tonic starts early). Velocities: D1 at 95, F1 at 88, Bb1 at 92, G1 at 85. Repeat for 8 bars.",
+      "why": "Long held notes (3 beats) give each root time to register as a harmonic arrival. The rest on beat 4 creates space — the next root arrives into silence, which makes each chord change feel intentional. G1 → D1 in bar 4 reinforces the resolution back to the tonic.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "The beat-4 rest is key. Without it the progression sounds like a continuous bass line. With the rest, each root arrival is an event — the silence before it creates anticipation."
+    },
+    {
+      "id": 5,
+      "title": "Loop and hear the implied harmony",
+      "category": "ableton",
+      "instruction": "Loop the 8-bar drums + bass. Close your eyes and listen for 30 seconds. As each bass note arrives, try to hear the implied chord above it: D = Dm, F = F major or Fm, Bb = Bb major, G = Gm. The ear fills in chord tones even when only the root is present.",
+      "why": "This is the core lesson of the rep: harmonic implication. The bass is playing single notes. Your ear is hearing chord changes. The brain constructs the absent harmonic context from the root alone plus memory of how those roots sound in minor keys.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If you can't hear the implied chords yet, hum a chord above each bass note: hum a minor third above D (= F), above F (= Ab or A), above Bb (= Db or D), above G (= Bb). The hum is your ear filling in what the bass implies."
+    },
+    {
+      "id": 6,
+      "title": "Shape the bass for harmonic fullness",
+      "category": "bass",
+      "instruction": "Add Saturator to the BASS track: Drive 20%, Soft Clip, Dry/Wet 50%. This adds upper harmonics that make the bass richer — the 2nd and 3rd harmonics above each root create implied chord tones. Play the loop. Hear how the bass sounds more 'chordal' with saturation.",
+      "why": "A pure sine wave has no harmonics — just the fundamental. Saturation adds the 2nd harmonic (an octave up) and 3rd harmonic (an octave + fifth up). These harmonics give each bass note a more complete sound and help the ear hear the implied chord.",
+      "ableton_cheatsheet_id": "saturator",
+      "splice_search": null,
+      "tip": "Toggle the Saturator on/off. With it off the bass feels thin and abstract. With it on the bass feels full and harmonically present. This is why BL3SS tracks sound harmonically rich despite having minimal pad content."
+    },
+    {
+      "id": 7,
+      "title": "Add Utility mono + EQ",
+      "category": "mix",
+      "instruction": "Add Utility after Saturator: Width 0% (mono). Add EQ Eight: HP at 30Hz. The bass should be centred, clean, and punchy. Set bass level to -2dB (louder than in previous reps — the bass is carrying more harmonic weight here).",
+      "why": "With no pad, the bass is the harmonic anchor. It earns a slightly higher place in the mix. -2dB vs -3dB is a small change but gives the bass the weight it needs to carry the whole track.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "Check on phone speakers. On a small speaker the bass will lose sub content — only the Saturator-added harmonics remain. Listen to whether the implied harmony still reads on phone speakers. It should."
+    },
+    {
+      "id": 8,
+      "title": "Add a ghost pad at -18dB",
+      "category": "ableton",
+      "instruction": "Create a PAD track. Load your Serum chord pad. Program the full D minor chords matching the bass roots: Dm (D3, F3, A3), Fmaj (F3, A3, C4), Bbmaj (Bb3, D4, F4), Gm (G3, Bb3, D4). Set PAD fader to -18dB — nearly inaudible. Loop and listen. Can you hear the pad? Is it changing the sound?",
+      "why": "This step shows you exactly how much pad you actually need. At -18dB the pad is barely there — but it may add a subtle warmth and confirmation of the harmony that's hard to identify consciously. Toggle the PAD track on/off. Notice whether the difference is large or small.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The answer varies. Some producers keep the pad at -18dB or lower as pure texture. Others find the bass-only version is complete and skip the pad entirely. There's no correct answer — the rep demonstrates both options."
+    },
+    {
+      "id": 9,
+      "title": "Compare with rep-11 (full chord pad)",
+      "category": "mix",
+      "instruction": "Play rep-13 (bass-implied) and rep-11 (full VI→III→i pads) back to back. Both are harmonically complete. Rep-11 uses full chords and heavy reverb. Rep-13 uses roots only with a ghost pad. Describe the emotional difference in one sentence.",
+      "why": "These two tracks represent different production philosophies. Rep-11 is rich and lush — harmony is stated explicitly and amplified with reverb. Rep-13 is sparse and hypnotic — harmony is suggested and the listener's ear does the work. Both are valid. Choosing between them is a creative decision, not a technical one.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Common descriptions: rep-11 = warm, rich, cinematic. rep-13 = dark, hypnotic, minimal. The bass-implied approach tends to feel more underground and late-night."
+    },
+    {
+      "id": 10,
+      "title": "Export and finalise",
+      "category": "mix",
+      "instruction": "Final levels with ghost pad: drums kick 0dB, bass -2dB, pad -18dB (or off). Export 30 seconds. Listen on phone. Save the session.",
+      "why": "The exported version is your reference for bass-implied harmony. When you're writing originals and want a sparse, hypnotic feel, this export reminds you what that approach sounds like.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Save both a 'pad on' and 'pad off' version of the export. They're different enough to be separate reference points."
+    }
+  ]
+}

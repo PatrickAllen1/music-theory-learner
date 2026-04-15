@@ -1,0 +1,100 @@
+{
+  "id": "rep-14-bass-implied-gmin",
+  "title": "Bass-Implied Harmony — G Minor",
+  "build_type": "rep",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 30,
+  "bpm": 132,
+  "key": "G minor",
+  "source_track_id": "bl3ss-deeper",
+  "spinoff_level": null,
+  "description": "Bass-implied harmony in G minor. You choose the root movement this time — i→bVII→bVI→v is suggested (Gm→F→Eb→Dm). A step explains why a different progression in the same technique produces a completely different emotional result.",
+  "what_youll_learn": [
+    "Applying bass-implied harmony in G minor independently",
+    "How chord progression choice within the same technique creates different emotions",
+    "i→bVII→bVI→v root movement: G→F→Eb→D",
+    "How saturation and note length interact to shape implied harmony"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up and derive roots",
+      "category": "ableton",
+      "instruction": "New project. BPM 132. Tracks: DRUMS and BASS. Before opening Ableton, derive the suggested progression in G minor: i=Gm (root G), bVII=F major (2 semitones below G = F), bVI=Eb major (4 semitones below G = Eb), v=Dm (5 semitones below G = D). Root movement: G→F→Eb→D. Write this down. Save as 'rep-14-bass-implied-gmin'.",
+      "why": "i→bVII→bVI→v is a descending root movement — each chord is lower than the last. Descending root movements feel inevitable, like something winding down or deepening. This is emotionally different from rep-13's i→bIII→bVI→iv (which has a mix of ascending and descending movement).",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "bVII of G = F (2 semitones down from G). bVI of G = Eb (4 semitones down). v of G = D (5 semitones down). Alternatively count up: bVII=10 semitones up, bVI=8 semitones up, v=7 semitones up."
+    },
+    {
+      "id": 2,
+      "title": "Program minimal drums",
+      "category": "drums",
+      "instruction": "Minimal drum pattern as in rep-13: kick on beats 1 and 3, clap on beat 3, sparse hats (4 per bar). BPM 132. 8-bar clip.",
+      "why": "Same drum philosophy as rep-13. The spaciousness of the pattern lets the bass root movement be the main event.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Copy drum setup from rep-13 if available."
+    },
+    {
+      "id": 3,
+      "title": "Program the descending bass movement",
+      "category": "bass",
+      "instruction": "Sub bass (rep-serum-sub-bass settings + Saturator Drive 20%). 4-bar clip: Bar 1 — G1 for 3 beats, rest beat 4. Bar 2 — F1 for 3 beats, rest beat 4. Bar 3 — Eb1 for 3 beats, rest beat 4. Bar 4 — D1 for 2 beats, G1 for 2 beats (return to tonic). Velocities: 92, 88, 90, 85, then 90 on return G. Repeat 8 bars.",
+      "why": "G→F→Eb→D is a stepwise descending bass line. Each root arrives one or two semitones lower than the last — creating a sense of descent or deepening. The return to G at bar 4 beat 3 makes the loop feel resolved. The descent is not endless — it resolves.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Eb1 is a black key — 3 semitones below F1 (F→E→Eb). Double-check you're on Eb1 and not E1. The difference is one semitone but changes the chord from Ebmaj to Emaj — a different harmonic colour entirely."
+    },
+    {
+      "id": 4,
+      "title": "Understand why this progression feels different from rep-13",
+      "category": "ableton",
+      "instruction": "Before adding anything else: loop just the bass at the rep-13 roots (D→F→Bb→G) for 30 seconds. Then loop the rep-14 roots (G→F→Eb→D) for 30 seconds. Describe the emotional difference. Rep-13 moves away from tonic and returns. Rep-14 descends stepwise toward the 5th (D) and then snaps back up to the root.",
+      "why": "Same technique (bass-implied harmony). Completely different emotional result. Rep-13's i→bIII→bVI→iv has angular, jumping motion — it covers more harmonic ground. Rep-14's i→bVII→bVI→v descends step by step — it feels inevitable, like a slow fall. The progression choice within a technique is a creative decision as important as the technique itself.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Common descriptions: rep-13 roots = restless, searching. rep-14 roots = inevitable, brooding, winding down. If you don't hear this yet, trust that it will become clearer after more listening experience."
+    },
+    {
+      "id": 5,
+      "title": "Shape note lengths for maximum harmonic implication",
+      "category": "ableton",
+      "instruction": "In the bass MIDI clip, experiment with these variations: (a) make all roots exactly 2 beats long (staccato feel). (b) make all roots 3.5 beats (almost legato, overlapping slightly with the next note). (c) original (3 beats + rest). Loop each and listen. Which length makes the harmony feel most implied?",
+      "why": "Note length is one of the primary tools for shaping how implied harmony reads. Short notes: each root is a punctuation mark — the ear hears them individually. Long notes: each root blurs into the next — the implied chord sustains. The 3-beat-plus-rest approach is a middle path: held long enough to register, with a moment of silence before the next arrival.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The 'right' answer depends on the feel you want. BL3SS tends to use medium-length roots with space between them. If a version feels more interesting to you, use it — the rep is demonstrating options, not prescribing one correct approach."
+    },
+    {
+      "id": 6,
+      "title": "Add Saturator and Utility",
+      "category": "mix",
+      "instruction": "Add Saturator to BASS: Drive 20%, Soft Clip, Dry/Wet 50%. Add Utility: Width 0%. EQ Eight: HP at 30Hz. Set BASS fader to -2dB.",
+      "why": "Same setup as rep-13. Saturation adds harmonic content for small-speaker translation. Mono ensures sub bass phase coherence.",
+      "ableton_cheatsheet_id": "saturator",
+      "splice_search": null,
+      "tip": "Apply from memory — this is the standard bass-implied setup from rep-13."
+    },
+    {
+      "id": 7,
+      "title": "Try an alternative progression",
+      "category": "ableton",
+      "instruction": "Duplicate the bass MIDI clip. In the duplicate, try a different root movement: i→bVI→bVII→i (G→Eb→F→G). This is an ascending return pattern — different emotional arc. Loop it for 30 seconds. Then loop the original descending version. Which feels more right for G minor at 132 BPM?",
+      "why": "There's no single correct progression for G minor bass-implied harmony. The point of this step is to experience how quickly an alternative progression creates a completely different emotional world — same key, same technique, different feeling. Your intuition about which progression to use is valid production knowledge.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "i→bVI→bVII→i = G→Eb→F→G feels more circular and suspended. i→bVII→bVI→v = G→F→Eb→D feels more linear and descending. Both are valid starting points for a track."
+    },
+    {
+      "id": 8,
+      "title": "Compare all four bass-implied approaches",
+      "category": "ableton",
+      "instruction": "You now have rep-13 (D minor i→bIII→bVI→iv) and rep-14 (G minor i→bVII→bVI→v) plus the rep-14 alternative (G minor i→bVI→bVII→i). Play all three in sequence. Notice: same technique, three distinct emotional characters. Export rep-14 as 30 seconds. Save session.",
+      "why": "This comparison closes the bass-implied harmony section of the intermediate reps. You've now experienced that the technique is a container — what you put inside it (which root movement) determines the emotional content. Understanding this is the difference between knowing a technique and being able to use it creatively.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Save all three exports in a folder called 'bass-implied-library'. When working on originals that need this approach, audition all three and choose the root movement that fits the emotional direction of the track."
+    }
+  ]
+}

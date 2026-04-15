@@ -5,6 +5,13 @@ import rep04 from "./reps/rep-04-phrygian-bass-dmin.json";
 import rep05 from "./reps/rep-05-phrygian-bass-amin.json";
 import rep06 from "./reps/rep-06-mini-track-emin.json";
 import rep07 from "./reps/rep-07-mini-track-gmin.json";
+import rep08 from "./reps/rep-08-bVI-lift-emin.json";
+import rep09 from "./reps/rep-09-bVI-lift-amin.json";
+import rep10 from "./reps/rep-10-bVI-lift-dmin.json";
+import rep11 from "./reps/rep-11-VI-III-i-loop-bbmin.json";
+import rep12 from "./reps/rep-12-VI-III-i-loop-fmin.json";
+import rep13 from "./reps/rep-13-bass-implied-dmin.json";
+import rep14 from "./reps/rep-14-bass-implied-gmin.json";
 import repSerumSubBass from "./reps/rep-serum-sub-bass.json";
 import repSerumChordPad from "./reps/rep-serum-chord-pad.json";
 import repSerumReeseBass from "./reps/rep-serum-reese-bass.json";
@@ -19,6 +26,13 @@ export const builds = [
   rep05,
   rep06,
   rep07,
+  rep08,
+  rep09,
+  rep10,
+  rep11,
+  rep12,
+  rep13,
+  rep14,
   repSerumSubBass,
   repSerumChordPad,
   repSerumReeseBass,

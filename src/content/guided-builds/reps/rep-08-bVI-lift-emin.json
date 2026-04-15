@@ -1,0 +1,120 @@
+{
+  "id": "rep-08-bVI-lift-emin",
+  "title": "bVI Lift Chord — E Minor",
+  "build_type": "rep",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 35,
+  "bpm": 132,
+  "key": "E minor",
+  "source_track_id": "interplanetary-criminal-slow-burner",
+  "spinoff_level": null,
+  "description": "The bVI lift chord is what makes an otherwise dark minor track suddenly feel like it has light in it. In E minor the bVI is C major — it arrives in bar 3 and changes everything. IC Slow Burner's emotional punch comes directly from this move.",
+  "what_youll_learn": [
+    "What the bVI chord is and why it creates brightness in a minor key",
+    "How to voice C major over an E minor bass line",
+    "How timing (which bar the lift arrives on) shapes the emotional impact",
+    "How to set up sidechain compression on a chord pad"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up the project",
+      "category": "ableton",
+      "instruction": "New Ableton project. BPM 132. Create tracks: DRUMS, BASS, PAD. Save as 'rep-08-bVI-lift-emin'.",
+      "why": "Three separate tracks for the first time — you're building a multi-element arrangement, not just a bass line.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Colour each track differently (right-click track header). This makes navigating the session much faster once you have 3+ tracks."
+    },
+    {
+      "id": 2,
+      "title": "Program 4-on-floor drums",
+      "category": "drums",
+      "instruction": "Load Drum Rack on DRUMS. Program an 8-bar clip: kick on every beat, clap on 2 and 4, off-beat closed hats, open hat on beat 2.5. Velocity: kick 100, clap 92, hats 70, open hat 80.",
+      "why": "Same drum pattern as rep-06. It's now a building block, not the lesson.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "punchy uk garage kick",
+      "tip": "Copy from rep-06 if you have it open — no need to reprogram."
+    },
+    {
+      "id": 3,
+      "title": "Program Em bass line",
+      "category": "bass",
+      "instruction": "Load sub bass on BASS. Create an 8-bar clip. Program: E1 for bars 1–2 (with the phrygian F# or F accent you've learned), C1 for bar 3 (this is the bVI root), B1 for bar 4, repeat. The bass follows the chord roots.",
+      "why": "The bass confirms the chord change. When the pad moves to C major in bar 3, the bass moving to C1 makes the lift unmistakable. If the bass stayed on E the lift would be ambiguous.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Program E1 for bars 1–2, then C1 for bar 3 only. Listen before adding the pad — just bass and drums. The single note change from E to C already implies the lift."
+    },
+    {
+      "id": 4,
+      "title": "Program Em chord pad — bars 1–2",
+      "category": "ableton",
+      "instruction": "Load Serum V2 (or chord pad patch from rep-serum-chord-pad) on PAD. Create an 8-bar clip. Bars 1–2: E minor chord — E3, G3, B3. Hold for 2 full bars. Slow attack 300ms, long release 1500ms.",
+      "why": "The Em pad establishes the dark tonic. Two full bars of Em make the listener settle into the darkness before the lift arrives.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "Use a spread voicing: E3, G3, B3. No notes below C3."
+    },
+    {
+      "id": 5,
+      "title": "Add C major on bar 3 — the bVI lift",
+      "category": "ableton",
+      "instruction": "In the same 8-bar pad clip, add: bar 3 — C major chord: C3, E3, G3. Bar 4 — B minor chord: B3, D4, F#4 (resolves back toward E minor). Then bars 5–8 repeat bars 1–4. Play the full loop and listen to the lift on bar 3.",
+      "why": "C major is 8 semitones above E — the bVI in E minor. It uses notes from the E natural minor scale (C, E, G are all in E minor) but the major quality of the chord creates a sudden brightness. This is the emotional lift — dark minor suddenly has light in it.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The lift should feel like a moment of release or hope. If it doesn't land emotionally, check the voicing — make sure C3 is the lowest note in the pad (not E or G) so the C major quality is clear."
+    },
+    {
+      "id": 6,
+      "title": "Add sidechain compression to the pad",
+      "category": "ableton",
+      "instruction": "Add a Compressor to the PAD track. In the Compressor's sidechain section: enable External, set Audio From to the DRUMS track. Set Ratio 3:1, Attack 2ms, Release 200ms, Threshold until GR meter shows 4–6dB reduction on every kick hit. The pad should pump in time with the kick.",
+      "why": "The sidechain pump is what makes garage pads feel rhythmically locked even when they're playing long sustained chords. Without sidechain the pad sits on top of the groove. With sidechain it breathes with the kick — part of the rhythm, not just a harmonic layer.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Use the DRUMS group track as the sidechain source (not an individual drum sound) so the entire drum hit triggers the compression, not just the kick sample."
+    },
+    {
+      "id": 7,
+      "title": "Add reverb send",
+      "category": "ableton",
+      "instruction": "Create a Return track. Add Ableton's Reverb to the return. Set Dry/Wet 100%, Room Size 0.8, Decay 3.5s, Pre-delay 15ms. Add EQ Eight before the Reverb: HP at 200Hz. Send the PAD to this return at about -12dB (a generous but not overwhelming reverb). Send the drums (clap only) at -18dB.",
+      "why": "Shared reverb on a send keeps all elements in the same acoustic space. The pad and clap share one large room — they sound like they belong together. Insert reverb on each track separately makes the mix feel disconnected.",
+      "ableton_cheatsheet_id": "reverb-send",
+      "splice_search": null,
+      "tip": "HP the reverb return at 200Hz — this removes low-frequency reverb mud that blooms under the pad. You want the high-end shimmer and space, not the sub-bass reverb."
+    },
+    {
+      "id": 8,
+      "title": "Loop and compare: Em only vs Em + bVI",
+      "category": "mix",
+      "instruction": "Loop bars 1–4. While it plays, mute the C major chord (bar 3) in the piano roll by selecting those notes and pressing Cmd+0. Listen to 8 bars of Em only. Then unmute. Hear the difference: the loop without the bVI feels static and dark. With the bVI it feels like the track has somewhere to go.",
+      "why": "The bVI lift exists to create motion in a minor key without leaving the key. Em only = darkness with no resolution. Em + bVI = darkness with a moment of light, which makes the darkness feel more intentional when it returns. The contrast is the emotional content.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Also try the bVI in different positions: bar 2 instead of bar 3. Bar 1 instead of bar 3. Notice how the timing changes the emotional impact — bar 3 is the classic position because it gives 2 bars of tension before the release."
+    },
+    {
+      "id": 9,
+      "title": "EQ the pad — high-pass at 130Hz",
+      "category": "mix",
+      "instruction": "Add EQ Eight to the PAD track. Apply a high-pass at 130Hz — this removes the low end of the pad, leaving the sub bass to own below that range. Also try a gentle high shelf boost at 8kHz (+1.5dB) to add air.",
+      "why": "The pad and sub bass will fight in the 80–130Hz range. HP the pad at 130Hz gives the sub room. The high shelf boost adds the shimmer quality that makes reverb-treated pads feel airy rather than heavy.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "Toggle the HP on/off while the full loop plays. With HP: bass feels tighter, pad sits in its own space. Without HP: mud in the low-mids."
+    },
+    {
+      "id": 10,
+      "title": "Final balance and export",
+      "category": "mix",
+      "instruction": "Set final levels: kick 0dB, clap -2dB, hats -9dB, bass -3dB, pad -6dB (pads sit below bass and kick). Loop the full 8 bars. Export a 30-second audio file. Listen on your phone.",
+      "why": "The bVI lift should be the most emotionally present moment in the loop. If bar 3 doesn't feel noticeably different from bars 1–2, the pad may be too quiet. Bring the pad up by 2dB and re-check.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "On a phone speaker the bVI lift should still be audible — the brightness of C major carries through even on small speakers because it's a mid-frequency change, not just a sub change."
+    }
+  ]
+}
