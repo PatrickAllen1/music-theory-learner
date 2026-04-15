@@ -29,6 +29,18 @@ import original01 from "./originals/original-01-slow-fade.json";
 import original02 from "./originals/original-02-glass-road.json";
 import original03 from "./originals/original-03-midnight-circuit.json";
 import original04 from "./originals/original-04-static-amber.json";
+import original05 from "./originals/original-05-night-walk.json";
+import original06 from "./originals/original-06-open-road.json";
+import original07 from "./originals/original-07-glass-hour.json";
+import original08 from "./originals/original-08-city-current.json";
+import original09 from "./originals/original-09-soft-tide.json";
+import original10 from "./originals/original-10-held-light.json";
+import original11 from "./originals/original-11-low-pull.json";
+import original12 from "./originals/original-12-far-signal.json";
+import original13 from "./originals/original-13-slow-ember.json";
+import original14 from "./originals/original-14-evening-run.json";
+import original15 from "./originals/original-15-pressure-drop.json";
+import original16 from "./originals/original-16-your-sound.json";
 
 export const builds = [
   rep01,
@@ -62,6 +74,18 @@ export const builds = [
   original02,
   original03,
   original04,
+  original05,
+  original06,
+  original07,
+  original08,
+  original09,
+  original10,
+  original11,
+  original12,
+  original13,
+  original14,
+  original15,
+  original16,
 ];
 
 export const buildById = Object.fromEntries(builds.map((b) => [b.id, b]));

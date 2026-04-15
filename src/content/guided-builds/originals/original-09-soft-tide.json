@@ -1,0 +1,140 @@
+{
+  "id": "original-09-soft-tide",
+  "title": "Soft Tide",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 95,
+  "bpm": 134,
+  "key": "D minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "D minor, 134 BPM, Dm to C to Bb, 4-on-floor drums, and a long-form lead. The hand-holding is beginner level, but the arrangement, syncopated bass writing, and drop automation are full-song moves.",
+  "what_youll_learn": [
+    "How i to bVII to bVI sounds like dark, less dark, then suspended in D minor",
+    "How to write a syncopated bass line that still clearly outlines the roots",
+    "How to use a lead with delay and reverb without burying the groove",
+    "How to make drop 2 feel bigger with arrangement and automation instead of random extra notes"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up the song",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 134 BPM and save it as 'original-09-soft-tide'. Make these tracks in order: DRUMS, BASS, PAD, LEAD, and a return track named VERB. The brief is: deep D minor, rolling 4-on-floor, a fuller bass rhythm than the earlier originals, and a lead that opens out in the second half.",
+      "why": "This track teaches growth through arrangement. The parts are all pre-written, but the lesson is hearing how an exact loop can develop into a more finished song shape.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Treat this as the first original in the set that should feel genuinely club-playable, not just like a study loop."
+    },
+    {
+      "id": 2,
+      "title": "Load the drum kit",
+      "category": "drums",
+      "instruction": "Load a Drum Rack on DRUMS and place these exact Production Hut samples: C1 = 'Production Hut- UK Garage Drums Volume 1/KICKS/PH UKG1 ONESHOT Sun_Kick.wav', D1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Clap/PH_UKG2_Clap_16.wav', F#1 = 'Production Hut- UK Garage Drums Volume 1/HATS/PH UKG1 ONESHOT Sun_Hat.wav', G#1 = 'Production Hut- UK Garage Drums Volume 1/SHAKERS/PH UKG1 ONESHOT Sun_Shaker.wav'.",
+      "why": "The Sun kick has a little more weight in the tail than Cash or Nikey, which works well with the more flowing bass rhythm in this track.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Do not swap the clap for a snare. The cleaner clap is part of why the lead can sit on top without the midrange turning muddy."
+    },
+    {
+      "id": 3,
+      "title": "Program the rolling 4-on-floor drums",
+      "category": "drums",
+      "instruction": "Create a 2-bar DRUMS clip. All note lengths are 0.25 beats. KICK C1: 1.1.1 vel 96, 1.2.1 vel 88, 1.3.1 vel 95, 1.4.1 vel 87, 2.1.1 vel 96, 2.2.1 vel 89, 2.3.1 vel 95, 2.4.1 vel 87. CLAP D1: 1.2.1 vel 92, 1.4.1 vel 90, 2.2.1 vel 92, 2.4.1 vel 90. HAT F#1: 1.1.3 vel 64, 1.2.3 vel 62, 1.3.3 vel 66, 1.4.3 vel 60, 2.1.3 vel 64, 2.2.3 vel 62, 2.3.3 vel 67, 2.4.3 vel 59. SHAKER G#1: 1.2.4 vel 45, 1.4.4 vel 42, 2.2.4 vel 45, 2.4.4 vel 42. Group DRUMS and add Glue Compressor with Ratio 4:1, Attack 3 ms, Release Auto, Threshold -5 dB, Soft Clip On.",
+      "why": "The shaker on the last 16th of beats 2 and 4 makes the groove feel like it is turning the corner into the next kick instead of just waiting for it.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "The hats should feel urgent. The shaker should feel like movement inside the urgency."
+    },
+    {
+      "id": 4,
+      "title": "Write the syncopated bass line",
+      "category": "bass",
+      "instruction": "On BASS load Serum 2 and open S1 Presets -> Speed Garage -> 'Sub- Turn Back Time'. Leave the preset exactly as loaded. Create a 4-bar MIDI clip and draw these exact notes: D1 at 1.1.1, length 1.5 beats, velocity 92; A1 at 1.2.3, length 0.5 beats, velocity 74; D1 at 1.3.1, length 1.0 beats, velocity 90; F1 at 1.4.3, length 0.5 beats, velocity 72; C1 at 2.1.1, length 1.5 beats, velocity 89; G1 at 2.2.3, length 0.5 beats, velocity 72; C1 at 2.3.1, length 1.0 beats, velocity 87; E1 at 2.4.3, length 0.5 beats, velocity 70; Bb0 at 3.1.1, length 1.5 beats, velocity 90; F1 at 3.2.3, length 0.5 beats, velocity 72; Bb0 at 3.3.1, length 1.0 beats, velocity 88; D1 at 3.4.3, length 0.5 beats, velocity 70; Bb0 at 4.1.1, length 2.5 beats, velocity 89; F1 at 4.3.3, length 0.5 beats, velocity 70; A0 at 4.4.3, length 0.5 beats, velocity 66.",
+      "why": "The roots D, C, and Bb stay obvious, but the shorter fifth and third pickups make the low end feel alive enough for a more polished track.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "The last A0 is the exact note that makes bar 1 restart smoothly on D1. Keep it where it is."
+    },
+    {
+      "id": 5,
+      "title": "Process the bass and prepare the drop pump",
+      "category": "bass",
+      "instruction": "After Serum on BASS add Saturator, Compressor, EQ Eight, and Utility. Saturator: Drive 4.7 dB, Soft Clip On, Output -2.8 dB. Compressor: Sidechain On, Audio From DRUMS, Threshold -18 dB, Ratio 4:1, Attack 0.30 ms, Release 82 ms. EQ Eight: High-Pass 30 Hz at 24 dB slope. Utility: Width 0 percent. Set BASS fader to -5.0 dB.",
+      "why": "The release is slightly shorter here than in the slower tracks because the bass rhythm is busier. It still needs to get out of the kick's way cleanly.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "Do not lower the bass because it feels active on its own. Judge it only with the drums playing."
+    },
+    {
+      "id": 6,
+      "title": "Load the pad and lock the voicings",
+      "category": "chords",
+      "instruction": "On PAD load Serum 2 and open S1 Presets -> Garage -> 'Pad- June'. Leave the preset exactly as loaded. Your chords are D minor = D, F, A; C major = C, E, G; and Bb major = Bb, D, F.",
+      "why": "This progression feels like it keeps lowering the floor under the listener. That descending root path is why it sounds tide-like instead of triumphant.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "Notice that D and F are shared between Dm and Bb. That is why the last move feels suspended instead of broken."
+    },
+    {
+      "id": 7,
+      "title": "Program the pad, return reverb, and sidechain",
+      "category": "chords",
+      "instruction": "Create a 4-bar PAD clip. Draw D3 at 1.1.1, length 3.5 beats, velocity 72; F3 at 1.1.1, length 3.5 beats, velocity 68; A3 at 1.1.1, length 3.5 beats, velocity 64; C3 at 2.1.1, length 3.5 beats, velocity 72; E3 at 2.1.1, length 3.5 beats, velocity 68; G3 at 2.1.1, length 3.5 beats, velocity 64; D3 at 3.1.1, length 7.5 beats, velocity 72; F3 at 3.1.1, length 7.5 beats, velocity 68; Bb3 at 3.1.1, length 7.5 beats, velocity 64. On VERB add Reverb with Decay Time 2.8 s, Pre-Delay 12 ms, Dry/Wet 100 percent, then EQ Eight High-Pass 220 Hz. On PAD add Compressor with Sidechain On, Audio From DRUMS, Threshold -22 dB, Ratio 4:1, Attack 0.10 ms, Release 132 ms. Set PAD send to VERB at -17.0 dB and PAD fader to -11.5 dB.",
+      "why": "The longer final Bb bar is what gives the lead enough room to bloom later in the phrase instead of sounding rushed.",
+      "ableton_cheatsheet_id": "return-tracks",
+      "splice_search": null,
+      "tip": "This pad should feel wide and slightly mournful. If it feels cheerful, you changed the voicing or the preset."
+    },
+    {
+      "id": 8,
+      "title": "Write the lead and add a little delay",
+      "category": "melody",
+      "instruction": "On LEAD load Serum 2 and open S1 Presets -> Leads -> 'LD Sad Melody [7S]'. Leave the preset exactly as loaded. Create a 4-bar clip with these notes: A4 at 1.1.1, length 1.0 beats, velocity 82; F4 at 1.2.3, length 0.5 beats, velocity 76; D4 at 1.4.1, length 1.0 beats, velocity 74; G4 at 2.1.1, length 1.0 beats, velocity 80; E4 at 2.2.3, length 0.5 beats, velocity 74; C4 at 2.4.1, length 1.0 beats, velocity 72; F4 at 3.1.1, length 1.5 beats, velocity 81; D4 at 3.3.1, length 0.5 beats, velocity 74; Bb3 at 3.4.1, length 1.0 beats, velocity 76; F4 at 4.1.1, length 1.0 beats, velocity 82; D4 at 4.2.3, length 0.5 beats, velocity 74; A3 at 4.4.1, length 0.5 beats, velocity 72. After Serum add Simple Delay with Time Left 1/8, Time Right 1/8, Feedback 16 percent, Dry/Wet 11 percent. Set LEAD send to VERB at -19.0 dB and LEAD fader to -9.5 dB.",
+      "why": "The lead is written as a clear answer line to the descending harmony, and the tiny delay gives it tail without turning it into mush.",
+      "ableton_cheatsheet_id": "simple-delay",
+      "splice_search": null,
+      "tip": "The delay should be felt more than heard. If you clearly hear repeats, the wet amount is too high."
+    },
+    {
+      "id": 9,
+      "title": "Carve vocal space and top-end control",
+      "category": "mix",
+      "instruction": "On PAD add EQ Eight after the Compressor: High-Pass 140 Hz, Bell 950 Hz at -3.5 dB with Q 1.50, Bell 2.6 kHz at -2.5 dB with Q 1.30. On LEAD add EQ Eight after Simple Delay: High-Pass 220 Hz, Bell 3.1 kHz at -2.0 dB with Q 1.20, High Shelf 8 kHz at -1.5 dB.",
+      "why": "The lead has enough sparkle already. Pulling a small amount of top-end off stops it from slicing over the drums in the second drop.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "If the lead still feels harsh, lower the LEAD fader 1 dB before you cut more EQ."
+    },
+    {
+      "id": 10,
+      "title": "Arrange the full song with drop-2 automation",
+      "category": "ableton",
+      "instruction": "Build the arrangement exactly like this. Bars 1-8: intro, DRUMS only, and automate the DRUMS group Utility Gain from -2 dB at bar 1 to 0 dB at bar 8. Bars 9-24: drop 1, full DRUMS plus BASS plus PAD plus LEAD. Bars 25-32: break, PAD and LEAD only, mute the DRUMS track completely from bar 25 through bar 32, and automate VERB send on LEAD from -19 dB at bar 25 to -13 dB at bar 32. Delete all clips on bar 32 beat 4 for a 1-beat silence. Bars 33-48: drop 2A, full arrangement returns. Bars 49-56: drop 2B part 1, keep the normal LEAD clip. Bars 57-64: drop 2B part 2, split the LEAD clip at bar 57 and set Clip Gain to +1.5 dB for bars 57-64, and automate PAD send to VERB from -17 dB at bar 57 to -15 dB at bar 64. Bars 65-72: outro, mute LEAD at bar 65, mute PAD at bar 69, mute BASS at bar 71, and let DRUMS finish bar 72.",
+      "why": "The second half grows by exact automation and level changes, not by random extra notes. That is how polished arrangements usually feel bigger without sounding messy.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Bars 49-64 should feel like the emotional high point. If they do not, revisit the lead level automation first."
+    },
+    {
+      "id": 11,
+      "title": "Set the final mix",
+      "category": "mix",
+      "instruction": "Set DRUMS group to -4.0 dB, BASS to -5.0 dB, PAD to -11.5 dB, LEAD to -9.5 dB, VERB return to -18.5 dB, and Master to 0.0 dB. Add Limiter on Master with Ceiling -0.30 dB and Lookahead 1 ms.",
+      "why": "The lead is important here, but the kick and bass still need to feel like the body of the track rather than the decoration.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "If the limiter is working too hard in bars 49-64, lower the duplicated lead clip gain by 0.5 dB, not the master."
+    },
+    {
+      "id": 12,
+      "title": "Export Soft Tide",
+      "category": "mix",
+      "instruction": "Export bars 1 through 72 as WAV, 24-bit, 44.1 kHz with filename 'original-09-soft-tide-v1.wav'. After export, listen to bars 49-64 and confirm the second drop feels wider and more emotional than the first without sounding louder for the sake of loudness.",
+      "why": "That check tells you whether your automation created musical lift instead of just volume lift.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Keep this one. It is the first lesson in the set where arrangement automation does a real amount of emotional work."
+    }
+  ]
+}

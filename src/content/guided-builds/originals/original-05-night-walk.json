@@ -1,0 +1,140 @@
+{
+  "id": "original-05-night-walk",
+  "title": "Night Walk",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 95,
+  "bpm": 130,
+  "key": "E minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "E minor, 130 BPM, Em to C (i to bVI), 4-on-floor drums, and a short pluck accent over a dark pad. The note-writing is fully hand-held, but the final result is staged like a restrained release, not a practice loop.",
+  "what_youll_learn": [
+    "How i to bVI works in E minor: Em feels home, C adds lift without leaving the key",
+    "How to keep a beginner UK garage bass line simple by using roots and short pickups",
+    "How a pluck accent differs from a full lead melody",
+    "How to turn one 4-bar loop into a finished intro, break, double-drop, and outro arrangement that can stand up to critique"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Concept and session setup",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 130 BPM and save it as 'original-05-night-walk'. Make these tracks in this order: DRUMS, BASS, PAD, PLUCK, and a return track called VERB. Keep the concept in front of you for the whole lesson: dark E minor, 4-on-floor, one bright C-major lift, and a tiny pluck accent instead of a busy melody.",
+      "why": "A tight concept keeps a beginner arrangement from becoming random. Every later choice in this track serves one contrast only: dark Em versus brighter C.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Do not add extra tracks. The whole point of this lesson is hearing how complete a small UK garage arrangement can sound with only drums, bass, pad, and one accent layer."
+    },
+    {
+      "id": 2,
+      "title": "Load the drum samples",
+      "category": "drums",
+      "instruction": "On DRUMS, load a Drum Rack. Put these exact Production Hut samples on these exact pads: C1 = 'Production Hut- UK Garage Drums Volume 1/KICKS/PH UKG1 ONESHOT Hackney_Kick.wav', D1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Clap/PH_UKG2_Clap_4.wav', F#1 = 'Production Hut- UK Garage Drums Volume 1/HATS/PH UKG1 ONESHOT Hackney_Hat.wav', G#1 = 'Production Hut- UK Garage Drums Volume 1/SHAKERS/PH UKG1 ONESHOT Hackney_Shaker.wav'.",
+      "why": "The Hackney kick, hat, and shaker already share a similar tonal shape, and the clap from UKG Volume 2 gives a cleaner backbeat than the Volume 1 snare folder for this softer opener.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Keep the samples dry. Do not add reverb or saturation to individual drum pads in this lesson."
+    },
+    {
+      "id": 3,
+      "title": "Program the 4-on-floor drum pattern",
+      "category": "drums",
+      "instruction": "Create a 2-bar MIDI clip on DRUMS. Draw these exact notes, all with note length 0.25 beats. KICK C1: 1.1.1 vel 96, 1.2.1 vel 88, 1.3.1 vel 94, 1.4.1 vel 86, 2.1.1 vel 96, 2.2.1 vel 89, 2.3.1 vel 95, 2.4.1 vel 87. CLAP D1: 1.2.1 vel 92, 1.4.1 vel 90, 2.2.1 vel 92, 2.4.1 vel 90. HAT F#1: 1.1.3 vel 64, 1.2.3 vel 62, 1.3.3 vel 65, 1.4.3 vel 60, 2.1.3 vel 64, 2.2.3 vel 62, 2.3.3 vel 66, 2.4.3 vel 58. SHAKER G#1: 1.2.3 vel 48, 1.4.3 vel 46, 2.2.3 vel 48, 2.4.3 vel 45. Group the DRUMS track and add Glue Compressor with Ratio 4:1, Attack 3 ms, Release Auto, Threshold -5 dB, Soft Clip On.",
+      "why": "The kick on every beat gives the steady late-night drive. The offbeat hats and quiet shaker add movement without making the groove feel busy.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "The clap lands on top of the kick at beats 2 and 4. That stacked hit is supposed to feel firm, not awkward."
+    },
+    {
+      "id": 4,
+      "title": "Load the bass preset and write the bass notes",
+      "category": "bass",
+      "instruction": "On BASS, load Serum 2 and open S1 Presets -> Garage -> 'Sub- Turn The Page'. Leave the preset exactly as loaded. Create a 4-bar MIDI clip and draw these exact notes: E1 at 1.1.1, length 3.5 beats, velocity 92; B1 at 1.4.3, length 0.5 beats, velocity 74; E1 at 2.1.1, length 3.0 beats, velocity 90; B1 at 2.4.1, length 0.5 beats, velocity 72; C1 at 3.1.1, length 3.5 beats, velocity 89; G1 at 3.4.3, length 0.5 beats, velocity 70; C1 at 4.1.1, length 3.0 beats, velocity 87; B0 at 4.4.1, length 0.5 beats, velocity 66.",
+      "why": "The long E1 and C1 notes tell the ear exactly when the harmony changes. The short B and G pickups add motion without turning the sub part into a melody.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Do not move the last B0. It is the little pull that makes bar 1 land cleanly when the loop restarts."
+    },
+    {
+      "id": 5,
+      "title": "Process the bass chain",
+      "category": "bass",
+      "instruction": "After Serum on BASS add Saturator, Compressor, EQ Eight, and Utility in that order. Set Saturator to Drive 4.5 dB, Soft Clip On, Output -2.5 dB. Set Compressor to Sidechain On, Audio From DRUMS, Threshold -18 dB, Ratio 4:1, Attack 0.30 ms, Release 90 ms, Makeup Off. Set EQ Eight band 1 to High-Pass 30 Hz with 24 dB slope. Set Utility Width to 0 percent and Gain to 0 dB. Set the BASS fader to -5.0 dB.",
+      "why": "The Saturator creates audible upper harmonics, the sidechain makes the kick breathe through the bass, the EQ removes useless sub-rumble, and Utility keeps the low end mono-safe.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "If you hear obvious pumping on the bass, that is correct. UK garage low end should dip slightly under the kick."
+    },
+    {
+      "id": 6,
+      "title": "Load the pad and understand the chord move",
+      "category": "chords",
+      "instruction": "On PAD, load Serum 2 and open S1 Presets -> Garage -> 'Pad - Somber af'. Leave the preset exactly as loaded. The two chords are E minor = E, G, B and C major = C, E, G. That means E and G are shared across the move, which is why the lift feels smooth instead of abrupt.",
+      "why": "Beginners often hear Em to C as 'dark then bright' but miss the shared notes. The shared E and G are the reason the progression sounds glued together.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "Say the chord tones out loud once before drawing them. That habit makes harmony easier to remember."
+    },
+    {
+      "id": 7,
+      "title": "Program the pad, reverb return, and sidechain",
+      "category": "chords",
+      "instruction": "Create a 4-bar MIDI clip on PAD. Draw E3 at 1.1.1, length 7.5 beats, velocity 72; G3 at 1.1.1, length 7.5 beats, velocity 68; B3 at 1.1.1, length 7.5 beats, velocity 64; C3 at 3.1.1, length 7.5 beats, velocity 72; E3 at 3.1.1, length 7.5 beats, velocity 68; G3 at 3.1.1, length 7.5 beats, velocity 64. On VERB add Reverb and EQ Eight. Set Reverb to Decay Time 2.7 s, Pre-Delay 12 ms, Dry/Wet 100 percent. Set EQ Eight on VERB to High-Pass 220 Hz, 24 dB slope. On PAD add Compressor after Serum and set Sidechain On, Audio From DRUMS, Threshold -22 dB, Ratio 4:1, Attack 0.10 ms, Release 140 ms. Set the PAD send to VERB at -17.0 dB and the PAD fader to -12.0 dB.",
+      "why": "The pad holds long enough to feel like one room-filling bed, but the half-beat gap before each change keeps the new chord readable. The sidechain stops the pad from smearing over the kick.",
+      "ableton_cheatsheet_id": "return-tracks",
+      "splice_search": null,
+      "tip": "Keep the return track high-passed. Reverb below 220 Hz will blur the bass and kick immediately."
+    },
+    {
+      "id": 8,
+      "title": "Add the pluck accent",
+      "category": "melody",
+      "instruction": "On PLUCK, load Serum 2 and open S1 Presets -> Garage -> 'Pluck - Cortese'. Leave the preset exactly as loaded. Create a 4-bar MIDI clip with these exact notes: E5 at 1.1.1, length 0.5 beats, velocity 82; B4 at 1.2.3, length 0.25 beats, velocity 74; G4 at 1.4.1, length 0.25 beats, velocity 76; E5 at 2.1.1, length 0.25 beats, velocity 80; B4 at 2.4.3, length 0.25 beats, velocity 72; G4 at 3.1.1, length 0.5 beats, velocity 80; E4 at 3.3.1, length 0.25 beats, velocity 70; C5 at 4.1.1, length 0.25 beats, velocity 78; G4 at 4.2.3, length 0.25 beats, velocity 72; E4 at 4.4.1, length 0.25 beats, velocity 70. After Serum add Simple Delay with Time Left 1/8, Time Right 1/8, Feedback 12 percent, Dry/Wet 8 percent. Set the PLUCK send to VERB at -20.0 dB and the PLUCK fader to -15.5 dB.",
+      "why": "These notes are sparse on purpose. The layer is only there to flash chord tones above the pad, and the short delay gives it enough tail to feel expensive without turning it into a real lead.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The delay should disappear under the groove. If you hear obvious repeats, reduce Dry/Wet before you touch the MIDI."
+    },
+    {
+      "id": 9,
+      "title": "Carve vocal space",
+      "category": "mix",
+      "instruction": "On PAD add EQ Eight after the Compressor and set band 1 High-Pass 140 Hz, band 3 Bell 950 Hz at -3.5 dB with Q 1.60, and band 4 Bell 2.6 kHz at -2.5 dB with Q 1.20. On PLUCK add EQ Eight and set band 1 High-Pass 250 Hz, band 3 Bell 3.2 kHz at -2.0 dB with Q 1.40. Leave BASS and DRUMS untouched in this step.",
+      "why": "Even without vocals, carving the midrange makes the track clearer. The pad and pluck are the layers most likely to clog the same space a future vocal would need.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "This track should feel open in the middle even though the harmony is dark."
+    },
+    {
+      "id": 10,
+      "title": "Arrange the full track",
+      "category": "ableton",
+      "instruction": "Build the arrangement exactly like this. Bars 1-8: intro, DRUMS only. Bars 9-16: intro B, DRUMS plus BASS. Bars 17-24: drop 1, DRUMS plus BASS plus PAD, and turn PLUCK on only from bar 21. Bars 25-28: break A, PAD only. Bars 29-32: break B, PAD plus PLUCK, and automate the PLUCK send to VERB from -20 dB at bar 29 to -16 dB at bar 32. Delete all clips on bar 32 beat 4 for a 1-beat silence. Bars 33-48: drop 2A, all four tracks playing. Bars 49-64: drop 2B, keep all four tracks playing, automate the PLUCK track fader from -15.5 dB at bar 49 to -14.0 dB at bar 64, and automate the PAD send to VERB from -17 dB at bar 57 to -14 dB at bar 64. Bars 65-72: outro, mute PLUCK at bar 65, mute PAD at bar 69, mute BASS at bar 71, and let DRUMS finish bar 72.",
+      "why": "This keeps the element count minimal but stages it like a proper record: bass first, then harmony, then accent, then a cleaner break, then a second drop that opens slightly wider without changing the core writing.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Bars 49-64 should feel larger because the tail opens up, not because the part got busier."
+    },
+    {
+      "id": 11,
+      "title": "Set the final mix levels",
+      "category": "mix",
+      "instruction": "Set these exact faders: DRUMS group -4.0 dB, BASS -5.0 dB, PAD -12.0 dB, PLUCK -15.5 dB, VERB return -18.5 dB, Master 0.0 dB. On the Master add Limiter with Ceiling -0.30 dB and Lookahead 1 ms. Leave the DRUMS Glue Compressor exactly as it is from step 3.",
+      "why": "These values leave headroom while keeping the kick forward, the sub solid, and the pluck decorative instead of dominant.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "If the limiter is shaving more than 2 dB on the drop, lower DRUMS by another 1 dB rather than turning the limiter up."
+    },
+    {
+      "id": 12,
+      "title": "Export the finished track",
+      "category": "mix",
+      "instruction": "Export bars 1 through 72 as WAV, 24-bit, 44.1 kHz with filename 'original-05-night-walk-v1.wav'. Before closing Ableton, play bars 49-64 and confirm three things: the kick is steady, the Em-to-C lift is obvious, and the pluck stays behind the pad while still helping the second drop feel more alive than the first.",
+      "why": "A restrained arrangement can still be upload-worthy if the section staging is deliberate. This export check makes sure the track behaves like a finished record instead of a nice loop.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Save the set again after export so the arrangement and mix moves stay exactly where you left them."
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "original-15-pressure-drop",
+  "title": "Pressure Drop",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 110,
+  "bpm": 138,
+  "key": "Eb minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "Eb minor, 138 BPM, Ebm to B, 4-on-floor drums, a stab, and a Production Hut top-loop layer. This is the fastest track in the set and uses exact loop-layering so it feels bigger without guessing.",
+  "what_youll_learn": [
+    "How to layer a warped Production Hut top loop over programmed one-shots",
+    "How i to bVI feels in Eb minor at 138 BPM",
+    "How to keep a fast mix tight when there is both a stab and a loop layer",
+    "How to build intensity through loop muting and return automation"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set the session",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 138 BPM and save it as 'original-15-pressure-drop'. Make these tracks in order: DRUMS, LOOP TOP, BASS, PAD, STAB, and a return track named VERB. The song is Eb minor to B major, with one programmed kit plus one warped top loop.",
+      "why": "This lesson teaches controlled density: the song gets bigger through layering, but every added layer is still specified exactly.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "The loop layer must support the one-shots, not replace them."
+    },
+    {
+      "id": 2,
+      "title": "Load the programmed drum kit",
+      "category": "drums",
+      "instruction": "Load a Drum Rack on DRUMS and place these exact samples: C1 = 'Production Hut- UK Garage Drums Volume 3/DRUMS ONE SHOTS/KICK/PH_UKG3_KICK_20.wav', D1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Clap/PH_UKG2_Clap_31.wav', F#1 = 'Production Hut- UK Garage Drums Volume 3/DRUMS ONE SHOTS/CLOSED/PH_UKG3_CLOSED_1.wav', G#1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Shaker/PH_UKG2_Shaker_1.wav'.",
+      "why": "The programmed kit gives you exact low-end and backbeat control. The loop will only provide extra top movement later.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Keep the one-shots dry and clean. The loop layer will bring enough texture."
+    },
+    {
+      "id": 3,
+      "title": "Program the one-shot drum pattern",
+      "category": "drums",
+      "instruction": "Create a 2-bar DRUMS clip. All note lengths are 0.25 beats. KICK C1: 1.1.1 vel 96, 1.2.1 vel 90, 1.3.1 vel 95, 1.4.1 vel 88, 2.1.1 vel 96, 2.2.1 vel 90, 2.3.1 vel 95, 2.4.1 vel 88. CLAP D1: 1.2.1 vel 91, 1.4.1 vel 89, 2.2.1 vel 91, 2.4.1 vel 89. CLOSED HAT F#1: 1.1.3 vel 64, 1.2.3 vel 62, 1.3.3 vel 66, 1.4.3 vel 61, 2.1.3 vel 64, 2.2.3 vel 62, 2.3.3 vel 67, 2.4.3 vel 60. SHAKER G#1: 1.2.4 vel 43, 1.4.4 vel 41, 2.2.4 vel 43, 2.4.4 vel 41. Group DRUMS and add Glue Compressor with Ratio 4:1, Attack 3 ms, Release Auto, Threshold -5 dB, Soft Clip On.",
+      "why": "The one-shots create the exact skeleton of the groove. The loop will only widen the hat and percussion feel around that skeleton.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "The loop should never be the only reason the groove works."
+    },
+    {
+      "id": 4,
+      "title": "Add and warp the loop layer",
+      "category": "drums",
+      "instruction": "Drag 'Production Hut- UK Garage Drums Volume 3/DRUM LOOPS/135BPM DRUM LOOPS/PH_UKG3_Loop_Freedom_Top.wav' onto the LOOP TOP track. Turn Warp On. Set Seg. BPM to 135.00. Set Warp Mode to Beats. Set Preserve to Transients and Loop Length to 2 bars. Duplicate the loop so it can cover all full-drop sections later. Set LOOP TOP track fader to -18.0 dB and High-Pass it with EQ Eight at 300 Hz, 24 dB slope.",
+      "why": "Using a top loop instead of a full loop means the programmed kick and clap stay in charge while the hats and percussion become more alive and human-feeling.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "If the loop makes the low end worse, the high-pass is not high enough."
+    },
+    {
+      "id": 5,
+      "title": "Write the bass line",
+      "category": "bass",
+      "instruction": "On BASS load Serum 2 and open S1 Presets -> Garage -> 'Sub- Turn The Page'. Leave it exactly as loaded. Create a 4-bar clip with these notes: Eb1 at 1.1.1, length 1.5 beats, velocity 92; Bb1 at 1.2.3, length 0.5 beats, velocity 74; Eb1 at 1.3.1, length 1.0 beats, velocity 90; Gb1 at 1.4.3, length 0.5 beats, velocity 72; B0 at 2.1.1, length 1.5 beats, velocity 89; F#1 at 2.2.3, length 0.5 beats, velocity 72; B0 at 2.3.1, length 1.0 beats, velocity 87; D#1 at 2.4.3, length 0.5 beats, velocity 70; Eb1 at 3.1.1, length 1.5 beats, velocity 92; Bb1 at 3.2.3, length 0.5 beats, velocity 74; Eb1 at 3.3.1, length 1.0 beats, velocity 90; Gb1 at 3.4.3, length 0.5 beats, velocity 72; B0 at 4.1.1, length 2.5 beats, velocity 89; F#1 at 4.3.3, length 0.5 beats, velocity 70; D1 at 4.4.3, length 0.5 beats, velocity 66.",
+      "why": "The fast tempo needs a bass line that is clear but not static. These pickups give energy without sacrificing the root movement.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "The final D1 is the forward-pull note into the next Eb bar. Keep it short."
+    },
+    {
+      "id": 6,
+      "title": "Process the bass",
+      "category": "bass",
+      "instruction": "After Serum add Saturator, Compressor, EQ Eight, and Utility. Saturator: Drive 4.6 dB, Soft Clip On, Output -2.8 dB. Compressor: Sidechain On, Audio From DRUMS, Threshold -18 dB, Ratio 4:1, Attack 0.30 ms, Release 76 ms. EQ Eight: High-Pass 30 Hz at 24 dB slope. Utility: Width 0 percent. Set BASS fader to -5.0 dB.",
+      "why": "The fastest tempo in the set needs the fastest bass recovery. The shorter release keeps the bass from smearing over the kick.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "This bass should feel tight and pressurized, not soft."
+    },
+    {
+      "id": 7,
+      "title": "Load the pad and chords",
+      "category": "chords",
+      "instruction": "On PAD load Serum 2 and open S1 Presets -> Garage -> 'Pad - Emosh'. Leave the preset exactly as loaded. Your two chords are Eb minor = Eb, Gb, Bb and B major = B, D#, F#.",
+      "why": "The major bVI chord is the bright flash in this track. The speed makes that flash feel urgent instead of dreamy.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "The pad should still sound emotional even though the song is fast."
+    },
+    {
+      "id": 8,
+      "title": "Program the pad, return reverb, and sidechain",
+      "category": "chords",
+      "instruction": "Create a 4-bar PAD clip. Draw Gb3 at 1.1.1, length 3.5 beats, velocity 72; Bb3 at 1.1.1, length 3.5 beats, velocity 68; Eb4 at 1.1.1, length 3.5 beats, velocity 64; D#4 at 2.1.1, length 3.5 beats, velocity 72; F#4 at 2.1.1, length 3.5 beats, velocity 68; B4 at 2.1.1, length 3.5 beats, velocity 64; Gb3 at 3.1.1, length 3.5 beats, velocity 72; Bb3 at 3.1.1, length 3.5 beats, velocity 68; Eb4 at 3.1.1, length 3.5 beats, velocity 64; D#4 at 4.1.1, length 3.5 beats, velocity 72; F#4 at 4.1.1, length 3.5 beats, velocity 68; B4 at 4.1.1, length 3.5 beats, velocity 64. On VERB add Reverb with Decay Time 2.3 s, Pre-Delay 9 ms, Dry/Wet 100 percent, then EQ Eight High-Pass 220 Hz. On PAD add Compressor with Sidechain On, Audio From DRUMS, Threshold -22 dB, Ratio 4:1, Attack 0.10 ms, Release 120 ms. Set PAD send to VERB at -18.0 dB and PAD fader to -12.0 dB.",
+      "why": "Alternating the two chords every bar keeps the song urgent. The pad is emotional, but the sidechain stops it from slowing the track down.",
+      "ableton_cheatsheet_id": "return-tracks",
+      "splice_search": null,
+      "tip": "If the pad feels too slow, it is usually too loud, not too sustained."
+    },
+    {
+      "id": 9,
+      "title": "Write the stab line",
+      "category": "melody",
+      "instruction": "On STAB load Serum 2 and open S1 Presets -> Garage -> 'Stab- Sam'. Leave the preset exactly as loaded. Create a 4-bar clip with these notes: Bb4 at 1.1.3, length 0.5 beats, velocity 82; Gb4 at 1.3.3, length 0.25 beats, velocity 74; D#5 at 2.1.3, length 0.5 beats, velocity 80; F#4 at 2.3.3, length 0.25 beats, velocity 72; Bb4 at 3.1.3, length 0.5 beats, velocity 82; Gb4 at 3.3.3, length 0.25 beats, velocity 74; D#5 at 4.1.3, length 0.5 beats, velocity 80; F#4 at 4.3.3, length 0.25 beats, velocity 72. Set STAB send to VERB at -20.0 dB and STAB fader to -14.0 dB.",
+      "why": "The stab gives the top half of the song rhythmic punctuation while the loop layer handles the extra percussive detail.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Do not lengthen these notes. The loop layer already adds tail and motion."
+    },
+    {
+      "id": 10,
+      "title": "Create the vocal pocket",
+      "category": "mix",
+      "instruction": "On PAD add EQ Eight after the Compressor: High-Pass 145 Hz, Bell 950 Hz at -3.5 dB with Q 1.50, Bell 2.5 kHz at -2.5 dB with Q 1.30. On STAB add EQ Eight: High-Pass 260 Hz, Bell 3.0 kHz at -2.0 dB with Q 1.30. On LOOP TOP keep the 300 Hz high-pass from step 4 and add a Bell cut at 6.5 kHz of -1.5 dB with Q 1.20.",
+      "why": "The loop can make the top end harsh if you leave it full-range. Small cuts keep the record energetic instead of fatiguing.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "If the hats feel sharp, fix the loop EQ before you touch the one-shot hat."
+    },
+    {
+      "id": 11,
+      "title": "Arrange the full track with loop staging",
+      "category": "ableton",
+      "instruction": "Build the arrangement exactly like this. Bars 1-8: intro, DRUMS only and no LOOP TOP. Bars 9-24: drop 1, DRUMS plus BASS plus PAD plus STAB, and turn LOOP TOP on only from bar 17. Bars 25-32: break, PAD plus STAB only, mute LOOP TOP entirely, and automate STAB send to VERB from -20 dB to -15 dB. Delete all clips on bar 32 beat 4 for a 1-beat silence. Bars 33-48: drop 2A, full arrangement including LOOP TOP from the start. Bars 49-64: drop 2B, keep everything on and raise LOOP TOP fader from -18 dB to -16 dB across bars 57-64. Bars 65-72: outro, mute STAB at bar 65, mute LOOP TOP at bar 67, mute PAD at bar 69, mute BASS at bar 71, let DRUMS finish bar 72.",
+      "why": "The loop layer is treated like arrangement fuel. Holding it back, removing it, and then returning it at exact times is what makes it exciting instead of constant.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "If the first drop already feels huge enough, resist the urge to add the loop earlier. Its delayed arrival is part of the lesson."
+    },
+    {
+      "id": 12,
+      "title": "Set the mix",
+      "category": "mix",
+      "instruction": "Set DRUMS group to -4.0 dB, LOOP TOP to -18.0 dB, BASS to -5.0 dB, PAD to -12.0 dB, STAB to -14.0 dB, VERB return to -18.5 dB, and Master to 0.0 dB. Add Limiter on Master with Ceiling -0.30 dB.",
+      "why": "The loop must stay lower than the one-shots. It is support energy, not the main groove.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "If the clap becomes harder to hear once the loop is on, lower LOOP TOP first."
+    },
+    {
+      "id": 13,
+      "title": "Export Pressure Drop",
+      "category": "mix",
+      "instruction": "Export bars 1 through 72 as WAV, 24-bit, 44.1 kHz with filename 'original-15-pressure-drop-v1.wav'. After export, compare bars 17-24 with bars 57-64 and confirm the later section feels wider and more urgent because of the loop-layer staging, not because the whole mix got uncontrolled.",
+      "why": "That tells you whether you layered the loop like a producer instead of just adding volume.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the loop feels too obvious, lower it by 1 dB instead of muting it. Support layers often work best just below the point where you notice them."
+    }
+  ]
+}

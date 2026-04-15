@@ -1,0 +1,140 @@
+{
+  "id": "original-12-far-signal",
+  "title": "Far Signal",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 95,
+  "bpm": 136,
+  "key": "F minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "F minor, 136 BPM, static Fm pad with a phrygian bass that uses Gb as the tension note, plus a short stab. The harmony is simple, but the bass color and arrangement make it feel more advanced.",
+  "what_youll_learn": [
+    "How phrygian tension works when the track keeps a static minor pad underneath it",
+    "How to use one outside note, Gb, to create a strong identity in F minor",
+    "How to make a static harmonic song feel finished with rhythm, automation, and arrangement",
+    "How to keep a stab layer sparse so the phrygian bass remains the star"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set the concept",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 136 BPM and save it as 'original-12-far-signal'. Make these tracks: DRUMS, BASS, PAD, STAB, and a return track named VERB. This song keeps one F minor pad underneath a bass line that keeps touching Gb as the phrygian tension note.",
+      "why": "Static harmony with a tense bass note is one of the fastest ways to make a simple song sound more distinctive.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "The core contrast is not between two chords here. It is between F feeling stable and Gb feeling wrong in exactly the right way."
+    },
+    {
+      "id": 2,
+      "title": "Load the drum kit",
+      "category": "drums",
+      "instruction": "Load a Drum Rack on DRUMS. Set C1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Kick/PH_UKG2_Kick_14.wav', D1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Clap/PH_UKG2_Clap_25.wav', F#1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Closed Hat/PH_UKG2_ClosedHat_15.wav', G#1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Shaker/PH_UKG2_Shaker_10.wav'.",
+      "why": "This Volume 2 kit is tight and dry enough that the phrygian bass can carry the weirdness instead of the drums trying to do it too.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Keep the drum kit plain. The identity of this song lives in the bass movement."
+    },
+    {
+      "id": 3,
+      "title": "Program the drums",
+      "category": "drums",
+      "instruction": "Create a 2-bar DRUMS clip. All note lengths are 0.25 beats. KICK C1: 1.1.1 vel 96, 1.2.1 vel 90, 1.3.1 vel 95, 1.4.1 vel 88, 2.1.1 vel 96, 2.2.1 vel 90, 2.3.1 vel 95, 2.4.1 vel 88. CLAP D1: 1.2.1 vel 91, 1.4.1 vel 89, 2.2.1 vel 91, 2.4.1 vel 89. HAT F#1: 1.1.3 vel 64, 1.2.3 vel 62, 1.3.3 vel 66, 1.4.3 vel 60, 2.1.3 vel 64, 2.2.3 vel 62, 2.3.3 vel 67, 2.4.3 vel 60. SHAKER G#1: 1.2.4 vel 43, 1.4.4 vel 41, 2.2.4 vel 43, 2.4.4 vel 41. Group DRUMS and add Glue Compressor with Ratio 4:1, Attack 3 ms, Release Auto, Threshold -5 dB, Soft Clip On.",
+      "why": "The groove is intentionally stable because the bass tension already gives the song enough personality.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "If you make the drums stranger too, the song becomes confusing instead of focused."
+    },
+    {
+      "id": 4,
+      "title": "Write the phrygian bass pattern",
+      "category": "bass",
+      "instruction": "On BASS load Serum 2 and open S1 Presets -> Speed Garage -> 'Bass- Sine here please'. Leave it exactly as loaded. Create a 4-bar MIDI clip and draw these exact notes: F1 at 1.1.1, length 1.5 beats, velocity 92; Gb1 at 1.2.3, length 0.5 beats, velocity 82; F1 at 1.3.1, length 1.0 beats, velocity 90; C2 at 1.4.3, length 0.5 beats, velocity 72; F1 at 2.1.1, length 1.5 beats, velocity 92; Gb1 at 2.2.3, length 0.5 beats, velocity 84; F1 at 2.3.1, length 1.0 beats, velocity 90; C2 at 2.4.3, length 0.5 beats, velocity 72; F1 at 3.1.1, length 1.5 beats, velocity 92; Gb1 at 3.2.3, length 0.5 beats, velocity 84; F1 at 3.3.1, length 1.0 beats, velocity 90; Eb2 at 3.4.3, length 0.5 beats, velocity 70; F1 at 4.1.1, length 2.5 beats, velocity 92; Gb1 at 4.3.3, length 0.5 beats, velocity 80; C2 at 4.4.3, length 0.5 beats, velocity 68.",
+      "why": "Gb is the phrygian flat-2 against F, so every time it appears the ear hears instant tension. Returning to F immediately afterwards is what makes the tension musical instead of random.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Gb is only one semitone above F. That tiny distance is exactly why it sounds so sharp and tense."
+    },
+    {
+      "id": 5,
+      "title": "Process the bass",
+      "category": "bass",
+      "instruction": "After Serum add Saturator, Compressor, EQ Eight, and Utility. Saturator: Drive 4.8 dB, Soft Clip On, Output -2.8 dB. Compressor: Sidechain On, Audio From DRUMS, Threshold -18 dB, Ratio 4:1, Attack 0.30 ms, Release 78 ms. EQ Eight: High-Pass 30 Hz at 24 dB slope. Utility: Width 0 percent. Set BASS fader to -5.0 dB.",
+      "why": "The bass is the centerpiece, but it still has to sit under a fast kick cleanly. The short sidechain release is what keeps it punchy.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "If the bass loses too much energy, lower the Threshold less instead of changing the notes."
+    },
+    {
+      "id": 6,
+      "title": "Load the static F minor pad",
+      "category": "chords",
+      "instruction": "On PAD load Serum 2 and open S1 Presets -> Garage -> 'Pad- Chroma'. Leave the preset exactly as loaded. The only chord for the whole loop is F minor = F, Ab, C.",
+      "why": "Keeping the pad static makes the phrygian bass note sound even more deliberate because the harmony underneath refuses to move with it.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "This is one of the few tracks in the set where less chord movement creates more identity."
+    },
+    {
+      "id": 7,
+      "title": "Program the pad, reverb, and sidechain",
+      "category": "chords",
+      "instruction": "Create a 4-bar PAD clip. Draw F3 at 1.1.1, length 15.5 beats, velocity 72; Ab3 at 1.1.1, length 15.5 beats, velocity 68; C4 at 1.1.1, length 15.5 beats, velocity 64. On VERB add Reverb with Decay Time 2.9 s, Pre-Delay 14 ms, Dry/Wet 100 percent, then EQ Eight High-Pass 230 Hz. On PAD add Compressor with Sidechain On, Audio From DRUMS, Threshold -22 dB, Ratio 4:1, Attack 0.10 ms, Release 132 ms. Set PAD send to VERB at -18.0 dB and PAD fader to -12.0 dB.",
+      "why": "One long chord turns the track into a fixed harmonic space. The bass tension note then feels like a signal passing through that space rather than a new chord.",
+      "ableton_cheatsheet_id": "return-tracks",
+      "splice_search": null,
+      "tip": "The half-beat gap at the loop end is small, but it helps the restart feel cleaner."
+    },
+    {
+      "id": 8,
+      "title": "Add the stab layer",
+      "category": "melody",
+      "instruction": "On STAB load Serum 2 and open S1 Presets -> Garage -> 'Stab - Hut'. Leave the preset exactly as loaded. Create a 4-bar clip with these notes: C5 at 1.1.3, length 0.5 beats, velocity 80; Ab4 at 1.3.3, length 0.25 beats, velocity 72; F4 at 1.4.3, length 0.25 beats, velocity 76; C5 at 2.1.3, length 0.5 beats, velocity 80; Ab4 at 2.3.3, length 0.25 beats, velocity 72; C5 at 3.1.3, length 0.5 beats, velocity 82; F4 at 3.3.3, length 0.25 beats, velocity 72; Ab4 at 4.1.3, length 0.5 beats, velocity 80; C5 at 4.3.3, length 0.25 beats, velocity 72. Set STAB send to VERB at -20.0 dB and STAB fader to -14.0 dB.",
+      "why": "The stab reinforces only the stable F minor chord tones, which keeps the phrygian tension isolated in the bass where it belongs.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Do not put Gb in the stab. The bass alone should carry the tension color."
+    },
+    {
+      "id": 9,
+      "title": "Create the vocal pocket",
+      "category": "mix",
+      "instruction": "On PAD add EQ Eight after the Compressor: High-Pass 145 Hz, Bell 950 Hz at -3.5 dB with Q 1.50, Bell 2.5 kHz at -2.5 dB with Q 1.30. On STAB add EQ Eight: High-Pass 260 Hz, Bell 2.9 kHz at -2.0 dB with Q 1.30.",
+      "why": "The static pad can fill the midrange for a long time if you do not carve it. This step keeps the texture rich without turning cloudy.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "This track should feel tense and clean at the same time."
+    },
+    {
+      "id": 10,
+      "title": "Arrange the track with phrygian emphasis",
+      "category": "ableton",
+      "instruction": "Build the arrangement exactly like this. Bars 1-8: intro, DRUMS only. Bars 9-24: drop 1, DRUMS plus BASS plus PAD plus STAB. Bars 25-32: break, BASS plus PAD only, and automate PAD send to VERB from -18 dB to -14 dB across the whole break. Delete all clips on bar 32 beat 4 for a 1-beat silence. Bars 33-48: drop 2A, full arrangement. Bars 49-64: drop 2B, duplicate the BASS clip and raise the duplicated clip Gain by +1.0 dB only for bars 57-64, and automate STAB send to VERB from -20 dB to -17 dB across bars 57-64. Bars 65-72: outro, mute STAB at bar 65, mute PAD at bar 69, mute BASS at bar 71, let DRUMS finish bar 72.",
+      "why": "Drop 2 gets bigger by highlighting the bass tension and opening the top-end ambience, not by adding a new harmonic idea.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "If the second drop does not feel more tense, the fix is usually the bass gain automation, not more reverb."
+    },
+    {
+      "id": 11,
+      "title": "Set the mix",
+      "category": "mix",
+      "instruction": "Set DRUMS group to -4.0 dB, BASS to -5.0 dB, PAD to -12.0 dB, STAB to -14.0 dB, VERB return to -18.5 dB, and Master to 0.0 dB. Add Limiter on Master with Ceiling -0.30 dB.",
+      "why": "The bass is the story in this track, so the mix has to keep enough room for its tension notes to register clearly.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "If the tension note feels weak, do not just turn the whole bass up. Compare the velocity and the bass clip gain in drop 2 first."
+    },
+    {
+      "id": 12,
+      "title": "Export Far Signal",
+      "category": "mix",
+      "instruction": "Export bars 1 through 72 as WAV, 24-bit, 44.1 kHz with filename 'original-12-far-signal-v1.wav'. After export, listen to bars 25-32 and bars 57-64 and confirm the same Fm pad feels more tense in the later section because the bass and send automation do more work.",
+      "why": "That tells you the arrangement is creating development even though the harmony itself barely changes.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "This track should feel like a single place viewed under different levels of pressure."
+    }
+  ]
+}

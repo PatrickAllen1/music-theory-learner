@@ -1,0 +1,150 @@
+{
+  "id": "original-14-evening-run",
+  "title": "Evening Run",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 105,
+  "bpm": 136,
+  "key": "C# minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "C# minor, 136 BPM, A to E to C#m, 4-on-floor drums, a pluck, and a lead. The harmony is bright-to-home and the arrangement is built so the second half feels more urgent without losing control.",
+  "what_youll_learn": [
+    "How VI to III to i feels in C# minor",
+    "How to split a hook across pluck and lead layers",
+    "How to use exact send and clip-gain moves to build a stronger second drop",
+    "How to keep a fast 4-on-floor track emotional rather than just busy"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set the song brief",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 136 BPM and save it as 'original-14-evening-run'. Make these tracks: DRUMS, BASS, PAD, PLUCK, LEAD, and a return track named VERB. The song story is A major to E major to C# minor, with the PLUCK arriving first and the LEAD making the second half feel larger.",
+      "why": "This track teaches you how to split the emotional job between two melodic layers instead of trying to make one layer do everything.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "The pluck is the runner. The lead is the breath opening up above it."
+    },
+    {
+      "id": 2,
+      "title": "Load the drum kit",
+      "category": "drums",
+      "instruction": "Load a Drum Rack on DRUMS and place these exact samples: C1 = 'Production Hut- UK Garage Drums Volume 3/DRUMS ONE SHOTS/KICK/PH_UKG3_KICK_17.wav', D1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Clap/PH_UKG2_Clap_30.wav', F#1 = 'Production Hut- UK Garage Drums Volume 3/DRUMS ONE SHOTS/CLOSED/PH_UKG3_CLOSED_3.wav', G#1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Shaker/PH_UKG2_Shaker_9.wav'.",
+      "why": "This kit has a tight enough transient profile to support both pluck and lead layers at 136 BPM.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Do not add an open hat. The closed hat and shaker already give enough top-end motion."
+    },
+    {
+      "id": 3,
+      "title": "Program the 4-on-floor drums",
+      "category": "drums",
+      "instruction": "Create a 2-bar DRUMS clip. All note lengths are 0.25 beats. KICK C1: 1.1.1 vel 96, 1.2.1 vel 90, 1.3.1 vel 95, 1.4.1 vel 88, 2.1.1 vel 96, 2.2.1 vel 90, 2.3.1 vel 95, 2.4.1 vel 88. CLAP D1: 1.2.1 vel 91, 1.4.1 vel 89, 2.2.1 vel 91, 2.4.1 vel 89. CLOSED HAT F#1: 1.1.3 vel 64, 1.2.3 vel 62, 1.3.3 vel 66, 1.4.3 vel 61, 2.1.3 vel 64, 2.2.3 vel 62, 2.3.3 vel 67, 2.4.3 vel 60. SHAKER G#1: 1.2.4 vel 43, 1.4.4 vel 41, 2.2.4 vel 43, 2.4.4 vel 41. Group DRUMS and add Glue Compressor with Ratio 4:1, Attack 3 ms, Release Auto, Threshold -5 dB, Soft Clip On.",
+      "why": "A steady house-like pulse underneath brighter harmony is a very effective UK garage combination because the harmony provides the emotional movement while the kick provides the certainty.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "This groove should feel urgent but smooth."
+    },
+    {
+      "id": 4,
+      "title": "Write the bass line",
+      "category": "bass",
+      "instruction": "On BASS load Serum 2 and open S1 Presets -> Speed Garage -> 'Bass- Optic Sine'. Leave the preset exactly as loaded. Create a 4-bar clip with these notes: A1 at 1.1.1, length 1.5 beats, velocity 90; E2 at 1.2.3, length 0.5 beats, velocity 72; A1 at 1.3.1, length 1.0 beats, velocity 88; C#2 at 1.4.3, length 0.5 beats, velocity 70; E1 at 2.1.1, length 1.5 beats, velocity 89; B1 at 2.2.3, length 0.5 beats, velocity 72; E1 at 2.3.1, length 1.0 beats, velocity 87; G#1 at 2.4.3, length 0.5 beats, velocity 70; C#1 at 3.1.1, length 1.5 beats, velocity 92; G#1 at 3.2.3, length 0.5 beats, velocity 72; C#1 at 3.3.1, length 1.0 beats, velocity 90; E1 at 3.4.3, length 0.5 beats, velocity 70; C#1 at 4.1.1, length 2.5 beats, velocity 91; G#1 at 4.3.3, length 0.5 beats, velocity 70; B0 at 4.4.3, length 0.5 beats, velocity 66.",
+      "why": "A to E to C# tells the ear clearly where the harmony lives, and the pickups stop the low end from feeling like big static blocks.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "That B0 at the end is the hinge back into the A major opening."
+    },
+    {
+      "id": 5,
+      "title": "Process the bass",
+      "category": "bass",
+      "instruction": "After Serum add Saturator, Compressor, EQ Eight, and Utility. Saturator: Drive 4.4 dB, Soft Clip On, Output -2.7 dB. Compressor: Sidechain On, Audio From DRUMS, Threshold -18 dB, Ratio 4:1, Attack 0.30 ms, Release 78 ms. EQ Eight: High-Pass 30 Hz at 24 dB slope. Utility: Width 0 percent. Set BASS fader to -5.0 dB.",
+      "why": "The low end stays agile and controlled so the brighter melodic layers can sit above it without the track feeling bloated.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "If the bass and kick fight, fix the sidechain before you touch EQ."
+    },
+    {
+      "id": 6,
+      "title": "Load the pad and chord voicings",
+      "category": "chords",
+      "instruction": "On PAD load Serum 2 and open S1 Presets -> Garage -> 'Pad- Nora'. Leave it exactly as loaded. Your chords are A major = A, C#, E; E major = E, G#, B; and C# minor = C#, E, G#.",
+      "why": "This progression starts bright, stays bright, then lands in minor. That delayed homecoming is the emotional shape of the song.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "C# minor should feel like the answer to the first two major chords."
+    },
+    {
+      "id": 7,
+      "title": "Program the pad, reverb, and sidechain",
+      "category": "chords",
+      "instruction": "Create a 4-bar PAD clip. Draw C#4 at 1.1.1, length 3.5 beats, velocity 72; E4 at 1.1.1, length 3.5 beats, velocity 68; A4 at 1.1.1, length 3.5 beats, velocity 64; B3 at 2.1.1, length 3.5 beats, velocity 72; E4 at 2.1.1, length 3.5 beats, velocity 68; G#4 at 2.1.1, length 3.5 beats, velocity 64; C#4 at 3.1.1, length 7.5 beats, velocity 72; E4 at 3.1.1, length 7.5 beats, velocity 68; G#4 at 3.1.1, length 7.5 beats, velocity 64. On VERB add Reverb with Decay Time 2.5 s, Pre-Delay 11 ms, Dry/Wet 100 percent, then EQ Eight High-Pass 220 Hz. On PAD add Compressor with Sidechain On, Audio From DRUMS, Threshold -22 dB, Ratio 4:1, Attack 0.10 ms, Release 124 ms. Set PAD send to VERB at -18.0 dB and PAD fader to -11.5 dB.",
+      "why": "Using the top notes of the major chords first keeps the pad feeling bright before the phrase drops into the darker C# minor hold.",
+      "ableton_cheatsheet_id": "return-tracks",
+      "splice_search": null,
+      "tip": "The last chord should feel like the floor opening under the brightness of the first two bars."
+    },
+    {
+      "id": 8,
+      "title": "Write the pluck layer",
+      "category": "melody",
+      "instruction": "On PLUCK load Serum 2 and open S1 Presets -> Garage -> 'Pluck - Simples'. Leave the preset exactly as loaded. Create a 4-bar clip with these notes: E5 at 1.1.3, length 0.5 beats, velocity 80; C#5 at 1.3.3, length 0.25 beats, velocity 74; G#4 at 2.1.3, length 0.5 beats, velocity 80; E4 at 2.3.3, length 0.25 beats, velocity 72; G#4 at 3.1.3, length 0.5 beats, velocity 82; E4 at 3.3.3, length 0.25 beats, velocity 72; C#5 at 4.1.3, length 0.5 beats, velocity 80; G#4 at 4.3.3, length 0.25 beats, velocity 70. Set PLUCK send to VERB at -20.0 dB and PLUCK fader to -15.0 dB.",
+      "why": "The pluck keeps the upper rhythm moving while staying short enough to leave room for the later lead layer.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "This part should feel like little lights above the groove."
+    },
+    {
+      "id": 9,
+      "title": "Write the lead layer",
+      "category": "melody",
+      "instruction": "On LEAD load Serum 2 and open S1 Presets -> Garage -> 'Lead- Just'. Leave the preset exactly as loaded. Create a 4-bar clip with these notes: C#5 at 1.1.1, length 1.0 beats, velocity 82; E5 at 1.2.3, length 0.5 beats, velocity 76; A4 at 1.4.1, length 0.5 beats, velocity 72; B4 at 2.1.1, length 1.0 beats, velocity 80; G#4 at 2.3.1, length 0.5 beats, velocity 74; E4 at 2.4.1, length 0.5 beats, velocity 72; G#4 at 3.1.1, length 1.0 beats, velocity 82; E4 at 3.2.3, length 0.5 beats, velocity 76; C#4 at 3.4.1, length 0.5 beats, velocity 74; B4 at 4.1.1, length 1.5 beats, velocity 81; G#4 at 4.3.1, length 0.5 beats, velocity 74; D#4 at 4.4.1, length 0.5 beats, velocity 72. After Serum add Simple Delay with Time Left 1/8, Time Right 1/8, Feedback 14 percent, Dry/Wet 10 percent. Set LEAD send to VERB at -19.0 dB and LEAD fader to -10.0 dB.",
+      "why": "The lead lands on strong chord tones and only uses the outside D# at the very end to pull you back into the loop.",
+      "ableton_cheatsheet_id": "simple-delay",
+      "splice_search": null,
+      "tip": "The lead should feel like a released version of the pluck, not like a totally separate song."
+    },
+    {
+      "id": 10,
+      "title": "Create the vocal pocket",
+      "category": "mix",
+      "instruction": "On PAD add EQ Eight after the Compressor: High-Pass 140 Hz, Bell 950 Hz at -3.5 dB with Q 1.50, Bell 2.5 kHz at -2.5 dB with Q 1.30. On PLUCK add EQ Eight: High-Pass 260 Hz, Bell 3.0 kHz at -2.0 dB with Q 1.30. On LEAD add EQ Eight after Simple Delay: High-Pass 220 Hz, Bell 3.0 kHz at -2.0 dB with Q 1.20.",
+      "why": "Three upper layers can mask a vocal quickly. These cuts stop the arrangement from becoming hard to read.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "If the lead and pluck still blur, lower PLUCK 1 dB before reducing LEAD."
+    },
+    {
+      "id": 11,
+      "title": "Arrange the full song",
+      "category": "ableton",
+      "instruction": "Build the arrangement exactly like this. Bars 1-8: intro, DRUMS only. Bars 9-24: drop 1, DRUMS plus BASS plus PAD plus PLUCK. Bars 25-32: break, PAD plus PLUCK only, and automate PLUCK send to VERB from -20 dB to -16 dB across bars 25-32. Delete all clips on bar 32 beat 4 for a 1-beat silence. Bars 33-48: drop 2A, full arrangement except LEAD. Bars 49-64: drop 2B, turn LEAD on and raise clip Gain on LEAD by +1.5 dB only from bars 57-64, and automate PAD send to VERB from -18 dB to -15 dB across bars 49-64. Bars 65-72: outro, mute LEAD at bar 65, mute PLUCK at bar 67, mute PAD at bar 69, mute BASS at bar 71, let DRUMS finish bar 72.",
+      "why": "The listener first meets the hook as a pluck pattern, then later gets the more open lead version of the same emotional space.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Drop 2B should feel like the pluck has finally turned into a voice."
+    },
+    {
+      "id": 12,
+      "title": "Set the mix",
+      "category": "mix",
+      "instruction": "Set DRUMS group to -4.0 dB, BASS to -5.0 dB, PAD to -11.5 dB, PLUCK to -15.0 dB, LEAD to -10.0 dB, VERB return to -18.5 dB, and Master to 0.0 dB. Add Limiter on Master with Ceiling -0.30 dB.",
+      "why": "The pluck and lead both need space, but the low-end groove still has to feel like the physical center of the track.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "Judge the final balance from bars 57-64. That is the section with the most information."
+    },
+    {
+      "id": 13,
+      "title": "Export Evening Run",
+      "category": "mix",
+      "instruction": "Export bars 1 through 72 as WAV, 24-bit, 44.1 kHz with filename 'original-14-evening-run-v1.wav'. After export, compare bars 9-24 with bars 49-64 and confirm the later section feels more urgent because the lead and automation add focus, not because the whole song became louder.",
+      "why": "That check tells you whether your arrangement development is musical instead of merely louder.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the later section feels cluttered, reduce the PLUCK reverb rise before changing the notes."
+    }
+  ]
+}

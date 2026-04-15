@@ -1,0 +1,140 @@
+{
+  "id": "original-11-low-pull",
+  "title": "Low Pull",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 95,
+  "bpm": 136,
+  "key": "Bb minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "Bb minor, 136 BPM, Gb to Db to Bbm, 4-on-floor drums, and a pluck that grows more insistent across the arrangement. This lesson is still fully hand-held, but the phrase rhythm and section design are more polished and modern.",
+  "what_youll_learn": [
+    "How VI to III to i feels in Bb minor",
+    "How to keep a faster 136 BPM 4-on-floor groove clean",
+    "How to use an 8-bar pluck phrase without overfilling the arrangement",
+    "How to make drop 2 stronger by changing where the pluck appears, not by rewriting the whole song"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set the session",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 136 BPM and save it as 'original-11-low-pull'. Make these tracks: DRUMS, BASS, PAD, PLUCK, and a return track named VERB. The emotional path is bright Gb, bright Db, then home on Bb minor.",
+      "why": "At 136 BPM the arrangement needs to feel purposeful quickly, so this track keeps the harmonic story very clear.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Think of this one as tight and forward rather than dreamy."
+    },
+    {
+      "id": 2,
+      "title": "Load the drums",
+      "category": "drums",
+      "instruction": "Load a Drum Rack on DRUMS and place these exact samples: C1 = 'Production Hut- UK Garage Drums Volume 1/KICKS/PH UKG1 ONESHOT TN_Kick.wav', D1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Clap/PH_UKG2_Clap_21.wav', F#1 = 'Production Hut- UK Garage Drums Volume 1/HATS/PH UKG1 ONESHOT TN_ClosedHat.wav', G#1 = 'Production Hut- UK Garage Drums Volume 1/SHAKERS/PH UKG1 ONESHOT JD_Shaker.wav'.",
+      "why": "TN_Kick is short and direct, which helps a 136 BPM groove stay punchy. The cleaner closed hat keeps the top end from washing out.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "This kit should sound tighter than the slower songs, not bigger."
+    },
+    {
+      "id": 3,
+      "title": "Program the faster 4-on-floor groove",
+      "category": "drums",
+      "instruction": "Create a 2-bar DRUMS clip. All note lengths are 0.25 beats. KICK C1: 1.1.1 vel 96, 1.2.1 vel 90, 1.3.1 vel 95, 1.4.1 vel 88, 2.1.1 vel 96, 2.2.1 vel 90, 2.3.1 vel 95, 2.4.1 vel 88. CLAP D1: 1.2.1 vel 91, 1.4.1 vel 89, 2.2.1 vel 91, 2.4.1 vel 89. CLOSED HAT F#1: 1.1.3 vel 64, 1.2.3 vel 62, 1.3.3 vel 66, 1.4.3 vel 61, 2.1.3 vel 64, 2.2.3 vel 62, 2.3.3 vel 67, 2.4.3 vel 60. SHAKER G#1: 1.2.4 vel 43, 1.4.4 vel 41, 2.2.4 vel 43, 2.4.4 vel 41. Group DRUMS and add Glue Compressor with Ratio 4:1, Attack 3 ms, Release Auto, Threshold -5 dB, Soft Clip On.",
+      "why": "At 136 BPM even small 16th-note details create noticeable momentum. The shaker on the last 16th keeps the bar turning over cleanly.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "Do not add more hats just because the track is faster. Faster already means denser."
+    },
+    {
+      "id": 4,
+      "title": "Write the bass line",
+      "category": "bass",
+      "instruction": "On BASS load Serum 2 and open S1 Presets -> Garage -> 'Bass- Knocking Sub'. Leave the preset exactly as loaded. Create a 4-bar clip with these notes: Gb1 at 1.1.1, length 1.5 beats, velocity 90; Db2 at 1.2.3, length 0.5 beats, velocity 72; Gb1 at 1.3.1, length 1.0 beats, velocity 88; Bb1 at 1.4.3, length 0.5 beats, velocity 70; Db1 at 2.1.1, length 1.5 beats, velocity 89; Ab1 at 2.2.3, length 0.5 beats, velocity 72; Db1 at 2.3.1, length 1.0 beats, velocity 87; F1 at 2.4.3, length 0.5 beats, velocity 70; Bb0 at 3.1.1, length 1.5 beats, velocity 92; F1 at 3.2.3, length 0.5 beats, velocity 72; Bb0 at 3.3.1, length 1.0 beats, velocity 90; Db1 at 3.4.3, length 0.5 beats, velocity 70; Bb0 at 4.1.1, length 2.5 beats, velocity 91; F1 at 4.3.3, length 0.5 beats, velocity 70; A0 at 4.4.3, length 0.5 beats, velocity 66.",
+      "why": "The root notes still make the progression obvious, but the extra pickups keep the low end moving fast enough for 136 BPM.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "The final A0 is an outside note that only exists to pull you back into Gb cleanly."
+    },
+    {
+      "id": 5,
+      "title": "Process the bass",
+      "category": "bass",
+      "instruction": "After Serum add Saturator, Compressor, EQ Eight, and Utility. Saturator: Drive 4.5 dB, Soft Clip On, Output -2.7 dB. Compressor: Sidechain On, Audio From DRUMS, Threshold -18 dB, Ratio 4:1, Attack 0.30 ms, Release 78 ms. EQ Eight: High-Pass 30 Hz at 24 dB slope. Utility: Width 0 percent. Set BASS fader to -5.0 dB.",
+      "why": "The shorter release helps the bass stay agile enough for the faster groove without stepping on the kick.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "The bass should feel quick, not huge."
+    },
+    {
+      "id": 6,
+      "title": "Load the pad and chord voicings",
+      "category": "chords",
+      "instruction": "On PAD load Serum 2 and open S1 Presets -> Garage -> 'Pad- Virjin'. Leave it exactly as loaded. Your chords are Gb major = Gb, Bb, Db; Db major = Db, F, Ab; and Bb minor = Bb, Db, F.",
+      "why": "This is another bright-to-home progression. The shared notes Db and F are what keep the final arrival feeling smooth.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "Bb minor should feel like home after the two major chords, not like a dramatic plot twist."
+    },
+    {
+      "id": 7,
+      "title": "Program the pad, reverb, and sidechain",
+      "category": "chords",
+      "instruction": "Create a 4-bar PAD clip. Draw Db4 at 1.1.1, length 3.5 beats, velocity 72; Gb4 at 1.1.1, length 3.5 beats, velocity 68; Bb4 at 1.1.1, length 3.5 beats, velocity 64; Db4 at 2.1.1, length 3.5 beats, velocity 72; F4 at 2.1.1, length 3.5 beats, velocity 68; Ab4 at 2.1.1, length 3.5 beats, velocity 64; Bb3 at 3.1.1, length 7.5 beats, velocity 72; Db4 at 3.1.1, length 7.5 beats, velocity 68; F4 at 3.1.1, length 7.5 beats, velocity 64. On VERB add Reverb with Decay Time 2.4 s, Pre-Delay 10 ms, Dry/Wet 100 percent, then EQ Eight High-Pass 220 Hz. On PAD add Compressor with Sidechain On, Audio From DRUMS, Threshold -22 dB, Ratio 4:1, Attack 0.10 ms, Release 124 ms. Set PAD send to VERB at -18.0 dB and PAD fader to -11.5 dB.",
+      "why": "High voicings keep the pad clean over the faster bass movement, and the final two bars on Bb minor make the phrase feel anchored.",
+      "ableton_cheatsheet_id": "return-tracks",
+      "splice_search": null,
+      "tip": "This pad should feel smooth and expensive, not sharp."
+    },
+    {
+      "id": 8,
+      "title": "Write the 8-bar pluck phrase",
+      "category": "melody",
+      "instruction": "On PLUCK load Serum 2 and open S1 Presets -> Garage -> 'Pluck - Skeng'. Leave the preset exactly as loaded. Create an 8-bar clip by writing this exact 4-bar phrase and then this exact 4-bar answer. Bars 1-4: Db5 at 1.1.3, length 0.5 beats, velocity 80; Bb4 at 1.3.3, length 0.25 beats, velocity 74; F4 at 2.1.3, length 0.5 beats, velocity 80; Ab4 at 2.3.3, length 0.25 beats, velocity 72; Bb4 at 3.1.3, length 0.5 beats, velocity 82; F4 at 3.3.3, length 0.25 beats, velocity 72; Db5 at 4.1.3, length 0.5 beats, velocity 80; F4 at 4.3.3, length 0.25 beats, velocity 70. Bars 5-8: F5 at 5.1.3, length 0.5 beats, velocity 82; Db5 at 5.3.3, length 0.25 beats, velocity 74; Ab4 at 6.1.3, length 0.5 beats, velocity 80; F4 at 6.3.3, length 0.25 beats, velocity 72; Bb4 at 7.1.3, length 0.5 beats, velocity 84; F4 at 7.3.3, length 0.25 beats, velocity 72; Db5 at 8.1.3, length 0.5 beats, velocity 82; Bb4 at 8.3.3, length 0.25 beats, velocity 70. Set PLUCK send to VERB at -20.0 dB and PLUCK fader to -14.5 dB.",
+      "why": "An 8-bar pluck phrase gives the arrangement more character than a tiny 1-bar stab, but it still stays rhythm-first because every hit lives off the beat.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "This layer should sound hooky enough to remember but not busy enough to replace a vocal."
+    },
+    {
+      "id": 9,
+      "title": "Create the vocal pocket",
+      "category": "mix",
+      "instruction": "On PAD add EQ Eight after the Compressor: High-Pass 140 Hz, Bell 950 Hz at -3.5 dB with Q 1.50, Bell 2.5 kHz at -2.5 dB with Q 1.30. On PLUCK add EQ Eight: High-Pass 260 Hz, Bell 3.0 kHz at -2.0 dB with Q 1.30.",
+      "why": "The pluck is bright and repetitive, so it needs a little space carved in the same range a future vocal would use.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "If the pluck feels too small after EQ, the answer is usually a little more send reverb, not less EQ."
+    },
+    {
+      "id": 10,
+      "title": "Arrange the track with pluck staging",
+      "category": "ableton",
+      "instruction": "Build the arrangement exactly like this. Bars 1-8: intro, DRUMS only. Bars 9-24: drop 1, DRUMS plus BASS plus PAD, and bring PLUCK in only from bar 17. Bars 25-32: break, PAD only for bars 25-28, then PAD plus PLUCK for bars 29-32. Delete all clips on bar 32 beat 4 for a 1-beat silence. Bars 33-48: drop 2A, full arrangement with PLUCK playing the first 4 bars of its 8-bar phrase. Bars 49-64: drop 2B, full arrangement with the complete 8-bar PLUCK phrase and increase PLUCK send to VERB from -20 dB to -17 dB across bars 57-64. Bars 65-72: outro, mute PLUCK at bar 65, mute PAD at bar 69, mute BASS at bar 71, let DRUMS finish bar 72.",
+      "why": "The pluck becomes more present as the arrangement progresses, which makes the second drop feel like a fuller statement of the same song rather than a copy-paste.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Bars 49-64 should feel like the track finally showing its full melodic confidence."
+    },
+    {
+      "id": 11,
+      "title": "Set the mix",
+      "category": "mix",
+      "instruction": "Set DRUMS group to -4.0 dB, BASS to -5.0 dB, PAD to -11.5 dB, PLUCK to -14.5 dB, VERB return to -18.5 dB, and Master to 0.0 dB. Add Limiter on Master with Ceiling -0.30 dB.",
+      "why": "The pluck needs to be memorable, but the drums and bass still need to feel like the body of the track at 136 BPM.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "If the pluck overpowers the track, lower it by 1 dB before reducing the send amount."
+    },
+    {
+      "id": 12,
+      "title": "Export Low Pull",
+      "category": "mix",
+      "instruction": "Export bars 1 through 72 as WAV, 24-bit, 44.1 kHz with filename 'original-11-low-pull-v1.wav'. After export, compare bars 17-24 with bars 49-64 and confirm the pluck's extra presence in the later section makes the song feel more complete rather than more cluttered.",
+      "why": "That comparison teaches arrangement staging: bigger is only better when the new layer earns its place.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the late pluck feels cluttered, shorten the reverb send automation before changing the notes."
+    }
+  ]
+}

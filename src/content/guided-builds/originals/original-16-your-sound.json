@@ -1,0 +1,150 @@
+{
+  "id": "original-16-your-sound",
+  "title": "Your Sound",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 120,
+  "bpm": 136,
+  "key": "Choice: E minor or B minor or F# minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "A guided choose-your-blueprint original. You still get 100 percent exact instructions, but you choose one of three keys and one of two grooves before building a full track with bass, pad, pluck, lead, arrangement, mix, and export.",
+  "what_youll_learn": [
+    "How to make controlled musical choices without being left to guess",
+    "How the same i to bVI shape behaves in three different keys",
+    "How the same musical blueprint feels different as 4-on-floor versus 2-step",
+    "How to combine everything from the earlier originals into one guided final build"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Choose your exact blueprint",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 136 BPM and save it as 'original-16-your-sound'. Choose exactly one key card and exactly one groove card. KEY CARD A: E minor with Em to C. KEY CARD B: B minor with Bm to G. KEY CARD C: F# minor with F#m to D. GROOVE CARD 1: 4-on-floor. GROOVE CARD 2: 2-step. Make these tracks in order: DRUMS, BASS, PAD, PLUCK, LEAD, and a return track named VERB.",
+      "why": "This is a real choice, but it is still fully guided. You are choosing from finished blueprints, not improvising from nothing.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "If you want the most stable option, pick KEY CARD A with GROOVE CARD 1. If you want the most advanced-feeling option, pick KEY CARD C with GROOVE CARD 2."
+    },
+    {
+      "id": 2,
+      "title": "Load one universal drum kit",
+      "category": "drums",
+      "instruction": "Load a Drum Rack on DRUMS and place these exact samples: C1 = 'Production Hut- UK Garage Drums Volume 3/DRUMS ONE SHOTS/KICK/PH_UKG3_KICK_06.wav', D1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Clap/PH_UKG2_Clap_17.wav', F#1 = 'Production Hut- UK Garage Drums Volume 3/DRUMS ONE SHOTS/CLOSED/PH_UKG3_CLOSED_10.wav', G#1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Shaker/PH_UKG2_Shaker_6.wav'.",
+      "why": "Using one exact kit keeps the only variables to your chosen key and groove. That makes the lesson cleaner.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Do not change the kit when you change the key. The point is hearing what harmony and groove do by themselves."
+    },
+    {
+      "id": 3,
+      "title": "Program your chosen groove",
+      "category": "drums",
+      "instruction": "If you chose GROOVE CARD 1, create a 2-bar clip with all note lengths at 0.25 beats. KICK C1: 1.1.1 vel 96, 1.2.1 vel 90, 1.3.1 vel 95, 1.4.1 vel 88, 2.1.1 vel 96, 2.2.1 vel 90, 2.3.1 vel 95, 2.4.1 vel 88. CLAP D1: 1.2.1 vel 91, 1.4.1 vel 89, 2.2.1 vel 91, 2.4.1 vel 89. HAT F#1: 1.1.3 vel 64, 1.2.3 vel 62, 1.3.3 vel 66, 1.4.3 vel 61, 2.1.3 vel 64, 2.2.3 vel 62, 2.3.3 vel 67, 2.4.3 vel 60. SHAKER G#1: 1.2.4 vel 43, 1.4.4 vel 41, 2.2.4 vel 43, 2.4.4 vel 41. If you chose GROOVE CARD 2, create a 2-bar clip with all note lengths at 0.25 beats. KICK C1: 1.1.1 vel 97, 1.2.3 vel 84, 1.4.4 vel 76, 2.1.3 vel 88, 2.3.1 vel 82, 2.4.3 vel 78. CLAP D1: 1.2.1 vel 92, 1.4.1 vel 90, 2.2.1 vel 92, 2.4.1 vel 90. HAT F#1: 1.1.3 vel 64, 1.2.4 vel 58, 1.3.3 vel 63, 1.4.3 vel 60, 2.1.3 vel 64, 2.2.4 vel 58, 2.3.3 vel 64, 2.4.3 vel 60. SHAKER G#1: 1.1.4 vel 42, 1.3.4 vel 40, 2.1.4 vel 42, 2.3.4 vel 40. In either case, group DRUMS and add Glue Compressor with Ratio 4:1, Attack 3 ms, Release Auto, Threshold -5 dB, Soft Clip On.",
+      "why": "This gives you two real rhythmic identities with zero guessing. The rest of the song can stay structurally identical while the groove changes its feel.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "Once you pick a groove card, do not switch mid-build. Commit and hear what it does."
+    },
+    {
+      "id": 4,
+      "title": "Load the bass preset and write the bass line for your key",
+      "category": "bass",
+      "instruction": "On BASS load Serum 2 and open S1 Presets -> Garage -> 'Bass- Knocking Sub'. Leave it exactly as loaded. Create a 4-bar clip. If you chose KEY CARD A, draw E1 at 1.1.1, length 1.5 beats, velocity 92; B1 at 1.2.3, length 0.5 beats, velocity 74; E1 at 1.3.1, length 1.0 beats, velocity 90; G1 at 1.4.3, length 0.5 beats, velocity 72; C1 at 2.1.1, length 1.5 beats, velocity 89; G1 at 2.2.3, length 0.5 beats, velocity 72; C1 at 2.3.1, length 1.0 beats, velocity 87; E1 at 2.4.3, length 0.5 beats, velocity 70; E1 at 3.1.1, length 1.5 beats, velocity 92; B1 at 3.2.3, length 0.5 beats, velocity 74; E1 at 3.3.1, length 1.0 beats, velocity 90; G1 at 3.4.3, length 0.5 beats, velocity 72; C1 at 4.1.1, length 2.5 beats, velocity 89; G1 at 4.3.3, length 0.5 beats, velocity 70; D1 at 4.4.3, length 0.5 beats, velocity 66. If you chose KEY CARD B, draw B1 at 1.1.1, length 1.5 beats, velocity 92; F#1 at 1.2.3, length 0.5 beats, velocity 74; B1 at 1.3.1, length 1.0 beats, velocity 90; D2 at 1.4.3, length 0.5 beats, velocity 72; G1 at 2.1.1, length 1.5 beats, velocity 89; D2 at 2.2.3, length 0.5 beats, velocity 72; G1 at 2.3.1, length 1.0 beats, velocity 87; B1 at 2.4.3, length 0.5 beats, velocity 70; B1 at 3.1.1, length 1.5 beats, velocity 92; F#1 at 3.2.3, length 0.5 beats, velocity 74; B1 at 3.3.1, length 1.0 beats, velocity 90; D2 at 3.4.3, length 0.5 beats, velocity 72; G1 at 4.1.1, length 2.5 beats, velocity 89; D2 at 4.3.3, length 0.5 beats, velocity 70; A1 at 4.4.3, length 0.5 beats, velocity 66. If you chose KEY CARD C, draw F#1 at 1.1.1, length 1.5 beats, velocity 92; C#2 at 1.2.3, length 0.5 beats, velocity 74; F#1 at 1.3.1, length 1.0 beats, velocity 90; A1 at 1.4.3, length 0.5 beats, velocity 72; D1 at 2.1.1, length 1.5 beats, velocity 89; A1 at 2.2.3, length 0.5 beats, velocity 72; D1 at 2.3.1, length 1.0 beats, velocity 87; F#1 at 2.4.3, length 0.5 beats, velocity 70; F#1 at 3.1.1, length 1.5 beats, velocity 92; C#2 at 3.2.3, length 0.5 beats, velocity 74; F#1 at 3.3.1, length 1.0 beats, velocity 90; A1 at 3.4.3, length 0.5 beats, velocity 72; D1 at 4.1.1, length 2.5 beats, velocity 89; A1 at 4.3.3, length 0.5 beats, velocity 70; E1 at 4.4.3, length 0.5 beats, velocity 66.",
+      "why": "You are making a real key choice, but every note is still pre-written. That is exactly how to widen your decision-making without losing hand-holding.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Each last note in bar 4 is the reset note that points back to the root of bar 1. Keep it short in every key."
+    },
+    {
+      "id": 5,
+      "title": "Process the bass",
+      "category": "bass",
+      "instruction": "After Serum add Saturator, Compressor, EQ Eight, and Utility. Saturator: Drive 4.5 dB, Soft Clip On, Output -2.7 dB. Compressor: Sidechain On, Audio From DRUMS, Threshold -18 dB, Ratio 4:1, Attack 0.30 ms, Release 80 ms. EQ Eight: High-Pass 30 Hz at 24 dB slope. Utility: Width 0 percent. Set BASS fader to -5.0 dB.",
+      "why": "The bass processing stays constant so you can hear what the key and groove choices do without changing the mix foundation.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "This is the same engineering discipline no matter which musical option you chose."
+    },
+    {
+      "id": 6,
+      "title": "Load the pad and fix the chord tones for your key",
+      "category": "chords",
+      "instruction": "On PAD load Serum 2 and open S1 Presets -> Garage -> 'Pad- Hese'. Leave it exactly as loaded. KEY CARD A uses Em = E, G, B and C = C, E, G. KEY CARD B uses Bm = B, D, F# and G = G, B, D. KEY CARD C uses F#m = F#, A, C# and D = D, F#, A.",
+      "why": "All three keys use the same i to bVI shape, so you can hear how one harmonic idea changes color simply by being moved to a different tonic.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "If you want the darkest version, choose KEY CARD B. If you want the most open version, choose KEY CARD C."
+    },
+    {
+      "id": 7,
+      "title": "Program the pad, return reverb, and sidechain",
+      "category": "chords",
+      "instruction": "Create a 4-bar PAD clip. If you chose KEY CARD A, draw G3 at 1.1.1, length 3.5 beats, velocity 72; B3 at 1.1.1, length 3.5 beats, velocity 68; E4 at 1.1.1, length 3.5 beats, velocity 64; G3 at 2.1.1, length 3.5 beats, velocity 72; C4 at 2.1.1, length 3.5 beats, velocity 68; E4 at 2.1.1, length 3.5 beats, velocity 64; then repeat bars 1 and 2 into bars 3 and 4. If you chose KEY CARD B, draw D4 at 1.1.1, length 3.5 beats, velocity 72; F#4 at 1.1.1, length 3.5 beats, velocity 68; B4 at 1.1.1, length 3.5 beats, velocity 64; D4 at 2.1.1, length 3.5 beats, velocity 72; G4 at 2.1.1, length 3.5 beats, velocity 68; B4 at 2.1.1, length 3.5 beats, velocity 64; then repeat bars 1 and 2 into bars 3 and 4. If you chose KEY CARD C, draw A3 at 1.1.1, length 3.5 beats, velocity 72; C#4 at 1.1.1, length 3.5 beats, velocity 68; F#4 at 1.1.1, length 3.5 beats, velocity 64; A3 at 2.1.1, length 3.5 beats, velocity 72; D4 at 2.1.1, length 3.5 beats, velocity 68; F#4 at 2.1.1, length 3.5 beats, velocity 64; then repeat bars 1 and 2 into bars 3 and 4. On VERB add Reverb with Decay Time 2.5 s, Pre-Delay 11 ms, Dry/Wet 100 percent, then EQ Eight High-Pass 220 Hz. On PAD add Compressor with Sidechain On, Audio From DRUMS, Threshold -22 dB, Ratio 4:1, Attack 0.10 ms, Release 126 ms. Set PAD send to VERB at -18.0 dB and PAD fader to -11.5 dB.",
+      "why": "The same voicing shape lets you compare keys honestly. You are hearing the transposition itself, not a different arrangement trick.",
+      "ableton_cheatsheet_id": "return-tracks",
+      "splice_search": null,
+      "tip": "Keep the voicings high. This track is supposed to feel polished, not muddy."
+    },
+    {
+      "id": 8,
+      "title": "Write the pluck hook for your key",
+      "category": "melody",
+      "instruction": "On PLUCK load Serum 2 and open S1 Presets -> Garage -> 'Pluck - Simples'. Leave it exactly as loaded. Create a 4-bar clip. If you chose KEY CARD A, draw E5 at 1.1.3, length 0.5 beats, velocity 80; B4 at 1.3.3, length 0.25 beats, velocity 74; G4 at 2.1.3, length 0.5 beats, velocity 80; E4 at 2.3.3, length 0.25 beats, velocity 72; E5 at 3.1.3, length 0.5 beats, velocity 82; B4 at 3.3.3, length 0.25 beats, velocity 74; G4 at 4.1.3, length 0.5 beats, velocity 80; E4 at 4.3.3, length 0.25 beats, velocity 70. If you chose KEY CARD B, draw B4 at 1.1.3, length 0.5 beats, velocity 80; F#4 at 1.3.3, length 0.25 beats, velocity 74; D4 at 2.1.3, length 0.5 beats, velocity 80; B3 at 2.3.3, length 0.25 beats, velocity 72; B4 at 3.1.3, length 0.5 beats, velocity 82; F#4 at 3.3.3, length 0.25 beats, velocity 74; D4 at 4.1.3, length 0.5 beats, velocity 80; B3 at 4.3.3, length 0.25 beats, velocity 70. If you chose KEY CARD C, draw C#5 at 1.1.3, length 0.5 beats, velocity 80; A4 at 1.3.3, length 0.25 beats, velocity 74; F#4 at 2.1.3, length 0.5 beats, velocity 80; C#4 at 2.3.3, length 0.25 beats, velocity 72; C#5 at 3.1.3, length 0.5 beats, velocity 82; A4 at 3.3.3, length 0.25 beats, velocity 74; F#4 at 4.1.3, length 0.5 beats, velocity 80; C#4 at 4.3.3, length 0.25 beats, velocity 70. Set PLUCK send to VERB at -20.0 dB and PLUCK fader to -15.0 dB.",
+      "why": "The same rhythmic hook in three different keys helps you hear key color directly while keeping the arrangement logic identical.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "This is your first chosen hook, but you are still executing exact notes. That is the safe way to practice decision-making."
+    },
+    {
+      "id": 9,
+      "title": "Write the lead hook for your key",
+      "category": "melody",
+      "instruction": "On LEAD load Serum 2 and open S1 Presets -> Garage -> 'Lead- Just'. Leave the preset exactly as loaded. Create a 4-bar clip. If you chose KEY CARD A, draw B4 at 1.1.1, length 1.0 beats, velocity 82; G4 at 1.2.3, length 0.5 beats, velocity 76; E4 at 1.4.1, length 0.5 beats, velocity 72; G4 at 2.1.1, length 1.0 beats, velocity 80; E4 at 2.3.1, length 0.5 beats, velocity 74; C4 at 2.4.1, length 0.5 beats, velocity 72; B4 at 3.1.1, length 1.0 beats, velocity 82; G4 at 3.2.3, length 0.5 beats, velocity 76; E4 at 3.4.1, length 0.5 beats, velocity 74; G4 at 4.1.1, length 1.5 beats, velocity 81; E4 at 4.3.1, length 0.5 beats, velocity 74; D4 at 4.4.1, length 0.5 beats, velocity 72. If you chose KEY CARD B, draw F#4 at 1.1.1, length 1.0 beats, velocity 82; D4 at 1.2.3, length 0.5 beats, velocity 76; B3 at 1.4.1, length 0.5 beats, velocity 72; D4 at 2.1.1, length 1.0 beats, velocity 80; B3 at 2.3.1, length 0.5 beats, velocity 74; G3 at 2.4.1, length 0.5 beats, velocity 72; F#4 at 3.1.1, length 1.0 beats, velocity 82; D4 at 3.2.3, length 0.5 beats, velocity 76; B3 at 3.4.1, length 0.5 beats, velocity 74; D4 at 4.1.1, length 1.5 beats, velocity 81; B3 at 4.3.1, length 0.5 beats, velocity 74; A3 at 4.4.1, length 0.5 beats, velocity 72. If you chose KEY CARD C, draw C#5 at 1.1.1, length 1.0 beats, velocity 82; A4 at 1.2.3, length 0.5 beats, velocity 76; F#4 at 1.4.1, length 0.5 beats, velocity 72; A4 at 2.1.1, length 1.0 beats, velocity 80; F#4 at 2.3.1, length 0.5 beats, velocity 74; D4 at 2.4.1, length 0.5 beats, velocity 72; C#5 at 3.1.1, length 1.0 beats, velocity 82; A4 at 3.2.3, length 0.5 beats, velocity 76; F#4 at 3.4.1, length 0.5 beats, velocity 74; A4 at 4.1.1, length 1.5 beats, velocity 81; F#4 at 4.3.1, length 0.5 beats, velocity 74; E4 at 4.4.1, length 0.5 beats, velocity 72. After Serum add Simple Delay with Time Left 1/8, Time Right 1/8, Feedback 14 percent, Dry/Wet 10 percent. Set LEAD send to VERB at -19.0 dB and LEAD fader to -10.0 dB.",
+      "why": "The lead is the more open, singable version of the pluck idea. Again, the structure is controlled so you can compare the keys honestly.",
+      "ableton_cheatsheet_id": "simple-delay",
+      "splice_search": null,
+      "tip": "The final note in each key is the little hinge note back into the root. It should sound like forward pull, not mistake."
+    },
+    {
+      "id": 10,
+      "title": "Create the vocal pocket",
+      "category": "mix",
+      "instruction": "On PAD add EQ Eight after the Compressor: High-Pass 140 Hz, Bell 950 Hz at -3.5 dB with Q 1.50, Bell 2.5 kHz at -2.5 dB with Q 1.30. On PLUCK add EQ Eight: High-Pass 260 Hz, Bell 3.0 kHz at -2.0 dB with Q 1.30. On LEAD add EQ Eight after Simple Delay: High-Pass 220 Hz, Bell 3.0 kHz at -2.0 dB with Q 1.20.",
+      "why": "The engineering stays fixed across all options so the musical differences remain the focus of the comparison.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "This is the shared mix discipline behind all three key choices."
+    },
+    {
+      "id": 11,
+      "title": "Arrange the full track",
+      "category": "ableton",
+      "instruction": "Build the arrangement exactly like this regardless of which key and groove you chose. Bars 1-8: intro, DRUMS only. Bars 9-24: drop 1, DRUMS plus BASS plus PAD plus PLUCK. Bars 25-32: break, PAD plus PLUCK only, and automate PLUCK send to VERB from -20 dB to -16 dB across bars 25-32. Delete all clips on bar 32 beat 4 for a 1-beat silence. Bars 33-48: drop 2A, full arrangement except LEAD. Bars 49-64: drop 2B, turn LEAD on and raise LEAD clip Gain by +1.5 dB only from bars 57-64, and automate PAD send to VERB from -18 dB to -15 dB across bars 49-64. Bars 65-72: outro, mute LEAD at bar 65, mute PLUCK at bar 67, mute PAD at bar 69, mute BASS at bar 71, let DRUMS finish bar 72.",
+      "why": "This identical arrangement across all options teaches you the difference between musical choices and structural choices. The structure stays fixed; the chosen key and groove change the feeling.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Do not improvise a new arrangement. The comparison only works if the structure is consistent."
+    },
+    {
+      "id": 12,
+      "title": "Set the mix",
+      "category": "mix",
+      "instruction": "Set DRUMS group to -4.0 dB, BASS to -5.0 dB, PAD to -11.5 dB, PLUCK to -15.0 dB, LEAD to -10.0 dB, VERB return to -18.5 dB, and Master to 0.0 dB. Add Limiter on Master with Ceiling -0.30 dB.",
+      "why": "Keeping the same gain structure across all options makes your final musical comparison more honest.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "If one key feels subjectively quieter, do not compensate. That perceived difference is part of the learning."
+    },
+    {
+      "id": 13,
+      "title": "Export and compare your chosen blueprint",
+      "category": "mix",
+      "instruction": "Export bars 1 through 72 as WAV, 24-bit, 44.1 kHz with filename 'original-16-your-sound-v1.wav'. In a notes file, write exactly which key card and groove card you chose. Then listen to bars 9-24 and 49-64 and write one sentence on how your choice changed the mood compared with what you expected.",
+      "why": "This is the first lesson where the musical comparison itself is the point. You made a bounded choice and then heard the result without any guesswork in the production process.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The song is still fully composed by the lesson. Your job here is to notice what your chosen blueprint feels like."
+    }
+  ]
+}

@@ -1,0 +1,150 @@
+{
+  "id": "original-08-city-current",
+  "title": "City Current",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 105,
+  "bpm": 134,
+  "key": "G minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "G minor, 134 BPM, Eb to Bb to Gm (VI to III to i), 4-on-floor drums, and two melodic layers: a pluck and a lead. The writing is fully pre-composed, but the section flow is pushed toward something you could actually upload and have critiqued.",
+  "what_youll_learn": [
+    "How VI to III to i works in G minor using one 4-bar phrase",
+    "How to separate a pluck layer from a lead layer so they do different jobs",
+    "How to keep a 134 BPM track energetic without overcrowding the drums",
+    "How to stage a second melodic layer later in the arrangement so the whole song feels more finished"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set the concept",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 134 BPM and save it as 'original-08-city-current'. Make these tracks: DRUMS, BASS, PAD, PLUCK, LEAD, and a return track called VERB. The track idea is simple: bright Eb, bright Bb, then home on G minor, with the PLUCK arriving first and the LEAD saved for the bigger second half.",
+      "why": "Saving one melodic layer for later is one of the easiest ways to make a beginner arrangement feel like it develops.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Treat PLUCK as texture and LEAD as statement. They should not feel interchangeable."
+    },
+    {
+      "id": 2,
+      "title": "Load the drum samples",
+      "category": "drums",
+      "instruction": "Load a Drum Rack on DRUMS and place these exact samples: C1 = 'Production Hut- UK Garage Drums Volume 1/KICKS/PH UKG1 ONESHOT Nikey_Kick.wav', D1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Clap/PH_UKG2_Clap_13.wav', F#1 = 'Production Hut- UK Garage Drums Volume 1/HATS/PH UKG1 ONESHOT Nikey_Hat2.wav', G#1 = 'Production Hut- UK Garage Drums Volume 1/SHAKERS/PH UKG1 ONESHOT Nikey_Shaker.wav'.",
+      "why": "The Nikey kick is slightly punchier and narrower than Hackney, which helps the groove stay defined at 134 BPM when more melodic material arrives later.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "You are using four sounds from the same named family here for consistency. That is a good beginner habit."
+    },
+    {
+      "id": 3,
+      "title": "Program the drums",
+      "category": "drums",
+      "instruction": "Create a 2-bar clip on DRUMS. All note lengths are 0.25 beats. KICK C1: 1.1.1 vel 96, 1.2.1 vel 89, 1.3.1 vel 95, 1.4.1 vel 87, 2.1.1 vel 96, 2.2.1 vel 90, 2.3.1 vel 95, 2.4.1 vel 88. CLAP D1: 1.2.1 vel 92, 1.4.1 vel 90, 2.2.1 vel 92, 2.4.1 vel 90. HAT F#1: 1.1.3 vel 64, 1.2.3 vel 62, 1.3.3 vel 66, 1.4.3 vel 60, 2.1.3 vel 64, 2.2.3 vel 62, 2.3.3 vel 67, 2.4.3 vel 59. SHAKER G#1: 1.2.4 vel 44, 1.4.4 vel 42, 2.2.4 vel 44, 2.4.4 vel 42. Group DRUMS and add Glue Compressor with Ratio 4:1, Attack 3 ms, Release Auto, Threshold -5 dB, Soft Clip On.",
+      "why": "The extra little 16th-note shaker flick on subdivision 4 gives the groove more electricity without changing the basic 4-on-floor foundation.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "The hats and shaker together should feel energetic, not fussy. If they feel fussy, the problem is almost always volume, not pattern."
+    },
+    {
+      "id": 4,
+      "title": "Write the bass line",
+      "category": "bass",
+      "instruction": "On BASS load Serum 2 and open S1 Presets -> Speed Garage -> 'Sub- Sidewinda'. Leave it exactly as loaded. Create a 4-bar MIDI clip with these notes: Eb1 at 1.1.1, length 3.5 beats, velocity 90; Bb1 at 1.4.3, length 0.5 beats, velocity 72; Bb0 at 2.1.1, length 3.5 beats, velocity 88; F1 at 2.4.3, length 0.5 beats, velocity 70; G1 at 3.1.1, length 7.5 beats, velocity 92; D2 at 4.4.1, length 0.5 beats, velocity 68.",
+      "why": "Eb to Bb to G gives you two bright major roots before the home minor arrives. The bass roots make that emotional shape impossible to miss.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Do not be scared by the two major chords. In UK garage they are often exactly what creates the lift."
+    },
+    {
+      "id": 5,
+      "title": "Process the bass",
+      "category": "bass",
+      "instruction": "After Serum add Saturator, Compressor, EQ Eight, and Utility. Saturator: Drive 4.4 dB, Soft Clip On, Output -2.6 dB. Compressor: Sidechain On, Audio From DRUMS, Threshold -18 dB, Ratio 4:1, Attack 0.30 ms, Release 86 ms. EQ Eight: High-Pass 30 Hz at 24 dB slope. Utility: Width 0 percent. Set BASS fader to -5.0 dB.",
+      "why": "At 134 BPM the release is a little shorter so the bass gets out of the way of the next kick faster.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "If the kick feels weak, do not make the kick louder first. Check the sidechain depth on the bass."
+    },
+    {
+      "id": 6,
+      "title": "Load the pad and fix the chord tones",
+      "category": "chords",
+      "instruction": "On PAD load Serum 2 and open S1 Presets -> Garage -> 'Pad- Wanderlust'. Leave the preset exactly as loaded. Your chords are Eb major = Eb, G, Bb; Bb major = Bb, D, F; and G minor = G, Bb, D.",
+      "why": "Bb is shared by Eb major and G minor, and D is shared by Bb major and G minor. That shared-note overlap is what makes the progression sound smooth even though the mood changes strongly.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "When you see shared notes across chords, expect a smoother transition. That is the rule you are hearing here."
+    },
+    {
+      "id": 7,
+      "title": "Program the pad and reverb",
+      "category": "chords",
+      "instruction": "Create a 4-bar PAD clip. Draw Eb3 at 1.1.1, length 3.5 beats, velocity 72; G3 at 1.1.1, length 3.5 beats, velocity 68; Bb3 at 1.1.1, length 3.5 beats, velocity 64; Bb2 at 2.1.1, length 3.5 beats, velocity 72; D3 at 2.1.1, length 3.5 beats, velocity 68; F3 at 2.1.1, length 3.5 beats, velocity 64; G3 at 3.1.1, length 7.5 beats, velocity 72; Bb3 at 3.1.1, length 7.5 beats, velocity 68; D4 at 3.1.1, length 7.5 beats, velocity 64. On VERB add Reverb with Decay Time 2.4 s, Pre-Delay 10 ms, Dry/Wet 100 percent, then EQ Eight High-Pass 220 Hz. On PAD add Compressor with Sidechain On, Audio From DRUMS, Threshold -22 dB, Ratio 4:1, Attack 0.10 ms, Release 128 ms. Set PAD send to VERB at -18.0 dB and PAD fader to -11.5 dB.",
+      "why": "The pad gives the listener the emotional map, but the sidechain keeps it rhythmic enough to still feel club-focused.",
+      "ableton_cheatsheet_id": "return-tracks",
+      "splice_search": null,
+      "tip": "Do not push the pad brighter with EQ. The lead and pluck will handle the extra sparkle later."
+    },
+    {
+      "id": 8,
+      "title": "Add the pluck layer",
+      "category": "melody",
+      "instruction": "On PLUCK load Serum 2 and open S1 Presets -> Garage -> 'Pluck - Nikey'. Leave the preset exactly as loaded. Create a 4-bar clip with these notes: G4 at 1.1.3, length 0.5 beats, velocity 80; Bb4 at 1.3.3, length 0.25 beats, velocity 74; D5 at 2.1.3, length 0.5 beats, velocity 80; F4 at 2.3.3, length 0.25 beats, velocity 72; Bb4 at 3.1.3, length 0.5 beats, velocity 82; D5 at 3.3.3, length 0.25 beats, velocity 74; G4 at 4.1.3, length 0.5 beats, velocity 80; D5 at 4.3.3, length 0.25 beats, velocity 72. Set PLUCK send to VERB at -21.0 dB and PLUCK fader to -15.0 dB.",
+      "why": "The pluck is all offbeat punctuation. It gives the loop sparkle without taking the lead role yet.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "This part should sound like little flashes on top of the pad, not a melody you can sing start to finish."
+    },
+    {
+      "id": 9,
+      "title": "Add the lead layer",
+      "category": "melody",
+      "instruction": "On LEAD load Serum 2 and open S1 Presets -> Garage -> 'Lead- Saturn'. Leave the preset exactly as loaded. Create a 4-bar clip with these notes: G4 at 1.1.1, length 1.0 beats, velocity 82; Bb4 at 1.2.3, length 0.5 beats, velocity 76; D5 at 1.4.1, length 0.5 beats, velocity 72; F4 at 2.1.1, length 1.0 beats, velocity 80; D4 at 2.3.1, length 0.5 beats, velocity 72; Bb4 at 2.4.1, length 0.5 beats, velocity 76; G4 at 3.1.1, length 1.5 beats, velocity 83; Bb4 at 3.3.1, length 0.5 beats, velocity 76; D5 at 4.1.1, length 1.0 beats, velocity 82; G4 at 4.3.1, length 1.0 beats, velocity 74. After Serum add Simple Delay with Time Left 1/8, Time Right 1/8, Feedback 14 percent, Dry/Wet 10 percent. Set LEAD send to VERB at -19.0 dB and LEAD fader to -10.0 dB.",
+      "why": "The lead lands on singable chord tones and fills more space than the pluck, so it sounds like the promoted version of the earlier idea. The short delay gives it a little reach when it finally arrives in the bigger section.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The delay should make the lead feel wider, not blurrier. If it starts masking the pluck, lower the LEAD send before you change the notes."
+    },
+    {
+      "id": 10,
+      "title": "Create vocal space",
+      "category": "mix",
+      "instruction": "On PAD add EQ Eight after the Compressor: High-Pass 140 Hz, Bell 950 Hz at -3.5 dB with Q 1.50, Bell 2.5 kHz at -2.5 dB with Q 1.30. On PLUCK add EQ Eight: High-Pass 260 Hz, Bell 3.0 kHz at -2.0 dB with Q 1.30. On LEAD add EQ Eight: High-Pass 220 Hz, Bell 2.9 kHz at -2.0 dB with Q 1.20.",
+      "why": "Three upper layers can clutter the center very quickly. These cuts leave room so the mix still feels deliberate.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "If the lead and pluck seem to fight, the answer is usually level balance plus this EQ step, not new notes."
+    },
+    {
+      "id": 11,
+      "title": "Arrange the full production",
+      "category": "ableton",
+      "instruction": "Build the arrangement exactly like this. Bars 1-8: intro, DRUMS only. Bars 9-16: drop 1A, DRUMS plus BASS plus PAD. Bars 17-24: drop 1B, add PLUCK. Bars 25-28: break A, PAD only. Bars 29-32: break B, PAD plus PLUCK, and automate the PLUCK send to VERB from -21 dB at bar 29 to -17 dB at bar 32. Delete all clips at bar 32 beat 4 for a 1-beat silence. Bars 33-48: drop 2A, DRUMS plus BASS plus PAD plus PLUCK. Bars 49-64: drop 2B, turn LEAD on so all five main tracks play together, automate the LEAD track fader from -10.0 dB at bar 57 to -9.0 dB at bar 64, and automate the PAD send to VERB from -18 dB at bar 57 to -15 dB at bar 64. Bars 65-72: outro, mute LEAD at bar 65, mute PLUCK at bar 67, mute PAD at bar 69, mute BASS at bar 71, and let DRUMS finish bar 72.",
+      "why": "The lead is held back until the later drop, and the final eight bars open a little wider through exact automation. That is what makes the whole track feel like a finished progression instead of repeated parts.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Bars 57-64 should feel like the emotional peak. If they do not, check the LEAD and PAD automation before you change the sound design."
+    },
+    {
+      "id": 12,
+      "title": "Set the mix",
+      "category": "mix",
+      "instruction": "Set DRUMS group to -4.0 dB, BASS to -5.0 dB, PAD to -11.5 dB, PLUCK to -15.0 dB, LEAD to -10.0 dB, VERB return to -18.5 dB, and Master to 0.0 dB. Add Limiter on Master with Ceiling -0.30 dB.",
+      "why": "These balances keep the drums and bass in charge while still letting the extra melodic layer feel exciting when it appears.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "Do not make the lead louder than the pad. It should feel present, not detached."
+    },
+    {
+      "id": 13,
+      "title": "Export City Current",
+      "category": "mix",
+      "instruction": "Export bars 1 through 72 as WAV, 24-bit, 44.1 kHz with filename 'original-08-city-current-v1.wav'. After export, listen to bars 49-64 and confirm the lead arrival and later send automation make that section feel bigger than bars 17-24 without turning the mix cloudy.",
+      "why": "A strong arrangement uses exact layer timing and small mix moves to create excitement, not just more notes everywhere all at once.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the last drop does not feel larger, the most likely fix is lowering PLUCK by 1 dB and leaving LEAD where it is."
+    }
+  ]
+}

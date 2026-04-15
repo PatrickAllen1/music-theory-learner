@@ -1,0 +1,140 @@
+{
+  "id": "original-06-open-road",
+  "title": "Open Road",
+  "build_type": "original",
+  "difficulty": "beginner",
+  "estimated_time_mins": 100,
+  "bpm": 132,
+  "key": "A minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "A minor, 132 BPM, Am to F to C, 4-on-floor drums, and a lead melody that opens out over a longer arrangement. The writing is fully hand-held, but the final song is shaped like something you could upload and get useful critique on.",
+  "what_youll_learn": [
+    "How Am to F to C creates forward motion while staying beginner-friendly",
+    "How to voice a lead so every downbeat lands on a clear chord tone",
+    "How to use a 4-bar harmonic loop and still make a full song",
+    "How to stage a three-chord track so the second drop feels release-ready instead of repeated"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Concept and setup",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 132 BPM and save it as 'original-06-open-road'. Make these tracks: DRUMS, BASS, PAD, LEAD, and a return track called VERB. The brief is simple: warm A minor verses, a brighter F and C lift, and a lead that feels like it is traveling ahead of the chords.",
+      "why": "This track adds one extra harmonic stop compared with Night Walk, so the arrangement feels more narrative without getting technically difficult.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Keep thinking in 4-bar chunks. This entire track is built from one 4-bar idea."
+    },
+    {
+      "id": 2,
+      "title": "Load the drum rack",
+      "category": "drums",
+      "instruction": "On DRUMS load a Drum Rack and place these exact samples: C1 = 'Production Hut- UK Garage Drums Volume 1/KICKS/PH UKG1 ONESHOT Cash_Kick.wav', D1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Clap/PH_UKG2_Clap_10.wav', F#1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Closed Hat/PH_UKG2_ClosedHat_6.wav', G#1 = 'Production Hut- UK Garage Drums Volume 2/One Shots/Shaker/PH_UKG2_Shaker_3.wav'.",
+      "why": "Cash_Kick has a faster front edge than Hackney_Kick, which helps the track feel tighter at 132 BPM.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Using all four drum sounds from the Production Hut garage folders keeps the kit cohesive even though the folders come from two different volumes."
+    },
+    {
+      "id": 3,
+      "title": "Program the drum pattern",
+      "category": "drums",
+      "instruction": "Create a 2-bar DRUMS clip. All note lengths are 0.25 beats. KICK C1: 1.1.1 vel 96, 1.2.1 vel 88, 1.3.1 vel 94, 1.4.1 vel 86, 2.1.1 vel 96, 2.2.1 vel 89, 2.3.1 vel 95, 2.4.1 vel 87. CLAP D1: 1.2.1 vel 91, 1.4.1 vel 89, 2.2.1 vel 91, 2.4.1 vel 89. CLOSED HAT F#1: 1.1.3 vel 63, 1.2.3 vel 61, 1.3.3 vel 64, 1.4.3 vel 59, 2.1.3 vel 63, 2.2.3 vel 61, 2.3.3 vel 65, 2.4.3 vel 58. SHAKER G#1: 1.2.3 vel 46, 1.4.3 vel 43, 2.2.3 vel 46, 2.4.3 vel 43. Group DRUMS and add Glue Compressor with Ratio 4:1, Attack 3 ms, Release Auto, Threshold -5 dB, Soft Clip On.",
+      "why": "The pattern is familiar enough to feel stable, but the shaker on the offbeats gives it forward pull so the lead has something to ride on top of.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "If the hats feel too sharp, lower only the hat track velocity values by 4, not the whole DRUMS group."
+    },
+    {
+      "id": 4,
+      "title": "Write the bass line",
+      "category": "bass",
+      "instruction": "On BASS load Serum 2 and open S1 Presets -> Garage -> 'Bass -  Sinesation'. Leave the preset exactly as loaded. Create a 4-bar MIDI clip and draw these exact notes: A1 at 1.1.1, length 3.5 beats, velocity 92; E2 at 1.4.3, length 0.5 beats, velocity 74; F1 at 2.1.1, length 3.5 beats, velocity 89; C2 at 2.4.3, length 0.5 beats, velocity 72; C2 at 3.1.1, length 3.5 beats, velocity 90; G1 at 3.4.3, length 0.5 beats, velocity 70; C1 at 4.1.1, length 3.0 beats, velocity 86; E1 at 4.4.1, length 0.5 beats, velocity 68.",
+      "why": "The long roots make the harmony clear, and the small fifth pickups stop the low end from feeling static.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Bars 3 and 4 both belong to C. That extra time on the final chord is what makes the loop feel settled before returning to A minor."
+    },
+    {
+      "id": 5,
+      "title": "Process the bass",
+      "category": "bass",
+      "instruction": "After Serum add Saturator, Compressor, EQ Eight, and Utility. Saturator: Drive 4.8 dB, Soft Clip On, Output -2.8 dB. Compressor: Sidechain On, Audio From DRUMS, Threshold -19 dB, Ratio 4:1, Attack 0.30 ms, Release 92 ms. EQ Eight: High-Pass 30 Hz at 24 dB slope. Utility: Width 0 percent, Gain 0 dB. Set the BASS fader to -5.0 dB.",
+      "why": "The processing is nearly the same as track 05 because the job is the same: keep the sub audible, controlled, and out of the kick's way.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "If the low end feels too thick in bar 3, that is usually the long C note touching the kick. Trust the sidechain first before changing the MIDI."
+    },
+    {
+      "id": 6,
+      "title": "Load the pad and lock in the chords",
+      "category": "chords",
+      "instruction": "On PAD load Serum 2 and open S1 Presets -> Garage -> 'Pad- Apricots'. Leave the preset exactly as loaded. Your three chords are A minor = A, C, E; F major = F, A, C; and C major = C, E, G.",
+      "why": "Am and F share A and C, and Am and C share C and E. Those shared notes are why this progression feels connected instead of jumpy.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "This progression sounds familiar because it uses lots of shared tones. That is not a weakness. It is what makes it beginner-friendly."
+    },
+    {
+      "id": 7,
+      "title": "Program the pad and return reverb",
+      "category": "chords",
+      "instruction": "Create a 4-bar PAD clip. Draw A3 at 1.1.1, length 3.5 beats, velocity 72; C4 at 1.1.1, length 3.5 beats, velocity 68; E4 at 1.1.1, length 3.5 beats, velocity 64; F3 at 2.1.1, length 3.5 beats, velocity 72; A3 at 2.1.1, length 3.5 beats, velocity 68; C4 at 2.1.1, length 3.5 beats, velocity 64; C3 at 3.1.1, length 7.5 beats, velocity 72; E3 at 3.1.1, length 7.5 beats, velocity 68; G3 at 3.1.1, length 7.5 beats, velocity 64. On VERB add Reverb with Decay Time 2.5 s, Pre-Delay 10 ms, Dry/Wet 100 percent, then EQ Eight High-Pass 220 Hz at 24 dB slope. On PAD add Compressor with Sidechain On, Audio From DRUMS, Threshold -22 dB, Ratio 4:1, Attack 0.10 ms, Release 130 ms. Set PAD send to VERB at -18.0 dB and PAD fader to -11.5 dB.",
+      "why": "The last chord gets two full bars so the listener has time to hear the phrase resolve before it loops.",
+      "ableton_cheatsheet_id": "sidechain-compression",
+      "splice_search": null,
+      "tip": "Keep the pad soft. The lead will do the obvious melodic talking in this track."
+    },
+    {
+      "id": 8,
+      "title": "Write the lead melody",
+      "category": "melody",
+      "instruction": "On LEAD load Serum 2 and open S1 Presets -> Garage -> 'Lead- Just'. Leave the preset exactly as loaded. Create a 4-bar clip and draw these exact notes: A4 at 1.1.1, length 1.0 beats, velocity 82; C5 at 1.3.1, length 1.0 beats, velocity 76; E5 at 1.4.3, length 0.5 beats, velocity 72; F4 at 2.1.1, length 1.0 beats, velocity 80; A4 at 2.2.3, length 0.5 beats, velocity 74; C5 at 2.3.3, length 0.5 beats, velocity 70; G4 at 3.1.1, length 1.5 beats, velocity 79; E4 at 3.3.1, length 0.5 beats, velocity 73; C4 at 3.4.1, length 1.0 beats, velocity 76; G4 at 4.1.1, length 1.0 beats, velocity 78; E4 at 4.2.3, length 0.5 beats, velocity 72; C4 at 4.4.1, length 0.5 beats, velocity 74. After Serum add Simple Delay with Time Left 1/8, Time Right 1/8, Feedback 14 percent, Dry/Wet 10 percent. Set LEAD send to VERB at -20.0 dB and the LEAD fader to -9.5 dB.",
+      "why": "Every bar opens on a chord tone that clearly belongs to the chord underneath it, so the melody sounds confident instead of accidental. The short delay gives the lead a little travel without pulling focus off the groove.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The delay should widen the lead, not make it wash out. If you hear a separate echo, lower Dry/Wet first."
+    },
+    {
+      "id": 9,
+      "title": "Create vocal space",
+      "category": "mix",
+      "instruction": "On PAD add EQ Eight after the Compressor: High-Pass 135 Hz, Bell 900 Hz at -3.5 dB with Q 1.60, Bell 2.2 kHz at -2.5 dB with Q 1.30. On LEAD add EQ Eight: High-Pass 220 Hz, Bell 3.0 kHz at -2.0 dB with Q 1.20. Leave the reverb return untouched.",
+      "why": "These cuts stop the pad and lead from filling the same speech-focused frequencies a singer would use later.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "When the mix is right, the lead should feel in front of the pad even though the pad is louder in total frequency area."
+    },
+    {
+      "id": 10,
+      "title": "Arrange the sections",
+      "category": "ableton",
+      "instruction": "Build the track exactly like this. Bars 1-8: intro, DRUMS only. Bars 9-16: drop 1A, DRUMS plus BASS plus PAD. Bars 17-24: drop 1B, add LEAD. Bars 25-28: break A, BASS only. Bars 29-32: break B, PAD only. Delete all clips at bar 32 beat 4 for a 1-beat silence. Bars 33-48: drop 2A, all four tracks. Bars 49-64: drop 2B, keep all four tracks playing, automate the LEAD track fader from -9.5 dB at bar 57 to -8.5 dB at bar 64, and automate the PAD send to VERB from -18 dB at bar 49 to -15 dB at bar 64. Bars 65-72: outro, mute LEAD at bar 65, mute PAD at bar 69, mute BASS at bar 71, and leave DRUMS until the end of bar 72.",
+      "why": "This makes the harmony easier to hear in the break, then gives the second half a proper lift through exact staging and automation rather than extra writing.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Bars 57-64 should feel like the peak because the lead opens slightly more, not because the track suddenly gets crowded."
+    },
+    {
+      "id": 11,
+      "title": "Set the mix",
+      "category": "mix",
+      "instruction": "Set DRUMS group to -4.0 dB, BASS to -5.0 dB, PAD to -11.5 dB, LEAD to -9.5 dB, VERB return to -18.5 dB, and Master to 0.0 dB. Add Limiter on Master with Ceiling -0.30 dB and Lookahead 1 ms.",
+      "why": "The lead needs to be heard clearly, but it should still sound attached to the groove rather than sitting like a separate pop vocal.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "If the lead feels too wide, leave it alone. This lesson is about note placement, not stereo decoration."
+    },
+    {
+      "id": 12,
+      "title": "Export Open Road",
+      "category": "mix",
+      "instruction": "Export bars 1 through 72 as WAV, 24-bit, 44.1 kHz with filename 'original-06-open-road-v1.wav'. Listen to bars 49-64 after export and confirm the progression is still obvious and the later section feels more open than bars 17-24 without sounding detached from the groove.",
+      "why": "A release-ready garage sketch still has to communicate harmony clearly when the arrangement changes. This export check makes sure the bigger ending is musical, not just louder.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If bars 25-32 feel empty instead of intentional, lower the VERB return less in the break next time, not the bass louder."
+    }
+  ]
+}
