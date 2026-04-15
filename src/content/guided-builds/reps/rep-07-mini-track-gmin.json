@@ -1,0 +1,100 @@
+{
+  "id": "rep-07-mini-track-gmin",
+  "title": "Mini-Track — G Minor, 2-Step",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 35,
+  "bpm": 136,
+  "key": "G minor",
+  "source_track_id": "sammy-virji",
+  "spinoff_level": null,
+  "description": "Same mini-track concept as rep-06 — but G minor, 2-step kick, and sourced from Sammy Virji's energy. The 2-step is lighter and more human than 4-on-floor. The final step compares both mini-tracks side by side: same template, completely different feel.",
+  "what_youll_learn": [
+    "How to use a 2-step kick pattern vs 4-on-floor",
+    "How G minor sits emotionally differently to E minor",
+    "How kick pattern choice changes the track's energy more than the notes do",
+    "Side-by-side comparison: rep-06 (4-on-floor, E minor) vs rep-07 (2-step, G minor)"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up the project",
+      "category": "ableton",
+      "instruction": "Open a new Ableton project. Set BPM to 136, time signature 4/4. Create two tracks: DRUMS and BASS. Save as 'rep-07-mini-track-gmin'. Set the loop brace to 8 bars.",
+      "why": "136 BPM is slightly faster than rep-06's 132 BPM. The 2-step kick makes the groove feel lighter, not denser — the tempo increase compensates so the energy level is comparable. This is a common real-world tradeoff: 2-step tracks often run slightly faster than 4-on-floor to maintain drive.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Keep rep-06 accessible — you'll compare both at the end. The contrast between 4-on-floor E minor and 2-step G minor is the main lesson of this rep."
+    },
+    {
+      "id": 2,
+      "title": "Program the 2-step kick",
+      "category": "drums",
+      "instruction": "Load a Drum Rack on the DRUMS track. Find a punchy kick sample (same as rep-01/06 or slightly different). Program an 8-bar clip with this 2-step kick pattern per bar: kick on beat 1 (strong), kick on beat 2.5 (the '+' of beat 2, slightly quieter — velocity 85), kick on beat 3 (medium — velocity 90). No kick on beat 4. Repeat this pattern for all 8 bars.",
+      "why": "The 2-step kick does not land on every beat. It lands on 1, the '+' of 2, and 3 — creating a rolling, stumbling feel rather than a mechanical 4-on-the-floor drive. The missing beat 4 is what gives the groove 'lift'. Sammy Virji uses this pattern to give his tracks a more organic, human feeling.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "punchy uk garage kick",
+      "tip": "The '+' of beat 2 (position 1.2.3 in Ableton) is the most important 2-step hit. Set the grid to 1/8 note to place it precisely. If you're unsure where it is, count: '1-and-2-AND-3-and-4' — the 'AND' of beat 2 is where it lands."
+    },
+    {
+      "id": 3,
+      "title": "Add clap and hats",
+      "category": "drums",
+      "instruction": "Add clap (D1) on beats 2 and 4, velocity 92. Add closed hi-hat (F#1) on off-beats (every 1/8 note '+'), velocity 68. Add an open hat accent (G#1) on beat 3.5 (the '+' of beat 3), velocity 78. Set open and closed hats to the same choke group (1).",
+      "why": "In a 2-step groove, the clap remains on the backbeat (2 and 4) but the open hat accent moves to beat 3.5 rather than beat 2.5. This slight repositioning keeps the hat accent synced with the kick's 2-step feel — both emphasise the off-beats around beat 3.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Loop just the drums without bass for 8 bars and listen. Does it feel like it has lift and bounce? Or does it feel mechanical? The 2-step should feel more like a human drummer choosing where to land, less like a click track."
+    },
+    {
+      "id": 4,
+      "title": "Program the G minor bass line",
+      "category": "bass",
+      "instruction": "Load your sub bass synth on the BASS track. Create an 8-bar clip. In G minor, the notes you'll use: G1 (root), F1 (minor 7th — 2 semitones below G), Bb1 (minor 3rd — 3 semitones above G). Program a simple movement: Bar 1 — G1 full bar. Bar 2 — G1 beats 1–2, F1 beats 3–4. Bar 3 — G1 full bar. Bar 4 — Bb1 beats 1–2, G1 beats 3–4. Repeat bars 1–4 for bars 5–8.",
+      "why": "G minor's root→bVII→bIII→root movement (G→F→Bb→G) is one of the most natural bass motions in minor keys. It gives the loop a sense of movement without a full chord progression. The bVII (F) and bIII (Bb) are dark and grounded — they reinforce the minor feeling while adding variety.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "F1 is 2 semitones below G1. Bb1 is 3 semitones above G1. In the piano roll, count down from G for F and up from G for Bb. Note that Bb1 is a black key — make sure you're placing it correctly."
+    },
+    {
+      "id": 5,
+      "title": "EQ both tracks",
+      "category": "mix",
+      "instruction": "Apply the same EQ approach as rep-06: on the kick chain, high pass at 40Hz, bell boost at 65Hz (+3dB), cut at 250Hz (-3dB) if boxy. On the BASS track, high pass at 30Hz, slight dip at 65Hz (-2dB) to give the kick room.",
+      "why": "The EQ principles don't change with the key or kick pattern. Kick punch lives at 65Hz, sub rumble below 30–40Hz is wasted headroom, and the 65Hz bump is where kick and bass need to share space carefully.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "Compare the kick sound with and without the 65Hz boost. In G minor the root note G1 sits at approximately 49Hz — lower than E1 (41Hz). This means the bass sits very low. The kick's 65Hz punch should be clearly distinct from the bass fundamental."
+    },
+    {
+      "id": 6,
+      "title": "Mix balance — 2-step sits differently",
+      "category": "mix",
+      "instruction": "Set mix levels: kick at 0dB (the beat 1 hit), 2-step ghost kicks at -2dB relative to the main kick, clap at -2dB, hats at -9dB, bass at -3dB. Loop and listen. The 2-step groove should feel balanced — the missing beat 4 kick should feel like breathing room, not absence.",
+      "why": "2-step kick mixes differently from 4-on-floor: without a kick on beat 4, the bass and hats carry that moment. The bass should be present enough to fill the beat-4 gap with weight. If the mix feels empty on beat 4, increase the bass level slightly.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The 2-step ghost kick (beat 2.5 hit at -2dB) should be quieter than the main kick but audible. If it disappears in the mix, raise it by 1dB at a time until you can feel its presence without it dominating."
+    },
+    {
+      "id": 7,
+      "title": "Loop 8 bars and feel the difference",
+      "category": "mix",
+      "instruction": "Loop the 8-bar G minor 2-step groove. Close your eyes and listen for 30 seconds. Then: open rep-06 (or export) and listen to the E minor 4-on-floor mini-track for 30 seconds. Switch back and forth three times. Describe in one sentence what's different about the two grooves emotionally.",
+      "why": "The two mini-tracks use the same template: sub bass, drums, EQ, basic mix. The differences are: key (E minor vs G minor), kick pattern (4-on-floor vs 2-step), and source track DNA (MPH vs Sammy Virji). The emotional difference should be clear. This comparison makes those differences explicit.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Common descriptions: rep-06 = 'driving, dark, relentless'. rep-07 = 'light, bouncy, human'. Neither is better — they're different tools for different emotional contexts. UK garage uses both."
+    },
+    {
+      "id": 8,
+      "title": "Export and listen on your phone",
+      "category": "mix",
+      "instruction": "Export rep-07 as a 30-second audio file (File > Export Audio/Video, render loop). Listen on your phone speakers. Then listen to rep-06 on your phone speakers. Which groove translates better? What frequency content are you losing on the small speaker? What's still present?",
+      "why": "Phone speakers (and mono Bluetooth speakers) reveal low-end translation issues. Sub bass at G1 (49Hz) is below the response range of most phone speakers — so you're hearing only the upper harmonics of the bass. This is why harmonic content (the texture of the bass, not just the fundamental) matters for translation.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the phone version sounds thin and bassless, the sub has no harmonic content to translate. Adding a slight saturation or overdrive to the bass track (Saturator at Drive 15%) adds upper harmonics that survive on small speakers."
+    }
+  ]
+}

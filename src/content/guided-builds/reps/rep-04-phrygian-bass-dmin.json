@@ -1,0 +1,100 @@
+{
+  "id": "rep-04-phrygian-bass-dmin",
+  "title": "Phrygian b2 — D Minor",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 20,
+  "bpm": 132,
+  "key": "D minor",
+  "source_track_id": "mph-raw",
+  "spinoff_level": null,
+  "description": "The same phrygian b2 technique as rep-03 — now in D minor. Root D, tension note Eb. Same one-semitone interval, different pitch register. The concept becomes yours when you can play it in multiple keys without thinking.",
+  "what_youll_learn": [
+    "How to transpose the phrygian b2 technique to D minor",
+    "How the same tension interval feels different at a lower pitch",
+    "Side-by-side comparison: E minor vs D minor phrygian",
+    "Why the concept is more important than the specific key"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up your project",
+      "category": "ableton",
+      "instruction": "Open a new Ableton project. Set BPM to 132. Save it as 'rep-04-phrygian-dmin'. If you still have rep-03 open in another window, keep it — you'll compare the two.",
+      "why": "You're repeating the same concept in a new key. The goal is not to learn new information — it's to encode the interval relationship into your ears at a different pitch level.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Use the same sub bass sound you used in rep-03. Consistency in the sound lets you focus purely on the pitch difference between keys."
+    },
+    {
+      "id": 2,
+      "title": "Find D and Eb",
+      "category": "ableton",
+      "instruction": "On a MIDI keyboard or in the piano roll, find D3. Play it. Now find Eb3 — one semitone higher. Play D3, then Eb3. That interval is the phrygian b2 of D minor. The tension note is Eb.",
+      "why": "In D natural minor the 2nd scale degree is E. In D phrygian the 2nd degree is Eb — one semitone lower. That half-step up from D creates the same quality of tension as E to F in E minor. The distance is identical. The pitch is lower — which makes the whole thing feel darker and heavier.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Eb3 is the black key immediately to the right of D3. If you're in the piano roll, it's one step up from D."
+    },
+    {
+      "id": 3,
+      "title": "Load your sub bass sound",
+      "category": "ableton",
+      "instruction": "Create a new MIDI track. Load the same sub bass sound from rep-03 (or any pure sine wave synth). Make sure notes are playing in the D2–Eb2 range — lower register for more physical weight.",
+      "why": "D1–D2 is lower than E1–E2. The sub bass sits heavier in this range. Same interval, more rumble. This is one of the ways key choice shapes the emotional register of a track — lower root = more weight.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the bass feels too heavy or muddy at D1, try D2. You want to feel the sub but still clearly hear the pitch movement."
+    },
+    {
+      "id": 4,
+      "title": "Program the D minor tension phrase",
+      "category": "bass",
+      "instruction": "Create a 4-bar MIDI clip. Program: Bar 1 — D2 for the full bar. Bar 2 — D2 for beats 1–2, Eb2 on beat 3 for 1.5 beats (dotted quarter), D2 back for the remaining beats. Bars 3–4 — D2 held. Velocities: D2 at 90, Eb2 at 75.",
+      "why": "Identical rhythmic placement to the rep-03 E minor phrase — only the pitch has changed. This lets you compare them directly. You're training your ear to recognise 'phrygian b2 pattern' as an abstract concept, not just E→F.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If you still have rep-03 open, put both projects side by side and loop them back to back. Notice how the tension quality is similar but the register and weight are different."
+    },
+    {
+      "id": 5,
+      "title": "Add 4-on-floor drums",
+      "category": "ableton",
+      "instruction": "Add a Drum Rack with a kick, clap, and closed hat. Program 4-on-floor at 132 BPM: kick every beat, clap on 2 and 4, off-beat closed hats. Loop with the D minor bass.",
+      "why": "Hearing the phrygian b2 over a kick confirms whether the tension reads at this lower pitch. D minor with 4-on-floor kick sounds darker and more hypnotic than E minor at the same tempo.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "punchy uk garage kick",
+      "tip": "Use the same kick sound from rep-01 if you have it. Consistency in the kick helps you isolate the change (the key) from everything else."
+    },
+    {
+      "id": 6,
+      "title": "Compare D minor against E minor side by side",
+      "category": "ableton",
+      "instruction": "If you have rep-03 still open: loop both projects at the same time (or bounce both to audio and lay them end-to-end in a new project). Listen to E minor phrygian first, then D minor. Describe out loud one word for each: what does the E minor version feel like? What does the D minor version feel like?",
+      "why": "The same interval in different keys produces different emotional registers. E minor phrygian tends to feel sharp and tense. D minor phrygian tends to feel heavy and brooding. This is timbre and register interacting with harmony — the emotional difference is real even though the theory is identical.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "There's no right answer to the one-word description exercise. The point is to develop an internal emotional vocabulary — words that connect musical techniques to feelings you can call on when you're making production decisions."
+    },
+    {
+      "id": 7,
+      "title": "Try the Eb on different beats",
+      "category": "bass",
+      "instruction": "Duplicate the 4-bar bass clip. Move the Eb note to: (a) bar 1 beat 4 — so the tension arrives right before the phrase loops back; (b) bar 2 beat 4 AND bar 4 beat 3 — two tension hits per 4 bars. Loop each and listen.",
+      "why": "You're learning to place tension rhythmically, not just harmonically. The same tension note on different beats creates different feelings: before the loop point (beat 4) creates anticipation, twice per loop creates restlessness.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Save each variation as a differently named clip so you can A/B them quickly. This is how you build a phrase vocabulary."
+    },
+    {
+      "id": 8,
+      "title": "Extend the phrase: add movement on bar 3",
+      "category": "bass",
+      "instruction": "In your original 4-bar clip, after the Eb resolves back to D on bar 2, add a new movement on bar 3: D2 for 2 beats, then C2 (descending one whole step) for 2 beats. Bar 4 returns to D2 for the whole bar. Now you have: D root → Eb tension → D resolution → C descent → D return.",
+      "why": "Adding a descending step on bar 3 extends the phrase and gives it a second point of interest. The C is the minor 7th of D — it's diatonic and dark. The descent from D to C and return to D is a common garage bass movement that keeps the loop from feeling repetitive.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "C2 is 2 semitones below D2. Make sure the transition from Eb back to D is clean before the descent — the resolution should be audible before the new movement starts."
+    }
+  ]
+}

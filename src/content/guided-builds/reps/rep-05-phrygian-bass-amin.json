@@ -1,0 +1,100 @@
+{
+  "id": "rep-05-phrygian-bass-amin",
+  "title": "Phrygian b2 — A Minor",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 20,
+  "bpm": 134,
+  "key": "A minor",
+  "source_track_id": "mph-raw",
+  "spinoff_level": null,
+  "description": "Third key for the phrygian b2 technique — A minor, tension note Bb. After rep-03 (E minor) and rep-04 (D minor), you now have the same concept in three keys. The final step combines all three into an 8-bar sequence that modulates between them.",
+  "what_youll_learn": [
+    "Phrygian b2 in A minor — root A, tension Bb",
+    "How the technique feels in a mid-range register vs E and D minor",
+    "How to modulate between three phrygian keys in one sequence",
+    "How to hear the concept as key-independent rather than tied to E minor"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up your project",
+      "category": "ableton",
+      "instruction": "Open a new Ableton project. Set BPM to 134 (slightly faster than rep-03/04 — notice how tempo interacts with the feel). Save as 'rep-05-phrygian-amin'.",
+      "why": "134 BPM at A minor will feel more urgent than 132 BPM at E minor, even with the same interval. Small tempo changes interact with the register and key to create different emotional flavours. This is useful to experience consciously.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "You can try the same sequence at 130 BPM and 136 BPM to feel how tempo shifts the tension quality — slower = more hypnotic, faster = more driving."
+    },
+    {
+      "id": 2,
+      "title": "Find A and Bb",
+      "category": "ableton",
+      "instruction": "Find A3 on your MIDI keyboard or piano roll. Now find Bb3 — one semitone higher (the black key immediately to the right of A). Play A3, then Bb3. That is the phrygian b2 of A minor.",
+      "why": "In A phrygian, the 2nd scale degree is Bb (1 semitone up from A). Bb sits higher in the mid-range — it has a slightly different timbral quality compared to F (E phrygian) and Eb (D phrygian). All three tension notes feel similar in quality but land differently in the register.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If you've been through rep-03 and rep-04, try singing E→F, D→Eb, and A→Bb in sequence. You'll hear that all three have the same tense, unresolved quality despite the different pitches."
+    },
+    {
+      "id": 3,
+      "title": "Load sub bass and program the A minor phrase",
+      "category": "bass",
+      "instruction": "Load your sub bass synth on a new MIDI track. Create a 4-bar clip. Program: Bar 1 — A1 full bar. Bar 2 — A1 for beats 1–2, Bb1 on beat 3 (dotted quarter length), A1 back to close. Bars 3–4 — A1 held. Velocities: A1 at 90, Bb1 at 75. Loop and listen.",
+      "why": "Same rhythmic structure as rep-03 and rep-04. The phrase pattern is now encoded — you recognise it immediately because you've played it in two other keys. This is exactly the kind of generalisation rep practice is designed to create.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "A1 is lower than A2 — use A1 for a deep sub feel, A2 if you want the pitch movement to be more audible. MPH Raw's bass tends to sit at A1–A2 range."
+    },
+    {
+      "id": 4,
+      "title": "Add drums and check the groove",
+      "category": "ableton",
+      "instruction": "Add a 4-on-floor drum pattern at 134 BPM. Kick every beat, clap on 2 and 4, off-beat hats. Loop with the A minor bass. Notice how the slightly higher tempo changes the urgency.",
+      "why": "134 BPM at A minor has a slightly different drive than 132 BPM at E minor. A minor sits in a slightly higher pitch register. The combination of tempo and register is what producers tune when they're deciding the energy level of a track.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Try toggling the BPM between 130 and 136 while the loop plays. You'll hear the 4-bar loop get tighter and looser as the tempo changes — the same phrase, very different feeling."
+    },
+    {
+      "id": 5,
+      "title": "Develop the A minor phrase",
+      "category": "bass",
+      "instruction": "Extend the phrase: on bar 3, add G1 (the minor 7th of A, 2 semitones below A) for beats 3–4 to give the loop a second movement point. Bar 4 returns to A1 for the full bar. The full sequence: A root → Bb tension → A resolution → G descent → A return.",
+      "why": "The minor 7th descent (A→G) is one of the most natural bass movements in minor keys. It's dark and conclusive, which makes bar 4's return to A feel like a clear loop point. Adding this second movement prevents the 4-bar loop from feeling like just the tension moment — it now has a complete arc.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "G1 is 2 semitones below A1. In the piano roll, scroll down 2 steps from A. Make sure the G arrives cleanly on beat 3 — not too early or late."
+    },
+    {
+      "id": 6,
+      "title": "Try Bb at different velocities",
+      "category": "bass",
+      "instruction": "Duplicate the clip. In the duplicate, raise the Bb1 velocity from 75 to 100 — match the A1 root velocity. Loop and compare. Then try Bb1 at velocity 55 (very quiet, almost ghost). Which version creates the most tension?",
+      "why": "Velocity shapes how much the tension note 'speaks'. A loud Bb creates an aggressive, sudden tension. A quiet Bb creates an ambiguous, almost-implied tension — the listener hears something unsettled without being sure why. MPH Raw uses a mid-velocity tension note — present but not dominating.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "There is no correct answer. Your ear will have a preference. The exercise is about hearing the difference clearly and storing the three velocities as options you can choose from."
+    },
+    {
+      "id": 7,
+      "title": "Build the three-key modulation sequence",
+      "category": "ableton",
+      "instruction": "Open a new session or a new scene. Create an 8-bar sequence that moves between all three phrygian keys you've learned. Layout: Bars 1–2: E minor phrygian (E→F pattern from rep-03). Bars 3–4: D minor phrygian (D→Eb pattern from rep-04). Bars 5–6: A minor phrygian (A→Bb pattern, this rep). Bars 7–8: back to E minor. Use the same rhythmic shape for all three — only the pitch changes.",
+      "why": "This 8-bar sequence demonstrates that the phrygian b2 is a technique, not a specific pitch. When you hear the same emotional quality cycle through three different keys, the concept is inside your ears — not just inside one song.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Use Shift+Arrow to transpose your E minor clip. Down 2 semitones = D minor. Down 5 semitones from D minor = A minor. Or select all notes and manually move them — either way, count the semitones."
+    },
+    {
+      "id": 8,
+      "title": "Add drums to the full 8-bar sequence and listen",
+      "category": "ableton",
+      "instruction": "Copy your 4-on-floor drum pattern across all 8 bars. Loop the entire sequence. Listen for: does each key change feel intentional? Does the tension note read the same way in E minor, D minor, and A minor? Adjust velocities or note timing in any bar that feels off.",
+      "why": "This is the final test of whether you've internalised the concept or just executed the steps. If the phrygian b2 reads in all three keys — if you feel the tension and resolution in the same way regardless of pitch — you've learned the technique, not just the E minor version.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Save the 8-bar sequence. It's the beginning of a real compositional idea — three phrygian keys in sequence is a modulation that no source track uses. You've already gone beyond the rep."
+    }
+  ]
+}

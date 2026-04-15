@@ -1,0 +1,100 @@
+{
+  "id": "rep-06-mini-track-emin",
+  "title": "Mini-Track — E Minor",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 35,
+  "bpm": 132,
+  "key": "E minor",
+  "source_track_id": "mph-raw",
+  "spinoff_level": null,
+  "description": "For the first time, combine multiple elements into a single loop: 4-on-floor kick, phrygian bass, EQ on both, rough mix balance, and a simple hat accent. A complete 8-bar loop you could actually play in a set.",
+  "what_youll_learn": [
+    "How to layer drums and bass so they don't fight each other",
+    "Basic EQ on kick and bass: kick punch without low-end mud",
+    "How to set a rough mix balance by ear",
+    "How a single open hat accent changes the entire feel of a loop"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up the project",
+      "category": "ableton",
+      "instruction": "Open a new Ableton project. Set BPM to 132, time signature 4/4. Create two tracks: one MIDI track for Drum Rack, one MIDI track for your sub bass synth. Save as 'rep-06-mini-track-emin'. Set the loop brace to 8 bars.",
+      "why": "8 bars instead of 4 — this is now a mini-track rather than a phrase. 8 bars at 132 BPM is approximately 14.4 seconds, long enough to feel like a groove has settled in.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Create both tracks before adding any devices. Name them 'DRUMS' and 'BASS' in Ableton's track header. Good naming habits from the start prevent confusion when the session grows."
+    },
+    {
+      "id": 2,
+      "title": "Program 4-on-floor drums",
+      "category": "drums",
+      "instruction": "Load a Drum Rack on the DRUMS track. Add: kick (C1) on every beat, clap (D1) on beats 2 and 4, closed hat (F#1) on every off-beat (8 per bar). Program an 8-bar clip using these patterns. Set kick velocity 100, clap 95, hat 70.",
+      "why": "The 4-on-floor at 132 BPM is the foundation. Kick on every beat = relentless forward motion. Clap anchors the backbeat. Off-beat hats fill the space between kicks. This is the same pattern from rep-01 — you're now using it as an ingredient, not the main subject.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "punchy uk garage kick",
+      "tip": "Copy your rep-01 drum Drum Rack and MIDI clip if you still have that session. No need to rebuild what you've already done."
+    },
+    {
+      "id": 3,
+      "title": "Program the phrygian bass line",
+      "category": "bass",
+      "instruction": "Load a sub bass synth on the BASS track. Create an 8-bar bass clip. Program the phrygian b2 pattern from rep-03 across bars 1–4, then repeat it for bars 5–8. Use: E2 for most of the bar, Eb2 tension note on bar 2 beat 3 (dotted quarter), resolution back to E2.",
+      "why": "You're using rep-03's bass line as a building block rather than building it from scratch. This is what learning through reps does — each rep becomes an ingredient you can reach for.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Copy the 4-bar bass clip from rep-03 directly if you have it open. Duplicate it to make 8 bars. If the notes are in a different octave, select all and transpose to E1–E2 range for sub weight."
+    },
+    {
+      "id": 4,
+      "title": "EQ the kick — punch without mud",
+      "category": "mix",
+      "instruction": "Click the kick pad in the Drum Rack to select its chain. Add EQ Eight. Apply: High Pass at 40Hz (remove sub rumble). Bell boost at 65Hz (+3dB, Q=1.5) for thump. Bell cut at 250Hz (-3dB, Q=1.0) if the kick sounds boxy. Toggle the EQ on/off to verify the difference.",
+      "why": "Sub rumble below 40Hz wastes headroom. The 65Hz boost is where kick punch lives — it's what you feel in a club. 250Hz is the 'cardboard box' frequency that muddies kicks when present. These are the three moves that make a kick sound professional vs amateur.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "Do the EQ work at the kick chain level, not on the Drum Rack group output. You want surgical control over the kick specifically — not all drum sounds at once."
+    },
+    {
+      "id": 5,
+      "title": "EQ the bass — clear the kick's space",
+      "category": "mix",
+      "instruction": "Add EQ Eight to the BASS track. Apply a High Pass at 30Hz (removes sub-sub rumble that has no audible content). If the bass and kick are fighting (both feel muddy together), add a slight dip at 65Hz on the bass (-2dB) — this gives the kick's punch frequency room to breathe.",
+      "why": "Kick punch at 65Hz and sub bass at 65Hz compete. One of them needs to give. Convention: let the kick own the punch frequency, high-pass the bass slightly above 65Hz if there's overlap. The bass provides weight below the kick's punch region.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "Mute the bass, listen to kick alone. Then mute the kick and listen to bass alone. Then unmute both. If the together version sounds muddier than either separately, there's frequency overlap — apply the 65Hz dip on the bass."
+    },
+    {
+      "id": 6,
+      "title": "Set rough mix balance",
+      "category": "mix",
+      "instruction": "With drums and bass both playing, adjust their fader levels. Start: kick at 0dB, clap at -2dB, hats at -8dB, sub bass at -3dB. Now close your eyes and listen for 30 seconds. Ask: is the kick clearly the loudest percussive element? Does the bass feel like it has weight without overwhelming the kick? Adjust by ear until the answer is yes to both.",
+      "why": "Mix balance is felt, not calculated. The numbers above are starting points — your ears make the final decision. The principle: kick is the anchor, bass has weight, everything else fills space around them. In UK garage, bass and kick share the bottom of the mix without competing.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Toggle your mix between laptop speakers and headphones. What sounds balanced on headphones often sounds muddy on speakers. Trust the speaker version — it's closer to how the track will be heard."
+    },
+    {
+      "id": 7,
+      "title": "Add an open hat accent on beat 2.5",
+      "category": "drums",
+      "instruction": "In the Drum Rack, load an open hi-hat sample onto G#1. In the drum MIDI clip, add a single G#1 note on position 1.2.3 (the '+' of beat 2) in each bar. Set velocity to 80. Set the open hat's Choke Group to 1 and the closed hat's Choke Group to 1 as well. Loop and listen.",
+      "why": "The open hat accent on beat 2.5 is one of the signature textures of UK garage. It adds air and momentum between the clap and the kick. The choke group makes it behave like a real hi-hat: the closed hat cuts the open hat ring when they overlap, which is both realistic and rhythmically clean.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Choke groups are set in the Drum Rack pad view — the small number box at the bottom of each pad. Both pads (open hat and closed hat) must have the same choke group number."
+    },
+    {
+      "id": 8,
+      "title": "Loop 8 bars and adjust — this is the rep",
+      "category": "mix",
+      "instruction": "Set your loop brace over bars 1–8. Hit play. Close your eyes for the full 8-bar loop — about 14 seconds. Listen for: does the groove feel locked? Does the bass tension land where you expect? Does the open hat accent add to the feeling or distract from it? Make any velocity or timing adjustments until it feels right. Export the loop as a 30-second audio file (4 loops).",
+      "why": "The export step forces a commitment. When you're listening to an exported audio file without looking at the session, you hear it the way a listener hears it — no ability to tweak in real time. That distance often reveals things you didn't notice while producing.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "To export: File > Export Audio/Video. Set render length to 'Loop'. Turn on 'Normalize' to bring the export to peak volume. Listen on your phone after exporting — tiny speakers reveal frequency problems that headphones hide."
+    }
+  ]
+}
