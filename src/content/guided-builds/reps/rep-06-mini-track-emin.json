@@ -80,11 +80,11 @@
       "id": 7,
       "title": "Add an open hat accent on beat 2.5",
       "category": "drums",
-      "instruction": "In the Drum Rack, load an open hi-hat sample onto G#1. In the drum MIDI clip, add a single G#1 note on position 1.2.3 (the '+' of beat 2) in each bar. Set velocity to 80. Set the open hat's Choke Group to 1 and the closed hat's Choke Group to 1 as well. Loop and listen.",
-      "why": "The open hat accent on beat 2.5 is one of the signature textures of UK garage. It adds air and momentum between the clap and the kick. The choke group makes it behave like a real hi-hat: the closed hat cuts the open hat ring when they overlap, which is both realistic and rhythmically clean.",
-      "ableton_cheatsheet_id": null,
+      "instruction": "In the Drum Rack, load an open hi-hat sample onto G#1. In the drum MIDI clip, add a single G#1 note on position 1.2.3 (the '+' of beat 2) in each bar. Set velocity to 80.\n\nNow set up a choke group. A choke group tells Ableton: 'when one pad in this group triggers, cut off all other pads in the same group.' This mimics a real hi-hat — when the closed hat hits the cymbal physically, it stops the open hat from ringing.\n\nHow to set it: click the G#1 pad (open hat) so it highlights. Look at the panel below the 16-pad grid — a row of controls appears for that pad, including a box labeled 'Choke'. Set it to '1'. Click the F#1 pad (closed hat) and set its Choke to '1' as well. Now whenever the closed hat fires, it immediately cuts the open hat ring.",
+      "why": "The open hat accent on beat 2.5 is one of the signature textures of UK garage. It adds air and momentum between the clap and the kick. Without the choke group, the open hat rings over the closed hat — both play simultaneously, which sounds sloppy. With choke group '1' on both, the closed hat cuts the open hat the instant it hits.",
+      "ableton_cheatsheet_id": "drum-rack",
       "splice_search": null,
-      "tip": "Choke groups are set in the Drum Rack pad view — the small number box at the bottom of each pad. Both pads (open hat and closed hat) must have the same choke group number."
+      "tip": "Test it: program one open hat on beat 2, then one closed hat on beat 2.5. With choke on, the open hat ring should stop dead when the closed hat hits. Without it, both ring simultaneously — you'll hear the difference immediately."
     },
     {
       "id": 8,

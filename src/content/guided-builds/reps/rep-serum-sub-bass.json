@@ -21,11 +21,11 @@
       "id": 1,
       "title": "Open Serum V2 and load Init Preset",
       "category": "serum",
-      "instruction": "Create a new MIDI track in Ableton. From your instruments library, load Serum V2. Once it opens, right-click the preset name at the top of Serum and choose 'Init Preset'. You start with a basic saw wave — you'll replace everything.",
+      "instruction": "Create a new MIDI track in Ableton. From your instruments library, load Serum V2. Once Serum opens, look at the very top of the Serum interface — there's a bar showing the current preset name (something like 'Default' or the last loaded preset). Right-click that preset name bar and choose 'Init Preset' from the menu. The oscillators reset to a basic saw wave — you'll rebuild from here.",
       "why": "Starting from Init Preset means you understand every decision you're making. Presets are other people's decisions. You need to know why each parameter is where it is — that's what this rep teaches.",
       "ableton_cheatsheet_id": "serum-v2-oscillators",
       "splice_search": null,
-      "tip": "If you don't see 'Init Preset' when you right-click, try clicking on the preset name area (top-centre of Serum) instead of the menu bar."
+      "tip": "If right-clicking the preset name doesn't show the menu, try left-clicking it first to activate the preset field, then right-clicking. In Serum V2 the preset bar is the thin strip at the very top with left/right arrows on either side and the preset name in the centre."
     },
     {
       "id": 2,
@@ -91,7 +91,7 @@
       "id": 8,
       "title": "Program the bass line",
       "category": "ableton",
-      "instruction": "Create a 2-bar MIDI clip on the Serum track. Open the piano roll. Set the grid to 1/8 note. Program this root movement, each note held for 2 beats: Gb1 → Db1 → Bb1. This maps to the Kettama chord roots (VI→III→i in Bb minor), transposed down. Hold each note for exactly 2 beats. Listen to how the pitch movement alone implies the chord changes — no chord pad needed yet.",
+      "instruction": "Create a 2-bar MIDI clip on the Serum track. Open the piano roll. Set the grid to 1/4 note. Scroll the piano roll down — Gb1 is very low, below E1.\n\nProgram 3 notes across the 2 bars: Gb1, Db1, Bb1 — each held for 2 beats (exactly half a bar at 4/4). To set note length: draw a note at the correct pitch and beat position, then hover your mouse near the right edge of the note. Your cursor changes to a small resize arrow. Drag that right edge to extend or shorten the note to exactly 2 beats.\n\nGb1 starts at bar 1 beat 1, right edge at bar 1 beat 3. Db1 starts at bar 1 beat 3, right edge at bar 2 beat 1. Bb1 starts at bar 2 beat 1, right edge at bar 2 beat 3. Leave bar 2 beats 3–4 empty.\n\nThis maps to the Kettama chord roots (VI→III→i in Bb minor). Listen to how the pitch movement alone implies the chord changes — no chord pad needed yet.",
       "why": "Bass lines define harmony through pitch movement alone. Even a pure sine wave at Gb1→Db1→Bb1 makes your ear hear VI→III→i motion. This is bass-implied harmony — one note per chord, carrying the full emotional weight of the progression.",
       "ableton_cheatsheet_id": null,
       "splice_search": null,

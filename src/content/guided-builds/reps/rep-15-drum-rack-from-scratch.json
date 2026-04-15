@@ -81,6 +81,12 @@
       "why": "The Glue Compressor is the difference between a drum kit and a collection of individual samples. By lightly compressing the bus, the compressor ties the elements together — when the kick hits hard it slightly ducks the hats, creating the cohesion you hear in professional productions. 2–3dB of gain reduction is barely audible as compression but transforms the overall feel.",
       "ableton_cheatsheet_id": "glue-compressor",
       "splice_search": null,
+      "images": [
+        {
+          "src": "/images/ableton/GlueL12.png",
+          "caption": "Glue Compressor — Ratio, Attack, Release, Threshold controls, and Soft Clip toggle on the right."
+        }
+      ],
       "tip": "After adding Glue Compressor, add a Limiter after it (last in the DRUMS group chain) with Ceiling -0.3dBFS. This prevents the drum bus from ever clipping regardless of what you do upstream. It's a safety net, not a sound shaper."
     },
     {

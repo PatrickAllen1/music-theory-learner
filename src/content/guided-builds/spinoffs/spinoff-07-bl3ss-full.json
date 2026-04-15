@@ -52,6 +52,16 @@
       "why": "Simpler's Slicing mode is one of Ableton's most powerful tools for vocal chops. It automatically detects transients (attacks) in the audio and maps each slice to its own MIDI note. You then treat the vocal as a percussion instrument — triggering individual syllables rhythmically. This is how classic UK garage vocal chops are made.",
       "ableton_cheatsheet_id": "simpler",
       "splice_search": null,
+      "images": [
+        {
+          "src": "/images/ableton/SimplerModesTabL12.png",
+          "caption": "Simpler's three mode tabs — Classic (full waveform), 1-Shot (plays to end), and Slicing (scissors icon, third tab)."
+        },
+        {
+          "src": "/images/ableton/SimplerSliceModeL12.png",
+          "caption": "Simpler in Slicing mode — vertical lines mark detected transients. Each slice maps to its own pad in the Drum Rack."
+        }
+      ],
       "tip": "After slicing, try the auto-generated MIDI clip first — it often creates interesting rhythmic patterns by itself. Then edit it: keep the slices that work rhythmically, remove ones that interrupt the flow. A good vocal chop pattern has 4–8 hits per 2 bars that feel like they belong in the groove."
     },
     {

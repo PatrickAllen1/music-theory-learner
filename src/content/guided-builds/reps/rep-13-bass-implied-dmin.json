@@ -50,7 +50,7 @@
       "id": 4,
       "title": "Program the bass root movement",
       "category": "bass",
-      "instruction": "Load sub bass (rep-serum-sub-bass settings). 4-bar clip: Bar 1 — D1 for 3 beats (long hold), rest beat 4. Bar 2 — F1 for 3 beats, rest beat 4. Bar 3 — Bb0/Bb1 for 3 beats, rest beat 4. Bar 4 — G1 for 2 beats, D1 for 2 beats (the return to tonic starts early). Velocities: D1 at 95, F1 at 88, Bb1 at 92, G1 at 85. Repeat for 8 bars.",
+      "instruction": "Load sub bass (rep-serum-sub-bass settings). 4-bar clip. In the piano roll, program each note by drawing it at the correct position and dragging its right edge to the correct length (hover near the right edge of a note — cursor changes to a resize arrow):\n\nBar 1: Draw D1 starting at beat 1. Drag its right edge to beat 4 (3 beats long). Leave beat 4 empty — no note.\nBar 2: Draw F1 starting at beat 1. Drag to beat 4 (3 beats). Leave beat 4 empty.\nBar 3: Draw Bb1 starting at beat 1. Drag to beat 4 (3 beats). Leave beat 4 empty.\nBar 4: Two separate notes here — Draw G1 starting at beat 1, drag right edge to beat 3 (2 beats). Then draw D1 starting at beat 3, drag right edge to beat 5 / bar 5 beat 1 (2 beats). G1 → D1 in bar 4 is the resolution back to the tonic.\n\nVelocities: D1 at 95, F1 at 88, Bb1 at 92, G1 at 85, final D1 at 90. Repeat for 8 bars.",
       "why": "Long held notes (3 beats) give each root time to register as a harmonic arrival. The rest on beat 4 creates space — the next root arrives into silence, which makes each chord change feel intentional. G1 → D1 in bar 4 reinforces the resolution back to the tonic.",
       "ableton_cheatsheet_id": "serum-v2-envelopes",
       "splice_search": null,

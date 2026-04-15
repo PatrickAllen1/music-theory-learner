@@ -90,6 +90,16 @@
       "why": "The 2-step kick pattern means the sidechain pump happens at irregular intervals — beat 1 (strong) and the and-of-2 (weaker). The pad breathes asymmetrically, which reinforces the rolling 2-step feel. The reverb at -12dB send is prominent — it creates the sense of space that makes the bVI lift feel expansive rather than just loud.",
       "ableton_cheatsheet_id": "sidechain",
       "splice_search": null,
+      "images": [
+        {
+          "src": "/images/ableton/CompressorSidechainL12.png",
+          "caption": "Compressor with Sidechain panel open — click the 'Sidechain' triangle at top-right, then enable the power button and set 'Audio From' to your DRUMS track."
+        },
+        {
+          "src": "/images/ableton/ReverbL12.png",
+          "caption": "Reverb on a Return track — Dry/Wet stays at 100% always. Control the amount of reverb from each source track's send knob."
+        }
+      ],
       "tip": "With the 2-step kick, the sidechain pump is not regular like 4-on-floor. Loop the drums and pad and listen: you should hear two distinct pumps per bar at uneven spacing. This irregularity is what makes the 2-step feel interesting rather than mechanical."
     },
     {

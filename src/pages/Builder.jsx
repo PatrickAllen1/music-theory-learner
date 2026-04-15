@@ -104,9 +104,14 @@ export default function Builder() {
               ? unmarkStep(build.id, step.id)
               : markStep(build.id, step.id)
           }
-          onNext={() =>
-            setStepIndex((i) => Math.min(i + 1, build.steps.length - 1))
-          }
+          onNext={() => {
+            if (stepIndex === build.steps.length - 1) {
+              setBuild(null);
+              setRefEntry(null);
+            } else {
+              setStepIndex((i) => i + 1);
+            }
+          }}
           onPrev={() => setStepIndex((i) => Math.max(i - 1, 0))}
           onOpenRef={(id) => setRefEntry(entryById[id] || null)}
         />

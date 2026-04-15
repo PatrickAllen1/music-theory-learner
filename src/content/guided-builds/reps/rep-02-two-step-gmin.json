@@ -80,7 +80,7 @@
       "id": 7,
       "title": "Apply swing",
       "category": "ableton",
-      "instruction": "Click the 2-step MIDI clip to select it. In Ableton's browser, find Groove Pool (press B). Drag 'Swing 54%' from Swing & Groove > Swing onto the clip. In the clip properties (bottom left), set the Groove amount to 60–70%.",
+      "instruction": "Click the 2-step MIDI clip to select it. Open the Groove Pool: go to View > Groove Pool in the menu bar, or click the Groove Pool icon at the bottom of the browser panel (looks like a music note with a curved arrow). Drag 'Swing 8-05' (or 'Swing 54%') from Swing & Groove > Swing onto the hat MIDI clip. A Groove Amount slider appears on the clip — set it to 60–70%.",
       "why": "Straight 8th-note hats at 136 BPM sound mechanical. Swing pushes every even 8th note slightly later — this is what makes the groove feel human. At 54% swing, the push is subtle but the difference is real. Try 0% vs 100% to hear the extremes.",
       "ableton_cheatsheet_id": null,
       "splice_search": null,

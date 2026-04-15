@@ -83,6 +83,12 @@
       "why": "40Hz HP removes sub rumble. 70Hz boost adds the physical chest thump. 280Hz cuts the cardboard-box frequency that makes kicks sound cheap. Grouping the drums lets you treat them as one unit for bussing and sidechain routing later.",
       "ableton_cheatsheet_id": "eq-eight",
       "splice_search": null,
+      "images": [
+        {
+          "src": "/images/ableton/RackChainList.png",
+          "caption": "Drum Rack chain list — the thin strip on the left of the Drum Rack device. Click a pad to highlight its chain row, then drag effects onto that row."
+        }
+      ],
       "tip": "Toggle the EQ on/off to A/B the difference. If you can barely hear it, the moves are too subtle — push until obvious, then back off."
     },
     {

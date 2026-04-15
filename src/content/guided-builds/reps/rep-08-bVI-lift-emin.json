@@ -70,10 +70,16 @@
       "id": 6,
       "title": "Add sidechain compression to the pad",
       "category": "ableton",
-      "instruction": "Add a Compressor to the PAD track. In the Compressor's sidechain section: enable External, set Audio From to the DRUMS track. Set Ratio 3:1, Attack 2ms, Release 200ms, Threshold until GR meter shows 4–6dB reduction on every kick hit. The pad should pump in time with the kick.",
+      "instruction": "Add Compressor (Audio Effects > Dynamics > Compressor) to the PAD track. At the top-right corner of the Compressor device, find a small triangle labeled 'Sidechain' and click it. A panel expands below showing a power button and an 'Audio From' dropdown. Click the power button to enable the sidechain. Set the 'Audio From' dropdown to the DRUMS track.\n\nSettings: Ratio 3:1, Attack 2ms, Release 200ms. Drag the Threshold knob leftward until the GR (gain reduction) meter — the thin vertical bar on the right side of the Compressor — shows 4–6dB of reduction each time the kick hits. The pad should now pump rhythmically with each kick.",
       "why": "The sidechain pump is what makes garage pads feel rhythmically locked even when they're playing long sustained chords. Without sidechain the pad sits on top of the groove. With sidechain it breathes with the kick — part of the rhythm, not just a harmonic layer.",
       "ableton_cheatsheet_id": "sidechain",
       "splice_search": null,
+      "images": [
+        {
+          "src": "/images/ableton/CompressorSidechainL12.png",
+          "caption": "Compressor with Sidechain panel open — power button enables it, 'Audio From' dropdown selects the trigger source (your DRUMS track)."
+        }
+      ],
       "tip": "Use the DRUMS group track as the sidechain source (not an individual drum sound) so the entire drum hit triggers the compression, not just the kick sample."
     },
     {

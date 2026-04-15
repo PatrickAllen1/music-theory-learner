@@ -40,7 +40,7 @@
       "id": 3,
       "title": "Program the VI→III→i chord rhythm",
       "category": "ableton",
-      "instruction": "Create a 4-bar pad MIDI clip. Chord rhythm: Bars 1–2: Gbmaj7 — Gb3, Bb3, Db4, F4 (held 2 full bars). Bar 3: Dbmaj — Db3, F3, Ab3. Bar 4: Bbm — Bb3, Db4, F4. Hold each chord for its full duration. Set all notes to velocity 85.",
+      "instruction": "Create a 4-bar pad MIDI clip. Open the piano roll.\n\nChord 1 — Gbmaj7 on bars 1–2: Draw all four notes (Gb3, Bb3, Db4, F4) starting at bar 1 beat 1. To make notes span 2 full bars: draw a note, then hover over its right edge — your cursor changes to a resize arrow. Drag the right edge all the way to bar 3 beat 1. Do this for all four Gbmaj7 notes.\n\nChord 2 — Dbmaj on bar 3: Draw notes Db3, F3, Ab3 starting at bar 3 beat 1, ending at bar 4 beat 1 (1 bar long). Drag right edge to the correct length.\n\nChord 3 — Bbm on bar 4: Draw notes Bb3, Db4, F4 starting at bar 4 beat 1, ending at bar 5 beat 1. Set all notes to velocity 85.",
       "why": "Gbmaj7 gets 2 bars because it's the most emotionally loaded chord — the brightness needs time. Dbmaj and Bbm get 1 bar each. The loop always starts with Gbmaj7, giving the listener a moment of light before moving through the progression and returning.",
       "ableton_cheatsheet_id": null,
       "splice_search": null,

@@ -60,7 +60,7 @@
       "id": 5,
       "title": "Program the Sammy Virji major chord voicing",
       "category": "ableton",
-      "instruction": "Create a 4-bar MIDI clip. Program these major chord stabs — each held for 1/16 note (very short, the envelope does the rest): Bar 1 beat 1: G#3, C4, D#4 (G# major). Bar 2 beat 1: E3, G#3, B3 (E major). Bar 3 beat 1: B3, D#4, F#4 (B major). Bar 4 beat 1: G#3, C4, D#4 (G# major again). All hits on beat 1 only — 1 stab per bar.",
+      "instruction": "Create a 4-bar MIDI clip. Open the piano roll. Set the grid to 1/16 (in the grid size dropdown at the top-right of the piano roll — click the 1/8 or current setting and change it to 1/16).\n\nDraw three notes simultaneously at each position (hold Shift to add multiple notes, or draw them one after another):\n- Bar 1 beat 1 (position 1.1): G#3, C4, D#4\n- Bar 2 beat 1 (position 2.1): E3, G#3, B3\n- Bar 3 beat 1 (position 3.1): B3, D#4, F#4\n- Bar 4 beat 1 (position 4.1): G#3, C4, D#4\n\nEach group of three notes should be exactly 1/16 note long — one grid cell. If your notes draw longer by default, drag their right edges left until they snap to exactly 1 grid cell. The MIDI note length is only triggering the envelope — the sound's actual duration is controlled by the 400ms Decay, not the MIDI length.",
       "why": "These are the major chords from G# minor's VI→III→VII: E major (VI), B major (III), G# minor's relative tonic. Sammy Virji uses major chord stabs — the major quality is what gives them the uplifting, euphoric character. The ascending major chord sequence (G#→E→B) creates a sense of rising energy on each hit.",
       "ableton_cheatsheet_id": null,
       "splice_search": null,

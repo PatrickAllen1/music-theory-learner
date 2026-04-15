@@ -81,6 +81,12 @@
       "why": "A pure sine sub bass at D1 (37Hz) is almost inaudible on laptop speakers and small earbuds — the fundamental frequency is too low for those drivers to reproduce. Saturation adds the 2nd harmonic (74Hz, an octave up) and 3rd harmonic (111Hz) — these are in the range that all speakers can reproduce. The bass is still a sub bass, but it now has sonic fingerprints that survive translation to small systems.",
       "ableton_cheatsheet_id": "saturator",
       "splice_search": null,
+      "images": [
+        {
+          "src": "/images/ableton/SaturatorL12.png",
+          "caption": "Saturator — Drive knob (15%), mode selector (Soft Clip), and Dry/Wet (40%). The Soft Clip mode adds warm harmonic content without hard clipping."
+        }
+      ],
       "tip": "Test on phone speakers after adding Saturator. Without it, D1 will almost disappear on a phone. With it, you should hear a warm, low thud even on a small speaker. If you can't hear a difference, increase Drive to 20% and Dry/Wet to 50%."
     },
     {
