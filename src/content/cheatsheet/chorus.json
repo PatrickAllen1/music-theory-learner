@@ -1,0 +1,32 @@
+{
+  "id": "chorus",
+  "title": "Chorus-Ensemble",
+  "category": "Effects",
+  "tags": [
+    "chorus",
+    "ensemble",
+    "width",
+    "stereo",
+    "detuning",
+    "modulation",
+    "pad"
+  ],
+  "summary": "Creates stereo width by layering slightly detuned copies of a signal. Ensemble mode (3 voices) is richer. Use on pads and synths to add width without reverb.",
+  "steps": [
+    "Add Chorus-Ensemble to a pad or synth track",
+    "Select mode: Classic = 2 voices, warmer. Ensemble = 3 voices, richer/wider",
+    "Rate: controls how fast the pitch modulation oscillates (0.3–0.5Hz for slow, natural chorus; higher for obvious vibrato)",
+    "Depth: how wide the pitch detuning swings — 30–50% for pads, lower for subtle width",
+    "Amount/Mix: how much of the chorus effect blends with the dry signal — 30–50% for pads, 15–25% for subtle width",
+    "For light stereo width on any synth: Ensemble mode, Mix 20%, Rate 0.4Hz"
+  ],
+  "tips": [
+    "Never add Chorus to sub bass — the detuned copies create phase cancellation in mono (the bass disappears on a mono speaker)",
+    "Chorus and Reverb serve different purposes: Chorus makes something wider in the stereo field. Reverb puts it in a space. Use both together on pads (Chorus for width, Reverb for depth)",
+    "In Ensemble mode with Rate very slow (0.1Hz) and Depth 20%, it creates a subtle shimmer effect rather than an obvious chorus",
+    "Toggle the Chorus on and off while listening — the pad should feel flatter and narrower with it off. If you can't hear a difference, increase Depth"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "Add Chorus-Ensemble to a chord pad in any rep that uses a pad (e.g. rep-08, rep-11, or any spinoff). Toggle it on and off to hear the width difference. Try Ensemble mode vs Classic mode.",
+  "ableton_version_note": "Chorus-Ensemble replaced the older Chorus device in Live 11. Both available in Standard."
+}

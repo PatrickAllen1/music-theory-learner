@@ -1,0 +1,32 @@
+{
+  "id": "automation",
+  "title": "Automation",
+  "category": "Workflow",
+  "tags": [
+    "automation",
+    "movement",
+    "filter sweep",
+    "dynamics",
+    "volume",
+    "breakpoints",
+    "arrangement"
+  ],
+  "summary": "Record or draw parameter changes over time in Arrangement view. Used for filter sweeps into drops, volume fades, FX movements, and anything that needs to change during the track.",
+  "steps": [
+    "Press A to toggle Automation view in Arrangement view — automation lanes appear below each track",
+    "Click the automation lane selector (dropdown on the left of each lane) to choose which parameter to automate (Volume, Pan, a device parameter, etc.)",
+    "Draw automation: select the Pencil tool (B key) and click to add breakpoints. Drag breakpoints to set the value. Right-click a breakpoint to delete it",
+    "Draw straight lines between breakpoints: click one breakpoint, hold Shift, click another — creates a linear ramp",
+    "Record automation live: press the Automation Arm button (red A in the transport), press Play, then move a parameter with your mouse or MIDI controller",
+    "Cmd+click any parameter in the device view to jump directly to its automation lane in Arrangement view"
+  ],
+  "tips": [
+    "Filter sweep into a drop: add AutoFilter to a pad, open its Cutoff automation lane, draw a ramp from 200Hz to full open over the last 8 bars before the drop",
+    "Automation is per-clip in Session view (Clip Envelopes) and per-timeline in Arrangement view. Arrangement automation is more powerful for full-track movements",
+    "To remove automation from a parameter: right-click its automation lane > Clear Automation. Or select all breakpoints and delete",
+    "Automation snaps to the grid by default. Hold Cmd to draw freehand automation that ignores the grid — useful for volume fades and smooth curves"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In any session in Arrangement view, add an AutoFilter to a pad track. Press A to view automation, select the Cutoff parameter, and draw a ramp from 300Hz to 20kHz over 8 bars. Play through that section to hear the sweep.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "simpler-filter",
+  "title": "Simpler — Internal Filter",
+  "category": "Instruments",
+  "tags": [
+    "simpler",
+    "filter",
+    "tone",
+    "cutoff",
+    "resonance",
+    "lowpass",
+    "highpass"
+  ],
+  "summary": "Simpler's built-in filter shapes the tone of a sample without needing a separate EQ or AutoFilter. Each Simpler instance has its own filter, controllable per drum pad.",
+  "steps": [
+    "Open a Simpler (inside a Drum Rack pad, or standalone)",
+    "In the Classic tab, find the Filter section and click the power button to enable it",
+    "Choose filter type: LP (lowpass) = cuts highs, leaves lows. HP (highpass) = cuts lows, leaves highs. BP (bandpass) = cuts both extremes, passes a band",
+    "Freq knob: sets the cutoff frequency. LP at 8kHz = slightly dark. LP at 3kHz = dark. HP at 200Hz = removes rumble from a pad sample",
+    "Res knob: resonance at the cutoff point. 0% = smooth cutoff. 30–50% = the classic synth filter 'peak' sound",
+    "The filter can be modulated by the Simpler's Envelope (Env) or LFO (LFO) — set the mod destination amount below the Freq knob"
+  ],
+  "tips": [
+    "Use HP on a pad sample loaded into Simpler to remove low-end rumble — cleaner than adding EQ Eight as a separate device",
+    "A slight LP roll-off (Freq 12kHz, no resonance) on a hi-hat sample makes it sit further back in the mix without being obviously filtered",
+    "The Simpler filter is less precise than an EQ Eight — for surgical frequency work, use EQ Eight. For general tone shaping, the Simpler filter is faster",
+    "Resonance above 60% on LP creates an aggressive, self-oscillating filter peak — use intentionally for acid bass effects"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In rep-01 or any drum rep, open a clap Simpler, enable LP filter, set Freq to 8kHz. Compare with filter off. Then try HP at 150Hz on the same clap — hear how it changes the character.",
+  "ableton_version_note": "Available in Simpler in Ableton Live Standard and Suite."
+}

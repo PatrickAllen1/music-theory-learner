@@ -1,0 +1,32 @@
+{
+  "id": "limiter",
+  "title": "Limiter",
+  "category": "Effects",
+  "tags": [
+    "limiter",
+    "master",
+    "clipping",
+    "ceiling",
+    "output",
+    "dynamics",
+    "gain"
+  ],
+  "summary": "Hard ceiling that prevents the signal from exceeding 0dBFS. Lives on the Master channel, last in chain. Safety net — not a creative effect.",
+  "steps": [
+    "Add Limiter as the very last device on the Master channel (after all other effects)",
+    "Set Ceiling to -0.3dBFS — this is the absolute maximum output level",
+    "Set Lookahead to 3ms — allows the limiter to react fractionally before peaks arrive, reducing distortion",
+    "Enable Soft Clip — adds gentle saturation at the ceiling rather than hard brick-wall clipping",
+    "Watch the Gain Reduction meter — it should catch occasional peaks only (1–2dB reduction on the loudest hits)",
+    "If the meter is constantly showing 3dB+ reduction: something upstream is too loud — fix the levels, don't rely on the limiter to fix it"
+  ],
+  "tips": [
+    "The Limiter's job is safety, not loudness. If you want louder mixes, push the level before the limiter",
+    "Soft Clip ON is recommended — without it, the ceiling is a hard clip. Soft Clip curves the peaks gently, similar to analogue tape saturation",
+    "Never use Limiter on individual tracks as a creative effect — use Saturator for track-level harmonic distortion",
+    "A master limiter catching more than 3dB constantly means the mix is too hot. Lower the main fader or the loudest tracks, then re-examine"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "Add a Limiter to your Master channel in any guided build session. Set Ceiling -0.3dBFS. Check the gain reduction meter while the track plays — it should be barely moving.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

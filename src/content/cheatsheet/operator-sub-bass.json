@@ -1,0 +1,32 @@
+{
+  "id": "operator-sub-bass",
+  "title": "Operator — Sub Bass from Scratch",
+  "category": "Instruments",
+  "tags": [
+    "operator",
+    "sub bass",
+    "FM synthesis",
+    "sine",
+    "carrier",
+    "pitch envelope",
+    "punch"
+  ],
+  "summary": "Build a clean, punchy sub bass in Operator using a single sine carrier with a pitch envelope for the attack transient. Suite only — use Serum V2 for an equivalent in Standard.",
+  "steps": [
+    "Open Operator (Suite only). Disable all operators except A",
+    "Set Oscillator A to Sine waveform (the cleanest, lowest-harmonic option for sub bass)",
+    "Operator A envelope: Attack 0ms, Decay 80ms, Sustain 80%, Release 100ms",
+    "Add a pitch envelope for the attack transient: in the Pitch section, set Initial = +12 semitones and Time = 30ms. This creates a pitch drop from a perfect 5th above the target pitch, landing on the root — the characteristic 'punch' of an Operator sub bass",
+    "No modulation from other operators: keep A's Amount at 0% from any other operator",
+    "EQ Eight after Operator: high-pass at 30Hz (removes sub-sonic rumble). Utility: Width 0% (mono)"
+  ],
+  "tips": [
+    "The pitch envelope is the key technique: the brief high pitch at the note's start creates a perceptible transient even at very low frequencies where a static sine would be nearly imperceptible on the attack",
+    "Operator is Suite only — if you have Live Standard, replicate this in Serum V2: OSC A sine wave, very fast ENV 2 pitch modulation (+24 semitones, Decay 30ms, Env Amount positive), rest of ENV 1 as described above",
+    "Sine wave sub bass = purest low-frequency tone. No harmonics to interfere with other instruments. The pitch envelope adds the only harmonic content (a brief upper pitch)",
+    "Test on headphones: play low notes (A1, B1, D1). The pitch should be clearly identifiable and the attack should have a slight punch despite the low frequency"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "If you have Operator (Suite): build this sub bass patch, play the A minor i→bIII→bVI→iv roots (A1, C1, F1, D1) from rep-13. Compare the Operator sub to the Serum sub you built in rep-serum-sub-bass — note the difference in attack character.",
+  "ableton_version_note": "Operator is available in Ableton Live Suite only. Not available in Standard."
+}

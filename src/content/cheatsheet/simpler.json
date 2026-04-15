@@ -1,0 +1,25 @@
+{
+  "id": "simpler",
+  "title": "Simpler",
+  "category": "Instruments",
+  "tags": ["simpler", "sample", "playback", "drum", "melodic", "loop", "slice"],
+  "summary": "Load and play any audio sample from MIDI. The engine inside every Drum Rack pad — also works standalone for melodic samples, one-shots, or chopped loops.",
+  "steps": [
+    "Drag 'Simpler' from Instruments in the browser onto a new MIDI track — or find it inside a Drum Rack pad by clicking the pad and pressing the chain icon",
+    "Drag an audio file (wav/aiff/mp3) from the browser directly onto the waveform display to load it",
+    "Classic mode: sample plays with pitch tracking from MIDI notes (use for melodic samples, pads, bass notes)",
+    "1-Shot mode: sample plays once from start on note-on, ignores MIDI note-off (use for drums — the sample finishes naturally)",
+    "Slicing mode: Simpler automatically slices a loop at transients and maps each slice to a MIDI pad (use for drum loops you want to rearrange or chop)",
+    "Adjust sample start and end points by dragging the markers on the waveform — useful for removing silence or isolating a specific hit",
+    "In the Amp section: Attack controls how fast the sample fades in. Decay/Sustain/Release shape the tail. For a drum hit: Attack 0ms, Decay to taste, Sustain 0 (so it dies after decay)"
+  ],
+  "tips": [
+    "In Classic mode, enable 'Loop' to make the sample loop while a MIDI note is held — great for sustained pads from a short sample",
+    "Warp is off by default in Simpler — if your loop drifts in tempo, enable Warp and set it to the loop's original BPM",
+    "In Slicing mode, right-click the sliced MIDI clip and 'Show in New MIDI Track' — each slice is a separate note you can rearrange freely",
+    "The internal LFO and Filter inside Simpler can modulate pitch, volume, or filter cutoff without needing extra devices"
+  ],
+  "practice_rep_id": "rep-01-four-on-floor-emin",
+  "practice_hint": null,
+  "ableton_version_note": "Available in all editions of Live 9+. Slicing mode requires Live Standard or Suite."
+}

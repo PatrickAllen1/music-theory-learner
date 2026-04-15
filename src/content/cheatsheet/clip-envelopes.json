@@ -1,0 +1,32 @@
+{
+  "id": "clip-envelopes",
+  "title": "Clip Envelopes",
+  "category": "Workflow",
+  "tags": [
+    "clip envelope",
+    "automation",
+    "modulation",
+    "per-clip",
+    "volume",
+    "pitch",
+    "linked"
+  ],
+  "summary": "Per-clip automation of volume, pitch, or any device parameter. Unlike Arrangement automation (global), clip envelopes travel with the clip — useful for sounds that vary clip-to-clip.",
+  "steps": [
+    "Select a MIDI or audio clip in Session or Arrangement view",
+    "In the clip view (bottom panel), click the 'E' tab (Envelopes) to open Clip Envelopes",
+    "Device chooser: select which device's parameter to automate (e.g. 'Clip' for volume/pan, or a specific device like 'Serum')",
+    "Control chooser: select the specific parameter (Volume, Transposition, or any device knob)",
+    "Draw envelope automation in the envelope lane — breakpoints work the same as Arrangement automation",
+    "Linked mode: when linked (default), the envelope loops with the clip. Unlinked: the envelope can have a different loop length from the MIDI notes — useful for evolving textures"
+  ],
+  "tips": [
+    "Clip envelope volume automation is useful for builds: the same clip loops but the volume ramps up over multiple repetitions in Arrangement view — without separate Arrangement automation on the track",
+    "Unlinked clip envelopes are powerful: a 4-bar MIDI loop with a 7-bar volume envelope creates an evolving pattern that never exactly repeats in the same phase relationship",
+    "Pitch (Transposition) clip envelope: automate the pitch of a clip for pitch bends or drops without using a pitchbend MIDI message. Pitch -12 over 4 bars = tape slowdown effect",
+    "Clip envelopes are clip-specific — different clips on the same track can have completely different envelopes. Arrangement automation is track-wide"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In any rep with a chord pad clip, select the clip, go to the Envelopes tab, select Clip > Volume. Draw a fade-in from -inf to 0dB over 8 bars. This clip now always fades in when it plays, regardless of Arrangement automation.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

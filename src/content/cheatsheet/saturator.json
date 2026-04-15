@@ -1,0 +1,32 @@
+{
+  "id": "saturator",
+  "title": "Saturator",
+  "category": "Effects",
+  "tags": [
+    "saturator",
+    "distortion",
+    "warmth",
+    "harmonics",
+    "soft clip",
+    "bass",
+    "pad"
+  ],
+  "summary": "Adds harmonic distortion for warmth and translation. Used on sub bass so it's audible on small speakers, and on pads to add character. More precise than Overdrive for controlled harmonic shaping.",
+  "steps": [
+    "Add Saturator to a sub bass or pad track",
+    "Choose a waveshaper mode: Soft Clip = gentle, warm saturation. Hard Clip = more aggressive, squared-off distortion. Analog Clip = SSL-style colour",
+    "For sub bass: Drive 15%, Soft Clip mode, Dry/Wet 40% — adds 2nd and 3rd harmonics so the bass is audible on headphones and small speakers",
+    "For a chord pad: Drive 10%, Soft Clip, Dry/Wet 25% — removes the 'too digital' quality from a Serum patch",
+    "For a master bus or drum bus: Drive 5%, Analog Clip, Dry/Wet 20% — adds subtle tape-like warmth",
+    "The Waveshaper display shows the distortion curve — watch how Soft Clip curves gently vs Hard Clip squaring off"
+  ],
+  "tips": [
+    "Saturator on sub bass is not about making it distorted — it's about adding harmonics that translate on systems that can't reproduce deep sub frequencies",
+    "Test sub bass saturation on earbuds or laptop speakers: with Saturator off, the bass disappears. With it on, you should hear the character of the bass even on small speakers",
+    "Dry/Wet knob is key — 100% is full saturation. 20–40% blends the saturated version with the original for controlled warmth",
+    "Unlike Overdrive, Saturator lets you see exactly what the distortion curve looks like — use the Waveshaper display to understand how your settings affect the waveform"
+  ],
+  "practice_rep_id": "rep-08-bVI-lift-emin",
+  "practice_hint": null,
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

@@ -1,0 +1,32 @@
+{
+  "id": "flanger",
+  "title": "Flanger",
+  "category": "Effects",
+  "tags": [
+    "flanger",
+    "modulation",
+    "sweep",
+    "comb",
+    "movement",
+    "breakdown",
+    "transition"
+  ],
+  "summary": "Creates a whooshing, comb-filtering effect by mixing the signal with a slightly delayed version of itself. Best used sparingly in breakdown sections and transitions — not as a constant effect.",
+  "steps": [
+    "Add Flanger to a pad or synth — works best on textural or atmospheric sounds",
+    "Rate: how fast the effect sweeps. 0.1–0.5Hz = slow, evolving sweep (good for breakdowns). Sync to tempo for rhythmic flanging",
+    "Feedback: how pronounced the metallic comb-filter sound is. Low feedback = subtle movement. High feedback = obvious, metallic character",
+    "Dry/Wet: 20–40% for subtle movement. 60%+ for obvious flange effect",
+    "Hi-Pass and Lo-Pass controls: filter the effect so it only applies to certain frequencies — use Hi-Pass 200Hz to keep the flanger from affecting the low end",
+    "For a breakdown sweep: automate the Rate or Feedback to increase over 4–8 bars as the breakdown builds"
+  ],
+  "tips": [
+    "Flanger is most powerful when used sparingly — one moment in a breakdown, not throughout a track. Constant flanging becomes tiring quickly",
+    "Automation is key: a flanger that slowly increases its Rate over 8 bars creates a sense of building tension that static settings can't achieve",
+    "The comb-filtering effect interacts with the harmonic content of the sound — try on different synth patches and compare. Sounds with many harmonics (Reese, pads with lots of overtones) flange more dramatically",
+    "Flanger + Reverb on a breakdown pad: the flange adds movement, the reverb adds space. Together they create the 'dissolving' breakdown sound"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In any spinoff with a breakdown section, add Flanger to the chord pad during the breakdown. Set Rate 0.2Hz, Feedback 30%, Dry/Wet 30%. Listen to how it changes the texture of the breakdown.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

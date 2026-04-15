@@ -1,0 +1,32 @@
+{
+  "id": "track-grouping",
+  "title": "Track Groups & Bus Routing",
+  "category": "Workflow",
+  "tags": [
+    "groups",
+    "bus",
+    "routing",
+    "organisation",
+    "colour",
+    "glue compressor",
+    "mix bus"
+  ],
+  "summary": "Group related tracks into a single bus track. Select tracks > Cmd+G. The group track becomes the bus — add effects (Glue Compressor, EQ) to it to process all grouped tracks together.",
+  "steps": [
+    "Select multiple tracks by clicking the first track header, then Shift+click the last",
+    "Press Cmd+G (Mac) to group them into a Group Track",
+    "Name the group by double-clicking its header (e.g. 'DRUMS', 'BASS', 'SYNTHS')",
+    "Add effects to the group track — they process the combined output of all grouped tracks",
+    "Common group FX: Glue Compressor on DRUMS group (bus glue). EQ Eight on BASS group (HP, shape the combined bass). Limiter on MASTER",
+    "Collapse the group by clicking the triangle on the group track to hide individual tracks and save screen space"
+  ],
+  "tips": [
+    "Standard grouping setup: DRUMS group (kick, snare, hats, perc) + Glue Compressor. BASS group (sub + mid bass) + EQ Eight. SYNTHS group (pads, stabs, leads) + EQ Eight + light Compressor",
+    "Colour-code groups: right-click a group header to assign a colour. Match the group colour to all tracks inside it — visual organisation in a complex session",
+    "The group track has its own fader — use it to balance the whole group in the mix. Lower the DRUMS group fader to bring the drums down without adjusting each drum level individually",
+    "Groups can be nested: you can have a BASS group inside a PRODUCTION group. Useful in complex sessions but unnecessary for garage builds"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In rep-06 or any mini-track rep, select all drum tracks and press Cmd+G. Name the group 'DRUMS'. Add Glue Compressor to the group track. Set ratio 4:1, attack 3ms, release Auto. Compare the drum sound with Glue Compressor bypassed vs active.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

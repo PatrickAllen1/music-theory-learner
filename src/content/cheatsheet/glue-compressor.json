@@ -1,0 +1,33 @@
+{
+  "id": "glue-compressor",
+  "title": "Glue Compressor",
+  "category": "Effects",
+  "tags": [
+    "glue compressor",
+    "bus",
+    "drums",
+    "SSL",
+    "glue",
+    "group",
+    "dynamics"
+  ],
+  "summary": "Bus compressor modelled on the SSL G-Bus. Makes a drum group or mix bus feel like one instrument rather than separate elements. Not for individual tracks — for groups.",
+  "steps": [
+    "Add Glue Compressor to a group track (e.g. DRUMS group), not an individual instrument track",
+    "Set Ratio to 4:1",
+    "Set Attack to 3ms — slow enough to let transients (the initial hits) pass through, then compress the body",
+    "Set Release to Auto — the compressor calculates release based on incoming audio",
+    "Lower the Threshold until the gain reduction meter shows 2–4dB of reduction on the loudest hits",
+    "Add Makeup Gain to compensate for any lost volume",
+    "Enable Soft Clip (the button at the output) for gentle limiting at the output — prevents the group from clipping"
+  ],
+  "tips": [
+    "2–4dB of gain reduction is the target — you should barely hear it but the drums should feel more cohesive",
+    "Ratio 2:1 = very gentle glue. 4:1 = noticeable cohesion. 8:1+ = starts to sound like a limiter — usually too aggressive on drums",
+    "The difference between Glue Compressor and standard Compressor: Glue is modelled on an analogue SSL bus compressor with a specific 'glue' character. Use it on buses. Use standard Compressor for sidechain pumping on individual tracks",
+    "Try toggling the Glue Compressor on and off while the track plays — if the drums feel looser and more disconnected with it off, it's working"
+  ],
+  "practice_rep_id": "spinoff-kettama-bbmin-full",
+  "practice_hint": null,
+  "ableton_version_note": "Available in Ableton Live Standard and Suite."
+}

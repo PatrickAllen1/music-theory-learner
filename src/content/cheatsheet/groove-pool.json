@@ -1,0 +1,32 @@
+{
+  "id": "groove-pool",
+  "title": "Groove Pool",
+  "category": "Workflow",
+  "tags": [
+    "groove",
+    "swing",
+    "timing",
+    "feel",
+    "humanise",
+    "shuffle",
+    "quantise"
+  ],
+  "summary": "Apply timing feel (swing, shuffle, groove) to MIDI clips. Drag grooves from the browser onto clips, or extract groove from a reference audio file. The global Groove Amount knob scales all grooves at once.",
+  "steps": [
+    "Open the Groove Pool: click the small 'Hot-Swap Groove' button (wave icon) in the lower-left of the screen, or find grooves in Browser > Grooves",
+    "From the browser, drag a groove preset onto a MIDI clip in the Session or Arrangement view",
+    "The clip now shows a groove indicator. Adjust Groove Amount (a knob that appears) to scale the effect: 50% = half the groove timing. 100% = full groove timing",
+    "Global groove: in the lower-left of the Ableton interface, the global Groove Amount slider scales all grooves in the project simultaneously",
+    "Extracting groove from audio: drag an audio file into the clip view, right-click > Extract Groove. The timing imperfections of the audio become a groove preset you can apply to MIDI clips",
+    "Commit a groove: with a grooved clip selected, click 'Flatten' — the groove is permanently baked into the MIDI note timing"
+  ],
+  "tips": [
+    "Straight quantised drums feel robotic. A groove with 20–30% amount adds subtle timing imperfections that make the beat feel more human",
+    "The MPC swing presets (MPC 60 Swing 56%) are classic — this is the shuffle feel on most UK garage and house tracks",
+    "Extract groove from a vinyl sample: drag a drum loop onto an audio track, extract its groove, apply to your Drum Rack MIDI clip. You capture the swing of the original recording",
+    "Apply different groove amounts to different tracks: heavy groove on drums, lighter on bass, no groove on sub. The contrast creates rhythmic interest"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In rep-01 or any drum rep, drag an MPC swing groove preset onto the drum MIDI clip. Set Groove Amount to 30%. Compare with 0% (straight quantised) — does the beat feel more natural?",
+  "ableton_version_note": "Groove Pool available in all editions of Live 9+."
+}

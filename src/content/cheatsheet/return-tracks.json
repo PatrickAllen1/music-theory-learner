@@ -1,0 +1,32 @@
+{
+  "id": "return-tracks",
+  "title": "Return Tracks & Send Routing",
+  "category": "Workflow",
+  "tags": [
+    "sends",
+    "reverb",
+    "routing",
+    "return track",
+    "bus",
+    "parallel",
+    "FX"
+  ],
+  "summary": "Return tracks host shared effects (reverb, delay) that multiple sources feed into via send knobs. The correct way to use time-based effects in any mix — everything shares one room.",
+  "steps": [
+    "Create a return track: Cmd+Option+T (Mac) — it appears in the right section of Session view, labelled A, B, C...",
+    "Add an effect to the return track (e.g. Reverb, Simple Delay)",
+    "Set Dry/Wet to 100% on the return track's effect — the return only outputs the wet effect signal",
+    "On any track that should feed this effect, turn up the corresponding Send knob (A, B, etc.) to route signal to the return",
+    "The return track's fader controls the overall level of the effect in the mix",
+    "Pre vs Post fader send: right-click a Send knob > 'Pre-Fader'. Pre-fader = send level is independent of the track fader. Post-fader (default) = send level scales with the track fader"
+  ],
+  "tips": [
+    "Always use return tracks for reverb and delay — never as inserts on individual tracks. One shared reverb return = everything exists in the same space. Separate insert reverbs = disconnected, unnatural mix",
+    "Name your return tracks clearly: 'Verb LG', 'Verb SM', 'Delay 1/8'. Ableton allows any return track name",
+    "High-pass the return track before the reverb/delay: EQ Eight, HP at 200Hz. Removes low-frequency smear from shared effects",
+    "For parallel compression (wet/dry compression blend): create a return track with a Compressor at 100% ratio, feed it from the source track, mix back with the fader"
+  ],
+  "practice_rep_id": "spinoff-kettama-bbmin-full",
+  "practice_hint": null,
+  "ableton_version_note": "Return tracks available in all editions of Live 9+."
+}

@@ -1,0 +1,34 @@
+{
+  "id": "reverb",
+  "title": "Reverb",
+  "category": "Effects",
+  "tags": [
+    "reverb",
+    "space",
+    "hall",
+    "send",
+    "return",
+    "depth",
+    "decay",
+    "pre-delay"
+  ],
+  "summary": "Simulates acoustic spaces. Always route via a return track (send), never as an insert on individual elements. High-pass the return at 200Hz — always.",
+  "steps": [
+    "Create a return track: click the '+' button at the bottom of the return section (or Cmd+Option+T), name it 'Reverb'",
+    "Drag Reverb from Audio Effects onto the return track",
+    "Set Dry/Wet to 100% (the return track is only reverb — the original signal stays on its own track)",
+    "Add EQ Eight before the Reverb on the return track: high-pass at 200Hz to remove low-frequency reverb mud",
+    "Set Decay (the reverb tail length): Large hall = 3–4s for pads. Small room = 0.3–0.5s for drums/clap. Plate = 1.5s for a medium-sized space",
+    "Set Pre-delay to 15ms on pad reverb — this lets the dry attack hit first, then the reverb follows",
+    "On each track that should have reverb, turn up its Send knob (A, B, etc.) to feed signal to the reverb return"
+  ],
+  "tips": [
+    "Never add reverb as an insert effect directly on a track — always use a return send. Insert = each element in its own separate space. Send = everything shares one room",
+    "The most common beginner mistake: reverb on sub bass. Sub bass + reverb = muddy mix. Keep the sub clean",
+    "More reverb ≠ deeper sound. A too-long decay creates mud. Start at 2.5s and reduce if the mix feels washed out",
+    "Solo the reverb return track and listen to just the reverb tail — you should hear it as a clean, high-passed wash. If it sounds muddy, increase the HP frequency"
+  ],
+  "practice_rep_id": "spinoff-kettama-bbmin-full",
+  "practice_hint": null,
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

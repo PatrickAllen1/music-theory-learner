@@ -1,0 +1,33 @@
+{
+  "id": "operator",
+  "title": "Operator (FM Synthesis)",
+  "category": "Instruments",
+  "tags": [
+    "operator",
+    "FM synthesis",
+    "carrier",
+    "modulator",
+    "ratio",
+    "algorithm",
+    "bass",
+    "organ"
+  ],
+  "summary": "Ableton's FM synthesizer. Uses oscillators that modulate each other to create complex timbres. Used in Kettama's production for distinctive bass and organ sounds. Suite only.",
+  "steps": [
+    "Operator has 4 oscillators (A, B, C, D). The Algorithm selector determines how they connect",
+    "In most algorithms: the bottom oscillator (D) modulates upward through C → B → A. Oscillator A is the carrier — the audible output. B, C, D are modulators — they affect timbre only",
+    "Algorithm 1 (all in series D→C→B→A): the simplest — one carrier, three modulators stacked. Good for bass starting point",
+    "Frequency Ratio: the pitch relationship between oscillators. Ratio 1.00 = oscillator plays the same pitch as the MIDI note. Ratio 2.00 = one octave up. Ratio 0.5 = one octave down",
+    "Modulation Amount: how much each modulator affects its carrier. Low amount = few extra harmonics (sine-like). High amount = complex, metallic timbre",
+    "For an FM bass: Oscillator A ratio 1.00, envelope fast attack/decay (plucky). Oscillator B ratio 1.00, Amount 20–40% (adds 2nd harmonic body)"
+  ],
+  "tips": [
+    "FM synthesis creates harmonics by math, not by filtering — the interaction of frequency ratios determines the timbre. Integer ratios (1, 2, 3) = harmonic sounds. Non-integer (1.5, 2.37) = inharmonic/metallic",
+    "Start with Algorithm 1 and only oscillators A+B active. Understand the two-operator relationship before adding C and D",
+    "FM bass with fast B envelope: the modulation is only active at the start of the note (the attack), creating a click/pluck. The tail is clean sine. This is the classic 80s FM bass character",
+    "Operator is Suite only — if you have Live Standard, use Serum V2 for FM-like sounds via the FM from B feature in Serum's oscillator section"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "Operator is Suite-only. If you have it: open Operator, select Algorithm 1, enable only A and B oscillators. Set B Amount to 30%. Hold a low note and slowly increase B's Amount from 0 to 80% — hear the timbre change.",
+  "ableton_version_note": "Operator is available in Ableton Live Suite only. Not available in Standard."
+}

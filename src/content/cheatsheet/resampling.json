@@ -1,0 +1,32 @@
+{
+  "id": "resampling",
+  "title": "Resampling",
+  "category": "Workflow",
+  "tags": [
+    "resampling",
+    "bounce",
+    "flatten",
+    "render",
+    "master",
+    "audio",
+    "creative"
+  ],
+  "summary": "Record your own mix output back into Ableton as an audio track. Used to capture a mix at a certain stage, create creative samples from your own sounds, or bounce CPU-heavy parts to audio.",
+  "steps": [
+    "Create a new audio track",
+    "Set the track's input to 'Resampling' from the Input Type dropdown (below the track name in Session view)",
+    "Arm the track for recording (click the arm button on the track)",
+    "Press Play and Record — the track records whatever is playing through Ableton's Master output",
+    "Stop recording. The recorded audio clip contains exactly what the Master output produced during that period",
+    "Drag the recorded clip back into your project as an audio sample, or use it as a creative starting point"
+  ],
+  "tips": [
+    "Resampling is a fast alternative to exporting: no need to open the export dialog. Just record the Master output to a track",
+    "Creative resampling: play a complex chord pad through a reverb, record the result. Now you have an audio recording of that sound you can slice, pitch-shift, and process further",
+    "Resample before you freeze: if you want to capture a moment in a build (e.g. the last 4 bars before the drop with all effects and automation), resample it — you have an audio recording of that exact state",
+    "The resampled audio includes all effects processing — unlike Freeze (which preserves the track separately). Resampling commits the full chain output to audio"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In any rep, add a new audio track, set its input to 'Resampling', arm it, and record 4 bars of your loop. Listen to the resampled clip — it should sound identical to your mix. This is your mix captured as audio.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

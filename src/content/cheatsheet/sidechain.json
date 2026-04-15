@@ -18,5 +18,7 @@
     "If the sidechain is too obvious, automate the dry/wet knob on the compressor to only activate on drops",
     "Try routing a ghost kick (inaudible, volume all the way down) as the sidechain source for more precise triggering without drum bleed"
   ],
-  "ableton_version_note": "Works in Ableton Live 10+"
+  "ableton_version_note": "Works in Ableton Live 10+",
+  "practice_rep_id": "spinoff-kettama-bbmin-full",
+  "practice_hint": null
 }

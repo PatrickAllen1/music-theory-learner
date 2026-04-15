@@ -1,0 +1,32 @@
+{
+  "id": "gate",
+  "title": "Gate",
+  "category": "Effects",
+  "tags": [
+    "gate",
+    "dynamics",
+    "noise gate",
+    "rhythmic",
+    "gating",
+    "sidechain",
+    "chop"
+  ],
+  "summary": "Silences the signal when it drops below the threshold — the opposite of a compressor. Used to remove noise from reverb tails, create rhythmic chop effects via sidechain triggering, or clean up sustained sounds.",
+  "steps": [
+    "Add Gate to the track you want to gate",
+    "Threshold: the level below which the gate closes (silences the signal). Set it just above the noise floor to gate silently",
+    "Attack: how quickly the gate opens when the signal exceeds threshold. Fast (0.5ms) = snappy gate open. Slow (20ms) = gradual fade-in",
+    "Hold: minimum time the gate stays open after the signal exceeds threshold. Useful for notes that briefly dip below threshold mid-sustain",
+    "Release: how quickly the gate closes after the signal drops below threshold. Fast = abrupt chop. Slow = gradual fade-out",
+    "For rhythmic gating: enable Sidechain, set Audio From to a rhythmic source track. The gate opens and closes with that source's amplitude — creates a rhythmic chop effect"
+  ],
+  "tips": [
+    "Gated reverb (famous 1980s drum sound): add a very long Reverb to a snare, then Gate after the reverb. Set short Hold — the reverb blooms then gets chopped off abruptly",
+    "For noise removal: set Threshold just above the hiss/noise floor. The gate closes when the signal is quiet (just noise) and opens when the actual content plays",
+    "Rhythmic gating via sidechain: a pad gated from a kick pattern creates a chopped pad that pulses with the kick rhythm — a different effect from sidechain compression (which ducks, not chops)",
+    "Gate vs Compressor: Compressor reduces volume above threshold. Gate silences below threshold. They work on opposite sides of the threshold"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In a session with a chord pad and reverb, try adding Gate after the reverb send's return track. Set Threshold to -30dB, Hold 200ms. Hear how the reverb tail is cut off rather than decaying naturally.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

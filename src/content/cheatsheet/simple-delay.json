@@ -1,0 +1,32 @@
+{
+  "id": "simple-delay",
+  "title": "Simple Delay",
+  "category": "Effects",
+  "tags": [
+    "delay",
+    "echo",
+    "feedback",
+    "tempo sync",
+    "rhythm",
+    "ping pong",
+    "repeats"
+  ],
+  "summary": "Tempo-synced delay that creates rhythmic echoes locked to your groove. Route via a return track. Dotted 1/8 delay is the signature UK garage pad echo feel.",
+  "steps": [
+    "Create a return track and add Simple Delay to it (same approach as Reverb — always a return, not an insert)",
+    "Add EQ Eight before Simple Delay on the return track: high-pass at 250Hz to keep delay tails clear",
+    "Set Sync mode: click the note icon to enable tempo sync on L and R channels",
+    "Set delay time: 1/8 = eighth-note delay. Dotted 1/8 = the classic garage pad echo (adds rhythmic interest without crowding the beat). 1/4 = quarter-note echo",
+    "Set Feedback: how many times the echo repeats. 25–35% = 2–3 audible repeats then fades. 50%+ = many repeating echoes",
+    "On the source track, turn up the Send knob for this return to taste — usually -14 to -10dB for a subtle delay tail"
+  ],
+  "tips": [
+    "Dotted 1/8 is the most useful delay time for UK garage pads — it creates echoes that land between the beats, adding rhythmic interest without clashing with the kick",
+    "Ping-pong delay (L and R at different times) creates movement across the stereo field — try L at 1/8, R at 1/4 for an asymmetric ping-pong",
+    "High-pass the delay return at 250Hz: low frequencies in the delay tails create mud fast. The brightness and upper harmonics are what you want to echo",
+    "Delay and reverb can share the same return track, or live on separate returns. Separate returns give more control — recommended"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In any spinoff session with a chord pad, create a return track with Simple Delay, set Dotted 1/8 sync, Feedback 30%, HP at 250Hz. Send the pad at -12dB. Toggle the send on and off to hear the difference.",
+  "ableton_version_note": "Simple Delay available in all editions of Live 9+. Echo (a more advanced delay) is available in Live 11 Suite only."
+}

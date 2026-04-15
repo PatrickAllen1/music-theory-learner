@@ -1,0 +1,32 @@
+{
+  "id": "simpler-lfo",
+  "title": "Simpler — Internal LFO",
+  "category": "Instruments",
+  "tags": [
+    "simpler",
+    "lfo",
+    "modulation",
+    "pitch",
+    "filter",
+    "vibrato",
+    "movement"
+  ],
+  "summary": "Simpler's built-in LFO modulates pitch, filter, or amplitude over time. Used in drum racks across all 5 source tracks to add subtle organic movement to otherwise static samples.",
+  "steps": [
+    "Open a Simpler (inside a Drum Rack pad, or standalone)",
+    "Click the LFO tab at the bottom of the Simpler interface",
+    "Set Destination: Pitch (subtle wobble), Filter (tonal movement), Amp (tremolo — volume oscillation)",
+    "Set Rate: how fast the LFO oscillates. Low rate (0.1–1Hz) = slow, organic movement. High rate (5Hz+) = vibrato or tremolo effect",
+    "Set Amount: the depth of modulation. For subtle movement on a hat: Pitch destination, Amount 3–5%. For a tape-stop effect on a clap: Pitch destination, Amount 20%, Rate 2Hz",
+    "Retrigger: enable to reset the LFO phase on each new note. Enable for consistent results on every hit. Disable for an evolving, never-repeating effect"
+  ],
+  "tips": [
+    "Pitch LFO at very low Amount (2–3%) on a closed hi-hat makes it feel like a real drummer — slightly unpredictable and organic",
+    "Filter LFO creates a sweeping tonal movement. Use on a long clap or snare reverb tail to make it feel like it's breathing",
+    "Retrigger ON = the LFO always starts from the same point on each hit. Retrigger OFF = the LFO is continuous and each hit catches it at a random phase",
+    "The LFO here is inside Simpler — it modulates the sample's playback, not an external effect. It's very CPU-efficient"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In any rep with a drum rack (rep-01 onwards), click a hat pad, open the Simpler inside, go to the LFO tab, set Destination to Pitch, Amount to 3%. Loop 4 bars. Can you hear the difference vs no LFO?",
+  "ableton_version_note": "Available in Simpler in Ableton Live Standard and Suite."
+}

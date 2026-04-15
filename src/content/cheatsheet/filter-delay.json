@@ -1,0 +1,31 @@
+{
+  "id": "filter-delay",
+  "title": "Filter Delay",
+  "category": "Effects",
+  "tags": [
+    "filter delay",
+    "frequency",
+    "bands",
+    "complex delay",
+    "texture",
+    "multi-band"
+  ],
+  "summary": "Three independent delays, each with its own filter — sends different frequency ranges to different delay times. Creates organic, frequency-dependent echo patterns. Best for complex textural effects.",
+  "steps": [
+    "Add Filter Delay to an atmospheric or pad track, or a return track",
+    "Each of the 3 bands has: a HP (high-pass) and LP (low-pass) filter to isolate a frequency range, a delay time (sync or ms), and a feedback amount",
+    "Enable only the bands you want — each band has an on/off toggle",
+    "Example setup: Band 1 (lows, LP 200Hz) = long delay (1/2 note). Band 2 (mids, HP 200Hz LP 3kHz) = medium delay (1/4 note). Band 3 (highs, HP 3kHz) = short delay (1/8 note)",
+    "Each band's feedback controls how many times that frequency range repeats",
+    "Dry/Wet: 30–50% for a blend of the original with the multi-band delay"
+  ],
+  "tips": [
+    "Filter Delay creates complexity because different frequencies echo at different rates — the low-end repeats don't line up with the high-end repeats, creating an organic, shifting texture",
+    "Start with just Band 3 (highs only) — the high-frequency echoes are most audible and musical without muddying the mix",
+    "Used sparingly in transitions: a pad going into a breakdown with Filter Delay has its frequency ranges echoing at different rates as it fades — creates a complex dissolve effect",
+    "This device is more complex than Simple Delay. Learn Simple Delay first. Use Filter Delay when you specifically want frequency-dependent delay times"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In a breakdown section, add Filter Delay to a chord pad. Enable only Band 3 (highs). Set delay time to 1/8, Feedback 20%, HP filter at 2kHz. This adds a high-frequency shimmer echo without cluttering the mid-range.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

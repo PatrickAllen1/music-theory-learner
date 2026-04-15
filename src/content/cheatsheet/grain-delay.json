@@ -1,0 +1,32 @@
+{
+  "id": "grain-delay",
+  "title": "Grain Delay",
+  "category": "Effects",
+  "tags": [
+    "grain delay",
+    "granular",
+    "texture",
+    "spray",
+    "clouds",
+    "atmosphere",
+    "breakdown"
+  ],
+  "summary": "Granular processor — chops audio into tiny grains and plays them back with random pitch/position variation. Creates textures and clouds from any audio source. Not a traditional delay — a texture device.",
+  "steps": [
+    "Add Grain Delay to an atmospheric pad or texture track",
+    "Spray: how random the grain position is. Low spray (0–20%) = coherent granular shimmer. High spray (60–100%) = pitch clouds, the source becomes unrecognisable",
+    "Frequency: number of grains per second. High frequency = smooth, dense texture. Low frequency = stuttery, fragmented sound",
+    "Pitch: amount of random pitch variation applied to grains. 0 = no pitch randomness. High values = tonal clouds that spread harmonically",
+    "Delay Time: base delay before grains play back. Set low (10–50ms) for near-instant texture. Longer for a distinct delay tail",
+    "Dry/Wet: 30–50% blends the texture with the original. 100% = only the granular output (original signal removed)"
+  ],
+  "tips": [
+    "Grain Delay is most effective on atmospheric or pad sounds — drums and bass usually sound unpleasant when granulated",
+    "For a breakdown 'dissolve' effect: automate Spray from 0% to 80% over 8 bars as the breakdown fades in. The pad becomes a texture cloud",
+    "Automation of the Pitch knob over time creates an evolving harmonic shimmer — the textural equivalent of a very slow filter sweep",
+    "Grain Delay + Reverb: granulate a pad and send it heavily to reverb. The result is a complex, evolving atmospheric texture perfect for breakdowns"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In a session with a chord pad, add Grain Delay. Start with Spray 20%, Frequency 80, Dry/Wet 40%. Loop 4 bars. Then gradually increase Spray to 80% and listen to the pad dissolve into texture.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

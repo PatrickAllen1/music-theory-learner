@@ -1,0 +1,31 @@
+{
+  "id": "instrument-rack",
+  "title": "Instrument Rack — Layering Synths",
+  "category": "Workflow",
+  "tags": [
+    "instrument rack",
+    "layering",
+    "macro",
+    "synthesis",
+    "chain",
+    "parallel"
+  ],
+  "summary": "Layer multiple instruments on one MIDI track. Add two Serum instances to one rack, balance their volumes, and high-pass one while low-passing the other for frequency-split layering.",
+  "steps": [
+    "Create a new MIDI track and drag 'Instrument Rack' from Instruments onto it",
+    "In the rack, click 'Add Chain'. Each chain is an independent instrument path",
+    "Drag a Serum (or any instrument) into Chain 1. Drag another Serum into Chain 2",
+    "Each chain has its own volume, pan, and mute button",
+    "For frequency-split layering: add EQ Eight to Chain 1 and high-pass at 300Hz (this chain handles mids/highs). Add EQ Eight to Chain 2 and low-pass at 300Hz (this chain handles lows/sub)",
+    "Macro knobs: the 8 macro knobs at the top of the rack can be mapped to any parameter inside any chain — Cmd+M to enter Macro Mapping mode, click a macro knob, then click the parameter to map"
+  ],
+  "tips": [
+    "Instrument Rack is how you build layered bass sounds: a clean sine sub in Chain 1 (LP 200Hz) + a Serum saw with harmonics in Chain 2 (HP 200Hz). One MIDI track, two complementary sounds",
+    "Macro knobs are where Instrument Racks become powerful: map a single macro to Serum's filter cutoff on both chains simultaneously. Turn one knob, filter both layers",
+    "Chain volumes don't affect each other — use the chain fader to balance layers. The track fader controls the overall output",
+    "You can put any combination of instruments and effects inside chains. A chain can have a Simpler + a compressor + reverb — all inside the rack"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In any rep with a sub bass, create an Instrument Rack with two chains: Chain 1 = your existing Serum sub bass patch (LP 200Hz). Chain 2 = a new Serum with a saw wave (HP 200Hz, filter MG Low 24 at 40%). Balance volumes. One MIDI track, layered bass.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

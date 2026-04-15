@@ -1,0 +1,31 @@
+{
+  "id": "audio-effect-rack",
+  "title": "Audio Effect Rack — Parallel Processing",
+  "category": "Workflow",
+  "tags": [
+    "rack",
+    "macros",
+    "parallel",
+    "chains",
+    "parallel compression",
+    "wet dry"
+  ],
+  "summary": "Process audio through multiple effect chains simultaneously. Each chain has its own effects and a volume knob to blend back. Used for parallel compression, frequency-split effects, and complex FX macros.",
+  "steps": [
+    "Add Audio Effect Rack (from Audio Effects in the browser) to any audio or instrument track",
+    "Click 'Add Chain' to add a parallel processing path",
+    "The default chain (labelled '1') processes the dry signal. Additional chains receive the same input",
+    "For parallel compression: Chain 1 = no effects (dry). Chain 2 = heavy Compressor (ratio 8:1, slow attack). Blend Chain 2 volume to taste — usually -6 to -3dB for the compressed chain",
+    "For frequency-split effects: Chain 1 with LP filter + reverb (lows into reverb). Chain 2 with HP filter + no reverb (highs stay dry)",
+    "Macro knobs map to multiple parameters across chains — Cmd+M to map"
+  ],
+  "tips": [
+    "Parallel compression is the most common use: the dry signal retains its dynamics and transients, while the heavily compressed version adds density and sustain. You blend the two to taste",
+    "Unlike series processing (effect after effect in a chain), parallel processing means both paths get the same input. The result is the sum of both outputs",
+    "Macro knobs are powerful here: map 'Crush Amount' to Drive on a Saturator in one chain, so you can automate how much grit is blended into the signal",
+    "The Dry/Wet controls in the rack itself (separate from individual device Dry/Wet knobs) let you bypass all chains at once with one knob"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "Try parallel compression on your DRUMS group: add Audio Effect Rack, create two chains. Chain 1 = no effects (dry). Chain 2 = Compressor at ratio 8:1, attack 1ms, release 50ms. Set Chain 2 volume to -6dB. Compare with/without Chain 2.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

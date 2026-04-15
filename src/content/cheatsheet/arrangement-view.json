@@ -1,0 +1,32 @@
+{
+  "id": "arrangement-view",
+  "title": "Arrangement View Workflow",
+  "category": "Workflow",
+  "tags": [
+    "arrangement",
+    "workflow",
+    "freeze",
+    "flatten",
+    "duplicate",
+    "loop brace",
+    "session"
+  ],
+  "summary": "Arrangement view is where full tracks are assembled. Key workflows: session to arrangement recording, duplicate sections, loop brace, and freeze/flatten for CPU-heavy tracks.",
+  "steps": [
+    "Switch to Arrangement view: Tab key. Switch back to Session view: Tab again",
+    "Record from Session to Arrangement: in Arrangement view, press the global Record button, then play your Session clips. They are recorded as clips in the Arrangement timeline",
+    "Loop brace: click and drag in the top ruler to set the loop region. Press Cmd+L (or the Loop button) to loop playback within that region",
+    "Duplicate a section: select tracks and timeline region, Cmd+D to duplicate it — the selected section is copied immediately after itself",
+    "Freeze a track: right-click a track header > Freeze. Ableton renders the track to audio temporarily, freeing CPU. The track shows as frozen (orange) and cannot be edited until unfrozen",
+    "Flatten: right-click a frozen track > Flatten. Renders permanently to audio. The instrument and effects are removed and the track becomes an audio track"
+  ],
+  "tips": [
+    "Freeze before export if you have CPU-heavy plugins. Freeze all tracks with Serum, then export — you get the full quality with no CPU overload during export",
+    "Duplicate section workflow for building arrangements: build 4 bars, duplicate to 8, duplicate to 16 — much faster than manually arranging every clip",
+    "The loop brace is essential for focused work on one section. Set the brace over just the drop, loop it, make adjustments — you don't have to listen from the beginning each time",
+    "Session to Arrangement recording is how the builds in this app suggest you work: build loops in Session, then record yourself playing them out in Arrangement"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In any rep with multiple clips built, press Tab to enter Arrangement view. Press Record. Go to Session view, click the Drop clips to play them. Go back to Arrangement view and stop recording. You should see the recorded arrangement. Press Tab to switch back and forth.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

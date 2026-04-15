@@ -1,0 +1,32 @@
+{
+  "id": "auto-filter",
+  "title": "Auto Filter",
+  "category": "Effects",
+  "tags": [
+    "auto filter",
+    "filter sweep",
+    "lfo",
+    "envelope follower",
+    "cutoff",
+    "build",
+    "movement"
+  ],
+  "summary": "A filter with built-in LFO and envelope follower. Animates over time, unlike a static EQ. Used for filter sweeps in builds, rhythmic filter pulses on pads, and envelope-following effects.",
+  "steps": [
+    "Add AutoFilter to a track you want to filter",
+    "Choose filter type: LP (lowpass) for cutting highs and opening up into a drop, HP (highpass) for removing lows",
+    "Set initial Cutoff frequency: for a build sweep, start at 200Hz and automate up to 20kHz over 8–16 bars",
+    "To create a rhythmic filter: enable LFO section, sync to tempo, set Rate to 1/4 or 1/8, Shape to Sine. The filter opens and closes with the beat",
+    "To create an envelope follower: expand Sidechain section, enable, set Audio From to a rhythmic track. AutoFilter opens/closes with that track's amplitude",
+    "Resonance: 0–20% for a smooth musical sweep. 40–60% for a pronounced filter peak. 80%+ for an aggressive acid character"
+  ],
+  "tips": [
+    "The most common use in UK garage: LP sweep in the build — start the cutoff closed (200Hz) and automate it to open over the last 8 bars before the drop",
+    "Automating filter cutoff: click the Cutoff knob, press Cmd+click to enter Automation mode in Arrangement view, draw the sweep",
+    "Envelope follower mode is powerful but subtle: it means the filter responds to dynamics in the mix, not time. Great for organic, reactive filter movement",
+    "LP AutoFilter with LFO at 1/8 sync creates a 'pumping' tonal movement that's different from sidechain compression — it's the filter opening and closing, not volume"
+  ],
+  "practice_rep_id": "rep-11-VI-III-i-loop-bbmin",
+  "practice_hint": null,
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

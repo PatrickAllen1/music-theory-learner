@@ -1,0 +1,32 @@
+{
+  "id": "overdrive",
+  "title": "Overdrive",
+  "category": "Effects",
+  "tags": [
+    "overdrive",
+    "distortion",
+    "drive",
+    "grit",
+    "bass",
+    "warmth",
+    "tube"
+  ],
+  "summary": "Tube-like distortion with a warmer, more musical character than hard clipping. Use on Reese bass for aggression, or pads that need edge without sounding harsh.",
+  "steps": [
+    "Add Overdrive to a bass or synth track that needs more character",
+    "Drive knob: 20–40% for warmth and subtle grit. 60–80% for obvious overdrive character",
+    "Tone knob: rolls off high-frequency content of the distortion. Lower = darker overdrive. Higher = brighter, more present",
+    "Dynamic knob: envelope-following drive — the harder a note is played (higher velocity), the more drive it gets. 0% = constant drive. 50%+ = velocity-responsive grit",
+    "Dry/Wet: blend the overdrive with the original signal. 50% is a common starting point — full wet may be too aggressive",
+    "Compare with Saturator: Overdrive has more character and 'feel'. Saturator is more precise and controllable. For Reese bass: Overdrive. For sub bass harmonics: Saturator"
+  ],
+  "tips": [
+    "Reese bass + Overdrive at 40–50% Drive: gives it the gritty, complex character heard in IC and BL3SS tracks",
+    "Don't use Overdrive on sub bass as a primary tool — it adds harmonics but less controlled than Saturator. Use Saturator for sub bass, Overdrive for mid-bass (Reese, stab)",
+    "The Tone knob is underused. High Tone with high Drive = very bright, harsh. Pull back the Tone to 30–40% when Drive is high to keep it musical",
+    "Overdrive at very low Drive (5–10%) with high Dry/Wet (80%) adds subtle tape-like warmth to a bus — similar to Saturator in Analog Clip mode but with a different character"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "In spinoff-03 or spinoff-05 (both have Reese bass), add Overdrive to the Reese track. Set Drive 40%, Tone 35%. Compare with and without. The Reese should feel more complex and present with Overdrive on.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

@@ -1,0 +1,34 @@
+{
+  "id": "compressor",
+  "title": "Compressor",
+  "category": "Effects",
+  "tags": [
+    "compressor",
+    "dynamics",
+    "threshold",
+    "ratio",
+    "attack",
+    "release",
+    "sidechain",
+    "bus"
+  ],
+  "summary": "General-purpose dynamics control. Automatically reduces volume when the signal exceeds the threshold. Different from Glue Compressor — use this for sidechain pumping and individual track control.",
+  "steps": [
+    "Add Compressor to the track you want to compress",
+    "Set Threshold: the dB level above which compression starts. A lower threshold = more compression",
+    "Set Ratio: how much the signal is reduced above the threshold. 2:1 = gentle. 4:1 = noticeable. 8:1+ = near-limiting",
+    "Set Attack: slow attack (20–50ms) lets transients through = punchy. Fast attack (0.1–1ms) catches the transient = smooth, controlled",
+    "Set Release: how quickly the compressor recovers. Too fast = pumping/breathing. Auto = Ableton calculates the best release for the material",
+    "For sidechain: expand Sidechain section, enable, set Audio From to your kick track. Now the compressor ducks when the kick hits",
+    "Watch the gain reduction meter — aim for 2–6dB of reduction on the peaks"
+  ],
+  "tips": [
+    "Slow attack = more punch (the transient gets through before the compressor reacts). This is counterintuitive but correct",
+    "For the sub bass sidechain: Ratio 6:1, Attack 0.5ms, Release 100ms. For pad sidechain: Ratio 4:1, Attack 2ms, Release 200ms",
+    "Knee setting: Hard knee = compressor kicks in abruptly at the threshold. Soft knee = gradual transition around the threshold. Soft knee sounds more natural",
+    "Never use a Compressor on the Master — use Limiter for the master output ceiling. Compressor on master kills dynamics in ways that are hard to undo"
+  ],
+  "practice_rep_id": "rep-13-bass-implied-dmin",
+  "practice_hint": null,
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

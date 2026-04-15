@@ -26,5 +26,7 @@
     "Stack two samples on the same pad using 'Add Chain' in the chain list for layered sounds (e.g. sub + click for kick)",
     "Hold Ctrl/Cmd when dragging a sample to a pad to replace the existing sample instead of stacking"
   ],
-  "ableton_version_note": "Drum Rack available since Ableton Live 7. Slicing requires Live Standard or Suite."
+  "ableton_version_note": "Drum Rack available since Ableton Live 7. Slicing requires Live Standard or Suite.",
+  "practice_rep_id": "rep-01-four-on-floor-emin",
+  "practice_hint": null
 }

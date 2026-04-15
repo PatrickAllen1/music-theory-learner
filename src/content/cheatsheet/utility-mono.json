@@ -1,0 +1,24 @@
+{
+  "id": "utility-mono",
+  "title": "Utility — Mono & Width",
+  "category": "Workflow",
+  "tags": ["utility", "mono", "width", "stereo", "gain", "mid-side", "bass"],
+  "summary": "The Utility device controls stereo width, mono conversion, and gain. Essential for sub bass (always mono) and checking mix mono compatibility.",
+  "steps": [
+    "Add Utility to a sub bass track: set Width to 0% to make it fully mono",
+    "Width 0% = mono (both channels identical). Width 100% = full stereo (default). Width 200% = exaggerated stereo width",
+    "Mono button: converts the signal to mono regardless of Width setting — equivalent to Width 0%",
+    "Bass Mono button (if available): makes only the low frequencies mono, leaves highs in stereo — useful on pads to mono the bass content while keeping stereo width in the highs",
+    "Gain knob: add or subtract up to 35dB of gain — useful for makeup gain after a compressor or to trim an overly loud source",
+    "For checking mono compatibility: add Utility to the Master, set Width to 0%, listen. What disappears has phase cancellation. What stays is mono-safe"
+  ],
+  "tips": [
+    "Sub bass must be mono. Low frequencies in stereo cause phase cancellation on mono speakers (club systems, phone speakers) — the bass disappears. Width 0% on sub bass is not optional",
+    "The mono check is a vital mix step: everything you add Chorus or Reverb to will be in stereo. Check what happens when Width = 0% on the master — important elements should survive",
+    "Gain via Utility is the cleanest gain structure in the chain — it's a digital level trim with no colouration, unlike a compressor or saturator",
+    "Utility's Phase Invert button (180°) is useful for fixing phase alignment between a close-mic and room mic, or when layering samples that cancel each other out"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "Add Utility to your sub bass in any rep (rep-08 onwards). Set Width to 0%. Play the track. Now add Utility to the Master, set its Width to 0% — check that the sub bass is still audible. It should be, since you already made it mono.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

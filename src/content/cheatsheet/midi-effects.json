@@ -1,0 +1,31 @@
+{
+  "id": "midi-effects",
+  "title": "MIDI Effects — Chord, Scale, Arp",
+  "category": "Workflow",
+  "tags": [
+    "midi",
+    "chord",
+    "scale",
+    "arpeggiator",
+    "pitch",
+    "harmony",
+    "quantise"
+  ],
+  "summary": "MIDI effects transform notes before they reach the instrument. Chord adds intervals automatically. Scale locks notes to a key. Arpeggiator creates rhythmic note patterns from held chords.",
+  "steps": [
+    "MIDI effects go before the instrument in the device chain. Drag from MIDI Effects in the browser onto a MIDI track — they appear to the left of the instrument",
+    "Chord device: each Shift knob adds an interval above the played note. Shift 1 = +7 semitones (perfect 5th), Shift 2 = +12 (octave). Now playing one note triggers 3 notes",
+    "Scale device: set Root and Scale type. Any note you play gets snapped to the nearest note in that scale. Play a full chromatic keyboard — only in-key notes come out",
+    "Arpeggiator: takes a held chord and plays the notes one at a time in a rhythmic pattern. Rate controls speed (1/8, 1/16, etc.). Style controls order (Up, Down, Random, etc.)",
+    "Stack MIDI effects: Chord → Scale → Arpeggiator. Play one note: Chord turns it into a chord, Scale snaps it to key, Arp arpegiates the chord rhythmically"
+  ],
+  "tips": [
+    "Scale device is useful when exploring chord voicings in an unfamiliar key — lock it to your target key and any note you play is in-key",
+    "Chord device + Scale: add Chord first (adds intervals), then Scale (snaps everything to key). The result: harmonically correct intervals regardless of which note you play",
+    "Arpeggiator with Rate 1/16 and Style 'Up-Down' creates the classic synth arpeggio used in a lot of UK garage builds and breakdowns",
+    "MIDI effects are non-destructive until you record the output or Flatten the clip. The original notes are unchanged — the MIDI effect transforms them in real time"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "On a pad track in any spinoff, add a Scale device before the instrument. Set it to your track's key (e.g. A minor). Now play random notes on your keyboard — everything stays in key. Notice how you can play freely without worrying about wrong notes.",
+  "ableton_version_note": "Available in all editions of Live 9+."
+}

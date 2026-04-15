@@ -1,0 +1,33 @@
+{
+  "id": "amp",
+  "title": "Amp (Amp Simulation)",
+  "category": "Effects",
+  "tags": [
+    "amp",
+    "amplifier",
+    "tube",
+    "drive",
+    "warmth",
+    "bass",
+    "guitar",
+    "simulation"
+  ],
+  "summary": "Simulates a guitar/bass amplifier — adds tube harmonics, cabinet colouration, and amp character. More tonal colour than Saturator. Used in Kettama for bass warmth. Suite only.",
+  "steps": [
+    "Add Amp to a bass or synth track (in Ableton Live Suite — not available in Standard)",
+    "Choose Amp Type: Clean = gentle saturation, warm. Ext Bass = enhanced low-end response. Bass = focused on bass frequencies. Heavy = aggressive gain with scooped mids",
+    "Drive: overall input gain into the amp. 20–40% for warmth. 60%+ for overdrive character",
+    "Bass, Middle, Treble: amp tone controls. These interact like a real amp — they're not independent EQ bands but influence each other",
+    "Cabinet: choose the speaker cabinet simulation (affects the high-end character significantly)",
+    "Dry/Wet: blend the amp-processed signal with the original. 50–80% for warmth with some original clarity"
+  ],
+  "tips": [
+    "Amp vs Saturator: Amp has more character and tonal colouration (cabinet simulation, tone stack). Saturator is more precise and controlled. Use Amp when you want the sound to feel 'played through gear'",
+    "Amp is Suite only — if you have Live Standard, use Saturator in Analog Clip mode for a similar (if less characterful) effect",
+    "Ext Bass type with low Drive (15%) adds low-mid warmth to a sub bass without distorting it — similar to Saturator but with a more analogue character",
+    "The Cabinet toggle (Cab on/off) changes the sound dramatically — with Cabinet off, Amp is just a drive and tone stage. With Cabinet on, it adds the speaker resonance colouration"
+  ],
+  "practice_rep_id": null,
+  "practice_hint": "Amp is Suite-only. If you have it: add Amp to a Reese bass track. Set type to Bass, Drive 30%, Dry/Wet 60%. Compare with Saturator at similar settings — hear the different character each device adds.",
+  "ableton_version_note": "Amp is available in Ableton Live Suite only. Not available in Standard."
+}
