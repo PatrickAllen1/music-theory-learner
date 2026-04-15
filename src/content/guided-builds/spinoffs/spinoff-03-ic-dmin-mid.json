@@ -1,0 +1,147 @@
+{
+  "id": "spinoff-03-ic-dmin-mid",
+  "title": "IC-Style Track — D Minor with Reese Bass Breakdown",
+  "build_type": "spinoff",
+  "spinoff_level": "mid",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 75,
+  "bpm": 134,
+  "key": "D minor",
+  "source_track_id": "interplanetary-criminal-slow-burner",
+  "source_track_changes": [
+    "Key changed to D minor",
+    "BPM 134 (between IC's 136 and BL3SS's 130)",
+    "Reese bass added to the breakdown section (not in IC's original)",
+    "Chord progression: i→bVI (Dm→Bb, simpler than IC's full loop)",
+    "Breakdown section features Reese bass over sparse pads instead of full drop elements"
+  ],
+  "production_brief": "We've taken IC's harmonic approach (bVI chord creating brightness in a dark minor key) to D minor, and added a Reese bass that only appears in the breakdown section. The harmonic complexity of a detuned Reese bass against quiet chord pads creates a brief moment of darkness and grit before the drop returns. The main loop uses a clean sub bass. The breakdown reveals a completely different bass texture — same key, same chords, different bass register and timbre. This is how a single technique difference can transform a section's emotional character.",
+  "what_youll_learn": [
+    "How to build a Reese bass in Serum V2 using two detuned oscillators",
+    "How to use the Reese bass only in one section (arrangement as texture tool)",
+    "D minor bVI chord: Bb major (8 semitones up from D)",
+    "How bass timbre (clean sine vs detuned saw) changes the emotional character of the same chord progression"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up and derive D minor chords",
+      "category": "ableton",
+      "instruction": "New project. BPM 134. Tracks: DRUMS, SUB BASS, REESE BASS, PAD. Before building: derive the chords for D minor. Root = D. bVI = 8 semitones up from D: D→Eb→E→F→Gb→G→Ab→A→Bb. bVI = Bb major. Chord notes: Dm (D, F, A) and Bb major (Bb, D, F). Common tones: D and F appear in both. Write: tonic = Dm, bVI = Bbmaj, root movement = D→Bb. Save as 'spinoff-03-ic-dmin'.",
+      "why": "Bb major in D minor is a warmer, darker bVI lift than F major in A minor (spinoff-02). The lower register of Bb gives it more weight. Same harmonic function (bVI = brightness out of a dark minor key), different specific timbre. This is the nuance that comes from working in multiple keys — the interval relationship is identical, but the specific pitches create distinct characters.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Verify: Bb major = Bb, D, F. D minor = D, F, A. Common tones are D and F. When your chord pad moves from Dm to Bb, those two notes stay in place and A drops out while Bb arrives below them."
+    },
+    {
+      "id": 2,
+      "title": "Program drums — 4-on-floor base",
+      "category": "drums",
+      "instruction": "Load Drum Rack on DRUMS. Standard IC-style 4-on-floor: kick on every beat (1, 2, 3, 4), clap on beats 2 and 4, closed hats every off-beat (8 per bar). Velocities: kick 100, clap 88, hats 70. Use a punchy kick with short tail — 134 BPM means kicks every 448ms, slightly slower than Kettama's 429ms. Create 2-bar MIDI clip. Group to DRUMS. Add GlueCompressor to the DRUMS group: Ratio 4:1, Attack 3ms, Release Auto, threshold for 2–3dB GR.",
+      "why": "4-on-floor at 134 BPM sits in the mid-tempo garage zone — not as urgent as 140, not as loose as 128. The GlueCompressor on the drum bus glues the individual drum hits into a cohesive kit — each element still has its own character but they all feel like they belong together. Without bus compression, kick/clap/hat can feel like three separate things happening simultaneously.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "punchy kick garage 134",
+      "tip": "The GlueCompressor's 3ms attack lets the kick transient through before compressing — if attack is too fast, the kick loses its punch. Too slow and the compressor doesn't glue. 3ms is the sweet spot for drum bus work."
+    },
+    {
+      "id": 3,
+      "title": "Build the sub bass for the drop",
+      "category": "bass",
+      "instruction": "Load Serum V2 on SUB BASS track. OSC A: Basic Shapes, WT POS all the way left (pure sine). Unison OFF. OSC B: disabled. Filter: off. ENV 1: Attack 0ms, Release 150ms. FX: all off. Add to SUB BASS: Saturator (Drive 15%, Soft Clip, Dry/Wet 40%), Utility (Width 0%), EQ Eight HP at 30Hz. 4-bar MIDI clip: Bars 1–2 D1 (3 beats + rest), Bar 3 Bb0/Bb1 (3 beats + rest), Bar 4 D1 (2 beats + rest). Velocities: D1=90, Bb1=85. This is the drop bass — clean and grounded.",
+      "why": "The sub bass in the drop is clean and simple — its job is harmonic confirmation, not texture. D1 confirms D minor, Bb1 confirms the Bb major bVI chord. The Saturator ensures the bass translates on small speakers despite its low register. Mono keeps phase coherent.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Bb0 is 29Hz — the very bottom of audible range. You may want to use Bb1 (58Hz) instead if your monitoring can't reproduce Bb0. Check on headphones and earbuds. If Bb1 sounds right there, use it."
+    },
+    {
+      "id": 4,
+      "title": "Build the Reese bass for the breakdown",
+      "category": "bass",
+      "instruction": "Load Serum V2 on REESE BASS track. OSC A: choose 'Analog_BD_Saw' or 'Basic Shapes' at full saw position (WT POS all the way right). Unison: 2 voices, detune 14 cents, blend 70%. OSC B: enable, same wavetable, detune OSC B to -11 cents coarse offset (so OSC A and B are ~25 cents apart). Filter: enable MG Low 24, Cutoff 40%, Resonance 12%. ENV 1: Attack 0ms, Release 400ms (longer than the sub — Reese has a slower fade). ENV 2: assign to Filter Cutoff, Amount +25%, Attack 0ms, Decay 200ms, Sustain 0% — this creates a subtle filter pluck on each note. Volume -3dB in Serum master.",
+      "why": "A Reese bass is defined by two oscillators detuned against each other — the beating interference between them creates a moving, growling timbre. Two saw waves 25 cents apart beat at a rate that produces the characteristic Reese 'wobble'. The filter pluck (ENV 2 → Cutoff) adds a brief brightness at the note attack that then closes — giving each note a defined beginning before the sustained growl.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "The Reese bass should sound noticeably rougher and more complex than the clean sub bass. If it sounds similar, your oscillator detune may be too small. The beating between the two detuned oscillators should be audible — a slow wavering or growl on sustained notes."
+    },
+    {
+      "id": 5,
+      "title": "Process the Reese bass",
+      "category": "bass",
+      "instruction": "On the REESE BASS track: add EQ Eight (HP at 40Hz, gentle boost +2dB at 120Hz for presence, cut -3dB at 400Hz to remove nasal mid). Add Saturator: Drive 25%, Soft Clip, Dry/Wet 60% (higher drive than the sub — the Reese needs more harmonic content to cut through). Add Utility: Width 40% (not fully mono — a little width is OK on a Reese, it adds character, but don't go too wide). Set REESE BASS fader to -6dB. Mute this track for now — it's only used in the breakdown.",
+      "why": "The Reese bass lives in the mid-bass register (100–400Hz) more than the sub register. The EQ emphasises 120Hz (where the Reese's character lives) and cuts 400Hz (where it can sound harsh). Unlike the sub bass, a Reese can have some width — the detuning creates natural stereo spread from the beating oscillators. At -6dB the Reese bass sits below the pads but above the sub.",
+      "ableton_cheatsheet_id": "saturator",
+      "splice_search": null,
+      "tip": "Compare the Reese and sub bass timbres by soloing each. Sub: pure, clean, single pitch. Reese: complex, moving, growling. These are two completely different instruments that happen to play similar pitches. Their difference is why the breakdown section will feel distinct from the drop."
+    },
+    {
+      "id": 6,
+      "title": "Voice the Dm and Bb major pads",
+      "category": "chords",
+      "instruction": "Load Serum chord pad on PAD track. 4-bar MIDI clip. Bars 1–2: Dm voicing — D3, F3, A3 (simple open voicing). Bar 3: Bbmaj — Bb3, D4, F4 (note: Bb is BELOW the previous chord's D3 — this is the bVI dropping below the tonic chord, creating a different sense of space than a bVI that sits above). Bar 4: Dm return — D3, F3, A3. Hold each chord full duration. Velocity 82. Reverb from return track at -10dB send.",
+      "why": "Bb3 below D3 in the Bbmaj voicing creates a downward register shift when the bVI arrives — the chord doesn't lift up, it shifts lower and wider. This is a different emotional effect than if Bbmaj was voiced above the Am. Both are valid bVI voicings; this one feels more grounded and darker.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Try both voicings of the Bbmaj chord back to back: Bb3, D4, F4 (this step) versus Bb2, D3, F3 (even lower) versus F3, Bb3, D4 (the 1st inversion). Each has a distinct character. The version with Bb3 as the lowest pad note balances with the sub bass well."
+    },
+    {
+      "id": 7,
+      "title": "Add sidechain to pads",
+      "category": "mix",
+      "instruction": "Add Compressor to PAD: Sidechain from DRUMS, Ratio 5:1, Attack 0.5ms, Release 280ms, Threshold -22dB. Pump should be audible but not extreme. Loop the drop section (DRUMS + SUB BASS + PAD). Check: does the kick punch through cleanly? Does the pad breathe with each kick? Add a subtle sidechain to SUB BASS too: same sidechain source, Ratio 4:1, Attack 0.5ms, Release 100ms, Threshold -18dB (ducking 4–5dB on each kick).",
+      "why": "At 134 BPM the kick hits every 448ms — the sidechain pump is rhythmic and deliberate. The PAD sidechain creates the breathing quality. The SUB BASS sidechain prevents kick and bass colliding in the low end. The releases are different: SUB BASS releases faster (100ms) so it recovers before the next kick.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Toggle both sidechains off simultaneously and listen to the difference. With both off, the low end will sound dense and cluttered. With both on, the kick has air around it. The sidechain is invisible architecture — listeners feel its presence rather than consciously noticing it."
+    },
+    {
+      "id": 8,
+      "title": "Build the breakdown section",
+      "category": "ableton",
+      "instruction": "Switch to Arrangement view. Create a 16-bar DROP section (bars 1–16) and a 16-bar BREAKDOWN section (bars 17–32). In the BREAKDOWN section: mute DRUMS (or program a half-time 2-beat kick — just beat 1 per bar, much sparser). Mute SUB BASS. Unmute REESE BASS — it now plays the same D→Bb root movement but with the Reese timbre. Set PAD send to reverb at -6dB (wetter in the breakdown). Set REESE BASS fader to -3dB for the breakdown (louder than in the drop context). Program a REESE BASS MIDI clip for the breakdown: D1 for 3 beats + rest, Bb1 for 3 beats + rest, repeated.",
+      "why": "The breakdown strips the kick and sub bass but reveals the Reese bass. The same chord progression (Dm→Bb) now has a completely different sonic character: the clean driving energy of the drop is replaced by a complex, moving, growling texture. The listener who's been dancing in the drop encounters this different texture in the breakdown as an emotional shift — darker, more introspective, before the build and drop return.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The transition from DROP to BREAKDOWN should feel like the floor has been pulled away. Remove the kick first (bar 17) then the sub on the same bar. The Reese bass should be already playing from bar 17 so there's no silence — just a sudden change of texture."
+    },
+    {
+      "id": 9,
+      "title": "Rebuild and return to drop",
+      "category": "ableton",
+      "instruction": "Bars 33–36: REBUILD. Add kick back (bar 33, sparse — just beats 1 and 3). Add sub bass back (bar 33, at -6dB — quieter, building in). Bar 34: kick returns to 4-on-floor. Bar 35: sub bass back to full -3dB. Bars 37–48: DROP 2 — full elements, sub bass, Reese bass MUTED. The rebuild should feel like the tension of the breakdown being resolved by the return of the groove and the clean sub.",
+      "why": "The contrast between breakdown (Reese texture, no kick) → rebuild (kick returns, bass builds) → drop (full energy, clean sub) creates an arc that makes the drop feel earned. The listener has heard a darker, more complex version of the same harmony (Reese breakdown). When the drop returns with the clean, simple sub bass, the simplicity feels like a relief.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Listen to the breakdown → rebuild → drop sequence from the perspective of a dancer on a floor. The breakdown takes the floor away. The rebuild is the anticipation. The drop is the release. If the arc doesn't feel like that, the rebuild is too short or the drop isn't landing on a clear downbeat."
+    },
+    {
+      "id": 10,
+      "title": "Compare Reese vs sub bass timbre",
+      "category": "ableton",
+      "instruction": "Solo just the REESE BASS and loop 8 bars of the same D→Bb root movement. Then solo just the SUB BASS and loop the same 8 bars. Same pitches, same progression, completely different sound. Then play them together (both unmuted, everything else muted) — do they clash or complement? They should sit in different frequency registers: sub bass in the 30–80Hz range, Reese in the 80–300Hz range.",
+      "why": "This comparison is the musical theory heart of this spinoff. Same notes, same chord progression, different timbre = different emotional character. This is why timbre is a compositional tool, not just a sound design detail. The Reese bass isn't just a different sound — it changes the meaning of the harmony.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the Reese and sub bass sound similar when soloed together, the Reese may have too much sub content. High-pass the Reese bass EQ more aggressively (HP at 60Hz) so it clearly lives above the sub range."
+    },
+    {
+      "id": 11,
+      "title": "Mix balance and EQ",
+      "category": "mix",
+      "instruction": "Play the full arrangement (drop → breakdown → rebuild → drop). Check levels: kick 0dB on the master, sub bass -3dB, pads -6dB, Reese (in breakdown only) -3dB. On the master channel: add Limiter as the last device, Ceiling -0.3dB, Lookahead 3ms. EQ Eight on PAD: HP 130Hz. EQ Eight on REESE: gentle cut at 200–250Hz (-2dB) if it sounds honky. Check that the drop and breakdown feel different in volume despite similar level settings — the lack of kick in the breakdown should make it feel quieter even at the same fader positions.",
+      "why": "Perceived loudness is not the same as measured loudness. The kick is responsible for much of the perceived energy in the drop — without it, the breakdown will feel quieter even at the same fader levels. This is correct: it should feel quieter. The Limiter on the master prevents any peaks from clipping without clamping the whole signal.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "If the breakdown feels too loud relative to the drop (wrong kind of energy) — reduce the PAD fader by 2dB in the breakdown section using automation. Automation on faders in Arrangement view lets you set different levels for different sections without changing the clip itself."
+    },
+    {
+      "id": 12,
+      "title": "Export and save",
+      "category": "ableton",
+      "instruction": "Export the full arrangement as WAV, 44100Hz, 24-bit. Include the full arc: drop → breakdown → rebuild → drop. Aim for 1.5–2 minutes. Name: 'spinoff-03-ic-dmin-mid-v1.wav'. Listen on earbuds. Check: does the breakdown feel distinctly different from the drop? Does the Reese bass have character without being harsh? Does the drop feel like a return when the sub bass and kick come back? Make the 2 most obvious fixes and save. Session name: 'spinoff-03-ic-dmin-mid'.",
+      "why": "This is your first build that has a full structural arc — not just a loop but a drop, breakdown, and return. The exported file demonstrates that a single technique change (Reese bass vs sub bass) can be used as an arrangement tool, not just a sound design choice.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Compare against spinoff-01 and spinoff-02. Spinoff-03 should feel more complete — it has movement and structure, not just a repeated loop. This is the difference between a loop and a track section."
+    }
+  ]
+}

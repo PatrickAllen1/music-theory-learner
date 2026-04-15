@@ -17,6 +17,10 @@ import repSerumChordPad from "./reps/rep-serum-chord-pad.json";
 import repSerumReeseBass from "./reps/rep-serum-reese-bass.json";
 import repSerumStab from "./reps/rep-serum-stab.json";
 import spinoffKettama from "./spinoffs/spinoff-kettama-bbmin-full.json";
+import spinoff01 from "./spinoffs/spinoff-01-mph-dmin-entry.json";
+import spinoff02 from "./spinoffs/spinoff-02-ic-amin-entry.json";
+import spinoff03 from "./spinoffs/spinoff-03-ic-dmin-mid.json";
+import spinoff04 from "./spinoffs/spinoff-04-kettama-fmin-mid.json";
 
 export const builds = [
   rep01,
@@ -38,6 +42,10 @@ export const builds = [
   repSerumReeseBass,
   repSerumStab,
   spinoffKettama,
+  spinoff01,
+  spinoff02,
+  spinoff03,
+  spinoff04,
 ];
 
 export const buildById = Object.fromEntries(builds.map((b) => [b.id, b]));

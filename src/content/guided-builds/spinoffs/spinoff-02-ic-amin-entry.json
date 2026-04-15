@@ -1,0 +1,126 @@
+{
+  "id": "spinoff-02-ic-amin-entry",
+  "title": "IC-Style bVI Loop — A Minor (2-Step)",
+  "build_type": "spinoff",
+  "spinoff_level": "entry",
+  "difficulty": "beginner",
+  "estimated_time_mins": 60,
+  "bpm": 136,
+  "key": "A minor",
+  "source_track_id": "interplanetary-criminal-slow-burner",
+  "source_track_changes": [
+    "Key changed to A minor (from IC's original key)",
+    "Kick pattern swapped from 4-on-floor to 2-step",
+    "bVI chord in A minor = F major (vs C major in E minor)",
+    "Simpler 2-chord loop: Am → Fmaj (no full 3-chord progression)"
+  ],
+  "production_brief": "We swapped the key to A minor and replaced the 4-on-floor kick with a 2-step pattern. The 2-step kick creates a half-time, rolling feel that changes the entire emotional register of the same bVI brightness. F major lifting out of A minor has a warmer, more open colour than C major lifting out of E minor — same interval relationship (a major chord 8 semitones up from the minor root), completely different timbre. The 2-step kick makes the loop feel lighter and more human, less relentless than 4-on-floor.",
+  "what_youll_learn": [
+    "How to derive bVI in A minor without memorising (count 8 semitones up from A = F major)",
+    "How the 2-step kick pattern creates a fundamentally different emotional register",
+    "How the same harmonic interval (bVI) produces different tonal colours in different keys",
+    "That kick pattern choice is a creative decision as important as chord choice"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up — A minor, 136 BPM, derive the bVI",
+      "category": "ableton",
+      "instruction": "New project. BPM 136. Tracks: DRUMS, BASS, PAD. Before opening Ableton: derive the bVI chord in A minor. Root = A. bVI = 8 semitones up from A. Count: A→Bb→B→C→Db→D→Eb→E→F. bVI = F major. So: tonic chord = Am (A, C, E). bVI chord = Fmaj (F, A, C). Write these down. Notice that Am and Fmaj share A and C — those are the common tones. The only new note when you move from Am to Fmaj is F in the bass. Save as 'spinoff-02-ic-amin'.",
+      "why": "The count-from-root method gives you the chord name without memorising a key. bVI always = 8 semitones up from the root. In E minor that was C. In A minor it's F. In every minor key the bVI is a major chord 8 semitones above the root — one method, infinite keys.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Double-check: F major = F, A, C. A minor = A, C, E. Common tones: A and C both appear in both chords. When you voice these on a pad, having A and C stay in place as the root moves from A to F gives you smooth voice leading."
+    },
+    {
+      "id": 2,
+      "title": "Find 2-step kick and samples on Splice",
+      "category": "drums",
+      "instruction": "Open Splice. Filter: One-Shots → Drums → Kick. Try: (1) 'uk garage kick rolling' (2) 'house kick deep 2step' (3) 'uk bass kick punchy'. You want a kick with clear attack and moderate tail — it needs to sound good on off-beats (the 2-step places kicks on irregular positions, so the kick must stand alone). Download 2-3 candidates. Also find a clap: 'tight clap uk garage'. Download 1 crisp dry clap.",
+      "why": "The 2-step kick pattern places kicks at unexpected positions — unlike 4-on-floor where every beat is predictable, the 2-step kick lands somewhere unexpected on beat 2 and/or the and-of-2. A kick that sounds strong in isolation (not dependent on a regular pattern for its punch) works better in 2-step.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "uk garage kick rolling",
+      "tip": "Preview the kick by clicking it repeatedly at irregular intervals — does it still sound purposeful when not on a perfect beat? If it only sounds good when repeated every beat, it may be too long-tailed for 2-step use."
+    },
+    {
+      "id": 3,
+      "title": "Program the 2-step drum pattern",
+      "category": "drums",
+      "instruction": "Load Drum Rack. Kick on C1, clap on D1, closed hat on F#1. Create a 2-bar MIDI clip. Set grid to 1/8. 2-step kick positions: Bar 1 — kicks at 1.1 (beat 1), 1.2.3 (the 'and' of beat 2). Bar 2 — kicks at 2.1 (beat 1), 2.2.3 (the 'and' of beat 2). Clap on beat 3 of each bar: 1.3 and 2.3. Hats: one per beat (4 per bar at 1.1, 1.2, 1.3, 1.4). Velocities: kick 100 on beat 1 downbeats, 88 on off-beat positions. Clap 85. Hats 60.",
+      "why": "The 2-step pattern places one kick on the downbeat (beat 1) and one on an off-beat (the and-of-2 = position 1.2.3). This creates an asymmetric groove — you feel beat 1 clearly as the anchor, then the second kick hits just after beat 2 as a surprise. The rolling quality of 2-step comes from this off-beat 'push' on every other bar. At 136 BPM this feels lighter and more buoyant than 4-on-floor.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Loop just the 2-bar drum pattern. Clap along with it while it plays. Do you naturally want to clap on beat 3? You should — the clap acts as the anchor while the kick rolls around it. If the pattern feels confusing, you may have the off-beat kick in the wrong position — it should be exactly between beats 2 and 3."
+    },
+    {
+      "id": 4,
+      "title": "Program the bass root movement",
+      "category": "bass",
+      "instruction": "Load sub bass (sine, mono, minimal processing). 4-bar clip. Bass follows chord roots: Bars 1–2: A1 (root of Am — hold for 2 full bars). Bar 3: F1 (root of Fmaj bVI — hold 1 bar). Bar 4: A1 (return to tonic — 1 bar). Velocities: A1 = 90, F1 = 85, A1 return = 88. Leave a small gap (beat 4 rest) before each chord change so the roots don't blur together.",
+      "why": "The bass confirms the chord change from Am to Fmaj by moving from A1 to F1. Even if the pad sounds ambiguous, the bass root makes the harmony clear. The return to A1 in bar 4 resolves the loop — the ear feels the tonic arriving. A 2-bar Fmaj gives the bVI chord time to register fully before resolving.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Check: F1 is 4 semitones below A1. Count down: A→Ab→G→Gb→F. That's correct. Don't accidentally program G1 (which would be Gm, not Fmaj). F major has a lighter, more open character than G minor."
+    },
+    {
+      "id": 5,
+      "title": "Voice the Am chord on PAD",
+      "category": "chords",
+      "instruction": "Create PAD track. Load Serum V2 chord pad (from rep-serum-chord-pad if available, or Init Preset with slow attack). Am voicing: A3, C4, E4. Hold for 2 full bars in bars 1–2 of the MIDI clip. Velocity 80. The lowest note A3 should be above C3 — nothing in the pad below middle C (the bass handles below that). Set the Attack to 200ms in the envelope so the chord fades in rather than snapping.",
+      "why": "A3, C4, E4 puts the Am chord in a comfortable register — above the bass register, below the shrill high register. E4 on top gives the chord a slightly open, suspended quality. The 200ms attack makes the chord swell in rather than hitting hard — this is the signature garage pad feel.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Play just the Am chord on loop (8 bars, no other elements). Does it feel settled and dark? Am should feel like being in a familiar but slightly melancholy room. If it feels too bright, check that you haven't accidentally used A major (A3, C#4, E4 — the C# makes it major, which sounds very different)."
+    },
+    {
+      "id": 6,
+      "title": "Voice the Fmaj bVI chord on PAD",
+      "category": "chords",
+      "instruction": "In the PAD MIDI clip, bar 3: Fmaj chord — F3, A3, C4. Hold 1 full bar. Bar 4: return to Am — A3, C4, E4, 1 bar. Notice: when you move from Am (A3, C4, E4) to Fmaj (F3, A3, C4), two notes stay in place — A3 and C4. Only E4 moves (it drops out) and F3 arrives as the new bottom note. This is the common-tone voice leading you identified in step 1.",
+      "why": "F3 as the lowest pad note for Fmaj puts the warmth of the chord in the low-mid range. With the bass at F1, there's now an F an octave apart — the bass confirms, the pad voices. A3 and C4 staying still between Am and Fmaj means the chord change feels smooth rather than abrupt. The ear hears the harmony shift without feeling a jolt.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "When the chord moves from Am to Fmaj, listen specifically for the E4 disappearing. That departure of the 5th of Am creates the brightness — E was grounding the Am chord, its absence opens up the harmonic space. F3 arriving below is the confirmation of the new chord."
+    },
+    {
+      "id": 7,
+      "title": "Add sidechain and reverb",
+      "category": "mix",
+      "instruction": "Add Compressor to PAD: Sidechain from DRUMS, Ratio 4:1, Attack 1ms, Release 250ms, Threshold -20dB. The pad should breathe with the kick. Create a Return track 'REVERB': Ableton Reverb, Decay 3.5s, Dry/Wet 100%. Add EQ Eight before Reverb on the return: HP at 200Hz. Set PAD send to -12dB. Add EQ Eight to PAD track directly: HP at 130Hz (bass handles below this). BASS track: add Utility (Width 0%), EQ Eight HP at 30Hz. Set final levels: DRUMS 0dB, BASS -3dB, PAD -6dB.",
+      "why": "The 2-step kick pattern means the sidechain pump happens at irregular intervals — beat 1 (strong) and the and-of-2 (weaker). The pad breathes asymmetrically, which reinforces the rolling 2-step feel. The reverb at -12dB send is prominent — it creates the sense of space that makes the bVI lift feel expansive rather than just loud.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "With the 2-step kick, the sidechain pump is not regular like 4-on-floor. Loop the drums and pad and listen: you should hear two distinct pumps per bar at uneven spacing. This irregularity is what makes the 2-step feel interesting rather than mechanical."
+    },
+    {
+      "id": 8,
+      "title": "Compare 2-step vs 4-on-floor feel",
+      "category": "ableton",
+      "instruction": "Duplicate the DRUMS track. Rename the copy 'DRUMS-TEST'. Mute the original. In the duplicate, reprogram the kick to 4-on-floor (beats 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4). Loop the full pattern (DRUMS-TEST + BASS + PAD) for 30 seconds. Then mute DRUMS-TEST, unmute DRUMS (2-step). Loop for 30 seconds. What changes in the emotional register? Which version suits the F major bVI lift better? Delete DRUMS-TEST when done.",
+      "why": "The 2-step vs 4-on-floor comparison is a creative decision demonstration. The harmonic content is identical — Am with an Fmaj lift. The only variable is the kick pattern. But the groove feel is completely different: 4-on-floor is relentless, mechanical, urgent. 2-step is rolling, asymmetric, human. The bVI lift can work with either, but it sounds like two different tracks.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Common descriptions: 2-step + bVI lift = buoyant, drifting, loose. 4-on-floor + bVI lift = driving, powerful, locked in. Neither is wrong — they serve different contexts. The IC original uses a more complex drum feel; your 2-step version is a simplification that emphasises the harmonic space."
+    },
+    {
+      "id": 9,
+      "title": "Adjust for emotional balance",
+      "category": "ableton",
+      "instruction": "Loop the full 4-bar pattern (your final 2-step version). Make one adjustment to each of the following until the loop feels complete: (1) Pad reverb send — increase from -12dB to -10dB if the loop feels too dry. (2) Bass velocity on F1 — try 80 instead of 85 if the Fmaj root feels too dominant. (3) Hat velocity — reduce to 55 if the hats feel busy. Then loop the final version for 2 minutes with eyes closed. Does the bVI lift arrive with a sense of brightness each time it returns?",
+      "why": "The bVI lift should feel like a small moment of light in each loop cycle — the Am is the dark home, the Fmaj is the brief window of warmth before returning. If the Fmaj doesn't feel distinctly lighter than the Am, check the chord voicings and the pad level. The emotional arc of the loop is: dark → light → dark → light. That arc should be audible.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the Fmaj chord doesn't feel like a lift, try adding a subtle velocity boost to the PAD notes in bar 3 (+8 velocity on the Fmaj notes vs the Am notes). A slightly louder arrival makes the brightness feel intentional."
+    },
+    {
+      "id": 10,
+      "title": "Export and save",
+      "category": "ableton",
+      "instruction": "Export 30 seconds as WAV, 44100Hz, 24-bit, Normalize OFF. Name: 'spinoff-02-ic-amin-2step-v1.wav'. Send to phone and listen on earbuds. Check: does the rolling 2-step feel translate? Is the bVI lift audible as a moment of brightness? Is the bass sitting under the pads without competing? Make the 1–2 most obvious fixes if needed, then save session as 'spinoff-02-ic-amin'.",
+      "why": "The exported file demonstrates that you can apply the bVI technique in a new key and with a different groove pattern. Keep alongside your other exports as a reference for the 2-step feel — when you want this specific combination of lightness and rolling rhythm, this is the template.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Compare against spinoff-01 (D minor phrygian at 128 BPM). Spinoff-01 should feel heavy and tense. Spinoff-02 should feel lighter and warmer. Both are minor keys. Both are garage-adjacent. The techniques (phrygian tension vs bVI lift) and the drum patterns (sparse 1+3 kick vs 2-step) create completely different emotional worlds."
+    }
+  ]
+}

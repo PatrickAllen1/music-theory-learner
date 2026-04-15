@@ -1,0 +1,147 @@
+{
+  "id": "spinoff-04-kettama-fmin-mid",
+  "title": "Kettama-Style Track — F Minor (Bass-Implied)",
+  "build_type": "spinoff",
+  "spinoff_level": "mid",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 90,
+  "bpm": 140,
+  "key": "F minor",
+  "source_track_id": "kettama-it-gets-better",
+  "source_track_changes": [
+    "Key changed to F minor (from Bb minor in original Kettama spinoff)",
+    "Bass-implied harmony replaces full chord pads (BL3SS technique applied to a Kettama structure)",
+    "Chord pads exist but at -14dB — texture only, not the primary harmonic statement",
+    "VI→III→i progression in F minor: Dbmaj7 → Abmaj → Fm",
+    "Same BPM, same drum approach, same sidechain philosophy"
+  ],
+  "production_brief": "We've taken Kettama's VI→III→i structure to F minor and stripped the chord pads back to near-silence. The bass now implies the VI→III→i harmony — Db→Ab→F root movement tells the story, the pads are texture at -14dB. Same progression, same tempo, completely different sonic philosophy. The full Kettama spinoff is lush and explicit — this version is sparse and late-night. The harmony is identical; what changes is whether it's stated (pads) or suggested (bass roots).",
+  "what_youll_learn": [
+    "VI→III→i in F minor: Dbmaj7 (Db, F, Ab, C) → Abmaj (Ab, C, Eb) → Fm (F, Ab, C)",
+    "How to apply BL3SS's bass-implied approach to a Kettama harmonic structure",
+    "How volume balance (pads at -14dB vs -6dB) fundamentally changes the production philosophy",
+    "How the same chord progression can create two completely different emotional worlds through sound design choices"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Derive VI→III→i in F minor",
+      "category": "ableton",
+      "instruction": "Before opening Ableton: derive the three chord names from F minor. Root = F. VI = 9 semitones up from F (count: F→Gb→G→Ab→A→Bb→B→C→Db→D — 9th step = Db). VI = Dbmaj7 (Db, F, Ab, C). III = 3 semitones up from F = Ab major (Ab, C, Eb). i = Fm (F, Ab, C). Write: Dbmaj7 → Abmaj → Fm. Root movement for the bass: Db → Ab → F. New project, BPM 140, tracks: DRUMS / SUB BASS / PAD. Save as 'spinoff-04-kettama-fmin'.",
+      "why": "Dbmaj7 → Abmaj → Fm is the F minor translation of Kettama's Gbmaj7 → Dbmaj → Bbm. The same interval relationships (VI→III→i) produce a different specific chord set in a different key. Working these out from the root each time (rather than memorising key-specific answers) is the transferable skill.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Verify: Dbmaj7 = Db, F, Ab, C. Check that C is the major 7th (Db→C = major 7th interval). Abmaj = Ab, C, Eb. Fm = F, Ab, C. Common tones between all three: F and Ab appear in all three chords. C appears in Dbmaj7 and Abmaj. The progression shares a high degree of common tones — this is why it feels smooth."
+    },
+    {
+      "id": 2,
+      "title": "Program drums — 4-on-floor at 140",
+      "category": "drums",
+      "instruction": "Copy your standard 4-on-floor drum setup at 140 BPM. If starting fresh: Drum Rack, kick on every beat (8 kicks per 2 bars), clap on beats 2 and 4, closed hats every off-beat at velocity 70. Velocities: kick 100, clap 88. Group to DRUMS. Apply Swing 8-05 groove from the Groove Pool to the hat MIDI clip at 55% — the rolling hat feel that characterises Kettama's approach.",
+      "why": "Same drum approach as the Kettama Bb minor spinoff. At 140 BPM the 4-on-floor feels urgent and relentless. The swing on the hats is what separates it from a mechanical pattern. This spinoff's main difference is the harmonic approach (bass-implied) — the drums should be familiar so the focus is on the harmonic contrast.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "uk garage kick 140",
+      "tip": "If you have a drum pattern from the Kettama Bb minor spinoff or rep-11, copy it directly. At 140 BPM the drums should feel like Kettama. The novelty in this spinoff is the harmonic approach, not the drums."
+    },
+    {
+      "id": 3,
+      "title": "Build the bass-implied root movement",
+      "category": "bass",
+      "instruction": "Load sub bass (Serum V2, sine, mono, Saturator Drive 20% Soft Clip Dry/Wet 50%). 4-bar MIDI clip: Bars 1–2 Db1 (VI root — 2 bars, long hold). Bar 3 Ab0 or Ab1 (III root — 1 bar). Bar 4 F1 (i root — 1 bar). Each note held for slightly under its full duration (leave a small gap before the next note arrives). Velocities: Db1=88, Ab1=83, F1=92 (F gets most velocity — it's the tonic arrival). EQ Eight HP at 30Hz. Utility Width 0%.",
+      "why": "Db1 (35Hz), Ab0 (26Hz), and F1 (44Hz) are the three roots of VI→III→i in F minor. The bass is playing these three roots only — no chord tones, just the roots. The ear constructs the Dbmaj7, Abmaj, and Fm chords from the root movement alone plus the context of the pads. This is the bass-implied approach: the bass implies the harmony so the pads don't have to state it.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "Db1 is a black key — make sure you're not accidentally playing D1 (natural D, which would imply D minor, not Db major). Db is 1 semitone below D. At MIDI note 25 on most keyboards. Double-check the piano roll to confirm you have Db1 and not D1."
+    },
+    {
+      "id": 4,
+      "title": "Loop and hear the implied harmony — bass only",
+      "category": "ableton",
+      "instruction": "CRITICAL: loop the 4-bar drums and bass only. NO PAD. Listen for 2 minutes. As each bass root arrives, try to hear the implied chord: Db1 = Dbmaj7 (major, warm, bright relative to F minor). Ab1 = Abmaj (also major, grounding). F1 = Fm (minor, tonic, dark resolution). Can you hear the progression as chord changes even though only single bass notes are playing? If not, hum a third above each root as it arrives: hum F above Db, hum C above Ab, hum Ab above F.",
+      "why": "This step is a version of rep-13's listening exercise, but now with VI→III→i motion (which has major chords) rather than i→bIII→bVI→iv (which has more ambiguous motion). You should be able to hear the Dbmaj7's brightness and the Fm's darkness from the bass roots alone. If you can, you're hearing harmonic implication. If you can't yet, keep listening — it becomes clearer with more listening experience.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The Dbmaj7 root (Db) should sound lighter/brighter than the Fm root (F) even though both are single notes. Db implies a major chord with a 7th — naturally warm and open. F implies F minor — naturally darker. Your ear makes this distinction based on the key context established over multiple repetitions."
+    },
+    {
+      "id": 5,
+      "title": "Voice the pads at ghost level (-14dB)",
+      "category": "chords",
+      "instruction": "Load Serum chord pad on PAD track. Program the full VI→III→i voicings (matching the bass roots): Bars 1–2: Dbmaj7 — Db3, F3, Ab3, C4. Bar 3: Abmaj — Ab3, C4, Eb4. Bar 4: Fm — F3, Ab3, C4. Velocity 75. Set PAD fader to -14dB. Loop all elements (drums, bass, pad). Can you hear the pad? It should be barely audible — a warmth behind the bass, not a statement. Toggle PAD on/off. Does it make a noticeable difference?",
+      "why": "At -14dB the pad is approximately 8x quieter than at -6dB. It exists as texture rather than content. The bass is doing the harmonic work — the pad reinforces it so subtly that listeners won't consciously notice the pad. This is the BL3SS philosophy applied to the Kettama structure: strip back, imply, let the listener's ear construct the harmony.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Toggle the PAD track on/off several times while the loop runs. If the difference is dramatic (the track sounds empty without it), the pad is doing too much work — lower the fader to -18dB. If you can barely hear a difference, the pad is correctly functioning as texture."
+    },
+    {
+      "id": 6,
+      "title": "Add reverb and sidechain to pad",
+      "category": "mix",
+      "instruction": "Create return track REVERB: Ableton Reverb, Decay 4s, Dry/Wet 100%, HP on return at 200Hz. Set PAD send to -8dB (higher send percentage than normal — when the pad is quiet, the reverb tail can be more prominent as texture). Add Compressor to PAD with sidechain from DRUMS: Ratio 3:1, Attack 1ms, Release 250ms, Threshold -28dB (very gentle — the pad is already quiet, you just want the subtle pump). Sub bass: Compressor sidechain from DRUMS, Ratio 4:1, Attack 0.5ms, Release 100ms.",
+      "why": "The reverb at -8dB send creates a long, diffuse tail from the ghost pad. Even though the direct pad signal is at -14dB, the reverb tail fills the space behind the bass with harmonic texture. At 4 seconds decay at 140 BPM, the reverb tail from one chord bar is still audible when the next chord starts — this creates a wash of harmonic colour that is heard but not consciously identified.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Solo the reverb return track while the loop plays. You should hear a diffuse, washy version of the chords. This is the texture that the listener feels rather than hears. Without it the track sounds dry. With it, the space feels larger."
+    },
+    {
+      "id": 7,
+      "title": "Compare against the full Kettama Bb minor spinoff",
+      "category": "ableton",
+      "instruction": "If you have the Kettama Bb minor spinoff export (or rep-11 export), play it now. Then play spinoff-04. Switch between them 3 times. Listen specifically for: (1) how different the harmonic emphasis is — full spinoff has prominent pads, this version has sub bass as the main harmonic voice. (2) how different the emotional character is — full spinoff feels lush and warm, this version feels sparse and late-night. (3) how similar the rhythm and tempo feel — both are 140 BPM 4-on-floor with the same sidechain pump. Write one sentence describing the difference.",
+      "why": "This comparison is the thesis of the spinoff: same production structure (140 BPM, 4-on-floor, sidechain pump), different harmonic philosophy (explicit pads vs bass-implied). Two legitimate approaches to the same musical material. The choice between them is not a technical question — it's a creative one about what kind of emotional space you want to create.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Common descriptions: Full Kettama spinoff = warm, lush, euphoric, present. This spinoff = late-night, spare, hypnotic, underground. The lushness of explicit pads is an energy investment — the listener is given the full harmonic experience. The sparseness of bass-implied is an energy reserve — the listener is asked to lean in."
+    },
+    {
+      "id": 8,
+      "title": "Try the alternative — raise pad to -6dB for one section",
+      "category": "ableton",
+      "instruction": "In Arrangement view, create a 16-bar DROP section and a 16-bar BREAKDOWN section. In the BREAKDOWN section only, automate the PAD fader from -14dB to -6dB. Now the breakdown has full, explicit pads. The drop has ghost pads. Play the full arrangement: drop (ghost pads) → breakdown (explicit pads) → drop (ghost pads again). Does the breakdown feel like a moment of harmonic revelation after the sparse drop?",
+      "why": "Using the explicit pad sound as a breakdown element creates a structural contrast: the drop is tense and sparse (bass-implied), the breakdown is lush and explicit (pads fully present). This is an arrangement technique — varying the harmonic density across sections to create an arc. The breakdown becomes the moment of 'here's what was always there' before the drop strips it back.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Automate the PAD fader by right-clicking it and choosing 'Show Automation'. Draw the automation lane: -14dB for bars 1–16, ramp up to -6dB starting bar 16, hold at -6dB through bars 17–32, return to -14dB at bar 33."
+    },
+    {
+      "id": 9,
+      "title": "Final mix balance check",
+      "category": "mix",
+      "instruction": "Play the drop section (ghost pads version) and check: (1) Is the bass the dominant harmonic element? (2) Is the kick clearly audible on every beat? (3) Can you hear the chord changes from the bass movement alone? (4) Is the ghost pad adding warmth without being identifiable as a pad? Levels for the drop: kick 0dB, sub bass -2dB (slightly louder than normal — it's doing harmonic work), pad -14dB, reverb return at whatever level feels right. Master: add Limiter, Ceiling -0.3dB.",
+      "why": "In bass-implied harmony the sub bass fader is slightly higher than in a full-pad context because the bass carries more harmonic responsibility. -2dB gives it the weight it needs without overpowering the kick. The pad at -14dB and the reverb return provide texture that lives behind the bass without competing.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Check on phone speakers. On small speakers, the sub bass will lose its fundamental. What should remain audible is the Saturator-added harmonics (the 2nd and 3rd harmonics above the root — typically in the 70–130Hz range) which confirm the chord change. If the chord changes sound ambiguous on phone speakers, increase Saturator drive to 25%."
+    },
+    {
+      "id": 10,
+      "title": "Listen test: implied vs stated harmony",
+      "category": "ableton",
+      "instruction": "Play spinoff-04 for someone who doesn't know the construction — or do this yourself after a break. Question: can you hear that there are three distinct chords in the progression, or does it sound like bass movement only? If you can hear three chords from bass roots alone, the technique is working. If it sounds like just a bass line moving between notes, the bass velocity profiles or note lengths may need adjustment — increase the pause between notes (the 'gap' before each new root arrival) so each chord arrival feels intentional.",
+      "why": "Bass-implied harmony is only successful when the harmonic intent is audible even without the pads. If the bass root movement sounds like a bass riff rather than chord changes, the technique has failed. The test is always whether a listener can hear harmony without knowing there's no chord pad.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "The beat-4 rest before each new root is critical. Without it the bass roots blur together and the ear hears a continuous moving line, not distinct chord arrivals. If the harmony isn't reading, check that you have a clear gap (rest) of at least one beat before each new note."
+    },
+    {
+      "id": 11,
+      "title": "Add a minimal atmospheric element",
+      "category": "ableton",
+      "instruction": "Create an ATMOSPHERE track. Search Splice: 'dark drone Db minor' or 'atmospheric pad Fm' or 'late night atmosphere loop'. Find a loop that sits in F minor or neutral tonality (avoid loops in the wrong key). Set at -20dB. Create a 32-bar clip. This adds a barely-there texture layer that fills the space the absent explicit pads leave. Toggle on/off — it should feel warmer with it and slightly empty without it.",
+      "why": "Bass-implied tracks can feel too sparse in the space where pads would normally live. A very quiet atmospheric element at -20dB doesn't replace the pads but adds a tonal shimmer that makes the sparseness feel intentional rather than empty. The difference between 'minimal' and 'incomplete' often comes down to a single low-level texture element.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": "dark drone minimal atmosphere",
+      "tip": "If Splice doesn't have a loop in Db or Fm, a neutral drone (slowly evolving, no clear pitch centre) works — it adds tonal warmth without adding harmonic information that could clash with the bass-implied chords."
+    },
+    {
+      "id": 12,
+      "title": "Export and save — two versions",
+      "category": "ableton",
+      "instruction": "Export two versions: (A) Drop only — 30 seconds with ghost pads at -14dB. Name: 'spinoff-04-fmin-bass-implied.wav'. (B) Breakdown section — 30 seconds with explicit pads at -6dB. Name: 'spinoff-04-fmin-breakdown.wav'. Listen to both on earbuds. The first should feel sparse and hypnotic. The second should feel lush. Both use the same chord progression. Save session as 'spinoff-04-kettama-fmin'.",
+      "why": "Two exports demonstrate the two sides of this spinoff: the minimalist bass-implied drop and the lush explicit pad breakdown. These are two production philosophies in the same track. Having both as reference exports shows that they can coexist — and that the choice between them can be a structural decision within a single track.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "These two exports complete a four-part comparison: spinoff-01 (phrygian, sparse, heavy), spinoff-02 (bVI, 2-step, light), spinoff-03 (bVI, full drop + Reese breakdown), spinoff-04 (VI→III→i, bass-implied drop + explicit breakdown). Four different harmonic and production approaches, all in the UK garage space."
+    }
+  ]
+}

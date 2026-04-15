@@ -1,0 +1,127 @@
+{
+  "id": "spinoff-01-mph-dmin-entry",
+  "title": "MPH-Style Phrygian Track — D Minor",
+  "build_type": "spinoff",
+  "spinoff_level": "entry",
+  "difficulty": "beginner",
+  "estimated_time_mins": 60,
+  "bpm": 128,
+  "key": "D minor",
+  "source_track_id": "mph-raw",
+  "source_track_changes": [
+    "Key dropped one semitone: E minor → D minor",
+    "BPM slowed: 132 → 128",
+    "Phrygian tension note changes: F (bII of E) → Eb (bII of D)",
+    "Same drum philosophy: sparse kick-on-1-and-3, open space between hits",
+    "Same phrygian bass approach: root sustained, tension note enters, resolves back"
+  ],
+  "production_brief": "Dropped the key a semitone from E to D minor and slowed to 128 BPM. The phrygian tension note is now Eb — one semitone above D. At 128 BPM the track breathes more slowly than MPH's original 132; the lower pitch and slower tempo combine to make the tension feel heavier and more hypnotic. Same technique, completely different emotional register. This spinoff is your first attempt to apply a technique you learned in one key to a new key without step-by-step hand-holding.",
+  "what_youll_learn": [
+    "Applying phrygian tension independently in D minor",
+    "How a one-semitone key drop and a 4 BPM change affects the emotional feel of identical techniques",
+    "D minor phrygian: root D, tension note Eb (the bII — one semitone above root)",
+    "How to transpose a bass line from one key to another by interval rather than by memory"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up — D minor, 128 BPM",
+      "category": "ableton",
+      "instruction": "New project. BPM 128. Tracks: DRUMS and BASS. Before touching anything else: write down the D minor phrygian notes you'll be using. Root = D. Tension = Eb (one semitone up from D — this is the bII, the defining note of phrygian mode). Minor third = F. Fifth = A. You'll use D1 and Eb1 in the bass. Save as 'spinoff-01-mph-dmin'.",
+      "why": "Writing the target notes before opening any instruments forces you to think in intervals rather than following an on-screen guide. D to Eb is one semitone — the same minimal distance that MPH uses for E to F in the original. That one-semitone tension is what gives phrygian its character.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Compare your written notes against rep-03 (E minor phrygian: root E, tension F). E→F = 1 semitone. D→Eb = 1 semitone. The interval is identical. The emotional character of phrygian comes from that minimal distance, not the specific pitch."
+    },
+    {
+      "id": 2,
+      "title": "Understand what changes at 128 BPM and a lower key",
+      "category": "ableton",
+      "instruction": "Before programming anything: open rep-03 in a separate window (or recall what it felt like). Play it back mentally or from the export. Now consider: rep-03 is E minor at 132 BPM. This spinoff is D minor at 128 BPM. The 4 BPM difference means each beat is 469ms instead of 454ms — the track breathes 3% more slowly. D is one semitone lower than E — the fundamental frequency of D1 is 37Hz vs E1's 41Hz. Both changes make the tension feel heavier, more subterranean. The music theory is identical. The vibe is not.",
+      "why": "Understanding that technique and vibe are separable is a core production insight. You can take the same musical idea (phrygian tension) and place it in a different key and tempo — and get a fundamentally different emotional result. This spinoff is the demonstration of that separation.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If you have your rep-03 export available, play 30 seconds of it now. Then imagine 3% slower and a semitone lower. Then build the spinoff. The comparison at the end of this build will be more meaningful if you have the original fresh in your memory."
+    },
+    {
+      "id": 3,
+      "title": "Find a kick on Splice",
+      "category": "drums",
+      "instruction": "Open Splice. Filter: One-Shots → Drums → Kick. Try these searches: (1) 'minimal kick deep dark' (2) 'sub kick slow house' (3) 'deep techno kick minimal'. At 128 BPM you want a kick that feels like a slow, deliberate punch — less urgency than Kettama's 140 BPM kick. Listen for: weight in the 50–70Hz range, short tail (under 300ms), no reverb. Download 3 candidates, compare them in a test MIDI clip.",
+      "why": "At 128 BPM each kick hits every 469ms — slower than the garage tempo you've been working with. A kick that sounded right at 140 BPM might feel too tight and punchy here. You want a kick that lands with weight and has room to settle before the next one arrives. The lower BPM gives the kick more space — the right kick uses that space.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "minimal kick deep dark",
+      "tip": "Preview the kick at 128 BPM, not at Splice's default tempo. In Splice, use the tempo match feature (or just listen to the rhythm in your head at 128). A kick that sounds right when you're physically bobbing your head at 128 BPM is the right kick."
+    },
+    {
+      "id": 4,
+      "title": "Program sparse drums — kick on 1 and 3",
+      "category": "drums",
+      "instruction": "Load Drum Rack on DRUMS. Load kick on C1. Create an 8-bar MIDI clip. Program kick on beats 1 and 3 only — positions 1.1, 1.3, 2.1, 2.3 etc. NO beat 2, NO beat 4. This is the half-time, heavy feel — not 4-on-floor. Add a clap or snare on D1. Program clap on beat 3 only (one per bar, not beats 2 and 4). Add a closed hat on F#1: program 4 per bar at positions 1.1, 1.2.3, 1.3.3, 1.4.3 (off-beats of beats 1 and 3). Kick velocity 95, clap 80, hats 65.",
+      "why": "MPH Raw uses a sparse drum pattern that creates space for the bass line to be heard as the primary melodic element. Kick on 1 and 3 (not 4-on-floor) gives the groove a half-time quality — heavier, slower feeling than a 4-on-floor kick at the same BPM. The single clap on beat 3 provides anchor without filling space. Sparse hats at low velocity add texture without dominating.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Loop 8 bars with just the kick. Count 1-2-3-4 out loud while it plays. The kick should land on 1 and 3. If you hear it landing on 2 and 4, you have a 2-step pattern by accident — check the MIDI positions."
+    },
+    {
+      "id": 5,
+      "title": "Program the D minor phrygian bass line",
+      "category": "bass",
+      "instruction": "Load sub bass (rep-serum-sub-bass settings — sine wave, no FX, mono). Create a 4-bar MIDI clip. This is the pattern: Bar 1, beats 1–3: D1 (root, 3 beats long). Bar 1, beat 4: Eb1 (tension, 1 beat). Bar 2, beats 1–2: D1 (resolution return, 2 beats). Bar 2, beats 3–4: rest. Bar 3: repeat pattern (D1 for 3 beats, Eb1 for 1 beat). Bar 4, beats 1–2: D1. Bar 4, beats 3–4: rest. Velocities: D1 root = 92, Eb1 tension = 78 (quieter — the tension note is a whisper, not a shout). Repeat for 8 bars.",
+      "why": "The tension note Eb1 arrives quietly on beat 4 — its low velocity means the ear hears it as a question, not a statement. D1 at 92 is the confident root. Eb1 at 78 is the unsettled intrusion. The return to D1 in bar 2 is the resolution — the root reclaims its place. This is phrygian tension in miniature: stability → intrusion → resolution. The 2-beat rest in bar 2 and bar 4 lets the silence between phrases be part of the rhythm.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Compare your D minor pattern against the rep-03 E minor pattern (if available). The rhythmic shape should be identical — only the pitches change. D1 and Eb1 vs E1 and F1. Same semitone interval, different pitch. This is transposition: moving the same idea to a new root."
+    },
+    {
+      "id": 6,
+      "title": "Add Saturator and shape the bass tone",
+      "category": "bass",
+      "instruction": "Add Saturator to the BASS track: Drive 15%, Soft Clip mode, Dry/Wet 40%. Add EQ Eight after the Saturator: High Pass at 30Hz (remove sub-sub rumble). Now add Utility before both: Width 0% (mono). Listen to the bass with and without Saturator. With it off: thin, pure tone. With it on: warmer, with more upper harmonic content that translates on small speakers. Set BASS fader to -3dB.",
+      "why": "A pure sine sub bass at D1 (37Hz) is almost inaudible on laptop speakers and small earbuds — the fundamental frequency is too low for those drivers to reproduce. Saturation adds the 2nd harmonic (74Hz, an octave up) and 3rd harmonic (111Hz) — these are in the range that all speakers can reproduce. The bass is still a sub bass, but it now has sonic fingerprints that survive translation to small systems.",
+      "ableton_cheatsheet_id": "saturator",
+      "splice_search": null,
+      "tip": "Test on phone speakers after adding Saturator. Without it, D1 will almost disappear on a phone. With it, you should hear a warm, low thud even on a small speaker. If you can't hear a difference, increase Drive to 20% and Dry/Wet to 50%."
+    },
+    {
+      "id": 7,
+      "title": "Compare against rep-03 (E minor version)",
+      "category": "ableton",
+      "instruction": "If you have the rep-03 export, play it now. Then play your spinoff-01 loop. Switch between them 3 times. Listen specifically for: (1) the pitch difference — D1 at 37Hz vs E1 at 41Hz, (2) the tempo difference — 128 BPM breathes slower than 132, (3) the emotional difference — does D minor at 128 feel heavier/darker than E minor at 132? Write one sentence describing the difference before moving on.",
+      "why": "The point of this comparison is to hear how technique and register interact. The phrygian tension is the same idea in both tracks. But the specific pitch and tempo create a different emotional context. This listening exercise builds the ear for making creative transposition decisions — knowing that you want the 'heavier, more hypnotic' version means choosing D minor at 128 rather than E minor at 132.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Common descriptions: E minor at 132 = urgent, tense, forward-moving. D minor at 128 = brooding, heavy, subterranean. Neither is better — they serve different emotional intentions."
+    },
+    {
+      "id": 8,
+      "title": "Adjust velocity and timing for feel",
+      "category": "bass",
+      "instruction": "Loop the 8-bar pattern. Make these micro-adjustments in the MIDI clip: try nudging the Eb1 tension note 5–10ms late (click the note, hold Shift and drag right slightly, or use the Nudge controls). Does the timing feel more natural or more mechanical? Try increasing the tension note velocity from 78 to 85 — does the tension feel too obvious? Try the original 78 again. Find the version that feels most natural to you and commit to it. Then check: does the kick on beat 1 feel like it aligns with the D1 bass note landing? It should.",
+      "why": "These micro-adjustments to timing and velocity are how you take a technically correct MIDI pattern and make it feel like music rather than programming. The Eb1 tension note nudged slightly late feels like a human hesitation — deliberate but organic. Velocity shapes the emotional weight of each note independent of the rhythm. These are production decisions, not technical ones — your instinct is valid.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "There is no single correct answer here. The rep-03 version had its own timing. Your spinoff can have slightly different feel and still be correct — it's supposed to be your interpretation of the technique, not a copy."
+    },
+    {
+      "id": 9,
+      "title": "Rough mix balance",
+      "category": "mix",
+      "instruction": "Set track levels: DRUMS group fader at 0dB. BASS fader at -3dB. Check the kick and bass together: on each beat 1 and 3, the kick and D1 bass note should land together. If the sub bass feels like it's competing with the kick at 128 BPM, add a Compressor on the BASS track with sidechain from DRUMS: Ratio 4:1, Attack 0.5ms, Release 150ms, Threshold -20dB. This gently ducks the bass on each kick. Loop 8 bars and listen: does the kick punch through clearly? Does the bass feel present in the spaces between kicks?",
+      "why": "At 128 BPM the space between kicks is 469ms — long enough that the bass note sustains clearly between kicks. At higher tempos this matters less. Here the sidechain should be gentle, not dramatic — you want the bass and kick to coexist, not the bass to disappear on every kick hit.",
+      "ableton_cheatsheet_id": "sidechain",
+      "splice_search": null,
+      "tip": "Check on headphones. If the kick feels separate from the bass (they sound like two different things happening), check that D1 and the kick are hitting exactly on the same beat 1 grid position. They should land simultaneously."
+    },
+    {
+      "id": 10,
+      "title": "Export and save",
+      "category": "ableton",
+      "instruction": "Final check: loop 8 bars. Listen for the phrygian tension arc in each 4-bar phrase — stability (D1) → intrusion (Eb1) → resolution (D1) → silence. It should feel inevitable. File > Export Audio/Video. WAV, 44100Hz, 24-bit, Normalize OFF, 30 seconds (bars 1–16 at 128 BPM = 30 seconds). Name it 'spinoff-01-mph-dmin-entry-v1.wav'. Listen on earbuds. Save the session as 'spinoff-01-mph-dmin-entry'.",
+      "why": "The exported file is your reference for phrygian tension in D minor. Keep it alongside your rep-03 export — when you need to choose between E minor and D minor for a track, audition both and let the emotional difference guide the decision.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "If the track feels too sparse, that's correct. MPH Raw is sparse by design — the space is part of the sound. Resist the urge to add more elements. The restraint is what makes the tension note land."
+    }
+  ]
+}
