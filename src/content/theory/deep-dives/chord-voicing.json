@@ -1,0 +1,102 @@
+{
+  "id": "chord-voicing",
+  "title": "Chord Voicing — From Name to Sound",
+  "subtitle": "Knowing Gbmaj7 and making it sound like Kettama are completely different skills. This deep dive bridges them.",
+  "difficulty": "beginner",
+  "read_time_mins": 10,
+  "track_references": ["kettama-it-gets-better"],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "You've learned that VI→III→i in Bb minor = Gbmaj7 → Dbmaj → Bbm. You open the piano roll. You put the notes in. It sounds nothing like Kettama. What went wrong?\n\nThe notes are correct. The voicing is not.\n\nVoicing is how you distribute chord notes across octaves and between instruments — and it changes the emotional character of a chord completely. A Gbmaj7 voiced in the wrong octave sounds muddy, cluttered, or thin. Voiced correctly it sounds like warmth falling from a height. This deep dive teaches you the specific decisions that turn a chord name into a garage pad sound."
+    },
+    {
+      "id": "register",
+      "heading": "Register — where in the keyboard the chord lives",
+      "body": "Register is the most important voicing decision. Playing chord tones in the low register (below C3) creates mud — the overtones of multiple notes at low frequencies clash and blur together. Playing all chord tones in the high register (above C5) sounds thin and bright — no body.\n\nThe sweet spot for garage pads: voice the main chord body between D3 and D5. Keep notes below C3 only for the bass line (which lives on a separate track). Keep notes above C5 only for a single top note or a melody voice.\n\nThe Gbmaj7 in Kettama sits in this register: Gb3 Bb3 Db4 F4 — you can hear each note of the chord clearly, the low end isn't muddy, and the top note (F4) rings out without being shrill.\n\nThis is the most common beginner mistake: putting chords too low. If your chord pad sounds muddy or indistinct, move it up an octave before touching any other setting."
+    },
+    {
+      "id": "spread-vs-closed",
+      "heading": "Closed vs spread (open) voicings",
+      "body": "A closed voicing stacks chord tones as close together as possible, using the smallest possible intervals:\nGbmaj7 closed: Gb3 Ab3 Bb3 Db4 (all crammed within 1 octave)\n\nA spread (open) voicing distributes them across a wider range, skipping octaves:\nGbmaj7 spread: Gb3 Bb3 Db4 F4 (spanning 1.5 octaves)\n\nClosed voicings in the mid register sound dense and jazzy — all the notes compete for the same frequency space. Spread voicings sound larger, more cinematic, and translate better in a full mix because the chord tones occupy different frequency zones without fighting each other.\n\nFor UK garage pads: spread voicings are almost always correct. The goal is to have chord tones distributed across at least 1.5 to 2 octaves. The bass line takes the root on a separate track — the pad does not need to double the root in the low register."
+    },
+    {
+      "id": "inversions",
+      "heading": "Inversions — which note is on the bottom of the voicing",
+      "body": "An inversion describes which chord tone is the lowest note in the voicing (not counting the bass line on a separate track).\n\nRoot position: the root is lowest — Gbmaj7 root position: Gb3 Bb3 Db4 F4\nFirst inversion: the 3rd is lowest — Gbmaj7 1st inversion: Bb3 Db4 F4 Gb4\nSecond inversion: the 5th is lowest — Gbmaj7 2nd inversion: Db3 F3 Bb3 Gb4\n\nThe bass line plays the root regardless — this is just about the pad.\n\nRoot position sounds grounded and stable. First inversion sounds slightly lighter, like the chord is lifting off the ground. Second inversion has a more ambiguous, unresolved quality — useful at the end of a phrase to create forward motion toward the next chord.\n\nKettama's Gbmaj7 is in root position: the Gb3 is the lowest note in the pad. This gives the chord a solid, planted feeling even though the bass is handling the root separately."
+    },
+    {
+      "id": "major-sevenths",
+      "heading": "Major 7ths — why garage uses them",
+      "body": "A major 7th chord (Gbmaj7 = Gb Bb Db F) includes the major 7th interval between the root and top note. F is 11 semitones above Gb — one semitone short of a full octave. This near-octave creates a distinctive feeling: the chord is reaching upward, almost completing a circle but not quite. It's bittersweet, lush, and yearning.\n\nWithout the 7th, it's a plain major triad (Gb Bb Db) — solid and pleasant, but less distinctive. The 7th is what gives the chord that quality that makes garage pads sound like garage pads.\n\nVoicing rule: whenever possible, put the major 7th as the highest note in the voicing. Gbmaj7: Gb3 Bb3 Db4 F4 — F on top. The 7th rings out above everything else and is the note you hear first. If you put the root on top instead (Bb3 Db4 F4 Gb4), the chord loses its quality — the root on top sounds closed and resolved rather than reaching."
+    },
+    {
+      "id": "chord-rhythm",
+      "heading": "Chord rhythm — how long to hold vs release",
+      "body": "Voicing is not only which notes — it's how long they're held. Kettama's pads hold each chord for its full duration (2 bars for Gbmaj7, 1 bar each for Dbmaj and Bbm). The long held chord lets the reverb bloom and build around the voicing. If you programme the same voicing with short, staccato 16th-note hits it sounds completely different — percussive and rhythmic rather than lush.\n\nFor garage pads:\n- Hold notes for at least 1 full bar, typically 2\n- The release is handled by Serum's ENV 1 release time (300–500ms for pads), not by note length in the piano roll\n- The sidechain compression gives rhythmic pulse without shortening the held notes — the volume pumps but the notes sustain\n\nThis means the pad feels rhythmically animated by the sidechain while remaining harmonically still. The chord is always there — it just breathes with the kick."
+    },
+    {
+      "id": "doubling",
+      "heading": "Doubling notes — and when not to",
+      "body": "Doubling means playing the same note in two different octaves simultaneously within a single voicing. For example, Gb3 and Gb4 both in the pad.\n\nDoubling the root in octaves adds weight — but also stacks more root frequency on top of what the bass already provides. Usually unnecessary, and can make the low-mids feel dense.\n\nDoubling the top note (the 7th) one octave up adds shimmer and brightness. Gbmaj7 with F5 added to the voicing gives F4 and F5 together — the top of the chord sparkles. Use sparingly.\n\nIn most garage pad contexts: doubling is unnecessary because Serum's unison and reverb already create width and fullness. A well-voiced 4-note chord in the right register sounds full without any doubling. Only reach for it if the pad sounds thin after checking register and spread."
+    },
+    {
+      "id": "reference-voicings",
+      "heading": "Exact voicings for the source track chords",
+      "body": "Reference voicings for the chords used across the 5 source tracks:\n\nGbmaj7 (Kettama VI chord):\n  Gb3  Bb3  Db4  F4\n  7th (F) on top. Root (Gb) at the bottom. Spans 1.5 octaves.\n  Do not put Gb below C3 — that's the bass's territory.\n\nDbmaj (Kettama III chord):\n  Db3  F3  Ab3  or  Ab3  Db4  F4\n  No 7th needed — plain major triad. Sounds more resolved than Gbmaj7.\n  Keep within D3–F4 register.\n\nBbm (Kettama i chord — tonic):\n  Bb3  Db4  F4\n  Minor triad spread over 1.5 octaves. The 5th (F) on top keeps it from sounding heavy.\n  Heavier version if you want weight on the tonic: Bb2  F3  Bb3  Db4 (but this gets close to bass range — use carefully).\n\nEm (beginner rep tonic):\n  E3  G3  B3  or spread  E3  B3  E4\n  For phrygian bass context: pad often doesn't play — the bass carries the harmonic content alone.\n\nMinor 7th (general formula):\n  Formula: root  b3  5  b7\n  Spread: root3  b3(same octave)  5(+3rd or +4th)  b7(next octave)\n  Bbm7 = Bb3  Db4  F4  Ab4"
+    },
+    {
+      "id": "hearing-voicings",
+      "heading": "How to hear voicings in a reference track",
+      "body": "Training yourself to hear voicings by ear is the highest-value skill in this section. Once you can do it, every track you listen to becomes a lesson.\n\nThe method:\n1. Find the highest note of the chord pad. This is usually the most distinctive pitch — it sits above everything else and is easiest to isolate. On Kettama's Gbmaj7, it's F4.\n2. Hum that note. Confirm it in your head.\n3. Ask: what note is a 3rd below? (In Gbmaj7: Db4, a minor 3rd below F4.)\n4. Ask: what note is a 3rd below that? (Bb3, a major 3rd below Db4.)\n5. Ask: what note is a 3rd below that? (Gb3, a minor 3rd below Bb3.)\n6. You've found the voicing from the top down: F4 Db4 Bb3 Gb3 — a Gbmaj7 in root position, spread.\n\nYou don't need perfect pitch to do this. You need relative interval recognition — can you hear a minor 3rd (3 semitones) vs a major 3rd (4 semitones)? This skill comes from practice, not talent. The reps are where you build it."
+    }
+  ],
+  "midi_examples": [
+    {
+      "label": "Gbmaj7 — closed voicing (wrong)",
+      "notes": ["Gb3", "Ab3", "Bb3", "Db4"],
+      "context": "All notes within 1 octave. Sounds dense and cluttered. Not a garage sound."
+    },
+    {
+      "label": "Gbmaj7 — spread voicing (correct)",
+      "notes": ["Gb3", "Bb3", "Db4", "F4"],
+      "context": "Spanning 1.5 octaves, 7th (F) on top. This is the Kettama voicing."
+    },
+    {
+      "label": "Dbmaj — spread voicing",
+      "notes": ["Db3", "F3", "Ab3"],
+      "context": "The III chord. Plain major triad, no 7th. More resolved feeling than Gbmaj7."
+    },
+    {
+      "label": "Bbm — spread voicing",
+      "notes": ["Bb3", "Db4", "F4"],
+      "context": "Tonic minor. 5th (F) on top keeps it from sounding too dark. Spread over 1.5 octaves."
+    },
+    {
+      "label": "Gbmaj7 — 1st inversion for comparison",
+      "notes": ["Bb3", "Db4", "F4", "Gb4"],
+      "context": "Same notes as the correct voicing, but Bb is lowest instead of Gb. Feels lighter and less grounded."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:32",
+      "what_to_hear": "Listen for the highest note of the chord pad when the Gbmaj7 enters at the drop. That ringing note above everything else — that's F4, the major 7th. Try to hum it. Now work downward: what pitch do you hear beneath it? That's Db4 (a minor 3rd below). And below that? Bb3. Below that? Gb3. You've reverse-engineered the voicing from the top down.",
+      "technique": "Identifying a chord voicing by ear from top to bottom"
+    },
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:48",
+      "what_to_hear": "When the chord changes from Gbmaj7 to Dbmaj, notice how the top note drops. The F4 (major 7th of Gbmaj7) disappears or moves. The chord feels slightly lower and more settled. That single change in the top voice is how you hear a chord change — the bass moves and the top note shifts.",
+      "technique": "Hearing chord changes through top voice movement"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Open a MIDI track with Serum V2 (or any pad patch). Programme three versions of Gbmaj7 and listen back to all three:\n\nVersion A — closed voicing: Gb3 Ab3 Bb3 Db4. Hold for 4 bars.\nVersion B — spread voicing: Gb3 Bb3 Db4 F4. Hold for 4 bars.\nVersion C — spread, 1st inversion: Bb3 Db4 F4 Gb4. Hold for 4 bars.\n\nAdd reverb and a sidechain from a kick. Listen to all three versions back to back. Write down: which version sounds closest to Kettama? Which sounds muddy? Which sounds like it's floating rather than grounded?",
+    "answer_hint": "Version B (spread, root position: Gb3 Bb3 Db4 F4) is the Kettama voicing — grounded at the bottom with the 7th ringing above. Version A (closed) sounds dense and harmonically ambiguous — the notes fight in the 400–800Hz range. Version C (1st inversion) sounds slightly unmoored — Gb moved to the top loses the open, upward-reaching quality the root position gives.",
+    "linked_rep_id": "rep-11-VI-III-i-loop-bbmin"
+  },
+  "key_takeaway": "A chord name tells you which notes. A voicing tells you where to put them. Register above C3, spread across 1.5–2 octaves, major 7th on top: those three decisions turn a correct chord into a Kettama chord."
+}

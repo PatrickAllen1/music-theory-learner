@@ -3,3 +3,4 @@ import chords from "./chords.json";
 import rhythms from "./rhythms.json";
 
 export { scales, chords, rhythms };
+export { deepDives, deepDiveById } from "./deep-dives/index.js";

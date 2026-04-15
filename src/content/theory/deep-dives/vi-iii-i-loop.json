@@ -1,0 +1,99 @@
+{
+  "id": "vi-iii-i-loop",
+  "title": "The VI→III→i Loop",
+  "subtitle": "How Kettama's three chords create an emotional arc that feels inevitable",
+  "difficulty": "beginner",
+  "read_time_mins": 8,
+  "track_references": ["kettama-it-gets-better"],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Most UK garage tracks don't use complex chord progressions. Kettama's 'It Gets Better' uses three chords, cycling every four bars. Yet it sounds emotionally rich, lush, and satisfying. How? The answer is in which three chords, and more importantly, why those three chords work together so naturally. This deep dive breaks down the VI→III→i progression — what each chord is, how it moves, why it feels inevitable, and how to use it yourself."
+    },
+    {
+      "id": "the-scale",
+      "heading": "Start with the scale",
+      "body": "Kettama's track is in Bb minor. The natural minor scale built on Bb is: Bb C Db Eb F Gb Ab. Every chord in the VI→III→i progression uses only notes from this scale — that's what makes it a diatonic progression. No borrowed chords, no accidentals. The three chords are built by stacking thirds from the scale:\n\nThe i chord (tonic) — built on Bb: Bb Db F → Bbm\nThe III chord — built on Db: Db F Ab → Dbmaj (also called bIII, the flat-third)\nThe VI chord — built on Gb: Gb Bb Db → Gbmaj (also called bVI, the flat-sixth)\n\nAll six notes across these three chords are from Bb natural minor. Nothing unusual is happening harmonically — the magic is in the order."
+    },
+    {
+      "id": "the-chords",
+      "heading": "The three chords in detail",
+      "body": "The VI chord: Gbmaj7 (Gb Bb Db F)\nIn Kettama's version this is voiced as a major 7th — Gb Bb Db F. The added 7th (F) is still in the Bb minor scale and gives the chord its lush, reaching quality. This is the 'launch chord' — it occupies bars 1–2 of the four-bar loop. Emotionally: brightness within darkness. Gb major is the relative major of Bb minor, so hearing it feels warm and uplifted without leaving the key.\n\nThe III chord: Dbmaj (Db F Ab)\nBuilt on the flat-third. This chord is voiced as a plain major triad. It occupies bar 3 of the loop. Emotionally: stable, resolved, slightly less bright than the VI. The motion from Gbmaj7 to Dbmaj is a downward movement — the energy settles slightly.\n\nThe i chord: Bbm (Bb Db F)\nThe tonic — home base in minor. Occupies bar 4. Emotionally: minor gravity, pulling back to the root. After Gbmaj7 (bright) and Dbmaj (stable), the Bbm return feels like the phrase completing itself."
+    },
+    {
+      "id": "common-tones",
+      "heading": "Why it sounds smooth: common tones",
+      "body": "The reason VI→III→i feels so connected — rather than three separate chords — is common tones: notes that are shared between adjacent chords, so the harmony moves while something stays in place.\n\nGbmaj7 → Dbmaj: The notes Db and F appear in both chords. When two out of three notes stay the same, the voice leading is smooth — you feel the chord change, but you also feel continuity.\n\nDbmaj → Bbm: Db and F appear in both chords again. Same principle. The progression has minimal movement between chord tones — it's almost as if the harmony is rotating around a stable core.\n\nThe practical implication: when you voice these chords in a pad, you can keep the inner voices nearly stationary and just move the outer voices. The pad doesn't need to jump around — it hovers and shifts."
+    },
+    {
+      "id": "timing",
+      "heading": "The rhythm of the progression",
+      "body": "Kettama's four-bar loop allocates two bars to Gbmaj7 and one bar each to Dbmaj and Bbm. The VI chord gets twice as much time because it's the emotional peak — it's where the listener spends the most time. The III and i chords feel like a resolution sequence that completes the phrase and returns to the launch.\n\nAt 140 BPM, four bars = 6.86 seconds. The Gbmaj7 holds for 3.43 seconds, Dbmaj and Bbm for 1.71 seconds each. The long Gbmaj7 lets the reverb bloom around it. The quick Dbmaj → Bbm resolution feels crisp and decisive.\n\nProgramming this in a piano roll: draw your Gbmaj7 block from bar 1 beat 1 to bar 3 beat 1. Draw Dbmaj from bar 3 beat 1 to bar 4 beat 1. Draw Bbm from bar 4 beat 1 to bar 5 beat 1 (the start of the next loop)."
+    },
+    {
+      "id": "transposing",
+      "heading": "Moving the progression to other keys",
+      "body": "The VI→III→i pattern works in any minor key — the chord names change but the intervals stay identical. To find it in a new key:\n\n1. Write out the natural minor scale for your root.\n2. The i chord = root, b3, 5 (minor triad on the root).\n3. The III chord = b3, 5, b7 of your key (major triad on the flat-third).\n4. The VI chord = b6, root, b3 of your key (major triad on the flat-sixth).\n\nExample — F minor (F G Ab Bb C Db Eb):\ni = Fm (F Ab C)\nIII = Abmaj (Ab C Eb)\nVI = Dbmaj7 (Db F Ab C) — the 7th (C) is in the F minor scale, add it for the lush quality.\n\nExample — E minor (E F# G A B C D):\ni = Em (E G B)\nIII = Gmaj (G B D)\nVI = Cmaj7 (C E G B)"
+    }
+  ],
+  "midi_examples": [
+    {
+      "label": "Gbmaj7 voicing (Kettama)",
+      "notes": ["Gb3", "Bb3", "Db4", "F4"],
+      "context": "The launch chord — spread voicing, major 7th (F) on top. Holds bars 1–2."
+    },
+    {
+      "label": "Dbmaj voicing",
+      "notes": ["Db3", "F3", "Ab3"],
+      "context": "The III chord — plain major triad. Bar 3. Slightly more resolved feeling than the VI."
+    },
+    {
+      "label": "Bbm voicing",
+      "notes": ["Bb3", "Db4", "F4"],
+      "context": "The tonic minor — spread across 1.5 octaves. Bar 4. The 5th (F) on top keeps it from sounding too dark."
+    },
+    {
+      "label": "VI→III→i in F minor",
+      "notes": [
+        "Db3",
+        "F3",
+        "Ab3",
+        "C4",
+        "Ab3",
+        "C4",
+        "Eb4",
+        "F3",
+        "Ab3",
+        "C4"
+      ],
+      "context": "The same progression transposed to F minor: Dbmaj7 → Abmaj → Fm"
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:32",
+      "what_to_hear": "The full VI→III→i loop enters at the drop. The Gbmaj7 hits first — notice how it feels bright and open despite being in a minor key. That's the bVI doing its job. Then the Dbmaj at bar 3 — slightly more settled. Then the Bbm at bar 4 — the minor tonic pulling the phrase back to the beginning.",
+      "technique": "VI→III→i loop entering at the drop"
+    },
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~1:10",
+      "what_to_hear": "Listen specifically for the common tone between Gbmaj7 and Dbmaj. Try to hold a single pitch in your head as the chord changes — the F or the Db is staying in place while the bass moves. That stationary voice is what makes the transition feel smooth rather than like a chord stab.",
+      "technique": "Common tone voice leading between VI and III"
+    },
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:10",
+      "what_to_hear": "Listen to the intro — just drums and bass, no chords yet. When the pad finally enters at the drop, the arrival of the Gbmaj7 feels like a relief. That contrast (drums-only intro → full chord drop) is why the VI chord lands so hard emotionally. The intro sets up the release.",
+      "technique": "Contrast between chord-less intro and chord drop"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Program the VI→III→i loop in F minor (not Bb minor). Step 1: write out the F natural minor scale. Step 2: identify the i, III, and VI chords from the scale. Step 3: voice them in a piano roll with Gbmaj7's voicing logic as a guide (spread voicing, major 7th on top for the VI chord). Step 4: set the timing — 2 bars on the VI chord, 1 bar each on III and i. Step 5: listen back and compare the emotional quality to Kettama. Different key, same feeling.",
+    "answer_hint": "F natural minor scale: F G Ab Bb C Db Eb. i = Fm (F Ab C) — voiced Fm: F3 Ab3 C4. III = Abmaj (Ab C Eb) — voiced: Ab3 C4 Eb4. VI = Dbmaj7 (Db F Ab C) — voiced: Db3 F3 Ab3 C4, or spread: Db3 Ab3 C4 F4.",
+    "linked_rep_id": "rep-11-VI-III-i-loop-bbmin"
+  },
+  "key_takeaway": "VI→III→i is three diatonic minor key chords moving through brightness (VI), stability (III), and resolution (i) — all connected by common tones that make the voice leading feel inevitable."
+}

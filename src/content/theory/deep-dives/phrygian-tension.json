@@ -1,0 +1,83 @@
+{
+  "id": "phrygian-tension",
+  "title": "Phrygian Tension",
+  "subtitle": "How MPH Raw builds an entire track from a single semitone of distance",
+  "difficulty": "beginner",
+  "read_time_mins": 7,
+  "track_references": ["mph-raw"],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "MPH Raw has no chord progression. No pads, no harmony, no VI→III→i. Just a bass line that moves between two notes — the root and a note one semitone above it. Yet the track feels tense, hypnotic, and purposeful. This is phrygian mode — specifically, the use of the phrygian flat-2 (b2) as a tension note. This deep dive explains why one semitone creates more tension than a chord progression can, how to hear it in the track, and how to programme it yourself."
+    },
+    {
+      "id": "what-is-phrygian",
+      "heading": "Phrygian vs natural minor — one note different",
+      "body": "Natural minor (Aeolian) and Phrygian are both minor modes. The only difference between them is the 2nd degree of the scale:\n\nNatural minor: root, whole, half, whole, whole, half, whole, whole\nE natural minor: E F# G A B C D\n\nPhrygian: root, half, whole, whole, whole, half, whole, whole\nE Phrygian: E F G A B C D\n\nThe only change: the 2nd degree drops by one semitone — from F# to F natural in E. That F natural, one half-step above the root E, is the phrygian b2. Everything else about the scale is identical.\n\nOne semitone. That's the whole thing. And it completely changes the emotional character of the scale."
+    },
+    {
+      "id": "why-semitone-tension",
+      "heading": "Why the b2 creates maximum tension",
+      "body": "In tonal music, tension comes from dissonance — intervals that feel unstable and want to resolve. The semitone (minor 2nd) is the most dissonant interval in Western music. When you play E and F together, the sound is grating, tense, unresolved. The ear desperately wants one of those notes to move.\n\nIn phrygian bass lines, you don't play them simultaneously — you alternate between them. The root (E) is home. The b2 (F) is the tension note. When the bass moves from E to F, you feel a physical pull back to E. When it returns, the tension releases.\n\nThis is the mechanism: establish the root so the ear knows where home is, then move to the note that is maximally close to home but isn't home. The proximity is what creates the tension — the ear hears F and immediately knows E is right there, one semitone away.\n\nA whole step (major 2nd) would create much less tension because the distance is greater — the ear doesn't feel the same gravitational pull back. The semitone is the tightest possible distance without unison."
+    },
+    {
+      "id": "mph-approach",
+      "heading": "How MPH uses it",
+      "body": "MPH Raw is in E Phrygian (root E, tension note F). The bass line is built almost entirely around these two notes with occasional movement to other scale tones for variety.\n\nThe key compositional decisions:\n\n1. Duration asymmetry: the root note (E) is held longer than the tension note (F). Long root → short tension → return to root. This keeps the track anchored — the tension is a departure from home, not a new home. If you held the F as long as the E, it would start to feel like F is the root.\n\n2. Velocity variation: the tension note (F) often hits at lower velocity than the root. This makes the tension feel like a lean or a whisper rather than a stab. High velocity on the b2 would make it sound aggressive; lower velocity makes it feel internal and tight.\n\n3. No harmony needed: because the tension is melodic (one note vs another), you don't need chords to create emotional content. The bass is doing all the harmonic work. Adding a chord pad over this would compete with the tension — the space is intentional.\n\n4. Rhythm as carrier: the timing of when the tension note lands matters as much as the note itself. Landing the F on an offbeat creates syncopation — the tension rides between the kicks rather than with them."
+    },
+    {
+      "id": "programming",
+      "heading": "Programming a phrygian bass line",
+      "body": "The starting template for any phrygian bass line:\n\nStep 1: Choose your root. E minor is the most common for UK garage (matches the rep-03 key).\nStep 2: Your tension note is always exactly one semitone above the root. E → F. A → Bb. D → Eb. G → Ab.\nStep 3: In the piano roll, draw your root note first — make it the anchor. A typical pattern: root on beat 1, holds for 1.5 beats, tension note on the 'and' of beat 2 for half a beat, root returns on beat 3.\nStep 4: Set velocity: root at 100, tension note at 75–85. The tension note should feel like it's leaning into the root, not punching.\nStep 5: Leave space. Phrygian lines breathe — silence between phrases is part of the tension. A gap of one beat before the next phrase restarts resets the root feeling and makes the next tension note hit harder.\nStep 6: Vary the rhythm of the tension note across bars. If bar 1 has the tension note on the 'and' of 2, put it on beat 3 in bar 3. Keeping it unpredictable makes it feel alive rather than mechanical."
+    },
+    {
+      "id": "other-keys",
+      "heading": "Phrygian in other keys",
+      "body": "The b2 relationship is always root → one semitone up:\n\nD Phrygian: root D, tension Eb\nA Phrygian: root A, tension Bb\nG Phrygian: root G, tension Ab\nF Phrygian: root F, tension Gb\nC Phrygian: root C, tension Db\n\nNotice that A Phrygian's tension note (Bb) is the root of Kettama's track. Moving between phrygian keys is one way to modulate — the tension note of one key becomes the root of another. A→Bb is the same as A Phrygian moving to Bb minor."
+    }
+  ],
+  "midi_examples": [
+    {
+      "label": "E Phrygian root + b2",
+      "notes": ["E2", "F2"],
+      "context": "The two notes that build the entire MPH Raw tension system. Root (E) is home; b2 (F) is the tension note one semitone above."
+    },
+    {
+      "label": "Basic phrygian bass pattern",
+      "notes": ["E2", "E2", "F2", "E2"],
+      "context": "Root for 1.5 beats → tension note for 0.5 beats → root returns. The asymmetry keeps E feeling like home."
+    },
+    {
+      "label": "A Phrygian b2",
+      "notes": ["A2", "Bb2"],
+      "context": "Same interval in A Phrygian. Tension note Bb is the root of Kettama's key — showing how phrygian and VI→III→i connect."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "mph-raw",
+      "timestamp": "~0:08",
+      "what_to_hear": "The phrygian bass line enters. Focus on the two notes it alternates between. The lower one (E) is home — the one you return to. The upper one (F) is the tension — it lasts for a short moment then releases back. Notice how the short duration of the tension note is what makes it work. It's a lean, not a landing.",
+      "technique": "Phrygian b2 tension and release pattern"
+    },
+    {
+      "track_id": "mph-raw",
+      "timestamp": "~0:30",
+      "what_to_hear": "Listen for where the tension note (F) lands rhythmically. It doesn't always land in the same place in each bar — it shifts. Sometimes it's on the offbeat, sometimes slightly earlier. That rhythmic variation is what makes the line feel played rather than programmed, even though it's a very simple two-note motif.",
+      "technique": "Rhythmic displacement of the tension note"
+    },
+    {
+      "track_id": "mph-raw",
+      "timestamp": "~1:00",
+      "what_to_hear": "Notice what's NOT there: no chord pads, no harmony, no additional melodic elements. The entire emotional content of the track at this point is carried by the bass line and drums. Try to imagine the same tension with a chord pad playing over it — it would destroy the feeling. The space is the point.",
+      "technique": "Harmonic space as compositional choice"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Write a 4-bar phrygian bass line in A minor. Your root is A, your tension note is Bb — one semitone above. Rules: (1) the A note should appear more than the Bb in each bar, (2) vary the rhythm of the Bb across bars — don't put it in the same position every time, (3) set the velocity of the Bb 15–20 velocity units lower than the A, (4) leave at least one beat of silence somewhere in the 4 bars. When you're done, compare to your rep-03 phrygian bass line in E minor — same interval relationship, different key.",
+    "answer_hint": "A natural minor scale: A B C D E F G. The b2 in A Phrygian is Bb (one semitone above A, lowering the natural minor's B to Bb). Example pattern bar 1: A2 (beat 1, 1.5 beats) → Bb2 (and of 2, 0.5 beats) → A2 (beat 3, 1 beat) → rest (beat 4). Vary bar 2: A2 (beat 1) → A2 (beat 2) → Bb2 (beat 3, 0.5 beats) → A2 (beat 3.5) → rest.",
+    "linked_rep_id": "rep-03-phrygian-bass-emin"
+  },
+  "key_takeaway": "Phrygian tension comes from a single semitone — root to b2 and back. Maximum tension from minimum movement. The shortness of the tension note and its rhythmic placement are as important as the note itself."
+}

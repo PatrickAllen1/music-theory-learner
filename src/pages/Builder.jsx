@@ -1,10 +1,18 @@
 import { useState } from "react";
+import { useLocation } from "react-router-dom";
 import BuildSelector from "../components/BuildSelector";
 import BuildStep from "../components/BuildStep";
 import { entryById } from "../content/cheatsheet";
+import { buildById } from "../content/guided-builds";
 
 export default function Builder() {
-  const [build, setBuild] = useState(null);
+  const location = useLocation();
+  const initialBuildId = location.state?.buildId;
+  const initialBuild = initialBuildId
+    ? (buildById[initialBuildId] ?? null)
+    : null;
+
+  const [build, setBuild] = useState(initialBuild);
   const [stepIndex, setStepIndex] = useState(0);
   const [refEntry, setRefEntry] = useState(null);
 

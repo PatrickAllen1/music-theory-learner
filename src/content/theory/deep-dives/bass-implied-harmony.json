@@ -1,0 +1,83 @@
+{
+  "id": "bass-implied-harmony",
+  "title": "Bass-Implied Harmony",
+  "subtitle": "How BL3SS carries an entire chord progression with just a bass line",
+  "difficulty": "intermediate",
+  "read_time_mins": 8,
+  "track_references": ["bl3ss-deeper"],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Most garage tracks use a chord pad to carry harmony — the bass plays the root and the pad fills in the 3rd, 5th, and 7th. BL3SS takes a different approach: the bass line moves through chord roots and the listener's ear fills in the harmony from context. No pad needed. This technique — bass-implied harmony — creates a stripped, spacious sound that feels different from both the dense Kettama pad approach and the chord-less MPH tension approach. It's a third road."
+    },
+    {
+      "id": "how-it-works",
+      "heading": "How the ear fills in missing chord tones",
+      "body": "When you hear a bass note in a musical context, your brain doesn't hear it in isolation — it hears it relative to everything that came before. If the track has established a key (D minor in BL3SS's case), then every bass note you hear is automatically interpreted as a function of that key.\n\nWhen the bass moves from D to F, you don't just hear two notes — you hear a D minor chord moving to an F major chord, even if no chord tones are playing. The bass root defines the chord; your harmonic memory supplies the rest.\n\nThis is implied harmony: the chord exists in the listener's perception even though only its root is sounding. The conditions that make it work:\n1. The key must be established first. The ear needs context before it can imply anything.\n2. The bass roots must outline a meaningful progression — random root movement doesn't imply chords, it just sounds like a wandering bass.\n3. The root notes must be heard clearly and held long enough for the ear to register each chord before the next arrives."
+    },
+    {
+      "id": "the-progression",
+      "heading": "The i→bIII→bVI→iv motion in D minor",
+      "body": "BL3SS's progression in D minor moves through four chord roots:\n\ni — D (Dm implied): home. Minor tonic.\nbIII — F (Fmaj implied): the flat-third, the relative major. Brightness in a minor key.\nbVI — Bb (Bbmaj implied): the flat-sixth. Familiar from Kettama's progression — this is the same bVI that Kettama uses as his VI chord.\niv — Gm (Gm implied): the minor 4th. Darker, more unresolved — sets up the return to the tonic.\n\nThe full loop: Dm → Fmaj → Bbmaj → Gm → repeat.\n\nWhat makes this work as implied harmony rather than just a bass line:\n- Each root lands on a strong beat and holds for at least a full bar\n- The roots outline a real, coherent diatonic progression (all chords in D natural minor)\n- There's enough space in the arrangement for the ear to hear each root as a harmonic event, not just a melodic note"
+    },
+    {
+      "id": "the-space",
+      "heading": "Why stripping the pad creates power",
+      "body": "When you remove the chord pad and let the bass carry the harmony, several things happen:\n\n1. The low end becomes the entire emotional content. Every nuance in the bass — velocity, note length, timing — is magnified because there's nothing else carrying harmony. The bass performance becomes visible.\n\n2. The reverb space opens up. Without a pad occupying the mid-frequency range (500Hz–2kHz), the reverb has room to breathe. The bass notes decay into space rather than competing with pad harmonics.\n\n3. The listener participates. Implied harmony is slightly ambiguous — the listener's brain is doing some of the harmonic work. This active listening creates engagement that explicit chord pads don't. The progression feels like it's half yours.\n\n4. Contrast is available. When you use bass-implied harmony for 32 bars, then bring in a pad at a key moment (breakdown reveal, or a single bar stab), the harmonic arrival hits harder than if the pad had been there the whole time."
+    },
+    {
+      "id": "making-it-work",
+      "heading": "Making implied harmony land — the bass performance details",
+      "body": "The bass line that implies harmony has more responsibility than a bass line playing under chords. The things that make it work:\n\nNote length: hold each root note for close to its full duration. A bass note that cuts off too early fails to establish the implied chord — the ear only hears a passing note. Aim for 80–90% of the note's theoretical duration before the next one arrives.\n\nVelocity arc: each new root note should have a slight velocity bump over the bass notes that came before it. This flags to the ear: new chord arriving. The velocity bump doesn't need to be large — 5–10 units on each root is enough.\n\nTimbre: a sub bass carrying implied harmony needs harmonic content above the fundamental or the ear can't hear the pitch clearly. A pure sine sub at 40Hz is hard to identify as a specific note. Add light saturation (Saturator, Soft Clip, Drive 15%) to generate the octave and upper harmonics — the note becomes identifiable even on small speakers.\n\nRhythm: the root note should land on a strong metric position — beat 1 of each bar, or beat 3 for a 2-bar chord duration. If the root lands on a weak beat, the ear interprets it as an ornament rather than a harmonic event."
+    },
+    {
+      "id": "layering",
+      "heading": "Adding a ghost pad — the BL3SS technique",
+      "body": "BL3SS doesn't always keep the arrangement completely pad-free. The technique that makes bass-implied harmony feel full rather than thin: a very low-level pad (−18dB or lower relative to the bass) playing the full chord tones, mostly buried in the mix.\n\nThis ghost pad is felt more than heard. It fills in the harmonic space just enough to confirm what the bass is implying, without taking over the role. At normal listening levels you can't identify it as a chord pad — it reads as part of the reverb texture. Solo it and you'll hear the chords; unsolo and they disappear into the body of the sound.\n\nTechnically: same chord progression as the bass roots, voiced in the D3–D4 range, low-pass filtered at 2kHz (removes brightness that would make the pad audible), reverb send at maximum (the pad becomes part of the room rather than a foreground element), pad fader at −18dBFS or lower."
+    }
+  ],
+  "midi_examples": [
+    {
+      "label": "i→bIII→bVI→iv roots (D minor)",
+      "notes": ["D2", "F2", "Bb2", "G2"],
+      "context": "The four bass roots. Each implies a full chord: Dm → Fmaj → Bbmaj → Gm. Hold each for one full bar."
+    },
+    {
+      "label": "Implied Dm chord",
+      "notes": ["D2", "D3", "F3", "A3"],
+      "context": "What the listener's ear hears when the bass plays D2. The upper voices aren't there — the brain supplies them."
+    },
+    {
+      "label": "Same progression in G minor",
+      "notes": ["G2", "Bb2", "Eb2", "C2"],
+      "context": "i→bIII→bVI→iv transposed to G minor: Gm → Bbmaj → Ebmaj → Cm roots."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "bl3ss-deeper",
+      "timestamp": "~0:20",
+      "what_to_hear": "The bass line establishes the key. Listen to the first note — hold it in your head and try to sing the chord you expect above it. You'll find yourself mentally hearing D minor even though no chord is playing. That's implied harmony at work before it's even moved anywhere.",
+      "technique": "Key establishment through bass root alone"
+    },
+    {
+      "track_id": "bl3ss-deeper",
+      "timestamp": "~0:36",
+      "what_to_hear": "The bass moves to the bIII (F). Notice how the feel shifts from dark/minor to briefly brighter — even though only one note changed. The relative major (F) creates warmth without leaving the key. Compare this brightness to the Gbmaj7 in Kettama — same emotional function (bVI/VI chord), different delivery method.",
+      "technique": "bIII creating brightness in implied harmony"
+    },
+    {
+      "track_id": "bl3ss-deeper",
+      "timestamp": "~1:05",
+      "what_to_hear": "Focus on the space around the bass notes. With no pad, the reverb decay of each bass note is clearly audible. You can hear the harmonic content of the room between notes. Compare this to Kettama's arrangement — the Kettama reverb is occupied by the pad harmonics. Here the space is empty and available.",
+      "technique": "Reverb space opened by removing the pad"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Write a bass-implied harmony progression in G minor. Step 1: write out the G natural minor scale (G A Bb C D Eb F). Step 2: find the i, bIII, bVI, and iv chord roots (G, Bb, Eb, C). Step 3: in a piano roll, draw only the root notes — one per bar, held for the full bar duration. Use a Serum sub bass patch (pure sine, no FX). Step 4: listen back. Can you hear the implied chords? Step 5: now add a ghost pad track — same progression, voiced Bb3–D4 range, fader pulled to −18dB, heavy reverb. Toggle it on and off. Notice that you can't quite hear it, but the track feels more harmonically complete with it.",
+    "answer_hint": "G natural minor: G A Bb C D Eb F. i = Gm (root: G). bIII = Bbmaj (root: Bb). bVI = Ebmaj (root: Eb). iv = Cm (root: C). Ghost pad voicings: Gm = G3 Bb3 D4, Bbmaj = Bb3 D4 F4, Ebmaj = Eb3 G3 Bb3, Cm = C3 Eb3 G3.",
+    "linked_rep_id": "rep-13-bass-implied-dmin"
+  },
+  "key_takeaway": "Bass-implied harmony lets a single bass line carry a full chord progression. The ear fills in the missing chord tones from context. Space, note length, and bass timbre are everything — the implied chords only land when each root is heard clearly and held."
+}
