@@ -73,20 +73,20 @@
   "listening_cues": [
     {
       "track_id": "kettama-it-gets-better",
-      "timestamp": "~0:32",
+      "timestamp": "bar 56 (~1:36)",
       "what_to_hear": "The full VI→III→i loop enters at the drop. The Gbmaj7 hits first — notice how it feels bright and open despite being in a minor key. That's the bVI doing its job. Then the Dbmaj at bar 3 — slightly more settled. Then the Bbm at bar 4 — the minor tonic pulling the phrase back to the beginning.",
       "technique": "VI→III→i loop entering at the drop"
     },
     {
       "track_id": "kettama-it-gets-better",
-      "timestamp": "~1:10",
+      "timestamp": "bar 80 (~2:17)",
       "what_to_hear": "Listen specifically for the common tone between Gbmaj7 and Dbmaj. Try to hold a single pitch in your head as the chord changes — the F or the Db is staying in place while the bass moves. That stationary voice is what makes the transition feel smooth rather than like a chord stab.",
       "technique": "Common tone voice leading between VI and III"
     },
     {
       "track_id": "kettama-it-gets-better",
-      "timestamp": "~0:10",
-      "what_to_hear": "Listen to the intro — just drums and bass, no chords yet. When the pad finally enters at the drop, the arrival of the Gbmaj7 feels like a relief. That contrast (drums-only intro → full chord drop) is why the VI chord lands so hard emotionally. The intro sets up the release.",
+      "timestamp": "bar 16 (~0:27)",
+      "what_to_hear": "Listen to the intro — just bass and lead melody, no drums, no chords yet. When the pad finally enters at the drop (bar 56, ~1:36), the arrival of the Gbmaj7 feels like a relief. That contrast (bass+lead intro → full chord drop) is why the VI chord lands so hard emotionally. The intro sets up the release.",
       "technique": "Contrast between chord-less intro and chord drop"
     }
   ],

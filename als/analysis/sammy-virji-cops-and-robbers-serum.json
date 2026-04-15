@@ -1,0 +1,957 @@
+{
+  "slug": "sammy-virji-cops-and-robbers",
+  "serum_instances": [
+    {
+      "track": "Bass",
+      "plugin": "Serum 2",
+      "wavetables": {
+        "osc_a": "Analog/Basic Shapes.wav",
+        "osc_b": "Analog/Basic Shapes.wav",
+        "osc_c": "Analog/Basic Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamOctave": -3.0
+        },
+        "osc_b": {
+          "kParamEnable": 1.0,
+          "kParamOctave": -2.0,
+          "kParamPitch": 7.000000476837158,
+          "kParamVolume": 0.3002566812998708
+        },
+        "osc_c": {
+          "kParamEnable": 1.0,
+          "kParamOctave": -2.0,
+          "kParamVolume": 0.07329679236335185
+        }
+      },
+      "filters": {},
+      "envelopes": {
+        "env_0": {
+          "kParamAttack": 0.01491488500948621,
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 55.78463673591614,
+          "kParamCurve3": 56.290704011917114,
+          "kParamRelease": 0.8711078831788275,
+          "kParamSustain": 0.7458652853965759
+        },
+        "env_1": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_2": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "global": {
+        "kParamBendRangeDn": -12.0,
+        "kParamLegato": 1.0,
+        "kParamMonoToggle": 1.0,
+        "kParamPortaAlways": 1.0,
+        "kParamPortamentoTime": 0.03560334457062379
+      }
+    },
+    {
+      "track": "Strings 1",
+      "plugin": "Serum 2",
+      "wavetables": {
+        "osc_a": "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR1.wav",
+        "osc_b": "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR2.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamFine": 0.244140625,
+          "kParamPan": -19.404467940330505,
+          "kParamVolume": 0.5591640904861528
+        },
+        "osc_b": {
+          "kParamDetune": 0.0,
+          "kParamDetuneWid": 87.97971606254578,
+          "kParamEnable": 1.0,
+          "kParamPan": 20.91728448867798,
+          "kParamVolume": 0.5648409591736367
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamDrive": 9.131716191768646,
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.7166597843170166,
+          "kParamReso": 7.041529566049576
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamAttack": 0.08316625759902478,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 35.17765998840332,
+          "kParamCurve3": 66.60000085830688,
+          "kParamDecay": 2.5708184650756625,
+          "kParamRelease": 0.007877879163497381,
+          "kParamSustain": 0.796875
+        },
+        "env_1": {
+          "kParamAttack": 0.0,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 66.60000085830688,
+          "kParamCurve3": 66.60000085830688,
+          "kParamRelease": 0.014700845522658537
+        },
+        "env_2": {
+          "kParamAttack": 0.0005153631860372539,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 66.60000085830688,
+          "kParamCurve3": 66.60000085830688,
+          "kParamRelease": 0.014700845522658537
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "global": {
+        "kParamLimitSameNotePolyphony": 1.0,
+        "kParamMasterVolume": 0.15973090485858826,
+        "kParamS1Compatibility": 1.0
+      },
+      "lfos": {
+        "lfo_0": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Envelope",
+          "kParamRate": 0.1354760904872742
+        },
+        "lfo_1": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Envelope",
+          "kParamRate": 0.6656587371233326
+        },
+        "lfo_2": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free",
+          "kParamRate": 4.0313740939106495
+        },
+        "lfo_3": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_4": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_5": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_6": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_7": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_8": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamDotted": 1.0,
+          "kParamMono": 1.0,
+          "kParamRate": 1.550315705227126,
+          "kParamRate10x": 1.0,
+          "kParamTriplets": 1.0,
+          "kParamType": "Lorenz"
+        },
+        "lfo_9": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamDotted": 1.0,
+          "kParamRate": 0.10000069729266844,
+          "kParamRate10x": 1.0,
+          "kParamTriplets": 1.0,
+          "kParamType": "Rossler"
+        }
+      },
+      "mod_matrix": {
+        "slot_0": {
+          "source": "LFO3",
+          "source_raw": [
+            6,
+            0
+          ],
+          "dest_module": "WTOsc",
+          "dest_instance": 0,
+          "dest_param": "kParamTablePos",
+          "amount": -100.0
+        },
+        "slot_1": {
+          "source": "LFO3",
+          "source_raw": [
+            6,
+            0
+          ],
+          "dest_module": "WTOsc",
+          "dest_instance": 1,
+          "dest_param": "kParamTablePos",
+          "amount": -90.78
+        },
+        "slot_2": {
+          "source": "ModWheel?",
+          "source_raw": [
+            25,
+            0
+          ],
+          "dest_module": "VoiceFilter",
+          "dest_instance": 0,
+          "dest_param": "kParamFreq",
+          "amount": 28.33
+        },
+        "slot_3": {
+          "source": "ModWheel?",
+          "source_raw": [
+            25,
+            0
+          ],
+          "dest_module": "FXChorus",
+          "dest_instance": 3,
+          "dest_param": "kParamLevelOut",
+          "amount": 10.21
+        },
+        "slot_4": {
+          "source": "LFO4",
+          "source_raw": [
+            7,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 3,
+          "dest_param": "kParamVolume",
+          "amount": 61.25
+        },
+        "slot_9": {
+          "source": "KeyTrack?",
+          "source_raw": [
+            28,
+            0
+          ],
+          "dest_module": "FXReverb",
+          "dest_instance": 5,
+          "dest_param": "kParamWet",
+          "amount": 46.56
+        },
+        "slot_10": {
+          "source": "PitchBend?",
+          "source_raw": [
+            26,
+            0
+          ],
+          "dest_module": "LFO",
+          "dest_instance": 0,
+          "dest_param": "kParamRate",
+          "amount": 9.15
+        },
+        "slot_11": {
+          "source": "Macro8?",
+          "source_raw": [
+            21,
+            27
+          ],
+          "dest_module": "LFOPointModBus",
+          "dest_instance": 0,
+          "dest_param": "kParamValue",
+          "amount": 50.0
+        },
+        "slot_12": {
+          "source": "LFO5",
+          "source_raw": [
+            8,
+            1
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 0,
+          "dest_param": "kParamFine",
+          "amount": 25.47
+        },
+        "slot_13": {
+          "source": "LFO5",
+          "source_raw": [
+            8,
+            1
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 1,
+          "dest_param": "kParamFine",
+          "amount": 25.48
+        },
+        "slot_14": {
+          "source": "Macro1?",
+          "source_raw": [
+            14,
+            1
+          ],
+          "dest_module": "LFO",
+          "dest_instance": 2,
+          "dest_param": "kParamRate",
+          "amount": 17.86
+        }
+      }
+    },
+    {
+      "track": "Strings 2",
+      "plugin": "Serum 2",
+      "wavetables": {
+        "osc_a": "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR1.wav",
+        "osc_b": "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR2.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamFine": 0.244140625,
+          "kParamVolume": 0.5591640904861528
+        },
+        "osc_b": {
+          "kParamEnable": 1.0,
+          "kParamFine": 2.093505859375,
+          "kParamVolume": 0.0
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamDrive": 9.131716191768646,
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.7166597843170166,
+          "kParamReso": 7.041529566049576
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamAttack": 0.2596956422960009,
+          "kParamCurve1": 67.5769567489624,
+          "kParamCurve2": 35.17765998840332,
+          "kParamCurve3": 66.60000085830688,
+          "kParamDecay": 2.5708184650756625,
+          "kParamRelease": 0.053591085768467175,
+          "kParamSustain": 0.7044099569320679
+        },
+        "env_1": {
+          "kParamAttack": 0.0,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 66.60000085830688,
+          "kParamCurve3": 66.60000085830688,
+          "kParamRelease": 0.014700845522658537
+        },
+        "env_2": {
+          "kParamAttack": 0.0005153631860372539,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 66.60000085830688,
+          "kParamCurve3": 66.60000085830688,
+          "kParamRelease": 0.014700845522658537
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "global": {
+        "kParamLegato": 1.0,
+        "kParamLimitSameNotePolyphony": 1.0,
+        "kParamMasterVolume": 0.20834334285102482,
+        "kParamPortaAlways": 1.0,
+        "kParamPortamentoTime": 0.0404001151721423,
+        "kParamS1Compatibility": 1.0
+      },
+      "lfos": {
+        "lfo_0": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Envelope",
+          "kParamRate": 0.1354760904872742
+        },
+        "lfo_1": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Envelope",
+          "kParamRate": 0.6656587371233326
+        },
+        "lfo_2": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free",
+          "kParamRate": 4.0313740939106495,
+          "kParamRise": 2.5553042888641357
+        },
+        "lfo_3": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_4": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_5": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_6": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_7": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_8": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamDotted": 1.0,
+          "kParamMono": 1.0,
+          "kParamRate": 1.550315705227126,
+          "kParamRate10x": 1.0,
+          "kParamTriplets": 1.0,
+          "kParamType": "Lorenz"
+        },
+        "lfo_9": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamDotted": 1.0,
+          "kParamRate": 0.10000069729266844,
+          "kParamRate10x": 1.0,
+          "kParamTriplets": 1.0,
+          "kParamType": "Rossler"
+        }
+      },
+      "mod_matrix": {
+        "slot_0": {
+          "source": "LFO3",
+          "source_raw": [
+            6,
+            0
+          ],
+          "dest_module": "WTOsc",
+          "dest_instance": 0,
+          "dest_param": "kParamTablePos",
+          "amount": -90.72
+        },
+        "slot_1": {
+          "source": "LFO3",
+          "source_raw": [
+            6,
+            0
+          ],
+          "dest_module": "WTOsc",
+          "dest_instance": 1,
+          "dest_param": "kParamTablePos",
+          "amount": -94.42
+        },
+        "slot_2": {
+          "source": "Velocity?",
+          "source_raw": [
+            23,
+            27
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 1,
+          "dest_param": "kParamVolume",
+          "amount": 74.95
+        },
+        "slot_3": {
+          "source": "Velocity?",
+          "source_raw": [
+            23,
+            27
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 0,
+          "dest_param": "kParamVolume",
+          "amount": -100.0
+        },
+        "slot_4": {
+          "source": "LFO4",
+          "source_raw": [
+            7,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 3,
+          "dest_param": "kParamVolume",
+          "amount": 61.25
+        },
+        "slot_5": {
+          "source": "ModWheel?",
+          "source_raw": [
+            25,
+            0
+          ],
+          "dest_module": "VoiceFilter",
+          "dest_instance": 0,
+          "dest_param": "kParamFreq",
+          "amount": 28.33
+        },
+        "slot_6": {
+          "source": "ModWheel?",
+          "source_raw": [
+            25,
+            0
+          ],
+          "dest_module": "FXChorus",
+          "dest_instance": 2,
+          "dest_param": "kParamLevelOut",
+          "amount": 9.68
+        },
+        "slot_9": {
+          "source": "KeyTrack?",
+          "source_raw": [
+            28,
+            0
+          ],
+          "dest_module": "FXReverb",
+          "dest_instance": 4,
+          "dest_param": "kParamWet",
+          "amount": 46.56
+        },
+        "slot_10": {
+          "source": "PitchBend?",
+          "source_raw": [
+            26,
+            0
+          ],
+          "dest_module": "LFO",
+          "dest_instance": 0,
+          "dest_param": "kParamRate",
+          "amount": 9.15
+        },
+        "slot_11": {
+          "source": "Macro8?",
+          "source_raw": [
+            21,
+            27
+          ],
+          "dest_module": "LFOPointModBus",
+          "dest_instance": 0,
+          "dest_param": "kParamValue",
+          "amount": 23.27
+        },
+        "slot_12": {
+          "source": "LFO5",
+          "source_raw": [
+            8,
+            1
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 0,
+          "dest_param": "kParamFine",
+          "amount": 25.47
+        },
+        "slot_13": {
+          "source": "LFO5",
+          "source_raw": [
+            8,
+            1
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 1,
+          "dest_param": "kParamFine",
+          "amount": 25.48
+        },
+        "slot_14": {
+          "source": "Macro1?",
+          "source_raw": [
+            14,
+            1
+          ],
+          "dest_module": "LFO",
+          "dest_instance": 2,
+          "dest_param": "kParamRate",
+          "amount": 17.86
+        }
+      }
+    },
+    {
+      "track": "Strings 3",
+      "plugin": "Serum 2",
+      "wavetables": {
+        "osc_a": "SYMPHONY2/STRINGS/Cello Long/Cello Long Mid RR1.wav",
+        "osc_b": "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR2.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamFine": 0.244140625,
+          "kParamVolume": 0.5591640904861528
+        },
+        "osc_b": {
+          "kParamEnable": 1.0,
+          "kParamVolume": 0.0
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamDrive": 9.131716191768646,
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.7166597843170166,
+          "kParamReso": 7.041529566049576
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamAttack": 0.024907239014622246,
+          "kParamCurve1": 61.49928569793701,
+          "kParamCurve2": 35.17765998840332,
+          "kParamCurve3": 66.60000085830688,
+          "kParamDecay": 2.5708184650756625,
+          "kParamRelease": 0.053591085768467175,
+          "kParamSustain": 0.7044099569320679
+        },
+        "env_1": {
+          "kParamAttack": 0.0,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 66.60000085830688,
+          "kParamCurve3": 66.60000085830688,
+          "kParamRelease": 0.014700845522658537
+        },
+        "env_2": {
+          "kParamAttack": 0.0005153631860372539,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 66.60000085830688,
+          "kParamCurve3": 66.60000085830688,
+          "kParamRelease": 0.014700845522658537
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "global": {
+        "kParamLimitSameNotePolyphony": 1.0,
+        "kParamMasterVolume": 0.31012746597404806,
+        "kParamModWheel": 13.00390362739563,
+        "kParamS1Compatibility": 1.0
+      },
+      "lfos": {
+        "lfo_0": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Envelope",
+          "kParamRate": 0.1354760904872742
+        },
+        "lfo_1": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Envelope",
+          "kParamRate": 0.6656587371233326
+        },
+        "lfo_2": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free",
+          "kParamRate": 4.0313740939106495,
+          "kParamRise": 2.5553042888641357
+        },
+        "lfo_3": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_4": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_5": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_6": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_7": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_8": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamDotted": 1.0,
+          "kParamMono": 1.0,
+          "kParamRate": 1.550315705227126,
+          "kParamRate10x": 1.0,
+          "kParamTriplets": 1.0,
+          "kParamType": "Lorenz"
+        },
+        "lfo_9": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamDotted": 1.0,
+          "kParamRate": 0.10000069729266844,
+          "kParamRate10x": 1.0,
+          "kParamTriplets": 1.0,
+          "kParamType": "Rossler"
+        }
+      },
+      "mod_matrix": {
+        "slot_0": {
+          "source": "LFO3",
+          "source_raw": [
+            6,
+            0
+          ],
+          "dest_module": "WTOsc",
+          "dest_instance": 0,
+          "dest_param": "kParamTablePos",
+          "amount": -100.0
+        },
+        "slot_1": {
+          "source": "LFO3",
+          "source_raw": [
+            6,
+            0
+          ],
+          "dest_module": "WTOsc",
+          "dest_instance": 1,
+          "dest_param": "kParamTablePos",
+          "amount": -93.17
+        },
+        "slot_2": {
+          "source": "Macro4?",
+          "source_raw": [
+            17,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 1,
+          "dest_param": "kParamVolume",
+          "amount": 74.73
+        },
+        "slot_3": {
+          "source": "Macro4?",
+          "source_raw": [
+            17,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 0,
+          "dest_param": "kParamVolume",
+          "amount": -74.54
+        },
+        "slot_4": {
+          "source": "LFO4",
+          "source_raw": [
+            7,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 3,
+          "dest_param": "kParamVolume",
+          "amount": 61.25
+        },
+        "slot_5": {
+          "source": "ModWheel?",
+          "source_raw": [
+            25,
+            0
+          ],
+          "dest_module": "VoiceFilter",
+          "dest_instance": 0,
+          "dest_param": "kParamFreq",
+          "amount": 28.33
+        },
+        "slot_6": {
+          "source": "ModWheel?",
+          "source_raw": [
+            25,
+            0
+          ],
+          "dest_module": "FXChorus",
+          "dest_instance": 2,
+          "dest_param": "kParamLevelOut",
+          "amount": 9.73
+        },
+        "slot_9": {
+          "source": "KeyTrack?",
+          "source_raw": [
+            28,
+            0
+          ],
+          "dest_module": "FXReverb",
+          "dest_instance": 4,
+          "dest_param": "kParamWet",
+          "amount": 46.56
+        },
+        "slot_10": {
+          "source": "PitchBend?",
+          "source_raw": [
+            26,
+            0
+          ],
+          "dest_module": "LFO",
+          "dest_instance": 0,
+          "dest_param": "kParamRate",
+          "amount": 9.15
+        },
+        "slot_11": {
+          "source": "Macro8?",
+          "source_raw": [
+            21,
+            27
+          ],
+          "dest_module": "LFOPointModBus",
+          "dest_instance": 0,
+          "dest_param": "kParamValue",
+          "amount": 23.27
+        },
+        "slot_12": {
+          "source": "LFO5",
+          "source_raw": [
+            8,
+            1
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 0,
+          "dest_param": "kParamFine",
+          "amount": 25.47
+        },
+        "slot_13": {
+          "source": "LFO5",
+          "source_raw": [
+            8,
+            1
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 1,
+          "dest_param": "kParamFine",
+          "amount": 25.48
+        },
+        "slot_14": {
+          "source": "Macro1?",
+          "source_raw": [
+            14,
+            1
+          ],
+          "dest_module": "LFO",
+          "dest_instance": 2,
+          "dest_param": "kParamRate",
+          "amount": 17.86
+        }
+      }
+    },
+    {
+      "track": "Saw",
+      "plugin": "Serum 2",
+      "wavetables": {
+        "osc_a": "S2 Tables/Default Shapes.wav",
+        "osc_b": "S2 Tables/Default Shapes.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamDetune": 0.30002692407856557,
+          "kParamUnison": 16.0
+        }
+      },
+      "filters": {},
+      "envelopes": {
+        "env_0": {
+          "kParamAttack": 0.00982882279254074,
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001,
+          "kParamRelease": 0.03288930740319907
+        },
+        "env_1": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_2": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "global": {
+        "kParamLegato": 1.0,
+        "kParamMasterVolume": 0.12860444822146985,
+        "kParamMonoToggle": 1.0,
+        "kParamPortaAlways": 1.0,
+        "kParamPortamentoTime": 0.007656708822842953
+      }
+    },
+    {
+      "track": "Chord",
+      "plugin": "Serum 2",
+      "wavetables": {
+        "osc_a": "Analog/Basic Shapes.wav",
+        "osc_b": "S2 Tables/Default Shapes.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamDetune": 0.06533882809201774,
+          "kParamOctave": -1.0,
+          "kParamUnison": 5.0,
+          "kParamVolume": 0.4454719329197019
+        },
+        "osc_b": {
+          "kParamDetune": 0.04771281606314036,
+          "kParamEnable": 1.0,
+          "kParamOctave": -1.0,
+          "kParamUnison": 5.0,
+          "kParamVolume": 0.42752382252173504
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.4635930359363556
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamAttack": 0.23491733809372334,
+          "kParamCurve1": 44.217902421951294,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001,
+          "kParamDecay": 0.4172308385663299,
+          "kParamRelease": 0.05497512187423349,
+          "kParamSustain": 0.6165340542793274
+        },
+        "env_1": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_2": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "global": {
+        "kParamMasterVolume": 0.14196883032536162
+      }
+    }
+  ],
+  "_raw_count": 6
+}

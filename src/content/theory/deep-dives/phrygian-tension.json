@@ -57,19 +57,19 @@
   "listening_cues": [
     {
       "track_id": "mph-raw",
-      "timestamp": "~0:08",
+      "timestamp": "bar 24 (~0:44)",
       "what_to_hear": "The phrygian bass line enters. Focus on the two notes it alternates between. The lower one (E) is home — the one you return to. The upper one (F) is the tension — it lasts for a short moment then releases back. Notice how the short duration of the tension note is what makes it work. It's a lean, not a landing.",
       "technique": "Phrygian b2 tension and release pattern"
     },
     {
       "track_id": "mph-raw",
-      "timestamp": "~0:30",
+      "timestamp": "bar 30 (~0:55)",
       "what_to_hear": "Listen for where the tension note (F) lands rhythmically. It doesn't always land in the same place in each bar — it shifts. Sometimes it's on the offbeat, sometimes slightly earlier. That rhythmic variation is what makes the line feel played rather than programmed, even though it's a very simple two-note motif.",
       "technique": "Rhythmic displacement of the tension note"
     },
     {
       "track_id": "mph-raw",
-      "timestamp": "~1:00",
+      "timestamp": "bar 33 (~1:00)",
       "what_to_hear": "Notice what's NOT there: no chord pads, no harmony, no additional melodic elements. The entire emotional content of the track at this point is carried by the bass line and drums. Try to imagine the same tension with a chord pad playing over it — it would destroy the feeling. The space is the point.",
       "technique": "Harmonic space as compositional choice"
     }

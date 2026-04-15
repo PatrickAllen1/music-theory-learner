@@ -1,0 +1,76 @@
+{
+  "id": "signal-flow",
+  "title": "Signal Flow — How Audio Moves Through a Session",
+  "subtitle": "Every sound in a garage track passes through a chain of effects before reaching the master. Understanding that chain is understanding how tracks are built.",
+  "difficulty": "beginner",
+  "read_time_mins": 9,
+  "track_references": [
+    "kettama-it-gets-better",
+    "mph-raw",
+    "bl3ss-camrinwatsin-kisses",
+    "sammy-virji-cops-and-robbers"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "When you load a Serum patch and press a key, the audio doesn't go straight to your speakers. It passes through a chain: the instrument itself, then any effects on that track, then any effects on the group that track belongs to, then the master chain, then your speakers. Signal flow is the name for this path — and understanding it is one of the most practically useful things you can learn as a producer.\n\nWhy does it matter? Because where you place a plugin changes what it does. A compressor on a single kick compresses only that kick. A compressor on the drum group compresses the entire drum mix together — kick, hats, and percussion all respond to each other's transients. Same plugin, completely different result. Signal flow is the difference between processing sounds and sculpting a mix."
+    },
+    {
+      "id": "the-chain",
+      "heading": "The three-level chain",
+      "body": "In Ableton, every track follows this path:\n\nLevel 1 — Instrument or audio clip: the raw sound. A Serum instance, a sample in Simpler, a recorded audio file.\n\nLevel 2 — Track effects chain: effects placed directly on that individual track. These process only this sound. Common: EQ8 (frequency shaping), Compressor (dynamics), Saturator (harmonic distortion), StereoGain (width control).\n\nLevel 3 — Group bus chain: if the track is inside a group, the group's effects chain processes the combined output of all tracks in that group. The same reverb or compressor sees all of them at once.\n\nLevel 4 — Master: final output. All groups and ungrouped tracks merge here.\n\nThe order within each level also matters: effects process top to bottom. A compressor placed before a reverb compresses the dry signal. A compressor placed after the reverb compresses the reverb tail too — a very different result."
+    },
+    {
+      "id": "mph-drum-bus",
+      "heading": "MPH Raw — the drum bus compressor",
+      "body": "In MPH Raw, the entire Drums group has a GlueCompressor applied — not on any individual drum track, but on the group bus. The settings: Threshold = −14.9 dB, Ratio = 1, Attack = 6 ms, Release = 1 ms, DryWet = 1 (fully wet).\n\nAt Ratio = 1, the compressor isn't actively reducing gain — but it's still engaged and the character of the hardware-modelled circuit subtly saturates and glues the transients. This is the 'glue' use case: you're not crushing the drums, you're binding them together so they feel like they came from the same room.\n\nThe 6ms attack allows kick transients through before compression kicks in — you hear the initial punch of the kick before it gets any glue treatment. The 1ms release is nearly instant — the compressor lets go quickly between hits so each drum feels responsive and punchy. This combination (slow attack, fast release) is the classic drum bus approach: let the transients breathe, control the sustain."
+    },
+    {
+      "id": "kettama-synth-bus",
+      "heading": "Kettama — the synth group bus",
+      "body": "Kettama's entire synth group — which contains bass, rave lead, lead 2, saw, pad, pluck, piano, main pad, drop pad, lead, chord, main chord, main chord 2 — shares a single group bus chain before anything else:\n\nReverb: PreDelay = 35.3 ms, RoomSize = 100%, DecayTime = 4,152 ms (~4 seconds)\nAutoFilter: Cutoff = 135 Hz (high-pass, keeping low end clean)\nKickstart 2: sidechain from the kick\n\nThis means every synth in the track — whether it's the bass, the lead, or the chord pad — passes through the same reverb on the way out. The 4-second decay creates the sense that all these synths exist in the same enormous space, even though each was built individually in Serum.\n\nThis is the power of group bus reverb: you don't need to set up reverb on each individual synth track. Put it on the group, set it once, and every track that routes through the group gets the same room character. If you turn the reverb up or down, it affects all synths together. You're mixing the entire synth section as a single instrument.\n\nThe Kickstart 2 on the group bus means all synths are sidechained by the same kick hit. Every pad, lead, and bass pumps together — they all breathe in unison. This is what creates the cohesive pump of the track rather than having different synths sidechain at different rates."
+    },
+    {
+      "id": "bl3ss-drum-chain",
+      "heading": "BL3SS — stacked drum bus processing",
+      "body": "BL3SS x CamrinWatsin 'Kisses' has one of the more aggressive drum group chains in the source tracks. The entire Drums group runs through four effects in sequence:\n\n1. Overdrive: Drive = 60, DryWet = 5% — a saturation layer that adds harmonic content and edge to the whole drum mix\n2. Overdrive: Drive = 50, DryWet = 1.5625% — a second, lighter saturation pass\n3. DrumBuss: DryWet = 10% — Ableton's DrumBuss at low wet amount; adds subtle transient enhancement and sub harmonics\n4. GlueCompressor: Threshold = −17.5 dB, Ratio = ∞:1, Attack = 4ms, Release = 0ms, DryWet = 50%\n\nThe two Overdrive units at low DryWet values are a common layering technique: small amounts of multiple saturation passes add warmth without any single pass becoming obvious. The GlueCompressor at 50% wet means you hear half dry, half compressed — the drums retain their original punch while the compressed version adds glue. This is parallel compression at the group level, achieved with a single wet knob.\n\nThe result is drums that feel punchy, slightly gritty, compressed but not lifeless — the industrial-soft texture characteristic of UK garage percussion."
+    },
+    {
+      "id": "sammy-virji-instruments-bus",
+      "heading": "Sammy Virji — instruments bus with chorus and reverb",
+      "body": "The Instruments group in Sammy Virji x Skepta 'Cops and Robbers' applies Chorus and Reverb across all instrument tracks — the Saw synth and all three Strings tracks pass through these together:\n\nEQ8 (no active bands — just sitting in the chain for potential use)\nChorus: DelayTime1 = 3ms, DelayTime2 = 7ms, ModAmount = 1.9, ModFreq = 1.01 Hz, DryWet = 25.4%\nReverb: PreDelay = 2.5ms, RoomSize = 100%, DecayTime = 27,793 ms\n\nThe Reverb DecayTime of 27.8 seconds is not a mistake. At this setting, the reverb decays so slowly that it acts more like an ambience field than a traditional room — the tail of each chord becomes a sustained pad underneath the next chord. This is the 'reverb as pad' technique: the reverb itself carries harmonic energy forward across bar lines.\n\nThe Chorus on the group bus means all string layers and saw synths get the same modulation shimmer. Rather than applying different chorus settings to each Serum instance, one setting unifies all of them. The 25% wet level keeps the effect subtle — you hear the width and movement without the sound becoming unstable."
+    },
+    {
+      "id": "routing-decisions",
+      "heading": "The practical question: track-level or group-level?",
+      "body": "When you add an effect, the question is: does this need to apply only to this sound, or to the whole group?\n\nTrack-level: any processing that should differ between tracks. An individual kick might need a high-pass EQ at 30 Hz to remove sub rumble. A pad might need its own Saturator to add harmonics before hitting the group reverb. A bass needs Kickstart 2 to sidechain its volume — but the hat doesn't.\n\nGroup-level: any processing that should unify the group. Reverb on a drum group means all drums feel like they're in the same room. A compressor on the synth group glues all synths to the same dynamic envelope. A Kickstart 2 on the synth group sidechains every synth simultaneously.\n\nThe MPH, Kettama, BL3SS, and Sammy Virji sessions each use this pattern: individual tracks handle their unique character (saturation, EQ), the group bus handles cohesion (reverb, glue compression, sidechain).\n\nCommon beginner mistake: putting a reverb on every individual track separately, with slightly different settings on each. The result sounds diffuse and inconsistent — each sound seems to be in a different room. Group bus reverb solves this: one room, shared by all tracks in the group. That shared space is what makes a section sound like it belongs together."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "bar 56 (~1:36)",
+      "what_to_hear": "At the main drop, 7+ synth tracks enter simultaneously. Listen for how they all sit in the same acoustic space — bass, lead, chord, piano all sound like they're in the same enormous room. That's the group bus reverb (4-second decay) unifying everything. No individual synth has its own distinct room — they all share one.",
+      "technique": "Group bus reverb as acoustic unifier"
+    },
+    {
+      "track_id": "mph-raw",
+      "timestamp": "bar 24 (~0:44)",
+      "what_to_hear": "When the drums and bass are both running, listen to how the kick and hats feel like they're locked together — not just rhythmically, but tonally. That bonding is the GlueCompressor on the drum group bus. The drums respond to each other's peaks even though they're on separate tracks.",
+      "technique": "Drum group bus glue compression"
+    },
+    {
+      "track_id": "bl3ss-camrinwatsin-kisses",
+      "timestamp": "bar 32 (~0:54)",
+      "what_to_hear": "When the full drum pattern locks in (kick + clap + hats all active), listen for the slight grit and warmth in the drum texture — not sharp and clinical, but slightly pushed and alive. That's the dual Overdrive saturation on the drum group bus at low wet amounts. The drums sound analogue even though they're digital samples.",
+      "technique": "Stacked light saturation on drum group bus"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "In a new Ableton session: (1) Create a Drums group with kick, hat, and clap on separate tracks. (2) Add a GlueCompressor to the Drums GROUP (not to individual tracks). Set Threshold to −14 dB, Attack to 6ms, Release to 1ms. (3) Create a Synths group with two Serum tracks playing chords. (4) Add a Reverb to the Synths GROUP with RoomSize 100%, DecayTime 3000ms. (5) Now solo each group and listen to the reverb on the synths — notice how both Serum tracks sit in the same room. (6) Move the Reverb from the group bus to one individual Serum track. Listen to how one synth has reverb and the other doesn't — they no longer sound like they're in the same space.",
+    "answer_hint": "Group bus effects unify everything routing through them. Track-level effects apply only to that track. The experiment in step 6 demonstrates why group bus reverb creates cohesion that individual track reverbs can't replicate: shared acoustic space vs. isolated acoustic spaces.",
+    "linked_rep_id": "rep-09-drum-bus-setup"
+  },
+  "key_takeaway": "Signal flow is: instrument → track effects → group bus → master. Group bus effects — reverb, compression, sidechain — apply to all tracks in the group at once, creating cohesion. Put reverb on the group, not individual tracks, to make a section sound like one instrument."
+}

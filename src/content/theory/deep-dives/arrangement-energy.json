@@ -1,0 +1,77 @@
+{
+  "id": "arrangement-energy",
+  "title": "Arrangement Energy — Three Ways to Open a Track",
+  "subtitle": "Every UK garage track builds from nothing to full energy — but they don't all start from the same place. The opening choice defines everything that follows.",
+  "difficulty": "beginner",
+  "read_time_mins": 10,
+  "track_references": [
+    "kettama-it-gets-better",
+    "mph-raw",
+    "interplanetary-criminal-slow-burner",
+    "bl3ss-camrinwatsin-kisses",
+    "sammy-virji-cops-and-robbers"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Five source tracks. Five different ways to build energy. Each one starts from a different element — one opens with melody, one with rhythm, one with full harmony, one with a single bass line, one with a chord pad. The opening choice isn't arbitrary: it shapes what the listener pays attention to, and what hitting the drop actually means.\n\nThe clearest way to understand energy management is to map exactly what enters and when. Not what the track is 'about', but the specific bar number where each element arrives. Once you see the entry maps side by side, three distinct strategies emerge."
+    },
+    {
+      "id": "kettama-melodic-first",
+      "heading": "Strategy 1 — Melodic first: Kettama",
+      "body": "Kettama 'It Gets Better' at 140 BPM establishes the harmonic identity of the track before any rhythm arrives:\n\n— Bar 16 (~0:27): bass + guitar bass + rave lead melody enter simultaneously. Two bass textures playing the same Bb minor notes at different octaves, plus a lead melody over them. No kick, no clap, no pad.\n— Bar 24 (~0:41): kick + sub bass enter. 8 full bars after the harmonic content. The rhythm arrives after the melody.\n— Bar 36 (~1:01): clap + chord pad enter. The full harmonic picture — Gbmaj7 → Dbmaj → Bbm — is revealed for the first time.\n— Bar 40 (~1:09): saw + pluck added to the build.\n— Bar 56 (~1:36): main drop — 7+ tracks enter simultaneously: main pad, lead, lead 2, chord, main chord, main chord 2, piano, mid bass.\n\nThe principle: by bar 24, you already know the key, the vibe, and the bass movement. The kick confirms the groove rather than introducing it. When the kick drops, it feels like a recognition — 'yes, that's the rhythm I was already hearing in the bass.'\n\nThe longest pre-drum section of any of the 5 tracks: 8 bars of pure melody before any rhythm. Kettama is completely confident that the melody alone is interesting enough to hold attention. It is."
+    },
+    {
+      "id": "mph-rhythmic-first",
+      "heading": "Strategy 2 — Rhythmic first: MPH",
+      "body": "MPH Raw at 132 BPM does the opposite. The rhythm frames the space before the melody arrives to fill it:\n\n— Bar 4 (~0:07): kick + clap enter. The very first musical event is rhythmic.\n— Bar 8 (~0:15): drone synth (a single E3 note held) + Clock Time Loop audio. A tonal drone under the drums, no melody yet.\n— Bar 16 (~0:29): groove loop + shaker groove + snare roll added. The full rhythmic texture is established.\n— Bar 24 (~0:44): bass enters with the E2/F2 phrygian movement. Only now does the harmonic identity of the track appear.\n— Bar 30 (~0:55): Reese Basic + Reese enter — two more phrygian bass layers adding depth and weight.\n\nThe principle: the drums create a groove that makes you want to hear something melodic. The absence of a bass line for 20 bars makes the bass entry feel like a reward — you've been waiting for the harmonic centre to arrive. When the E/F movement enters at bar 24, it fills a space the kick has already defined.\n\nCompare: Kettama listeners already know the melody when the kick arrives. MPH listeners already know the groove when the bass arrives. Both approaches create anticipation; the direction of the anticipation is opposite."
+    },
+    {
+      "id": "ic-harmonic-first",
+      "heading": "Strategy 3 — Harmonic first: IC + Sammy Virji",
+      "body": "Interplanetary Criminal 'Slow Burner' at 136 BPM delivers full harmonic context before either kick or bass:\n\n— Bar 10 (~0:18): 90s Piano, Organ, Clap, Open Hat, and Perc Akcent all enter simultaneously. The harmonic content (Am/C/Em notes in the piano and organ) and the light drum texture arrive as one unit.\n— Bar 13 (~0:23): Crash Delayed adds. Crash punctuation already marking section boundaries before the kick exists.\n— Bar 26 (~0:46): Snare enters — the backbeat that implies there's a kick coming.\n— Bar 30 (~0:53): Kick + Bass both enter on the same bar. The drop is the moment rhythm and low end arrive together.\n\nSammy Virji 'Cops and Robbers' is even more extreme: the chord pad and strings begin at bar 0 — before bar 1. The harmonic content is the very first thing the listener hears, 4 bars before any kick arrives (bar 4, ~0:07).\n\nThe principle: both tracks let the listener settle into the harmonic world completely before the physical impact of kick and bass. When the kick finally arrives at bar 30 (IC) or bar 4 (Sammy Virji), the listener already cares about the music — the rhythm is dropping into an emotional context that already exists.\n\nThis is why 'slow burn' tracks can sustain long chord-only intros without losing the listener. The harmony is compelling enough on its own. The rhythm arrives as the physical delivery of something the listener already wants to move to."
+    },
+    {
+      "id": "bl3ss-bass-first",
+      "heading": "A fourth approach: BL3SS",
+      "body": "BL3SS x CamrinWatsin 'Kisses' at 142 BPM leads with a bass line, but not a melodic one — a harmonic bass that establishes both the rhythm and the key simultaneously:\n\n— Bar 8 (~0:14): organ bass enters (Serum, playing Am7-type notes: A#2, C2, D2, F2, G2). A bass-register harmonic pad — not a kick, not a melody, but a low-end harmonic statement.\n— Bar 16 (~0:27): kick + Open Hat 2 + Snare 2 enter. Drums join 8 bars after the bass.\n— Bar 24 (~0:41): FM Bass enters — a second, brighter bass layer added to the organ bass.\n— Bar 32 (~0:54): clap + Hat + Open Hat 1 + Pluck 1 — the full rhythmic texture locks in.\n— Bar 40 (~1:08): Saws 1 enters — the first sustained synth layer.\n\nThe principle: the organ bass at bar 8 is genuinely harmonic — multiple notes, functioning as a chord — but it's in the bass register, creating a bottom-heavy foundation before any mid or high frequencies appear. The entry is bass-first in a literal sense: all the low end before any highs.\n\nThis creates a weight-first listening experience. By bar 16, the bottom is already full and the drums join a sub-bass world rather than creating the world themselves."
+    },
+    {
+      "id": "what-the-opening-does",
+      "heading": "What the opening strategy determines",
+      "body": "The opening choice — melodic, rhythmic, harmonic, bass — determines what the drop means emotionally.\n\nMelodic-first (Kettama): the drop means 'the rhythm finally confirms what I've been feeling.' Emotional: arrival.\n\nRhythmic-first (MPH): the drop means 'the melody finally answers what the drums have been asking.' Emotional: resolution.\n\nHarmonic-first (IC, Sammy Virji): the drop means 'the physical impact arrives under what I've been emotionally engaged with.' Emotional: power added to meaning.\n\nBass-first (BL3SS): the drop means 'the texture above arrives into the weight I've already felt.' Emotional: expansion.\n\nNone of these is correct. All are deliberate. A fast, urgent track benefits from rhythmic-first — the kick creates urgency before anything else. A lush, emotional track benefits from harmonic-first — the listener falls for the chords before the drums demand movement. A melodic-first track works when the melody alone is strong enough to carry 8+ bars without drums.\n\nWhen you start a track, the first element you place is a choice about what emotion you want the listener to have before the drop hits."
+    },
+    {
+      "id": "bar-count-comparison",
+      "heading": "Entry maps: the numbers",
+      "body": "Direct comparison of when each element first appears, per track:\n\nKettama (140 BPM):\n  Bar 16 (~0:27): bass + lead\n  Bar 24 (~0:41): kick\n  Bar 36 (~1:01): pad + clap\n  Bar 56 (~1:36): main drop\n  Pre-drop lead time: 40 bars\n\nMPH Raw (132 BPM):\n  Bar 4 (~0:07): kick\n  Bar 8 (~0:15): drone\n  Bar 16 (~0:29): full groove\n  Bar 24 (~0:44): bass\n  Pre-drop lead time: 20 bars\n\nInterplanetary Criminal (136 BPM):\n  Bar 10 (~0:18): piano + organ + clap + hat\n  Bar 26 (~0:46): snare\n  Bar 30 (~0:53): kick + bass\n  Pre-drop lead time: 20 bars\n\nBL3SS (142 BPM):\n  Bar 8 (~0:14): organ bass\n  Bar 16 (~0:27): kick + hat\n  Bar 32 (~0:54): full texture\n  Pre-drop lead time: 24 bars\n\nSammy Virji (136 BPM):\n  Bar 0 (~0:00): chord + strings\n  Bar 4 (~0:07): kick\n  Bar 8 (~0:14): saw + more strings\n  Pre-drop lead time: 8 bars\n\nKettama's 40-bar pre-drop is the longest of the five tracks — more than twice MPH's 20. IC packs its full harmonic statement into bars 10–30. Sammy Virji moves fastest: 8 bars from the first sound to the kick."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "bar 16 (~0:27)",
+      "what_to_hear": "The first sound in the track: two bass textures and a lead melody, no kick. You hear the key, the vibe, the character of the track — all from bass alone. Count 8 bars until bar 24 (~0:41) when the kick arrives. Notice that when the kick enters, you feel recognition — the rhythm confirms what the bass implied. This is melodic-first in action.",
+      "technique": "Melodic-first opening — harmony before rhythm"
+    },
+    {
+      "track_id": "mph-raw",
+      "timestamp": "bar 4 (~0:07)",
+      "what_to_hear": "The very first sound: kick. No bass, no melody, just rhythm framing an empty space. Count 20 bars to bar 24 (~0:44) when the bass enters with the E/F phrygian movement. Notice that when the bass arrives, you feel the harmonic answer to the rhythmic question the kick has been asking.",
+      "technique": "Rhythmic-first opening — rhythm before harmony"
+    },
+    {
+      "track_id": "interplanetary-criminal-slow-burner",
+      "timestamp": "bar 10 (~0:18)",
+      "what_to_hear": "Full harmonic content enters — 90s piano and organ, clap and hat — all at once. No kick, no bass yet. The key and chords are fully present. Count to bar 30 (~0:53) when kick and bass arrive simultaneously. Notice that the drop feels like physical weight being added to an emotional experience that already exists.",
+      "technique": "Harmonic-first opening — chords before kick and bass"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Choose one of the three opening strategies and apply it to a 32-bar arrangement sketch in your DAW. (1) Melodic-first: start with bass + lead only (bars 1-8), add kick at bar 9, add pad at bar 17, build to bar 25 as your mini-drop. (2) Rhythmic-first: start with kick only (bars 1-4), add groove loop at bar 5, add bass at bar 9, drop at bar 17. (3) Harmonic-first: start with chord pad (bars 1-8), add snare at bar 9, add kick + bass at bar 13. Compare: what is the listener 'waiting for' in each approach? Write down which strategy you tried and what the drop felt like.",
+    "answer_hint": "In melodic-first, the drop feels like rhythmic arrival into a world you've already heard. In rhythmic-first, the drop feels like melodic resolution of a rhythmic question. In harmonic-first, the drop feels like physical weight added to emotional content. The same 32 bars with the same sounds feel completely different depending on which element arrives first.",
+    "linked_rep_id": "rep-06-mini-track-emin"
+  },
+  "key_takeaway": "Three opening strategies — melodic-first (Kettama), rhythmic-first (MPH), harmonic-first (IC/Sammy Virji) — each make the drop feel different. The first element you place determines what the listener is waiting for and what it means when the drop arrives."
+}

@@ -82,13 +82,13 @@
   "listening_cues": [
     {
       "track_id": "kettama-it-gets-better",
-      "timestamp": "~0:32",
+      "timestamp": "bar 56 (~1:36)",
       "what_to_hear": "Listen for the highest note of the chord pad when the Gbmaj7 enters at the drop. That ringing note above everything else — that's F4, the major 7th. Try to hum it. Now work downward: what pitch do you hear beneath it? That's Db4 (a minor 3rd below). And below that? Bb3. Below that? Gb3. You've reverse-engineered the voicing from the top down.",
       "technique": "Identifying a chord voicing by ear from top to bottom"
     },
     {
       "track_id": "kettama-it-gets-better",
-      "timestamp": "~0:48",
+      "timestamp": "bar 58 (~1:39)",
       "what_to_hear": "When the chord changes from Gbmaj7 to Dbmaj, notice how the top note drops. The F4 (major 7th of Gbmaj7) disappears or moves. The chord feels slightly lower and more settled. That single change in the top voice is how you hear a chord change — the bass moves and the top note shifts.",
       "technique": "Hearing chord changes through top voice movement"
     }

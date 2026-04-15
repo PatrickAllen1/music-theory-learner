@@ -12,6 +12,10 @@ import delay from "./delay.json";
 import compression from "./compression.json";
 import saturation from "./saturation.json";
 import eqStrategy from "./eq-strategy.json";
+import signalFlow from "./signal-flow.json";
+import arrangementEnergy from "./arrangement-energy.json";
+import arrangementTransitions from "./arrangement-transitions.json";
+import arrangementVariation from "./arrangement-variation.json";
 
 export const deepDives = [
   viIIIi,
@@ -28,6 +32,10 @@ export const deepDives = [
   compression,
   saturation,
   eqStrategy,
+  signalFlow,
+  arrangementEnergy,
+  arrangementTransitions,
+  arrangementVariation,
 ];
 
 export const deepDiveById = Object.fromEntries(deepDives.map((d) => [d.id, d]));

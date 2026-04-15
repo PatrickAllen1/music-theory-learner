@@ -1,0 +1,316 @@
+{
+  "slug": "kettama-it-gets-better",
+  "serum_instances": [
+    {
+      "track": "bass",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.2743,
+        "osc_a_uni_voices": 1,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.3202,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "mid bass",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.5,
+        "osc_a_uni_voices": 5,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "sub",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.2743,
+        "osc_a_uni_voices": 1,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "rave lead",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.3915,
+        "osc_a_uni_voices": 3,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "rave lead 2",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.3481,
+        "osc_a_uni_voices": 3,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "saw",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.6259,
+        "osc_a_uni_voices": 1,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "pad",
+      "plugin": "Serum_x64",
+      "wavetables": [],
+      "key_params": {
+        "osc_a_level": 1.0,
+        "osc_a_wtpos": 0.5117,
+        "osc_a_uni_voices": 6,
+        "osc_a_detune": 0.0,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.0
+      }
+    },
+    {
+      "track": "pluck",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.4826,
+        "osc_a_uni_voices": 1,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "main pad",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Analog/SawRounded.wav",
+        "Vowel/OOH_YAH_OO.wav",
+        "Organics/H-Breath.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.4966,
+        "osc_a_uni_voices": 3,
+        "osc_a_detune": 0.5684,
+        "osc_b_level": 0.4957,
+        "osc_b_wtpos": 1.0,
+        "osc_b_uni_voices": 8,
+        "osc_b_detune": 0.5,
+        "flt_cutoff": 0.2,
+        "flt_res": 0.3096,
+        "env1_attack": 0.13,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5083,
+        "env1_release": 0.377
+      }
+    },
+    {
+      "track": "drop pad",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Analog/Basic Mini.wav",
+        "Analog/Acid.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.5377,
+        "osc_a_wtpos": 0.4889,
+        "osc_a_uni_voices": 7,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_cutoff": 1.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "lead",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Analog/BS2 - Filthy.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.4826,
+        "osc_a_uni_voices": 16,
+        "osc_a_detune": 0.5351,
+        "osc_b_level": 0.1579,
+        "osc_b_wtpos": 1.0,
+        "osc_b_uni_voices": 8,
+        "osc_b_detune": 0.5,
+        "flt_cutoff": 1.0,
+        "flt_res": 0.6009,
+        "env1_attack": 0.5833,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.2193,
+        "lfo1_attack": 0.2807
+      }
+    },
+    {
+      "track": "lead 2",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Analog/PWM C64.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.4826,
+        "osc_a_uni_voices": 16,
+        "osc_a_detune": 0.5132,
+        "osc_b_level": 0.0,
+        "flt_cutoff": 1.0,
+        "flt_res": 0.5921,
+        "env1_attack": 0.807,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.8246
+      }
+    },
+    {
+      "track": "chord",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Vowel/ML Addifunk.wav",
+        "Attacks_Kick/XF_KikAtk_55.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.6814,
+        "osc_a_wtpos": 0.4604,
+        "osc_a_uni_voices": 2,
+        "osc_a_detune": 0.6997,
+        "osc_b_level": 0.0,
+        "flt_cutoff": 0.1333,
+        "flt_res": 0.3097,
+        "env1_attack": 0.5014,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.0,
+        "lfo1_attack": 0.7009
+      }
+    },
+    {
+      "track": "main chord",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.6302,
+        "osc_a_uni_voices": 5,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_cutoff": 0.7333,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "main chord 2",
+      "plugin": "Serum_x64",
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.5,
+        "osc_a_uni_voices": 16,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_cutoff": 0.7333,
+        "flt_res": 0.5307,
+        "env1_attack": 0.3421,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    }
+  ],
+  "_raw_count": 15
+}

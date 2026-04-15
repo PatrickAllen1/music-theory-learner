@@ -1,0 +1,189 @@
+{
+  "slug": "bl3ss-camrinwatsin-kisses",
+  "serum_instances": [
+    {
+      "track": "Organ Bass",
+      "plugin": "Serum",
+      "wavetables": [
+        "Analog/Mellow But Instable.wav",
+        "Analog/Basic Shapes.wav",
+        "Analog/OrganNoise.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.2852,
+        "osc_a_uni_voices": 1,
+        "osc_a_detune": 1.0,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.5044,
+        "env1_decay": 0.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.0
+      }
+    },
+    {
+      "track": "FM Bass",
+      "plugin": "Serum",
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Analog/OrganNoise.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.25,
+        "osc_a_uni_voices": 1,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.3553,
+        "osc_b_wtpos": 0.0,
+        "osc_b_uni_voices": 8,
+        "osc_b_detune": 0.5,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 0.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.0
+      }
+    },
+    {
+      "track": "Pluck 1",
+      "plugin": "Serum",
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.6561,
+        "osc_a_wtpos": 0.5,
+        "osc_a_uni_voices": 1,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "Saws 1",
+      "plugin": "Serum",
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Analog/ARP white.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7439,
+        "osc_a_wtpos": 0.6133,
+        "osc_a_uni_voices": 16,
+        "osc_a_detune": 1.0,
+        "osc_b_level": 0.0,
+        "flt_cutoff": 1.0,
+        "flt_res": 0.5219,
+        "env1_attack": 0.2018,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.3246
+      }
+    },
+    {
+      "track": "Saws 2",
+      "plugin": "Serum",
+      "wavetables": [
+        "Analog/ARP white.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.6605,
+        "osc_a_wtpos": 0.4922,
+        "osc_a_uni_voices": 12,
+        "osc_a_detune": 0.6798,
+        "osc_b_level": 0.0,
+        "flt_cutoff": 0.4667,
+        "flt_res": 0.3904,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "Lead",
+      "plugin": "Serum",
+      "wavetables": [
+        "Analog/ARP white.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.5,
+        "osc_a_uni_voices": 7,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.3509
+      }
+    },
+    {
+      "track": "Pad 1",
+      "plugin": "Serum",
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.5039,
+        "osc_a_uni_voices": 16,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_cutoff": 1.0,
+        "flt_res": 0.3421,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "Pad 2",
+      "plugin": "Serum",
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.8184,
+        "osc_a_wtpos": 0.707,
+        "osc_a_uni_voices": 16,
+        "osc_a_detune": 0.75,
+        "osc_b_level": 0.0,
+        "flt_res": 0.5,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    },
+    {
+      "track": "Pad 3",
+      "plugin": "Serum",
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "key_params": {
+        "osc_a_level": 0.7,
+        "osc_a_wtpos": 0.4102,
+        "osc_a_uni_voices": 16,
+        "osc_a_detune": 0.7281,
+        "osc_b_level": 0.0,
+        "flt_cutoff": 1.0,
+        "flt_res": 0.3289,
+        "env1_attack": 0.0,
+        "env1_decay": 1.0,
+        "env1_sustain": 0.5,
+        "env1_release": 0.25
+      }
+    }
+  ],
+  "_raw_count": 9
+}
