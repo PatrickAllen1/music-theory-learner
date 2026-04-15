@@ -22,6 +22,12 @@
     {
       "id": "high-pass",
       "heading": "High-pass filtering \u2014 the first EQ move",
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/EQEightL12.png",
+          "caption": "Click band circle 1 (top-left of EQ Eight). At the bottom, click the filter shape icon that looks like a line rising steeply from the left — that is the high-pass shape. Double-click the Freq knob and type the cutoff frequency (e.g. 150 for a pad, 500 for hats). The curve on the graph updates to show which frequencies are being removed."
+        }
+      ],
       "body": "The high-pass filter (HPF) removes all frequencies below a set point, allowing everything above to pass. On Ableton's EQ Eight, it's the first filter button (labelled 'I' in the lowest position).\n\nEvery element in your mix except kick and bass should have a high-pass filter. The reason: every microphone, synth, and sample captures low-frequency content even when the sound source doesn't generate it \u2014 room rumble, cable noise, low-frequency resonance from other elements bleeding in. None of this low-frequency content sounds like anything useful, but it accumulates in the sub-bass range and makes the mix feel congested and unclear.\n\nHigh-pass filter settings by element:\n- Pad / chord synth: HPF at 120\u2013200Hz. The bass track handles everything below this.\n- Clap / snare: HPF at 200\u2013300Hz. Claps don't need sub information.\n- Hats (closed/open): HPF at 500\u2013800Hz. Hats are high-frequency content only.\n- Bass track: HPF at 30\u201340Hz. Sub-sonic rumble exists even in bass samples and wastes headroom.\n- Drum bus (group): HPF at 40Hz. Removes sub-sonic content from the entire drum group.\n\nHigh-pass filtering everything except kick and bass frees up the low end for the sounds that are actually supposed to occupy it."
     },
     {

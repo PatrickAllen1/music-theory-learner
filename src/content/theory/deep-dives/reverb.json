@@ -4,10 +4,7 @@
   "subtitle": "Reverb turns isolated samples into sounds that exist in a room. Understanding it means knowing when to use it and when silence is better.",
   "difficulty": "beginner",
   "read_time_mins": 8,
-  "track_references": [
-    "kettama-it-gets-better",
-    "bl3ss-camrinwatsin-kisses"
-  ],
+  "track_references": ["kettama-it-gets-better", "bl3ss-camrinwatsin-kisses"],
   "sections": [
     {
       "id": "intro",
@@ -22,6 +19,12 @@
     {
       "id": "pads",
       "heading": "Reverb on pads \u2014 the standard garage approach",
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/ReverbL12.png",
+          "caption": "Set Dry/Wet to 100% when on a return track — control the wetness from the Send A knob on the pad track instead. Set Decay Time to 2s for pads. Set Pre-delay to 20ms so the chord attack arrives before the reverb blooms. Add EQ Eight before this Reverb on the same return track and high-pass at 200Hz to cut reverb mud."
+        }
+      ],
       "body": "UK garage pads always have reverb. The reverb is what gives them the 'breathing', expansive quality that's central to the sound. Without reverb, even a perfectly voiced chord sounds flat and close.\n\nTypical settings on a pad in Ableton's Reverb:\n- Room Size: Large (0.7\u20130.9)\n- Decay: 1.8\u20132.5s\n- Pre-delay: 15\u201325ms\n- Dry/Wet: 30\u201340%\n- Diffusion: high (0.7+)\n- Low Cut (inside Reverb): 200\u2013300Hz \u2014 prevents bass frequencies from blooming in the reverb tail, which would add mud\n\nThe Low Cut inside the reverb is an often-missed detail. Without it, the reverb tail accumulates low-frequency energy from the bass notes in the chord, muddying the low end of the mix. Cutting below 200\u2013300Hz inside the reverb keeps the reverb tail bright and airy while preventing bass buildup.\n\nKettama's pads on 'It Gets Better' use reverb with a medium-long decay and a clear pre-delay. You can hear the onset of each chord arrival cleanly before the space blooms \u2014 that's pre-delay doing its job."
     },
     {

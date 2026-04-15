@@ -4,10 +4,7 @@
   "subtitle": "Saturation adds harmonics to a signal \u2014 it makes sounds warmer, louder-feeling, and more present in a mix without raising volume.",
   "difficulty": "intermediate",
   "read_time_mins": 8,
-  "track_references": [
-    "mph-raw",
-    "bl3ss-camrinwatsin-kisses"
-  ],
+  "track_references": ["mph-raw", "bl3ss-camrinwatsin-kisses"],
   "sections": [
     {
       "id": "intro",
@@ -22,6 +19,12 @@
     {
       "id": "ableton-saturator",
       "heading": "Ableton's Saturator \u2014 the settings that matter",
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/SaturatorL12.png",
+          "caption": "Set Drive to 15% for sub bass or 10% for a pad. Click the mode selector (the shape icons below the waveshaper display) and choose Soft Clip for gentle warmth. Set Dry/Wet to 40% to blend saturation with the dry signal — this keeps the original attack intact while adding harmonics to the body."
+        }
+      ],
       "body": "Ableton's Saturator has a Drive knob, a WaveShaper selector, and a Wet/Dry.\n\nDrive: how hard you're pushing the signal into the saturator. Low drive (2\u20135dB) = subtle warmth, barely noticeable. High drive (15\u201320dB) = obvious distortion, the sound clips hard.\n\nWaveShaper: the type of saturation. The most useful options:\n- Soft Sine: gentle even harmonics, analog warmth. Good on pads, keys, pads.\n- Warm: heavier even harmonics with more body. Good on bass.\n- Medium Curve: balanced. A general-purpose starting point.\n- Hard Clip: aggressive, adds strong odd harmonics. Good on aggressive bass lines or when you want obvious distortion.\n\nColor (high/low): amplifies or cuts the harmonics above or below a set frequency. Usually leave at flat for transparent saturation.\n\nWet/Dry: as with any effect, blend to taste. 100% wet means only the saturated signal. 70% wet keeps some of the original clean signal mixed in \u2014 useful when you want to preserve the attack clarity while adding saturation to the body."
     },
     {
