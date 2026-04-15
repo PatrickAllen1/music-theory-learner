@@ -1,0 +1,31 @@
+{
+  "id": "serum-v2-envelopes",
+  "title": "Serum V2 — Envelopes & Modulation",
+  "category": "Serum V2",
+  "tags": [
+    "serum",
+    "envelope",
+    "attack",
+    "release",
+    "modulation",
+    "LFO",
+    "synthesis"
+  ],
+  "summary": "ENV 1 shapes for the three core garage sounds, plus using ENV 2 and LFOs to create movement.",
+  "steps": [
+    "ENV 1 controls volume shape. Find it in the lower-left of the Serum interface — it's always connected to the master amplitude.",
+    "Sub bass shape: Attack 0ms, Decay 0ms, Sustain 100%, Release 100–150ms. Instant on, clean off. No swell — the note responds immediately to MIDI.",
+    "Chord pad shape: Attack 200–400ms, Decay 0ms, Sustain 100%, Release 500–1000ms. The pad swells in and rings out. This is what makes it sound lush rather than hitting like a stab.",
+    "Stab shape: Attack 0ms, Decay 200–300ms, Sustain 0%, Release 50ms. Hits hard, dies immediately — the sound exists only in the decay.",
+    "To add filter movement with ENV 2: hover over the FILTER CUTOFF knob, then drag the ENV 2 label onto it. A coloured ring appears. Drag the ring to set the modulation depth (positive = filter opens, negative = filter closes on the envelope shape).",
+    "To add a rhythmic filter pulse with LFO 1: hover over FILTER CUTOFF, drag LFO 1 onto it. Set LFO rate to '1/4' (sync on) — the filter pulses every quarter note in time with the track.",
+    "To add subtle pad movement: drag LFO 1 onto WT POS at very low depth (3–5%). The wavetable position drifts slowly, giving the pad an organic, evolving character over time."
+  ],
+  "tips": [
+    "Slow attack = pad sounds like it blooms. Fast attack = stab/pluck. This single parameter changes the category of sound more than any other.",
+    "Release controls how long the pad rings after you release the key. Too short = choppy. Too long = notes blur together. For pads: 500–800ms is the sweet spot.",
+    "The MATRIX tab (top of Serum) shows every modulation connection as a table — use it to see what ENV 2 and LFOs are connected to in any patch.",
+    "Multiple LFOs can modulate multiple destinations simultaneously — LFO 1 on filter, LFO 2 on WT POS, etc."
+  ],
+  "practice_rep_id": "rep-serum-chord-pad"
+}

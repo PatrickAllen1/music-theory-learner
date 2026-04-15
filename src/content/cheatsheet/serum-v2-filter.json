@@ -1,0 +1,32 @@
+{
+  "id": "serum-v2-filter",
+  "title": "Serum V2 — Filter",
+  "category": "Serum V2",
+  "tags": [
+    "serum",
+    "filter",
+    "low pass",
+    "cutoff",
+    "resonance",
+    "MG Low",
+    "synthesis"
+  ],
+  "summary": "Shaping brightness with Serum's filter — which type to use, where to set cutoff and resonance for UK garage sounds.",
+  "steps": [
+    "Enable the FILTER by clicking the power button in the FILTER section header — it's off on Init Preset",
+    "Click the filter type dropdown and choose 'MG Low 24' — this is the standard choice for pads. Smooth, warm, musical.",
+    "Set CUTOFF to ~55–65% of the dial for a pad (roughly 1–2kHz). This removes harsh upper harmonics while keeping presence.",
+    "Set RES (resonance) to 5–15% for pads — just enough to give the filter a gentle character without any squeal. Higher resonance adds a peak at the cutoff frequency.",
+    "For a sub bass: disable the filter entirely (power button off). Sub bass needs no filtering — keep the signal as clean as possible.",
+    "For a stab: set CUTOFF higher (75–85%) so the stab stays bright. Fast attack sounds benefit from an open filter.",
+    "To add filter movement: drag ENV 2 onto the CUTOFF knob. Set ENV 2 attack to match ENV 1, decay 500ms, amount moderate. The filter opens as the note hits and closes as it decays — classic pad movement.",
+    "Try 'Dirty Low' instead of 'MG Low 24' for a bass sound that needs edge — it saturates slightly at the filter stage."
+  ],
+  "tips": [
+    "MG Low 24 = smooth and warm. Dirty Low = gritty. PRO Low (V2) = modern and precise. For pads, start with MG Low 24.",
+    "If the filter is on but nothing seems to be changing, check that CUTOFF isn't at 100% — fully open filter has no effect",
+    "Resonance above 50% starts squealing. Keep it below 20% for pad work unless you want an audible filter character.",
+    "The FILTER has its own ENV routing button (small icon next to the cutoff knob) — click it to quickly assign ENV 2 to cutoff"
+  ],
+  "practice_rep_id": "rep-serum-chord-pad"
+}

@@ -1,0 +1,107 @@
+{
+  "id": "serum-v2-ui",
+  "title": "Serum V2 — The Full Map",
+  "subtitle": "Every section of the synth explained in the context of UK garage sounds before you touch a single parameter",
+  "difficulty": "beginner",
+  "read_time_mins": 15,
+  "track_references": ["kettama-it-gets-better", "mph-raw"],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Serum V2 can feel overwhelming on first open — the interface is dense, there are knobs everywhere, and it's not obvious where to start. But the synth has a clean underlying logic: four stages, always in the same order. Every sound you'll ever build in Serum follows the same path.\n\nThis deep dive walks every section of the interface in that logical order. By the end you'll be able to look at any patch and understand what it's doing — not because you've memorised parameters, but because you understand the signal flow."
+    },
+    {
+      "id": "four-panels",
+      "heading": "The four panels — the whole synth in one sentence",
+      "body": "Serum V2's interface is divided into four functional areas:\n\nOSC (Oscillators) — Make the raw sound. This is where you choose what the synth produces before any shaping.\n\nFILTER — Shape the brightness. A filter removes frequencies. You use it to make sounds brighter, darker, or to create movement.\n\nENV / LFO (Envelopes and LFOs) — Control how the sound moves over time. Attack, decay, sustain, release. Wobbles, sweeps, pulses.\n\nFX — Finish the sound. Chorus, reverb, EQ, delay — the polishing layer applied after everything else.\n\nEvery sound you build in Serum follows this path: OSC → FILTER → ENV/LFO → FX. Signal flows left to right, top to bottom. If something doesn't sound right, you start diagnosing from the left (the source) and work right (toward the output)."
+    },
+    {
+      "id": "osc",
+      "heading": "OSC A and OSC B — the raw material",
+      "body": "The oscillator section has three main oscillators: OSC A, OSC B, and a SUB oscillator. OSC A is your primary sound source. OSC B is a second oscillator you can layer with A for thickness, an octave-shifted version for body, or a different wavetable for harmonic complexity.\n\nFor each oscillator, the key controls are:\n\nWavetable name (click to open the browser): this is the fundamental character of the sound. Basic Shapes contains sine, triangle, sawtooth, and square waves — the four building blocks of synthesis. Analog Brass & Keys, Analog Leads, and similar tables give you more complex starting timbres. For UK garage pads: Basic Shapes or Analog Leads. For sub bass: Basic Shapes (pure sine).\n\nWT POS (wavetable position): moves through the wavetable from one wave shape to the next. On Basic Shapes: far left = pure sine, centre-left = triangle, centre-right = sawtooth, far right = square. Dragging WT POS is how you dial in the brightness of the oscillator before the filter even touches it.\n\nOCT / SEMI / FINE (tuning): OCT transposes in octaves, SEMI in semitones, FINE in cents (100ths of a semitone). For OSC B: detune by +7 cents for subtle warmth, or +12 semitones (1 octave up) for upper harmonic support.\n\nLEVEL: the output volume of this oscillator before it hits the filter. Balance OSC A vs OSC B here.\n\nIn V2, OSC A and OSC B have an additional WARP control — this applies real-time distortion to the wavetable waveform before it reaches the filter. Hard Sync, Bend+, FM: these are advanced timbral shaping tools. For garage sounds: leave WARP at the default (no warp) until you're comfortable with the basics."
+    },
+    {
+      "id": "wavetable",
+      "heading": "The wavetable — what WT POS is actually doing",
+      "body": "A wavetable is a collection of single-cycle waveforms stored in sequence. When you hold a note in Serum, the oscillator loops a single waveform (one cycle of sound) continuously. WT POS determines which waveform in the collection is being looped.\n\nOn Basic Shapes:\n- WT POS 0%: pure sine wave — smooth, round, almost no harmonics. Sounds like a test tone or a sub bass. Warm but thin on its own.\n- WT POS ~25%: triangle wave — slightly brighter than sine, still smooth. A bit more presence.\n- WT POS ~50%: sawtooth wave — bright, rich with harmonics. Buzzy and aggressive. The classic synth bass and lead sound. This is where most pad sounds start before the filter shapes them.\n- WT POS ~75%: square wave — hollow, slightly nasal. The classic video game sound. Less common for garage pads but useful for specific timbres.\n- WT POS 100%: at the end of the table, often another variation or silence depending on the wavetable.\n\nFor Kettama's pad: Basic Shapes at ~20–30% WT POS gives a slightly warm sawtooth — brighter than a triangle, less harsh than full sawtooth. The filter then shapes this into the final character.\n\nFor a sub bass: Basic Shapes at 0% (pure sine). You want no harmonics in the oscillator itself — harmonics are added deliberately later via Saturator."
+    },
+    {
+      "id": "unison",
+      "heading": "UNISON — width, thickness, and detuning",
+      "body": "Unison is Serum's width and thickness control. When UNISON is enabled, Serum plays multiple slightly-detuned copies of the oscillator simultaneously. The Voices parameter sets how many copies; the Detune parameter sets how far apart they are in pitch.\n\nWhat this sounds like: 1 voice = focused, mono, present. 2 voices = slight width, subtle chorus quality. 4 voices = wide, warm, lush — the classic pad width. 8 voices = massive wall-of-sound, almost overwhelming.\n\nThe Detune amount controls the beating between voices. Low detune (2–5 cents): tight, controlled — voices are close together and beat slowly, creating gentle movement. Higher detune (12–20 cents): loose, lush — voices beat more noticeably, creating the chorus-like swirl of a big pad.\n\nFor Kettama's chord pad: 4 voices, 12 cents detune. This is the 'lush garage pad' setting — wide enough to fill the stereo field without sounding scattered.\n\nFor a sub bass: UNISON OFF (1 voice, no detune). Multiple detuned voices on a sub bass create phase cancellation in mono — the bass will disappear on mono systems (phones, club PA check). Sub bass must be mono and focused.\n\nV2-specific UNISON modes:\n- Stack: adds voices in a specific phase/amplitude arrangement for a denser, more controlled stereo spread compared to standard unison.\n- HYPR: the V2 flagship mode — creates a wide, warm ensemble by combining different detuning strategies across the voices. Sounds bigger than standard unison at the same voice count. Kettama-style pads benefit from HYPR at 4 voices."
+    },
+    {
+      "id": "sub-noise",
+      "heading": "SUB oscillator and NOISE",
+      "body": "Below OSC A and OSC B sit two additional sound sources: SUB and NOISE.\n\nSUB oscillator: A dedicated pure sine wave that always plays one octave below OSC A. It adds low-end body without adding harmonics — it's specifically a fundamental-frequency reinforcement tool. Use it on sub bass patches to add extra depth below the main oscillator. For pads: SUB at 0% level or off entirely (you have a separate sub bass track doing this job). For bass patches: enable SUB and set its level to about -6dB relative to OSC A — this adds felt depth without changing the timbre.\n\nNOISE oscillator: Adds a configurable noise signal (white, pink, or filtered variants). Noise adds breath, texture, and air to a patch. For pads: a small amount of noise (level very low, -20dB or lower) adds organic movement that makes the pad feel less digital. For bass: noise is usually off. For stabs or plucky sounds: a short burst of noise (shaped by ENV 1 with fast decay) adds a transient click or breath to the attack."
+    },
+    {
+      "id": "filter",
+      "heading": "FILTER — shaping brightness",
+      "body": "The filter section sits between the oscillators and the output. It removes frequencies — making sounds brighter or darker without changing the fundamental pitch.\n\nThe key controls:\n\nFilter type (dropdown): the character of the filter. The most important types for UK garage:\n- MG Low 24: Moog-style low-pass filter, 24dB slope. Smooth, warm, musical. The standard choice for pads. 'Low 24' means it rolls off frequencies above the cutoff at 24dB per octave — a steep, decisive cut.\n- Dirty Low: adds saturation to the filter — slightly gritty character. Good for bass and for adding edge to pads.\n- PRO Low (V2): a new filter type with a more aggressive, modern character. More precise than MG Low but less 'warm'. Good for harder sounds.\n\nCUTOFF: the frequency at which the filter starts removing harmonics. Lower cutoff = darker sound. Higher cutoff = brighter. For pads: 55–70% of the dial (roughly 1–3kHz range). For sub bass: cutoff high or filter off entirely.\n\nRES (resonance): adds a peak of emphasis at the cutoff frequency. Low resonance (0–10%): barely noticeable, just shapes the curve. Medium (20–40%): audible peak, adds character. High (60%+): the classic 'synth filter sweep' squeal. For pads: keep resonance low (5–15%) — you want the filter shaping, not squeaking.\n\nFilter enable button: make sure the filter is actually on. It's easy to set the cutoff and wonder why nothing is changing because the filter isn't enabled. The FILTER section header has a small power button.\n\nThe FILTER also has a dedicated envelope routing button — click it to assign ENV 2 to the filter cutoff directly. This creates the classic filter envelope effect: the filter opens as the note hits and closes as it decays."
+    },
+    {
+      "id": "envelopes",
+      "heading": "ENV 1 — the amplitude envelope (the most important control in Serum)",
+      "body": "ENV 1 controls the volume shape of the sound over time. It's the primary envelope and is hardwired to the master volume of the patch — you can't disconnect it. The four parameters:\n\nATTACK: how long it takes for the sound to reach full volume after you press a key. 0ms = instant. 300ms = half a second fade-in. 0ms attack = the sound hits immediately (bass, stabs, drums). Slow attack (200–500ms) = the sound swells in gradually (pads, strings, atmospheres). Kettama's pad has a slow attack — you hear it bloom rather than hit.\n\nDECAY: how quickly the sound falls from its peak after the attack. Only audible if SUSTAIN is below 100%. For stabs: fast decay (200ms), low sustain (0%) = the sound hits and immediately fades.\n\nSUSTAIN: the volume level held while the key is held. 100% = the sound stays at full volume. 0% = the sound fades to silence during the decay phase (stab/pluck behaviour). For pads: sustain at 80–100%.\n\nRELEASE: how long the sound takes to fade to silence after you release the key. Short release (50–100ms) = sound stops quickly when key is released (tight bass). Long release (500–2000ms) = sound rings out after key release (pads, legato).\n\nThe three fundamental UK garage sound shapes:\n- Sub bass: Attack 0ms, Decay 0ms, Sustain 100%, Release 100–150ms. Instant on, instant off.\n- Chord pad: Attack 200–400ms, Decay 0ms, Sustain 100%, Release 500–1000ms. Swell in, hold, ring out.\n- Stab: Attack 0ms, Decay 300ms, Sustain 0%, Release 50ms. Hit hard, die immediately."
+    },
+    {
+      "id": "env2-lfo",
+      "heading": "ENV 2 and LFOs — modulation: making things move",
+      "body": "Below ENV 1 are ENV 2 and four LFOs. These are modulation sources — they don't make sound directly, they move other parameters over time.\n\nTo use a modulator: hover over the knob you want to modulate, then drag the ENV 2 or LFO header onto it. A small coloured ring appears around the knob showing the modulation amount. Drag the ring to set the depth of modulation.\n\nENV 2: a second envelope, identical in shape to ENV 1 but not connected to volume. You assign it to any knob you want to shape with an envelope — most commonly the filter cutoff (filter opens on attack, closes on decay) or pitch (pitch envelope for punchy bass attack).\n\nCommon ENV 2 uses:\n- ENV 2 → FILTER CUTOFF: the filter opens as the note hits, then closes. Classic pad movement. Set ENV 2 attack to match ENV 1 attack. Set decay to 500–1000ms. Amount: positive = filter opens, negative = filter closes.\n- ENV 2 → PITCH: the pitch spikes slightly at the attack then returns to normal. Used for punchy bass or plucky leads.\n\nLFOs: oscillators that run at audio-below rates (they're too slow to be heard as pitch — they create movement instead). The LFO rate controls speed; the shape (sine, square, triangle, random) controls the motion character.\n\nCommon LFO uses:\n- LFO → FILTER CUTOFF: creates a rhythmic filter pulse. Sync the LFO rate to 1/4 or 1/8 note for a pulse that locks to the tempo.\n- LFO → WT POS: slowly moves through the wavetable over time, creating evolving timbre — a pad that subtly changes character over 4–8 bars.\n- LFO → VOLUME (or AMP): creates tremolo — a volume wobble. Subtle (depth 5–10%) adds organic movement to a pad. Strong tremolo is a stylistic effect."
+    },
+    {
+      "id": "fx",
+      "heading": "FX tab — the finishing layer",
+      "body": "The FX tab contains Serum's built-in effects processors. Signal flows left to right through however many are enabled. In V2 the slots are:\n\nDISTORT: waveshaper distortion. Different from the wavetable distortion — this is post-filter. Use for adding grit to a bass or crunch to a stab.\n\nHYPR: Serum V2's ensemble chorus — a dense, rich stereo widening effect. Different from standard CHORUS. Sounds like multiple voices playing together. For pads: HYPR at low mix (20–35%) adds width without the obvious chorus flutter.\n\nDIMENSION: a subtler stereo widening effect, simulating a spacious room without adding the pitch-shifting quality of chorus. Good for slightly widening a sound without any obvious modulation character.\n\nCHORUS: standard chorus — pitch-shifts copies slightly and layers them. For pads: CHORUS after HYPR is redundant — pick one. CHORUS alone at low rate (0.3–0.5Hz), moderate depth (25–40%), moderate mix (30–50%) gives the classic detuned pad shimmer.\n\nFLANGER / PHASER: more extreme modulation effects. Comb filtering, sweeping metallic quality. Not common for UK garage pads — more for sound design and effects transitions.\n\nDELAY: a built-in delay, useful for adding rhythmic echo within the patch before it hits Ableton's chain.\n\nREVERB: Serum's internal reverb. For production: use Ableton's reverb on a return track instead — the internal Serum reverb commits the effect to the patch and can't be adjusted in the mix. Only use Serum's internal reverb for sound design exploration.\n\nEQ: a simple high/low shelf and peak EQ. Useful for removing unwanted frequencies from the oscillators before the sound hits Ableton.\n\nFILTER (in FX): a second filter stage, post-everything else. Good for cutting specific resonances after distortion or chorus.\n\nFor the Kettama pad specifically: HYPR (or CHORUS) → REVERB (for sound design only — in production use a return track instead) → EQ (high-pass at 100Hz to remove sub rumble from the pad oscillators)."
+    },
+    {
+      "id": "matrix",
+      "heading": "MATRIX tab — understanding what's connected",
+      "body": "The MATRIX tab shows every modulation connection in the current patch as a table: source (ENV 2, LFO 1, etc.), destination (FILTER CUTOFF, WT POS, etc.), and amount.\n\nYou don't use the MATRIX to create connections — you drag modulators onto knobs in the main interface to do that. But the MATRIX is invaluable for:\n\n1. Understanding someone else's patch: load a preset and open MATRIX to see exactly what's modulating what. This is how you reverse-engineer a sound.\n2. Editing modulation depth precisely: the MATRIX shows exact numerical values for each modulation amount. You can fine-tune here more precisely than dragging the ring on a knob.\n3. Deleting modulation connections: click the X next to any row to remove that connection.\n\nFor beginners: don't worry about the MATRIX until your patches have more than 2–3 modulation connections. Use it as a diagnostic tool — if a patch is behaving unexpectedly, check the MATRIX to see what's moving what."
+    },
+    {
+      "id": "v2-vs-v1",
+      "heading": "V2 vs V1 — what actually changed",
+      "body": "If you've used Serum V1, the architecture is identical. The same signal flow, same routing, same basic approach. V2 changes are primarily:\n\nLarger wavetable display: the WT POS visualization is bigger and more interactive in V2. You can drag the display itself to move through the wavetable, not just the knob.\n\nMore FX slots and the HYPR engine: V2 adds the HYPR effect (not in V1) and more total FX slots. HYPR is genuinely useful for pads — it's one of the main sonic upgrades.\n\nNew filter types: the PRO series filters (PRO Low, PRO High, etc.) are V2 additions. More aggressive and characterful than the V1 filters. MG Low still exists and behaves identically to V1.\n\nNew unison modes: HYPR unison mode and STACK are V2 additions. Standard unison behaves identically to V1.\n\nImproved UI scaling: V2 scales cleanly at different screen sizes. V1 had scaling issues.\n\nConclusion: if you learn V2, you understand V1. The additions are refinements and additions, not replacements. Any V1 preset will open in V2 and sound identical."
+    }
+  ],
+  "midi_examples": [
+    {
+      "label": "Sub bass note (E1)",
+      "notes": ["E1"],
+      "context": "Sub bass lives in the E1–B1 range. One note at a time, held for 2 beats. No unison, no filter, ENV 1 instant attack."
+    },
+    {
+      "label": "Chord pad — Gbmaj7",
+      "notes": ["Gb3", "Bb3", "Db4", "F4"],
+      "context": "Four notes held for 2 bars. Slow attack (300ms), long release (800ms). ENV 1 shapes the swell."
+    },
+    {
+      "label": "Stab — single note hit",
+      "notes": ["Gb3"],
+      "context": "Single note, velocity 100. ENV 1: attack 0ms, decay 200ms, sustain 0%, release 50ms. The note decays immediately."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:32",
+      "what_to_hear": "When the pad enters at the drop, listen to the attack. It doesn't hit immediately — there's a short swell (200–300ms) before it reaches full volume. That's ENV 1's attack time in action. Now listen to what happens between the notes: the pad doesn't cut off sharply, it fades (that's the release). The sidechain pumping is separate — it's modulating the volume of an already-held note.",
+      "technique": "ENV 1 attack and release shaping the pad sound"
+    },
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "~0:20",
+      "what_to_hear": "In the intro (drums only), notice what's absent: no pad, no wide stereo content, no lush reverb. When the pad enters at the drop, the UNISON voices and reverb suddenly fill the stereo field. That contrast — mono drums vs wide pad — is partly the UNISON (4 voices, 12 cents) creating stereo width that wasn't there before.",
+      "technique": "UNISON creating stereo width at the drop"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Open Serum V2. Right-click the preset name at the top and select 'Init Preset'. You now have a basic default patch.\n\nStep 1: Hold a single note (C4). Listen to what the Init Preset sounds like — a bright, static sawtooth.\n\nStep 2: On OSC A, slowly drag WT POS from 0% to 100% while holding the note. Listen to the character change from smooth (sine, left) through buzzy (sawtooth, centre-right) to hollow (square, right).\n\nStep 3: Return WT POS to ~25% (slightly warm sawtooth).\n\nStep 4: Enable the FILTER. Set type to MG Low 24. Set CUTOFF to 50%. Hear the brightness reduce.\n\nStep 5: Change ENV 1: set Attack to 300ms. Hold a note — hear the swell instead of instant hit.\n\nStep 6: Enable UNISON. Set to 4 voices, 12 cents detune. Hear the pad widen.\n\nStep 7: In the FX tab, enable HYPR at 25% mix. The pad gets wider and richer.\n\nYou've just set up the skeleton of a UK garage pad.",
+    "answer_hint": "After these steps: OSC A on Basic Shapes ~25% WT POS, MG Low 24 filter at 50% cutoff, ENV 1 attack 300ms sustain 100% release 500ms, UNISON 4 voices 12 cents, FX HYPR 25% mix. This is the starting point for the Kettama chord pad. The rep will take you the rest of the way.",
+    "linked_rep_id": "rep-serum-chord-pad"
+  },
+  "key_takeaway": "Serum is four things in order: OSC (make sound) → FILTER (shape brightness) → ENV/LFO (control movement over time) → FX (finish it). Every sound you build follows this path."
+}

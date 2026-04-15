@@ -1,0 +1,23 @@
+{
+  "id": "serum-v2-oscillators",
+  "title": "Serum V2 — Oscillators",
+  "category": "Serum V2",
+  "tags": ["serum", "oscillator", "wavetable", "unison", "osc", "synthesis"],
+  "summary": "Setting up OSC A and unison for the three core UK garage sounds: sub bass, chord pad, and stab.",
+  "steps": [
+    "Right-click the preset name → Init Preset to start from scratch every time",
+    "Click the wavetable name on OSC A to open the browser — choose 'Basic Shapes' for all three UK garage sound types",
+    "For a chord pad: drag WT POS to ~20–30% (warm sawtooth territory, just past the triangle). Enable UNISON, set to 4 voices, Detune 12 cents. In V2 try HYPR mode instead of standard unison for a richer width.",
+    "For a sub bass: drag WT POS fully left (0%) — pure sine wave. Set UNISON to OFF (1 voice, no detune). Turn OSC B off. Sub must be mono — multiple detuned voices cause phase cancellation.",
+    "For a stab: WT POS ~50% (full sawtooth — bright and immediate). UNISON 2 voices, 5–8 cents — tight, not wide. The stab should feel sharp and present, not lush.",
+    "OSC B: for extra pad thickness, enable OSC B with the same wavetable at +7 cents FINE tuning. Keep its level lower than OSC A (around -6dB). Do not use OSC B on sub bass.",
+    "SUB oscillator: on a sub bass patch, enable the SUB at -6dB below OSC A level. It reinforces the fundamental one octave below without adding harmonics."
+  ],
+  "tips": [
+    "WT POS 0% = sine (smooth, no harmonics), ~50% = sawtooth (bright, rich), ~75% = square (hollow). Drag slowly and listen.",
+    "HYPR unison mode (V2) sounds bigger than standard unison at the same voice count — try it first for pads",
+    "Unison on sub bass = silence on mono systems. Always turn unison off on anything below 200Hz.",
+    "If OSC B is enabled but you can't hear it, check its level knob — it defaults to lower than OSC A"
+  ],
+  "practice_rep_id": "rep-serum-chord-pad"
+}
