@@ -2,9 +2,11 @@
 
 > **For Claude:** REQUIRED SUB-SKILL: Use superpowers:executing-plans to implement this plan task-by-task.
 
-**Goal:** Deepen the learning content, add a daily practice system with progress tracking, and finish all 25 guided builds. Phase 2 turns the scaffold into a real learning tool.
+**Goal:** Deepen the learning content, add a daily practice system with progress tracking, finish all 25 guided builds, and teach Serum V2 from zero to functional. Phase 2 turns the scaffold into a real learning tool.
 
 **What Phase 1 delivered:** App shell, 5 track breakdowns, 3 beginner reps + 1 Kettama spinoff, Theory reference (4 scales, 6 chords, 6 rhythms), Ableton cheatsheet (3 entries), Builder UI. Deployed at music-theory-learner.pages.dev.
+
+**Serum V2 target:** By end of Phase 2, the user can open Serum V2, navigate the UI confidently, build a sub bass from scratch, build a pad from scratch, build a Reese bass, and understand what every section of the synth does in the context of UK garage sounds. All Serum content is anchored to sounds in the 5 source tracks — no abstract synthesis theory.
 
 ---
 
@@ -516,16 +518,184 @@ Add `CLOUDFLARE_API_TOKEN` as a GitHub repository secret (not Cloudflare env var
 
 ---
 
-## Task Order (recommended)
+## Phase 2E: Serum V2 Learning Track
 
-1. Task 11 — Theory Deep Dives Part 1 (highest learning value, fast)
-2. Task 12 — Theory Deep Dives Part 2
-3. Task 17 — Progress tracking (makes the builds feel purposeful)
-4. Task 18 — Daily practice (depends on progress tracking)
-5. Task 13 — Beginner reps 4–7 (content)
-6. Task 14 — Intermediate reps 8–14 (content)
-7. Task 15 — Spinoffs 2–4 (content)
-8. Task 19 — Cheatsheet expansion (quick wins)
-9. Task 20 — Drum rack downloads (requires Python script run)
-10. Task 16 — Full spinoffs + originals (most work, highest payoff)
-11. Task 21 — CI fix (housekeeping)
+**User context:** Has Serum V1 and V2. Uses V2. Has never built a sound from scratch — only used presets. Goal: confident patch building for UK garage by end of Phase 2. All V2 UI terminology used throughout.
+
+### Task 22: Serum V2 — UI orientation deep dive + cheatsheet
+
+**Goal:** The user understands every section of Serum V2's interface before touching a parameter. Anchored to sounds they've already heard in the source tracks.
+
+**Files:**
+- Create: `src/content/theory/deep-dives/serum-v2-ui.json`
+- Create: `src/content/cheatsheet/serum-v2-oscillators.json`
+- Create: `src/content/cheatsheet/serum-v2-filter.json`
+- Create: `src/content/cheatsheet/serum-v2-envelopes.json`
+
+**Deep dive — `serum-v2-ui.json`:**
+
+Sections:
+1. **The four panels** — OSC (make sound), FILTER (shape it), ENV/LFO (move it over time), FX (finish it). Everything in Serum lives in one of these four areas.
+2. **OSC A and OSC B** — Each oscillator has: a wavetable (the raw shape of the sound), WT POS (which point in the wavetable), OCT/SEMI/FINE (tuning), UNISON (how many copies, and how detuned). V2 difference from V1: the wavetable display is larger and interactive — you can drag the WT POS knob while watching the waveform change in real time.
+3. **The wavetable** — A wavetable is a collection of single-cycle waveforms. WT POS moves through them. Basic Shapes goes from sine (smooth, pure) → triangle → sawtooth (bright, buzzy) → square (hollow). The position you pick determines the starting character of the sound.
+4. **UNISON** — Sets how many copies of OSC A play simultaneously, slightly detuned from each other. 1 voice = mono, focused. 4 voices at 12 cents = wide, warm pad. 8 voices at 20 cents = huge wall-of-sound. Detune creates the chorus effect — copies beating against each other. In V2 the unison modes include HYPR (stacks and fattens in a specific way) and STACK.
+5. **SUB oscillator** — A separate pure sine wave one octave below OSC A. Only adds fundamental frequency — no harmonics. Great for reinforcing the very bottom of a sub bass without adding brightness.
+6. **NOISE oscillator** — Adds a noise layer (white, pink, etc.) to the patch. Used sparingly for breath and texture on pads.
+7. **FILTER** — The filter removes frequencies. Low Pass (LP) = cuts highs, lets lows through. High Pass (HP) = cuts lows. The cutoff knob is the frequency at which cutting starts. Resonance adds a peak at the cutoff — too much = squeaky. For pads: LP at 60–70% cutoff. For bass: LP fully open or off. V2 filter types: MG Low (Moog-style, smooth), Dirty (adds grit), the new PRO filters (more aggressive). Use MG Low for pads.
+8. **ENV 1 (Amplitude envelope)** — Controls the volume shape over time. Attack = how long it takes to reach full volume from silence. Decay = how quickly it falls after the peak. Sustain = level it holds while the key is held. Release = how long it takes to go silent after the key is released. Pad: slow attack (200–400ms), high sustain, long release. Bass: zero attack, high sustain, short release. Stab: zero attack, short decay, zero sustain, short release.
+9. **ENV 2 and LFOs** — Additional modulators. Drag ENV 2 or an LFO onto any knob to create movement. LFO on filter cutoff = filter sweep. ENV 2 on pitch = pitch envelope (punchy bass attack). Rate and shape determine how fast and what shape the movement takes.
+10. **FX tab** — Processing after the oscillators. In V2: DISTORT, HYPR (ensemble chorus), DIMENSION (subtle stereo width), CHORUS, FLANGER, PHASER, COMPRESSOR, DELAY, REVERB, EQ, FILTER (second filter). For pads: CHORUS + REVERB. For bass: nothing, or just COMPRESSOR. Order matters — signal flows left to right.
+11. **MATRIX tab** — V2's modulation matrix. Shows every modulator → destination connection. Useful for seeing what's connected to what when a patch gets complex.
+12. **V2 vs V1 key differences** — Larger wavetable display. More FX slots. HYPR mode in UNISON and FX. New filter types. Better UI scaling. Matrix view more readable. The fundamental architecture is identical — if you learn V2 you understand V1.
+
+MIDI examples: show example MIDI notes for each sound type discussed (pad chord, sub bass note, stab note).
+
+Practice exercise: "Open Serum V2. Go to Init Preset. On OSC A, slowly drag WT POS from 0 to 100% while holding a single note. Describe in one sentence what you hear changing at the beginning, middle, and end of the sweep."
+
+Key takeaway: "Serum is four things: make a sound (OSC), shape its brightness (FILTER), control how it moves over time (ENV/LFO), and finish it (FX). Every sound you'll ever build is those four steps in that order."
+
+**Cheatsheet — `serum-v2-oscillators.json`:** Quick reference for wavetable navigation, WT POS, unison settings for common UK garage sounds. Steps: set up pad OSC, set up sub bass OSC, set up stab OSC. Tags: serum, oscillator, wavetable, unison.
+
+**Cheatsheet — `serum-v2-filter.json`:** Filter types and when to use each. Steps: add LP filter for pad, set cutoff + resonance, hear the difference between MG Low and Dirty. Tags: serum, filter, low pass, cutoff, resonance.
+
+**Cheatsheet — `serum-v2-envelopes.json`:** ENV 1 shapes for common sounds. Steps: set pad envelope, set bass envelope, set stab envelope, drag ENV 2 onto filter cutoff. Tags: serum, envelope, attack, release, modulation.
+
+**Step: Commit**
+```bash
+git commit -m "feat: Serum V2 UI deep dive + oscillator/filter/envelope cheatsheets"
+```
+
+---
+
+### Task 23: Serum V2 — Build a sub bass (garage-specific)
+
+**Goal:** A dedicated guided build rep that walks through building a clean, punchy sub bass in Serum V2 from Init Preset. No presets. Every step explained.
+
+**File:** `src/content/guided-builds/reps/rep-serum-sub-bass.json`
+
+**Build details:**
+- ID: `rep-serum-sub-bass`
+- Title: "Sub Bass in Serum V2"
+- Build type: rep
+- Difficulty: beginner
+- BPM: 136
+- Key: E minor
+- Estimated time: 20 mins
+- Source: MPH Raw (sub bass reference)
+
+**Steps (~10):**
+
+1. Open Serum V2. Load Init Preset (right-click preset name → Init Preset). You start with a basic saw wave — you'll replace everything.
+2. OSC A: click the wavetable name, select Basic Shapes. Drag WT POS all the way left — pure sine wave. This is your entire sub bass tone. No OSC B, no noise, no sub OSC needed yet.
+3. UNISON: set to 1 voice. Subs must be mono — multiple detuned voices create phase cancellation in the low end that destroys the sub on mono systems.
+4. FILTER: disable it entirely (click the FILTER power button off). A filter on a sub bass adds unnecessary processing. The sub should be as pure as possible.
+5. ENV 1: Attack 0ms. Decay 0. Sustain 100%. Release 150ms. The sub should respond instantly and release cleanly. Slow attack on a sub = the note feels late; it misses the kick transient.
+6. Sub OSC: enable it. Set to Sine. Set level to -6dB below OSC A. The Sub OSC adds the fundamental one octave below — you feel it more than hear it. Compare with and without.
+7. FX tab: turn everything OFF. No chorus, no reverb, no distortion. Any FX on a sub introduces phase and harmonics that cloud the low end.
+8. Program a simple bass line: Gb1 → Db1 → Bb1 (the Kettama root movement, transposed to start on Gb). Hold each note for ~2 beats. Listen to how the pitch movement implies chord changes.
+9. Add a Utility device in Ableton after Serum: set Width to 0% (mono). Check in a DAW meter that the sub is centered. A wide sub will disappear in mono.
+10. Compare your sub against the sub in a reference track (Kettama or IC Slow Burner) at the same volume. Is yours as clean? As punchy? Adjust ENV 1 release if it sounds muddy between notes.
+
+**Step: Commit**
+```bash
+git commit -m "feat: rep — sub bass in Serum V2 from scratch"
+```
+
+---
+
+### Task 24: Serum V2 — Build a chord pad (garage-specific)
+
+**Goal:** Walk through building the lush Kettama-style pad in Serum V2 from Init Preset. Teaches the full oscillator → filter → envelope → FX chain.
+
+**File:** `src/content/guided-builds/reps/rep-serum-chord-pad.json`
+
+**Build details:**
+- ID: `rep-serum-chord-pad`
+- Title: "Chord Pad in Serum V2"
+- Difficulty: beginner
+- BPM: 140, Key: Bb minor
+- Source: Kettama — It Gets Better
+
+**Steps (~12):**
+
+1. Init Preset in Serum V2.
+2. OSC A: Basic Shapes, WT POS ~25% (soft, slightly rounded — not pure sine, not full saw). This is the tonal foundation.
+3. OSC B: enable. Same wavetable and WT position as OSC A. Tune fine to +7 cents (FINE knob, drag up 7). Lower its volume by 3dB. This creates the beating/chorus effect between A and B — two oscillators slightly out of tune with each other.
+4. UNISON on OSC A: 4 voices, detune 12 cents, blend 50%. Now you have OSC A with 4 detuned copies + OSC B slightly above them — 5 slightly different versions of the same waveform. This width is the warmth.
+5. FILTER: enable, select MG Low 24. Cutoff ~60% (about 10 o'clock). Resonance 8%. The filter rounds off the bright upper harmonics, making the sound warm rather than harsh.
+6. ENV 1: Attack 300ms (slow — the pad fades in). Decay 0. Sustain 100%. Release 1500ms (long — chords overlap slightly as they change).
+7. LFO 1: shape Sine, Rate 0.25 Hz (one cycle every 4 seconds). Drag LFO 1 onto the Filter Cutoff knob — a mod dot appears. Set the modulation amount to 5%. The filter now breathes very gently in and out. This is the living quality.
+8. FX tab: Enable CHORUS (click the power dot). Rate 0.40, Depth 25%, Mix 40%. Enable REVERB: Size 0.75, Decay 0.65, Pre-delay 15ms, Mix 30%. Enable EQ: high-pass at 120Hz (pads don't need anything below that — the sub bass handles it).
+9. V2 note: In V2 the HYPR mode in FX is a more complex ensemble effect. Try it at 30% mix as an alternative to standard CHORUS — it adds a more organic, slightly vintage width.
+10. Program a Gbmaj7 chord: Gb3, Bb3, Db4, F4. Hold for 4 bars and listen. Does it feel dreamy and warm? The F4 on top is the major 7th — the note that makes it shimmer.
+11. Add a Saturator in Ableton after Serum: Drive 12%, Soft Clip mode, Dry/Wet 30%. This adds analogue warmth — the sound feels less digital.
+12. Compare against the Kettama reference: solo your pad against the original. Notice the similarities and differences. Adjust the FILTER cutoff or REVERB mix until yours feels similarly deep.
+
+**Step: Commit**
+```bash
+git commit -m "feat: rep — chord pad in Serum V2 from scratch"
+```
+
+---
+
+### Task 25: Serum V2 — Reese bass, chord stabs, and layering
+
+**Goal:** Teach the three remaining Serum sounds used in the source tracks: Reese bass (detuned saws), chord stabs (Sammy Virji style), and how to layer two Serum patches together.
+
+**Files:**
+- `src/content/guided-builds/reps/rep-serum-reese-bass.json`
+- `src/content/guided-builds/reps/rep-serum-stab.json`
+- `src/content/theory/deep-dives/serum-layering.json`
+
+**Reese bass build (~8 steps):**
+1. Init Preset.
+2. OSC A: Basic Shapes, WT POS all the way right (sawtooth). This is the core of a Reese — raw, harmonically rich.
+3. OSC B: enable. Same saw wavetable. Tune FINE to -14 cents (slightly flat). The beating between A and B is the Reese sound.
+4. UNISON on both: 2 voices, detune 8 cents. Keep it controlled — too much unison makes the Reese lose its focus.
+5. FILTER: MG Low 24. Cutoff ~40% (darker than the pad). Resonance 15% (a bit of peak adds the growl).
+6. ENV 2: drag onto Filter Cutoff. Attack 0, Decay 200ms, Sustain 0%, amount +20%. Now the filter opens briefly when each note plays then closes — the "wah" envelope. This is what gives the Reese its movement.
+7. ENV 1: Attack 10ms (slightly soft), Sustain 100%, Release 300ms.
+8. Program G1 → D1 → B1 (a minor root movement). Listen for the growl and movement. Adjust ENV 2 Decay between 100ms and 400ms to hear how it changes the character.
+
+**Chord stab build (~8 steps):** Based on Sammy Virji's major chord stabs (G#maj → Emaj → Bmaj). Init Preset → OSC A sawtooth → FILTER HP at 300Hz (cuts the low end — stabs live in the mid) → ENV 1 Attack 0, Decay 400ms, Sustain 0% (stab shape: hits and fades) → FX Distort lightly → program G#3+C4+D#4 (G# major chord voicing).
+
+**Layering deep dive — `serum-layering.json`:** Why you layer two Serum instances (one for the body of a sound, one for the attack/texture). How to use Ableton's Instrument Rack to layer two Serum patches on one MIDI track. How to balance them with volume and frequency — high-pass one, low-pass the other. Example: layer the sub bass (pure sine) with a mid-bass texture patch (light saw with HP at 200Hz) for a bass with both weight and character.
+
+**Step: Commit**
+```bash
+git commit -m "feat: reps — Reese bass, chord stabs, layering deep dive in Serum V2"
+```
+
+---
+
+## Updated Task Order (with Serum track)
+
+1. Task 11 — Theory Deep Dives Part 1
+2. **Task 22 — Serum V2 UI orientation** ← do this early so all future builds make sense
+3. **Task 23 — Serum sub bass** ← first practical Serum skill
+4. **Task 24 — Serum chord pad** ← second practical Serum skill
+5. Task 12 — Theory Deep Dives Part 2
+6. Task 17 — Progress tracking
+7. Task 18 — Daily practice
+8. Task 13 — Beginner reps 4–7
+9. **Task 25 — Serum Reese + stabs + layering**
+10. Task 14 — Intermediate reps 8–14
+11. Task 15 — Spinoffs 2–4
+12. Task 19 — Cheatsheet expansion
+13. Task 20 — Drum rack downloads
+14. Task 16 — Full spinoffs + originals
+15. Task 21 — CI fix
+
+**Serum V2 competency progression:**
+- After Task 22: understand what every section of the UI does
+- After Task 23: can build a sub bass from scratch
+- After Task 24: can build a chord pad from scratch
+- After Task 25: can build a Reese bass, a stab, and layer two patches
+- By Task 14+: all intermediate reps use Serum — they reinforce the skills in musical context
+
+**Total Serum content in Phase 2:**
+- 1 UI deep dive (Task 22)
+- 4 Serum-specific reps (Tasks 23–25: sub bass, chord pad, Reese, stab)
+- 1 layering deep dive (Task 25)
+- 3 Serum cheatsheet entries (oscillators, filter, envelopes)
+- Serum steps embedded in all spinoffs and intermediate reps
