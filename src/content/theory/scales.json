@@ -1,0 +1,56 @@
+[
+  {
+    "id": "natural-minor",
+    "name": "Natural Minor",
+    "aka": "Aeolian mode",
+    "notes_from_root": [0, 2, 3, 5, 7, 8, 10],
+    "interval_formula": "W H W W H W W",
+    "feel": "Dark, emotive, melancholic — the backbone of UK garage",
+    "examples": [
+      "Kettama — It Gets Better (Bb minor)",
+      "Interplanetary Criminal — Slow Burner (E minor)",
+      "BL3SS — Kisses (D minor)"
+    ],
+    "common_keys": ["E minor", "F minor", "Bb minor", "D minor", "G minor"],
+    "analytical_note": "The flatted 3rd, 6th, and 7th give the dark quality vs major. In E minor: E F# G A B C D. Most garage tracks live here — it's the default emotional register."
+  },
+  {
+    "id": "dorian",
+    "name": "Dorian Mode",
+    "aka": "Natural minor with raised 6th",
+    "notes_from_root": [0, 2, 3, 5, 7, 9, 10],
+    "interval_formula": "W H W W W H W",
+    "feel": "Minor but with a lift — jazzy, soulful. Slightly warmer than natural minor.",
+    "examples": [
+      "Common in deeper/soulful garage",
+      "DJ Heartstring",
+      "Soul Mass Transit System"
+    ],
+    "common_keys": ["D dorian", "G dorian", "A dorian"],
+    "analytical_note": "Same as natural minor but the 6th is 1 semitone higher. In E dorian: E F# G A B C# D. That raised 6th adds brightness. The iv chord becomes a minor (not diminished), which sounds warmer."
+  },
+  {
+    "id": "phrygian",
+    "name": "Phrygian Mode",
+    "aka": "Natural minor with flattened 2nd",
+    "notes_from_root": [0, 1, 3, 5, 7, 8, 10],
+    "interval_formula": "H W W W H W W",
+    "feel": "Tense, dark, Arabic flavour. The b2 creates a half-step pull back to root.",
+    "examples": ["MPH — Raw (E phrygian bass line: E→F)"],
+    "common_keys": ["E phrygian", "A phrygian"],
+    "analytical_note": "The b2 (just one semitone above root) creates instant tension. In E phrygian: E F G A B C D. The MPH bass moves E→F — that F is the b2 (phrygian note). One semitone up, immediately pulls back down. That's the signature tension."
+  },
+  {
+    "id": "harmonic-minor",
+    "name": "Harmonic Minor",
+    "aka": "Natural minor with raised 7th",
+    "notes_from_root": [0, 2, 3, 5, 7, 8, 11],
+    "interval_formula": "W H W W H Aug2 H",
+    "feel": "Dark with a dramatic pull — the raised 7th creates a strong resolution back to root. Exotic flavour from the augmented 2nd gap.",
+    "examples": [
+      "Sammy Virji — Cops & Robbers (G# minor, V major chord = harmonic minor influence)"
+    ],
+    "common_keys": ["G# minor", "C minor", "A minor"],
+    "analytical_note": "Raise the 7th by 1 semitone vs natural minor. This makes the V chord major (not minor), which creates a strong dominant resolution. Sammy Virji's G#maj stab (instead of G#m) comes from this — the B# in the G# major chord is the raised 7th of G# harmonic minor."
+  }
+]

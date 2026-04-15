@@ -1,0 +1,94 @@
+[
+  {
+    "id": "minor-triad",
+    "name": "Minor Triad",
+    "symbol": "m",
+    "intervals": [0, 3, 7],
+    "interval_names": ["root", "minor 3rd", "perfect 5th"],
+    "feel": "Foundational dark chord — most garage pads and bass targets start here.",
+    "examples": [
+      "Em in Interplanetary Criminal (i chord)",
+      "Bbm in Kettama (i chord)",
+      "Dm in BL3SS Kisses"
+    ],
+    "in_progressions": ["i chord in minor key", "iv chord", "ii° occasionally"],
+    "analytical_note": "Root + 3 semitones + 7 semitones. The minor 3rd (vs major 3rd at 4 semitones) is what makes it sound dark/sad. Every minor key centers on this chord."
+  },
+  {
+    "id": "major-7",
+    "name": "Major 7",
+    "symbol": "maj7",
+    "intervals": [0, 4, 7, 11],
+    "interval_names": ["root", "major 3rd", "perfect 5th", "major 7th"],
+    "feel": "Lush, dreamy, slightly bittersweet. The maj7 chord sound is a defining colour of Kettama-style garage.",
+    "examples": [
+      "Gbmaj7 in Kettama — It Gets Better (VI chord)",
+      "Dbmaj in same track (III chord)"
+    ],
+    "in_progressions": [
+      "bVI chord in minor key (e.g. Gbmaj7 in Bb minor)",
+      "bIII chord"
+    ],
+    "analytical_note": "The major 7th sits 1 semitone below the octave. That tension against the root gives the chord its wistful quality. Kettama's Gbmaj7→Dbmaj→Bbm loop uses this as the 'lift' chord — same function as a bVI."
+  },
+  {
+    "id": "bVI-lift",
+    "name": "bVI (Flat-Six) Lift",
+    "symbol": "bVI",
+    "intervals": [0, 4, 7],
+    "interval_names": ["root", "major 3rd", "perfect 5th"],
+    "feel": "Bright, emotional lift within a minor key. The borrowed major chord that resolves tension.",
+    "examples": [
+      "C major in Interplanetary Criminal E minor (bVI = 8 semitones up from E)",
+      "Gbmaj7 in Kettama Bb minor"
+    ],
+    "in_progressions": [
+      "i → v → bVI (IC pattern: Em → Bm → C)",
+      "VI → III → i (Kettama: Gbmaj7 → Dbmaj → Bbm)"
+    ],
+    "analytical_note": "The bVI is a major chord built on the 6th note of the natural minor scale. In E minor the 6th note is C, so C major is the bVI. It's 'borrowed' — C major isn't diatonic to E minor (C would naturally be minor). The major quality gives the lift."
+  },
+  {
+    "id": "bass-implied",
+    "name": "Bass-Implied Harmony",
+    "symbol": "—",
+    "intervals": [],
+    "interval_names": [],
+    "feel": "Chord feels implied by the bass root note alone, with no full chord played. Creates ambiguity and space.",
+    "examples": [
+      "BL3SS — Kisses: Dm→F→Bb→Gm bass line implies full chord progression with no chord instrument"
+    ],
+    "in_progressions": ["i → bIII → bVI → iv (BL3SS: Dm → F → Bb → Gm)"],
+    "analytical_note": "When a bass note moves through D→F→Bb→G, the ear fills in Dm→Fmaj→Bbmaj→Gm even without chords being played. This is how BL3SS creates harmony — two bass tracks (organ + FM) carry all harmonic information. Powerful for minimalist productions."
+  },
+  {
+    "id": "borrowed-major",
+    "name": "Borrowed Major Chord",
+    "symbol": "I (in minor)",
+    "intervals": [0, 4, 7],
+    "interval_names": ["root", "major 3rd", "perfect 5th"],
+    "feel": "Unexpected brightness on the tonic — dramatic, anthemic. The 'major in a minor key' moment.",
+    "examples": [
+      "G#maj in Sammy Virji — Cops & Robbers (tonic as major, not G#m)"
+    ],
+    "in_progressions": [
+      "G#maj → Emaj → Bmaj (V-III-VII in G# minor with all majors)"
+    ],
+    "analytical_note": "In G# minor, the natural tonic chord is G#m. Sammy Virji uses G# major instead — the Picardy-third equivalent. All three stab chords are major (G#maj, Emaj, Bmaj), creating an anthemic, triumphant feel despite the minor key context. The raised 3rd (B# = C) on G#maj comes from harmonic minor."
+  },
+  {
+    "id": "suspended",
+    "name": "Suspended Chord",
+    "symbol": "sus2 / sus4",
+    "intervals_sus2": [0, 2, 7],
+    "intervals_sus4": [0, 5, 7],
+    "interval_names": ["root", "2nd or 4th", "perfect 5th"],
+    "feel": "Unresolved, floating — neither major nor minor. Creates anticipation before resolving.",
+    "examples": [
+      "Common in garage breakdowns and transitions",
+      "Used on synth pads to avoid committing to major/minor"
+    ],
+    "in_progressions": ["Often used as passing chord: Em → Esus4 → Em"],
+    "analytical_note": "Replace the 3rd with a 2nd (sus2) or 4th (sus4). No 3rd = no major/minor identity. Sus chords float harmonically — they want to resolve. Often used in breakdowns to build tension before the drop."
+  }
+]
