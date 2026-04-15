@@ -1,0 +1,100 @@
+{
+  "id": "rep-serum-stab",
+  "title": "Chord Stab in Serum V2",
+  "build_type": "rep",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 20,
+  "bpm": 138,
+  "key": "G# minor",
+  "source_track_id": "sammy-virji",
+  "spinoff_level": null,
+  "description": "Build the bright, punchy chord stab from Sammy Virji's style — sawtooth oscillator, high-pass filter, stab envelope (hit and die), and the major chord voicing that gives his drops their euphoric lift. The stab is the opposite of the pad in every dimension.",
+  "what_youll_learn": [
+    "How the stab envelope (0ms attack, short decay, 0% sustain) creates a hit-and-die shape",
+    "Why a high-pass filter on a stab keeps it in the mids where it belongs",
+    "How to voice major chord stabs for Sammy Virji's euphoric quality",
+    "How contrast between pads and stabs works in a mix"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Init Preset — OSC A to sawtooth",
+      "category": "serum",
+      "instruction": "Open Serum V2. Init Preset. OSC A: Basic Shapes, WT POS ~50% (full sawtooth). Turn OSC B off. UNISON: 2 voices, 5 cents detune, blend 40%. The stab should be bright and present but not overly wide.",
+      "why": "The sawtooth is the right choice for stabs — it's bright and harmonically rich, which is exactly the character you need for a chord that hits and cuts through a mix immediately. Unlike a pad (which uses a softer waveform), a stab needs instant presence. Tight 2-voice unison (5 cents) adds just enough width without softening the attack.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Hold a single note and compare WT POS at 25% (soft/warm) vs 50% (bright/saw). For a stab you want the 50% position — the brightness is what makes it cut through the mix on impact."
+    },
+    {
+      "id": 2,
+      "title": "FILTER — high-pass to cut the bottom",
+      "category": "serum",
+      "instruction": "Enable the FILTER. Click the filter type dropdown and select 'HP 12' (or any High Pass filter type). Set CUTOFF to approximately 35% (roughly 300Hz). Set RES to 5%. The sound should lose its low-end entirely — you're keeping only the mids and highs.",
+      "why": "Stabs do not have a bass role. They live in the upper-mid range (300Hz–5kHz). Cutting everything below 300Hz means the stab won't fight the sub bass or kick when it hits. This is also what gives stabs their 'snap' rather than 'thud' — no low-end weight, all mid attack.",
+      "ableton_cheatsheet_id": "serum-v2-filter",
+      "splice_search": null,
+      "tip": "After applying the HP filter, the stab should sound thin in isolation. That's correct — it's not supposed to carry bass. In context with drums and bass it will sit perfectly in the mid layer."
+    },
+    {
+      "id": 3,
+      "title": "ENV 1 — stab shape: hit and die",
+      "category": "serum",
+      "instruction": "ENV 1: Attack 0ms. Decay 400ms. Sustain 0%. Release 50ms. Play a chord. The sound should hit instantly and fade out completely within 400ms — even if you hold the key, it disappears.",
+      "why": "The stab envelope is the exact opposite of the pad envelope. Sustain 0% means the sound dies regardless of whether you hold the key. The only duration that matters is the Decay. Short decay (200ms) = a punch. 400ms = a slightly softer stab that gives the chord character a chance to bloom for a moment before dying. Try both.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "Play a chord and hold the MIDI keys down for 2 seconds. Notice the sound dies after 400ms regardless — the key being held has no effect once Sustain is 0%. Release 50ms is just for the natural off — keep it short."
+    },
+    {
+      "id": 4,
+      "title": "FX — light distortion for edge",
+      "category": "serum",
+      "instruction": "In the FX tab, enable DISTORT. Set Drive to 12%, Soft Clip mode, Mix 60%. Enable EQ: add a presence boost at 3kHz (+3dB, narrow Q) — this adds attack to the transient. Turn off all other FX.",
+      "why": "Light distortion on a stab adds harmonic density at the upper mids — it makes the chord sound more physical and present. The 3kHz presence boost sharpens the attack, giving the stab more 'snap'. No reverb or delay — stabs are meant to be dry and immediate.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Toggle Distort on/off while the stab loops. At Drive 12% the difference should be a harder, more present edge on the chord. If it sounds too gritty, reduce Drive to 8%."
+    },
+    {
+      "id": 5,
+      "title": "Program the Sammy Virji major chord voicing",
+      "category": "ableton",
+      "instruction": "Create a 4-bar MIDI clip. Program these major chord stabs — each held for 1/16 note (very short, the envelope does the rest): Bar 1 beat 1: G#3, C4, D#4 (G# major). Bar 2 beat 1: E3, G#3, B3 (E major). Bar 3 beat 1: B3, D#4, F#4 (B major). Bar 4 beat 1: G#3, C4, D#4 (G# major again). All hits on beat 1 only — 1 stab per bar.",
+      "why": "These are the major chords from G# minor's VI→III→VII: E major (VI), B major (III), G# minor's relative tonic. Sammy Virji uses major chord stabs — the major quality is what gives them the uplifting, euphoric character. The ascending major chord sequence (G#→E→B) creates a sense of rising energy on each hit.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "1/16 note MIDI length is very short — the envelope (400ms decay) is longer than the MIDI note, which is correct. The MIDI note just triggers the envelope. You'll hear the 400ms decay on each hit regardless of the note length."
+    },
+    {
+      "id": 6,
+      "title": "Add a Saturator in Ableton",
+      "category": "ableton",
+      "instruction": "After Serum in the Ableton device chain, add a Saturator. Drive 8%, Soft Clip, Dry/Wet 40%. This adds extra warmth at the mix level — the stab feels more analogue.",
+      "why": "The in-Serum distortion adds edge to the Serum signal. The Ableton-level Saturator adds warmth to the overall output. Layering subtle saturation at two stages (inside the synth + at the track level) creates more complex harmonic character than a single heavy saturation.",
+      "ableton_cheatsheet_id": "saturator",
+      "splice_search": null,
+      "tip": "Toggle the Saturator on/off while the stab sequence plays. The difference at 8% drive and 40% mix is subtle but present — the stabs should feel slightly warmer and more physical with it on."
+    },
+    {
+      "id": 7,
+      "title": "Add drums and hear the stab in context",
+      "category": "ableton",
+      "instruction": "Add a 2-step drum pattern (from rep-02 or rep-07) at 138 BPM. Loop the 4-bar stab sequence with the drums. Listen to how the stabs sit in the mix — do they cut through the kick? Does each chord hit feel impactful? Adjust the stab track volume until it sits just above the hats in the mix.",
+      "why": "Stabs in a garage mix should feel like punctuation — they add emphasis without overwhelming the groove. Too loud and they dominate. Too quiet and their chord quality gets lost. They should be audible on every hit but not louder than the kick.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Close your eyes and listen to the sequence. Are the stabs adding energy or creating clutter? If they feel cluttered, try them every other bar instead of every bar — less is often more with stabs."
+    },
+    {
+      "id": 8,
+      "title": "Compare stab vs pad — same chord, opposite envelopes",
+      "category": "ableton",
+      "instruction": "Open a new MIDI clip alongside the stab. Program the same G# major chord (G#3, C4, D#4) but using your chord pad patch from rep-serum-chord-pad — slow attack 300ms, long release 1500ms. Play both simultaneously. Listen to how the same chord notes feel completely different based solely on the envelope.",
+      "why": "This is the most direct demonstration of envelope as emotion. Same notes. Same key. Same chord. The pad blooms, the stab hits. The stab is aggressive and present. The pad is warm and sustained. Volume envelope = the single parameter that decides whether a sound is a stab or a pad. This is worth experiencing directly.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "After hearing both together, mute one then the other. Notice how the stab sounds thin and harsh in isolation, but sits perfectly in context. Notice how the pad sounds lush in isolation but doesn't have attack. This is why most garage tracks use both — the stab for impact, the pad for sustain."
+    }
+  ]
+}

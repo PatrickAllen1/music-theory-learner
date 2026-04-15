@@ -1,0 +1,100 @@
+{
+  "id": "rep-serum-reese-bass",
+  "title": "Reese Bass in Serum V2",
+  "build_type": "rep",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 25,
+  "bpm": 136,
+  "key": "G minor",
+  "source_track_id": "interplanetary-criminal-slow-burner",
+  "spinoff_level": null,
+  "description": "Build a Reese bass from scratch in Serum V2 — two detuned sawtooth oscillators, a filter envelope that gives it movement, and the growl that comes from the beating between them. The Reese is the most characterful bass in UK garage.",
+  "what_youll_learn": [
+    "Why two detuned saws create the Reese's signature growl",
+    "How the filter envelope (ENV 2 → cutoff) gives it the 'wah' movement",
+    "How unison interacts with the Reese — less is more",
+    "How to voice a Reese bass line in G minor"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Init Preset and set OSC A to sawtooth",
+      "category": "serum",
+      "instruction": "Open Serum V2. Right-click preset name → Init Preset. On OSC A: click the wavetable name → select Basic Shapes. Drag WT POS all the way right to approximately 50% — the full sawtooth. The waveform display should show a ramp shape. This is the core of the Reese.",
+      "why": "The sawtooth wave has the richest harmonic content of any basic waveform — every harmonic is present. This brightness and density is exactly what a Reese bass needs. The growl of a Reese comes from those harmonics beating against each other when two detuned saws interact.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "WT POS at ~50% gives the full sawtooth in Basic Shapes. Check the waveform display in the top of Serum — it should show a sharp ramp that falls steeply and resets. If it's rounded at the top, you're at a lower WT POS — push it further right."
+    },
+    {
+      "id": 2,
+      "title": "Enable OSC B — the Reese interval",
+      "category": "serum",
+      "instruction": "Enable OSC B. Set it to Basic Shapes, WT POS ~50% (same sawtooth as OSC A). Now find the FINE tuning knob on OSC B and set it to -14 cents. Lower OSC B's level slightly — about 2dB below OSC A. Hold a note and listen to the beating between the two oscillators.",
+      "why": "The Reese sound is defined by two oscillators slightly out of tune — the beating between them is the growl. -14 cents is a well-established Reese interval (slightly further apart than a pad detune, which gives a more aggressive, pulsing character). The beating rate changes with pitch, which is why a Reese sounds different across its range.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Play the same note while adjusting OSC B's FINE tuning from 0 to -20 cents. You'll hear the beating get faster as the detune increases. At 0 cents the oscillators are in phase — no beating. At -14 cents the beat rate is in a useful zone: fast enough to sound like movement, slow enough to not be a shimmer."
+    },
+    {
+      "id": 3,
+      "title": "UNISON — controlled, not wide",
+      "category": "serum",
+      "instruction": "Set UNISON on OSC A to 2 voices, detune 8 cents. Set OSC B UNISON to OFF (1 voice). The total: 2 OSC A voices + 1 OSC B voice = 3 slightly different saws.",
+      "why": "Unlike a pad (where wide unison creates warmth), a Reese bass needs focus. Too much unison makes it lose its growl and attack — it becomes a pad. 2 voices at 8 cents on OSC A keeps it tight while adding just enough width. OSC B stays at 1 voice to keep the Reese interval precise.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "Toggle UNISON between 1 voice and 2 voices on OSC A while holding a low note. The difference should be subtle — slightly wider without losing the focus of the Reese."
+    },
+    {
+      "id": 4,
+      "title": "FILTER — MG Low 24, cutoff closed",
+      "category": "serum",
+      "instruction": "Enable the FILTER. Select MG Low 24. Set CUTOFF to approximately 35% (relatively closed — roughly 8 o'clock). Set RES to 15% — slightly higher than the pad setting. The sound should become darker and growlier.",
+      "why": "The filter cutoff sitting low (35%) means most of the bright saw harmonics are removed. The resonance at 15% adds a peak at the cutoff frequency — this is the 'bite' that makes the Reese feel aggressive. When the envelope opens the filter, those harmonics rush in and then close back down — that's the wah.",
+      "ableton_cheatsheet_id": "serum-v2-filter",
+      "splice_search": null,
+      "tip": "At 35% cutoff the Reese will sound quite dark. That's intentional — ENV 2 will open it up dynamically. A Reese that starts bright doesn't have anywhere to go. The closed starting position is what makes the envelope opening feel dramatic."
+    },
+    {
+      "id": 5,
+      "title": "ENV 2 → filter cutoff — the wah movement",
+      "category": "serum",
+      "instruction": "In the ENV 2 section, set: Attack 0ms, Decay 200ms, Sustain 0%, Release 0ms. Now hover over the FILTER CUTOFF knob. Drag the ENV 2 label onto it. A coloured ring appears — drag the ring clockwise to set modulation depth to approximately +30%. Play a note and listen to the filter snap open and close.",
+      "why": "ENV 2 opens the filter sharply on the note attack (0ms attack = instant), then closes it over 200ms. At Sustain 0% the filter is fully closed by the end of the decay. This 'wah' envelope is the defining motion of the Reese — the burst of harmonics on the attack followed by the dark tail.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "Try Decay at 100ms, 200ms, and 400ms while playing repeated notes. Short decay = snappy, punchy Reese. Long decay = the filter stays open longer, more mid-bass character. 200ms is the classic Reese sweet spot for garage."
+    },
+    {
+      "id": 6,
+      "title": "ENV 1 — attack and release shape",
+      "category": "serum",
+      "instruction": "Set ENV 1: Attack 10ms (very slight softening of the attack — just takes the hard click off), Decay 0, Sustain 100%, Release 300ms. Play a note. The bass should have a defined attack, sustain at full volume while the key is held, and a clean 300ms decay after release.",
+      "why": "Attack 10ms (vs 0ms) removes the hard transient click from the sawtooth's initial cycle. Without it the Reese can sound slightly harsh at the attack. 10ms is barely perceptible but removes that click. Release 300ms means notes overlap slightly — the Reese doesn't cut off sharply.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "Compare Attack 0ms and Attack 10ms on a loud Reese note. Listen for the very beginning of the sound — at 0ms you may hear a slight 'click'. At 10ms it's smooth. This is a subtle but professional detail."
+    },
+    {
+      "id": 7,
+      "title": "FX — minimal",
+      "category": "serum",
+      "instruction": "In the FX tab: enable only COMPRESSOR (Threshold -12dB, Ratio 4:1, Attack 10ms, Release Auto) and optionally a subtle DISTORT (Drive 5%, Soft Clip). Turn off all other FX — no chorus, no reverb, no delay.",
+      "why": "A Reese bass should be dry and focused. The compressor controls the dynamics — the filter envelope creates a lot of volume variation, and the compressor tames peaks without removing the movement. Very light distortion adds warmth to the high-end harmonics without changing the character. Reverb on a Reese smears the growl and loses the attack.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Toggle the Distort on/off while the Reese loops. At Drive 5% the difference is subtle — just a slight warmth at the top end. If you want more grit, increase to 10–15%."
+    },
+    {
+      "id": 8,
+      "title": "Program the G minor Reese bass line",
+      "category": "ableton",
+      "instruction": "Create a MIDI clip. Program this 4-bar G minor line: Bar 1 — G1 full bar. Bar 2 — G1 beats 1–2, F1 beat 3 (half beat), G1 beat 3.5–4. Bar 3 — Bb1 full bar. Bar 4 — G1 beats 1–2, D1 beats 3–4. Repeat for 4 bars. Add a Utility device after Serum: Width to 0% (mono).",
+      "why": "G→F→Bb→D is a dark root movement in G minor. The Reese's wah envelope makes each note feel articulated even when held. Bar 3's Bb1 (the minor 3rd) brings warmth and a moment of relative brightness. The Utility mono ensures the detuned oscillators don't create phase problems on mono systems.",
+      "ableton_cheatsheet_id": "utility-mono",
+      "splice_search": null,
+      "tip": "Play the Reese bass line alongside a 4-on-floor or 2-step kick. The Reese should sit in the mid-bass range — not competing with a sub bass. If you're layering with a sub, high-pass the Reese at 120Hz and let the sub handle everything below."
+    }
+  ]
+}

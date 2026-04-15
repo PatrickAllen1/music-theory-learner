@@ -7,6 +7,8 @@ import rep06 from "./reps/rep-06-mini-track-emin.json";
 import rep07 from "./reps/rep-07-mini-track-gmin.json";
 import repSerumSubBass from "./reps/rep-serum-sub-bass.json";
 import repSerumChordPad from "./reps/rep-serum-chord-pad.json";
+import repSerumReeseBass from "./reps/rep-serum-reese-bass.json";
+import repSerumStab from "./reps/rep-serum-stab.json";
 import spinoffKettama from "./spinoffs/spinoff-kettama-bbmin-full.json";
 
 export const builds = [
@@ -19,6 +21,8 @@ export const builds = [
   rep07,
   repSerumSubBass,
   repSerumChordPad,
+  repSerumReeseBass,
+  repSerumStab,
   spinoffKettama,
 ];
 

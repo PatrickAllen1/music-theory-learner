@@ -6,6 +6,7 @@ import serumV2Ui from "./serum-v2-ui.json";
 import arrangementTheory from "./arrangement-theory.json";
 import soundDesignEmotion from "./sound-design-emotion.json";
 import transposingConcepts from "./transposing-concepts.json";
+import serumLayering from "./serum-layering.json";
 
 export const deepDives = [
   viIIIi,
@@ -16,6 +17,7 @@ export const deepDives = [
   arrangementTheory,
   soundDesignEmotion,
   transposingConcepts,
+  serumLayering,
 ];
 
 export const deepDiveById = Object.fromEntries(deepDives.map((d) => [d.id, d]));

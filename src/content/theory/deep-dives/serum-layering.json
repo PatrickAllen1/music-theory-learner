@@ -1,0 +1,77 @@
+{
+  "id": "serum-layering",
+  "title": "Layering Two Serum Patches",
+  "subtitle": "One Serum patch gives you a sound. Two Serum patches on one MIDI track, split by frequency, give you a sound with both weight and character.",
+  "difficulty": "intermediate",
+  "read_time_mins": 7,
+  "track_references": ["interplanetary-criminal-slow-burner"],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "A single synthesizer patch is often a compromise. A sub bass is clean and pure but has no harmonic character on small speakers. A mid bass is interesting and textured but has no low-end weight. Layering solves this: run two separate Serum instances on the same MIDI track, each handling a different frequency range. Together they become a single sound — pure sub weight plus mid character, both triggered by the same notes. This is a standard technique in professional UK garage production. You'll hear it on almost every IC Slow Burner-style track."
+    },
+    {
+      "id": "instrument-rack",
+      "heading": "How to layer in Ableton: Instrument Rack",
+      "body": "Ableton's Instrument Rack lets you run multiple instruments on a single MIDI track. All instruments receive the same MIDI notes simultaneously. Each instrument has its own signal chain (its own effects), its own volume, and its own chain filter that limits which pitch range it processes.\n\nTo set up a layered bass:\n1. Create a MIDI track.\n2. Drag 'Instrument Rack' from Instruments > Instrument Rack onto the track.\n3. Inside the Rack, drag your first Serum patch (sub bass) into the chain area — it becomes Chain 1.\n4. Drag your second Serum patch (mid bass / Reese) into the chain area — it becomes Chain 2.\n5. Both Serums now respond to every MIDI note on this track simultaneously.\n\nThis is the basic setup. The next step is frequency splitting — telling each instrument which frequency range it's responsible for."
+    },
+    {
+      "id": "frequency-split",
+      "heading": "Frequency splitting: high-pass one, low-pass the other",
+      "body": "After loading both Serums into the Instrument Rack, you need to split their frequency ranges so they don't fight each other.\n\nSub bass chain (Chain 1): Add an EQ Eight to the chain (after Serum, in the chain effects slot). Set a low-pass filter at 120Hz — this means Chain 1 only outputs frequencies below 120Hz. The sub bass handles all sub.\n\nMid bass chain (Chain 2): Add an EQ Eight to the chain. Set a high-pass filter at 120Hz — Chain 2 only outputs frequencies above 120Hz. The Reese or mid texture handles the mid range.\n\nThe crossover point (120Hz) is the frequency at which you split the two layers. This keeps them from fighting in the same frequency region. The sub has clean weight below 120Hz. The mid layer has all its character above 120Hz.\n\nTypical crossover points:\n- Sub + mid bass: 100–150Hz\n- Sub + pad layer: 120–200Hz (pads usually start higher)\n- Two mid textures: 600Hz–1kHz (split at a formant region)"
+    },
+    {
+      "id": "volume-balance",
+      "heading": "Balancing the two layers",
+      "body": "After frequency splitting, balance the volumes of the two chains in the Instrument Rack. The sub should be the dominant element — it provides the weight. The mid layer should sit lower in the mix, adding character without taking over.\n\nA common starting balance:\n- Sub bass chain: 0dB (full level)\n- Mid bass chain: -4dB to -6dB (noticeably quieter than sub)\n\nThe mid layer should be something you feel is there — a textural presence, some harmonic content on small speakers — but not something that dominates the mix on its own. If you solo the mid layer and it sounds like the main event, it's too loud.\n\nAfter setting the balance, listen on both headphones and small speakers. On headphones: the sub provides all the weight. On small speakers: the sub disappears and the mid layer keeps the bass present. Both layers are doing essential work in different playback contexts."
+    },
+    {
+      "id": "example-sub-reese",
+      "heading": "Example: sub bass + Reese layer",
+      "body": "This is the most common layering setup in UK garage.\n\nChain 1 — Sub bass (rep-serum-sub-bass settings):\n- OSC A: Basic Shapes, WT POS 0% (sine)\n- UNISON: 1 voice\n- FILTER: off\n- ENV 1: 0ms attack, 150ms release\n- Low-pass EQ at 120Hz in the chain\n- Level: 0dB\n\nChain 2 — Reese (rep-serum-reese-bass settings):\n- OSC A + B: sawtooth, OSC B at -14 cents\n- FILTER: MG Low 24, cutoff ~35%, ENV 2 → cutoff for wah\n- High-pass EQ at 120Hz in the chain\n- Level: -5dB\n\nMIDI trigger: the same G minor bass line from rep-serum-reese-bass. Both chains respond to every note simultaneously. The sub provides clean fundamental weight. The Reese provides the growl and movement in the mids. On large speakers: you feel the sub and hear the growl. On phone speakers: you still hear the Reese's harmonic character.\n\nThe combined sound is more complete than either layer alone. This is the IC Slow Burner bass character — weight + texture."
+    },
+    {
+      "id": "example-sub-texture",
+      "heading": "Variation: sub bass + light texture layer",
+      "body": "A lighter alternative to the sub + Reese combination is sub bass + a soft mid texture. This gives you sub weight plus a gentle harmonic presence without the aggression of a Reese.\n\nChain 2 — Texture:\n- OSC A: Basic Shapes, WT POS ~25% (soft, warm saw territory)\n- UNISON: 3 voices, 10 cents, blend 50%\n- FILTER: MG Low 24, cutoff 55%, resonance 5%\n- ENV 1: Attack 30ms (slightly soft), sustain 100%, release 400ms\n- High-pass at 150Hz in the chain\n- Level: -8dB (very low — just a ghost presence)\n\nThis combination is more subtle than sub + Reese. The texture layer barely audible but adds harmonic richness in the 150–800Hz range that helps the bass translate on small speakers without adding aggression."
+    },
+    {
+      "id": "chain-filter",
+      "heading": "The Instrument Rack chain filter — an alternative to EQ",
+      "body": "Inside the Instrument Rack, each chain has a small 'Chain Filter' section in the chain view (the piano keyboard strip at the bottom of the chain). This lets you restrict which MIDI pitches trigger each chain — useful for layering based on note range rather than frequency.\n\nFor most bass layering: use EQ Eight on each chain for frequency splitting (described above) — this is more precise because it splits audio frequencies, not MIDI note ranges.\n\nThe Chain Filter (MIDI pitch range) is more useful when you want: a different timbre for low notes vs high notes, or a separate instrument triggered only by certain velocity ranges (using the velocity split option in the chain view)."
+    }
+  ],
+  "midi_examples": [
+    {
+      "label": "Layered bass — G minor line",
+      "notes": ["G1", "F1", "Bb1", "D1"],
+      "context": "Both chains respond to the same notes. Sub carries the weight; Reese provides the mid character. Both triggered by the same MIDI."
+    },
+    {
+      "label": "Frequency split point",
+      "notes": ["LP at 120Hz on sub chain", "HP at 120Hz on mid chain"],
+      "context": "EQ Eight on each chain. Below 120Hz = sub bass only. Above 120Hz = mid layer only. No overlap."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "interplanetary-criminal-slow-burner",
+      "timestamp": "~0:00",
+      "what_to_hear": "The IC Slow Burner bass entering from the start. Listen on both headphones and then your phone speaker. On headphones: weight and depth. On phone: the harmonic texture that survives the small speaker. That surviving texture is the mid layer — the part of the bass that has character above the sub range.",
+      "technique": "sub + mid layer — frequency-split bass on different playback systems"
+    },
+    {
+      "track_id": "interplanetary-criminal-slow-burner",
+      "timestamp": "~0:45",
+      "what_to_hear": "When the bass is most present in the breakdown section, listen for the quality of the bass character — the slight growl or movement in the mids. That texture is not coming from a single sine wave. It's harmonic content added by a mid layer above the sub. The sub provides the weight; the mid provides the movement.",
+      "technique": "mid bass texture — the layer above the sub fundamental"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Open Ableton. Create a MIDI track with an Instrument Rack. Load your rep-serum-sub-bass patch as Chain 1 and your rep-serum-reese-bass patch as Chain 2. Add EQ Eight to each chain: LP at 120Hz on Chain 1, HP at 120Hz on Chain 2. Set Chain 2 level to -5dB. Program the G minor bass line from rep-serum-reese-bass. Listen on headphones, then on your phone speaker. Describe: what does each layer contribute on each playback system?",
+    "answer_hint": "Headphones: sub (Chain 1) provides the physical weight and pure fundamental below 120Hz. Reese (Chain 2) provides growl and movement in the 120Hz–2kHz range. Phone speaker: sub disappears (below phone range), Reese layer keeps bass audible and interesting. Together: complete bass sound that works on all systems.",
+    "linked_rep_id": "rep-serum-reese-bass"
+  },
+  "key_takeaway": "Layer a pure sub (sine, LP at 120Hz) with a mid texture (Reese or soft saw, HP at 120Hz). Balance sub at 0dB, mid at -5dB. The sub carries the weight; the mid carries the character. Together they work on every playback system."
+}
