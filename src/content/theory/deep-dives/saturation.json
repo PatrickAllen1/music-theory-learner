@@ -1,0 +1,63 @@
+{
+  "id": "saturation",
+  "title": "Saturation: Harmonic Color",
+  "subtitle": "Saturation adds harmonics to a signal \u2014 it makes sounds warmer, louder-feeling, and more present in a mix without raising volume.",
+  "difficulty": "intermediate",
+  "read_time_mins": 8,
+  "track_references": [
+    "mph-raw",
+    "bl3ss-camrinwatsin-kisses"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Saturation is one of the most misunderstood effects in production. It's often described vaguely as 'warmth' or 'character' \u2014 which is true but not useful. More precisely: saturation adds harmonics. When you push a sound through a saturator, the device generates new frequencies that weren't in the original signal \u2014 typically even harmonics (2nd, 4th, 6th) which sound warm and musical, and odd harmonics (3rd, 5th, 7th) which sound harder and more aggressive. Understanding which type you're adding and why changes how you use it."
+    },
+    {
+      "id": "what-it-does",
+      "heading": "What saturation actually does to a signal",
+      "body": "Imagine a clean sine wave \u2014 a pure tone with no harmonics. Push it through a saturator and it clips gently, adding new frequency content at integer multiples of the original frequency. A 100Hz sine wave through a saturator gains energy at 200Hz, 300Hz, 400Hz, etc. This makes the sound 'thicker' \u2014 it has more content across the frequency spectrum.\n\nFor bass sounds, saturation is critical for presence. A sub bass at 50\u201380Hz is felt but barely heard on small speakers \u2014 there's no speaker that can reproduce 50Hz with real volume. But add saturation: the saturator generates harmonics at 100Hz, 150Hz, 200Hz \u2014 frequencies that small speakers can reproduce. The listener hears the harmonics as the bass, even if the fundamental is below their speaker range. This is why saturated bass sounds louder and more present than unsaturated bass on laptop speakers or earbuds, even at the same dB level.\n\nFor pads and synths, saturation adds warmth and prevents sounds from feeling 'thin' or 'cold'. Digital synthesis is mathematically perfect \u2014 which means it can sound sterile. A small amount of saturation mimics the harmonic distortion of analog hardware, adding subtle character."
+    },
+    {
+      "id": "ableton-saturator",
+      "heading": "Ableton's Saturator \u2014 the settings that matter",
+      "body": "Ableton's Saturator has a Drive knob, a WaveShaper selector, and a Wet/Dry.\n\nDrive: how hard you're pushing the signal into the saturator. Low drive (2\u20135dB) = subtle warmth, barely noticeable. High drive (15\u201320dB) = obvious distortion, the sound clips hard.\n\nWaveShaper: the type of saturation. The most useful options:\n- Soft Sine: gentle even harmonics, analog warmth. Good on pads, keys, pads.\n- Warm: heavier even harmonics with more body. Good on bass.\n- Medium Curve: balanced. A general-purpose starting point.\n- Hard Clip: aggressive, adds strong odd harmonics. Good on aggressive bass lines or when you want obvious distortion.\n\nColor (high/low): amplifies or cuts the harmonics above or below a set frequency. Usually leave at flat for transparent saturation.\n\nWet/Dry: as with any effect, blend to taste. 100% wet means only the saturated signal. 70% wet keeps some of the original clean signal mixed in \u2014 useful when you want to preserve the attack clarity while adding saturation to the body."
+    },
+    {
+      "id": "bass-saturation",
+      "heading": "Saturation on bass \u2014 the most important use",
+      "body": "The most impactful use of saturation in UK garage production is on the sub bass. A clean sub bass sounds massive on studio monitors and nearly invisible on laptop speakers. Saturating it adds harmonics in the 150\u2013400Hz range \u2014 the range where most speakers operate \u2014 so the bass feels present on any playback system.\n\nFor a Serum sub bass or a bass with heavy low-frequency content:\n1. Add Saturator after the instrument\n2. Mode: Warm or Soft Sine\n3. Drive: 5\u201310dB (subtle)\n4. Wet/Dry: 60\u201380% (blend with the original)\n\nThe test: listen to your bass on laptop speakers (or low-quality earbuds) before and after saturation. With saturation, the bass should feel present and weighty even on small speakers. Without it, the bass may almost disappear.\n\nFor a reese bass or distorted bass (like in rep-serum-reese-bass), the saturation is pushed much harder \u2014 sometimes through Overdrive at medium drive \u2014 because the distorted quality is central to the sound."
+    },
+    {
+      "id": "parallel-saturation",
+      "heading": "Parallel saturation \u2014 control without harshness",
+      "body": "Heavy saturation can make sounds harsh in the high frequencies \u2014 especially on pads and synths. Parallel saturation solves this: route the original signal and the saturated signal in parallel, then blend them.\n\nHow to do this in Ableton:\n1. On the track, add Saturator\n2. Set Drive high (15\u201320dB) to get the harmonic density you want\n3. Set Wet/Dry to 30\u201350% \u2014 this already IS parallel saturation within the plugin\n\nAlternatively: Ableton's Saturator Dry/Wet knob is essentially built-in parallel saturation. Pushing Drive high and keeping Dry/Wet at 50% means you get the full harmonic density of high drive, but blended at 50% with the clean original. The result is warmer than 0% but less harsh than 100% saturated.\n\nOn complex sounds (pads with lots of high-frequency content), parallel saturation adds body in the mids without making the highs shrill."
+    },
+    {
+      "id": "overdrive-vs-saturator",
+      "heading": "Overdrive vs Saturator \u2014 when to use which",
+      "body": "Ableton has both Overdrive and Saturator. They do similar things but with different character.\n\nSaturator: clean, smooth distortion with precise harmonic control. Better for subtle warmth, sub bass presence, pad character. Has more control over exactly what type of saturation you're adding.\n\nOverdrive: more aggressive, with a tone control that's similar to a guitar amp's EQ. Better when you specifically want a driven, electric sound \u2014 a bass line with grit, a synth that sounds slightly broken. Has a Tone knob that shapes the frequency of the distortion.\n\nFor the reese bass in rep-serum-reese-bass, Overdrive is more appropriate than Saturator \u2014 the goal is distortion as a sound character, not subtle warmth. For the sub bass in rep-serum-sub-bass, Saturator is more appropriate \u2014 adding presence without changing the fundamental character of the bass."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "mph-raw",
+      "timestamp": "bar 24 (~0:44)",
+      "what_to_hear": "MPH Bass track has: Serum 2 \u2192 Kickstart 2 \u2192 Saturator (DryWet=0.34, Drive=1) \u2192 EQ8 \u2192 Compressor (confirmed ALS). The bass enters around bar 24. Listen on headphones vs laptop speakers. The Saturator adds harmonics so the bass stays audible on small speakers. The saturation drive is subtle (Drive=1) \u2014 the goal is presence, not distortion.",
+      "technique": "Saturator on bass \u2014 DryWet=0.34, Drive=1 for presence without distortion"
+    },
+    {
+      "track_id": "bl3ss-camrinwatsin-kisses",
+      "timestamp": "bar 8 (~0:13)",
+      "what_to_hear": "BL3SS Organ Bass enters at bar 8 (ALS: Serum \u2192 EQ8 \u2192 StereoGain \u2192 Saturator DryWet=0.119 \u2192 MultibandDynamics). The Saturator on the Organ Bass is very subtle (DryWet=0.12). Listen for whether the bass feels warm vs cold on your speakers \u2014 saturation this light adds harmonic character without being audible as distortion.",
+      "technique": "Light saturation (DryWet=0.12) \u2014 warmth without audible distortion"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Open rep-serum-sub-bass. Add Saturator to the sub bass track. Set mode to Warm, Drive 8dB, Dry/Wet 70%. Listen on headphones first \u2014 the difference may be subtle. Then play the same loop through the worst speakers you have (laptop speakers, phone speaker, or cheap earbuds). Compare the bass with Saturator bypassed vs active. Write down: is the bass more present on small speakers with saturation? Does it feel louder without actually being louder?",
+    "answer_hint": "On laptop speakers or earbuds, the unsaturated sub bass should feel thin or nearly inaudible because there are no harmonics above 80Hz to reproduce. With Saturation on Warm mode, you should hear the bass more clearly \u2014 not because it's louder, but because the harmonics at 150\u2013400Hz are now visible to small speakers. This is why professional releases always have bass that translates across speaker systems.",
+    "linked_rep_id": "rep-serum-sub-bass"
+  },
+  "key_takeaway": "Saturation adds harmonics \u2014 not volume. Use it on bass to create presence on small speakers. Use it on pads for analog warmth. Blend with Dry/Wet rather than pushing Drive to maximum."
+}

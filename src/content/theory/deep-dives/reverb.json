@@ -1,0 +1,63 @@
+{
+  "id": "reverb",
+  "title": "Reverb: Space and Depth",
+  "subtitle": "Reverb turns isolated samples into sounds that exist in a room. Understanding it means knowing when to use it and when silence is better.",
+  "difficulty": "beginner",
+  "read_time_mins": 8,
+  "track_references": [
+    "kettama-it-gets-better",
+    "bl3ss-camrinwatsin-kisses"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Every sound you hear in real life exists in a space. When someone claps in a bathroom it sounds different from a clap in a concert hall \u2014 the room shape, size, and materials change how the sound reflects back to you. Reverb recreates this effect in the digital domain. Without it, samples sound like they were recorded in a vacuum \u2014 which is technically accurate but sounds sterile and artificial in a mix. With it, sounds feel like they inhabit the same physical space, which is part of what makes a mix feel cohesive."
+    },
+    {
+      "id": "how-it-works",
+      "heading": "What reverb actually does",
+      "body": "Reverb works by creating thousands of tiny echoes that decay over time. Three parameters matter most:\n\nPre-delay: the gap between the original sound and the first reverb reflections. 0ms means reverb starts immediately \u2014 the sound blooms around the attack. 20\u201340ms means the attack arrives clean, then reverb washes in underneath. Pre-delay is critical on pads and claps. On pads, 15\u201325ms pre-delay lets the chord onset arrive before the reverb \u2014 the notes are clear, then the space blooms. Without pre-delay, the reverb muddles the initial chord attack.\n\nDecay (size): how long the reverb tail lasts. A 0.5s decay sounds like a small room. A 3s decay sounds like a cathedral. Most garage pads use 1.5\u20133s decay. Most drums use 0.3\u20130.8s decay. Long reverb on drums makes them sound distant and washed out \u2014 usually wrong unless that's intentional (for breakdowns).\n\nDry/wet: how much reverb is in the signal relative to the original. 100% wet means only the reverb tail, no original. 20% means mostly original with a light reverb presence. Most pads sit at 25\u201340% wet. Drums at 10\u201320%. Bass almost never gets reverb (it smears the low end and destroys punch)."
+    },
+    {
+      "id": "pads",
+      "heading": "Reverb on pads \u2014 the standard garage approach",
+      "body": "UK garage pads always have reverb. The reverb is what gives them the 'breathing', expansive quality that's central to the sound. Without reverb, even a perfectly voiced chord sounds flat and close.\n\nTypical settings on a pad in Ableton's Reverb:\n- Room Size: Large (0.7\u20130.9)\n- Decay: 1.8\u20132.5s\n- Pre-delay: 15\u201325ms\n- Dry/Wet: 30\u201340%\n- Diffusion: high (0.7+)\n- Low Cut (inside Reverb): 200\u2013300Hz \u2014 prevents bass frequencies from blooming in the reverb tail, which would add mud\n\nThe Low Cut inside the reverb is an often-missed detail. Without it, the reverb tail accumulates low-frequency energy from the bass notes in the chord, muddying the low end of the mix. Cutting below 200\u2013300Hz inside the reverb keeps the reverb tail bright and airy while preventing bass buildup.\n\nKettama's pads on 'It Gets Better' use reverb with a medium-long decay and a clear pre-delay. You can hear the onset of each chord arrival cleanly before the space blooms \u2014 that's pre-delay doing its job."
+    },
+    {
+      "id": "drums",
+      "heading": "Reverb on drums \u2014 less is more",
+      "body": "Drum reverb in UK garage is shorter and drier than pad reverb. The goal is a hint of room cohesion, not a washed sound.\n\nKick: typically no reverb, or a very short room reverb (0.2\u20130.3s, 5\u201310% wet). The kick needs to hit hard and clean \u2014 reverb softens the transient.\n\nClap/snare: small reverb adds presence without wash. 0.3\u20130.5s decay, 10\u201320% wet, no pre-delay needed. The tiny room reverb makes the clap sound like it exists in a physical space rather than being a dry sample floating in the mix.\n\nHats: usually no reverb. Hats are already high-frequency and bright \u2014 reverb makes them shrill and washy. Exception: open hat on the groove pickup occasionally gets a short plate reverb (0.2s) to give it a slight shimmer.\n\nThe drum rack in rep-15 includes a small reverb on the clap chain specifically \u2014 0.3s decay, 15% wet. That's the standard approach for the source track style."
+    },
+    {
+      "id": "send-vs-insert",
+      "heading": "Send reverb vs insert reverb",
+      "body": "You can add reverb directly on a track (insert) or route multiple tracks to a shared reverb return track (send).\n\nInsert reverb: reverb is part of that sound only. Good when each sound needs different reverb settings. Used in the drum rack (the clap has its own reverb chain, different from what the pad uses).\n\nSend reverb: all sounds that send to this return share the reverb space. Creates cohesion \u2014 different elements feel like they exist in the same room. Typical in full mixes: one long room reverb return, multiple tracks sending varying amounts to it.\n\nFor the beginner rep approach (one sound at a time), insert reverb is simpler. In spinoffs and originals, a shared reverb return creates the 'single space' quality that makes tracks sound professionally mixed rather than like a collection of individual samples."
+    },
+    {
+      "id": "common-mistakes",
+      "heading": "Three reverb mistakes to avoid",
+      "body": "1. Too much reverb everywhere. If every element is swimming in reverb, nothing has space \u2014 the mix becomes a wash. Reserve long, wet reverb for 1\u20132 elements (usually the main pad and one other). Keep drums relatively dry.\n\n2. Reverb on bass. Low-frequency reverb tails build up in the 60\u2013200Hz range and destroy mix clarity. Basslines almost never use reverb. If you want the bass to feel 'big', that comes from EQ (adding body at 80\u2013100Hz) and saturation, not reverb.\n\n3. Reverb without pre-delay on melodic content. If you add reverb directly to the attack of a chord, the onset becomes blurred \u2014 the chord sounds like it's 'starting in reverb' rather than arriving cleanly. Set pre-delay to 15\u201325ms on any melodic or harmonic content."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "bar 36 (~1:01)",
+      "what_to_hear": "The chord pad enters at bar 36. Listen for how the pad arrival has space blooming around it \u2014 the onset of each chord is clear, then reverb washes in behind. That gap between the chord attack and the reverb bloom is pre-delay doing its job. The chord exists in a room; it is not just a dry synth note.",
+      "technique": "Pre-delay on pad reverb \u2014 clean attack, then room bloom"
+    },
+    {
+      "track_id": "bl3ss-camrinwatsin-kisses",
+      "timestamp": "bar 32 (~0:54)",
+      "what_to_hear": "The clap enters at bar 32 with a small reverb (confirmed in ALS: Clap track has Reverb device). Compare its size to the kick: the kick is tight and direct, the clap has a brief room tail. The contrast between dry kick and roomed clap is what creates separation between the two drum elements in the mix.",
+      "technique": "Short reverb on clap vs dry kick \u2014 contrast creates separation"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Open rep-11 (or any rep with chord pads). Add Ableton's Reverb to your pad track as an insert. Set: Room Size 0.8, Decay 2s, Pre-delay 20ms, Dry/Wet 35%, Low Cut 250Hz inside Reverb. Play back the chord loop. Now bypass the reverb entirely. Now bypass just the Low Cut inside the reverb (set to 0Hz). Compare all three states: (1) no reverb, (2) reverb with Low Cut, (3) reverb without Low Cut. Write down: what changes in the low end of the mix between states 2 and 3?",
+    "answer_hint": "State 3 (no Low Cut in reverb) should sound muddier in the low mids \u2014 the bass frequencies in the chord's reverb tail accumulate below 200Hz and make the mix feel thick and indistinct. State 2 (with Low Cut at 250Hz) keeps the reverb tail bright and airy, preventing that low-end buildup.",
+    "linked_rep_id": "rep-11-VI-III-i-loop-bbmin"
+  },
+  "key_takeaway": "Reverb adds space and cohesion \u2014 but placement matters. Pads: long decay with pre-delay. Drums: short and dry. Bass: none. Always high-cut the reverb tail to prevent low-end mud buildup."
+}

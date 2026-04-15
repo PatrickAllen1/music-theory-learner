@@ -1,0 +1,63 @@
+{
+  "id": "compression",
+  "title": "Compression: Control and Cohesion",
+  "subtitle": "Compression is not about making things louder. It's about controlling dynamics so elements sit together instead of fighting.",
+  "difficulty": "beginner",
+  "read_time_mins": 9,
+  "track_references": [
+    "kettama-it-gets-better",
+    "mph-raw"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Most beginners think compression is a volume tool \u2014 you put it on a track to make it louder or punchier. This is wrong. Compression is a dynamics tool. Its job is to reduce the difference between the loudest and quietest moments in a signal. A kick drum without compression hits at 100% on its transient peak and decays to maybe 30% a millisecond later. With compression, that 100% peak is reduced to 70%, so the tail is proportionally louder relative to the peak \u2014 the kick sounds fuller, more sustained. Understanding what compression actually does to a waveform is the foundation of every mix decision."
+    },
+    {
+      "id": "parameters",
+      "heading": "The four parameters you always set",
+      "body": "Threshold: the level above which compression kicks in. Set it at -20dBFS and anything below -20 passes through unchanged; anything above gets compressed. Setting threshold high (-5dBFS) means only the loudest peaks are compressed. Setting it low (-30dBFS) means almost everything gets compressed. For drum buses: set threshold until you see 2\u20134dB of gain reduction on the meters during loud sections.\n\nRatio: how aggressively the signal is reduced above the threshold. 2:1 means for every 2dB over the threshold, only 1dB comes through (gentle). 8:1 means for every 8dB over the threshold, only 1dB comes through (heavy). 4:1 is the standard drum bus setting \u2014 enough to control peaks without squashing the life out of the drums. Limiting is effectively ratio \u221e:1.\n\nAttack: how quickly the compressor clamps down after a signal crosses the threshold. Slow attack (30\u2013100ms) lets the transient through before compression kicks in \u2014 this preserves the punch and click of the drum hit. Fast attack (0.1\u20133ms) catches the transient, making the drum hit softer and less punchy but more controlled.\n\nRelease: how quickly the compressor lets go after the signal drops below the threshold. Too fast = the compressor is constantly pumping on and off, creating an audible 'breathing' sound. Too slow = the compressor stays engaged too long and squashes the tail of a sound. 'Auto' release in Ableton's Glue Compressor is program-dependent \u2014 it adjusts based on the signal. This is a safe default."
+    },
+    {
+      "id": "glue",
+      "heading": "The Glue Compressor \u2014 drums",
+      "body": "The Glue Compressor is named for what it does: it makes separate elements feel like one instrument. On a drum bus (a group track containing all your drum sounds), the Glue Compressor ties the kick, clap, and hats together \u2014 when the kick hits hard it slightly ducks the hats, creating the mutual interaction you'd hear from a real drummer hitting a kit.\n\nStandard Glue Compressor settings for a UK garage drum bus:\n- Ratio: 4:1\n- Attack: 3ms (fast enough to catch some of the transient energy, slow enough to keep punch)\n- Release: Auto\n- Threshold: set until gain reduction shows 2\u20133dB on peak hits\n- Soft Clip: ON (prevents the output from ever harshly clipping)\n\nThe 2\u20133dB of gain reduction is barely perceptible as compression when listening to it directly. But compare your drum bus with the Glue Compressor active vs bypassed \u2014 with it on, the drums feel cohesive and driven as a unit. Without it, they sound like four separate samples stacked on top of each other.\n\nThis is the 'glue' concept: the compression creates shared dynamic relationships between elements that weren't recorded together. The kick and hats now react to each other's volume, creating the cohesion of a live-played kit."
+    },
+    {
+      "id": "sidechain",
+      "heading": "Sidechain compression \u2014 the garage pump",
+      "body": "Sidechain compression is where the compressor's trigger signal comes from a different source than the audio being compressed. The classic garage setup: the compressor on the pad track uses the kick drum as its trigger. Every time the kick hits, it triggers the compressor on the pad, briefly ducking the pad's volume. The pad pumps with the kick.\n\nThis creates the iconic pumping, breathing quality in UK garage pads. The pad is always present, but it rhythmically ducks in response to the kick \u2014 giving the track forward motion and groove even when the chord content isn't changing.\n\nSettings for pad sidechain in Ableton:\n1. Add Compressor (not Glue) to the pad track\n2. In the Compressor, enable Sidechain, set input to the kick MIDI track\n3. Ratio: 6:1 or higher\n4. Attack: 0.5\u20131ms (very fast \u2014 catches the kick immediately)\n5. Release: 80\u2013150ms (releases before the next kick at your BPM)\n6. Threshold: lower until the pad volume visibly ducks on every kick hit\n\nThe release time is the most important parameter for the sidechain feel. At 136 BPM, kicks hit every ~441ms. Your release should be short enough that the pad has mostly recovered before the next kick \u2014 typically 80\u2013150ms. Too long (300ms) and the pad never fully recovers. Too short (20ms) and the pump is too abrupt and clicky."
+    },
+    {
+      "id": "transient-control",
+      "heading": "Attack time and transients",
+      "body": "The attack setting is a transient control knob. Fast attack = compressor grabs the transient = less punch, more body. Slow attack = transient gets through = more punch, more click, less body.\n\nFor kick drums: slow attack (20\u201340ms) lets the click and impact of the kick hit the mix before compression kicks in. This preserves the kick's physical impact. Then the body of the kick (the 80\u2013200Hz thump) is controlled by the compressor. The result: punchy click on the front, controlled tail on the back.\n\nFor pads and sustained sounds: fast attack is usually fine because there's no meaningful transient to preserve. The goal is gain reduction, not transient shaping.\n\nFor bass stabs: medium attack (5\u201315ms) \u2014 some transient comes through (punch) but the main body is controlled (consistency across notes). This prevents loud notes from poking out of the mix while quiet notes disappear."
+    },
+    {
+      "id": "gain-reduction",
+      "heading": "Reading the gain reduction meter",
+      "body": "Every compressor has a gain reduction meter that shows how much it's compressing in real time. This is the most useful thing to watch when dialing in compression.\n\n0dB gain reduction = the compressor is doing nothing. Either the threshold is too high or the signal is too quiet.\n\n2\u20134dB gain reduction = light compression. Transparent on single sounds, effective for glue on a bus. This is where most drum buses and pad buses should sit.\n\n6\u201310dB gain reduction = moderate to heavy compression. Used on individual sounds when you specifically want the compressed quality (pumping sidechain, heavily controlled bass). Starts to affect the character of the sound noticeably.\n\n12dB+ gain reduction = very heavy compression. Typically only used intentionally (on vocals for upfront presence, on drum rooms for a crushed sound). Sounds obviously compressed.\n\nIf you can't see any gain reduction, the compressor is off. Start by lowering the threshold until you see 2\u20133dB of reduction, then adjust ratio and attack/release from there."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "mph-raw",
+      "timestamp": "bar 4 (~0:07)",
+      "what_to_hear": "MPH uses a GlueCompressor on the Drums group bus (confirmed ALS: Drums group has GlueCompressor, Threshold -14.9dB, Attack 6ms, Release 1ms). From bar 4 when the kick enters, listen to how the kick and other drum elements feel like one instrument rather than separate samples. That cohesion is the bus compressor tying them together.",
+      "technique": "Drum bus GlueCompressor \u2014 elements as one cohesive kit"
+    },
+    {
+      "track_id": "bl3ss-camrinwatsin-kisses",
+      "timestamp": "bar 16 (~0:27)",
+      "what_to_hear": "BL3SS has Kickstart 2 on Pluck, Saws, and Lead tracks (confirmed ALS). When the kick enters at bar 16, listen to how the harmonic elements (when they appear from bar 32) breathe with the kick \u2014 they briefly duck and recover. That duck-and-recover is Kickstart sidechain compression. The pad does not stay at constant volume; it pulses with the kick.",
+      "technique": "Kickstart 2 sidechain \u2014 pads and leads pumping with kick"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Open rep-01 (or any rep with full drums and a chord pad). Set up sidechain compression on the pad: add Compressor to the pad, enable sidechain from the kick. Start with Ratio 6:1, Attack 1ms, Release 120ms. Lower the threshold until you see 6\u20138dB of gain reduction on each kick hit. Play the loop. Now change the Release to 300ms (too slow). Notice how the pad never fully recovers. Change it to 30ms (too fast). Notice the abrupt pump. Find the setting where the release feels groovy \u2014 the pad dips cleanly with the kick and returns by the next hit.",
+    "answer_hint": "At 136 BPM, 80\u2013120ms release is usually the sweet spot. The pad's recovery arc should feel like a breath \u2014 not a click (too fast) and not a sustained duck (too slow). The groove-feel of the sidechain comes from the recovery time matching the kick pattern's natural breathing rhythm.",
+    "linked_rep_id": "rep-01-four-on-floor-emin"
+  },
+  "key_takeaway": "Compression controls dynamics. Glue Compressor ties drum elements together. Sidechain compression creates the pumping groove in garage pads. Attack controls how much transient comes through. Read the gain reduction meter \u2014 if it's not moving, the compressor isn't working."
+}

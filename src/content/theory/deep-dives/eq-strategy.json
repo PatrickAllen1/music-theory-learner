@@ -1,0 +1,63 @@
+{
+  "id": "eq-strategy",
+  "title": "EQ Strategy: Making Room in a Mix",
+  "subtitle": "EQ is not about making individual sounds better. It's about making elements coexist \u2014 each one has its own frequency territory.",
+  "difficulty": "intermediate",
+  "read_time_mins": 9,
+  "track_references": [
+    "kettama-it-gets-better",
+    "sammy-virji-cops-and-robbers"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Most beginners use EQ to add \u2014 boost the bass, boost the treble, make it sound 'better' in isolation. Professional mixing uses EQ primarily to subtract \u2014 carve space for each element so they coexist without fighting. A kick and a sub bass both occupy 50\u2013150Hz. Without EQ they compete and blur together. With EQ, you cut the bass slightly in the range where the kick peaks, and cut the kick slightly in the range where the bass peaks. Each element is slightly thinner alone but clearer together. This is the core concept of EQ in a mix."
+    },
+    {
+      "id": "frequency-map",
+      "heading": "The frequency map for UK garage",
+      "body": "Knowing where each element lives tells you where to cut when things get muddy.\n\nSub bass (50\u201380Hz): the fundamental pitch of the bass. Felt more than heard. Kick drum also has energy here.\n\nBass body (80\u2013200Hz): where the bass is heard. The thump of a kick, the body of a bass note. The most contested frequency range in a mix \u2014 kick, bass, and sometimes pad low notes all want this space.\n\n250\u2013350Hz: the 'mud zone'. Where room resonance, kick tail, and the lower mids of multiple instruments accumulate. A gentle cut here almost always cleans up a mix. It's called mud because there's usually too much of it.\n\n400\u2013800Hz: low mids. Where warmth lives in instruments. Can also sound 'boxy' or 'cardboard' when too much accumulates \u2014 this is where the Glue Compressor's sidechain from kick sometimes creates buildup in the bus.\n\n1\u20133kHz: the 'presence' zone. Where vocals and lead instruments cut through a mix. Where the attack click of a kick lives. Boosting here makes elements feel forward and present.\n\n4\u20138kHz: the 'air and brightness' zone. High-frequency content that adds clarity and detail. Cymbals, the sibilance of synthesised sounds, the air around a pad.\n\n8kHz+: high air. Often inaudible in isolation but gives a mix 'open' quality. High-pass on most elements above 12kHz unless you want brightness."
+    },
+    {
+      "id": "high-pass",
+      "heading": "High-pass filtering \u2014 the first EQ move",
+      "body": "The high-pass filter (HPF) removes all frequencies below a set point, allowing everything above to pass. On Ableton's EQ Eight, it's the first filter button (labelled 'I' in the lowest position).\n\nEvery element in your mix except kick and bass should have a high-pass filter. The reason: every microphone, synth, and sample captures low-frequency content even when the sound source doesn't generate it \u2014 room rumble, cable noise, low-frequency resonance from other elements bleeding in. None of this low-frequency content sounds like anything useful, but it accumulates in the sub-bass range and makes the mix feel congested and unclear.\n\nHigh-pass filter settings by element:\n- Pad / chord synth: HPF at 120\u2013200Hz. The bass track handles everything below this.\n- Clap / snare: HPF at 200\u2013300Hz. Claps don't need sub information.\n- Hats (closed/open): HPF at 500\u2013800Hz. Hats are high-frequency content only.\n- Bass track: HPF at 30\u201340Hz. Sub-sonic rumble exists even in bass samples and wastes headroom.\n- Drum bus (group): HPF at 40Hz. Removes sub-sonic content from the entire drum group.\n\nHigh-pass filtering everything except kick and bass frees up the low end for the sounds that are actually supposed to occupy it."
+    },
+    {
+      "id": "cut-before-boost",
+      "heading": "Cut first, boost carefully",
+      "body": "The most important EQ principle: always try cutting before boosting.\n\nIf a pad sounds muddy: cut at 250\u2013350Hz before boosting anywhere else. Often the mud disappears and the pad sounds cleaner without any boost.\n\nIf the kick sounds thin: instead of boosting the kick at 80Hz, try cutting the bass slightly at 80\u2013100Hz. With less bass energy in that range, the kick punches through more clearly \u2014 without actually adding any frequency content to the kick.\n\nIf the mix sounds dark: instead of boosting high frequencies on everything, try cutting the low-mids (300\u2013600Hz) on the busiest elements. This reduces the frequency range that's competing most and makes the mix feel brighter by contrast.\n\nWhy cut instead of boost? Each boost adds volume to the mix. The more you boost, the louder the total signal, the harder it is to manage headroom, and the more everything sounds compressed together. Cuts remove content, which opens space without raising volume. A mix made primarily of careful cuts has more headroom and more clarity than one made primarily of boosts."
+    },
+    {
+      "id": "kick-bass-relationship",
+      "heading": "The kick-bass relationship \u2014 the most important cut",
+      "body": "The kick and sub bass share the most valuable frequency real estate: 50\u2013150Hz. Every mix decision in this range determines whether your low end sounds clear and powerful or congested and muddy.\n\nThe standard approach \u2014 sidechain + EQ:\n\nSidechain compression on the bass (triggered by kick) is the primary tool \u2014 the bass ducks when the kick hits, so they share the frequency without overlapping. This is already covered in the compression deep dive.\n\nEQ in addition:\n- On the kick: if it has too much boom (100\u2013150Hz), cut slightly at the frequency where the bass peak lives. Find the bass fundamental note frequency and cut -2 to -3dB there on the kick.\n- On the bass: cut -2dB at 60\u201380Hz when the kick peak is exactly there. This creates a small pocket for the kick transient to speak through.\n\nBut go carefully: the sub bass is the most genre-defining element in UK garage. Over-cutting it removes the physical weight that defines the sound. The sidechain compressor should do most of the work; EQ is a fine-tuning tool, not the primary solution."
+    },
+    {
+      "id": "shelf-vs-bell",
+      "heading": "Shelf EQ vs bell EQ \u2014 when to use each",
+      "body": "EQ Eight has two main shapes beyond filters:\n\nBell (peak/dip): affects a specific frequency and a band around it. The width (Q) determines how narrow or wide the affected area is. High Q = narrow notch affecting only a few Hz. Low Q = broad boost or cut affecting hundreds of Hz. Use bell EQ for: fixing a specific resonance, scooping a narrow problem frequency, adding presence in a targeted zone.\n\nShelf: affects all frequencies above (high shelf) or below (low shelf) a set point. Rolling off the high frequencies of a pad with a high shelf at 8kHz reduces air and brightness across the entire top end. Rolling off low frequencies with a low shelf is an alternative to high-pass for gentle, musical low-end management.\n\nPractical uses in UK garage:\n- Low shelf cut on pad (-2dB at 200Hz, wide): gently reduces the muddy range without a hard cut\n- High shelf boost on hats (+2dB at 8kHz): subtle air and brightness\n- Bell cut on clap (-3dB at 280Hz, medium Q): removes that cardboard boxy sound from the snare body\n- Bell boost on bass (+2dB at 80Hz, medium Q): adds sub thump"
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "mph-raw",
+      "timestamp": "bar 4 (~0:07)",
+      "what_to_hear": "MPH drums group (confirmed ALS: GlueCompressor on Drums bus, AutoFilter on Kick Clap track). Listen to the full drum mix \u2014 kick, tops, snare roll \u2014 as a unit. Do they feel clean in the low mids or muddy? MPH has AutoFilter on the Kick Clap track (Cutoff=47Hz, functioning as a high-pass). That high-pass is clearing sub-sonic content below the kick fundamental.",
+      "technique": "AutoFilter as high-pass on drum bus \u2014 removing sub-sonic buildup"
+    },
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "bar 56 (~1:36)",
+      "what_to_hear": "At bar 56, 7+ tracks enter simultaneously (main pad, leads, chords, mid bass). With this many elements in the mix, listen for whether each one is audible and distinct or whether they blur together. The EQ8 devices on the chord group (Overdrive \u2192 Amp \u2192 MultibandDynamics \u2192 StereoGain confirmed in ALS) are doing the frequency separation work that keeps the mass entry from becoming a wall of sound.",
+      "technique": "EQ separation in a dense multi-track drop"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Open rep-01 (or any rep with drums + pad). Add EQ Eight to the pad track. Set a high-pass filter at 150Hz. Play back. Listen to how the pad changes \u2014 some low-end warmth may disappear, but the mix should feel cleaner. Now add a bell cut: -3dB at 280Hz, Q = 2.0. Play back. Notice if the muddiness in the low-mids decreases. Now add a bell boost: +2dB at 3kHz, Q = 1.0. Notice if the pad feels more present. Compare the final EQ'd pad to the original bypassed \u2014 individual changes are subtle but together they should sound cleaner and more forward in the mix.",
+    "answer_hint": "The HPF at 150Hz clears sub energy that the pad doesn't need (the bass handles that). The -3dB cut at 280Hz removes the boxy buildup from the pad's lower harmonics. The +2dB boost at 3kHz brings the pad slightly forward in the mix presence. Together these three moves are standard pad EQ \u2014 subtle individually, meaningful in a full mix.",
+    "linked_rep_id": "rep-11-VI-III-i-loop-bbmin"
+  },
+  "key_takeaway": "High-pass everything except kick and bass. Cut at 250\u2013350Hz when things feel muddy. Cut before boosting. EQ is about giving each element its own frequency territory \u2014 not making each sound better in isolation."
+}

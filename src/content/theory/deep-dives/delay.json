@@ -1,0 +1,63 @@
+{
+  "id": "delay",
+  "title": "Delay: Repetition as Rhythm",
+  "subtitle": "Delay is more than an echo effect. Used rhythmically, it creates forward motion and adds dimension without adding complexity.",
+  "difficulty": "beginner",
+  "read_time_mins": 7,
+  "track_references": [
+    "kettama-it-gets-better",
+    "interplanetary-criminal-slow-burner"
+  ],
+  "sections": [
+    {
+      "id": "intro",
+      "heading": null,
+      "body": "Reverb creates space. Delay creates time \u2014 it takes a sound and places copies of it in the future. The two are often confused by beginners because both create a sense of 'more' around a sound. The difference: reverb blurs a sound into a room, while delay repeats it at intervals. Rhythmic delay is one of the most useful mixing tools in UK garage because it adds motion and density without needing new MIDI notes or additional samples."
+    },
+    {
+      "id": "how-it-works",
+      "heading": "The three parameters that matter",
+      "body": "Delay time: how far in the future the echo lands. In music, delay time is usually set in musical divisions \u2014 1/8 note, 1/16 note, dotted 1/8 note (1.5x a normal 1/8). At 136 BPM, a 1/8 note delay is about 220ms. This means: every sound gets an echo 220ms later, which is perfectly in time with the music. When you set delay time to a musical division and sync it to the project tempo, the echoes land on the grid \u2014 they feel like part of the rhythm rather than an accident.\n\nFeedback: how many echoes repeat. 0% = one echo. 50% = multiple echoes that gradually fade out over about 3\u20135 repeats. 100% = infinite echoes that never fade (dangerous \u2014 the delay will feedback forever). For most uses: 30\u201360% feedback.\n\nDry/wet: how loud the echoes are relative to the original. 20% wet means quiet echoes that add subtle texture. 60% wet means the echoes compete with the original. Most uses: 20\u201340%.\n\nNote: Ableton Live 11 Standard uses Simple Delay (a single stereo delay). Echo (the more complex delay device with character and modulation) is Suite-only. Simple Delay is fully capable for all the uses described here."
+    },
+    {
+      "id": "rhythmic-delay",
+      "heading": "Rhythmic delay on bass",
+      "body": "One of the most common uses in UK garage: a 1/16 dotted delay on a bass stab creates a 'ghost' hit that falls between the grid. This is the stutter-echo effect you hear on off-beat bass hits in IC and similar tracks.\n\nHow to set it up in Simple Delay:\n1. Add Simple Delay to the bass track\n2. Set both L and R channels to 1/16D (dotted 1/16 = 1.5x a normal 1/16)\n3. Feedback: 35%\n4. Dry/wet: 25%\n\nNow when your bass hits on the 1, you'll hear a subtle echo between the 1 and the 2 \u2014 at the triplet point. This adds rhythmic motion without programming additional MIDI notes.\n\nWhy dotted 1/16? The dotted note falls at an unusual grid point \u2014 it's not on an 8th or 16th. This creates a 'between-the-beats' effect that gives the bass line a rhythmic bounce even when the underlying MIDI is straight."
+    },
+    {
+      "id": "filter-delay",
+      "heading": "Filter delay for atmospheric texture",
+      "body": "Delay can do more than repeat a sound \u2014 it can transform it. If you use Filter Delay (Ableton Live Suite) or a Simple Delay followed by an AutoFilter return, you can filter each echo so it sounds darker and further away than the original. This creates a sense of the echo receding into the distance, which adds depth and dimension.\n\nIn Live 11 Standard: simulate filter delay by routing your delay to a return track with a Low Pass filter (AutoFilter, cutoff around 800Hz, resonance minimal). Send the wet signal from Simple Delay to this return instead of mixing it back directly. The filtered echo sounds further away and adds atmosphere without cluttering the mid-frequency content of the original sound.\n\nThis technique is especially useful on high-frequency elements: a shaker, a vocal chop, or a hi-hat. The filtered delay turns a single hit into a textured, layered sound that fills space in the stereo field."
+    },
+    {
+      "id": "stereo-width",
+      "heading": "Delay for stereo width",
+      "body": "Simple Delay has independent L and R channels. By setting them to slightly different delay times \u2014 for example, L at 1/8 and R at 1/8 dotted \u2014 the echoes land at slightly different times in the left and right speakers. This creates a subtle stereo spread even on a mono source.\n\nThe technique: use L at 1/8, R at 1/8 dotted, both at low feedback (25\u201330%) and low wet (20\u201325%). On a pad stab or a short synth hit, this makes the sound feel wider than it is without any chorus or stereo imaging plugin. It works because the small time offset between L and R mimics how sound arrives at your two ears from different distances.\n\nBe careful: check your mix in mono (use Utility in mono mode at the end of your chain). If the L and R echoes cancel each other out in mono, the trick is too aggressive. Subtle settings generally survive mono."
+    },
+    {
+      "id": "when-not-to",
+      "heading": "When to avoid delay",
+      "body": "Not every element needs delay. Using delay on too many tracks creates a smeared, indistinct mix where echoes from different elements overlap and create sonic mud.\n\nUsually no delay on: kick drum (delays the transient impact, makes the groove feel off), sub bass (low-frequency echoes build up quickly and cause muddy low end), main pad sustained notes (the held note is already filling that space \u2014 adding delay creates redundant texture).\n\nUsually uses delay: bass stabs and short bass hits, vocal chops, high-frequency percussion, pad hits that aren't sustained, lead synth lines.\n\nThe test: A/B your mix with and without the delay. Does the mix feel more interesting, or just busier? More interesting = keep it. Busier = remove or lower the wet signal."
+    }
+  ],
+  "listening_cues": [
+    {
+      "track_id": "interplanetary-criminal-slow-burner",
+      "timestamp": "bar 30 (~0:52)",
+      "what_to_hear": "Bass and kick both enter at bar 30 (confirmed ALS). Listen to the bass line in isolation \u2014 do any notes have a subtle echo after them? IC uses Kickstart 2 on the bass (sidechain pumping) but the bass movement itself is worth studying for how it occupies the low end rhythmically without a delay.",
+      "technique": "Bass rhythmic identity without delay \u2014 how movement alone creates groove"
+    },
+    {
+      "track_id": "kettama-it-gets-better",
+      "timestamp": "bar 40 (~1:08)",
+      "what_to_hear": "At bar 40, the pluck enters (Serum + Delay chain in ALS). The pluck is a short-duration sound \u2014 listen for whether you hear a repeat or echo after each pluck hit. Short pluck sounds with delay create rhythmic motion between hits, filling the space without adding new MIDI notes.",
+      "technique": "Delay on pluck \u2014 filling rhythmic space between hits"
+    }
+  ],
+  "practice_exercise": {
+    "instruction": "Open rep-01 or rep-02 (any rep with a kick and bass). On the bass channel, add Simple Delay. Set: L = 1/16 Dotted, R = 1/16 Dotted, Feedback 35%, Dry/Wet 25%. Play back one bar and listen. Then: change Dry/Wet to 60%. Listen to how the echoes now compete with the original. Change it back to 25%. Toggle the delay on and off while the loop runs and notice what the delay adds. Does the bass feel more rhythmically active with it? Does it feel cluttered?",
+    "answer_hint": "At 25% wet, the delay should add a subtle bounce \u2014 a ghost hit between the main bass notes that makes the groove feel more alive without being obvious. At 60% wet, the echoes dominate and the original bass loses its punch. The 'right' level is when you toggle it off and the groove feels slightly flat \u2014 not when you toggle it on and hear an obvious effect.",
+    "linked_rep_id": "rep-02-two-step-gmin"
+  },
+  "key_takeaway": "Set delay time to a musical division and it becomes rhythm. Dotted 1/16 on bass stabs adds bounce. Low wet signal keeps it subtle. Use on short hits and stabs, not sustained pads or kick drums."
+}
