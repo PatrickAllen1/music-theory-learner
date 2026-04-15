@@ -1,4 +1,5 @@
 import rep01 from "./reps/rep-01-four-on-floor-emin.json";
+import rep15 from "./reps/rep-15-drum-rack-from-scratch.json";
 import rep02 from "./reps/rep-02-two-step-gmin.json";
 import rep03 from "./reps/rep-03-phrygian-bass-emin.json";
 import rep04 from "./reps/rep-04-phrygian-bass-dmin.json";
@@ -31,6 +32,7 @@ import original04 from "./originals/original-04-static-amber.json";
 
 export const builds = [
   rep01,
+  rep15,
   rep02,
   rep03,
   rep04,

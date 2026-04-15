@@ -1,0 +1,101 @@
+{
+  "id": "rep-15-drum-rack-from-scratch",
+  "title": "Drum Rack from Scratch",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 30,
+  "bpm": 136,
+  "key": "E minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "Build a fully functional UK garage drum rack from scratch: find your samples on Splice, load them into the standard layout, set velocity layers, add choke groups for hats, and bus through a Glue Compressor. The drum foundation used in every rep and spinoff.",
+  "what_youll_learn": [
+    "The standard Drum Rack pad layout (kick C1, snare D1, clap D#1, closed hat F#1, open hat G#1)",
+    "How to audition and select samples on Splice for a specific sound concept",
+    "Velocity calibration — why each drum element needs a different default velocity",
+    "Choke groups: how to make open hat automatically cut off when closed hat hits",
+    "Glue Compressor on the drum bus — the difference between raw and glued drums"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Open Drum Rack and set up the project",
+      "category": "ableton",
+      "instruction": "New Ableton project. BPM 136. Create a MIDI track, name it DRUMS. From the browser: Instruments > Drum Rack, drag onto the DRUMS track. You now have an empty Drum Rack with 16 pads. Save the project before touching anything.",
+      "why": "Starting with a saved project means Ableton can auto-recover if it crashes. Drum Rack is the container — every drum sound lives inside it as a separate chain (one Simpler per pad). You will load samples into these chains.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "The Drum Rack's 16-pad view shows C1 in the bottom-left. Clicking a pad plays it. The standard GM layout puts kick on C1, snare on D1, clap on D#1, closed hat on F#1, open hat on G#1. These positions are convention — they don't have to be here, but matching convention makes templates and tutorials easier to follow."
+    },
+    {
+      "id": 2,
+      "title": "Find and load a kick",
+      "category": "drums",
+      "instruction": "Go to splice.com (or open the Splice desktop app). Search 'uk garage kick punchy 136'. Audition at least 5 kicks. You are listening for: weight in the low-mid (100–200Hz), a short tail (not too boomy), and a defined transient click. Download the one that fits. In Ableton: drag the kick sample onto the C1 pad of the Drum Rack. It loads into a Simpler inside the rack. Set the Simpler to 1-Shot mode (plays the full sample on each hit regardless of note length).",
+      "why": "The kick choice defines the energy of the whole drum rack. A kick that is too short sounds weak. A kick that is too long creates low-end mud when the BPM is fast (136 BPM = 441ms per beat — the kick tail should be shorter than this). UK garage kicks tend to have more body than techno kicks but less sub-heaviness than drum & bass.",
+      "ableton_cheatsheet_id": "simpler",
+      "splice_search": "uk garage kick punchy 136 bpm",
+      "tip": "Audition the kick at your project BPM (136) by loading it temporarily onto a track and looping a single bar. Does it feel right at tempo? A great kick sample at 90 BPM may feel too slow and heavy at 136. Find one that sounds right at your actual BPM."
+    },
+    {
+      "id": 3,
+      "title": "Load a clap and position on D#1",
+      "category": "drums",
+      "instruction": "Splice search: 'uk garage clap crispy snap'. Audition 3–5 options. UK garage claps are tight and crispy — not room snares, not huge reverb claps. You want something that sits clearly above the mix. Drag onto D#1 pad. 1-Shot mode. Now add a small reverb: click the D#1 chain's 'Show Devices' button (small arrow on the chain list), add Reverb with Decay 0.3s, Dry/Wet 15%. The tiny reverb adds room without washing it out.",
+      "why": "The clap on beats 2 and 4 is the rhythmic anchor. It needs to be heard clearly — a crispy clap with a tiny room reverb sits in the mix better than a completely dry clap (which can sound cheap) or an over-reverbed one (which blurs the backbeat). 0.3s decay is short enough to sound 'roomy' not 'washed'.",
+      "ableton_cheatsheet_id": "simpler",
+      "splice_search": "uk garage clap crispy tight",
+      "tip": "Clap pitch matters. Standard pitch = the sample's original pitch. Try nudging the Simpler's Transpose knob ±2 semitones — a slightly pitched-up clap can feel brighter and more present. A pitched-down clap feels heavier. Your call based on the track concept."
+    },
+    {
+      "id": 4,
+      "title": "Load closed and open hats — set up choke group",
+      "category": "drums",
+      "instruction": "Splice search: 'closed hi hat uk garage tight'. Load onto F#1 pad (1-Shot). Splice search: 'open hi hat garage sustain'. Load onto G#1 pad (1-Shot). Now set up the choke group: click G#1 pad, in the pad view at the bottom set Choke Group to '1'. Click F#1 pad, also set Choke Group to '1'. Now when F#1 fires, it cuts off any ringing G#1. This is how real hi-hats work — the closed hat physically touches and stops the open hat.",
+      "why": "Without a choke group, the open hat rings over the closed hats — this creates a build-up of sustained hat noise that makes the groove feel sloppy and dense. With choke group 1 on both, every closed hat hit cuts off the open hat immediately. The groove tightens dramatically. This is a non-negotiable step in real drum programming.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "closed hi hat uk garage 808",
+      "tip": "Test the choke: program one bar with open hat on beat 1 and closed hat on beat 1.5. Play it back. With choke on, the open hat ring should stop the instant the closed hat hits. Without it, both ring simultaneously."
+    },
+    {
+      "id": 5,
+      "title": "Set velocities for each element",
+      "category": "drums",
+      "instruction": "Program a test 4-bar MIDI clip with this pattern: Kick C1 beats 1 2 3 4. Clap D#1 beats 2 and 4. Closed hat F#1 every 8th note (8 per bar). Play it back, then set MIDI note velocities: Kick = 95. Clap beats 2+4 = 85. Closed hats = vary between 65 and 80 (not all the same — cycle 65, 78, 72, 80 across the 8 hats per bar). This hat velocity variation is the difference between a programmed-feeling groove and a played-feeling groove.",
+      "why": "Every drum hit in a real performance has a different velocity. Programmed drums at 100% velocity everywhere sound like a machine. Varying hat velocity in a 4-step cycle (soft, medium-soft, medium, medium-hard) replicates the wrist movement of a drummer — the downbeat hats land harder than the upbeat hats. This is the technique BL3SS uses (from rep-01 onwards).",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Select all hat notes in the piano roll and use Ableton's velocity randomise (in the MIDI velocity lane at the bottom, right-click > Randomize) — then manually correct the extremes. Faster than typing each velocity. Or write 65, 78, 72, 80 as a repeating 4-note pattern manually — both work."
+    },
+    {
+      "id": 6,
+      "title": "Group and add Glue Compressor",
+      "category": "mix",
+      "instruction": "In the Session view, select the DRUMS track. Press Cmd+G (Mac) to group it. Name the group 'DRUMS'. Add Glue Compressor to the group track: Ratio 4:1, Attack 3ms, Release Auto, Threshold until gain reduction shows 2–3dB. Soft Clip ON. Play the drum pattern. Toggle the Glue Compressor on and off — with it on, the kick, clap, and hats should feel like one instrument. Without it they feel like separate samples stacked together.",
+      "why": "The Glue Compressor is the difference between a drum kit and a collection of individual samples. By lightly compressing the bus, the compressor ties the elements together — when the kick hits hard it slightly ducks the hats, creating the cohesion you hear in professional productions. 2–3dB of gain reduction is barely audible as compression but transforms the overall feel.",
+      "ableton_cheatsheet_id": "glue-compressor",
+      "splice_search": null,
+      "tip": "After adding Glue Compressor, add a Limiter after it (last in the DRUMS group chain) with Ceiling -0.3dBFS. This prevents the drum bus from ever clipping regardless of what you do upstream. It's a safety net, not a sound shaper."
+    },
+    {
+      "id": 7,
+      "title": "EQ the drum bus",
+      "category": "mix",
+      "instruction": "Add EQ Eight before the Glue Compressor on the DRUMS group track. High-pass at 40Hz (removes sub-sonic rumble that the kick doesn't need). Add a slight bell boost at 80–100Hz (+2dB, narrow Q) for kick punch. Add a gentle broad cut at 250–300Hz (-2dB) if the drum bus sounds boxy — this frequency range is where drum room sound builds up. Play the full drum pattern and compare with EQ bypassed. The high-pass and 250Hz cut should make the bus sound cleaner without removing weight.",
+      "why": "The drum bus EQ shapes how the whole kit sits in the mix, not just individual sounds. The high-pass removes content no drum sound needs. The 250Hz cut is the most universally useful mix move on a drum bus — it removes the 'boxy cardboard' resonance that accumulates when kick + clap + hat all contribute energy in that range.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "Do the drum bus EQ last — after loading all samples and setting velocities. Adding EQ before you know the full picture of your drum sound means you're fixing problems that may not exist yet."
+    },
+    {
+      "id": 8,
+      "title": "Save as a template and use in a rep",
+      "category": "ableton",
+      "instruction": "Save the project. Then: File > Save as Template (or save a copy called 'drum-rack-template-136bpm'). Now open rep-01 (Four on Floor E min) or any rep you've already done. Replace the drum rack in that rep with this new drum rack by dragging your saved project's MIDI track or exporting/importing the drum rack preset. Alternatively: start rep-01 fresh using this drum rack as the foundation instead of the default instructions. Hear the difference between a carefully built rack and a placeholder.",
+      "why": "A drum rack template is one of the highest-leverage assets in production. Every new project starts with a solid foundation instead of from zero. The template encodes your sample choices, velocity approach, choke groups, and bus processing — everything you just learned is now instantly available in every future project.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Name your kick, clap, and hat samples descriptively when you save them to your Ableton User Library. 'UK Kick warm 136' is findable in 6 months. 'Kick 1' is not. Good sample naming is production infrastructure."
+    }
+  ]
+}
