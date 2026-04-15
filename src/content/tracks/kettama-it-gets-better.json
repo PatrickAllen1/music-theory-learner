@@ -1,0 +1,246 @@
+{
+  "id": "kettama-it-gets-better",
+  "title": "It Gets Better",
+  "artist": "KETTAMA",
+  "bpm": 140,
+  "key": "Bb minor",
+  "scale": "natural minor",
+  "swing": "none",
+  "time_sig": "4/4",
+  "total_bars": 160,
+  "difficulty": "intermediate",
+
+  "chord_progression": {
+    "chords": ["Gbmaj7", "Dbmaj", "Bbm"],
+    "roman_numerals": "VI maj7 → III → i",
+    "loop_length_beats": 16,
+    "voicings": {
+      "Gbmaj7": ["F#2", "F#3", "A#3", "C#4", "F4"],
+      "Dbmaj": ["C#2", "G#3", "C#3", "C#4", "F4"],
+      "Bbm": ["A#1", "A#2", "F3", "A#3", "C#4"]
+    },
+    "theory_notes": "Bb natural minor: Bb C Db Eb F Gb Ab. The VI (Gbmaj7) is the soulful Kettama signature — a major 7th chord on the 6th degree gives warmth and lift. III (Dbmaj) is the stable middle ground. i (Bbm) is the root resolution. The loop VI→III→i never lands on i as a 'final' resolution — it keeps cycling, giving the track a floating, perpetual quality. This is a core Kettama technique: always implying resolution without fully arriving."
+  },
+
+  "structure": [
+    {
+      "section": "Intro",
+      "bars": "1–16",
+      "description": "Vocal starts bar 16.7, no beat"
+    },
+    {
+      "section": "Intro Build",
+      "bars": "17–24",
+      "description": "Bass + guitar bass + rave lead, no kick yet"
+    },
+    {
+      "section": "Build w/ Kick",
+      "bars": "25–32",
+      "description": "Kick enters (4-on-floor), sub + rave lead 2 at bar 25"
+    },
+    {
+      "section": "Layer Build",
+      "bars": "33–48",
+      "description": "Top loop + clap + pad enter at 37, pluck at 41, white noise at 45"
+    },
+    {
+      "section": "Piano Drop",
+      "bars": "49–56",
+      "description": "Everything strips back — piano only + sub drop audio. Dramatic negative space."
+    },
+    {
+      "section": "Main Section 1",
+      "bars": "57–80",
+      "description": "Full chord stack enters: chord + main chord + main chord 2 + lead + lead 2 + piano + main pad + mid bass"
+    },
+    {
+      "section": "Full Drop 1",
+      "bars": "81–96",
+      "description": "Kick + top loop return. Drop pad adds energy. Sub variation at bar 89."
+    },
+    {
+      "section": "Full Drop 2",
+      "bars": "97–112",
+      "description": "Identical structure to Drop 1, repeated"
+    },
+    {
+      "section": "Break / Strip",
+      "bars": "113–136",
+      "description": "Kick drops, one-bar stabs (bars 121–134), snare 909 from bar 129, drop pad from bar 125"
+    },
+    {
+      "section": "Final Drop",
+      "bars": "137–160",
+      "description": "Full arrangement returns for final run. Piano re-enters at bars 135, 145, 149, 153, 157."
+    }
+  ],
+
+  "tracks": [
+    { "name": "kick", "type": "MIDI", "role": "4-on-the-floor kick, C4" },
+    { "name": "clap", "type": "MIDI", "role": "Clap on beats 2 and 4" },
+    {
+      "name": "snare 909",
+      "type": "MIDI",
+      "role": "909 snare in breakdown (bars 73–79, 129–135)"
+    },
+    {
+      "name": "bass",
+      "type": "MIDI",
+      "role": "Main bass — walks Bb minor scale (F#, C#, D#, A#, F, G# across sections)"
+    },
+    {
+      "name": "giutar bass",
+      "type": "MIDI",
+      "role": "Guitar-style bass layer (doubles main bass)"
+    },
+    {
+      "name": "mid bass",
+      "type": "MIDI",
+      "role": "Mid-range bass layer in main sections"
+    },
+    {
+      "name": "sub",
+      "type": "MIDI",
+      "role": "Sub bass — enters at bar 25, drops in piano section, returns at drop"
+    },
+    {
+      "name": "rave lead",
+      "type": "MIDI",
+      "role": "Main rave/synth lead from bar 17"
+    },
+    {
+      "name": "rave lead 2",
+      "type": "MIDI",
+      "role": "Second rave lead, enters bar 25"
+    },
+    {
+      "name": "saw",
+      "type": "MIDI",
+      "role": "Saw synth layer in build (bars 41–48)"
+    },
+    { "name": "pad", "type": "MIDI", "role": "Soft pad layer from bar 37" },
+    {
+      "name": "pluck",
+      "type": "MIDI",
+      "role": "Pluck synth accent (bars 41–48)"
+    },
+    {
+      "name": "piano",
+      "type": "MIDI",
+      "role": "Piano — centrepiece of the track, appears in drops and breakdowns"
+    },
+    {
+      "name": "main pad",
+      "type": "MIDI",
+      "role": "Main pad sustained through sections 57–160"
+    },
+    {
+      "name": "drop pad",
+      "type": "MIDI",
+      "role": "Drop-specific pad, adds fullness to drops"
+    },
+    { "name": "lead", "type": "MIDI", "role": "Lead melody over chord loop" },
+    { "name": "lead 2", "type": "MIDI", "role": "Second lead harmony layer" },
+    {
+      "name": "chord",
+      "type": "MIDI",
+      "role": "Chord stabs — Gbmaj7 → Dbmaj → Bbm"
+    },
+    {
+      "name": "main chord",
+      "type": "MIDI",
+      "role": "Main chord layer (same progression, fuller voicing)"
+    },
+    {
+      "name": "main chord 2",
+      "type": "MIDI",
+      "role": "Third chord layer / slight variation"
+    },
+    {
+      "name": "white noise",
+      "type": "MIDI",
+      "role": "White noise riser in build (bars 45–48)"
+    },
+    {
+      "name": "Vocal",
+      "type": "AUDIO",
+      "role": "Vocal runs entire track (bar 16.7–164)"
+    },
+    {
+      "name": "clap 2",
+      "type": "AUDIO",
+      "role": "Audio clap hit at section transitions"
+    },
+    {
+      "name": "Top Loop",
+      "type": "AUDIO",
+      "role": "Percussive top loop in drops"
+    },
+    {
+      "name": "Crash",
+      "type": "AUDIO",
+      "role": "Crash cymbal at major section transitions"
+    },
+    {
+      "name": "sub drop",
+      "type": "AUDIO",
+      "role": "Sub bass audio sample in piano section (49–53)"
+    }
+  ],
+
+  "drum_pattern": {
+    "kick": {
+      "note": "C4",
+      "pattern": "4-on-the-floor — beats 1, 2, 3, 4",
+      "velocity": 127
+    },
+    "clap": {
+      "note": "C4",
+      "pattern": "Beats 2 and 4 only",
+      "velocity": 100
+    }
+  },
+
+  "bass_pattern": {
+    "notes_used": ["F#2/3", "C#3", "D#3", "A#2/3", "F3", "G#3"],
+    "key_notes": "All in Bb natural minor scale (Bb=A#, Db=C#, Eb=D#, F, Gb=F#, Ab=G#)",
+    "description": "Bass walks through the Bb minor scale across a 2-bar phrase. F#(Gb) is the bass root for the Gbmaj7 chord section, C#(Db) for the Dbmaj section, A#(Bb) for the Bbm section. Each note is subdivided with quick 16th-note articulations (0.25, 0.5 beat durations) for a bouncy, driving feel.",
+    "technique": "Each bass note uses a quick-attack articulation: 0.25 beat pickup → 0.5 beat held → repeat. Creates rhythmic momentum rather than held notes."
+  },
+
+  "key_techniques": [
+    "VI→III→i chord loop — always cycling, never fully resolving — Kettama's floating minor feel",
+    "Triple chord layering: chord + main chord + main chord 2 (three instances of same progression for density)",
+    "Piano as structural pivot — appears alone at bar 49 to strip the energy, then returns in drops",
+    "4-on-the-floor kick with clap on 2 and 4 — more dance/house feel vs the open-hat UK garage approach",
+    "Rave lead enters before kick (bar 17) — bass energy before the beat creates anticipation",
+    "One-bar stab technique in breakdown (bars 121–134) — track stutters to nothing bar by bar",
+    "Sub drops at the start of drops for physical impact"
+  ],
+
+  "theory_notes": "It Gets Better is built on Bb natural minor at 140 BPM. The chord progression Gbmaj7→Dbmaj→Bbm is the VI→III→i in Bb minor — a soulful, perpetually-unresolved loop that defines Kettama's melodic style. Analytically: natural minor gives you 7 chords (i, iidim, III, iv, v, VI, VII). Kettama uses the three 'warmest' ones. The major 7th on the VI chord (Gbmaj7) is the signature sound — it adds a dreamy, jazz-inflected quality that lifts the track above straight minor-key darkness. Compare to MPH Raw which uses no chords at all — this track shows the opposite approach: dense harmonic layering over a driving beat.",
+
+  "vs_mph_raw": "MPH Raw: no chords, phrygian tension, E minor pedal note, aggression through rhythm. Kettama It Gets Better: rich chord progression, Bb minor, VI→III→i loop, emotional complexity through harmony. Two completely different approaches to UK garage at similar BPMs (132 vs 140).",
+
+  "spinoff_potential": {
+    "key_changes": ["F minor", "C minor", "G minor"],
+    "bpm_range": "132–144",
+    "elements_to_transplant": [
+      "VI→III→i chord loop (transpose to any minor key)",
+      "Triple chord layer technique (same chords on 3 separate MIDI tracks for thickness)",
+      "Piano-only breakdown for maximum tension release",
+      "Bass articulation technique (quick 16th pickup notes)",
+      "One-bar stutter breakdown"
+    ]
+  },
+
+  "splice_searches": [
+    "kettama style chord stab",
+    "uk garage piano loop 140bpm",
+    "rave lead synth uk garage",
+    "sub bass drop hit",
+    "4x4 house kick 140bpm"
+  ],
+
+  "guided_build_id": "kettama-it-gets-better-recreation"
+}
