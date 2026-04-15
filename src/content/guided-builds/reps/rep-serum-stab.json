@@ -34,6 +34,12 @@
       "why": "Stabs do not have a bass role. They live in the upper-mid range (300Hz–5kHz). Cutting everything below 300Hz means the stab won't fight the sub bass or kick when it hits. This is also what gives stabs their 'snap' rather than 'thud' — no low-end weight, all mid attack.",
       "ableton_cheatsheet_id": "serum-v2-filter",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumFilterSection.jpeg",
+          "caption": "Serum FILTER — power button to enable, type dropdown (select HP 12 for high-pass), CUTOFF knob (set to ~35% for 300Hz cut)."
+        }
+      ],
       "tip": "After applying the HP filter, the stab should sound thin in isolation. That's correct — it's not supposed to carry bass. In context with drums and bass it will sit perfectly in the mid layer."
     },
     {
@@ -44,6 +50,12 @@
       "why": "The stab envelope is the exact opposite of the pad envelope. Sustain 0% means the sound dies regardless of whether you hold the key. The only duration that matters is the Decay. Short decay (200ms) = a punch. 400ms = a slightly softer stab that gives the chord character a chance to bloom for a moment before dying. Try both.",
       "ableton_cheatsheet_id": "serum-v2-envelopes",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumEnvelopeSection.jpeg",
+          "caption": "ENV 1 — for a stab: Attack 0ms (fully left), Decay 400ms, Sustain 0% (fully left), Release 50ms. Opposite of a pad envelope."
+        }
+      ],
       "tip": "Play a chord and hold the MIDI keys down for 2 seconds. Notice the sound dies after 400ms regardless — the key being held has no effect once Sustain is 0%. Release 50ms is just for the natural off — keep it short."
     },
     {

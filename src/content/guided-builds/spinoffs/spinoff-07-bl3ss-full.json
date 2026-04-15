@@ -54,11 +54,11 @@
       "splice_search": null,
       "images": [
         {
-          "src": "/images/ableton/SimplerModesTabL12.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/SimplerModesTabL12.png",
           "caption": "Simpler's three mode tabs — Classic (full waveform), 1-Shot (plays to end), and Slicing (scissors icon, third tab)."
         },
         {
-          "src": "/images/ableton/SimplerSliceModeL12.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/SimplerSliceModeL12.png",
           "caption": "Simpler in Slicing mode — vertical lines mark detected transients. Each slice maps to its own pad in the Drum Rack."
         }
       ],

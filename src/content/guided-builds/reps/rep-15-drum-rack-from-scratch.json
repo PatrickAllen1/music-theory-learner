@@ -57,7 +57,7 @@
       "splice_search": "closed hi hat uk garage 808",
       "images": [
         {
-          "src": "/images/ableton/DrumRackPadView.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/DrumRackPadView.png",
           "caption": "Drum Rack pad view — Choke Group number box is in the bottom panel when a pad is selected."
         }
       ],
@@ -83,7 +83,7 @@
       "splice_search": null,
       "images": [
         {
-          "src": "/images/ableton/GlueL12.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/GlueL12.png",
           "caption": "Glue Compressor — Ratio, Attack, Release, Threshold controls, and Soft Clip toggle on the right."
         }
       ],

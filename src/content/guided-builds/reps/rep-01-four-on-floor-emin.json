@@ -86,7 +86,7 @@
       "splice_search": null,
       "images": [
         {
-          "src": "/images/ableton/EQEightExpandedViewL12.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/EQEightExpandedViewL12.png",
           "caption": "EQ Eight — numbered band circles along the top, frequency graph in the centre, shape/freq/gain/Q controls at the bottom."
         }
       ],

@@ -83,7 +83,7 @@
       "splice_search": null,
       "images": [
         {
-          "src": "/images/ableton/SaturatorL12.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/SaturatorL12.png",
           "caption": "Saturator — Drive knob (15%), mode selector (Soft Clip), and Dry/Wet (40%). The Soft Clip mode adds warm harmonic content without hard clipping."
         }
       ],

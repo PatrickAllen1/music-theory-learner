@@ -92,11 +92,11 @@
       "splice_search": null,
       "images": [
         {
-          "src": "/images/ableton/CompressorSidechainL12.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
           "caption": "Compressor with Sidechain panel open — click the 'Sidechain' triangle at top-right, then enable the power button and set 'Audio From' to your DRUMS track."
         },
         {
-          "src": "/images/ableton/ReverbL12.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/ReverbL12.png",
           "caption": "Reverb on a Return track — Dry/Wet stays at 100% always. Control the amount of reverb from each source track's send knob."
         }
       ],

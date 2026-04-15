@@ -85,7 +85,7 @@
       "splice_search": null,
       "images": [
         {
-          "src": "/images/ableton/RackChainList.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/RackChainList.png",
           "caption": "Drum Rack chain list — the thin strip on the left of the Drum Rack device. Click a pad to highlight its chain row, then drag effects onto that row."
         }
       ],

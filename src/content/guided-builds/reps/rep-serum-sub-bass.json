@@ -25,6 +25,12 @@
       "why": "Starting from Init Preset means you understand every decision you're making. Presets are other people's decisions. You need to know why each parameter is where it is — that's what this rep teaches.",
       "ableton_cheatsheet_id": "serum-v2-oscillators",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumV2FullInterface.jpeg",
+          "caption": "Serum V2 full interface — OSC A/B/C and NOISE in the top section, ENV 1-4 and LFO 1-8 in the bottom row, navigation tabs (OSC / MIX / FX / MATRIX / GLOBAL) at the top."
+        }
+      ],
       "tip": "If right-clicking the preset name doesn't show the menu, try left-clicking it first to activate the preset field, then right-clicking. In Serum V2 the preset bar is the thin strip at the very top with left/right arrows on either side and the preset name in the centre."
     },
     {
@@ -35,6 +41,12 @@
       "why": "The sine wave has no harmonics — only the fundamental frequency. Sub bass lives below 100Hz where overtones would create muddiness and compete with kick drum energy. WT POS 0% is the cleanest signal Serum can produce.",
       "ableton_cheatsheet_id": "serum-v2-oscillators",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumOscillatorSection.jpeg",
+          "caption": "OSC A — WT POS knob bottom-left, UNISON and DETUNE knobs below the waveform display. Drag WT POS fully left for the pure sine (smooth curve in the waveform display)."
+        }
+      ],
       "tip": "Hold Shift while dragging a knob in Serum for fine control. WT POS 0% is exactly at the leftmost position — watch the waveform display to confirm you have a smooth round shape, not a saw or square."
     },
     {
@@ -65,6 +77,12 @@
       "why": "Attack 0ms means the note responds immediately when you press a key — the sub hits exactly on time with the kick. Release 150ms means the note decays cleanly over 150ms after you release the key. Too long and notes blur together; too short and the sub sounds clipped.",
       "ableton_cheatsheet_id": "serum-v2-envelopes",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumEnvelopeSection.jpeg",
+          "caption": "ENV 1 — ATTACK, HOLD, DECAY, SUSTAIN, RELEASE knobs. Set Attack 0ms (fully left), Sustain 100% (fully right), Release ~150ms."
+        }
+      ],
       "tip": "To see exact millisecond values, hover your mouse over the knob — a tooltip will show the current value. Adjust slowly and watch the tooltip to land on 150ms for Release."
     },
     {

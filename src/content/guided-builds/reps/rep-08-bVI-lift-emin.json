@@ -76,7 +76,7 @@
       "splice_search": null,
       "images": [
         {
-          "src": "/images/ableton/CompressorSidechainL12.png",
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
           "caption": "Compressor with Sidechain panel open — power button enables it, 'Audio From' dropdown selects the trigger source (your DRUMS track)."
         }
       ],

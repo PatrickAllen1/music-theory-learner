@@ -26,6 +26,12 @@
       "why": "Every parameter you set yourself is a decision you'll remember. Patches loaded from a library hide those decisions. Starting from Init Preset means you understand the whole sound, not just the interesting parts.",
       "ableton_cheatsheet_id": "serum-v2-oscillators",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumV2FullInterface.jpeg",
+          "caption": "Serum V2 layout — OSC A/B/C top section, ENV 1-4 and LFO 1-8 bottom row, FX/MATRIX/GLOBAL tabs at top. Init Preset resets all of these to defaults."
+        }
+      ],
       "tip": "Save your project immediately after loading Init Preset. Save again after each step — Ableton does not auto-save, and it's easy to lose work."
     },
     {
@@ -66,6 +72,12 @@
       "why": "The MG Low 24 is a Moog-modelled lowpass filter — smooth and warm, not harsh or clinical. At 60% cutoff (roughly 1–2kHz) it removes the harshest upper harmonics while keeping the character of the oscillators. 8% resonance adds just enough 'voice' to the filter without any squeal.",
       "ableton_cheatsheet_id": "serum-v2-filter",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumFilterSection.jpeg",
+          "caption": "Serum FILTER section — power button top-left to enable, filter type dropdown (select MG Low 24), CUTOFF and RES knobs below."
+        }
+      ],
       "tip": "After setting the filter, sweep the CUTOFF knob while holding a chord — hear how the sound changes from completely muffled (far left) to fully bright (far right). Park it in the 55–65% range for the pad sound. Toggle the filter on/off to hear how much it's doing."
     },
     {
@@ -76,6 +88,12 @@
       "why": "The slow attack is the single most important decision in pad design. It transforms the sound from a stab (instant on) to a pad (swells in). 300ms means the pad reaches full volume after 0.3 seconds — you hear it bloom rather than hit. Release 1500ms means chords overlap slightly as they change, creating the seamless wash effect.",
       "ableton_cheatsheet_id": "serum-v2-envelopes",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumEnvelopeSection.jpeg",
+          "caption": "ENV 1 — ATTACK, HOLD, DECAY, SUSTAIN, RELEASE knobs. For a pad: Attack ~300ms, Decay 0, Sustain 100%, Release ~1500ms."
+        }
+      ],
       "tip": "Try Attack at 0ms vs 300ms back to back. At 0ms you have a pluck or stab. At 300ms you have a pad. This single parameter changes the category of sound more than any other. Kettama's pad has roughly this 300ms swell."
     },
     {
@@ -86,6 +104,12 @@
       "why": "A very slow LFO on filter cutoff makes the pad's brightness gently rise and fall. At 5% depth the movement is almost imperceptible — you just feel that the sound is alive rather than static. This 'breathing' quality is what separates a flat synth pad from the organic, living quality of Kettama's pads.",
       "ableton_cheatsheet_id": "serum-v2-envelopes",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumLFOSection.jpeg",
+          "caption": "LFO 1 — shape selector top-left, RATE knob at the bottom. Set shape to Sine, Rate to 0.25 Hz, and make sure BPM sync is off."
+        }
+      ],
       "tip": "To see all modulation connections, click the MATRIX tab at the top of Serum. Your LFO 1 → Cutoff connection will appear as a row. You can adjust the modulation depth here numerically. Try increasing to 10–15% and hear the breathing become more obvious — then decide which subtlety level you prefer."
     },
     {
