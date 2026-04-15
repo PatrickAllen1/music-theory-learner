@@ -55,6 +55,12 @@
       "why": "Without a choke group, the open hat rings over the closed hats — this creates a build-up of sustained hat noise that makes the groove feel sloppy and dense. With choke group 1 on both, every closed hat hit cuts off the open hat immediately. The groove tightens dramatically. This is a non-negotiable step in real drum programming.",
       "ableton_cheatsheet_id": "drum-rack",
       "splice_search": "closed hi hat uk garage 808",
+      "images": [
+        {
+          "src": "/images/ableton/DrumRackPadView.png",
+          "caption": "Drum Rack pad view — Choke Group number box is in the bottom panel when a pad is selected."
+        }
+      ],
       "tip": "Test the choke: program one bar with open hat on beat 1 and closed hat on beat 1.5. Play it back. With choke on, the open hat ring should stop the instant the closed hat hits. Without it, both ring simultaneously."
     },
     {

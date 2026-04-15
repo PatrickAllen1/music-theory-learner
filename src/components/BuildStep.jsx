@@ -50,6 +50,28 @@ export default function BuildStep({
         </div>
       )}
 
+      {step.images && step.images.length > 0 && (
+        <div className="mb-6 space-y-3">
+          {step.images.map((img, i) => (
+            <figure
+              key={i}
+              className="bg-zinc-900 rounded-lg overflow-hidden border border-zinc-800"
+            >
+              <img
+                src={img.src}
+                alt={img.caption}
+                className="w-full object-contain max-h-72"
+              />
+              {img.caption && (
+                <figcaption className="px-3 py-2 text-xs font-mono text-zinc-500">
+                  {img.caption}
+                </figcaption>
+              )}
+            </figure>
+          ))}
+        </div>
+      )}
+
       {step.ableton_cheatsheet_id && (
         <button
           onClick={() => onOpenRef(step.ableton_cheatsheet_id)}

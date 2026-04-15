@@ -84,6 +84,12 @@
       "why": "Sub rumble below 40Hz takes up headroom without adding audible weight. The 65Hz boost adds the physical kick thump you feel in a club. 250Hz is the 'cardboard box' frequency — cutting it tightens the kick. IC's kick is present but never bloated.",
       "ableton_cheatsheet_id": "eq-eight",
       "splice_search": null,
+      "images": [
+        {
+          "src": "/images/ableton/EQEightExpandedViewL12.png",
+          "caption": "EQ Eight — numbered band circles along the top, frequency graph in the centre, shape/freq/gain/Q controls at the bottom."
+        }
+      ],
       "tip": "Toggle the EQ on/off (the power button) to compare with and without. If you can't hear a difference, the cut/boost is too subtle — increase it until it's obvious, then back off slightly."
     },
     {
