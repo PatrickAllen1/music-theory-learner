@@ -2,6 +2,9 @@ export default function BuildStep({
   step,
   stepNumber,
   total,
+  buildId,
+  isComplete,
+  onMark,
   onNext,
   onPrev,
   onOpenRef,
@@ -56,7 +59,7 @@ export default function BuildStep({
         </button>
       )}
 
-      <div className="flex gap-3 mt-8">
+      <div className="flex items-center gap-3 mt-8">
         {stepNumber > 1 && (
           <button
             onClick={onPrev}
@@ -70,6 +73,34 @@ export default function BuildStep({
           className="px-6 py-2 bg-zinc-100 text-zinc-900 hover:bg-white rounded font-mono text-sm font-bold transition-colors"
         >
           {stepNumber === total ? "Finish" : "Next step →"}
+        </button>
+
+        <button
+          onClick={onMark}
+          className={`ml-auto flex items-center gap-2 text-xs font-mono px-3 py-2 rounded border transition-colors ${
+            isComplete
+              ? "border-green-700 bg-green-900/30 text-green-400"
+              : "border-zinc-700 text-zinc-500 hover:border-zinc-500 hover:text-zinc-300"
+          }`}
+        >
+          <span
+            className={`w-3.5 h-3.5 rounded-sm border flex items-center justify-center shrink-0 ${
+              isComplete ? "bg-green-600 border-green-600" : "border-zinc-600"
+            }`}
+          >
+            {isComplete && (
+              <svg
+                viewBox="0 0 10 10"
+                className="w-2.5 h-2.5 text-white"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="1.5"
+              >
+                <polyline points="1.5,5 4,7.5 8.5,2" />
+              </svg>
+            )}
+          </span>
+          {isComplete ? "Done" : "Mark done"}
         </button>
       </div>
     </div>

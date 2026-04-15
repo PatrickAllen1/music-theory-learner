@@ -15,7 +15,37 @@ const spinoffLevelStyles = {
   full: "bg-purple-900/40 text-purple-400",
 };
 
-export default function BuildSelector({ onSelect }) {
+function ProgressBar({ done, total }) {
+  const pct = total === 0 ? 0 : Math.round((done / total) * 100);
+  const complete = done >= total;
+  return (
+    <div className="mt-3">
+      {complete ? (
+        <span className="text-xs font-mono text-green-400 bg-green-900/30 px-2 py-0.5 rounded">
+          ✓ Complete
+        </span>
+      ) : (
+        <div className="flex items-center gap-2">
+          <div className="flex-1 h-1 bg-zinc-800 rounded-full overflow-hidden">
+            <div
+              className="h-full bg-zinc-500 rounded-full transition-all"
+              style={{ width: `${pct}%` }}
+            />
+          </div>
+          <span className="text-xs font-mono text-zinc-600 shrink-0">
+            {done}/{total}
+          </span>
+        </div>
+      )}
+    </div>
+  );
+}
+
+export default function BuildSelector({
+  onSelect,
+  stepsComplete,
+  isBuildComplete,
+}) {
   const [tab, setTab] = useState("Reps");
   const [repFilter, setRepFilter] = useState("beginner");
 
@@ -121,6 +151,11 @@ export default function BuildSelector({ onSelect }) {
                 </li>
               ))}
             </ul>
+
+            <ProgressBar
+              done={stepsComplete ? stepsComplete(build.id) : 0}
+              total={build.steps.length}
+            />
           </button>
         ))}
 

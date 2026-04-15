@@ -4,6 +4,7 @@ import BuildSelector from "../components/BuildSelector";
 import BuildStep from "../components/BuildStep";
 import { entryById } from "../content/cheatsheet";
 import { buildById } from "../content/guided-builds";
+import { useProgress } from "../hooks/useProgress";
 
 export default function Builder() {
   const location = useLocation();
@@ -16,6 +17,14 @@ export default function Builder() {
   const [stepIndex, setStepIndex] = useState(0);
   const [refEntry, setRefEntry] = useState(null);
 
+  const {
+    markStep,
+    unmarkStep,
+    stepsComplete,
+    isBuildComplete,
+    isStepComplete,
+  } = useProgress();
+
   if (!build)
     return (
       <BuildSelector
@@ -23,10 +32,13 @@ export default function Builder() {
           setBuild(b);
           setStepIndex(0);
         }}
+        stepsComplete={stepsComplete}
+        isBuildComplete={isBuildComplete}
       />
     );
 
   const step = build.steps[stepIndex];
+  const stepDone = isStepComplete(build.id, step.id);
 
   return (
     <div className="flex gap-8">
@@ -47,10 +59,21 @@ export default function Builder() {
             {build.build_type}
           </p>
           <h2 className="font-mono font-bold text-zinc-100">{build.title}</h2>
-          <div className="flex gap-3 text-xs font-mono text-zinc-500 mt-2">
-            <span>{build.bpm} BPM</span>
-            <span>{build.key}</span>
-            <span>~{build.estimated_time_mins}min</span>
+          <div className="flex items-center gap-3 mt-2">
+            <div className="flex gap-3 text-xs font-mono text-zinc-500">
+              <span>{build.bpm} BPM</span>
+              <span>{build.key}</span>
+              <span>~{build.estimated_time_mins}min</span>
+            </div>
+            {isBuildComplete(build) ? (
+              <span className="ml-auto text-xs font-mono text-green-400 bg-green-900/30 px-2 py-0.5 rounded">
+                ✓ Complete
+              </span>
+            ) : (
+              <span className="ml-auto text-xs font-mono text-zinc-600">
+                {stepsComplete(build.id)}/{build.steps.length} steps
+              </span>
+            )}
           </div>
         </div>
 
@@ -58,6 +81,13 @@ export default function Builder() {
           step={step}
           stepNumber={stepIndex + 1}
           total={build.steps.length}
+          buildId={build.id}
+          isComplete={stepDone}
+          onMark={() =>
+            stepDone
+              ? unmarkStep(build.id, step.id)
+              : markStep(build.id, step.id)
+          }
           onNext={() =>
             setStepIndex((i) => Math.min(i + 1, build.steps.length - 1))
           }
