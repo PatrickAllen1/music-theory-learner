@@ -27,6 +27,12 @@
     "The difference between Glue Compressor and standard Compressor: Glue is modelled on an analogue SSL bus compressor with a specific 'glue' character. Use it on buses. Use standard Compressor for sidechain pumping on individual tracks",
     "Try toggling the Glue Compressor on and off while the track plays — if the drums feel looser and more disconnected with it off, it's working"
   ],
+  "images": [
+    {
+      "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/GlueL12.png",
+      "caption": "Set Ratio to 4:1. Set Attack to 3ms. Set Release to Auto. Lower the Threshold knob until the GR (gain reduction) meter shows 2–4dB on the loudest hits. Enable Soft Clip (the button on the right side) to prevent clipping at the output."
+    }
+  ],
   "practice_rep_id": "spinoff-kettama-bbmin-full",
   "practice_hint": null,
   "ableton_version_note": "Available in Ableton Live Standard and Suite."

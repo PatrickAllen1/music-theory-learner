@@ -4,10 +4,7 @@
   "subtitle": "Compression is not about making things louder. It's about controlling dynamics so elements sit together instead of fighting.",
   "difficulty": "beginner",
   "read_time_mins": 9,
-  "track_references": [
-    "kettama-it-gets-better",
-    "mph-raw"
-  ],
+  "track_references": ["kettama-it-gets-better", "mph-raw"],
   "sections": [
     {
       "id": "intro",
@@ -22,11 +19,23 @@
     {
       "id": "glue",
       "heading": "The Glue Compressor \u2014 drums",
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/GlueL12.png",
+          "caption": "Add Glue Compressor to your DRUMS group track (not an individual drum track). Set Ratio to 4:1, Attack to 3ms, Release to Auto. Lower Threshold until the GR meter shows 2–3dB of reduction on kick hits. Enable Soft Clip (right side) to prevent the output from clipping."
+        }
+      ],
       "body": "The Glue Compressor is named for what it does: it makes separate elements feel like one instrument. On a drum bus (a group track containing all your drum sounds), the Glue Compressor ties the kick, clap, and hats together \u2014 when the kick hits hard it slightly ducks the hats, creating the mutual interaction you'd hear from a real drummer hitting a kit.\n\nStandard Glue Compressor settings for a UK garage drum bus:\n- Ratio: 4:1\n- Attack: 3ms (fast enough to catch some of the transient energy, slow enough to keep punch)\n- Release: Auto\n- Threshold: set until gain reduction shows 2\u20133dB on peak hits\n- Soft Clip: ON (prevents the output from ever harshly clipping)\n\nThe 2\u20133dB of gain reduction is barely perceptible as compression when listening to it directly. But compare your drum bus with the Glue Compressor active vs bypassed \u2014 with it on, the drums feel cohesive and driven as a unit. Without it, they sound like four separate samples stacked on top of each other.\n\nThis is the 'glue' concept: the compression creates shared dynamic relationships between elements that weren't recorded together. The kick and hats now react to each other's volume, creating the cohesion of a live-played kit."
     },
     {
       "id": "sidechain",
       "heading": "Sidechain compression \u2014 the garage pump",
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
+          "caption": "Add Compressor to your PAD track. Click the 'Sidechain' triangle at top-right to expand the panel. Enable it with the power button. Set 'Audio From' to your kick/DRUMS track. Set Ratio 6:1, Attack 0.5ms, Release 80–150ms. Lower Threshold until the pad visibly ducks on every kick hit."
+        }
+      ],
       "body": "Sidechain compression is where the compressor's trigger signal comes from a different source than the audio being compressed. The classic garage setup: the compressor on the pad track uses the kick drum as its trigger. Every time the kick hits, it triggers the compressor on the pad, briefly ducking the pad's volume. The pad pumps with the kick.\n\nThis creates the iconic pumping, breathing quality in UK garage pads. The pad is always present, but it rhythmically ducks in response to the kick \u2014 giving the track forward motion and groove even when the chord content isn't changing.\n\nSettings for pad sidechain in Ableton:\n1. Add Compressor (not Glue) to the pad track\n2. In the Compressor, enable Sidechain, set input to the kick MIDI track\n3. Ratio: 6:1 or higher\n4. Attack: 0.5\u20131ms (very fast \u2014 catches the kick immediately)\n5. Release: 80\u2013150ms (releases before the next kick at your BPM)\n6. Threshold: lower until the pad volume visibly ducks on every kick hit\n\nThe release time is the most important parameter for the sidechain feel. At 136 BPM, kicks hit every ~441ms. Your release should be short enough that the pad has mostly recovered before the next kick \u2014 typically 80\u2013150ms. Too long (300ms) and the pad never fully recovers. Too short (20ms) and the pump is too abrupt and clicky."
     },
     {

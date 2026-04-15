@@ -74,6 +74,12 @@
       "why": "By rep-12 this is the standard garage pad setup. It should be muscle memory. If it takes more than 5 minutes you need to revisit reps 08–11.",
       "ableton_cheatsheet_id": "sidechain",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
+          "caption": "Compressor with Sidechain panel — 'Sidechain' triangle at top-right, power button to enable, 'Audio From' set to DRUMS. This is the full setup you should be able to do from memory by rep-12."
+        }
+      ],
       "tip": "Time yourself: sidechain setup, reverb return creation, EQ. Target: under 3 minutes total."
     },
     {

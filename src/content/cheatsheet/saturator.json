@@ -26,6 +26,12 @@
     "Dry/Wet knob is key — 100% is full saturation. 20–40% blends the saturated version with the original for controlled warmth",
     "Unlike Overdrive, Saturator lets you see exactly what the distortion curve looks like — use the Waveshaper display to understand how your settings affect the waveform"
   ],
+  "images": [
+    {
+      "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/SaturatorL12.png",
+      "caption": "Set Drive to 15% for sub bass or 10% for a pad. Select Soft Clip mode using the shape selector (the gentle curve icon). Set Dry/Wet to 40% to blend saturation with the dry signal. Toggle the device on/off while the track plays — the bass should feel warmer and more present with it on."
+    }
+  ],
   "practice_rep_id": "rep-08-bVI-lift-emin",
   "practice_hint": null,
   "ableton_version_note": "Available in all editions of Live 9+."

@@ -91,6 +91,12 @@
       "why": "At 134 BPM the kick hits every 448ms — the sidechain pump is rhythmic and deliberate. The PAD sidechain creates the breathing quality. The SUB BASS sidechain prevents kick and bass colliding in the low end. The releases are different: SUB BASS releases faster (100ms) so it recovers before the next kick.",
       "ableton_cheatsheet_id": "sidechain",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
+          "caption": "Compressor Sidechain panel — 'Sidechain' triangle at top-right, power button to enable, 'Audio From' set to DRUMS group. Apply this to both the PAD track and the SUB BASS track with different settings."
+        }
+      ],
       "tip": "Toggle both sidechains off simultaneously and listen to the difference. With both off, the low end will sound dense and cluttered. With both on, the kick has air around it. The sidechain is invisible architecture — listeners feel its presence rather than consciously noticing it."
     },
     {

@@ -39,6 +39,24 @@ export default function Ableton() {
               </span>
             </div>
             <p className="text-zinc-400 text-sm mb-4">{entry.summary}</p>
+            {entry.images?.length > 0 && (
+              <div className="mb-4 space-y-3">
+                {entry.images.map((img, i) => (
+                  <figure key={i} className="m-0">
+                    <img
+                      src={img.src}
+                      alt={img.caption}
+                      className="w-full rounded border border-zinc-800"
+                    />
+                    {img.caption && (
+                      <figcaption className="text-xs text-zinc-600 font-mono mt-1 leading-relaxed">
+                        {img.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            )}
             <ol className="space-y-2">
               {entry.steps.map((step, i) => (
                 <li key={i} className="text-zinc-300 text-sm flex gap-3">

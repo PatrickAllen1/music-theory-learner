@@ -21,5 +21,11 @@
   ],
   "practice_rep_id": "rep-01-four-on-floor-emin",
   "practice_hint": null,
+  "images": [
+    {
+      "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/SimplerModesTabL12.png",
+      "caption": "The mode tabs (Classic / 1-Shot / Slice) appear below the waveform display. Click '1-Shot' for drum samples so they play through completely on each hit regardless of note length. Click 'Classic' for melodic samples that need pitch tracking. Click 'Slice' for a loop you want to chop and rearrange."
+    }
+  ],
   "ableton_version_note": "Available in all editions of Live 9+. Slicing mode requires Live Standard or Suite."
 }

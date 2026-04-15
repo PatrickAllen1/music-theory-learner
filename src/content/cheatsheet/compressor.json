@@ -28,6 +28,12 @@
     "Knee setting: Hard knee = compressor kicks in abruptly at the threshold. Soft knee = gradual transition around the threshold. Soft knee sounds more natural",
     "Never use a Compressor on the Master — use Limiter for the master output ceiling. Compressor on master kills dynamics in ways that are hard to undo"
   ],
+  "images": [
+    {
+      "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorL12.png",
+      "caption": "Drag the Threshold knob left until the GR bar (gain reduction — the vertical bar on the right) shows 2–6dB of movement on peaks. Set Ratio, Attack, and Release in the center panel. For sidechain: click the 'Sidechain' triangle at top-right, enable it, then set 'Audio From' to your kick source."
+    }
+  ],
   "practice_rep_id": "rep-13-bass-implied-dmin",
   "practice_hint": null,
   "ableton_version_note": "Available in all editions of Live 9+."

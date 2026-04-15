@@ -81,6 +81,16 @@
       "why": "The reverb at -8dB send creates a long, diffuse tail from the ghost pad. Even though the direct pad signal is at -14dB, the reverb tail fills the space behind the bass with harmonic texture. At 4 seconds decay at 140 BPM, the reverb tail from one chord bar is still audible when the next chord starts — this creates a wash of harmonic colour that is heard but not consciously identified.",
       "ableton_cheatsheet_id": "sidechain",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/ReverbL12.png",
+          "caption": "Reverb on the Return track — Dry/Wet 100%, Decay 4s. The Send A knob on the PAD track controls the reverb amount."
+        },
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
+          "caption": "Compressor Sidechain — enable via the triangle at top-right, set 'Audio From' to DRUMS. Apply once on PAD (Ratio 3:1, gentle) and once on SUB BASS (Ratio 4:1, faster release)."
+        }
+      ],
       "tip": "Solo the reverb return track while the loop plays. You should hear a diffuse, washy version of the chords. This is the texture that the listener feels rather than hears. Without it the track sounds dry. With it, the space feels larger."
     },
     {

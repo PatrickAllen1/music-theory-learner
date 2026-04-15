@@ -377,6 +377,24 @@ function DeepDiveArticle({ entry, onBack, onPractice }) {
             <div className="text-zinc-300 text-sm leading-relaxed whitespace-pre-line">
               {section.body}
             </div>
+            {section.images?.length > 0 && (
+              <div className="mt-4 space-y-3">
+                {section.images.map((img, i) => (
+                  <figure key={i} className="m-0">
+                    <img
+                      src={img.src}
+                      alt={img.caption}
+                      className="w-full rounded border border-zinc-800"
+                    />
+                    {img.caption && (
+                      <figcaption className="text-xs text-zinc-600 font-mono mt-1 leading-relaxed">
+                        {img.caption}
+                      </figcaption>
+                    )}
+                  </figure>
+                ))}
+              </div>
+            )}
             {/* Listening cues that reference this section — rendered inline after body */}
             {entry.listening_cues
               ?.filter((_, i) => {

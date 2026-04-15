@@ -90,6 +90,12 @@
       "why": "Shared reverb on a send keeps all elements in the same acoustic space. The pad and clap share one large room — they sound like they belong together. Insert reverb on each track separately makes the mix feel disconnected.",
       "ableton_cheatsheet_id": "reverb-send",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/ReverbL12.png",
+          "caption": "Reverb device on a Return track — Dry/Wet at 100% always. Decay controls the room size. Add EQ Eight before the Reverb on this same return track and high-pass at 200Hz to prevent low-end mud."
+        }
+      ],
       "tip": "HP the reverb return at 200Hz — this removes low-frequency reverb mud that blooms under the pad. You want the high-end shimmer and space, not the sub-bass reverb."
     },
     {

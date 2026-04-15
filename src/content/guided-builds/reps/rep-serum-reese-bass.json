@@ -24,6 +24,12 @@
       "why": "The sawtooth wave has the richest harmonic content of any basic waveform — every harmonic is present. This brightness and density is exactly what a Reese bass needs. The growl of a Reese comes from those harmonics beating against each other when two detuned saws interact.",
       "ableton_cheatsheet_id": "serum-v2-oscillators",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumV2FullInterface.jpeg",
+          "caption": "Serum V2 interface — OSC A top-left, WT POS knob controls waveform character. For the Reese, drag WT POS to ~50% (full sawtooth: ramp shape in the waveform display). Right-click the preset name bar at the very top to access Init Preset."
+        }
+      ],
       "tip": "WT POS at ~50% gives the full sawtooth in Basic Shapes. Check the waveform display in the top of Serum — it should show a sharp ramp that falls steeply and resets. If it's rounded at the top, you're at a lower WT POS — push it further right."
     },
     {
@@ -54,6 +60,12 @@
       "why": "The filter cutoff sitting low (35%) means most of the bright saw harmonics are removed. The resonance at 15% adds a peak at the cutoff frequency — this is the 'bite' that makes the Reese feel aggressive. When the envelope opens the filter, those harmonics rush in and then close back down — that's the wah.",
       "ableton_cheatsheet_id": "serum-v2-filter",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumFilterSection.jpeg",
+          "caption": "Serum FILTER section — power button to enable, type dropdown (select MG Low 24 for the Moog-style lowpass), CUTOFF at ~35% (relatively dark starting position), RES at 15% for a slight bite at the cutoff frequency."
+        }
+      ],
       "tip": "At 35% cutoff the Reese will sound quite dark. That's intentional — ENV 2 will open it up dynamically. A Reese that starts bright doesn't have anywhere to go. The closed starting position is what makes the envelope opening feel dramatic."
     },
     {
@@ -64,6 +76,12 @@
       "why": "ENV 2 opens the filter sharply on the note attack (0ms attack = instant), then closes it over 200ms. At Sustain 0% the filter is fully closed by the end of the decay. This 'wah' envelope is the defining motion of the Reese — the burst of harmonics on the attack followed by the dark tail.",
       "ableton_cheatsheet_id": "serum-v2-envelopes",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/serum/SerumEnvelopeSection.jpeg",
+          "caption": "ENV 2 — same knob layout as ENV 1 but controls a secondary modulation target. Set Attack 0ms, Decay 200ms, Sustain 0%, Release 0ms. Then right-click FILTER CUTOFF > Add Modulation > ENV 2 and set depth to +30%."
+        }
+      ],
       "tip": "Try Decay at 100ms, 200ms, and 400ms while playing repeated notes. Short decay = snappy, punchy Reese. Long decay = the filter stays open longer, more mid-bass character. 200ms is the classic Reese sweet spot for garage."
     },
     {
@@ -94,6 +112,12 @@
       "why": "G→F→Bb→D is a dark root movement in G minor. The Reese's wah envelope makes each note feel articulated even when held. Bar 3's Bb1 (the minor 3rd) brings warmth and a moment of relative brightness. The Utility mono ensures the detuned oscillators don't create phase problems on mono systems.",
       "ableton_cheatsheet_id": "utility-mono",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/UtilityL12.png",
+          "caption": "Utility device — Width at 0% forces mono. The Reese bass uses detuned oscillators which create natural stereo spread — Utility collapses this to mono to prevent phase cancellation on club systems."
+        }
+      ],
       "tip": "Play the Reese bass line alongside a 4-on-floor or 2-step kick. The Reese should sit in the mid-bass range — not competing with a sub bass. If you're layering with a sub, high-pass the Reese at 120Hz and let the sub handle everything below."
     }
   ]

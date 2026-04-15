@@ -169,6 +169,12 @@
       "why": "At 140 BPM 4-on-floor, kick and sub occupy the same frequency range. Without sidechain they stack and clip. The 0.5ms attack reacts instantly to the kick transient. The 120ms release lets the bass bounce back quickly — this creates the pumping, breathing feel that you feel in your chest at a garage night. That pump is the sidechain.",
       "ableton_cheatsheet_id": "sidechain-compression",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
+          "caption": "Compressor Sidechain panel — 'Sidechain' triangle at top-right expands the panel. Enable the power button. Set 'Audio From' to the DRUMS group. The GR meter (gain reduction bar) should visibly deflect on every kick hit."
+        }
+      ],
       "tip": "Use the Compressor's Monitor button (headphone icon) to solo the sidechain signal. You should hear a clean kick trigger. If you hear muddy low end, the kick's tail is triggering the compressor late — add a high-pass filter on the sidechain signal at 200Hz to isolate the transient."
     },
     {
@@ -179,6 +185,12 @@
       "why": "Kettama's pads pulse subtly in time with the kick — they don't sustain flatly. A 3:1 ratio is light enough that you won't hear obvious pumping, but you'll feel the groove having life. The 2ms attack (slightly slower than the bass) means the pad retains its initial transient — it ducks just after the kick hits, not at the same moment.",
       "ableton_cheatsheet_id": "sidechain-compression",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
+          "caption": "Compressor Sidechain on the chord pad track — same setup as the sub bass sidechain but gentler settings (Ratio 3:1 vs 6:1). The pads breathe with the kick rather than hard-ducking."
+        }
+      ],
       "tip": "Toggle the pad sidechain compressor on and off while the track loops. If you can't hear a difference, lower the threshold. You want the listener to feel it without knowing why."
     },
     {
@@ -189,6 +201,12 @@
       "why": "Long reverb (3.5s) places the pads in a large, dark room — the late-night club atmosphere. A shared send reverb glues all elements into one space, making the track feel like it exists in a single physical environment. The 200Hz HP on the reverb bus is critical: low-frequency reverb creates mud. You want space on the mids and highs, not the bass.",
       "ableton_cheatsheet_id": null,
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/ReverbL12.png",
+          "caption": "Reverb on a Return track — Dry/Wet must be 100% (you control wetness from the Send A knob on each source track). Decay 3.5s. Add EQ Eight before the Reverb on this same return track and set band 1 to high-pass at 200Hz."
+        }
+      ],
       "tip": "Add a second, shorter reverb send (Decay 0.8s, 'Small Room') for the drums. Having two reverb spaces — one for drums, one for pads — creates depth without crowding. Drums live in a different room than the pads."
     },
     {

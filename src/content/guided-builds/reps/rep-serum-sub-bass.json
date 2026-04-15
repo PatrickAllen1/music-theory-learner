@@ -123,6 +123,12 @@
       "why": "Even with UNISON at 1 voice, subtle stereo can creep in through Serum's internal processing or slight monitoring differences. A sub bass that's wide will collapse to near-silence when played on a mono system (phone speaker, small Bluetooth speaker, club PA in some zones). Utility at Width 0% is the guarantee.",
       "ableton_cheatsheet_id": "utility-mono",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/UtilityL12.png",
+          "caption": "Utility device — Width knob at 0% forces the signal to true mono. Add this after Serum in the device chain on the sub bass track."
+        }
+      ],
       "tip": "To test: route your output to a mono bus or use Utility's own mono button. You can also use the Phase Correlation meter in EQ Eight — positive correlation = mono-safe, negative correlation = phase issues."
     },
     {

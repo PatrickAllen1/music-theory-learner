@@ -26,6 +26,12 @@
     "Side-chain EQ: click the small headphone icon to solo the EQ band and hear only that frequency range while sweeping",
     "On your kick: high-pass around 40Hz, add a slight bell boost at 60–80Hz for punch, notch at 200–300Hz if it sounds boxy"
   ],
+  "images": [
+    {
+      "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/EQEightL12.png",
+      "caption": "Click a numbered circle (1–8) at the top to activate a band. Set the filter shape using the icons along the bottom — the leftward-rising curve is high-pass. Double-click the Freq knob and type a number (e.g. 40) to set the cutoff precisely. Drag the dot on the frequency graph up/down to boost or cut."
+    }
+  ],
   "ableton_version_note": "Works in all modern Ableton versions. Spectrum display available in Live 9+",
   "practice_rep_id": "rep-serum-sub-bass",
   "practice_hint": null

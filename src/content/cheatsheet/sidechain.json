@@ -18,6 +18,12 @@
     "If the sidechain is too obvious, automate the dry/wet knob on the compressor to only activate on drops",
     "Try routing a ghost kick (inaudible, volume all the way down) as the sidechain source for more precise triggering without drum bleed"
   ],
+  "images": [
+    {
+      "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
+      "caption": "Click the small triangle labeled 'Sidechain' at the top-right of the Compressor to expand the panel. Click the power button to enable it. Set 'Audio From' to your DRUMS group track. Then lower the Threshold knob until the GR bar shows movement on every kick hit."
+    }
+  ],
   "ableton_version_note": "Works in Ableton Live 10+",
   "practice_rep_id": "spinoff-kettama-bbmin-full",
   "practice_hint": null

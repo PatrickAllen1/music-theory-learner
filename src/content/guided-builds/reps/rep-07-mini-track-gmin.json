@@ -64,6 +64,12 @@
       "why": "The EQ principles don't change with the key or kick pattern. Kick punch lives at 65Hz, sub rumble below 30–40Hz is wasted headroom, and the 65Hz bump is where kick and bass need to share space carefully.",
       "ableton_cheatsheet_id": "eq-eight",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/EQEightL12.png",
+          "caption": "EQ Eight — band 1 high-pass at 40Hz (kick) or 30Hz (bass), band 2 bell boost at 65Hz (+3dB kick punch), band 4 cut at 250Hz (-3dB boxy kick). Click a band circle to select it, then set the shape and frequency below."
+        }
+      ],
       "tip": "Compare the kick sound with and without the 65Hz boost. In G minor the root note G1 sits at approximately 49Hz — lower than E1 (41Hz). This means the bass sits very low. The kick's 65Hz punch should be clearly distinct from the bass fundamental."
     },
     {

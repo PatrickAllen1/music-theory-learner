@@ -64,6 +64,12 @@
       "why": "Kettama uses a strong sidechain pump — it's a defining character of the track. Ratio 6:1 with fast attack and moderate release creates the audible breath-and-return effect. The pad ducks deep on each kick then rushes back up.",
       "ableton_cheatsheet_id": "sidechain",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/CompressorSidechainL12.png",
+          "caption": "Compressor with Sidechain panel open — click the 'Sidechain' triangle at top-right to expand it, click the power button to enable, then set 'Audio From' to your DRUMS group track."
+        }
+      ],
       "tip": "Too much sidechain (threshold too low or ratio too high) makes the pad disappear on every kick. You should hear the chord during the attack of each kick, then feel it pulse back. The pump should feel rhythmic, not destructive."
     },
     {
@@ -74,6 +80,12 @@
       "why": "4 second reverb at 140 BPM means the tail of each chord lasts over 9 beats — chord notes are still ringing when the next chord starts. This is intentional: the overlap between chords creates the lush, blended quality.",
       "ableton_cheatsheet_id": "reverb-send",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/ReverbL12.png",
+          "caption": "Reverb device — set Dry/Wet to 100% on the return track. The Send A knob on the PAD track (not inside the Reverb) controls how wet you hear. Lower send = more subtle reverb."
+        }
+      ],
       "tip": "At -10dB send the reverb is prominent. If it feels too wet, reduce to -14dB. The Kettama sound has very present reverb — more than you might expect."
     },
     {

@@ -28,6 +28,12 @@
     "More reverb ≠ deeper sound. A too-long decay creates mud. Start at 2.5s and reduce if the mix feels washed out",
     "Solo the reverb return track and listen to just the reverb tail — you should hear it as a clean, high-passed wash. If it sounds muddy, increase the HP frequency"
   ],
+  "images": [
+    {
+      "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/ReverbL12.png",
+      "caption": "Set Dry/Wet to 100% — this must be 100% on a return track (you control wetness from the Send A knob on each source track, not from inside the device). Set Decay Time to 3.5s for pads or 0.4s for drums. Set Pre-delay to 15ms so the dry attack hits before the reverb bloom."
+    }
+  ],
   "practice_rep_id": "spinoff-kettama-bbmin-full",
   "practice_hint": null,
   "ableton_version_note": "Available in all editions of Live 9+."

@@ -26,6 +26,12 @@
     "Stack two samples on the same pad using 'Add Chain' in the chain list for layered sounds (e.g. sub + click for kick)",
     "Hold Ctrl/Cmd when dragging a sample to a pad to replace the existing sample instead of stacking"
   ],
+  "images": [
+    {
+      "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/DrumRackPadView.png",
+      "caption": "Click a pad to select it — a row of controls appears below the 16-pad grid. Set Choke to '1' on both the open hat and closed hat pads so the closed hat cuts the open hat when it fires. The pad grid shows C1 bottom-left: load kick on C1, clap on D1, closed hat on F#1, open hat on G#1."
+    }
+  ],
   "ableton_version_note": "Drum Rack available since Ableton Live 7. Slicing requires Live Standard or Suite.",
   "practice_rep_id": "rep-01-four-on-floor-emin",
   "practice_hint": null

@@ -54,6 +54,12 @@
       "why": "Sub rumble below 40Hz wastes headroom. The 65Hz boost is where kick punch lives — it's what you feel in a club. 250Hz is the 'cardboard box' frequency that muddies kicks when present. These are the three moves that make a kick sound professional vs amateur.",
       "ableton_cheatsheet_id": "eq-eight",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/EQEightL12.png",
+          "caption": "EQ Eight — numbered band circles at top (click to select a band), frequency graph in center, filter shape icons and knobs along the bottom. Band 1 = high-pass at 40Hz, band 2 = bell boost at 65Hz, band 4 = cut at 250Hz."
+        }
+      ],
       "tip": "Do the EQ work at the kick chain level, not on the Drum Rack group output. You want surgical control over the kick specifically — not all drum sounds at once."
     },
     {
@@ -64,6 +70,12 @@
       "why": "Kick punch at 65Hz and sub bass at 65Hz compete. One of them needs to give. Convention: let the kick own the punch frequency, high-pass the bass slightly above 65Hz if there's overlap. The bass provides weight below the kick's punch region.",
       "ableton_cheatsheet_id": "eq-eight",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/EQEightL12.png",
+          "caption": "EQ Eight on the BASS track — high-pass on band 1 at 30Hz removes sub rumble. If kick and bass fight at 65Hz, add a bell cut on band 2 at 65Hz (-2dB) to give the kick room."
+        }
+      ],
       "tip": "Mute the bass, listen to kick alone. Then mute the kick and listen to bass alone. Then unmute both. If the together version sounds muddier than either separately, there's frequency overlap — apply the 65Hz dip on the bass."
     },
     {
@@ -84,6 +96,12 @@
       "why": "The open hat accent on beat 2.5 is one of the signature textures of UK garage. It adds air and momentum between the clap and the kick. Without the choke group, the open hat rings over the closed hat — both play simultaneously, which sounds sloppy. With choke group '1' on both, the closed hat cuts the open hat the instant it hits.",
       "ableton_cheatsheet_id": "drum-rack",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/DrumRackPadView.png",
+          "caption": "Drum Rack pad view — when you click a pad, a row of controls appears below the 16-pad grid. The Choke number box is in this lower panel. Set both open hat (G#1) and closed hat (F#1) to Choke Group 1."
+        }
+      ],
       "tip": "Test it: program one open hat on beat 2, then one closed hat on beat 2.5. With choke on, the open hat ring should stop dead when the closed hat hits. Without it, both ring simultaneously — you'll hear the difference immediately."
     },
     {

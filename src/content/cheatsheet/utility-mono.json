@@ -18,6 +18,12 @@
     "Gain via Utility is the cleanest gain structure in the chain — it's a digital level trim with no colouration, unlike a compressor or saturator",
     "Utility's Phase Invert button (180°) is useful for fixing phase alignment between a close-mic and room mic, or when layering samples that cancel each other out"
   ],
+  "images": [
+    {
+      "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/UtilityL12.png",
+      "caption": "Drag the Width knob all the way left to 0% to force mono. Add this device after Serum (or any instrument) on your sub bass track. To confirm it worked: play your track, then open a second Utility on the Master track and set its Width to 0% — the sub should still be clearly audible."
+    }
+  ],
   "practice_rep_id": null,
   "practice_hint": "Add Utility to your sub bass in any rep (rep-08 onwards). Set Width to 0%. Play the track. Now add Utility to the Master, set its Width to 0% — check that the sub bass is still audible. It should be, since you already made it mono.",
   "ableton_version_note": "Available in all editions of Live 9+."

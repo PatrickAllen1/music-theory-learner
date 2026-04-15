@@ -97,6 +97,12 @@
       "why": "The drum bus EQ shapes how the whole kit sits in the mix, not just individual sounds. Every drum hit contributes energy across the frequency spectrum — when kick + clap + hat all have content at 250Hz, that range stacks up and creates a boxy, room-sound buildup even if each sample sounds fine on its own. The high-pass removes content no drum needs. The 250Hz cut is the most universally useful single EQ move on a drum bus.",
       "ableton_cheatsheet_id": "eq-eight",
       "splice_search": null,
+      "images": [
+        {
+          "src": "https://pub-17a8ebedb7004de6abf80673719c5d00.r2.dev/ableton/EQEightL12.png",
+          "caption": "EQ Eight on the drum bus — band 1 high-pass at 40Hz, band 2 bell boost at 80–100Hz (+2dB kick punch), band 4 bell cut at 250Hz (-2dB boxiness). Place this device BEFORE the Glue Compressor in the device chain."
+        }
+      ],
       "tip": "Do the drum bus EQ last — after loading all samples and setting velocities. Adding EQ before you know the full picture of your drum sound means you're fixing problems that may not exist yet."
     },
     {
