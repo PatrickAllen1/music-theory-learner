@@ -1,0 +1,229 @@
+{
+  "id": "spinoff-kettama-bbmin-full",
+  "title": "Kettama-Style Track in Bb Minor",
+  "build_type": "spinoff",
+  "spinoff_level": "full",
+  "difficulty": "intermediate",
+  "estimated_time_mins": 120,
+  "bpm": 140,
+  "key": "Bb minor",
+  "source_track_id": "kettama-it-gets-better",
+  "source_track_changes": [
+    "Same key: Bb minor",
+    "Same BPM: 140",
+    "Same chord progression: Gbmaj7 → Dbmaj → Bbm (VI→III→i)",
+    "Your own samples, your own synth patches, your own arrangement decisions"
+  ],
+  "production_brief": "This is a full-depth study of how Kettama's chord loop works and why it hits so hard. The VI→III→i progression (Gbmaj7→Dbmaj→Bbm) is the DNA of the lush, late-night UK garage sound. You'll build every layer from scratch — drums, sub bass, Serum chord pads with a full effects chain, sidechain, reverb, arrangement. By the end you'll have a complete 2–3 minute track and a deep understanding of both the harmony and the sound design.",
+  "what_youll_learn": [
+    "How the VI→III→i progression works in Bb minor and why each chord follows the last",
+    "Exactly how to voice Gbmaj7, Dbmaj, and Bbm as MIDI notes",
+    "How to build the Kettama pad tone in Serum V1 and V2 from scratch",
+    "How to build a sub bass in Serum and why it differs from a pad patch",
+    "Sidechain compression to create the pumping garage feel",
+    "How to chain Serum FX + Ableton FX for a finished pad sound",
+    "A complete arrangement: intro / build / drop / breakdown / rebuild / drop / outro"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set up your project",
+      "category": "ableton",
+      "instruction": "Open a new Ableton project. Set BPM to 140. Set time signature to 4/4. In the Groove Pool (press B in browser), find 'Swing & Groove' and locate 'Swing 8-05'. Leave it there for now — you'll apply it to drum MIDI clips later. Save as 'kettama-study-bbmin'.",
+      "why": "140 BPM is Kettama's tempo. It's on the faster end of UK garage, which makes the chord loop feel urgent rather than laid-back. Swing 8-05 is the specific Ableton groove preset that gives the rolling, slightly-behind-the-beat feel — applying it only to the hat MIDI clip creates the human groove without making every element feel wobbly.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Create a folder called 'kettama-study' in your Ableton Projects folder before saving. Organised projects are easier to return to — you will come back to this one."
+    },
+    {
+      "id": 2,
+      "title": "Find your kick on Splice",
+      "category": "drums",
+      "instruction": "Open Splice. Try these searches, filter by One-Shots → Drums → Kick, and preview until one feels right: (1) 'uk garage kick 140' (2) 'deep house kick punchy' (3) 'rolling garage kick sub'. What to listen for: short tail under 400ms, clear thump in the 60–80Hz range, defined click attack, no reverb or room sound. Download 2–3 candidates and compare.",
+      "why": "Kettama's kick has weight but doesn't linger — it hits and gets out of the way so the sub bass and pads can breathe. A kick with too long a tail will blur into the sub. You need both the click (what you hear) and the thump (what you feel). One-shot drums on Splice don't have a real tempo so ignore the BPM filter.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "uk garage kick 140",
+      "tip": "Preview at least 20 kicks before deciding. Your first instinct is usually wrong. The right kick is the one that still sounds good after 32 bars on loop."
+    },
+    {
+      "id": 3,
+      "title": "Find your clap and hi-hats on Splice",
+      "category": "drums",
+      "instruction": "Clap searches: (1) 'uk clap garage' (2) 'tight clap house' (3) 'crispy clap dry'. You want: a dry, sharp crack with minimal reverb tail — not a big room snare, a tight disciplined hit. Hi-hat searches: (1) 'closed hi hat crisp' (2) 'tight closed hat garage' (3) 'dry closed hat house'. You want: a clean, short-decay closed hat. Download 2 clap candidates and 2 hat candidates.",
+      "why": "The clap anchors the groove without dominating. A reverb-heavy snare washes out the pads. Kettama's hi-hat is crisp and sits above the mix without being sharp — it provides rhythmic detail, not character. Save the character for the chord pads.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": "tight clap uk garage",
+      "tip": "Download a hat pack rather than individual hits if one appears in results. Hat packs give you multiple velocity layers that you can layer for more life in the pattern."
+    },
+    {
+      "id": 4,
+      "title": "Load Drum Rack and program the kick",
+      "category": "drums",
+      "instruction": "Create a MIDI track. Load Drum Rack. Drag kick onto C1, clap onto D1, closed hat onto F#1. Create a 2-bar MIDI clip. Set grid to 1/4. Program kick C1 on every beat: 1.1, 1.2, 1.3, 1.4, 2.1, 2.2, 2.3, 2.4. Velocities 105. Note length 1/8 each.",
+      "why": "4-on-the-floor at 140 BPM hits every 429ms. That rapid cadence combined with the lush pads creates the core tension of the Kettama sound — relentless rhythm against dreamy harmony.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": null,
+      "tip": "Hold Shift while drawing notes to drag across the grid and place all 8 kicks at once."
+    },
+    {
+      "id": 5,
+      "title": "Program clap and hi-hat with swing",
+      "category": "drums",
+      "instruction": "Clap (D1): beats 2 and 4 — positions 1.2, 1.4, 2.2, 2.4. Velocity 90. Closed hat (F#1): every off-beat (8 per bar, set grid to 1/8). Cycle hat velocities: 95, 75, 110, 75, 95, 75, 110, 75 — louder on off-beats of beats 1 and 3, quieter on 2 and 4. Drag 'Swing 8-05' from the Groove Pool onto the hat MIDI clip only (not the kick clip). Set groove amount to 60%.",
+      "why": "Cycling hat velocities mimic a live drummer's natural accenting. Swing 8-05 at 60% slightly pushes every second off-beat hat — this is what gives UK garage its rolling, breathing quality rather than a mechanical march. Applying it only to the hat preserves the kick's metronomic anchor.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Apply swing at 60% first. 100% is extreme — you want it to feel human, not drunk."
+    },
+    {
+      "id": 6,
+      "title": "EQ the kick",
+      "category": "mix",
+      "instruction": "Click the kick pad in the Drum Rack to select its chain. Add EQ Eight. Activate band 1 as High Pass at 40Hz. Add bell boost at 70Hz (+3dB, Q=1.5). Add bell cut at 280Hz (-4dB, Q=2). Now right-click the Drum Rack MIDI track and Group it. Name the group 'DRUMS'.",
+      "why": "40Hz HP removes sub rumble. 70Hz boost adds the physical chest thump. 280Hz cuts the cardboard-box frequency that makes kicks sound cheap. Grouping the drums lets you treat them as one unit for bussing and sidechain routing later.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "Toggle the EQ on/off to A/B the difference. If you can barely hear it, the moves are too subtle — push until obvious, then back off."
+    },
+    {
+      "id": 7,
+      "title": "Understand the chord progression before touching a synth",
+      "category": "ableton",
+      "instruction": "Read this before opening Serum. The progression is Gbmaj7 → Dbmaj → Bbm. In Bb natural minor the scale is: Bb, C, Db, Eb, F, Gb, Ab. Gb is the 6th degree (bVI), Db is the 3rd (bIII), Bb is the root (i). The progression is bVImaj7 → bIIImaj → i. Exact notes — Gbmaj7: Gb, Bb, Db, F. Dbmaj: Db, F, Ab. Bbm: Bb, Db, F. Notice: Db and F appear in ALL THREE CHORDS. Those are the common tones that make the progression feel inevitable — the inner voices barely move while the bass drops Gb → Db → Bb.",
+      "why": "The major 7th (F) on top of Gbmaj7 is the note that makes it shimmer. Dbmaj uses the same F, so when you move from Gbmaj7 to Dbmaj the top voice stays still — a voice-leading technique called 'common tone retention'. Bbm also holds Db and F from the previous chord. This is why the progression doesn't feel jarring; it feels like one continuous thought.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Before building the synth, play these three chords on a keyboard or enter them one at a time in a piano roll and loop. Gbmaj7 should feel open and slightly yearning. Dbmaj slightly grounded. Bbm = arrived, dark, complete. If you don't hear that arc, your ear isn't calibrated yet — keep listening until you do."
+    },
+    {
+      "id": 8,
+      "title": "Build the chord pad in Serum — oscillators and filter",
+      "category": "ableton",
+      "instruction": "Create a new MIDI track. Load Serum (V1 or V2 — identical approach). Start with Init Preset so you're building from scratch. OSC A: click the wavetable name and select 'Basic Shapes'. Move the WT POS knob about 25% to the right — you want the softer, slightly rounded shape (not pure sine, not full saw). Detune: leave at 0 for now. Unison: set to 4 voices, detune 12 cents, blend 50%. OSC B: enable it, same wavetable and WT position as OSC A. Detune OSC B to +7 cents (coarse 0, fine +7). Volume: drop OSC B to -3dB below OSC A. Filter: enable the filter, choose 'MG Low 24' (Moog-style low-pass). Cutoff: 60%. Resonance: 8%.",
+      "why": "Two detuned oscillators create the warm, slightly wide pad sound — one slightly sharp against the other creates a slow beating effect (chorus without the plugin). 4 unison voices at 12 cents detune gives width without losing focus. The Moog-style low-pass at 60% cuts the harsh upper harmonics, leaving only the warm mid-range that makes pads feel lush. Pure sine would sound thin; pure saw would sound harsh.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "In Serum V2: the wavetable browser is slightly redesigned but the same wavetables exist. Right-click the WT slot > Browse > Basic Shapes. In V1: click the wavetable name directly to open the browser."
+    },
+    {
+      "id": 9,
+      "title": "Shape the pad envelope and add LFO movement",
+      "category": "ableton",
+      "instruction": "In Serum's ENV 1 (which controls amplitude by default): Attack: 0.30s (300ms). Decay: 0. Sustain: 100%. Release: 1.50s (1500ms). The pad should take 300ms to reach full volume and ring for 1.5 seconds after the key is released. Now set up LFO 1: click LFO 1, set the shape to Sine, Rate to 0.25 Hz (one cycle every 4 seconds), Amount to very small. Drag LFO 1 onto the Filter Cutoff knob — a small modulation dot will appear. Set the LFO → Filter depth to about 5% (the cutoff barely breathes up and down).",
+      "why": "The 300ms attack means the chord fades in rather than snapping — this is essential for pads. A sharp attack makes pads feel like stabs. The 1.5s release means chords overlap slightly as you move between them, creating a smooth transition. The LFO on the filter adds a barely-perceptible movement to the pad — it never sounds static. Kettama's chords have a living quality; this is where it comes from.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "To hear the attack shape: play a single chord and watch the volume ramp up over 300ms. If it snaps too quickly, increase the attack. If it feels sluggish, reduce it. 200–400ms is the sweet spot for this style."
+    },
+    {
+      "id": 10,
+      "title": "Serum FX chain — reverb, chorus, and EQ inside Serum",
+      "category": "ableton",
+      "instruction": "In Serum's FX tab (top right of Serum): Enable CHORUS: Rate 0.40 Hz, Depth 25%, Mix 40%. Enable REVERB: Size 0.75, Decay 0.65, Pre-delay 15ms, Mix 30%. Enable the EQ (in Serum V1 it's a simple high/low shelf; in V2 it's a full EQ): High-pass at 120Hz (remove low end — the sub bass handles everything below this). Now exit Serum and add Ableton effects on the track after Serum: Add EQ Eight — high-pass at 130Hz (reinforcing the Serum HP). Then add a Saturator: Drive 10–15%, type 'Analog Clip' or 'Soft Clip'. Keep Dry/Wet at 30%.",
+      "why": "Serum's internal reverb is light and tight — it adds depth to the pad itself. The Ableton reverb (added in a later step as a send) adds the big room atmosphere that glues everything together. Using both gives you two layers of reverb at different scales. The Chorus adds width without using stereo tricks. The Saturator adds analogue warmth — it very slightly distorts the pad, making it feel like it's coming from real hardware rather than a plugin.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "In Serum V2: the FX tab has been redesigned with more module slots. The same effects exist but may be in different positions. Chorus is often labelled 'HYPR' in V2 — it's a more complex chorus/ensemble effect. Use it at 30–40% mix instead of 40%."
+    },
+    {
+      "id": 11,
+      "title": "Program the chord voicings in MIDI",
+      "category": "chords",
+      "instruction": "Create a 4-bar MIDI clip. Set grid to 1/2 note. Program these exact notes: Bars 1–2 (Gbmaj7): Gb3, Bb3, Db4, F4 — all held for 2 full bars. Bar 3 (Dbmaj): Db3, F3, Ab3, Db4 — held 1 bar. Bar 4 (Bbm): Bb2, Db3, F3, Bb3 — held 1 bar. All velocities 80. After programming: loop the 4 bars and listen. Now play with the chord rhythm — try having the chord change on beat 3 of bar 2 instead of bar 3 for a different feeling.",
+      "why": "Gbmaj7 gets 2 bars because it's the launch chord — it needs time to establish the dreamy quality before resolving. Db and Bb get 1 bar each because they're the 'coming home' movement. The F4 on top of Gbmaj7 is the major 7th — the single note that makes that chord shimmer. The root note in the bass (Gb2) will be handled by the sub bass track, so the lowest chord note can start from Gb3.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "After programming, solo the chord track (no drums, no bass). Close your eyes. Does Gbmaj7 feel open and slightly yearning? Does Bbm feel like arrival in a dark room? If the emotional arc isn't clear, the voicing may be off — try moving F4 down to F3 on the Gbmaj7 and hear the difference."
+    },
+    {
+      "id": 12,
+      "title": "Build the sub bass in Serum",
+      "category": "bass",
+      "instruction": "Create a new MIDI track. Load a second instance of Serum. Start from Init Preset. OSC A: click the wavetable, choose 'Basic Shapes'. Move WT POS all the way left to the pure sine position. Unison: OFF (1 voice only). OSC B: disabled. Filter: disabled. Sub OSC: enable it, set to Sine, -12dB below OSC A. ENV 1: Attack 0ms, Decay 0, Sustain 100%, Release 200ms. Serum FX: all disabled — no reverb, no chorus, no distortion. The sub bass should be pure, clean, and simple. Set the master volume in Serum to about -6dB.",
+      "why": "A sub bass needs to be a clean sine wave — any harmonics compete with the kick and the pad. Unison OFF means there's no width or chorus on the sub — sub bass should be mono, dead center. The Sub OSC adds a fundamental one octave below, reinforcing the very bottom end. No Serum FX is intentional: effects add harmonics and stereo spread, both of which are wrong for a sub. Simple wins.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "After building, check mono compatibility: on the Master channel, click the mono button (or use a Utility device, Width = 0%). If the sub bass disappears or gets quieter, you have phase issues — check that no processing on the sub has introduced a phase shift. A good sub bass survives mono summing."
+    },
+    {
+      "id": 13,
+      "title": "Program the sub bass MIDI line",
+      "category": "bass",
+      "instruction": "Create a 4-bar MIDI clip on the sub bass track. One note per chord, following the roots: Bars 1–2: Gb1, held for ~1.8 bars (leave a small gap before bar 3). Bar 3: Db1, held ~0.9 bars. Bar 4: Bb1, held ~0.9 bars. Velocities: Gb1 = 88, Db1 = 83, Bb1 = 95. The root Bb gets the most velocity — it signals arrival.",
+      "why": "The bass plays only the root of each chord. The tiny gap before each new note (not held all the way to the bar line) prevents low-frequency smear — two sub notes colliding creates a bass bump that sounds unintentional. Bb1 landing with the highest velocity tells the ear 'we're home' without the listener consciously noticing.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Use Ableton's Utility device (Mono switch ON) on the sub bass track. Sub bass should always be mono — wide sub bass causes phase cancellation on mono speaker systems."
+    },
+    {
+      "id": 14,
+      "title": "Sidechain compress the sub bass from the kick",
+      "category": "mix",
+      "instruction": "On the sub bass track, add Ableton's Compressor. Expand the Sidechain section and enable it. Set 'Audio From' to the Drum Rack MIDI track (or the kick chain output). Settings: Ratio 6:1, Attack 0.5ms, Release 120ms, Threshold -18dB. Watch the gain reduction meter — it should bounce on every kick hit. The sub bass ducks by about 6–8dB on every kick.",
+      "why": "At 140 BPM 4-on-floor, kick and sub occupy the same frequency range. Without sidechain they stack and clip. The 0.5ms attack reacts instantly to the kick transient. The 120ms release lets the bass bounce back quickly — this creates the pumping, breathing feel that you feel in your chest at a garage night. That pump is the sidechain.",
+      "ableton_cheatsheet_id": "sidechain-compression",
+      "splice_search": null,
+      "tip": "Use the Compressor's Monitor button (headphone icon) to solo the sidechain signal. You should hear a clean kick trigger. If you hear muddy low end, the kick's tail is triggering the compressor late — add a high-pass filter on the sidechain signal at 200Hz to isolate the transient."
+    },
+    {
+      "id": 15,
+      "title": "Sidechain the chord pads too",
+      "category": "mix",
+      "instruction": "On the chord pad track (Serum), add another Compressor with sidechain from the same kick source. Settings: Ratio 3:1, Attack 2ms, Release 200ms, Threshold -22dB. This is gentler than the sub sidechain — the pads breathe with the kick rather than hard-ducking.",
+      "why": "Kettama's pads pulse subtly in time with the kick — they don't sustain flatly. A 3:1 ratio is light enough that you won't hear obvious pumping, but you'll feel the groove having life. The 2ms attack (slightly slower than the bass) means the pad retains its initial transient — it ducks just after the kick hits, not at the same moment.",
+      "ableton_cheatsheet_id": "sidechain-compression",
+      "splice_search": null,
+      "tip": "Toggle the pad sidechain compressor on and off while the track loops. If you can't hear a difference, lower the threshold. You want the listener to feel it without knowing why."
+    },
+    {
+      "id": 16,
+      "title": "Set up a reverb send for the pads",
+      "category": "mix",
+      "instruction": "Create a new Audio Track. Name it 'REVERB SEND'. Add Ableton's Reverb. Settings: Decay Time 3.5s, click 'Large Hall' in the room size selector, Dry/Wet 100% (this is a send — it should be 100% wet). High-pass the reverb send track at 200Hz with EQ Eight before the reverb (cuts reverb on low frequencies = less mud). On the chord pad track, increase the 'A' send knob to -12dB. Add a tiny send from the sub bass at -28dB (barely any — just a ghost of space on the low end).",
+      "why": "Long reverb (3.5s) places the pads in a large, dark room — the late-night club atmosphere. A shared send reverb glues all elements into one space, making the track feel like it exists in a single physical environment. The 200Hz HP on the reverb bus is critical: low-frequency reverb creates mud. You want space on the mids and highs, not the bass.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Add a second, shorter reverb send (Decay 0.8s, 'Small Room') for the drums. Having two reverb spaces — one for drums, one for pads — creates depth without crowding. Drums live in a different room than the pads."
+    },
+    {
+      "id": 17,
+      "title": "Find and add atmosphere textures",
+      "category": "ableton",
+      "instruction": "Splice searches: (1) 'dark atmosphere pad loop' — a slow drone that barely moves. Set to Loops, Atmospheric. (2) 'vinyl crackle loop' — lo-fi warmth. (3) 'white noise riser sweep' — for transitions. For the drone: new Audio track, drag in loop, set to loop for whole track, volume -18dB. For vinyl crackle: same, volume -20dB. Put both in a Group Track 'ATMOSPHERE'. Automate the group volume: +2dB during drops, 0dB during breakdowns.",
+      "why": "The atmosphere layer is what you don't consciously hear but would miss if removed. The drone reinforces Bb minor tonal centre even during breakdown when the chords go quiet. Vinyl crackle softens digital harshness. The subtle volume automation (louder in drops) makes the drop feel bigger without changing any individual element.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": "dark drone loop atmospheric minor",
+      "tip": "When searching Splice for drones, filter by 'Key: Bb' if available, or 'Key: A#' (same note). A drone in the wrong key will clash with your chord progression."
+    },
+    {
+      "id": 18,
+      "title": "Build the arrangement",
+      "category": "ableton",
+      "instruction": "Switch to Arrangement view (Tab). Lay out these sections: Bars 1–8: INTRO — kick + hats only, no clap. Bars 9–16: BUILD — add bass on bar 9, add clap on bar 13. Bar 16 beat 4: 1-beat silence — mute every track for exactly 1 beat. Bars 17–48: DROP 1 — all elements, including pads and atmosphere. Bars 49–64: BREAKDOWN — remove kick and sub. Pads + atmosphere + reverb only. Increase reverb send by 3dB for extra depth. Bars 65–68: REBUILD — hat bar 65, kick bar 66, bass bar 67, pads already running. Bars 69–96: DROP 2 — full. Bars 97–104: OUTRO — strip elements one by one, end on atmosphere drone fade.",
+      "why": "The 1-beat silence before Drop 1 is a production technique that makes the drop hit harder — total silence for 429ms makes everything that follows feel louder. The BUILD section creates expectation: the bass arrives before the chords, so when the chords finally drop in bar 17 the listener has been primed. The BREAKDOWN without kick forces attention onto the harmony — listeners hear the chord loop clearly for the first time.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Use Arrangement view's loop brace to work on each section independently. Build intro right, then drop, then stitch together. Do not try to arrange the whole track at once."
+    },
+    {
+      "id": 19,
+      "title": "EQ and volume balance",
+      "category": "mix",
+      "instruction": "Play the drop section on loop. Apply EQ Eight high-pass filters to everything not needing low end: chord pads — 130Hz (already done in Serum, reinforce in Ableton). Atmosphere drone — 200Hz. Reverb send — 200Hz (already done). Clap — 200Hz. Hi-hats — 500Hz. Volume rough targets (peak in Arrangement): kick -6dBFS, sub bass -8dBFS, chord pads -12dBFS, hats -14dBFS, atmosphere -20dBFS. Master channel peaks: -3 to -6dBFS.",
+      "why": "High-passing removes frequency buildup in the 100–300Hz range that makes mixes muddy. Without these cuts, every track contributes low-mid mud and the mix sounds loud without feeling powerful. The volume hierarchy (kick loudest, then bass, then pads) tells the ear what to focus on.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "A/B your drop against the Kettama reference at the same volume. Not to copy it, to calibrate — is your kick as punchy? Are your pads as warm? Are the hats present without being harsh? These comparisons reveal problems before they become habitual."
+    },
+    {
+      "id": 20,
+      "title": "Export and listen on earbuds",
+      "category": "ableton",
+      "instruction": "File > Export Audio/Video. Format: WAV, 44100 Hz, 24-bit, Normalize OFF, Master out. Name it 'kettama-study-bbmin-v1.wav'. Send to your phone. Listen on earbuds. Note: does the bass feel too heavy or disappear? Are the pads audible or washed out? Is the kick punchy or boomy? These are things studio monitors hide. Then make the 2–3 most obvious fixes and export as v2.",
+      "why": "Earbuds reveal low-end balance issues that monitors and headphones mask. If the sub feels too heavy on earbuds it's too heavy in the mix. If the pads disappear they're over-reverbed or too quiet. The earbud check is the final calibration step. 'v1' in the filename is intentional — you will come back.",
+      "ableton_cheatsheet_id": null,
+      "splice_search": null,
+      "tip": "Save the project before exporting. Then Save As 'kettama-study-bbmin-v2' — keep v1 intact. Always version your saves so you can return to a decision point."
+    }
+  ]
+}
