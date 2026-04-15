@@ -6,7 +6,7 @@
 
 **Architecture:** Vite + React + Tailwind + React Router. All content as static JSON/Markdown in `src/content/`. No backend. Four sections: Guided Track Builder, Track Library, Theory Reference, Ableton Cheatsheet.
 
-**Tech Stack:** React 18, Vite, Tailwind CSS v3, React Router v6, Cloudflare Pages
+**Tech Stack:** React 18, Vite, Tailwind CSS v3, React Router v7, Cloudflare Pages
 
 ---
 
@@ -635,32 +635,143 @@ git commit -m "feat: theory reference — scales, chords, rhythms"
 
 ## Phase 5: Guided Track Builder
 
-### Task 8: Guided build data model + first build
+### Task 8: Guided build data model + content
+
+**Directory structure:**
+```
+src/content/guided-builds/
+  reps/          ← isolated technique drills (1 concept, 1 key, 6–8 steps)
+  spinoffs/      ← source track transformed (entry/mid/full levels)
+  originals/     ← fully authored original tracks (concept-first)
+  index.js       ← exports all builds flat with metadata
+```
+
+**Build schema — all three types share this base:**
+```json
+{
+  "id": "rep-01-four-on-floor-emin",
+  "title": "4-on-the-Floor Kick",
+  "build_type": "rep",
+  "difficulty": "beginner",
+  "estimated_time_mins": 20,
+  "bpm": 132,
+  "key": "E minor",
+  "techniques_used": ["4-on-floor-kick", "drum-rack-setup"],
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "...",
+  "what_youll_learn": ["..."],
+  "steps": [...]
+}
+```
+
+Spinoff-specific fields:
+```json
+{
+  "build_type": "spinoff",
+  "spinoff_level": "entry" | "mid" | "full",
+  "source_track_id": "interplanetary-criminal-slow-burner",
+  "source_track_changes": [
+    "Key: E minor → A minor",
+    "Drums: 4-on-floor → 2-step kick"
+  ],
+  "production_brief": "We swapped the 4-on-floor for a 2-step because the same chord progression feels more intimate with a lighter kick. Try it both ways and hear the difference."
+}
+```
+
+Original-specific fields:
+```json
+{
+  "build_type": "original",
+  "track_name": "Slow Fade",
+  "concept": "Dark, minimal D minor track. Phrygian bass only, no chords. Late-night feeling.",
+  "techniques_borrowed": ["mph-raw:phrygian-bass", "mph-raw:stutter-breakdown"]
+}
+```
+
+**Full content list — 25 guided builds:**
+
+```
+BEGINNER REPS (src/content/guided-builds/reps/)
+  rep-01-four-on-floor-emin.json      — 4-on-floor kick, E minor
+  rep-02-two-step-gmin.json           — 2-step drum feel, G minor
+  rep-03-phrygian-bass-emin.json      — phrygian b2 tension, E minor
+  rep-04-phrygian-bass-dmin.json      — same concept, D minor
+  rep-05-phrygian-bass-amin.json      — same concept, A minor
+  rep-06-mini-track-emin.json         — drums + phrygian bass combined, E minor
+  rep-07-mini-track-gmin.json         — drums + phrygian bass combined, G minor
+
+INTERMEDIATE REPS (src/content/guided-builds/reps/)
+  rep-08-bVI-lift-emin.json           — bVI chord lift (IC technique), E minor
+  rep-09-bVI-lift-amin.json           — bVI chord lift, A minor
+  rep-10-bVI-lift-dmin.json           — bVI chord lift, D minor
+  rep-11-VI-III-i-loop-bbmin.json     — VI→III→i loop (Kettama technique), Bb minor
+  rep-12-VI-III-i-loop-fmin.json      — VI→III→i loop, F minor
+  rep-13-bass-implied-dmin.json       — bass-implied chords (BL3SS technique), D minor
+  rep-14-bass-implied-gmin.json       — bass-implied chords, G minor
+
+SPINOFFS (src/content/guided-builds/spinoffs/)
+  spinoff-01-mph-dmin-entry.json      — MPH style, D minor, tempo 128 (entry)
+  spinoff-02-ic-amin-entry.json       — IC style, A minor, 2-step kick swap (entry)
+  spinoff-03-ic-dmin-mid.json         — IC style, D minor + Reese bass in breakdown (mid)
+  spinoff-04-kettama-fmin-mid.json    — Kettama style, F minor + BL3SS bass technique (mid)
+  spinoff-05-ic-full.json             — IC DNA, full transform: new key/drums/bass/structure (full)
+  spinoff-06-sammy-full.json          — Sammy Virji DNA, full transform (full)
+  spinoff-07-bl3ss-full.json          — BL3SS DNA, full transform (full)
+
+ORIGINALS (src/content/guided-builds/originals/)
+  original-01-slow-fade.json          — "Slow Fade", D minor 132 BPM, beginner, phrygian only
+  original-02-glass-road.json         — "Glass Road", F minor 134 BPM, intermediate, crossbred
+  original-03-midnight-circuit.json   — "Midnight Circuit", G minor 138 BPM, intermediate, evolving structure
+  original-04-static-amber.json       — "Static Amber", A minor 136 BPM, advanced, full crossbreed
+```
+
+**Step 1: Author first 3 beginner reps** (rep-01, rep-02, rep-03) with full steps
+
+**Step 2: Author guided builds index**
+
+`src/content/guided-builds/index.js`:
+```js
+// import all builds and export flat list + lookup map
+export const builds = [/* all 25 */]
+export const buildById = Object.fromEntries(builds.map(b => [b.id, b]))
+export const repsByDifficulty = (diff) => builds.filter(b => b.build_type === 'rep' && b.difficulty === diff)
+export const spinoffs = builds.filter(b => b.build_type === 'spinoff')
+export const originals = builds.filter(b => b.build_type === 'original')
+```
+
+**Step 3: Commit first batch**
+
+```bash
+git add src/content/guided-builds/
+git commit -m "feat: guided build data model + beginner reps 1–3"
+```
+
+---
+
+### Task 9: Guided Track Builder UI
 
 **Files:**
-- Create: `src/content/guided-builds/kettama-rolling-garage.json`
-- Create: `src/content/guided-builds/index.js`
+- Modify: `src/pages/Builder.jsx`
+- Create: `src/components/BuildSelector.jsx`
+- Create: `src/components/BuildStep.jsx`
+- Create: `src/components/ReferencePanel.jsx`
+
+**BuildSelector** shows three tabs: Reps | Spinoffs | Originals. Within Reps, shows Beginner / Intermediate filter. Each card shows difficulty badge, build_type, BPM, key, estimated time.
 
 **Step 1: Write guided build schema**
 
 ```json
 {
-  "id": "kettama-rolling-garage",
-  "title": "Rolling Garage House",
-  "artist_style": "Kettama",
-  "bpm": 130,
-  "key": "F minor",
+  "id": "rep-01-four-on-floor-emin",
+  "title": "4-on-the-Floor Kick in E minor",
+  "build_type": "rep",
   "difficulty": "beginner",
-  "estimated_time_mins": 90,
-  "description": "Build a rolling, swung garage house track from scratch. You'll learn 2-step drum programming, chord voicings in the piano roll, sub bass layering, and sidechain compression.",
-  "what_youll_learn": [
-    "How to program a 2-step garage drum pattern",
-    "How to draw Fmin7–Ebmaj7–Dbmaj7–Cm7 in the piano roll",
-    "How to layer a sub bass with a mid bass",
-    "How to set up sidechain compression for the pump",
-    "How to apply groove pool swing"
-  ],
-  "reference_track_id": "kettama-rolling-forever",
+  "bpm": 132,
+  "key": "E minor",
+  "estimated_time_mins": 20,
+  "description": "...",
+  "what_youll_learn": ["..."],
   "steps": [
     {
       "id": 1,
@@ -723,42 +834,131 @@ git commit -m "feat: guided build data model + Kettama rolling garage build"
 - Modify: `src/pages/Builder.jsx`
 - Create: `src/components/BuildSelector.jsx`
 - Create: `src/components/BuildStep.jsx`
-- Create: `src/components/ReferencePanel.jsx`
 
-**Step 1: Write BuildSelector**
+**Schema reminder:** builds have `build_type` ("rep"|"spinoff"|"original"), `difficulty` ("beginner"|"intermediate"|"advanced"), `bpm`, `key`, `estimated_time_mins`, `what_youll_learn[]`, `steps[]`. Spinoffs also have `spinoff_level` and `source_track_id`.
+
+**Step 1: Write BuildSelector with 3-tab layout**
+
+Three tabs: Reps | Spinoffs | Originals.
+- Reps tab has a secondary Beginner / Intermediate difficulty filter.
+- Each card shows difficulty badge, build_type label, BPM, key, estimated time, and first 2 `what_youll_learn` items.
 
 `src/components/BuildSelector.jsx`:
 ```jsx
+import { useState } from 'react'
 import { builds } from '../content/guided-builds'
 
+const TABS = ['Reps', 'Spinoffs', 'Originals']
+
+const difficultyStyles = {
+  beginner: 'bg-green-900/40 text-green-400',
+  intermediate: 'bg-yellow-900/40 text-yellow-400',
+  advanced: 'bg-red-900/40 text-red-400',
+}
+
+const spinoffLevelStyles = {
+  entry: 'bg-zinc-700 text-zinc-300',
+  mid: 'bg-blue-900/40 text-blue-400',
+  full: 'bg-purple-900/40 text-purple-400',
+}
+
 export default function BuildSelector({ onSelect }) {
+  const [tab, setTab] = useState('Reps')
+  const [repFilter, setRepFilter] = useState('beginner')
+
+  const reps = builds.filter(b => b.build_type === 'rep')
+  const spinoffs = builds.filter(b => b.build_type === 'spinoff')
+  const originals = builds.filter(b => b.build_type === 'original')
+
+  const visibleReps = reps.filter(b => b.difficulty === repFilter)
+
+  const visible =
+    tab === 'Reps' ? visibleReps :
+    tab === 'Spinoffs' ? spinoffs :
+    originals
+
   return (
     <div>
       <h1 className="text-2xl font-mono font-bold mb-2">Guided Track Builder</h1>
-      <p className="text-zinc-400 text-sm mb-8">Pick a style. Build a track. Learn as you go.</p>
+      <p className="text-zinc-400 text-sm mb-6">Pick a build. Follow the steps. Learn as you go.</p>
+
+      {/* Tab bar */}
+      <div className="flex gap-2 mb-4">
+        {TABS.map(t => (
+          <button
+            key={t}
+            onClick={() => setTab(t)}
+            className={`text-xs font-mono px-3 py-1.5 rounded transition-colors ${
+              tab === t ? 'bg-zinc-100 text-zinc-900' : 'bg-zinc-800 text-zinc-400 hover:text-zinc-200'
+            }`}
+          >
+            {t}
+          </button>
+        ))}
+      </div>
+
+      {/* Reps difficulty filter */}
+      {tab === 'Reps' && (
+        <div className="flex gap-2 mb-6">
+          {['beginner', 'intermediate'].map(d => (
+            <button
+              key={d}
+              onClick={() => setRepFilter(d)}
+              className={`text-xs font-mono px-3 py-1 rounded transition-colors ${
+                repFilter === d ? 'bg-zinc-700 text-zinc-100' : 'text-zinc-500 hover:text-zinc-300'
+              }`}
+            >
+              {d}
+            </button>
+          ))}
+        </div>
+      )}
+
+      {/* Build cards */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-        {builds.map(build => (
+        {visible.map(build => (
           <button
             key={build.id}
             onClick={() => onSelect(build)}
             className="text-left p-5 bg-zinc-900 border border-zinc-800 rounded-lg hover:border-zinc-600 transition-colors"
           >
-            <span className="text-xs font-mono text-zinc-500 block mb-1">{build.artist_style} style</span>
-            <h3 className="font-mono font-bold text-zinc-100 mb-2">{build.title}</h3>
+            <div className="flex justify-between items-start mb-2">
+              <span className="text-xs font-mono text-zinc-600">
+                {build.build_type === 'spinoff' ? `spinoff · ${build.spinoff_level}` : build.build_type}
+              </span>
+              <div className="flex gap-2">
+                {build.spinoff_level && (
+                  <span className={`text-xs font-mono px-1.5 py-0.5 rounded ${spinoffLevelStyles[build.spinoff_level]}`}>
+                    {build.spinoff_level}
+                  </span>
+                )}
+                <span className={`text-xs font-mono px-1.5 py-0.5 rounded ${difficultyStyles[build.difficulty] ?? 'bg-zinc-800 text-zinc-400'}`}>
+                  {build.difficulty}
+                </span>
+              </div>
+            </div>
+
+            <h3 className="font-mono font-bold text-zinc-100 mb-3">{build.title}</h3>
+
             <div className="flex gap-3 text-xs font-mono text-zinc-500 mb-3">
               <span>{build.bpm} BPM</span>
               <span>{build.key}</span>
               <span>~{build.estimated_time_mins}min</span>
             </div>
+
             <ul className="space-y-1">
-              {build.what_youll_learn.slice(0, 3).map((item, i) => (
-                <li key={i} className="text-xs text-zinc-400 flex gap-2">
-                  <span className="text-zinc-600">→</span>{item}
+              {build.what_youll_learn.slice(0, 2).map((item, i) => (
+                <li key={i} className="text-xs text-zinc-500 flex gap-2">
+                  <span className="text-zinc-700">→</span>{item}
                 </li>
               ))}
             </ul>
           </button>
         ))}
+
+        {visible.length === 0 && (
+          <p className="text-zinc-600 font-mono text-sm col-span-2">No builds yet — coming soon.</p>
+        )}
       </div>
     </div>
   )
@@ -846,9 +1046,24 @@ export default function Builder() {
   return (
     <div className="flex gap-8">
       <div className="flex-1">
-        <button onClick={() => setBuild(null)} className="text-xs font-mono text-zinc-500 hover:text-zinc-300 mb-6 block">
-          ← {build.title}
+        <button
+          onClick={() => { setBuild(null); setRefEntry(null) }}
+          className="text-xs font-mono text-zinc-500 hover:text-zinc-300 mb-6 block"
+        >
+          ← All builds
         </button>
+
+        {/* Build header */}
+        <div className="mb-6 p-4 bg-zinc-900 rounded-lg">
+          <p className="text-xs font-mono text-zinc-600 mb-1">{build.build_type}</p>
+          <h2 className="font-mono font-bold text-zinc-100">{build.title}</h2>
+          <div className="flex gap-3 text-xs font-mono text-zinc-500 mt-2">
+            <span>{build.bpm} BPM</span>
+            <span>{build.key}</span>
+            <span>~{build.estimated_time_mins}min</span>
+          </div>
+        </div>
+
         <BuildStep
           step={step}
           stepNumber={stepIndex + 1}
@@ -865,6 +1080,7 @@ export default function Builder() {
             <h3 className="font-mono font-bold text-zinc-100 text-sm">{refEntry.title}</h3>
             <button onClick={() => setRefEntry(null)} className="text-zinc-600 hover:text-zinc-400 font-mono">×</button>
           </div>
+          <p className="text-xs text-zinc-500 mb-3">{refEntry.summary}</p>
           <ol className="space-y-2">
             {refEntry.steps.map((s, i) => (
               <li key={i} className="text-zinc-300 text-xs flex gap-2">
@@ -884,13 +1100,13 @@ export default function Builder() {
 ```bash
 npm run dev
 ```
-Expected: Builder shows style selector → click → steps through instructions → reference panel slides in when Ableton ref available.
+Expected: Builder shows Reps/Spinoffs/Originals tabs → Reps has beginner/intermediate filter → 3 beginner reps visible → click opens build header + step-through → Ableton reference opens in sidebar panel. Spinoffs and Originals tabs show "No builds yet" since content isn't authored yet.
 
 **Step 5: Commit**
 
 ```bash
 git add src/
-git commit -m "feat: guided track builder UI with reference panel"
+git commit -m "feat: guided track builder UI — 3-tab selector, step view, reference panel"
 ```
 
 ---
@@ -929,13 +1145,35 @@ git push origin main
 
 ## Content Backlog (post-scaffold)
 
-Once the app is built, fill it with Claude-authored content:
+### Guided builds — 25 total (see Task 8 for full list)
 
-- [ ] 5 guided builds (one per artist style)
-- [ ] 30 track breakdowns
-- [ ] 10+ cheatsheet entries (all effects, MIDI, instruments)
-- [ ] Theory reference (scales, chords, rhythms fully populated)
-- [ ] Guided build: Interplanetary Criminal bassline style
-- [ ] Guided build: Sammy Virji breaks garage style
-- [ ] Guided build: TS7 piano house style
-- [ ] Guided build: DJ Heartstring deep garage style
+**Beginner reps (7):** 4-on-floor, 2-step, phrygian bass × 3 keys, mini-tracks × 2 keys
+**Intermediate reps (7):** bVI lift × 3 keys, VI→III→i × 2 keys, bass-implied × 2 keys
+**Spinoffs (7):** entry × 2, mid × 2, full × 3 (MPH, IC, Kettama, Sammy, BL3SS DNA)
+**Originals (4):** Slow Fade, Glass Road, Midnight Circuit, Static Amber
+
+### Track library — expand to 15+ tracks
+- [ ] TS7 — Piano (if remake available)
+- [ ] DJ Heartstring — deep/soulful garage track
+- [ ] Interplanetary Criminal — second track
+- [ ] Orange Groove Speed Garage template (already in Downloads — parse it)
+- [ ] 10+ additional UK garage/bassline/house tracks
+
+### Ableton Cheatsheet — 15+ entries
+- [ ] Drum Rack setup
+- [ ] EQ Eight
+- [ ] Sidechain compression
+- [ ] Groove Pool swing
+- [ ] Simpler (vocal chop)
+- [ ] Compressor basics
+- [ ] Reverb / Delay
+- [ ] Automation (clip vs. arrangement)
+- [ ] Piano roll basics (velocity, quantize)
+- [ ] Operator / Drift / Wavetable — when to use each
+
+### Theory Reference — full population
+- [ ] Scales: natural minor, dorian, phrygian
+- [ ] Chord voicings: all voicings from the 5 remakes documented
+- [ ] Rhythm patterns: 4-on-floor, 2-step, swing math
+- [ ] Bassline formulas: phrygian b2, walking bass, bass-implied chords
+- [ ] Song structure templates per sub-genre
