@@ -19,8 +19,10 @@ from pathlib import Path
 
 try:
     from design_serum_track_blueprint import build_report as build_blueprint_report
+    from refine_serum_track_blueprint import build_report as build_refined_blueprint_report
 except ModuleNotFoundError:
     from .design_serum_track_blueprint import build_report as build_blueprint_report
+    from .refine_serum_track_blueprint import build_report as build_refined_blueprint_report
 
 
 DEFAULT_CATALOG_DIR = Path("als/catalog/profiles")
@@ -35,6 +37,8 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--prefer-rendered", action="store_true", help="Prefer rendered profiles where available.")
     parser.add_argument("--limit-per-part", type=int, default=5, help="Max candidates to inspect per blueprint part. Default: 5")
     parser.add_argument("--mutation-limit", type=int, default=6, help="Max mutation suggestions per part. Default: 6")
+    parser.add_argument("--refine", action="store_true", help="Refine the blueprint before generating lesson notes.")
+    parser.add_argument("--max-swaps", type=int, default=2, help="Maximum refinement swaps to apply when --refine is set. Default: 2")
     parser.add_argument("--format", choices=["json", "text"], default="text", help="Output format.")
     return parser
 
@@ -48,6 +52,14 @@ def _blueprint_namespace(args: argparse.Namespace) -> Namespace:
         limit_per_part=args.limit_per_part,
         mutation_limit=args.mutation_limit,
         format="json",
+    )
+
+
+def _refine_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        **vars(_blueprint_namespace(args)),
+        alternative_limit=max(args.limit_per_part, 5),
+        max_swaps=args.max_swaps,
     )
 
 
@@ -144,12 +156,14 @@ def _part_teaching_notes(part: dict) -> dict:
 
 
 def build_report(args: argparse.Namespace) -> dict:
-    blueprint = build_blueprint_report(_blueprint_namespace(args))
+    refined = getattr(args, "refine", False)
+    blueprint = build_refined_blueprint_report(_refine_namespace(args)) if refined else build_blueprint_report(_blueprint_namespace(args))
     part_notes = [_part_teaching_notes(part) for part in blueprint["parts"]]
     return {
         "brief_id": blueprint["brief_id"],
         "description": blueprint["description"],
         "prefer_rendered": blueprint["prefer_rendered"],
+        "refined": refined,
         "selected_profile_ids": blueprint["selected_profile_ids"],
         "overview": [
             f"This blueprint is designed for `{blueprint['brief_id']}`.",
@@ -158,6 +172,7 @@ def build_report(args: argparse.Namespace) -> dict:
         "parts": part_notes,
         "conflict_notes": blueprint["conflict_notes"],
         "pairwise_analysis": blueprint["pairwise_analysis"],
+        "refinement_swaps": blueprint.get("refinement_swaps") or [],
     }
 
 
@@ -168,6 +183,7 @@ def render_text(report: dict) -> str:
     lines.append(f"- brief: `{report['brief_id']}`")
     lines.append(f"- description: {report['description']}")
     lines.append(f"- prefer rendered: {'yes' if report['prefer_rendered'] else 'no'}")
+    lines.append(f"- refined: {'yes' if report['refined'] else 'no'}")
     lines.append("")
     lines.append("## Overview")
     for row in report["overview"]:
@@ -191,6 +207,14 @@ def render_text(report: dict) -> str:
         lines.append("## Conflict Notes")
         for row in report["conflict_notes"]:
             lines.append(f"- {row}")
+        lines.append("")
+    if report["refinement_swaps"]:
+        lines.append("## Refinement Swaps")
+        for row in report["refinement_swaps"]:
+            lines.append(
+                f"- `{row['part_id']}`: `{row['from_profile_id']}` -> `{row['to_profile_id']}` "
+                f"(mode {row['from_constraint_mode']} -> {row['to_constraint_mode']})"
+            )
         lines.append("")
     if report["pairwise_analysis"]:
         lines.append("## Pairwise Analysis")

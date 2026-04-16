@@ -18,10 +18,12 @@ from pathlib import Path
 
 try:
     from design_serum_track_blueprint import build_report as build_blueprint_report
+    from refine_serum_track_blueprint import build_report as build_refined_blueprint_report
     from prepare_serum_audio_session import build_queue, render_readme, render_tsv
     from search_serum_profiles import load_profiles
 except ModuleNotFoundError:
     from .design_serum_track_blueprint import build_report as build_blueprint_report
+    from .refine_serum_track_blueprint import build_report as build_refined_blueprint_report
     from .prepare_serum_audio_session import build_queue, render_readme, render_tsv
     from .search_serum_profiles import load_profiles
 
@@ -41,6 +43,8 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--prefer-rendered", action="store_true", help="Prefer rendered profiles where available in the blueprint selection.")
     parser.add_argument("--limit-per-part", type=int, default=5, help="Max candidates to inspect per blueprint part. Default: 5")
     parser.add_argument("--mutation-limit", type=int, default=6, help="Max mutation suggestions per part. Default: 6")
+    parser.add_argument("--refine", action="store_true", help="Refine the blueprint before preparing the render session.")
+    parser.add_argument("--max-swaps", type=int, default=2, help="Maximum refinement swaps to apply when --refine is set. Default: 2")
     parser.add_argument("--force", action="store_true", help="Overwrite existing metadata files.")
     return parser
 
@@ -63,6 +67,14 @@ def _blueprint_namespace(args: argparse.Namespace) -> Namespace:
     )
 
 
+def _refine_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        **vars(_blueprint_namespace(args)),
+        alternative_limit=max(args.limit_per_part, 5),
+        max_swaps=args.max_swaps,
+    )
+
+
 def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
@@ -71,7 +83,7 @@ def main() -> None:
     renders_dir = out_dir / "renders"
     renders_dir.mkdir(parents=True, exist_ok=True)
 
-    blueprint = build_blueprint_report(_blueprint_namespace(args))
+    blueprint = build_refined_blueprint_report(_refine_namespace(args)) if args.refine else build_blueprint_report(_blueprint_namespace(args))
     selected_profile_ids = blueprint["selected_profile_ids"]
 
     profiles = load_profiles(Path(args.catalog_dir))
@@ -94,6 +106,7 @@ def main() -> None:
             }
             for part in blueprint["parts"]
         ],
+        "refined": args.refine,
     }
 
     readme = render_readme(queue, out_dir, spec_path) + "\n## Blueprint\n\n" + json.dumps({

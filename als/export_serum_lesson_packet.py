@@ -18,11 +18,13 @@ from pathlib import Path
 
 try:
     from design_serum_track_blueprint import build_report as build_blueprint_report, render_text as render_blueprint_text
+    from refine_serum_track_blueprint import build_report as build_refined_blueprint_report, render_text as render_refined_blueprint_text
     from generate_serum_lesson_notes import build_report as build_lesson_notes_report, render_text as render_lesson_notes_text
     from prepare_serum_audio_session import build_queue, render_readme, render_tsv
     from search_serum_profiles import load_profiles
 except ModuleNotFoundError:
     from .design_serum_track_blueprint import build_report as build_blueprint_report, render_text as render_blueprint_text
+    from .refine_serum_track_blueprint import build_report as build_refined_blueprint_report, render_text as render_refined_blueprint_text
     from .generate_serum_lesson_notes import build_report as build_lesson_notes_report, render_text as render_lesson_notes_text
     from .prepare_serum_audio_session import build_queue, render_readme, render_tsv
     from .search_serum_profiles import load_profiles
@@ -43,6 +45,8 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--prefer-rendered", action="store_true", help="Prefer rendered profiles where available.")
     parser.add_argument("--limit-per-part", type=int, default=5, help="Max candidates to inspect per blueprint part. Default: 5")
     parser.add_argument("--mutation-limit", type=int, default=6, help="Max mutation suggestions per part. Default: 6")
+    parser.add_argument("--refine", action="store_true", help="Refine the blueprint before exporting the packet.")
+    parser.add_argument("--max-swaps", type=int, default=2, help="Maximum refinement swaps to apply when --refine is set. Default: 2")
     parser.add_argument("--force", action="store_true", help="Overwrite existing metadata files.")
     return parser
 
@@ -62,7 +66,16 @@ def _namespace(args: argparse.Namespace) -> Namespace:
         prefer_rendered=args.prefer_rendered,
         limit_per_part=args.limit_per_part,
         mutation_limit=args.mutation_limit,
+        refine=args.refine,
+        max_swaps=args.max_swaps,
         format="json",
+    )
+
+
+def _refine_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        **vars(_namespace(args)),
+        alternative_limit=max(args.limit_per_part, 5),
     )
 
 
@@ -73,8 +86,9 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
 
     report_args = _namespace(args)
-    blueprint = build_blueprint_report(report_args)
-    lesson_notes = build_lesson_notes_report(report_args)
+    refine_args = _refine_namespace(args)
+    blueprint = build_refined_blueprint_report(refine_args) if args.refine else build_blueprint_report(report_args)
+    lesson_notes = build_lesson_notes_report(refine_args if args.refine else report_args)
 
     profiles = load_profiles(Path(args.catalog_dir))
     by_id = {profile["profile_id"]: profile for profile in profiles}
@@ -85,7 +99,7 @@ def main() -> None:
     queue = build_queue(selected_profiles, spec)
 
     _write_text(out_dir / "blueprint.json", json.dumps(blueprint, indent=2) + "\n", args.force)
-    _write_text(out_dir / "blueprint.md", render_blueprint_text(blueprint) + "\n", args.force)
+    _write_text(out_dir / "blueprint.md", (render_refined_blueprint_text(blueprint) if args.refine else render_blueprint_text(blueprint)) + "\n", args.force)
     _write_text(out_dir / "lesson-notes.json", json.dumps(lesson_notes, indent=2) + "\n", args.force)
     _write_text(out_dir / "lesson-notes.md", render_lesson_notes_text(lesson_notes) + "\n", args.force)
 
@@ -112,6 +126,7 @@ def main() -> None:
     manifest = {
         "brief_id": blueprint["brief_id"],
         "prefer_rendered": blueprint["prefer_rendered"],
+        "refined": args.refine,
         "selected_profile_ids": blueprint["selected_profile_ids"],
         "files": {
             "blueprint_json": str(out_dir / "blueprint.json"),
