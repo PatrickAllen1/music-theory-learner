@@ -10,6 +10,7 @@ standalone Serum 1 / VST2 `.fxp` presets now reuses that same chunk parser.
 
 ```bash
 python3 als/prepare_serum_manual_session.py --out-dir /tmp/serum-manual-session
+python3 als/prepare_serum_manual_session.py --out-dir /tmp/serum-manual-session-A --checkpoint A
 python3 als/validate_serum_manual_bundle.py --pairs-dir /tmp/serum-manual-session/pairs
 python3 als/run_serum_vst2_postdiff.py --pairs-dir /tmp/serum-manual-session/pairs --out-dir /tmp/serum-postdiff
 ```
@@ -18,7 +19,8 @@ These close the gap between the probe manifests and the eventual human Serum
 capture pass:
 
 - `prepare_serum_manual_session.py` writes a capture-ready folder with a
-  numbered queue, expected pair filenames, and the merged bundle metadata.
+  numbered queue, expected pair filenames, and the merged bundle metadata. It
+  can also emit checkpoint- or probe-scoped session folders for resumable runs.
 - `validate_serum_manual_bundle.py --pairs-dir ...` now doubles as a preflight
   checker for missing `<probe_id>.before/.after` files, grouped by checkpoint.
 - `run_serum_vst2_postdiff.py` turns a completed pair folder into a persistent

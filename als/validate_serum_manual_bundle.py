@@ -20,10 +20,10 @@ from argparse import ArgumentParser
 from pathlib import Path
 
 try:
-    from render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
+    from render_serum_manual_bundle import DEFAULT_MANIFESTS, filter_bundle, load_bundle
     from report_serum_vst2_probe_coverage import build_probe_coverage_report
 except ModuleNotFoundError:
-    from .render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
+    from .render_serum_manual_bundle import DEFAULT_MANIFESTS, filter_bundle, load_bundle
     from .report_serum_vst2_probe_coverage import build_probe_coverage_report
 
 
@@ -111,6 +111,8 @@ def main() -> None:
         "--pairs-dir",
         help="Optional directory expected to contain <probe_id>.before.fxp / <probe_id>.after.fxp pairs.",
     )
+    parser.add_argument("--checkpoint", action="append", default=[], help="Restrict validation to one or more checkpoint ids.")
+    parser.add_argument("--probe", action="append", default=[], help="Restrict validation to one or more probe ids.")
     args = parser.parse_args()
 
     manifest_paths = list(DEFAULT_MANIFESTS)
@@ -119,6 +121,8 @@ def main() -> None:
         for manifest_path in manifest_paths:
             json.loads(manifest_path.read_text())
         bundle = load_bundle(manifest_paths)
+        if args.checkpoint or args.probe:
+            bundle = filter_bundle(bundle, checkpoint_ids=args.checkpoint, probe_ids=args.probe)
         coverage = build_probe_coverage_report(manifest_paths)
         missing_preset_paths = _collect_missing_preset_paths(manifest_paths)
         pairs_status = _collect_pairs_status(bundle, Path(args.pairs_dir)) if args.pairs_dir else None

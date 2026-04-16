@@ -19,6 +19,7 @@ from pathlib import Path
 try:
     from render_serum_manual_bundle import (
         DEFAULT_MANIFESTS,
+        filter_bundle,
         load_bundle,
         render_markdown,
         render_tsv,
@@ -26,6 +27,7 @@ try:
 except ModuleNotFoundError:
     from .render_serum_manual_bundle import (
         DEFAULT_MANIFESTS,
+        filter_bundle,
         load_bundle,
         render_markdown,
         render_tsv,
@@ -41,6 +43,8 @@ def make_parser() -> argparse.ArgumentParser:
         default=[],
         help="Optional manifest override. Pass multiple times to replace the default A-H bundle.",
     )
+    parser.add_argument("--checkpoint", action="append", default=[], help="Restrict the prepared session to one or more checkpoint ids.")
+    parser.add_argument("--probe", action="append", default=[], help="Restrict the prepared session to one or more probe ids.")
     parser.add_argument("--force", action="store_true", help="Overwrite existing metadata files in the output directory.")
     return parser
 
@@ -94,6 +98,8 @@ def main() -> None:
 
     manifest_paths = [Path(path) for path in args.manifest] if args.manifest else DEFAULT_MANIFESTS
     bundle = load_bundle(manifest_paths)
+    if args.checkpoint or args.probe:
+        bundle = filter_bundle(bundle, checkpoint_ids=args.checkpoint, probe_ids=args.probe)
 
     out_dir = Path(args.out_dir)
     pairs_dir = out_dir / "pairs"

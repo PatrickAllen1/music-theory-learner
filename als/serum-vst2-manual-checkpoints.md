@@ -11,6 +11,7 @@ Session prep helper:
 
 ```bash
 python3 als/prepare_serum_manual_session.py --out-dir /tmp/serum-manual-session
+python3 als/prepare_serum_manual_session.py --out-dir /tmp/serum-manual-session-A --checkpoint A --force
 ```
 
 Common diff command after saving the two `.fxp` variants:
@@ -32,6 +33,7 @@ One-shot post-diff wrapper:
 
 ```bash
 python3 als/run_serum_vst2_postdiff.py --pairs-dir /path/to/serum-probe-pairs --out-dir /tmp/serum-postdiff
+python3 als/run_serum_vst2_postdiff.py --pairs-dir /path/to/serum-probe-pairs --out-dir /tmp/serum-postdiff-A --checkpoint A
 ```
 
 Preflight a capture folder before ingest:

@@ -33,6 +33,8 @@ def make_parser() -> argparse.ArgumentParser:
         default=[],
         help="Optional manifest override. Pass multiple times to replace the default A-H bundle.",
     )
+    parser.add_argument("--checkpoint", action="append", default=[], help="Restrict the post-diff run to one or more checkpoint ids.")
+    parser.add_argument("--probe", action="append", default=[], help="Restrict the post-diff run to one or more probe ids.")
     parser.add_argument("--slots", type=int, default=180, help="How many float slots to diff")
     parser.add_argument("--threshold", type=float, default=0.01, help="Minimum delta threshold")
     return parser
@@ -92,15 +94,20 @@ def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
     manifest_paths = [Path(path) for path in args.manifest] if args.manifest else DEFAULT_MANIFESTS
+    checkpoint_filter = set(args.checkpoint)
+    probe_filter = set(args.probe)
+    selected_probe_ids = sorted({
+        probe["id"]
+        for manifest_path in manifest_paths
+        for checkpoint in json.loads(manifest_path.read_text())["checkpoints"]
+        if not checkpoint_filter or checkpoint["id"] in checkpoint_filter
+        for probe in checkpoint["probes"]
+        if not probe_filter or probe["id"] in probe_filter
+    })
     report = build_ingest_report(
         pairs_dir=Path(args.pairs_dir),
         manifest_paths=manifest_paths,
-        selected_probe_ids=sorted({
-            probe["id"]
-            for manifest_path in manifest_paths
-            for checkpoint in json.loads(manifest_path.read_text())["checkpoints"]
-            for probe in checkpoint["probes"]
-        }),
+        selected_probe_ids=selected_probe_ids,
         slots=args.slots,
         threshold=args.threshold,
     )

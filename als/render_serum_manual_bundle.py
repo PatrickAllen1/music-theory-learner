@@ -50,6 +50,8 @@ def make_parser() -> argparse.ArgumentParser:
         default="markdown",
         help="Output format.",
     )
+    parser.add_argument("--checkpoint", action="append", default=[], help="Restrict output to one or more checkpoint ids.")
+    parser.add_argument("--probe", action="append", default=[], help="Restrict output to one or more probe ids.")
     return parser
 
 
@@ -103,6 +105,33 @@ def load_bundle(manifest_paths: list[Path]) -> dict:
                 })
     return {
         "manifest_paths": [str(path) for path in manifest_paths],
+        "checkpoint_count": len(checkpoints),
+        "probe_count": len(probes),
+        "checkpoints": checkpoints,
+        "probes": probes,
+    }
+
+
+def filter_bundle(
+    bundle: dict,
+    checkpoint_ids: list[str] | None = None,
+    probe_ids: list[str] | None = None,
+) -> dict:
+    checkpoint_filter = set(checkpoint_ids or [])
+    probe_filter = set(probe_ids or [])
+
+    probes = []
+    for probe in bundle["probes"]:
+        if checkpoint_filter and probe["checkpoint_id"] not in checkpoint_filter:
+            continue
+        if probe_filter and probe["probe_id"] not in probe_filter:
+            continue
+        probes.append(probe)
+
+    kept_checkpoints = {probe["checkpoint_id"] for probe in probes}
+    checkpoints = [item for item in bundle["checkpoints"] if item["checkpoint_id"] in kept_checkpoints]
+    return {
+        "manifest_paths": bundle["manifest_paths"],
         "checkpoint_count": len(checkpoints),
         "probe_count": len(probes),
         "checkpoints": checkpoints,
@@ -212,6 +241,8 @@ def main() -> None:
     args = parser.parse_args()
     manifest_paths = [Path(path) for path in args.manifest] if args.manifest else DEFAULT_MANIFESTS
     bundle = load_bundle(manifest_paths)
+    if args.checkpoint or args.probe:
+        bundle = filter_bundle(bundle, checkpoint_ids=args.checkpoint, probe_ids=args.probe)
 
     if args.format == "json":
         print(json.dumps(bundle, indent=2))
