@@ -18,6 +18,7 @@ from argparse import Namespace
 from pathlib import Path
 
 try:
+    from build_song_decision_tree import build_report as build_song_decision_tree_report, render_text as render_song_decision_tree_text
     from compile_guided_build_lesson import build_report as build_compiled_lesson_report, render_text as render_compiled_lesson_text
     from design_full_song_blueprint import build_report as build_full_song_blueprint_report, render_text as render_full_song_blueprint_text
     from generate_serum_guided_build_steps import build_report as build_synth_steps_report, render_text as render_synth_steps_text
@@ -30,6 +31,7 @@ try:
     from report_serum_render_backlog import build_report as build_render_backlog_report
     from validate_guided_build_lesson import build_report as build_lesson_validation_report, render_text as render_lesson_validation_text
 except ModuleNotFoundError:
+    from .build_song_decision_tree import build_report as build_song_decision_tree_report, render_text as render_song_decision_tree_text
     from .compile_guided_build_lesson import build_report as build_compiled_lesson_report, render_text as render_compiled_lesson_text
     from .design_full_song_blueprint import build_report as build_full_song_blueprint_report, render_text as render_full_song_blueprint_text
     from .generate_serum_guided_build_steps import build_report as build_synth_steps_report, render_text as render_synth_steps_text
@@ -123,6 +125,21 @@ def _full_song_namespace(args: argparse.Namespace) -> Namespace:
         format="json",
         lesson_only=False,
         lesson_json=None,
+    )
+
+
+def _decision_tree_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        brief=args.brief,
+        song_briefs=args.song_briefs,
+        templates=args.templates,
+        catalog_dir=args.catalog_dir,
+        serum_briefs=args.briefs,
+        prefer_rendered=args.prefer_rendered,
+        limit_per_part=args.limit_per_part,
+        mutation_limit=args.mutation_limit,
+        max_swaps=args.max_swaps,
+        format="json",
     )
 
 
@@ -283,6 +300,7 @@ def _author_summary(
     render_blockers: list[dict],
     bank_candidates: dict,
     full_song_blueprint: dict,
+    decision_tree: dict,
     compiled_lesson: dict,
     lesson_validation: dict,
     synth_plan: dict,
@@ -312,6 +330,7 @@ def _author_summary(
     lines.append(f"- synth sections in scaffold: {len(synth_plan['synth_sections'])}")
     lines.append(f"- full-song bars: {full_song_blueprint['readiness']['total_bars']}")
     lines.append(f"- compiled lesson steps: {compiled_lesson['lesson']['steps'] and len(compiled_lesson['lesson']['steps'])}")
+    lines.append(f"- decision branches: {len(decision_tree['branches'])}")
     lines.append(f"- production techniques attached: {full_song_blueprint['production_techniques']['result_count']}")
     lines.append(
         f"- technique interactions: "
@@ -387,6 +406,7 @@ def _author_summary(
     lines.append("## Bundle Files")
     lines.append("- `packet/` contains the refined packet export.")
     lines.append("- `full-song-blueprint.json` / `full-song-blueprint.md` capture the actual production plan.")
+    lines.append("- `decision-tree.json` / `decision-tree.md` prepare the model-led composition pass.")
     lines.append("- `production-techniques.json` / `production-techniques.md` show the transcript-derived moves that fit this brief.")
     lines.append("- `full-song-readiness.json` shows whether the song plan is release-shaped enough to proceed.")
     lines.append("- `compiled-lesson.json` is the draft lesson object generated from the full-song plan.")
@@ -412,6 +432,7 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     render_backlog = build_render_backlog_report(namespace)
     bank_candidates = build_brief_bank_report(_bank_namespace(args))
     full_song_blueprint = build_full_song_blueprint_report(_full_song_namespace(args))
+    decision_tree = build_song_decision_tree_report(_decision_tree_namespace(args))
     compiled_lesson = build_compiled_lesson_report(_full_song_namespace(args))
     lesson_validation = build_lesson_validation_report(_full_song_namespace(args))
     synth_plan = build_synth_plan_report(_synth_plan_namespace(args))
@@ -431,6 +452,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     _write_text(out_dir / "bank-candidates.tsv", _bank_candidates_tsv(bank_candidates), args.force)
     _write_text(out_dir / "full-song-blueprint.json", json.dumps(full_song_blueprint, indent=2) + "\n", args.force)
     _write_text(out_dir / "full-song-blueprint.md", render_full_song_blueprint_text(full_song_blueprint) + "\n", args.force)
+    _write_text(out_dir / "decision-tree.json", json.dumps(decision_tree, indent=2) + "\n", args.force)
+    _write_text(out_dir / "decision-tree.md", render_song_decision_tree_text(decision_tree) + "\n", args.force)
     _write_text(
         out_dir / "production-techniques.json",
         json.dumps(full_song_blueprint["production_techniques"], indent=2) + "\n",
@@ -528,6 +551,7 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             render_blockers,
             bank_candidates,
             full_song_blueprint,
+            decision_tree,
             compiled_lesson,
             lesson_validation,
             synth_plan,
@@ -552,6 +576,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             "bank_candidates_tsv": str(out_dir / "bank-candidates.tsv"),
             "full_song_blueprint_json": str(out_dir / "full-song-blueprint.json"),
             "full_song_blueprint_md": str(out_dir / "full-song-blueprint.md"),
+            "decision_tree_json": str(out_dir / "decision-tree.json"),
+            "decision_tree_md": str(out_dir / "decision-tree.md"),
             "production_techniques_json": str(out_dir / "production-techniques.json"),
             "production_techniques_md": str(out_dir / "production-techniques.md"),
             "compiled_lesson_json": str(out_dir / "compiled-lesson.json"),

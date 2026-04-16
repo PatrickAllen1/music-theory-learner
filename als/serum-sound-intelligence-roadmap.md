@@ -29,6 +29,8 @@ main product is:
   shaped tracks
 - a lesson-compilation layer that converts finished track decisions into
   guided-build content
+- a model-led composition layer where scripts prepare the decision tree and the
+  model makes the final aesthetic calls
 
 ## Target Artifacts
 
@@ -57,6 +59,8 @@ Planned artifacts:
   scaffolds
 - `als/design_full_song_blueprint.py` complete track blueprint for drums,
   harmony, melody, arrangement, FX, mix, and export
+- `als/build_song_decision_tree.py` model-facing composition context with bold
+  moves, required pairings, and mandatory constraints
 - `als/song-production-templates.json` per-layer Ableton chain templates,
   return/send architecture, and sample-slot definitions
 - `als/compile_guided_build_lesson.py` conversion from full song blueprint to

@@ -115,6 +115,13 @@ python3 als/design_full_song_blueprint.py --brief ukg-2step-dark-stab
 python3 als/design_full_song_blueprint.py --brief ukg-4x4-pluck-driver --format json
 ```
 
+Build a model-facing song decision tree from that blueprint:
+
+```bash
+python3 als/build_song_decision_tree.py --brief ukg-2step-dark-stab
+python3 als/build_song_decision_tree.py --brief ukg-4x4-lead-driver --format json
+```
+
 Recommend transcript-derived production techniques for a brief:
 
 ```bash
@@ -231,6 +238,7 @@ The author bundle includes:
 
 - `packet/` with the refined lesson packet
 - `full-song-blueprint.json` / `full-song-blueprint.md`
+- `decision-tree.json` / `decision-tree.md`
 - `production-techniques.json` / `production-techniques.md`
 - `full-song-readiness.json`
 - `compiled-lesson.json` / `compiled-lesson.md`
