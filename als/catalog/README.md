@@ -150,6 +150,13 @@ Prepare a capture-session queue from that preset shortlist:
 python3 als/prepare_serum_preset_capture_session.py --out-dir als/preset-capture-session
 ```
 
+Rank which briefs are strongest candidates for actual lesson authoring:
+
+```bash
+python3 als/report_serum_lesson_author_queue.py
+python3 als/report_serum_lesson_author_queue.py --format json
+```
+
 Prepare one consolidated priority render session across all briefs:
 
 ```bash
