@@ -66,6 +66,7 @@ Build small preset palettes:
 ```bash
 python3 als/palette_builder.py --role bass --role pad --role lead
 python3 als/palette_builder.py --role bass --role pad --role pluck --target-tone dark
+python3 als/palette_builder.py --role bass --role lead --prefer-rendered
 ```
 
 The canonical schema for each profile is:
