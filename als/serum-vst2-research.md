@@ -106,6 +106,8 @@ Important limit:
 python3 als/report_serum_vst2_coverage.py --summary-only
 python3 als/report_serum_vst2_coverage.py --category fx
 python3 als/report_serum_vst2_coverage.py --summary-only --module matrix_source --include-module-candidates --exclude-range 140-143 --exclude-range 154-163 --exclude-range 166-179
+python3 als/report_serum_vst2_probe_coverage.py --summary-only
+python3 als/report_serum_vst2_probe_coverage.py --status none
 ```
 
 This cross-references the current standalone `.fxp` parser against the binary
@@ -149,6 +151,48 @@ Bank-split read from the corpus profiler:
 - that instability is another sign that the remaining matrix surfaces should
   not be overfit to one single inferred island before the deferred manual
   save-diffs land
+
+### Probe coverage report
+
+`als/report_serum_vst2_probe_coverage.py` cross-references the deferred manual
+probe manifest against the host catalog and current parser coverage state.
+
+Current high-level read:
+
+- fully covered by the current A-E manifest:
+  - `global_pitch`
+  - `global_portamento`
+  - `macro`
+- partially covered:
+  - `fx_eq`
+  - `fx_delay`
+  - `fx_chorus`
+  - `fx_flanger`
+  - `fx_filter`
+  - `fx_hyper_dimension`
+  - `global_voicing`
+  - `matrix_source`
+  - `matrix_destination`
+  - `matrix_depth`
+  - `matrix_curve`
+- still unplanned by the current manifest:
+  - `fx_compressor`, `fx_distortion`, `fx_phaser`, `fx_reverb`
+  - `filter_core`, `filter_routing`
+  - `osc_a`, `osc_b`, `noise`, `sub`
+  - `env1_amp`, `env2`, `env3`, `envelope_curve`, `lfo`, `chaos`
+  - `matrix_aux_source`, `matrix_output`
+  - `global_master`, `global_misc`
+
+Best post-A-E manual expansion targets from the current evidence:
+
+1. oscillator warp family (`A Warp`, `B Warp`, `Warp Menu OSC A`)
+2. remaining global voicing (`Monophonic / Polyphonic switch`, `Legato`,
+   `Unison Stereo Width`, `Unison Warp`, `Unison Stack`, `Unison Detune Mode`)
+3. post-`LFO1Rate` modulation family (`LFO2 Rate` / `LFO2 smooth`, then `LFO3`)
+4. filter topology and routing (`Fil Type`, `Fil Var`, `Filter KeyTrack`,
+   `OscA/B/N/S>Fil`)
+5. one missing FX module core (`Distortion On / Drive / Mode` or
+   `Reverb On / Type`)
 
 ### Corpus slot profiler
 

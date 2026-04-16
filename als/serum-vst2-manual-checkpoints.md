@@ -63,3 +63,11 @@ python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
 - `Macro amount`: `Garage/Lead- Saturn.fxp`, fallbacks `Garage/Bass - 100%.fxp`, `Garage/Pad - Yoboy.fxp`, `Garage/Bass- Sidewinda.fxp`, `Garage/Bass- Crackhead.fxp`
 - `Mod route add/remove`: `Garage/Pad- June.fxp`, fallbacks `Garage/Bass- Duality.fxp`, `Garage/Bass- Wide Reese.fxp`, `Garage/Reese - If Bass could kill.fxp`, `Speed Garage/Bass- Sidewinda.fxp`
 - `Matrix curve`: `Garage/Bass- Wide Reese.fxp`, fallbacks `Garage/Bass- Duality.fxp`, `Garage/Reese - If Bass could kill.fxp`, `Garage/Bass- Optic Sine.fxp`, `Garage/Bass- Crackhead.fxp`
+
+## After A-E
+- If A-E is not enough, the next highest-value unplanned manual probes are:
+- `Osc A/B Warp`: `A Warp`, `B Warp`, `Warp Menu OSC A`
+- Remaining global voicing: `Monophonic / Polyphonic switch`, `Legato`, `Unison Stereo Width`, `Unison Warp`, `Unison Stack`, `Unison Detune Mode`
+- LFO family beyond `LFO1Rate`: `LFO2 Rate` / `LFO2 smooth`, then `LFO3`
+- Filter topology and routing: `Fil Type`, `Fil Var`, `Filter KeyTrack`, `OscA/B/N/S>Fil`
+- One missing FX module core: `Distortion On / Drive / Mode` or `Reverb On / Type`
