@@ -16,6 +16,7 @@ Examples:
     python3 als/report_serum_vst2_probe_coverage.py --status none
     python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --summary-only
     python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --summary-only
+    python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --manifest als/serum-vst2-phase4-probes.json --summary-only
 """
 
 import argparse
@@ -27,8 +28,10 @@ from pathlib import Path
 
 try:
     from parse_serum import build_serum_vst2_host_coverage_report, extract_serum_vst2_host_param_catalog
+    from serum_vst2_label_overrides import apply_serum_vst2_label_overrides, canonicalize_label_iter
 except ModuleNotFoundError:
     from .parse_serum import build_serum_vst2_host_coverage_report, extract_serum_vst2_host_param_catalog
+    from .serum_vst2_label_overrides import apply_serum_vst2_label_overrides, canonicalize_label_iter
 
 
 DEFAULT_MANIFEST = Path("als/serum-vst2-manual-probes.json")
@@ -92,7 +95,7 @@ def _build_probe_rows(manifest: dict, label_index: dict[str, list[dict]]) -> lis
                 "probe_id": probe["id"],
                 "probe_label": probe["label"],
                 "candidate_host_labels": probe.get("candidate_host_labels", []),
-                "matched_labels": [entry["label"] for entry in matched_entries],
+                "matched_labels": canonicalize_label_iter(entry["label"] for entry in matched_entries),
                 "matched_modules": sorted({entry["module"] for entry in matched_entries}),
                 "candidate_slot_windows": probe.get("candidate_slot_windows", []),
                 "recommended_preset": probe.get("recommended_preset", ""),
@@ -115,7 +118,7 @@ def _load_manifests(paths: list[Path]) -> list[dict]:
 def build_probe_coverage_report(manifest_paths: list[Path]) -> dict:
     manifests = _load_manifests(manifest_paths)
     catalog = extract_serum_vst2_host_param_catalog()
-    coverage = build_serum_vst2_host_coverage_report()
+    coverage = apply_serum_vst2_label_overrides(build_serum_vst2_host_coverage_report())
     label_index = _build_label_index(catalog)
     probe_rows = []
     for manifest_path, manifest in zip(manifest_paths, manifests):

@@ -163,6 +163,7 @@ Examples:
 python3 als/report_serum_vst2_probe_coverage.py --summary-only
 python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --summary-only
 python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --summary-only
+python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --manifest als/serum-vst2-phase4-probes.json --summary-only
 python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --status none
 ```
 
@@ -207,23 +208,14 @@ The current second-stage choice is to prefer `Distortion` over `Reverb`
 because it appears less broadly shared across the corpus and should be easier
 to isolate cleanly in a controlled save-diff.
 
-Current three-pack state after adding the phase-3 cleanup manifest:
+Current four-pack state after adding the phase-4 cleanup manifest:
 
-- `25` uncovered modules are now fully targeted by the deferred manual bundle
-- `11` uncovered modules remain partial
+- `35` uncovered modules are now fully targeted by the deferred manual bundle
+- `0` uncovered modules remain partially targeted
 - `0` uncovered modules remain completely unplanned
 
-The remaining partial set is mostly the broad repeated families and alias-heavy
-surfaces:
-
-- large FX cores that still need deeper parameter sweeps: `fx_eq`, `fx_delay`,
-  `fx_chorus`, `fx_flanger`, `fx_filter`, `fx_hyper_dimension`,
-  `fx_distortion`, and one duplicate compressor wet label
-- `lfo`, which still needs a wider post-`LFO1Rate` sweep
-- `envelope_curve`, where the `#2` / `#3` labels collapse onto duplicate host
-  names in the current catalog
-- `other`, which is still a mixed residue bucket rather than a trustworthy
-  single Serum surface
+That `35/0/0` read is after applying the current alias/residue override layer
+for duplicated host labels and obvious UI/catalog leftovers.
 
 ### Partial-gap audit
 
@@ -231,6 +223,7 @@ surfaces:
 python3 als/report_serum_vst2_partial_gaps.py
 python3 als/report_serum_vst2_partial_gaps.py --module fx_delay
 python3 als/report_serum_vst2_partial_gaps.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json
+python3 als/report_serum_vst2_partial_gaps.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --manifest als/serum-vst2-phase4-probes.json
 ```
 
 This helper explains why a module is still `partial` instead of just listing
@@ -242,19 +235,34 @@ the missing labels. Each missing label is classified as one of:
 - `catalog_residue`: a label that appears in the coverage report but does not
   resolve back to a distinct host label in the current catalog
 
-Current practical read from that audit:
+Current practical read from that audit before the override collapse:
 
 - `fx_eq`, `fx_delay`, `fx_chorus`, `fx_flanger`, `fx_filter`,
-  `fx_hyper_dimension`, and `fx_distortion` are still partial because they each
-  have a real remaining parameter surface, not because of naming noise
-- `lfo` is still partial for the same reason: there is a large real
-  post-`LFO1Rate` control surface still untouched
-- `fx_compressor` is mostly an alias/collision problem, with one residual host
-  catalog quirk around the duplicated wet label
-- `envelope_curve` is mostly duplicate or residue noise in the current host
-  catalog, not a clean new family waiting for another probe
-- `other` remains a residue bucket and should not be treated like a coherent
-  Serum module
+  `fx_hyper_dimension`, and `fx_distortion` were genuine broad FX surfaces that
+  needed dedicated phase-4 probes
+- `lfo` needed a canonical `LFO1-4` sweep plus explicit residue handling for
+  `LFO5-8`, bus labels, UI labels, and source aliases
+- `fx_compressor`, `envelope_curve`, and large parts of `other` were primarily
+  duplicate-label or host-catalog residue problems rather than new probe
+  families
+
+### Label-override layer
+
+The report scripts now apply an alias/residue normalization pass through
+[`als/serum_vst2_label_overrides.py`](./serum_vst2_label_overrides.py).
+
+What it currently does:
+
+- collapses known duplicate labels such as `Comp_Wet #2`, `FX Fil Pan #2`,
+  `Attack Curve #2/#3`, `Decay Curve #2/#3`, `Release Curve #2/#3`
+- re-homes obvious aliases such as `Bend U/D`, `WarpOscA/B`,
+  `OscAPitchTrack` / `OscBPitchTrack`, and `Osc N/S On`
+- ignores host/UI residue like `Mod N amt/out`, `Matrix OSC->Curve N`,
+  `CompMB L/M/H`, `MultBand`, the generic LFO UI labels, and the `LFO Bus`
+  family
+
+The result is that the manual-probe progress report now measures effective S1
+preset surfaces rather than raw duplicated host strings.
 
 ### Corpus slot profiler
 
@@ -312,6 +320,7 @@ python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-expansion-probes.json
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json
+python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --manifest als/serum-vst2-phase4-probes.json
 ```
 
 The autonomous batch now has a deferred-manual layer:
@@ -325,6 +334,9 @@ The autonomous batch now has a deferred-manual layer:
   enough
 - [`als/serum-vst2-phase3-probes.json`](./serum-vst2-phase3-probes.json) is
   the phase-3 cleanup pack for the remaining dark surfaces after A-F
+- [`als/serum-vst2-phase4-probes.json`](./serum-vst2-phase4-probes.json) is
+  the phase-4 cleanup pack for the remaining broad FX and canonical LFO
+  surfaces after A-G
 - [`als/ingest_serum_manual_diff.py`](./ingest_serum_manual_diff.py) ingests
   final `.before.fxp` / `.after.fxp` pairs using the `<probe_id>.before.fxp`
   and `<probe_id>.after.fxp` naming convention, now supports multiple

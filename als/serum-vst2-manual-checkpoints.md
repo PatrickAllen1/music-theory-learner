@@ -5,6 +5,7 @@ Deferred manual checkpoint pack for the current Serum VST2 mapping pass. This is
 - `als/serum-vst2-manual-probes.json` for checkpoints A-E
 - `als/serum-vst2-expansion-probes.json` for checkpoint F
 - `als/serum-vst2-phase3-probes.json` for checkpoint G
+- `als/serum-vst2-phase4-probes.json` for checkpoint H
 
 Common diff command after saving the two `.fxp` variants:
 
@@ -18,6 +19,7 @@ End-of-run ingest command for a folder of completed pairs:
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json
+python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --manifest als/serum-vst2-phase4-probes.json
 ```
 
 ## Checkpoint A
@@ -103,3 +105,16 @@ python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs -
 - Chaos family: both Chaos rate/sync/mono/SNH/source lanes
 - Low-confidence host-global sweep: `Master Volume`, `Quality`, `GUI Size`
 - Delay bridge: `FX Delay Level`
+
+## After G
+- If checkpoint G still leaves broad FX and LFO surfaces open, layer in `als/serum-vst2-phase4-probes.json`.
+- Phase-4 targets:
+- EQ core: `EQ FrqL/H`, `EQ Q L/H`, `EQ VolL/H`
+- Delay core: wet, filter, sync, link, time left/right, mode, feedback, offsets
+- Chorus core: enable/on, wet, rate, depth, feed, LPF, chorus level
+- Flanger core: enable/on, wet, rate, depth, feed, stereo, flanger level
+- FX filter core: wet, type, freq, reso, drive, var, pan, filter level
+- Hyper/Dimension core: wet, rate, detune, unison, retrig, Hyper/Dimension levels
+- Distortion extended: wet, level, low/band/high, freq, bandwidth, pre/post
+- Canonical post-LFO1 sweep: `LFO1-4` smooth/rate/rise/delay
+- After applying the current alias/residue overrides, the four-pack bundle effectively covers every remaining uncovered module in the host catalog.

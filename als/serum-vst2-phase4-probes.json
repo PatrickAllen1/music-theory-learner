@@ -1,0 +1,200 @@
+{
+  "metadata": {
+    "version": 1,
+    "description": "Fourth-stage deferred manual Serum VST2 probe pack for the remaining real-missing broad FX and LFO surfaces after phases A-G.",
+    "default_diff_command": "python3 als/parse_serum_preset.py --diff before.fxp after.fxp --slots 180 --threshold 0.01 --cluster-gap 0"
+  },
+  "checkpoints": [
+    {
+      "id": "H",
+      "title": "Broad FX and LFO closure probes",
+      "objective": "Target the remaining real missing parameter surfaces in EQ, delay, chorus, flanger, FX filter, hyper/dimension, distortion, and the broad post-LFO1 family.",
+      "probes": [
+        {
+          "id": "fx_eq_core",
+          "label": "EQ core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "EQ FrqL",
+            "EQ FrqH",
+            "EQ Q L",
+            "EQ Q H",
+            "EQ VolL",
+            "EQ VolH"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese -  Dusty Heever.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp"
+          ],
+          "notes": "This is the follow-on sweep after EQ type and EQ on/off. Move one EQ frequency, Q, or level control per save."
+        },
+        {
+          "id": "fx_delay_core",
+          "label": "Delay core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Dly_Wet",
+            "Dly_Freq",
+            "Dly_BW",
+            "Dly_BPM_Sync",
+            "Dly_Link",
+            "Dly_TimL",
+            "Dly_TimR",
+            "Dly_Mode",
+            "Dly_Feed",
+            "Dly_Offset L",
+            "Dly_Offset R"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Big W.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp"
+          ],
+          "notes": "Use a clearly delayed patch and run wet, timing, filter, feedback, and offset edits as separate save pairs."
+        },
+        {
+          "id": "fx_chorus_core",
+          "label": "Chorus core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Cho Enable",
+            "FX Chorus Level",
+            "Cho_Wet",
+            "Cho_Rate",
+            "Cho_Dep",
+            "Cho_Feed",
+            "Cho_LPF",
+            "Cho_On"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Speed On Smoke.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp"
+          ],
+          "notes": "This is the follow-on sweep after the BPM-sync probe. Treat Cho Enable and Cho_On as likely toggle aliases, and treat FX Chorus Level as a likely module-level level alias around Cho_Wet."
+        },
+        {
+          "id": "fx_flanger_core",
+          "label": "Flanger core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Flg Enable",
+            "FX Flg Level",
+            "Flg_Wet",
+            "Flg_Rate",
+            "Flg_Dep",
+            "Flg_Feed",
+            "Flg_Stereo",
+            "Flg_On"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Flanger.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp"
+          ],
+          "notes": "Use the explicit flanger pad first so wet, rate, depth, feedback, and stereo stay obvious."
+        },
+        {
+          "id": "fx_filter_core",
+          "label": "FX filter core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "FX Fil Pan",
+            "FX Filter Level",
+            "FX Fil Wet",
+            "FX Fil Type",
+            "FX Fil Freq",
+            "FX Fil Reso",
+            "FX Fil Drive",
+            "FX Fil Var"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese -  Dusty Heever.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Stab - digi.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp"
+          ],
+          "notes": "Follow the FX filter on/off probe with single-parameter sweeps for wet, type, freq, reso, drive, var, and pan. Treat FX Fil Pan #2 as a likely duplicate/alias artifact rather than a separate target."
+        },
+        {
+          "id": "fx_hyper_core",
+          "label": "Hyper/Dimension core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "FX DimExp Level",
+            "FX Hyper Level",
+            "Hyp_Wet",
+            "Hyp_Rate",
+            "Hyp_Detune",
+            "Hyp_Unison",
+            "Hyp_Retrig",
+            "Hyper Dimension",
+            "Hyper Dim. Wet",
+            "Hyper FX On"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Rudeboy.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp"
+          ],
+          "notes": "Use a wide patch first. Treat Hyper/Dimension as one family and sweep wet, rate, detune, unison, retrig, and output level separately."
+        },
+        {
+          "id": "fx_distortion_extended",
+          "label": "Distortion extended family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "FX Dist Level",
+            "Dist_Wet",
+            "Dist_L/B/H",
+            "Dist_Freq",
+            "Dist_BW",
+            "Dist_PrePost"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Face Melter.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Sidewinda.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - If Bass could kill.fxp"
+          ],
+          "notes": "This extends the earlier distortion probe beyond drive/mode/on to wet, output level, bands, freq, bandwidth, and pre/post."
+        },
+        {
+          "id": "lfo_extended_family",
+          "label": "Post-LFO1 extended family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "LFO1 smooth",
+            "LFO1 Rise",
+            "LFO1 Delay",
+            "LFO2Rate",
+            "LFO2 smooth",
+            "LFO2 Rise",
+            "LFO2 Delay",
+            "LFO3Rate",
+            "LFO3 smooth",
+            "LFO3 Rise",
+            "LFO3 Delay",
+            "LFO4Rate",
+            "LFO4 smooth",
+            "LFO4 Rise",
+            "LFO4 Delay"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp"
+          ],
+          "notes": "Use this as the canonical post-LFO1 sweep. Treat LFO5-8, LFO Bus 1-16, parenthesized smooth labels, generic UI controls like LFO Grid/Display/Mode, and LFO Source aliases as host-catalog residue until a save-diff proves they serialize distinctly in the S1 corpus."
+        }
+      ]
+    }
+  ]
+}

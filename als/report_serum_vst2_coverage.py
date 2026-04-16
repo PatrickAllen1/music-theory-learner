@@ -17,9 +17,11 @@ import sys
 try:
     from parse_serum import SERUM_VST2_PLUGIN_BINARY_PATH, build_serum_vst2_host_coverage_report
     from rank_serum_vst2_module_candidates import rank_target_candidates
+    from serum_vst2_label_overrides import apply_serum_vst2_label_overrides
 except ModuleNotFoundError:
     from .parse_serum import SERUM_VST2_PLUGIN_BINARY_PATH, build_serum_vst2_host_coverage_report
     from .rank_serum_vst2_module_candidates import rank_target_candidates
+    from .serum_vst2_label_overrides import apply_serum_vst2_label_overrides
 
 
 def make_parser() -> argparse.ArgumentParser:
@@ -156,7 +158,7 @@ def main():
     args = parser.parse_args()
 
     try:
-        report = build_serum_vst2_host_coverage_report(binary_path=args.binary)
+        report = apply_serum_vst2_label_overrides(build_serum_vst2_host_coverage_report(binary_path=args.binary))
     except Exception as exc:
         print(json.dumps({"error": str(exc)}), file=sys.stderr)
         sys.exit(1)

@@ -31,6 +31,7 @@ DEFAULT_MANIFESTS = [
     Path("als/serum-vst2-manual-probes.json"),
     Path("als/serum-vst2-expansion-probes.json"),
     Path("als/serum-vst2-phase3-probes.json"),
+    Path("als/serum-vst2-phase4-probes.json"),
 ]
 
 
