@@ -42,6 +42,13 @@ python3 als/suggest_serum_mutations.py --profile-id mph-raw:bass:i1 --goal darke
 python3 als/suggest_serum_mutations.py --profile-id mph-raw:bass:i1 --goal tighter --goal mono_safer
 ```
 
+Recommend a preset for a musical part and bundle the mutation suggestions:
+
+```bash
+python3 als/recommend_serum_part.py --role bass --goal darker --goal mono_safer
+python3 als/recommend_serum_part.py --role lead --tone bright --prefer-rendered --goal tighter --goal more_presence
+```
+
 Prepare a manual audio audition session:
 
 ```bash
