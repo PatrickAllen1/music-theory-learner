@@ -493,6 +493,7 @@ def infer_serum_vst2_host_control_kind(label: str) -> str:
 
     boolean_tokens = (
         "_On",
+        " On",
         "PitchTrack",
         "BPM_Sync",
         "Link",

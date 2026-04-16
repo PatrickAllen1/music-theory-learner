@@ -368,6 +368,48 @@ to prove:
 - Porta Mode
 - Porta Scaled
 
+## Synthetic family results
+
+Module ranking is useful, but some Serum surfaces are better treated as control
+families before we try to prove exact per-label mappings.
+
+The first strong example is:
+
+- `fx_enable_toggles`
+
+This synthetic family is defined as the ten FX on/off labels:
+
+- `Dist_On`
+- `Flg_On`
+- `Phs_On`
+- `Cho_On`
+- `Dly_On`
+- `Comp_On`
+- `Rev_On`
+- `EQ_On`
+- `FX Fil On`
+- `Hyper FX On`
+
+The family ranking result is currently the strongest structural clue in the
+whole VST2 reverse-engineering pass:
+
+- top candidate window: `154-163`
+- score: `1.0`
+- shape: `10 / 10` boolean-style slots
+
+This is not yet a proven per-label ordering, but it is a high-confidence family
+level hypothesis:
+
+- cluster `154-163` is very likely the VST2 storage region for Serum FX enable
+  toggles
+
+That gives us a better next proof path:
+
+1. save one preset with only one FX module toggled on/off
+2. diff the preset
+3. check whether the changed slot falls inside `154-163`
+4. repeat for a second FX module to test ordering inside the family
+
 ## Good immediate targets
 
 - `Lead- Just` vs `Lead- Saturn`
