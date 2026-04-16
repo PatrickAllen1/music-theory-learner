@@ -1,8 +1,8 @@
 # Serum Sound Intelligence Roadmap
 
 This roadmap shifts the Serum work from narrow VST2 slot archaeology toward a
-practical system for understanding, cataloging, and using Serum sounds in song
-production.
+practical system for understanding, cataloging, and using Serum sounds in
+full-song production and guided-build authoring.
 
 The end goal is:
 
@@ -10,6 +10,8 @@ The end goal is:
 - understand how it is built
 - understand how it will likely sit in a mix
 - retrieve and combine sounds intentionally when building tracks
+- author full-quality UK garage songs with intentional sound choices
+- transform those finished song decisions into guided-build lesson steps
 
 ## Scope
 
@@ -20,8 +22,13 @@ We will support two source lanes:
   purchased S1 presets living inside the Serum 2 compatibility folders
 
 The current VST2 work remains useful, but it is no longer the main product. The
-main product is a normalized preset profile and, later, an audio-linked preset
-catalog.
+main product is:
+
+- a normalized preset profile and audio-linked preset catalog
+- a song-authoring layer that uses those presets to build coherent, release-
+  shaped tracks
+- a lesson-compilation layer that converts finished track decisions into
+  guided-build content
 
 ## Target Artifacts
 
@@ -41,6 +48,17 @@ Planned artifacts:
 - `als/tag_serum_profiles.py` semantic role/tone tagging
 - `als/search_serum_profiles.py` role/tone/mix-aware retrieval
 - `als/palette_builder.py` preset pairing and palette suggestions
+- `als/design_serum_track_blueprint.py` song-level synth stack planning
+- `als/prepare_serum_lesson_author_bundle.py` brief-specific lesson authoring
+  bundle
+- `als/generate_serum_guided_build_synth_plan.py` per-part synth authoring
+  scaffold
+- `als/generate_serum_guided_build_steps.py` guided-build-style synth step
+  scaffolds
+- `als/design_full_song_blueprint.py` complete track blueprint for drums,
+  harmony, melody, arrangement, FX, mix, and export
+- `als/compile_guided_build_lesson.py` conversion from full song blueprint to
+  lesson JSON
 
 ## Phase 1: Canonical Profile
 
@@ -198,6 +216,100 @@ Acceptance criteria:
   palette
 - lesson content can cite concrete sonic reasons, not only preset names
 
+## Phase 7: Full-Song Blueprint Authoring
+
+Goal:
+
+- move from “good synth choices” to “good full songs” by freezing the entire
+  production plan before writing lessons
+
+Deliverables:
+
+- a reusable full-song blueprint format that captures:
+  - drum sample choices and exact groove logic
+  - bass/chord/melody roles and synth assignments
+  - harmonic plan
+  - arrangement sections and section goals
+  - FX, transitions, and mix notes
+  - export expectations
+- brief-driven helpers that can output release-shaped UKG song plans instead of
+  isolated synth suggestions
+
+Files:
+
+- add `als/design_full_song_blueprint.py`
+- add `als/song-blueprint-briefs.json`
+- add `als/compare_full_song_blueprints.py`
+
+Acceptance criteria:
+
+- given a target brief, the system can output a complete production blueprint,
+  not only synth part selections
+- the blueprint is detailed enough that a human could build the same finished
+  song from it
+- the blueprint reads like a song plan first and a teaching aid second
+
+## Phase 8: Guided-Lesson Compilation
+
+Goal:
+
+- convert a finished song blueprint into guided-build lesson content without
+  losing production quality
+
+Deliverables:
+
+- a compiler that turns a full-song blueprint into:
+  - guided-build-style `steps[]`
+  - lesson metadata
+  - rationale for each section and sound choice
+- structured rules for converting:
+  - production decisions -> learner instructions
+  - arrangement sections -> lesson sequencing
+  - mix/export choices -> exact final steps
+
+Files:
+
+- add `als/compile_guided_build_lesson.py`
+- add `als/validate_guided_build_lesson.py`
+
+Acceptance criteria:
+
+- the compiled lesson preserves the full song’s quality and intent
+- the lesson remains fully hand-held and pre-composed
+- resulting JSON is close enough to existing `src/content/guided-builds/originals/*.json`
+  that only light editorial cleanup is needed
+
+## Phase 9: Quality Gate And Audio Verification
+
+Goal:
+
+- stop the system from producing “educational but weak” songs
+
+Deliverables:
+
+- a quality gate that checks:
+  - release-shaped arrangement
+  - no unresolved key sound roles
+  - no major fallback-heavy synth parts left unreviewed
+  - mix/export scaffolding present
+- audio-verification workflow for the highest-impact synth parts and blueprint
+  choices
+
+Files:
+
+- add `als/report_full_song_blueprint_readiness.py`
+- extend `als/prepare_serum_render_handoff.py`
+- extend `als/prepare_serum_lesson_author_bundle.py`
+
+Acceptance criteria:
+
+- the system can tell the difference between “teachable loop” and “finished
+  song plan”
+- top lesson candidates are prioritized by song quality, not just synth
+  coverage
+- render/audio verification is attached to the song-authoring loop, not treated
+  as a separate afterthought
+
 ## Manual vs Automatable Work
 
 Automatable now:
@@ -208,6 +320,8 @@ Automatable now:
 - cross-run reporting
 - tag generation
 - search and retrieval
+- song-blueprint generation from briefs
+- lesson-step scaffolding from frozen song decisions
 
 Manual or host-dependent:
 
@@ -227,6 +341,9 @@ Important distinction:
 3. Choose a small golden preset set from the Garage banks.
 4. Add a reproducible audio-render workflow.
 5. Add semantic tagging and retrieval.
+6. Build full-song blueprints on top of the sound-intelligence layer.
+7. Compile those blueprints into guided-build lesson JSON.
+8. Add quality gates so “full-quality song first” remains the rule.
 
 ## Immediate Next Files
 
@@ -248,3 +365,7 @@ Recommended next code pass:
 - extend `build_serum_profile.py` to ingest fresh Serum 2 ALS captures directly
 - add audio descriptor extraction on top of prepared audio sessions
 - tighten semantic tagging so fewer profiles remain `unknown`
+- add the full-song blueprint layer so the system can author whole tracks, not
+  only synth sections
+- add the lesson compiler layer so finished song decisions can be turned into
+  guided-build JSON
