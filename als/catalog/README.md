@@ -56,6 +56,13 @@ python3 als/design_serum_track_blueprint.py --brief ukg-4x4-pluck-driver
 python3 als/design_serum_track_blueprint.py --brief ukg-4x4-lead-driver --prefer-rendered --format json
 ```
 
+Compare two chosen profiles for clash risk and separation moves:
+
+```bash
+python3 als/compare_serum_profiles.py --left mph-raw:bass:i1 --right mph-raw:lead:i3
+python3 als/compare_serum_profiles.py --left mph-raw:bass:i1 --right mph-raw:reese:i5 --format json
+```
+
 Prepare a manual audio audition session:
 
 ```bash
