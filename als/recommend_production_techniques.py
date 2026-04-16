@@ -81,6 +81,18 @@ def render_text(report: dict) -> str:
         lines.append(f"  when: {row['when_to_use']}")
         lines.append(f"  works with: {' | '.join(row['works_well_with'])}")
         lines.append(f"  clashes with: {' | '.join(row['likely_clashes_with'])}")
+    interaction = report["interaction_analysis"]
+    if interaction["reinforcements"] or interaction["watchouts"]:
+        lines.append("")
+        lines.append("## Technique Interactions")
+        for row in interaction["reinforcements"]:
+            lines.append(f"- reinforcement :: `{row['left_id']}` <-> `{row['right_id']}`")
+            lines.append(f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}")
+        for row in interaction["watchouts"]:
+            lines.append(f"- watchout :: `{row['left_id']}` <-> `{row['right_id']}`")
+            lines.append(f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}")
+            if row["mitigations"]:
+                lines.append(f"  mitigations: {' | '.join(row['mitigations'][:3])}")
     return "\n".join(lines)
 
 

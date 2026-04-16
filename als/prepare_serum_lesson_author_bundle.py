@@ -313,6 +313,11 @@ def _author_summary(
     lines.append(f"- full-song bars: {full_song_blueprint['readiness']['total_bars']}")
     lines.append(f"- compiled lesson steps: {compiled_lesson['lesson']['steps'] and len(compiled_lesson['lesson']['steps'])}")
     lines.append(f"- production techniques attached: {full_song_blueprint['production_techniques']['result_count']}")
+    lines.append(
+        f"- technique interactions: "
+        f"{full_song_blueprint['production_techniques']['interaction_analysis']['reinforcement_count']} reinforcements / "
+        f"{full_song_blueprint['production_techniques']['interaction_analysis']['watchout_count']} watchouts"
+    )
     lines.append("")
     lines.append("## Next Actions")
     for step in song_readiness_row["next_actions"]:
@@ -347,6 +352,18 @@ def _author_summary(
         for row in full_song_blueprint["production_techniques"]["recommendations"][:3]:
             lines.append(f"- `{row['name']}` [{row['source']}]")
             lines.append(f"  why now: {row['when_to_use']}")
+        lines.append("")
+    interaction = full_song_blueprint["production_techniques"]["interaction_analysis"]
+    if interaction["watchouts"] or interaction["reinforcements"]:
+        lines.append("## Technique Interactions")
+        for row in interaction["reinforcements"][:3]:
+            lines.append(f"- reinforcement :: `{row['left_id']}` <-> `{row['right_id']}`")
+            lines.append(f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}")
+        for row in interaction["watchouts"][:3]:
+            lines.append(f"- watchout :: `{row['left_id']}` <-> `{row['right_id']}`")
+            lines.append(f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}")
+            if row["mitigations"]:
+                lines.append(f"  mitigations: {' | '.join(row['mitigations'][:2])}")
         lines.append("")
     lines.append("## Bundle Files")
     lines.append("- `packet/` contains the refined packet export.")
@@ -417,6 +434,32 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
                 ]).rstrip()
                 for row in full_song_blueprint["production_techniques"]["recommendations"]
             ],
+            "",
+            "## Technique Interactions",
+            *(
+                [
+                    *[
+                        "\n".join([
+                            f"- reinforcement :: `{row['left_id']}` <-> `{row['right_id']}`",
+                            f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}",
+                        ])
+                        for row in full_song_blueprint["production_techniques"]["interaction_analysis"]["reinforcements"]
+                    ],
+                    *[
+                        "\n".join([
+                            f"- watchout :: `{row['left_id']}` <-> `{row['right_id']}`",
+                            f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}",
+                            f"  mitigations: {' | '.join(row['mitigations'][:3])}" if row["mitigations"] else "",
+                        ]).rstrip()
+                        for row in full_song_blueprint["production_techniques"]["interaction_analysis"]["watchouts"]
+                    ],
+                ]
+                if (
+                    full_song_blueprint["production_techniques"]["interaction_analysis"]["reinforcements"]
+                    or full_song_blueprint["production_techniques"]["interaction_analysis"]["watchouts"]
+                )
+                else ["- none detected"]
+            ),
             "",
         ]),
         args.force,

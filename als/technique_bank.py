@@ -9,6 +9,7 @@ from __future__ import annotations
 
 import json
 import re
+from collections import defaultdict
 from pathlib import Path
 
 
@@ -47,6 +48,16 @@ def entry_text(entry: dict) -> str:
         " ".join(entry.get("works_well_with", [])),
         " ".join(entry.get("likely_clashes_with", [])),
         " ".join(entry.get("mitigations", [])),
+    ])
+
+
+def technique_signature_text(entry: dict) -> str:
+    return " ".join([
+        entry.get("id", "").replace("-", " "),
+        entry.get("name", ""),
+        entry.get("what_it_does", ""),
+        entry.get("when_to_use", ""),
+        entry.get("why", ""),
     ])
 
 
@@ -138,9 +149,108 @@ def recommend_for_blueprint(blueprint: dict, bank: list[dict], limit: int) -> di
             "mitigations": entry["mitigations"],
         })
     rows.sort(key=lambda row: (-row["score"], row["name"]))
+    selected = rows[:limit]
     return {
         "brief_id": blueprint["brief_id"],
         "description": blueprint["description"],
-        "result_count": len(rows[:limit]),
-        "recommendations": rows[:limit],
+        "result_count": len(selected),
+        "recommendations": selected,
+        "interaction_analysis": analyze_recommended_techniques(selected, bank),
+    }
+
+
+def _match_phrase_to_entry(phrase: str, entry: dict) -> int:
+    phrase_norm = phrase.lower().strip()
+    if not phrase_norm:
+        return 0
+    name_tokens = tokens(
+        " ".join([
+            entry.get("id", "").replace("-", " "),
+            str(entry.get("name") or ""),
+        ])
+    )
+    labels = [
+        entry.get("id", "").replace("-", " ").lower(),
+        str(entry.get("name") or "").lower(),
+    ]
+    if any(label and (label in phrase_norm or phrase_norm in label) for label in labels):
+        return 5
+    phrase_tokens = tokens(phrase)
+    name_overlap = phrase_tokens & name_tokens
+    total_overlap = phrase_tokens & tokens(technique_signature_text(entry))
+    if name_overlap and len(total_overlap) >= 2:
+        return len(total_overlap) + len(name_overlap)
+    return 0
+
+
+def analyze_recommended_techniques(recommendations: list[dict], bank: list[dict]) -> dict:
+    entry_map = {entry["id"]: entry for entry in bank}
+    selected_entries = [entry_map[row["id"]] for row in recommendations if row["id"] in entry_map]
+    selected_map = {entry["id"]: entry for entry in selected_entries}
+
+    interactions: dict[tuple[str, tuple[str, str]], dict] = {}
+    unmatched: list[dict] = []
+    dependency_counts = defaultdict(int)
+
+    for source in selected_entries:
+        for kind, phrases in (
+            ("reinforcement", source.get("works_well_with", [])),
+            ("watchout", source.get("likely_clashes_with", [])),
+        ):
+            for phrase in phrases:
+                best_target = None
+                best_score = 0
+                for target in selected_entries:
+                    if target["id"] == source["id"]:
+                        continue
+                    score = _match_phrase_to_entry(phrase, target)
+                    if score > best_score:
+                        best_target = target
+                        best_score = score
+                if best_target is None or best_score < 2:
+                    unmatched.append({
+                        "source_id": source["id"],
+                        "kind": kind,
+                        "phrase": phrase,
+                    })
+                    continue
+                pair_ids = tuple(sorted((source["id"], best_target["id"])))
+                key = (kind, pair_ids)
+                interaction = interactions.setdefault(key, {
+                    "kind": kind,
+                    "left_id": pair_ids[0],
+                    "right_id": pair_ids[1],
+                    "evidence": [],
+                    "mitigations": [],
+                })
+                interaction["evidence"].append({
+                    "from_id": source["id"],
+                    "matched_id": best_target["id"],
+                    "phrase": phrase,
+                    "match_score": best_score,
+                })
+                if kind == "watchout":
+                    for mitigation in source.get("mitigations", []):
+                        if mitigation not in interaction["mitigations"]:
+                            interaction["mitigations"].append(mitigation)
+                dependency_counts[source["id"]] += 1
+
+    reinforcements = sorted(
+        (row for row in interactions.values() if row["kind"] == "reinforcement"),
+        key=lambda row: (-len(row["evidence"]), row["left_id"], row["right_id"]),
+    )
+    watchouts = sorted(
+        (row for row in interactions.values() if row["kind"] == "watchout"),
+        key=lambda row: (-len(row["evidence"]), row["left_id"], row["right_id"]),
+    )
+
+    return {
+        "selected_count": len(selected_entries),
+        "reinforcement_count": len(reinforcements),
+        "watchout_count": len(watchouts),
+        "unmatched_reference_count": len(unmatched),
+        "dependency_counts": dict(sorted(dependency_counts.items())),
+        "reinforcements": reinforcements,
+        "watchouts": watchouts,
+        "unmatched_references": unmatched,
     }

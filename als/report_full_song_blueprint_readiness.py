@@ -90,14 +90,18 @@ def _overall_readiness(blueprint_label: str, lesson_label: str) -> str:
 
 def _next_actions(blueprint: dict, lesson: dict) -> list[str]:
     actions = []
-    if blueprint["unresolved_synth_parts"]:
+    readiness = blueprint["readiness"]
+    technique_interactions = blueprint["production_techniques"]["interaction_analysis"]
+    if readiness["unresolved_synth_parts"]:
         actions.append("resolve the missing synth parts before treating the song as lesson-ready")
-    if blueprint["fallback_synth_parts"]:
+    if readiness["fallback_synth_parts"]:
         actions.append("replace or strengthen fallback-heavy synth selections")
-    if blueprint["pairwise_conflicts"]:
+    if readiness["pairwise_conflicts"]:
         actions.append("reduce the remaining synth conflicts before final authoring")
-    if blueprint["missing_processing_chains"]:
+    if readiness["missing_processing_chains"]:
         actions.append("assign processing chains to every required lane")
+    if technique_interactions["watchout_count"]:
+        actions.append("decide which recommended production techniques can coexist and apply the listed mitigations")
     if lesson["vague_step_ids"]:
         actions.append("tighten the remaining draft-style lesson wording")
     if lesson["readiness"] != "strong":
@@ -134,9 +138,11 @@ def build_report(args: argparse.Namespace) -> dict:
             "step_count": lesson["step_count"],
             "vague_step_ids": lesson["vague_step_ids"],
             "compiler_warning_count": len(compiler["compiler_warnings"]),
+            "technique_reinforcements": blueprint["production_techniques"]["interaction_analysis"]["reinforcement_count"],
+            "technique_watchouts": blueprint["production_techniques"]["interaction_analysis"]["watchout_count"],
             "blueprint_issues": blueprint["readiness"]["issues"],
             "lesson_warnings": lesson["warnings"],
-            "next_actions": _next_actions(blueprint["readiness"], lesson),
+            "next_actions": _next_actions(blueprint, lesson),
         })
 
     briefs.sort(
@@ -173,7 +179,8 @@ def render_text(report: dict) -> str:
             f"- `{row['brief_id']}` :: readiness={row['readiness']}; "
             f"blueprint={row['blueprint_readiness']}; lesson={row['lesson_readiness']}; "
             f"bars={row['total_bars']}; synth_conflicts={row['synth_conflicts']}; "
-            f"fallbacks={row['fallback_synth_parts']}; vague_steps={len(row['vague_step_ids'])}"
+            f"fallbacks={row['fallback_synth_parts']}; vague_steps={len(row['vague_step_ids'])}; "
+            f"technique_watchouts={row['technique_watchouts']}"
         )
         if row["blueprint_issues"]:
             lines.append(f"  blueprint issues: {' | '.join(row['blueprint_issues'])}")

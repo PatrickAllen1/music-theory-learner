@@ -333,6 +333,18 @@ def render_text(report: dict) -> str:
             lines.append(f"  when: {row['when_to_use']}")
             if row["matched_keywords"]:
                 lines.append(f"  matched: {', '.join(row['matched_keywords'])}")
+    interaction = report["production_techniques"]["interaction_analysis"]
+    if interaction["reinforcements"] or interaction["watchouts"]:
+        lines.append("")
+        lines.append("## Technique Interactions")
+        for row in interaction["reinforcements"]:
+            lines.append(f"- reinforcement :: `{row['left_id']}` <-> `{row['right_id']}`")
+            lines.append(f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}")
+        for row in interaction["watchouts"]:
+            lines.append(f"- watchout :: `{row['left_id']}` <-> `{row['right_id']}`")
+            lines.append(f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}")
+            if row["mitigations"]:
+                lines.append(f"  mitigations: {' | '.join(row['mitigations'][:3])}")
     if report["readiness"]["issues"]:
         lines.append("")
         lines.append("## Readiness Issues")
