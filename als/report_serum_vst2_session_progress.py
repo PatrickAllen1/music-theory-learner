@@ -13,6 +13,7 @@ Examples:
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
 from collections import defaultdict
 from datetime import datetime, timezone
@@ -25,6 +26,16 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--write-state", action="store_true", help="Write or update session_state.json in the session directory.")
     parser.add_argument("--summary-only", action="store_true", help="Only print counts and next probe.")
     return parser
+
+
+def _file_meta(path: Path) -> dict:
+    stat = path.stat()
+    digest = hashlib.sha256(path.read_bytes()).hexdigest()
+    return {
+        "size": stat.st_size,
+        "mtime": datetime.fromtimestamp(stat.st_mtime, timezone.utc).isoformat(),
+        "sha256": digest,
+    }
 
 
 def build_session_progress(session_dir: Path) -> dict:
@@ -46,7 +57,17 @@ def build_session_progress(session_dir: Path) -> dict:
     for probe in bundle["probes"]:
         before_exists = (pairs_dir / probe["before_filename"]).exists()
         after_exists = (pairs_dir / probe["after_filename"]).exists()
-        complete = before_exists and after_exists
+        before_meta = _file_meta(pairs_dir / probe["before_filename"]) if before_exists else None
+        after_meta = _file_meta(pairs_dir / probe["after_filename"]) if after_exists else None
+        integrity_warnings = []
+        if before_meta and before_meta["size"] == 0:
+            integrity_warnings.append("before_empty")
+        if after_meta and after_meta["size"] == 0:
+            integrity_warnings.append("after_empty")
+        if before_meta and after_meta and before_meta["sha256"] == after_meta["sha256"]:
+            integrity_warnings.append("identical_hash")
+        captured = before_exists and after_exists
+        complete = captured and not integrity_warnings
         state = {
             "probe_id": probe["probe_id"],
             "checkpoint_id": probe["checkpoint_id"],
@@ -56,7 +77,11 @@ def build_session_progress(session_dir: Path) -> dict:
             "after_filename": probe["after_filename"],
             "before_exists": before_exists,
             "after_exists": after_exists,
+            "before_meta": before_meta,
+            "after_meta": after_meta,
+            "captured": captured,
             "complete": complete,
+            "integrity_warnings": integrity_warnings,
         }
         probes.append(state)
         row = by_checkpoint[probe["checkpoint_id"]]
@@ -83,6 +108,7 @@ def build_session_progress(session_dir: Path) -> dict:
             "status": "complete" if row["pending_count"] == 0 else "in_progress" if row["completed_count"] else "not_started",
         }
 
+    integrity_warning_count = sum(len(item["integrity_warnings"]) for item in probes)
     return {
         "state_version": 1,
         "generated_at": datetime.now(timezone.utc).isoformat(),
@@ -91,6 +117,7 @@ def build_session_progress(session_dir: Path) -> dict:
         "probe_count": len(bundle["probes"]),
         "completed_probe_count": len(completed_probe_ids),
         "pending_probe_count": len(bundle["probes"]) - len(completed_probe_ids),
+        "integrity_warning_count": integrity_warning_count,
         "completed_probe_ids": completed_probe_ids,
         "next_probe": next_probe,
         "checkpoint_progress": checkpoint_progress,
@@ -110,6 +137,7 @@ def main() -> None:
             "probe_count": report["probe_count"],
             "completed_probe_count": report["completed_probe_count"],
             "pending_probe_count": report["pending_probe_count"],
+            "integrity_warning_count": report["integrity_warning_count"],
             "next_probe": report["next_probe"],
             "checkpoint_progress": report["checkpoint_progress"],
         }

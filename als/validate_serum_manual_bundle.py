@@ -16,7 +16,9 @@ from __future__ import annotations
 
 import json
 import sys
+import hashlib
 from argparse import ArgumentParser
+from datetime import datetime, timezone
 from pathlib import Path
 
 try:
@@ -56,6 +58,15 @@ def _collect_missing_preset_paths(manifest_paths: list[Path]) -> list[dict]:
     return missing
 
 
+def _file_meta(path: Path) -> dict:
+    stat = path.stat()
+    return {
+        "size": stat.st_size,
+        "mtime": datetime.fromtimestamp(stat.st_mtime, timezone.utc).isoformat(),
+        "sha256": hashlib.sha256(path.read_bytes()).hexdigest(),
+    }
+
+
 def _collect_pairs_status(bundle: dict, pairs_dir: Path) -> dict:
     expected = {}
     by_checkpoint = {}
@@ -71,7 +82,21 @@ def _collect_pairs_status(bundle: dict, pairs_dir: Path) -> dict:
             "before_exists": before_path.exists(),
             "after_exists": after_path.exists(),
         }
-        pair["complete"] = pair["before_exists"] and pair["after_exists"]
+        pair["before_meta"] = _file_meta(before_path) if pair["before_exists"] else None
+        pair["after_meta"] = _file_meta(after_path) if pair["after_exists"] else None
+        pair["integrity_warnings"] = []
+        if pair["before_meta"] and pair["before_meta"]["size"] == 0:
+            pair["integrity_warnings"].append("before_empty")
+        if pair["after_meta"] and pair["after_meta"]["size"] == 0:
+            pair["integrity_warnings"].append("after_empty")
+        if (
+            pair["before_meta"]
+            and pair["after_meta"]
+            and pair["before_meta"]["sha256"] == pair["after_meta"]["sha256"]
+        ):
+            pair["integrity_warnings"].append("identical_hash")
+        pair["captured"] = pair["before_exists"] and pair["after_exists"]
+        pair["complete"] = pair["captured"] and not pair["integrity_warnings"]
         expected[pair["before_filename"]] = pair["probe_id"]
         expected[pair["after_filename"]] = pair["probe_id"]
         by_checkpoint.setdefault(probe["checkpoint_id"], []).append(pair)
@@ -87,9 +112,11 @@ def _collect_pairs_status(bundle: dict, pairs_dir: Path) -> dict:
     checkpoint_summary = {}
     missing_pairs = []
     complete_probe_count = 0
+    integrity_warning_count = 0
     for checkpoint_id, pairs in by_checkpoint.items():
         complete = sum(1 for pair in pairs if pair["complete"])
         complete_probe_count += complete
+        integrity_warning_count += sum(len(pair["integrity_warnings"]) for pair in pairs)
         missing = [pair for pair in pairs if not pair["complete"]]
         missing_pairs.extend(missing)
         checkpoint_summary[checkpoint_id] = {
@@ -103,6 +130,7 @@ def _collect_pairs_status(bundle: dict, pairs_dir: Path) -> dict:
         "probe_count": len(bundle["probes"]),
         "complete_probe_count": complete_probe_count,
         "missing_probe_count": len(bundle["probes"]) - complete_probe_count,
+        "integrity_warning_count": integrity_warning_count,
         "checkpoint_summary": checkpoint_summary,
         "missing_pairs": missing_pairs,
         "stray_files": stray_files,
