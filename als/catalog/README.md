@@ -56,6 +56,12 @@ python3 als/design_serum_track_blueprint.py --brief ukg-4x4-pluck-driver
 python3 als/design_serum_track_blueprint.py --brief ukg-4x4-lead-driver --prefer-rendered --format json
 ```
 
+Prepare an audio render session directly from the chosen blueprint stack:
+
+```bash
+python3 als/prepare_serum_blueprint_audio_session.py --brief ukg-4x4-lead-driver --out-dir als/audio-session/ukg-4x4-lead-driver
+```
+
 Compare two chosen profiles for clash risk and separation moves:
 
 ```bash

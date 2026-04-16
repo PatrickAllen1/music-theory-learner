@@ -18,9 +18,13 @@ from argparse import Namespace
 from pathlib import Path
 
 try:
+    from compare_serum_profiles import build_report as build_profile_comparison
     from recommend_serum_part import build_report as build_part_report
+    from search_serum_profiles import load_profiles
 except ModuleNotFoundError:
+    from .compare_serum_profiles import build_report as build_profile_comparison
     from .recommend_serum_part import build_report as build_part_report
+    from .search_serum_profiles import load_profiles
 
 
 DEFAULT_CATALOG_DIR = Path("als/catalog/profiles")
@@ -138,6 +142,34 @@ def _conflict_notes(parts: list[dict]) -> list[str]:
     return notes
 
 
+def _pairwise_analysis(parts: list[dict], mutation_limit: int, catalog_dir: Path) -> list[dict]:
+    selected = [part for part in parts if part.get("selection")]
+    profile_map = {profile["profile_id"]: profile for profile in load_profiles(catalog_dir)}
+    analyses = []
+    for i, left in enumerate(selected):
+        for right in selected[i + 1 :]:
+            left_profile_id = left["selection"]["profile_id"]
+            right_profile_id = right["selection"]["profile_id"]
+            if left_profile_id not in profile_map or right_profile_id not in profile_map:
+                continue
+            comparison = build_profile_comparison(
+                profile_map[left_profile_id],
+                profile_map[right_profile_id],
+                mutation_limit=min(3, mutation_limit),
+            )
+            analyses.append({
+                "left_part_id": left["part_id"],
+                "right_part_id": right["part_id"],
+                "left_profile_id": left_profile_id,
+                "right_profile_id": right_profile_id,
+                "conflicts": comparison["conflicts"],
+                "complements": comparison["complements"],
+                "left_suggested_goals": comparison["left"]["suggested_goals"],
+                "right_suggested_goals": comparison["right"]["suggested_goals"],
+            })
+    return analyses
+
+
 def build_report(args: argparse.Namespace) -> dict:
     brief = _load_brief(Path(args.briefs), args.brief)
     used_profile_ids: set[str] = set()
@@ -163,6 +195,8 @@ def build_report(args: argparse.Namespace) -> dict:
         "prefer_rendered": args.prefer_rendered,
         "parts": parts,
         "conflict_notes": _conflict_notes([part for part in parts if part["selection"]]),
+        "pairwise_analysis": _pairwise_analysis(parts, args.mutation_limit, Path(args.catalog_dir)),
+        "selected_profile_ids": [part["selection"]["profile_id"] for part in parts if part["selection"]],
     }
 
 
@@ -212,6 +246,23 @@ def render_text(report: dict) -> str:
         lines.append("## Conflict Notes")
         for note in report["conflict_notes"]:
             lines.append(f"- {note}")
+        lines.append("")
+    if report["pairwise_analysis"]:
+        lines.append("## Pairwise Analysis")
+        for row in report["pairwise_analysis"]:
+            lines.append(
+                f"- `{row['left_part_id']}` vs `{row['right_part_id']}` "
+                f"({row['left_profile_id']} <> {row['right_profile_id']})"
+            )
+            if row["conflicts"]:
+                lines.append(f"  conflicts: {' | '.join(row['conflicts'])}")
+            if row["complements"]:
+                lines.append(f"  complements: {' | '.join(row['complements'])}")
+            if row["left_suggested_goals"] or row["right_suggested_goals"]:
+                lines.append(
+                    f"  separation goals: left={', '.join(row['left_suggested_goals']) or '-'}; "
+                    f"right={', '.join(row['right_suggested_goals']) or '-'}"
+                )
         lines.append("")
     return "\n".join(lines)
 
