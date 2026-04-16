@@ -78,11 +78,15 @@ def _step_ids_matching(lesson: dict, pattern: str) -> list[int]:
 
 
 def build_report(args: argparse.Namespace) -> dict:
-    if not args.brief and not args.lesson_json:
+    if not getattr(args, "brief", None) and not getattr(args, "lesson_json", None) and not getattr(args, "lesson", None) and not getattr(args, "compiled_report", None):
         raise ValueError("pass either --brief or --lesson-json")
 
-    compiler_report = None
-    if args.brief:
+    compiler_report = getattr(args, "compiled_report", None)
+    if compiler_report is not None:
+        lesson = compiler_report["lesson"]
+    elif getattr(args, "lesson", None) is not None:
+        lesson = args.lesson
+    elif args.brief:
         compiler_report = build_compiled_lesson_report(_compiler_namespace(args))
         lesson = compiler_report["lesson"]
     else:

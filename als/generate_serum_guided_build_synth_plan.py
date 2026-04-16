@@ -210,11 +210,26 @@ def _part_step_sequence(part: dict, lesson_part: dict, mutation_part: dict, rend
 def build_report(args: argparse.Namespace) -> dict:
     lesson_notes = build_lesson_notes_report(_lesson_namespace(args))
     mutation_plan = build_mutation_plan_report(_mutation_namespace(args))
-    author_queue = build_author_queue_report(_shared_namespace(args))
-    render_backlog = build_render_backlog_report(_shared_namespace(args))
-    bank_candidates = build_brief_bank_report(_bank_namespace(args))
+    if getattr(args, "skip_render_backlog", False):
+        render_backlog = {"backlog": []}
+    else:
+        render_backlog = build_render_backlog_report(_shared_namespace(args))
+    if getattr(args, "skip_bank_candidates", False):
+        bank_candidates = {"parts": [], "parts_needing_attention": 0}
+    else:
+        bank_candidates = build_brief_bank_report(_bank_namespace(args))
 
-    author_row = next(row for row in author_queue["queue"] if row["brief_id"] == args.brief)
+    if getattr(args, "skip_author_queue", False):
+        author_row = {
+            "brief_id": args.brief,
+            "readiness": "needs_work",
+            "author_score": 0,
+            "next_actions": ["treat this synth scaffold as a draft until the song-level queue has been checked"],
+        }
+    else:
+        author_queue = build_author_queue_report(_shared_namespace(args))
+        author_row = next(row for row in author_queue["queue"] if row["brief_id"] == args.brief)
+
     render_rows = _brief_render_blockers(render_backlog, args.brief, args.render_limit)
     lesson_by_part = {row["part_id"]: row for row in lesson_notes["parts"]}
     mutation_by_part = {row["part_id"]: row for row in mutation_plan["parts"]}

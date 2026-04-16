@@ -18,25 +18,35 @@ from argparse import Namespace
 from pathlib import Path
 
 try:
+    from compile_guided_build_lesson import build_report as build_compiled_lesson_report, render_text as render_compiled_lesson_text
+    from design_full_song_blueprint import build_report as build_full_song_blueprint_report, render_text as render_full_song_blueprint_text
     from generate_serum_guided_build_steps import build_report as build_synth_steps_report, render_text as render_synth_steps_text
     from export_serum_lesson_packet import export_packet
     from generate_serum_guided_build_synth_plan import build_report as build_synth_plan_report, render_text as render_synth_plan_text
+    from report_full_song_blueprint_readiness import build_report as build_full_song_readiness_report
     from report_serum_brief_bank_candidates import build_report as build_brief_bank_report
     from report_serum_lesson_author_queue import build_report as build_author_queue_report
     from report_serum_packet_readiness import build_report as build_packet_readiness_report
     from report_serum_render_backlog import build_report as build_render_backlog_report
+    from validate_guided_build_lesson import build_report as build_lesson_validation_report, render_text as render_lesson_validation_text
 except ModuleNotFoundError:
+    from .compile_guided_build_lesson import build_report as build_compiled_lesson_report, render_text as render_compiled_lesson_text
+    from .design_full_song_blueprint import build_report as build_full_song_blueprint_report, render_text as render_full_song_blueprint_text
     from .generate_serum_guided_build_steps import build_report as build_synth_steps_report, render_text as render_synth_steps_text
     from .export_serum_lesson_packet import export_packet
     from .generate_serum_guided_build_synth_plan import build_report as build_synth_plan_report, render_text as render_synth_plan_text
+    from .report_full_song_blueprint_readiness import build_report as build_full_song_readiness_report
     from .report_serum_brief_bank_candidates import build_report as build_brief_bank_report
     from .report_serum_lesson_author_queue import build_report as build_author_queue_report
     from .report_serum_packet_readiness import build_report as build_packet_readiness_report
     from .report_serum_render_backlog import build_report as build_render_backlog_report
+    from .validate_guided_build_lesson import build_report as build_lesson_validation_report, render_text as render_lesson_validation_text
 
 
 DEFAULT_CATALOG_DIR = Path("als/catalog/profiles")
 DEFAULT_BRIEFS_PATH = Path("als/serum-track-briefs.json")
+DEFAULT_SONG_BRIEFS_PATH = Path("als/song-blueprint-briefs.json")
+DEFAULT_TEMPLATES_PATH = Path("als/song-production-templates.json")
 DEFAULT_SPEC_PATH = Path("als/serum-audio-audition-spec.json")
 
 
@@ -45,7 +55,9 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--brief", required=True, help="Brief id from the manifest.")
     parser.add_argument("--out-dir", required=True, help="Output directory for the author bundle.")
     parser.add_argument("--catalog-dir", default=str(DEFAULT_CATALOG_DIR), help="Directory of generated *-profiles.json files.")
-    parser.add_argument("--briefs", default=str(DEFAULT_BRIEFS_PATH), help="Track brief manifest JSON.")
+    parser.add_argument("--briefs", default=str(DEFAULT_BRIEFS_PATH), help="Underlying Serum brief manifest JSON.")
+    parser.add_argument("--song-briefs", default=str(DEFAULT_SONG_BRIEFS_PATH), help="Song-level brief manifest JSON.")
+    parser.add_argument("--templates", default=str(DEFAULT_TEMPLATES_PATH), help="Song production templates JSON.")
     parser.add_argument("--spec", default=str(DEFAULT_SPEC_PATH), help="Audio audition spec JSON.")
     parser.add_argument("--prefer-rendered", action="store_true", help="Prefer rendered profiles where available.")
     parser.add_argument("--limit-per-part", type=int, default=5, help="Max candidates to inspect per part. Default: 5")
@@ -68,8 +80,11 @@ def _write_text(path: Path, content: str, force: bool) -> None:
 
 def _shared_namespace(args: argparse.Namespace) -> Namespace:
     return Namespace(
+        brief=args.brief,
         catalog_dir=args.catalog_dir,
         briefs=args.briefs,
+        song_briefs=args.song_briefs,
+        templates=args.templates,
         prefer_rendered=args.prefer_rendered,
         limit_per_part=args.limit_per_part,
         mutation_limit=args.mutation_limit,
@@ -91,6 +106,23 @@ def _packet_namespace(args: argparse.Namespace, packet_dir: Path) -> Namespace:
         refine=True,
         max_swaps=args.max_swaps,
         force=args.force,
+    )
+
+
+def _full_song_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        brief=args.brief,
+        song_briefs=args.song_briefs,
+        templates=args.templates,
+        catalog_dir=args.catalog_dir,
+        serum_briefs=args.briefs,
+        prefer_rendered=args.prefer_rendered,
+        limit_per_part=args.limit_per_part,
+        mutation_limit=args.mutation_limit,
+        max_swaps=args.max_swaps,
+        format="json",
+        lesson_only=False,
+        lesson_json=None,
     )
 
 
@@ -247,8 +279,12 @@ def _author_summary(
     packet: dict,
     author_row: dict,
     readiness_row: dict,
+    song_readiness_row: dict,
     render_blockers: list[dict],
     bank_candidates: dict,
+    full_song_blueprint: dict,
+    compiled_lesson: dict,
+    lesson_validation: dict,
     synth_plan: dict,
     packet_dir: Path,
 ) -> str:
@@ -263,16 +299,22 @@ def _author_summary(
     lines.append("")
     lines.append("## Summary")
     lines.append(f"- {author_row['description']}")
-    lines.append(f"- refined pairwise conflicts: {author_row['refined_pairwise_conflicts']}")
-    lines.append(f"- fallback count: {author_row['fallback_count']}")
-    if author_row["parts_without_mutations"]:
-        lines.append(f"- parts without mutations: {', '.join(author_row['parts_without_mutations'])}")
+    lines.append(
+        f"- song readiness: blueprint={song_readiness_row['blueprint_readiness']}, "
+        f"lesson={song_readiness_row['lesson_readiness']}, overall={song_readiness_row['readiness']}"
+    )
+    lines.append(f"- refined pairwise conflicts: {author_row['synth_conflicts']}")
+    lines.append(f"- fallback count: {author_row['fallback_synth_parts']}")
+    if author_row["vague_step_ids"]:
+        lines.append(f"- vague lesson steps: {', '.join(str(i) for i in author_row['vague_step_ids'])}")
     lines.append(f"- render blockers in bundle: {len(render_blockers)}")
     lines.append(f"- weak parts with bank candidates: {bank_candidates['parts_needing_attention']}")
     lines.append(f"- synth sections in scaffold: {len(synth_plan['synth_sections'])}")
+    lines.append(f"- full-song bars: {full_song_blueprint['readiness']['total_bars']}")
+    lines.append(f"- compiled lesson steps: {compiled_lesson['lesson']['steps'] and len(compiled_lesson['lesson']['steps'])}")
     lines.append("")
     lines.append("## Next Actions")
-    for step in readiness_row["next_actions"]:
+    for step in song_readiness_row["next_actions"]:
         lines.append(f"1. {step}")
     if render_blockers:
         lines.append("1. Render the profiles listed in `render-blockers.tsv` before trusting final sound choices.")
@@ -301,6 +343,10 @@ def _author_summary(
         lines.append("")
     lines.append("## Bundle Files")
     lines.append("- `packet/` contains the refined packet export.")
+    lines.append("- `full-song-blueprint.json` / `full-song-blueprint.md` capture the actual production plan.")
+    lines.append("- `full-song-readiness.json` shows whether the song plan is release-shaped enough to proceed.")
+    lines.append("- `compiled-lesson.json` is the draft lesson object generated from the full-song plan.")
+    lines.append("- `lesson-validation.json` shows what still keeps the draft from being app-ready.")
     lines.append("- `synth-plan.md` / `synth-plan.json` translate the chosen stack into per-part lesson-authoring steps.")
     lines.append("- `synth-steps.md` / `synth-steps.json` turn those synth sections into draft lesson `steps[]` objects.")
     lines.append("- `render-blockers.tsv` shows the exact profiles that still need audio truth.")
@@ -317,27 +363,56 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     packet = export_packet(_packet_namespace(args, packet_dir))
     namespace = _shared_namespace(args)
     author_queue = build_author_queue_report(namespace)
+    full_song_readiness = build_full_song_readiness_report(namespace)
     packet_readiness = build_packet_readiness_report(namespace)
     render_backlog = build_render_backlog_report(namespace)
     bank_candidates = build_brief_bank_report(_bank_namespace(args))
+    full_song_blueprint = build_full_song_blueprint_report(_full_song_namespace(args))
+    compiled_lesson = build_compiled_lesson_report(_full_song_namespace(args))
+    lesson_validation = build_lesson_validation_report(_full_song_namespace(args))
     synth_plan = build_synth_plan_report(_synth_plan_namespace(args))
     synth_steps = build_synth_steps_report(_synth_steps_namespace(args))
 
     author_row = _find_row(author_queue["queue"], args.brief)
+    song_readiness_row = _find_row(full_song_readiness["briefs"], args.brief)
     readiness_row = _find_row(packet_readiness["briefs"], args.brief)
     render_blockers = _brief_render_blockers(render_backlog, args.brief, args.render_limit)
 
     _write_text(out_dir / "author-queue.json", json.dumps(author_row, indent=2) + "\n", args.force)
     _write_text(out_dir / "packet-readiness.json", json.dumps(readiness_row, indent=2) + "\n", args.force)
+    _write_text(out_dir / "full-song-readiness.json", json.dumps(song_readiness_row, indent=2) + "\n", args.force)
     _write_text(out_dir / "render-blockers.json", json.dumps(render_blockers, indent=2) + "\n", args.force)
     _write_text(out_dir / "render-blockers.tsv", _render_blockers_tsv(render_blockers), args.force)
     _write_text(out_dir / "bank-candidates.json", json.dumps(bank_candidates, indent=2) + "\n", args.force)
     _write_text(out_dir / "bank-candidates.tsv", _bank_candidates_tsv(bank_candidates), args.force)
+    _write_text(out_dir / "full-song-blueprint.json", json.dumps(full_song_blueprint, indent=2) + "\n", args.force)
+    _write_text(out_dir / "full-song-blueprint.md", render_full_song_blueprint_text(full_song_blueprint) + "\n", args.force)
+    _write_text(out_dir / "compiled-lesson.json", json.dumps(compiled_lesson["lesson"], indent=2) + "\n", args.force)
+    _write_text(out_dir / "compiled-lesson-diagnostics.json", json.dumps(compiled_lesson, indent=2) + "\n", args.force)
+    _write_text(out_dir / "compiled-lesson.md", render_compiled_lesson_text(compiled_lesson) + "\n", args.force)
+    _write_text(out_dir / "lesson-validation.json", json.dumps(lesson_validation, indent=2) + "\n", args.force)
+    _write_text(out_dir / "lesson-validation.md", render_lesson_validation_text(lesson_validation) + "\n", args.force)
     _write_text(out_dir / "synth-plan.json", json.dumps(synth_plan, indent=2) + "\n", args.force)
     _write_text(out_dir / "synth-plan.md", render_synth_plan_text(synth_plan) + "\n", args.force)
     _write_text(out_dir / "synth-steps.json", json.dumps(synth_steps, indent=2) + "\n", args.force)
     _write_text(out_dir / "synth-steps.md", render_synth_steps_text(synth_steps) + "\n", args.force)
-    _write_text(out_dir / "README.md", _author_summary(packet, author_row, readiness_row, render_blockers, bank_candidates, synth_plan, packet_dir), args.force)
+    _write_text(
+        out_dir / "README.md",
+        _author_summary(
+            packet,
+            author_row,
+            readiness_row,
+            song_readiness_row,
+            render_blockers,
+            bank_candidates,
+            full_song_blueprint,
+            compiled_lesson,
+            lesson_validation,
+            synth_plan,
+            packet_dir,
+        ),
+        args.force,
+    )
 
     manifest = {
         "brief_id": args.brief,
@@ -348,10 +423,18 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             "readme": str(out_dir / "README.md"),
             "author_queue_json": str(out_dir / "author-queue.json"),
             "packet_readiness_json": str(out_dir / "packet-readiness.json"),
+            "full_song_readiness_json": str(out_dir / "full-song-readiness.json"),
             "render_blockers_json": str(out_dir / "render-blockers.json"),
             "render_blockers_tsv": str(out_dir / "render-blockers.tsv"),
             "bank_candidates_json": str(out_dir / "bank-candidates.json"),
             "bank_candidates_tsv": str(out_dir / "bank-candidates.tsv"),
+            "full_song_blueprint_json": str(out_dir / "full-song-blueprint.json"),
+            "full_song_blueprint_md": str(out_dir / "full-song-blueprint.md"),
+            "compiled_lesson_json": str(out_dir / "compiled-lesson.json"),
+            "compiled_lesson_diagnostics_json": str(out_dir / "compiled-lesson-diagnostics.json"),
+            "compiled_lesson_md": str(out_dir / "compiled-lesson.md"),
+            "lesson_validation_json": str(out_dir / "lesson-validation.json"),
+            "lesson_validation_md": str(out_dir / "lesson-validation.md"),
             "synth_plan_json": str(out_dir / "synth-plan.json"),
             "synth_plan_md": str(out_dir / "synth-plan.md"),
             "synth_steps_json": str(out_dir / "synth-steps.json"),
@@ -368,6 +451,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
         "packet_dir": str(packet_dir),
         "author_score": author_row["author_score"],
         "readiness": author_row["readiness"],
+        "song_readiness": song_readiness_row["readiness"],
+        "lesson_readiness": song_readiness_row["lesson_readiness"],
         "render_blocker_count": len(render_blockers),
         "weak_part_count": bank_candidates["parts_needing_attention"],
         "files": manifest["files"],

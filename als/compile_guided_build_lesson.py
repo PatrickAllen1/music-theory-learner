@@ -22,10 +22,8 @@ from pathlib import Path
 
 try:
     from design_full_song_blueprint import build_report as build_full_song_blueprint_report
-    from generate_serum_guided_build_steps import build_report as build_synth_steps_report
 except ModuleNotFoundError:
     from .design_full_song_blueprint import build_report as build_full_song_blueprint_report
-    from .generate_serum_guided_build_steps import build_report as build_synth_steps_report
 
 
 DEFAULT_CATALOG_DIR = Path("als/catalog/profiles")
@@ -70,22 +68,6 @@ def _full_song_namespace(args: argparse.Namespace) -> Namespace:
         limit_per_part=args.limit_per_part,
         mutation_limit=args.mutation_limit,
         max_swaps=args.max_swaps,
-        format="json",
-    )
-
-
-def _synth_steps_namespace(args: argparse.Namespace, blueprint: dict) -> Namespace:
-    return Namespace(
-        brief=blueprint["serum_brief_id"],
-        catalog_dir=args.catalog_dir,
-        briefs=args.serum_briefs,
-        prefer_rendered=args.prefer_rendered,
-        limit_per_part=args.limit_per_part,
-        mutation_limit=args.mutation_limit,
-        max_swaps=args.max_swaps,
-        bank_dir=[],
-        bank_top_per_part=3,
-        render_limit=6,
         format="json",
     )
 
@@ -292,34 +274,67 @@ def _make_static_steps(blueprint: dict, synth_steps: list[dict]) -> list[dict]:
     return static_steps
 
 
-def _enrich_synth_step(step: dict, blueprint: dict) -> dict:
-    source_part_id = step.get("source_part_id")
-    layer = next((row for row in blueprint["synth_layers"] if row["part_id"] == source_part_id), None)
-    if not layer:
-        return step
+def _synth_category(role: str) -> str:
+    if role in {"bass", "sub", "reese"}:
+        return "bass"
+    if role == "pad":
+        return "chords"
+    if role in {"lead", "pluck", "stab"}:
+        return "melody"
+    return "mix"
 
-    chain_note = _chain_text(layer.get("processing_chain"))
-    instruction = re.sub(
-        r"\s*If the base sound still feels weak, keep these alternates ready to audition next:.*?$",
-        "",
-        step["instruction"],
-        flags=re.IGNORECASE,
-    )
-    title = re.sub(r"^Choose and shape", "Load and shape", step["title"])
-    addition = (
-        f" After shaping the preset, treat this lane with `{layer.get('processing_chain_id')}`: {chain_note}. "
-        f"In the arrangement, this layer should {layer['arrangement_role']}."
-    )
-    tip = step["tip"]
-    if layer.get("audio_status") != "rendered":
-        tip = f"{tip} This lane is still param-driven until a render confirms it."
-    return {
-        **step,
-        "title": title,
-        "instruction": instruction + addition,
-        "why": step["why"] + f" The song blueprint assigns this lane to {layer['job_in_track']}.",
-        "tip": tip,
-    }
+
+def _synth_cheatsheet(role: str) -> str | None:
+    if role in {"bass", "sub", "reese"}:
+        return "serum-v2-oscillators"
+    if role in {"pad", "lead", "pluck", "stab"}:
+        return "serum-v2-envelopes"
+    return None
+
+
+def _mutation_text(layer: dict) -> str:
+    suggestions = layer.get("mutation_suggestions") or []
+    if not suggestions:
+        return "Leave the preset close to its starting point and judge it in context before inventing extra moves."
+    rows = []
+    for suggestion in suggestions[:4]:
+        rows.append(
+            f"`{suggestion['path']}` {suggestion['action']} "
+            f"{suggestion['current_value']} -> {suggestion['suggested_value']} for `{suggestion['goal']}`"
+        )
+    return "Make these first changes immediately: " + "; ".join(rows) + "."
+
+
+def _make_synth_steps(blueprint: dict) -> list[dict]:
+    steps = []
+    for layer in blueprint["synth_layers"]:
+        profile_id = layer.get("profile_id") or "unresolved"
+        track = layer.get("track") or "the selected starting patch"
+        chain_note = _chain_text(layer.get("processing_chain"))
+        instruction = (
+            f"On the `{layer['part_id']}` track, load Serum and start from `{track}` (`{profile_id}`). "
+            f"{_mutation_text(layer)} "
+            f"After the patch feels close, treat this lane with `{layer.get('processing_chain_id')}`: {chain_note}. "
+            f"In the arrangement, this layer should {layer['arrangement_role']}."
+        )
+        why = (
+            f"This layer should {layer['job_in_track']}. "
+            f"The song blueprint expects it to cover the `{layer['role']}` role while staying aligned to the target tone and mix behavior."
+        )
+        tip = "Keep the role narrow. The point is to make this layer do one job clearly."
+        if layer.get("audio_status") != "rendered":
+            tip += " This lane is still param-driven until a render confirms it."
+        steps.append({
+            "title": f"Load and shape the {layer['part_id']} synth",
+            "category": _synth_category(layer["role"]),
+            "instruction": instruction,
+            "why": why,
+            "ableton_cheatsheet_id": _synth_cheatsheet(layer["role"]),
+            "splice_search": None,
+            "tip": tip,
+            "source_part_id": layer["part_id"],
+        })
+    return steps
 
 
 def _find_vague_step_ids(lesson: dict) -> list[int]:
@@ -336,9 +351,9 @@ def _find_vague_step_ids(lesson: dict) -> list[int]:
 
 def build_report(args: argparse.Namespace) -> dict:
     blueprint = build_full_song_blueprint_report(_full_song_namespace(args))
-    synth_steps_report = build_synth_steps_report(_synth_steps_namespace(args, blueprint))
-    static_steps = _make_static_steps(blueprint, synth_steps_report["steps"])
-    enriched_synth_steps = [_enrich_synth_step(step, blueprint) for step in synth_steps_report["steps"]]
+    synth_steps = _make_synth_steps(blueprint)
+    static_steps = _make_static_steps(blueprint, synth_steps)
+    enriched_synth_steps = synth_steps
     all_steps = static_steps[:3] + enriched_synth_steps + static_steps[3:]
     steps = []
     for index, step in enumerate(all_steps, start=1):
@@ -376,7 +391,7 @@ def build_report(args: argparse.Namespace) -> dict:
     return {
         "brief_id": blueprint["brief_id"],
         "blueprint_readiness": blueprint["readiness"],
-        "synth_step_count": synth_steps_report["step_count"],
+        "synth_step_count": len(synth_steps),
         "vague_step_ids": vague_step_ids,
         "compiler_warnings": compiler_warnings,
         "lesson": lesson,

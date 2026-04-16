@@ -135,6 +135,13 @@ python3 als/validate_guided_build_lesson.py --brief ukg-2step-dark-stab
 python3 als/validate_guided_build_lesson.py --lesson-json path/to/lesson.json --format json
 ```
 
+Report which song briefs are actually closest to full guided-build authoring:
+
+```bash
+python3 als/report_full_song_blueprint_readiness.py
+python3 als/report_full_song_blueprint_readiness.py --format json
+```
+
 Export the whole lesson packet in one shot:
 
 ```bash
@@ -216,6 +223,11 @@ python3 als/prepare_serum_lesson_author_bundle.py --brief ukg-4x4-pluck-driver -
 The author bundle includes:
 
 - `packet/` with the refined lesson packet
+- `full-song-blueprint.json` / `full-song-blueprint.md`
+- `full-song-readiness.json`
+- `compiled-lesson.json` / `compiled-lesson.md`
+- `compiled-lesson-diagnostics.json`
+- `lesson-validation.json` / `lesson-validation.md`
 - `synth-plan.md` / `synth-plan.json`
 - `synth-steps.md` / `synth-steps.json`
 - `render-blockers.tsv` / `render-blockers.json`

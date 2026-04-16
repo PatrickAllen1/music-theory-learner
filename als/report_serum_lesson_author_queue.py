@@ -3,7 +3,7 @@
 report_serum_lesson_author_queue.py
 
 Rank Serum briefs by how close they are to being strong lesson-authoring
-candidates, taking readiness, remaining conflicts, fallbacks, and render
+candidates, taking full-song readiness, compiled-lesson quality, and render
 dependencies into account.
 
 Examples:
@@ -18,10 +18,8 @@ import json
 from argparse import Namespace
 
 try:
-    from report_serum_packet_readiness import build_report as build_packet_readiness_report
     from report_serum_render_backlog import build_report as build_render_backlog_report
 except ModuleNotFoundError:
-    from .report_serum_packet_readiness import build_report as build_packet_readiness_report
     from .report_serum_render_backlog import build_report as build_render_backlog_report
 
 
@@ -30,8 +28,11 @@ READINESS_BASE = {"strong": 12, "usable": 8, "needs_work": 4, "blocked": 0}
 
 def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Rank Serum briefs by lesson-authoring readiness.")
+    parser.add_argument("--brief", help="Optional single brief id to inspect.")
     parser.add_argument("--catalog-dir", default="als/catalog/profiles", help="Directory of generated *-profiles.json files.")
-    parser.add_argument("--briefs", default="als/serum-track-briefs.json", help="Track brief manifest JSON.")
+    parser.add_argument("--briefs", default="als/serum-track-briefs.json", help="Underlying Serum brief manifest JSON.")
+    parser.add_argument("--song-briefs", default="als/song-blueprint-briefs.json", help="Song-level brief manifest JSON.")
+    parser.add_argument("--templates", default="als/song-production-templates.json", help="Song production templates JSON.")
     parser.add_argument("--prefer-rendered", action="store_true", help="Prefer rendered profiles where available.")
     parser.add_argument("--limit-per-part", type=int, default=5, help="Max candidates to inspect per part. Default: 5")
     parser.add_argument("--mutation-limit", type=int, default=6, help="Max mutation suggestions per part. Default: 6")
@@ -43,7 +44,11 @@ def make_parser() -> argparse.ArgumentParser:
 def _namespace(args: argparse.Namespace) -> Namespace:
     return Namespace(
         catalog_dir=args.catalog_dir,
-        briefs=args.briefs,
+        brief=getattr(args, "brief", None),
+        briefs=getattr(args, "briefs", "als/serum-track-briefs.json"),
+        serum_briefs=getattr(args, "serum_briefs", getattr(args, "briefs", "als/serum-track-briefs.json")),
+        song_briefs=getattr(args, "song_briefs", "als/song-blueprint-briefs.json"),
+        templates=getattr(args, "templates", "als/song-production-templates.json"),
         prefer_rendered=args.prefer_rendered,
         limit_per_part=args.limit_per_part,
         mutation_limit=args.mutation_limit,
@@ -53,7 +58,12 @@ def _namespace(args: argparse.Namespace) -> Namespace:
 
 
 def build_report(args: argparse.Namespace) -> dict:
-    readiness = build_packet_readiness_report(_namespace(args))
+    try:
+        from report_full_song_blueprint_readiness import build_report as build_full_song_readiness_report
+    except ModuleNotFoundError:
+        from .report_full_song_blueprint_readiness import build_report as build_full_song_readiness_report
+
+    readiness = build_full_song_readiness_report(_namespace(args))
     backlog = build_render_backlog_report(_namespace(args))
 
     render_by_brief: dict[str, list[dict]] = {}
@@ -74,10 +84,13 @@ def build_report(args: argparse.Namespace) -> dict:
         render_blockers = sorted(render_by_brief.get(brief["brief_id"], []), key=lambda row: (-row["score"], row["profile_id"]))
         high_render_count = sum(1 for row in render_blockers if row["priority"] == "high")
         score = READINESS_BASE.get(brief["readiness"], 0)
-        score -= brief["refined_pairwise_conflicts"] * 2
-        score -= brief["fallback_count"] * 2
-        score -= brief["unresolved_count"] * 4
-        score -= len(brief["parts_without_mutations"])
+        score += READINESS_BASE.get(brief["blueprint_readiness"], 0)
+        score += READINESS_BASE.get(brief["lesson_readiness"], 0)
+        score -= brief["synth_conflicts"] * 2
+        score -= brief["fallback_synth_parts"] * 2
+        score -= brief["unresolved_synth_parts"] * 4
+        score -= len(brief["vague_step_ids"])
+        score -= brief["missing_processing_chains"] * 3
         score -= high_render_count
 
         next_actions = list(brief["next_actions"])
@@ -88,10 +101,14 @@ def build_report(args: argparse.Namespace) -> dict:
             "brief_id": brief["brief_id"],
             "description": brief["description"],
             "readiness": brief["readiness"],
+            "blueprint_readiness": brief["blueprint_readiness"],
+            "lesson_readiness": brief["lesson_readiness"],
             "author_score": score,
-            "refined_pairwise_conflicts": brief["refined_pairwise_conflicts"],
-            "fallback_count": brief["fallback_count"],
-            "parts_without_mutations": brief["parts_without_mutations"],
+            "synth_conflicts": brief["synth_conflicts"],
+            "fallback_synth_parts": brief["fallback_synth_parts"],
+            "unresolved_synth_parts": brief["unresolved_synth_parts"],
+            "missing_processing_chains": brief["missing_processing_chains"],
+            "vague_step_ids": brief["vague_step_ids"],
             "high_priority_render_count": high_render_count,
             "render_blockers": render_blockers[:5],
             "next_actions": next_actions,
@@ -115,11 +132,12 @@ def render_text(report: dict) -> str:
     for row in report["queue"]:
         lines.append(
             f"- `{row['brief_id']}` :: author_score={row['author_score']}; readiness={row['readiness']}; "
-            f"conflicts={row['refined_pairwise_conflicts']}; fallbacks={row['fallback_count']}; "
+            f"blueprint={row['blueprint_readiness']}; lesson={row['lesson_readiness']}; "
+            f"conflicts={row['synth_conflicts']}; fallbacks={row['fallback_synth_parts']}; "
             f"high_render_blockers={row['high_priority_render_count']}"
         )
-        if row["parts_without_mutations"]:
-            lines.append(f"  parts without mutations: {', '.join(row['parts_without_mutations'])}")
+        if row["vague_step_ids"]:
+            lines.append(f"  vague steps: {', '.join(str(i) for i in row['vague_step_ids'])}")
         if row["render_blockers"]:
             blockers = " | ".join(
                 f"{item['profile_id']}->{item['part_id']}({item['priority']})"
