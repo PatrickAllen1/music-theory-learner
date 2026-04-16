@@ -38,6 +38,7 @@ def build_gap_report(mapping: dict, bundle: dict) -> dict:
     promoted_probe_ids = {row["probe_id"] for row in mapping.get("promoted", [])}
     follow_up_probe_ids = {row["probe_id"] for row in mapping.get("follow_up_queue", [])}
     missing_probe_ids = {row["probe_id"] for row in mapping.get("missing", [])}
+    probe_meta = {probe["probe_id"]: probe for probe in bundle["probes"]}
 
     checkpoint_rows = defaultdict(lambda: {
         "probe_ids": [],
@@ -54,17 +55,29 @@ def build_gap_report(mapping: dict, bundle: dict) -> dict:
             checkpoint["promoted"].append(probe["probe_id"])
         elif probe["probe_id"] in follow_up_probe_ids:
             checkpoint["follow_up"].append(probe["probe_id"])
+            meta = probe_meta[probe["probe_id"]]
             unresolved.append({
                 "probe_id": probe["probe_id"],
+                "probe_label": meta["label"],
                 "checkpoint_id": probe["checkpoint_id"],
+                "matched_modules": mapping_probe_modules(mapping, probe["probe_id"]),
+                "expected_windows": meta.get("candidate_slot_windows", []),
+                "candidate_host_labels": meta.get("candidate_host_labels", []),
                 "reason": "follow_up",
+                "next_action": "rerun_probe_or_review_clusters",
             })
         else:
             checkpoint["missing"].append(probe["probe_id"])
+            meta = probe_meta[probe["probe_id"]]
             unresolved.append({
                 "probe_id": probe["probe_id"],
+                "probe_label": meta["label"],
                 "checkpoint_id": probe["checkpoint_id"],
+                "matched_modules": mapping_probe_modules(mapping, probe["probe_id"]),
+                "expected_windows": meta.get("candidate_slot_windows", []),
+                "candidate_host_labels": meta.get("candidate_host_labels", []),
                 "reason": "missing" if probe["probe_id"] in missing_probe_ids else "not_promoted",
+                "next_action": "capture_pair" if probe["probe_id"] in missing_probe_ids else "review_promotion_rule",
             })
 
     checkpoints = {}
@@ -92,6 +105,16 @@ def build_gap_report(mapping: dict, bundle: dict) -> dict:
         "checkpoint_status": checkpoints,
         "unresolved": unresolved,
     }
+
+
+def mapping_probe_modules(mapping: dict, probe_id: str) -> list[str]:
+    for row in mapping.get("promoted", []):
+        if row["probe_id"] == probe_id:
+            return row.get("matched_modules", [])
+    for row in mapping.get("follow_up_queue", []):
+        if row["probe_id"] == probe_id:
+            return row.get("matched_modules", [])
+    return []
 
 
 def main() -> None:

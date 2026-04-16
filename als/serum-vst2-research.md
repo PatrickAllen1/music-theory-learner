@@ -21,6 +21,12 @@ capture pass:
 - `prepare_serum_manual_session.py` writes a capture-ready folder with a
   numbered queue, expected pair filenames, and the merged bundle metadata. It
   can also emit checkpoint- or probe-scoped session folders for resumable runs.
+- `report_serum_vst2_session_progress.py` updates `session_state.json` from the
+  actual before/after files on disk, so long manual sessions have a canonical
+  “done / next / resume here” source.
+- `render_serum_manual_bundle.py --state-json ...` now projects that state back
+  into the canonical queue so resume output is not just ordered, but annotated
+  with completion and next-up markers.
 - The rendered bundle now carries explicit checkpoint defer chains plus
   machine-generated subgroups for oversized probes such as matrix, oscillator,
   and extended LFO families.
@@ -30,9 +36,15 @@ capture pass:
 - `promote_serum_vst2_mapping.py` and the updated post-diff wrapper now emit a
   smaller `mapping.json` artifact so accepted manual-diff results can feed the
   next parser-alignment phase without reparsing the full ingest report.
+- `mapping.json` now also carries `implementation_targets`, `manual_sections`,
+  and aggregated `parser_work_items`, so the next parser pass can group edits by
+  target file instead of rediscovering that from raw probe rows.
 - `report_serum_vst2_postdiff_gaps.py` and the updated wrapper now emit
   `gaps.json`, which turns a completed manual batch into a checkpoint-by-
   checkpoint unresolved queue for the next reverse-engineering pass.
+- The wrapper also emits `mapping_coverage.json`, which compares promoted manual
+  evidence against the current parser coverage so the next implementation pass
+  starts from “ready for alignment” modules instead of raw diffs.
 - `validate_serum_manual_bundle.py --pairs-dir ...` now doubles as a preflight
   checker for missing `<probe_id>.before/.after` files, grouped by checkpoint.
 - `run_serum_vst2_postdiff.py` turns a completed pair folder into a persistent

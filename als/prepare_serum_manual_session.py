@@ -36,6 +36,10 @@ try:
     from serum_vst2_manual_plan import build_probe_subgroups
 except ModuleNotFoundError:
     from .serum_vst2_manual_plan import build_probe_subgroups
+try:
+    from report_serum_vst2_session_progress import build_session_progress
+except ModuleNotFoundError:
+    from .report_serum_vst2_session_progress import build_session_progress
 
 
 def make_parser() -> argparse.ArgumentParser:
@@ -146,6 +150,7 @@ def main() -> None:
         args.force,
     )
     _write_text(out_dir / ".gitignore", "pairs/*.fxp\n", args.force)
+    _write_text(out_dir / "session_state.json", json.dumps(build_session_progress(out_dir), indent=2) + "\n", args.force)
 
     print(json.dumps({
         "ok": True,
@@ -159,6 +164,7 @@ def main() -> None:
             "capture_queue.json",
             "subprobe_queue.tsv",
             "expected-files.txt",
+            "session_state.json",
             ".gitignore",
         ],
     }, indent=2))

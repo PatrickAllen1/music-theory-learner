@@ -56,6 +56,7 @@ def make_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--checkpoint", action="append", default=[], help="Restrict output to one or more checkpoint ids.")
     parser.add_argument("--probe", action="append", default=[], help="Restrict output to one or more probe ids.")
+    parser.add_argument("--state-json", help="Optional session_state.json path to annotate completion and next-up status.")
     return parser
 
 
@@ -146,6 +147,27 @@ def filter_bundle(
     }
 
 
+def apply_state(bundle: dict, state: dict) -> dict:
+    completed = set(state.get("completed_probe_ids", []))
+    next_probe_id = (state.get("next_probe") or {}).get("probe_id")
+    probes = []
+    for probe in bundle["probes"]:
+        row = {**probe}
+        row["complete"] = probe["probe_id"] in completed
+        row["next_up"] = probe["probe_id"] == next_probe_id
+        probes.append(row)
+    return {
+        **bundle,
+        "state": {
+            "generated_at": state.get("generated_at"),
+            "completed_probe_count": state.get("completed_probe_count"),
+            "pending_probe_count": state.get("pending_probe_count"),
+            "next_probe": state.get("next_probe"),
+        },
+        "probes": probes,
+    }
+
+
 def render_markdown(bundle: dict) -> str:
     lines = []
     lines.append("# Serum VST2 Manual Bundle")
@@ -153,11 +175,15 @@ def render_markdown(bundle: dict) -> str:
     lines.append(f"- manifests: {', '.join(bundle['manifest_paths'])}")
     lines.append(f"- checkpoints: {bundle['checkpoint_count']}")
     lines.append(f"- probes: {bundle['probe_count']}")
+    if bundle.get("state"):
+        lines.append(f"- completed: {bundle['state'].get('completed_probe_count', 0)}")
+        lines.append(f"- pending: {bundle['state'].get('pending_probe_count', 0)}")
     lines.append("")
     lines.append("## Capture Queue")
     for probe in sorted(bundle["probes"], key=lambda item: item["probe_sequence"]):
+        marker = "[x]" if probe.get("complete") else "->" if probe.get("next_up") else "[ ]"
         lines.append(
-            f"{probe['probe_sequence']}. "
+            f"{probe['probe_sequence']}. {marker} "
             f"[{probe['checkpoint_id']}.{probe['probe_order']}] "
             f"`{probe['probe_id']}` — {probe['label']} "
             f"(preset: `{probe['recommended_preset_name']}`; "
@@ -213,6 +239,8 @@ def render_tsv(bundle: dict) -> str:
             "checkpoint_sequence",
             "probe_sequence",
             "probe_order",
+            "status",
+            "next_up",
             "probe_id",
             "label",
             "before_filename",
@@ -234,6 +262,8 @@ def render_tsv(bundle: dict) -> str:
             str(probe["checkpoint_sequence"]),
             str(probe["probe_sequence"]),
             str(probe["probe_order"]),
+            "complete" if probe.get("complete") else "pending",
+            "yes" if probe.get("next_up") else "",
             probe["probe_id"],
             probe["label"],
             probe["before_filename"],
@@ -256,6 +286,8 @@ def main() -> None:
     bundle = load_bundle(manifest_paths)
     if args.checkpoint or args.probe:
         bundle = filter_bundle(bundle, checkpoint_ids=args.checkpoint, probe_ids=args.probe)
+    if args.state_json:
+        bundle = apply_state(bundle, json.loads(Path(args.state_json).read_text()))
 
     if args.format == "json":
         print(json.dumps(bundle, indent=2))

@@ -19,6 +19,14 @@ The prepared session folder now includes:
 - `capture_queue.tsv` for the canonical probe order
 - `subprobe_queue.tsv` for chunked views of oversized probes like matrix, oscillator-detail, and LFO families
 - `expected-files.txt` for the exact `.before/.after` filenames
+- `session_state.json` as the authoritative resume source for completed probes, pending probes, and the next queue item
+
+Refresh session state during a long capture run:
+
+```bash
+python3 als/report_serum_vst2_session_progress.py --session-dir /tmp/serum-manual-session --write-state
+python3 als/render_serum_manual_bundle.py --state-json /tmp/serum-manual-session/session_state.json | sed -n '1,40p'
+```
 
 Common diff command after saving the two `.fxp` variants:
 
@@ -47,7 +55,10 @@ The wrapper now writes:
 - `ingest.json` with raw per-probe diff summaries plus consensus/follow-up queues
 - `mapping.json` with promoted mappings for accepted statuses (`confirmed` and `expected_hit` by default)
 - `gaps.json` with unresolved checkpoint/probe status after promotion
+- `mapping_coverage.json` with parser-covered vs manually evidenced vs still-dark modules
 - `summary.md` with the readable post-diff queue
+
+`mapping.json` also includes aggregated `parser_work_items`, so the next parser-alignment pass can start with file-level edit groups instead of raw promoted rows.
 
 Preflight a capture folder before ingest:
 

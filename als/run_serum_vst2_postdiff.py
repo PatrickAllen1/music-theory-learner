@@ -19,11 +19,13 @@ try:
     from ingest_serum_manual_diff import build_ingest_report
     from promote_serum_vst2_mapping import build_mapping
     from report_serum_vst2_postdiff_gaps import build_gap_report
+    from report_serum_vst2_mapping_coverage import build_mapping_coverage_report
     from render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
 except ModuleNotFoundError:
     from .ingest_serum_manual_diff import build_ingest_report
     from .promote_serum_vst2_mapping import build_mapping
     from .report_serum_vst2_postdiff_gaps import build_gap_report
+    from .report_serum_vst2_mapping_coverage import build_mapping_coverage_report
     from .render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
 
 
@@ -134,16 +136,19 @@ def main() -> None:
     mapping = build_mapping(report, set(args.accept_status))
     bundle = load_bundle(manifest_paths)
     report["gaps"] = build_gap_report(mapping, bundle)
+    report["mapping_coverage"] = build_mapping_coverage_report(mapping)
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     ingest_path = out_dir / "ingest.json"
     mapping_path = out_dir / "mapping.json"
     gaps_path = out_dir / "gaps.json"
+    mapping_coverage_path = out_dir / "mapping_coverage.json"
     summary_path = out_dir / "summary.md"
     ingest_path.write_text(json.dumps(report, indent=2) + "\n")
     mapping_path.write_text(json.dumps(mapping, indent=2) + "\n")
     gaps_path.write_text(json.dumps(report["gaps"], indent=2) + "\n")
+    mapping_coverage_path.write_text(json.dumps(report["mapping_coverage"], indent=2) + "\n")
     summary_path.write_text(render_summary(report))
 
     print(json.dumps({
@@ -152,6 +157,7 @@ def main() -> None:
         "ingest_path": str(ingest_path),
         "mapping_path": str(mapping_path),
         "gaps_path": str(gaps_path),
+        "mapping_coverage_path": str(mapping_coverage_path),
         "summary_path": str(summary_path),
         "result_count": len(report["results"]),
         "missing_count": len(report["missing"]),
