@@ -1,0 +1,302 @@
+[
+  {
+    "id": "one-note-pitch-bend-lead",
+    "name": "One-note pitch-bend lead",
+    "source": "Raw — MPH",
+    "what_it_does": "Uses a single sustained note with a pitch bend envelope (±1 semitone in Serum) to create melodic movement without committing to any scale degree. The bend goes to pitches between the grid, generating atonality through movement rather than harmony.",
+    "when_to_use": "When you want melodic interest in an atonal or key-ambiguous track where traditional chord progressions would feel out of place.",
+    "works_well_with": [
+      "stable root-locked sub",
+      "timbre-rotation arrangement",
+      "sidechain-aware note placement",
+      "sparse harmony or no harmony"
+    ],
+    "likely_clashes_with": [
+      "busy chord stabs",
+      "strongly tonal melodic hooks",
+      "dense toplines",
+      "any element implying a fixed key"
+    ],
+    "why": "The technique depends on harmonic space and ambiguity. Competing tonal elements resolve the tension the pitch bend is trying to create — they make it sound out of tune rather than intentional.",
+    "mitigations": [
+      "Anchor the low end with a root-locked sub that never bends — this gives the ear a stable reference so the bending lead reads as expressive, not chaotic.",
+      "Keep other mid-range elements tonal contrast only (timbre changes, not pitch changes).",
+      "Use rhythm as the primary groove driver since scale-based phrasing is unavailable."
+    ]
+  },
+  {
+    "id": "stable-root-locked-sub",
+    "name": "Stable root-locked sub",
+    "source": "Raw — MPH",
+    "what_it_does": "Sub bass sits on the root note with no pitch bend and no melodic movement, providing a fixed tonal anchor below a bending or atonal top element. Minor movement (root → step above → back) is the extent of its range.",
+    "when_to_use": "When the top lead or main melody is pitch-bending or atonal and needs a stable low-end reference to prevent the track from sounding uncontrolled.",
+    "works_well_with": [
+      "one-note pitch-bend lead",
+      "atonal arrangement",
+      "octave-locked supporting bass",
+      "high-passed mid elements"
+    ],
+    "likely_clashes_with": [
+      "wide de-tuned unison bass in the same register",
+      "melodic sub bass lines",
+      "any other pitch-moving element below 100 Hz"
+    ],
+    "why": "Provides the anchor that makes top-end ambiguity feel intentional. Without it, a bending lead just sounds out of tune. Two moving low-end elements stack up and make the sub region undefined.",
+    "mitigations": [
+      "High-pass all other bass elements aggressively to keep the sub register clean.",
+      "If adding brief movement (e.g. drop 2.5 variation), limit it to a step — keep it short and unaccented."
+    ]
+  },
+  {
+    "id": "timbre-rotation-arrangement",
+    "name": "Timbre-rotation arrangement",
+    "source": "Raw — MPH",
+    "what_it_does": "Multiple instruments with strongly contrasting timbres (mono tight, wide de-tuned, clean square, sampled stab) cycle in and out every 2, 4, or 8 bars instead of stacking. Only one non-anchor element plays at any given time.",
+    "when_to_use": "When harmonic content is minimal (one or two notes) and interest must come from texture and timbre changes rather than harmonic movement.",
+    "works_well_with": [
+      "one-note pitch-bend lead",
+      "atonal / key-center approach",
+      "octave-locked supporting bass",
+      "wide de-tuned unison bass (as contrast peak element)"
+    ],
+    "likely_clashes_with": [
+      "richly harmonised arrangements where chord stabs already provide variation",
+      "multiple elements with similar timbres cycling — contrast is lost",
+      "complex drum fills competing for attention at the same transition points"
+    ],
+    "why": "Creates movement and contrast without adding harmonic complexity. Each element needs a distinct enough timbre that the swap is immediately audible — the rotation IS the melody.",
+    "mitigations": [
+      "Ensure each element has a clearly different tonal character: mono vs. wide, clean vs. de-tuned, pitched vs. sampled.",
+      "Stagger entry/exit points — don't have two elements swap simultaneously or the contrast moment collapses.",
+      "Use the widest/most complex element (e.g. respace) sparingly as the 8-bar peak, not the default."
+    ]
+  },
+  {
+    "id": "octave-locked-supporting-bass",
+    "name": "Octave-locked supporting bass",
+    "source": "Raw — MPH",
+    "what_it_does": "A supporting bass line that only plays the root note at different octaves, adding rhythmic weight and low-mid body without implying a key or harmonic direction.",
+    "when_to_use": "In atonal tracks where you need rhythmic and tonal support but any non-root note would suggest a harmonic relationship you want to avoid.",
+    "works_well_with": [
+      "stable root-locked sub",
+      "one-note pitch-bend lead",
+      "atonal arrangement",
+      "timbre-rotation arrangement"
+    ],
+    "likely_clashes_with": [
+      "melodic bass lines moving through scale degrees",
+      "chord-implying bass movement",
+      "elements that strongly establish a key — the octave lock only works if the harmony stays ambiguous"
+    ],
+    "why": "Any non-root interval in the bass register implies a harmonic relationship. Octaves are tonally neutral and add weight without commitment.",
+    "mitigations": [
+      "If you want brief harmonic colour, keep it to the 5th and use it sparingly — the 5th is the most harmonically neutral interval after the octave.",
+      "High-pass aggressively so the octave bass stays out of the sub register — leave that to the root-locked sub."
+    ]
+  },
+  {
+    "id": "wide-detuned-unison-bass",
+    "name": "Wide de-tuned unison bass (respace)",
+    "source": "Raw — MPH",
+    "what_it_does": "Heavily de-tuned saw wave with additional custom harmonic wavetable (5th and 6th harmonics), both running with maximum unison voices. The harmonic content from the wavetable adds an implied melodic pitch above the fundamental, creating a sense of melodic content from synthesis alone.",
+    "when_to_use": "As a periodic peak contrast element (e.g. every 8 bars) to break up tight, mono, or clean elements. Works as an arrangement event, not a constant layer.",
+    "works_well_with": [
+      "mono sub anchor (keeps low end tight while the mid-range spreads)",
+      "timbre-rotation arrangement",
+      "sparse drums",
+      "dark or minimal mid-range content"
+    ],
+    "likely_clashes_with": [
+      "wide stereo pad in the same frequency range",
+      "stereo-heavy bass anchor",
+      "other de-tuned or wide unison elements running simultaneously",
+      "busy high-end content that competes with the harmonic shimmer"
+    ],
+    "why": "Low-mid width stacks up fast. Two wide de-tuned elements in the same register create a muddy, undefined stereo image where nothing reads clearly.",
+    "mitigations": [
+      "High-pass aggressively — let the mono sub handle the low end exclusively.",
+      "Use it only as a periodic rotation element, not a constant layer.",
+      "Sidechain or duck against the kick so the width doesn't collapse the mono compatibility."
+    ]
+  },
+  {
+    "id": "drum-bus-glue-and-clip",
+    "name": "Drum bus glue compression + auto-clipping",
+    "source": "Raw — MPH",
+    "what_it_does": "Three-stage drum group processing: (1) glue compressor at 4:1, long attack, fast release to let kick lead — creates cohesion; (2) parallel compressor at very low threshold, fast attack/release, very low dry/wet — lifts hi-hat tails; (3) auto-clip to distort the loudest peaks together, adding subtle saturation.",
+    "when_to_use": "When drums are assembled from separate samples or loops that don't naturally interact, and you want them to sound like a single cohesive kit.",
+    "works_well_with": [
+      "simple kick/clap/hat pattern with velocity-led groove",
+      "clean individual drum sounds with preserved dynamics",
+      "minimal additional drum bus processing"
+    ],
+    "likely_clashes_with": [
+      "already-compressed or limited loops (double-limiting causes pumping)",
+      "very busy, transient-rich percussion where the clipping flattens detail",
+      "heavily processed individual hits that already have their own character"
+    ],
+    "why": "Stacked compression on already-limited elements kills dynamics and causes pumping artifacts. The three-stage approach works because each stage is gentle — together they add up.",
+    "mitigations": [
+      "Set glue compressor attack long enough (50-100ms) to let velocity transients through before gain reduction kicks in.",
+      "Parallel comp at very low dry/wet (5-15%) — just lifts the room and tail without audible pumping.",
+      "Auto-clip threshold set to catch only the loudest peaks — not a constant effect."
+    ]
+  },
+  {
+    "id": "sidechain-aware-note-placement",
+    "name": "Sidechain-aware lead note placement",
+    "source": "Raw — MPH",
+    "what_it_does": "Positions lead notes to deliberately avoid kick drum positions, placing them on the offbeat and the 2nd/4th 16th note positions. Turns the sidechain gap into a rhythmic feature rather than fighting it.",
+    "when_to_use": "Any sidechain-heavy arrangement where a lead competes with the kick for audibility.",
+    "works_well_with": [
+      "strong sidechain compression",
+      "swing groove",
+      "simple one-note or two-note melodic content",
+      "velocity-led drum groove"
+    ],
+    "likely_clashes_with": [
+      "busy kick patterns with extra kicks on the upbeats (removes the gaps the lead needs)",
+      "leads that require on-beat emphasis to phrase correctly",
+      "fast, dense melodic runs that inevitably land on kick positions"
+    ],
+    "why": "Notes that align with the kick get masked by the transient or pumped out by sidechain. Placing them in the kick's shadow turns the sidechain into a groove tool — the lead and kick lock rhythmically instead of fighting.",
+    "mitigations": [
+      "If an on-beat note is necessary, shorten its attack so it blooms after the kick transient has passed.",
+      "Use a shorter note length so the tail doesn't overlap into the next kick."
+    ]
+  },
+  {
+    "id": "velocity-led-drum-groove",
+    "name": "Velocity-led drum groove",
+    "source": "Raw — MPH",
+    "what_it_does": "Uses velocity variation across individual drum hits rather than pattern complexity to create a natural, dynamic-feeling groove. Accented notes are louder; unaccented notes are quieter — the pattern stays simple.",
+    "when_to_use": "When drum patterns are intentionally simple but need to feel alive and human rather than rigid.",
+    "works_well_with": [
+      "simple kick/clap/hat pattern",
+      "16th note swing",
+      "drum bus glue compression with a long enough attack to preserve transients"
+    ],
+    "likely_clashes_with": [
+      "heavy drum bus limiting or brick-wall compression (evens out velocities, removes the groove)",
+      "already-processed loops that carry their own fixed dynamics — velocities won't read through"
+    ],
+    "why": "The groove IS the velocity pattern. If downstream processing flattens it, the drums go back to feeling mechanical. The processing chain has to preserve the variation.",
+    "mitigations": [
+      "Set glue compressor attack at 50ms+ so the initial transient (which carries the velocity impression) passes before compression engages.",
+      "Check velocity contrast before and after group processing — aim to preserve at least 60-70% of the original dynamic range."
+    ]
+  },
+  {
+    "id": "noise-fm-pluck-attack",
+    "name": "Noise FM pluck attack",
+    "source": "Raw — MPH",
+    "what_it_does": "Noise oscillator used as a frequency modulation source for the main oscillator, modulated by a very short envelope (envelope 3). Adds a sharp, noisy thump at the note's transient only — once the envelope closes, the noise disappears.",
+    "when_to_use": "When a clean oscillator patch (sine, square) sounds too smooth at the attack and needs a more percussive, defined transient without adding a dedicated noise layer.",
+    "works_well_with": [
+      "phase-start aligned oscillator attack",
+      "clean sine or square wave patch",
+      "multiband compression on the output",
+      "minimal filter (no filter was used in this patch)"
+    ],
+    "likely_clashes_with": [
+      "already noisy or distorted patches — the FM noise adds to existing harmonic density",
+      "busy high-frequency content in the mix — the transient noise competes",
+      "long attack envelopes on the main oscillator — the FM transient will be heard before the main sound blooms"
+    ],
+    "why": "FM noise is gated by the envelope — it only exists at the moment of note-on. This adds transient character without affecting the sustain or tail of the sound.",
+    "mitigations": [
+      "Keep envelope 3 (FM modulator) very short — 5-15ms max. Longer decay starts to affect the body of the sound.",
+      "Adjust FM amount to taste; too much and the transient becomes more noise than pitch."
+    ]
+  },
+  {
+    "id": "phase-start-oscillator-attack",
+    "name": "Phase-start aligned oscillator attack",
+    "source": "Raw — MPH",
+    "what_it_does": "Sets oscillator random phase to 0 and phase start position to 90° so every note begins at the waveform's maximum amplitude point. Even a 1ms amplitude envelope creates a punchy, defined attack because the waveform starts at peak rather than zero.",
+    "when_to_use": "When a synthesized sound needs a consistent, punchy transient without using a hard filter envelope or distortion.",
+    "works_well_with": [
+      "noise FM pluck attack",
+      "short amplitude envelope (1ms attack)",
+      "minimal filter",
+      "sine or square wave patches where the transient is otherwise too soft"
+    ],
+    "likely_clashes_with": [
+      "patches with multiple oscillators at different phase positions — alignment at 90° can cause phase cancellation between layers",
+      "patches with heavy unison where phase randomisation is part of the texture — setting fixed phase removes that spread"
+    ],
+    "why": "Starting at 90° means the waveform is already at maximum amplitude at t=0. The amplitude envelope then controls the decay from that peak — the attack is effectively instantaneous regardless of the envelope's attack setting.",
+    "mitigations": [
+      "Check for phase cancellation when layering multiple oscillators at the same phase start — offset by a few degrees if needed.",
+      "If using unison, check whether fixed phase affects the stereo spread you want."
+    ]
+  },
+  {
+    "id": "16th-note-swing-66",
+    "name": "Strong 16th-note swing (66)",
+    "source": "Raw — MPH",
+    "what_it_does": "Delays every off-beat 16th note by a significant amount (66% swing), creating a shuffled, organic groove that sits between straight and triplet feel. Gives a garage/footwork character to the rhythm.",
+    "when_to_use": "UK garage, garage-influenced techno, footwork, or any style where a straight 16th grid feels too rigid and mechanical.",
+    "works_well_with": [
+      "sidechain-aware note placement",
+      "velocity-led drum groove",
+      "simple kick/clap/hat patterns where the swing is clearly audible",
+      "live-sounding percussion loops at the same swing setting"
+    ],
+    "likely_clashes_with": [
+      "straight-quantized MIDI phrases or loops not running at the same swing",
+      "drum machines or samplers running in straight mode",
+      "dense melodic runs where swing makes notes feel rushed or rushed"
+    ],
+    "why": "Any element not sharing the same swing grid will clash rhythmically — it will feel slightly drunk rather than grooved. The whole arrangement needs to commit to the same swing value.",
+    "mitigations": [
+      "Run all MIDI through the same swing grid before printing.",
+      "For imported audio loops, either warp them to match or extract their groove and apply it globally.",
+      "If a loop resists the swing, high-pass it and use it as atmosphere — its rhythmic content becomes less audible."
+    ]
+  },
+  {
+    "id": "macro-automated-oscillator-layer",
+    "name": "Macro-automated oscillator layer",
+    "source": "Raw — MPH",
+    "what_it_does": "A third oscillator (additional harmonic layer) is kept silent initially and then faded in at a specific drop via a macro, adding tonal complexity as an arrangement event rather than a sound design constant.",
+    "when_to_use": "When you want a sound to evolve across the track's sections without creating a new instrument — the patch gets 'heavier' as the track develops.",
+    "works_well_with": [
+      "timbre-rotation arrangement",
+      "macro-controlled risers and transitions",
+      "long-form track structures where the same lead sound plays throughout"
+    ],
+    "likely_clashes_with": [
+      "tracks with very short sections where the new layer has no time to register before the next change",
+      "patches where the new oscillator layer clashes in frequency with the existing ones — adds mud rather than depth"
+    ],
+    "why": "Gives a static sound a perceived arc — it changes without replacing. The listener hears the same voice getting richer over time.",
+    "mitigations": [
+      "Keep the automated layer significantly lower in volume than the foundation oscillators — it should add texture, not compete.",
+      "Use a harmonic that sits above the fundamental (3rd harmonic = octave + 5th) so it adds air rather than low-mid clutter."
+    ]
+  },
+  {
+    "id": "sample-stab-pitch-correction",
+    "name": "Sample stab pitch correction and sequencing",
+    "source": "Raw — MPH",
+    "what_it_does": "A classic sample chord stab (A Day in the Life by Black Riot / Todd Terry) dropped into a sampler, first chord taken, pitched to fit the track's root center (±31 cents detune), and sequenced as a rhythmic element every 4 bars.",
+    "when_to_use": "When you want a recognisable, culturally-loaded chord texture without building a complex synthesized pad. Common in UK garage and UK-influenced techno.",
+    "works_well_with": [
+      "atonal or key-center arrangement (stab brings one moment of chord colour)",
+      "timbre-rotation arrangement (stab as the 4-bar contrast element)",
+      "stable root-locked sub"
+    ],
+    "likely_clashes_with": [
+      "strongly melodic tracks where the sample's original key conflicts with the track's harmonic content",
+      "dense arrangements where another chord element is already present — the stab gets buried",
+      "tracks at very different BPMs from the sample's original feel — rhythm of the sample chord won't sit right"
+    ],
+    "why": "Sample stabs carry their own harmonic fingerprint. Small detune adjustments (31 cents) bring them into the track's pitch centre without sounding re-pitched. They work best as rhythmic punctuation rather than harmonic foundation.",
+    "mitigations": [
+      "Use only the first chord of the sample — the rest of the sample's harmonic movement will conflict.",
+      "Detune carefully by ear — a few cents makes the difference between in-tune and slightly pitchy.",
+      "Keep the stab short (no sustain) so its harmonic content reads as rhythmic colour, not a chord."
+    ]
+  }
+]

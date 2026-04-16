@@ -21,8 +21,10 @@ from pathlib import Path
 
 try:
     from refine_serum_track_blueprint import build_report as build_refined_blueprint_report
+    from technique_bank import DEFAULT_BANK_PATH, load_bank, recommend_for_blueprint
 except ModuleNotFoundError:
     from .refine_serum_track_blueprint import build_report as build_refined_blueprint_report
+    from .technique_bank import DEFAULT_BANK_PATH, load_bank, recommend_for_blueprint
 
 
 DEFAULT_CATALOG_DIR = Path("als/catalog/profiles")
@@ -38,6 +40,8 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--templates", default=str(DEFAULT_TEMPLATES_PATH), help="Song production templates JSON.")
     parser.add_argument("--catalog-dir", default=str(DEFAULT_CATALOG_DIR), help="Directory of generated *-profiles.json files.")
     parser.add_argument("--serum-briefs", default=str(DEFAULT_SERUM_BRIEFS_PATH), help="Serum brief manifest JSON.")
+    parser.add_argument("--technique-bank", default=str(DEFAULT_BANK_PATH), help="Production technique bank JSON path.")
+    parser.add_argument("--technique-limit", type=int, default=6, help="Maximum production techniques to attach. Default: 6")
     parser.add_argument("--prefer-rendered", action="store_true", help="Prefer rendered profiles where available.")
     parser.add_argument("--limit-per-part", type=int, default=5, help="Max candidates to inspect per part. Default: 5")
     parser.add_argument("--mutation-limit", type=int, default=6, help="Max mutation suggestions per part. Default: 6")
@@ -207,8 +211,7 @@ def build_report(args: argparse.Namespace) -> dict:
     sample_lanes = _build_drum_and_sample_lanes(song_brief, template)
     synth_layers = _build_synth_layers(song_brief, template, synth_report)
     readiness = _readiness(song_brief, synth_report, arrangement, sample_lanes, synth_layers)
-
-    return {
+    blueprint_core = {
         "brief_id": song_brief["brief_id"],
         "description": song_brief["description"],
         "template_id": template["template_id"],
@@ -235,6 +238,18 @@ def build_report(args: argparse.Namespace) -> dict:
             "refinement_swaps": synth_report["refinement_swaps"],
         },
         "readiness": readiness,
+    }
+    technique_bank_path = Path(getattr(args, "technique_bank", DEFAULT_BANK_PATH))
+    technique_limit = getattr(args, "technique_limit", 6)
+    technique_report = recommend_for_blueprint(
+        blueprint_core,
+        load_bank(technique_bank_path),
+        technique_limit,
+    )
+
+    return {
+        **blueprint_core,
+        "production_techniques": technique_report,
     }
 
 
@@ -308,6 +323,16 @@ def render_text(report: dict) -> str:
         lines.append("## Arrangement Notes")
         for row in report["arrangement_notes"]:
             lines.append(f"- {row}")
+    if report["production_techniques"]["recommendations"]:
+        lines.append("")
+        lines.append("## Production Techniques")
+        for row in report["production_techniques"]["recommendations"]:
+            lines.append(
+                f"- `{row['id']}` :: {row['name']} [{row['source']}] score={row['score']}"
+            )
+            lines.append(f"  when: {row['when_to_use']}")
+            if row["matched_keywords"]:
+                lines.append(f"  matched: {', '.join(row['matched_keywords'])}")
     if report["readiness"]["issues"]:
         lines.append("")
         lines.append("## Readiness Issues")

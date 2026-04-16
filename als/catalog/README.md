@@ -115,6 +115,13 @@ python3 als/design_full_song_blueprint.py --brief ukg-2step-dark-stab
 python3 als/design_full_song_blueprint.py --brief ukg-4x4-pluck-driver --format json
 ```
 
+Recommend transcript-derived production techniques for a brief:
+
+```bash
+python3 als/recommend_production_techniques.py --brief ukg-2step-dark-stab
+python3 als/recommend_production_techniques.py --brief ukg-4x4-pluck-driver --format json
+```
+
 Compare two full-song blueprints before turning either one into a lesson:
 
 ```bash
@@ -224,6 +231,7 @@ The author bundle includes:
 
 - `packet/` with the refined lesson packet
 - `full-song-blueprint.json` / `full-song-blueprint.md`
+- `production-techniques.json` / `production-techniques.md`
 - `full-song-readiness.json`
 - `compiled-lesson.json` / `compiled-lesson.md`
 - `compiled-lesson-diagnostics.json`

@@ -312,6 +312,7 @@ def _author_summary(
     lines.append(f"- synth sections in scaffold: {len(synth_plan['synth_sections'])}")
     lines.append(f"- full-song bars: {full_song_blueprint['readiness']['total_bars']}")
     lines.append(f"- compiled lesson steps: {compiled_lesson['lesson']['steps'] and len(compiled_lesson['lesson']['steps'])}")
+    lines.append(f"- production techniques attached: {full_song_blueprint['production_techniques']['result_count']}")
     lines.append("")
     lines.append("## Next Actions")
     for step in song_readiness_row["next_actions"]:
@@ -341,9 +342,16 @@ def _author_summary(
                 top = part["candidates"][0]
                 lines.append(f"  top candidate: `{top['track']}` from `{top.get('bank') or '-'}`")
         lines.append("")
+    if full_song_blueprint["production_techniques"]["recommendations"]:
+        lines.append("## Top Production Techniques")
+        for row in full_song_blueprint["production_techniques"]["recommendations"][:3]:
+            lines.append(f"- `{row['name']}` [{row['source']}]")
+            lines.append(f"  why now: {row['when_to_use']}")
+        lines.append("")
     lines.append("## Bundle Files")
     lines.append("- `packet/` contains the refined packet export.")
     lines.append("- `full-song-blueprint.json` / `full-song-blueprint.md` capture the actual production plan.")
+    lines.append("- `production-techniques.json` / `production-techniques.md` show the transcript-derived moves that fit this brief.")
     lines.append("- `full-song-readiness.json` shows whether the song plan is release-shaped enough to proceed.")
     lines.append("- `compiled-lesson.json` is the draft lesson object generated from the full-song plan.")
     lines.append("- `lesson-validation.json` shows what still keeps the draft from being app-ready.")
@@ -387,6 +395,32 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     _write_text(out_dir / "bank-candidates.tsv", _bank_candidates_tsv(bank_candidates), args.force)
     _write_text(out_dir / "full-song-blueprint.json", json.dumps(full_song_blueprint, indent=2) + "\n", args.force)
     _write_text(out_dir / "full-song-blueprint.md", render_full_song_blueprint_text(full_song_blueprint) + "\n", args.force)
+    _write_text(
+        out_dir / "production-techniques.json",
+        json.dumps(full_song_blueprint["production_techniques"], indent=2) + "\n",
+        args.force,
+    )
+    _write_text(
+        out_dir / "production-techniques.md",
+        "\n".join([
+            "# Production Techniques",
+            "",
+            f"- brief: `{args.brief}`",
+            f"- results: {full_song_blueprint['production_techniques']['result_count']}",
+            "",
+            *[
+                "\n".join([
+                    f"- `{row['id']}` :: {row['name']} [{row['source']}] score={row['score']}",
+                    f"  when: {row['when_to_use']}",
+                    f"  does: {row['what_it_does']}",
+                    f"  matched: {', '.join(row['matched_keywords'])}" if row["matched_keywords"] else "",
+                ]).rstrip()
+                for row in full_song_blueprint["production_techniques"]["recommendations"]
+            ],
+            "",
+        ]),
+        args.force,
+    )
     _write_text(out_dir / "compiled-lesson.json", json.dumps(compiled_lesson["lesson"], indent=2) + "\n", args.force)
     _write_text(out_dir / "compiled-lesson-diagnostics.json", json.dumps(compiled_lesson, indent=2) + "\n", args.force)
     _write_text(out_dir / "compiled-lesson.md", render_compiled_lesson_text(compiled_lesson) + "\n", args.force)
@@ -430,6 +464,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             "bank_candidates_tsv": str(out_dir / "bank-candidates.tsv"),
             "full_song_blueprint_json": str(out_dir / "full-song-blueprint.json"),
             "full_song_blueprint_md": str(out_dir / "full-song-blueprint.md"),
+            "production_techniques_json": str(out_dir / "production-techniques.json"),
+            "production_techniques_md": str(out_dir / "production-techniques.md"),
             "compiled_lesson_json": str(out_dir / "compiled-lesson.json"),
             "compiled_lesson_diagnostics_json": str(out_dir / "compiled-lesson-diagnostics.json"),
             "compiled_lesson_md": str(out_dir / "compiled-lesson.md"),
