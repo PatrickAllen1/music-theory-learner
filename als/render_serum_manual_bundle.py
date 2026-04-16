@@ -20,6 +20,10 @@ try:
     from serum_vst2_manual_plan import build_probe_subgroups, checkpoint_defer_until
 except ModuleNotFoundError:
     from .serum_vst2_manual_plan import build_probe_subgroups, checkpoint_defer_until
+try:
+    from report_serum_vst2_session_progress import build_session_progress
+except ModuleNotFoundError:
+    from .report_serum_vst2_session_progress import build_session_progress
 
 DEFAULT_MANIFESTS = [
     Path("als/serum-vst2-manual-probes.json"),
@@ -57,6 +61,7 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--checkpoint", action="append", default=[], help="Restrict output to one or more checkpoint ids.")
     parser.add_argument("--probe", action="append", default=[], help="Restrict output to one or more probe ids.")
     parser.add_argument("--state-json", help="Optional session_state.json path to annotate completion and next-up status.")
+    parser.add_argument("--pairs-dir", help="Optional pairs/ directory. If provided, derive live session state from its parent session folder.")
     return parser
 
 
@@ -286,7 +291,10 @@ def main() -> None:
     bundle = load_bundle(manifest_paths)
     if args.checkpoint or args.probe:
         bundle = filter_bundle(bundle, checkpoint_ids=args.checkpoint, probe_ids=args.probe)
-    if args.state_json:
+    if args.pairs_dir:
+        session_dir = Path(args.pairs_dir).resolve().parent
+        bundle = apply_state(bundle, build_session_progress(session_dir))
+    elif args.state_json:
         bundle = apply_state(bundle, json.loads(Path(args.state_json).read_text()))
 
     if args.format == "json":

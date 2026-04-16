@@ -15,10 +15,12 @@ import json
 from pathlib import Path
 
 try:
+    from report_serum_vst2_alignment_actions import build_alignment_actions
     from report_serum_vst2_mapping_coverage import build_mapping_coverage_report
     from report_serum_vst2_postdiff_gaps import build_gap_report
     from render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
 except ModuleNotFoundError:
+    from .report_serum_vst2_alignment_actions import build_alignment_actions
     from .report_serum_vst2_mapping_coverage import build_mapping_coverage_report
     from .report_serum_vst2_postdiff_gaps import build_gap_report
     from .render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
@@ -44,7 +46,7 @@ def _write(path: Path, text: str, force: bool) -> None:
     path.write_text(text)
 
 
-def _render_markdown(mapping: dict, gaps: dict, coverage: dict) -> str:
+def _render_markdown(mapping: dict, gaps: dict, coverage: dict, actions: dict) -> str:
     lines = []
     lines.append("# Serum VST2 Alignment Session")
     lines.append("")
@@ -69,6 +71,14 @@ def _render_markdown(mapping: dict, gaps: dict, coverage: dict) -> str:
             f"- `{row['module']}` — evidenced labels: {row['evidenced_uncovered_count']}; "
             f"dark labels: {row['dark_uncovered_count']}; "
             f"probes: {', '.join(row['probe_ids']) or '-'}"
+        )
+    lines.append("")
+
+    lines.append("## Parser Actions")
+    for item in actions.get("actions", [])[:40]:
+        lines.append(
+            f"- `{item['implementation_target']}` :: `{item['module']}` "
+            f"(priority: {item['priority_score']}; probes: {', '.join(item['probe_ids']) or '-'})"
         )
     lines.append("")
 
@@ -105,6 +115,33 @@ def _render_alignment_queue_tsv(coverage: dict) -> str:
     return "\n".join("\t".join(cell.replace("\t", " ").replace("\n", " ") for cell in row) for row in rows) + "\n"
 
 
+def _render_alignment_actions_tsv(actions: dict) -> str:
+    rows = [[
+        "implementation_target",
+        "module",
+        "priority_score",
+        "manual_section",
+        "evidenced_uncovered_count",
+        "dark_uncovered_count",
+        "probe_ids",
+        "clusters",
+        "windows",
+    ]]
+    for item in actions.get("actions", []):
+        rows.append([
+            item["implementation_target"],
+            item["module"],
+            str(item["priority_score"]),
+            item["manual_section"],
+            str(item["evidenced_uncovered_count"]),
+            str(item["dark_uncovered_count"]),
+            " | ".join(item["probe_ids"]),
+            " | ".join(item["clusters"]),
+            " | ".join(item["windows"]),
+        ])
+    return "\n".join("\t".join(cell.replace("\t", " ").replace("\n", " ") for cell in row) for row in rows) + "\n"
+
+
 def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
@@ -125,12 +162,15 @@ def main() -> None:
         gaps = json.loads(gaps_path.read_text())
     else:
         gaps = build_gap_report(mapping, bundle)
+    actions = build_alignment_actions(mapping, coverage, gaps)
 
-    _write(out_dir / "alignment_brief.md", _render_markdown(mapping, gaps, coverage), args.force)
+    _write(out_dir / "alignment_brief.md", _render_markdown(mapping, gaps, coverage, actions), args.force)
     _write(out_dir / "alignment_queue.tsv", _render_alignment_queue_tsv(coverage), args.force)
+    _write(out_dir / "alignment_actions.tsv", _render_alignment_actions_tsv(actions), args.force)
     _write(out_dir / "mapping.json", json.dumps(mapping, indent=2) + "\n", args.force)
     _write(out_dir / "mapping_coverage.json", json.dumps(coverage, indent=2) + "\n", args.force)
     _write(out_dir / "gaps.json", json.dumps(gaps, indent=2) + "\n", args.force)
+    _write(out_dir / "alignment_actions.json", json.dumps(actions, indent=2) + "\n", args.force)
 
     print(json.dumps({
         "ok": True,
@@ -139,9 +179,11 @@ def main() -> None:
         "files": [
             "alignment_brief.md",
             "alignment_queue.tsv",
+            "alignment_actions.tsv",
             "mapping.json",
             "mapping_coverage.json",
             "gaps.json",
+            "alignment_actions.json",
         ],
         "ready_module_count": coverage.get("ready_module_count", 0),
         "still_dark_module_count": coverage.get("still_dark_module_count", 0),

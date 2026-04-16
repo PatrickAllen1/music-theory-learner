@@ -25,6 +25,8 @@ Refresh session state during a long capture run:
 
 ```bash
 python3 als/report_serum_vst2_session_progress.py --session-dir /tmp/serum-manual-session --write-state
+python3 als/validate_serum_manual_bundle.py --pairs-dir /tmp/serum-manual-session/pairs --write-session-state || true
+python3 als/render_serum_manual_bundle.py --pairs-dir /tmp/serum-manual-session/pairs | sed -n '1,40p'
 python3 als/render_serum_manual_bundle.py --state-json /tmp/serum-manual-session/session_state.json | sed -n '1,40p'
 ```
 
@@ -65,6 +67,8 @@ Turn a completed postdiff folder into a parser-alignment workpack:
 ```bash
 python3 als/prepare_serum_vst2_alignment_session.py --postdiff-dir /tmp/serum-postdiff --out-dir /tmp/serum-alignment
 ```
+
+The alignment workpack now includes `alignment_actions.tsv` and `alignment_actions.json` for prioritized parser edit targets.
 
 Preflight a capture folder before ingest:
 

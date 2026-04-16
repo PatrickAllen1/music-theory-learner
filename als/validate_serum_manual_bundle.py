@@ -22,9 +22,11 @@ from pathlib import Path
 try:
     from render_serum_manual_bundle import DEFAULT_MANIFESTS, filter_bundle, load_bundle
     from report_serum_vst2_probe_coverage import build_probe_coverage_report
+    from report_serum_vst2_session_progress import build_session_progress
 except ModuleNotFoundError:
     from .render_serum_manual_bundle import DEFAULT_MANIFESTS, filter_bundle, load_bundle
     from .report_serum_vst2_probe_coverage import build_probe_coverage_report
+    from .report_serum_vst2_session_progress import build_session_progress
 
 
 def _collect_missing_preset_paths(manifest_paths: list[Path]) -> list[dict]:
@@ -111,6 +113,11 @@ def main() -> None:
         "--pairs-dir",
         help="Optional directory expected to contain <probe_id>.before.fxp / <probe_id>.after.fxp pairs.",
     )
+    parser.add_argument(
+        "--write-session-state",
+        action="store_true",
+        help="If --pairs-dir points to a prepared session folder's pairs/ dir, refresh session_state.json in the parent session directory.",
+    )
     parser.add_argument("--ingest-json", help="Optional ingest artifact from run_serum_vst2_postdiff.py or ingest_serum_manual_diff.py.")
     parser.add_argument(
         "--reject-status",
@@ -188,6 +195,12 @@ def main() -> None:
     }
     if pairs_status:
         result["pairs_status"] = pairs_status
+        if args.write_session_state:
+            session_dir = Path(args.pairs_dir).resolve().parent
+            state_path = session_dir / "session_state.json"
+            state = build_session_progress(session_dir)
+            state_path.write_text(json.dumps(state, indent=2) + "\n")
+            result["session_state_path"] = str(state_path)
     if ingest_status:
         result["ingest_status"] = ingest_status
     print(json.dumps(result, indent=2))

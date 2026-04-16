@@ -27,6 +27,9 @@ capture pass:
 - `render_serum_manual_bundle.py --state-json ...` now projects that state back
   into the canonical queue so resume output is not just ordered, but annotated
   with completion and next-up markers.
+- `render_serum_manual_bundle.py --pairs-dir ...` now derives that same state
+  directly from the live `pairs/` folder, and the validator can refresh
+  `session_state.json` in the same pass with `--write-session-state`.
 - The rendered bundle now carries explicit checkpoint defer chains plus
   machine-generated subgroups for oversized probes such as matrix, oscillator,
   and extended LFO families.
@@ -49,6 +52,9 @@ capture pass:
   `mapping_coverage.json`, and `gaps.json` into an alignment workpack with a
   brief and TSV queue, so the next parser coding session has a clean starting
   point.
+- `report_serum_vst2_alignment_actions.py` and the updated alignment-session
+  prep now turn that workpack into prioritized parser actions grouped by
+  implementation target.
 - `validate_serum_manual_bundle.py --pairs-dir ...` now doubles as a preflight
   checker for missing `<probe_id>.before/.after` files, grouped by checkpoint.
 - `run_serum_vst2_postdiff.py` turns a completed pair folder into a persistent
