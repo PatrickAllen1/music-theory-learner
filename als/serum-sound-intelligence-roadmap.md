@@ -33,8 +33,11 @@ Immediate artifacts:
 Planned artifacts:
 
 - `als/catalog/` normalized profile outputs
+- `als/prepare_serum_audio_session.py` repeatable manual render-session prep
 - `als/render_serum_audio.py` controlled audio audition renderer
 - `als/extract_serum_audio_features.py` objective audio descriptors
+- `als/serum_mutation_rules.py` reusable parameter-mutation heuristics
+- `als/suggest_serum_mutations.py` profile-aware change suggestions
 - `als/tag_serum_profiles.py` semantic role/tone tagging
 - `als/search_serum_profiles.py` role/tone/mix-aware retrieval
 - `als/palette_builder.py` preset pairing and palette suggestions
@@ -134,6 +137,8 @@ Deliverables:
 
 Files:
 
+- add `als/serum-audio-audition-spec.json`
+- add `als/prepare_serum_audio_session.py`
 - add `als/render_serum_audio.py`
 - add `als/extract_serum_audio_features.py`
 
@@ -159,6 +164,8 @@ Deliverables:
 
 Files:
 
+- add `als/serum_mutation_rules.py`
+- add `als/suggest_serum_mutations.py`
 - add `als/tag_serum_profiles.py`
 - add `als/search_serum_profiles.py`
 
@@ -226,9 +233,15 @@ Already added in this pass:
 
 - [schemas/serum-preset-profile.schema.json](./schemas/serum-preset-profile.schema.json)
 - [build_serum_profile.py](./build_serum_profile.py)
+- [search_serum_profiles.py](./search_serum_profiles.py)
+- [serum_mutation_rules.py](./serum_mutation_rules.py)
+- [suggest_serum_mutations.py](./suggest_serum_mutations.py)
+- [serum-audio-audition-spec.json](./serum-audio-audition-spec.json)
+- [prepare_serum_audio_session.py](./prepare_serum_audio_session.py)
+- [palette_builder.py](./palette_builder.py)
 
 Recommended next code pass:
 
 - extend `build_serum_profile.py` to ingest fresh Serum 2 ALS captures directly
-- add `als/catalog/` output support
-- add a small checked-in golden profile fixture for regression testing
+- add audio descriptor extraction on top of prepared audio sessions
+- tighten semantic tagging so fewer profiles remain `unknown`

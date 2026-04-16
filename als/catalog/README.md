@@ -32,6 +32,32 @@ python3 als/search_serum_profiles.py --role lead --tone bright
 python3 als/search_serum_profiles.py --dest-module VoiceFilter
 ```
 
+Suggest targeted parameter moves for a profile:
+
+```bash
+python3 als/suggest_serum_mutations.py --list-goals
+python3 als/suggest_serum_mutations.py --profile-id mph-raw:bass:i1 --goal darker
+python3 als/suggest_serum_mutations.py --profile-id mph-raw:bass:i1 --goal tighter --goal mono_safer
+```
+
+Prepare a manual audio audition session:
+
+```bash
+python3 als/prepare_serum_audio_session.py --out-dir als/audio-session --role bass --limit 10
+python3 als/prepare_serum_audio_session.py --out-dir als/audio-session --profile-id mph-raw:bass:i1 --force
+```
+
+The audition spec is:
+
+- [../serum-audio-audition-spec.json](../serum-audio-audition-spec.json)
+
+Build small preset palettes:
+
+```bash
+python3 als/palette_builder.py --role bass --role pad --role lead
+python3 als/palette_builder.py --role bass --role pad --role pluck --target-tone dark
+```
+
 The canonical schema for each profile is:
 
 - [../schemas/serum-preset-profile.schema.json](../schemas/serum-preset-profile.schema.json)

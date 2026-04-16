@@ -1,0 +1,375 @@
+{
+  "spec_version": "0.1.0",
+  "description": "Standard repeatable audio audition patterns for Serum preset rendering.",
+  "role_sets": {
+    "sub": [
+      {
+        "audition_id": "sub_sustain_root",
+        "label": "Sub sustain root",
+        "clip_bars": 2,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C2",
+            "length_beats": 8.0,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "audition_id": "sub_short_stab",
+        "label": "Sub short stab",
+        "clip_bars": 1,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C2",
+            "length_beats": 1.0,
+            "velocity": 110
+          }
+        ]
+      }
+    ],
+    "bass": [
+      {
+        "audition_id": "bass_sustain_root",
+        "label": "Bass sustain root",
+        "clip_bars": 2,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C2",
+            "length_beats": 8.0,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "audition_id": "bass_two_bar_riff",
+        "label": "Bass two-bar riff",
+        "clip_bars": 2,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C2",
+            "length_beats": 1.0,
+            "velocity": 110
+          },
+          {
+            "start_beats": 1.5,
+            "note": "G1",
+            "length_beats": 0.5,
+            "velocity": 102
+          },
+          {
+            "start_beats": 2.0,
+            "note": "Bb1",
+            "length_beats": 1.0,
+            "velocity": 106
+          },
+          {
+            "start_beats": 4.0,
+            "note": "C2",
+            "length_beats": 0.75,
+            "velocity": 110
+          },
+          {
+            "start_beats": 5.0,
+            "note": "Eb2",
+            "length_beats": 0.75,
+            "velocity": 104
+          },
+          {
+            "start_beats": 6.0,
+            "note": "G1",
+            "length_beats": 0.75,
+            "velocity": 100
+          }
+        ]
+      }
+    ],
+    "reese": [
+      {
+        "audition_id": "reese_sustain_root",
+        "label": "Reese sustain root",
+        "clip_bars": 2,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C2",
+            "length_beats": 8.0,
+            "velocity": 110
+          }
+        ]
+      },
+      {
+        "audition_id": "reese_octave_riff",
+        "label": "Reese octave riff",
+        "clip_bars": 2,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C2",
+            "length_beats": 1.0,
+            "velocity": 108
+          },
+          {
+            "start_beats": 1.0,
+            "note": "C3",
+            "length_beats": 1.0,
+            "velocity": 102
+          },
+          {
+            "start_beats": 2.0,
+            "note": "Bb1",
+            "length_beats": 1.0,
+            "velocity": 106
+          },
+          {
+            "start_beats": 4.0,
+            "note": "C2",
+            "length_beats": 2.0,
+            "velocity": 110
+          }
+        ]
+      }
+    ],
+    "pad": [
+      {
+        "audition_id": "pad_minor_chord_sustain",
+        "label": "Pad minor chord sustain",
+        "clip_bars": 2,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C4",
+            "length_beats": 8.0,
+            "velocity": 96
+          },
+          {
+            "start_beats": 0.0,
+            "note": "Eb4",
+            "length_beats": 8.0,
+            "velocity": 92
+          },
+          {
+            "start_beats": 0.0,
+            "note": "G4",
+            "length_beats": 8.0,
+            "velocity": 92
+          }
+        ]
+      },
+      {
+        "audition_id": "pad_short_chord",
+        "label": "Pad short chord",
+        "clip_bars": 1,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C4",
+            "length_beats": 1.0,
+            "velocity": 96
+          },
+          {
+            "start_beats": 0.0,
+            "note": "Eb4",
+            "length_beats": 1.0,
+            "velocity": 92
+          },
+          {
+            "start_beats": 0.0,
+            "note": "G4",
+            "length_beats": 1.0,
+            "velocity": 92
+          }
+        ]
+      }
+    ],
+    "lead": [
+      {
+        "audition_id": "lead_phrase",
+        "label": "Lead phrase",
+        "clip_bars": 2,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C4",
+            "length_beats": 0.5,
+            "velocity": 112
+          },
+          {
+            "start_beats": 0.5,
+            "note": "Eb4",
+            "length_beats": 0.5,
+            "velocity": 104
+          },
+          {
+            "start_beats": 1.0,
+            "note": "G4",
+            "length_beats": 1.0,
+            "velocity": 116
+          },
+          {
+            "start_beats": 2.5,
+            "note": "F4",
+            "length_beats": 0.5,
+            "velocity": 100
+          },
+          {
+            "start_beats": 4.0,
+            "note": "G4",
+            "length_beats": 0.75,
+            "velocity": 112
+          },
+          {
+            "start_beats": 5.0,
+            "note": "Bb4",
+            "length_beats": 0.75,
+            "velocity": 108
+          },
+          {
+            "start_beats": 6.0,
+            "note": "C5",
+            "length_beats": 1.0,
+            "velocity": 118
+          }
+        ]
+      },
+      {
+        "audition_id": "lead_single_note",
+        "label": "Lead single note",
+        "clip_bars": 1,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C4",
+            "length_beats": 1.0,
+            "velocity": 112
+          }
+        ]
+      }
+    ],
+    "pluck": [
+      {
+        "audition_id": "pluck_phrase",
+        "label": "Pluck phrase",
+        "clip_bars": 2,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C4",
+            "length_beats": 0.5,
+            "velocity": 108
+          },
+          {
+            "start_beats": 1.0,
+            "note": "Eb4",
+            "length_beats": 0.5,
+            "velocity": 102
+          },
+          {
+            "start_beats": 2.0,
+            "note": "G4",
+            "length_beats": 0.5,
+            "velocity": 110
+          },
+          {
+            "start_beats": 3.0,
+            "note": "Bb4",
+            "length_beats": 0.5,
+            "velocity": 104
+          },
+          {
+            "start_beats": 4.0,
+            "note": "G4",
+            "length_beats": 0.5,
+            "velocity": 108
+          }
+        ]
+      },
+      {
+        "audition_id": "pluck_chord_stab",
+        "label": "Pluck chord stab",
+        "clip_bars": 1,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C4",
+            "length_beats": 0.5,
+            "velocity": 106
+          },
+          {
+            "start_beats": 0.0,
+            "note": "Eb4",
+            "length_beats": 0.5,
+            "velocity": 100
+          },
+          {
+            "start_beats": 0.0,
+            "note": "G4",
+            "length_beats": 0.5,
+            "velocity": 100
+          }
+        ]
+      }
+    ],
+    "stab": [
+      {
+        "audition_id": "stab_minor_chord",
+        "label": "Stab minor chord",
+        "clip_bars": 1,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C4",
+            "length_beats": 0.75,
+            "velocity": 112
+          },
+          {
+            "start_beats": 0.0,
+            "note": "Eb4",
+            "length_beats": 0.75,
+            "velocity": 106
+          },
+          {
+            "start_beats": 0.0,
+            "note": "G4",
+            "length_beats": 0.75,
+            "velocity": 106
+          }
+        ]
+      }
+    ],
+    "fx": [
+      {
+        "audition_id": "fx_trigger",
+        "label": "FX trigger",
+        "clip_bars": 2,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C3",
+            "length_beats": 4.0,
+            "velocity": 118
+          }
+        ]
+      }
+    ],
+    "unknown": [
+      {
+        "audition_id": "default_single_note",
+        "label": "Default single note",
+        "clip_bars": 1,
+        "notes": [
+          {
+            "start_beats": 0.0,
+            "note": "C3",
+            "length_beats": 1.0,
+            "velocity": 108
+          }
+        ]
+      }
+    ]
+  }
+}
