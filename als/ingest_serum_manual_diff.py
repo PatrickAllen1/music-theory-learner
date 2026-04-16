@@ -17,9 +17,16 @@ Examples:
 
 import argparse
 import json
+import re
+from collections import defaultdict
 from pathlib import Path
 
-from parse_serum import cluster_vst2_slot_rows, diff_vst2_float_slots, parse_fxp_file
+from parse_serum import (
+    cluster_vst2_slot_rows,
+    diff_vst2_float_slots,
+    extract_serum_vst2_host_param_catalog,
+    parse_fxp_file,
+)
 
 
 def parse_window(window: str) -> tuple[int, int]:
@@ -32,6 +39,31 @@ def parse_window(window: str) -> tuple[int, int]:
 
 def load_manifest(path: Path) -> dict:
     return json.loads(path.read_text())
+
+
+def _normalize_label(label: str) -> str:
+    return re.sub(r"[^a-z0-9]+", "", label.lower())
+
+
+def _build_label_index(catalog: dict) -> dict[str, list[dict]]:
+    by_normalized = defaultdict(list)
+    for entry in catalog["entries"]:
+        by_normalized[_normalize_label(entry["label"])].append(entry)
+    return by_normalized
+
+
+def _match_host_entries(labels: list[str], label_index: dict[str, list[dict]]) -> list[dict]:
+    matches = []
+    seen = set()
+    for label in labels:
+        normalized = _normalize_label(label)
+        for entry in label_index.get(normalized, []):
+            key = (entry["module"], entry["label"])
+            if key in seen:
+                continue
+            seen.add(key)
+            matches.append(entry)
+    return matches
 
 
 def iter_probes(manifest: dict):
@@ -62,7 +94,15 @@ def overlap_with_expected(clusters: list[dict], windows: list[str]) -> list[dict
     return overlaps
 
 
-def summarise_probe_result(checkpoint: dict, probe: dict, before_path: Path, after_path: Path, slots: int, threshold: float) -> dict:
+def summarise_probe_result(
+    checkpoint: dict,
+    probe: dict,
+    before_path: Path,
+    after_path: Path,
+    slots: int,
+    threshold: float,
+    label_index: dict[str, list[dict]],
+) -> dict:
     before = parse_fxp_file(before_path)
     after = parse_fxp_file(after_path)
     changes = diff_vst2_float_slots(
@@ -72,6 +112,7 @@ def summarise_probe_result(checkpoint: dict, probe: dict, before_path: Path, aft
         threshold=threshold,
     )
     clusters = cluster_vst2_slot_rows(changes, max_index_gap=0)
+    matched_entries = _match_host_entries(probe.get("candidate_host_labels", []), label_index)
     return {
         "checkpoint": checkpoint["id"],
         "checkpoint_title": checkpoint["title"],
@@ -84,6 +125,8 @@ def summarise_probe_result(checkpoint: dict, probe: dict, before_path: Path, aft
         "expected_windows": probe.get("candidate_slot_windows", []),
         "window_overlaps": overlap_with_expected(clusters, probe.get("candidate_slot_windows", [])),
         "candidate_host_labels": probe.get("candidate_host_labels", []),
+        "matched_host_labels": [entry["label"] for entry in matched_entries],
+        "matched_modules": sorted({entry["module"] for entry in matched_entries}),
     }
 
 
@@ -97,6 +140,8 @@ def main():
     args = parser.parse_args()
 
     manifest = load_manifest(Path(args.manifest))
+    catalog = extract_serum_vst2_host_param_catalog()
+    label_index = _build_label_index(catalog)
     lookup = build_probe_lookup(manifest)
     pairs_dir = Path(args.pairs_dir)
     selected_probe_ids = args.probe or sorted(lookup.keys())
@@ -126,6 +171,7 @@ def main():
                 after_path,
                 slots=args.slots,
                 threshold=args.threshold,
+                label_index=label_index,
             )
         )
 

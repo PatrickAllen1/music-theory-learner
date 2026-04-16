@@ -257,7 +257,8 @@ The autonomous batch now has a deferred-manual layer:
   is the human handoff pack
 - [`als/ingest_serum_manual_diff.py`](./ingest_serum_manual_diff.py) ingests
   final `.before.fxp` / `.after.fxp` pairs using the `<probe_id>.before.fxp`
-  and `<probe_id>.after.fxp` naming convention
+  and `<probe_id>.after.fxp` naming convention, and now echoes the matched
+  host labels and modules for each probe alongside the moved slot clusters
 
 That means the remaining manual Serum saves can happen in one bundled pass at
 the end of the autonomous run instead of interrupting each analysis wave.
