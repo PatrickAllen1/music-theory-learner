@@ -121,6 +121,20 @@ Compare two full-song blueprints before turning either one into a lesson:
 python3 als/compare_full_song_blueprints.py --left-brief ukg-2step-dark-stab --right-brief ukg-4x4-pluck-driver
 ```
 
+Compile a full-song blueprint into a guided-build lesson draft:
+
+```bash
+python3 als/compile_guided_build_lesson.py --brief ukg-2step-dark-stab
+python3 als/compile_guided_build_lesson.py --brief ukg-4x4-pluck-driver --lesson-only --format json
+```
+
+Validate whether a compiled lesson is still a scaffold or close to app-ready:
+
+```bash
+python3 als/validate_guided_build_lesson.py --brief ukg-2step-dark-stab
+python3 als/validate_guided_build_lesson.py --lesson-json path/to/lesson.json --format json
+```
+
 Export the whole lesson packet in one shot:
 
 ```bash
