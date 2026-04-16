@@ -93,6 +93,13 @@ python3 als/generate_serum_lesson_notes.py --brief ukg-4x4-lead-driver --format 
 python3 als/generate_serum_lesson_notes.py --brief ukg-2step-dark-stab --refine --format json
 ```
 
+Generate a guided-build synth scaffold from the refined brief:
+
+```bash
+python3 als/generate_serum_guided_build_synth_plan.py --brief ukg-2step-dark-stab
+python3 als/generate_serum_guided_build_synth_plan.py --brief ukg-4x4-pluck-driver --format json
+```
+
 Export the whole lesson packet in one shot:
 
 ```bash
@@ -174,6 +181,7 @@ python3 als/prepare_serum_lesson_author_bundle.py --brief ukg-4x4-pluck-driver -
 The author bundle includes:
 
 - `packet/` with the refined lesson packet
+- `synth-plan.md` / `synth-plan.json`
 - `render-blockers.tsv` / `render-blockers.json`
 - `bank-candidates.tsv` / `bank-candidates.json`
 - `author-queue.json`

@@ -19,12 +19,14 @@ from pathlib import Path
 
 try:
     from export_serum_lesson_packet import export_packet
+    from generate_serum_guided_build_synth_plan import build_report as build_synth_plan_report, render_text as render_synth_plan_text
     from report_serum_brief_bank_candidates import build_report as build_brief_bank_report
     from report_serum_lesson_author_queue import build_report as build_author_queue_report
     from report_serum_packet_readiness import build_report as build_packet_readiness_report
     from report_serum_render_backlog import build_report as build_render_backlog_report
 except ModuleNotFoundError:
     from .export_serum_lesson_packet import export_packet
+    from .generate_serum_guided_build_synth_plan import build_report as build_synth_plan_report, render_text as render_synth_plan_text
     from .report_serum_brief_bank_candidates import build_report as build_brief_bank_report
     from .report_serum_lesson_author_queue import build_report as build_author_queue_report
     from .report_serum_packet_readiness import build_report as build_packet_readiness_report
@@ -102,6 +104,22 @@ def _bank_namespace(args: argparse.Namespace) -> Namespace:
         bank_dir=args.bank_dir,
         top_per_part=args.bank_top_per_part,
         include_stable=args.include_stable_bank_parts,
+        format="json",
+    )
+
+
+def _synth_plan_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        brief=args.brief,
+        catalog_dir=args.catalog_dir,
+        briefs=args.briefs,
+        prefer_rendered=args.prefer_rendered,
+        limit_per_part=args.limit_per_part,
+        mutation_limit=args.mutation_limit,
+        max_swaps=args.max_swaps,
+        bank_dir=args.bank_dir,
+        bank_top_per_part=args.bank_top_per_part,
+        render_limit=args.render_limit,
         format="json",
     )
 
@@ -213,6 +231,7 @@ def _author_summary(
     readiness_row: dict,
     render_blockers: list[dict],
     bank_candidates: dict,
+    synth_plan: dict,
     packet_dir: Path,
 ) -> str:
     lines = []
@@ -232,6 +251,7 @@ def _author_summary(
         lines.append(f"- parts without mutations: {', '.join(author_row['parts_without_mutations'])}")
     lines.append(f"- render blockers in bundle: {len(render_blockers)}")
     lines.append(f"- weak parts with bank candidates: {bank_candidates['parts_needing_attention']}")
+    lines.append(f"- synth sections in scaffold: {len(synth_plan['synth_sections'])}")
     lines.append("")
     lines.append("## Next Actions")
     for step in readiness_row["next_actions"]:
@@ -261,6 +281,12 @@ def _author_summary(
                 top = part["candidates"][0]
                 lines.append(f"  top candidate: `{top['track']}` from `{top.get('bank') or '-'}`")
         lines.append("")
+    lines.append("## Bundle Files")
+    lines.append("- `packet/` contains the refined packet export.")
+    lines.append("- `synth-plan.md` / `synth-plan.json` translate the chosen stack into per-part lesson-authoring steps.")
+    lines.append("- `render-blockers.tsv` shows the exact profiles that still need audio truth.")
+    lines.append("- `bank-candidates.tsv` shows real S1 bank presets worth trying when a part is weak or under-specified.")
+    lines.append("")
     return "\n".join(lines) + "\n"
 
 
@@ -275,6 +301,7 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     packet_readiness = build_packet_readiness_report(namespace)
     render_backlog = build_render_backlog_report(namespace)
     bank_candidates = build_brief_bank_report(_bank_namespace(args))
+    synth_plan = build_synth_plan_report(_synth_plan_namespace(args))
 
     author_row = _find_row(author_queue["queue"], args.brief)
     readiness_row = _find_row(packet_readiness["briefs"], args.brief)
@@ -286,7 +313,9 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     _write_text(out_dir / "render-blockers.tsv", _render_blockers_tsv(render_blockers), args.force)
     _write_text(out_dir / "bank-candidates.json", json.dumps(bank_candidates, indent=2) + "\n", args.force)
     _write_text(out_dir / "bank-candidates.tsv", _bank_candidates_tsv(bank_candidates), args.force)
-    _write_text(out_dir / "README.md", _author_summary(packet, author_row, readiness_row, render_blockers, bank_candidates, packet_dir), args.force)
+    _write_text(out_dir / "synth-plan.json", json.dumps(synth_plan, indent=2) + "\n", args.force)
+    _write_text(out_dir / "synth-plan.md", render_synth_plan_text(synth_plan) + "\n", args.force)
+    _write_text(out_dir / "README.md", _author_summary(packet, author_row, readiness_row, render_blockers, bank_candidates, synth_plan, packet_dir), args.force)
 
     manifest = {
         "brief_id": args.brief,
@@ -301,6 +330,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             "render_blockers_tsv": str(out_dir / "render-blockers.tsv"),
             "bank_candidates_json": str(out_dir / "bank-candidates.json"),
             "bank_candidates_tsv": str(out_dir / "bank-candidates.tsv"),
+            "synth_plan_json": str(out_dir / "synth-plan.json"),
+            "synth_plan_md": str(out_dir / "synth-plan.md"),
             "packet_manifest_json": str(packet_dir / "packet-manifest.json"),
         },
     }
