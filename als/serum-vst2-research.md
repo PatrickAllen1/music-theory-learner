@@ -225,6 +225,37 @@ surfaces:
 - `other`, which is still a mixed residue bucket rather than a trustworthy
   single Serum surface
 
+### Partial-gap audit
+
+```bash
+python3 als/report_serum_vst2_partial_gaps.py
+python3 als/report_serum_vst2_partial_gaps.py --module fx_delay
+python3 als/report_serum_vst2_partial_gaps.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json
+```
+
+This helper explains why a module is still `partial` instead of just listing
+the missing labels. Each missing label is classified as one of:
+
+- `real_missing_surface`: a genuine uncovered control still worth probing
+- `alias_collision`: a duplicate/alternate host label that normalizes onto a
+  label already targeted by the manifest
+- `catalog_residue`: a label that appears in the coverage report but does not
+  resolve back to a distinct host label in the current catalog
+
+Current practical read from that audit:
+
+- `fx_eq`, `fx_delay`, `fx_chorus`, `fx_flanger`, `fx_filter`,
+  `fx_hyper_dimension`, and `fx_distortion` are still partial because they each
+  have a real remaining parameter surface, not because of naming noise
+- `lfo` is still partial for the same reason: there is a large real
+  post-`LFO1Rate` control surface still untouched
+- `fx_compressor` is mostly an alias/collision problem, with one residual host
+  catalog quirk around the duplicated wet label
+- `envelope_curve` is mostly duplicate or residue noise in the current host
+  catalog, not a clean new family waiting for another probe
+- `other` remains a residue bucket and should not be treated like a coherent
+  Serum module
+
 ### Corpus slot profiler
 
 ```bash
