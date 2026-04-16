@@ -137,6 +137,19 @@ python3 als/report_serum_catalog_gaps.py
 python3 als/report_serum_catalog_gaps.py --format json
 ```
 
+Recommend actual S1 Garage preset files to capture next for those gaps:
+
+```bash
+python3 als/report_serum_preset_capture_candidates.py
+python3 als/report_serum_preset_capture_candidates.py --format json
+```
+
+Prepare a capture-session queue from that preset shortlist:
+
+```bash
+python3 als/prepare_serum_preset_capture_session.py --out-dir als/preset-capture-session
+```
+
 Prepare one consolidated priority render session across all briefs:
 
 ```bash
