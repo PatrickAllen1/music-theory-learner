@@ -24,6 +24,17 @@ DEFAULT_MANIFESTS = [
     Path("als/serum-vst2-phase4-probes.json"),
 ]
 
+MANIFEST_PACK_LABELS = {
+    "als/serum-vst2-manual-probes.json": "primary",
+    "als/serum-vst2-expansion-probes.json": "phase2",
+    "als/serum-vst2-phase3-probes.json": "phase3",
+    "als/serum-vst2-phase4-probes.json": "phase4",
+}
+
+
+def _pack_label(path: Path) -> str:
+    return MANIFEST_PACK_LABELS.get(str(path), path.stem)
+
 
 def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Render the deferred Serum VST2 manual bundle.")
@@ -49,21 +60,36 @@ def _basename(path: str) -> str:
 def load_bundle(manifest_paths: list[Path]) -> dict:
     checkpoints = []
     probes = []
-    for manifest_path in manifest_paths:
+    checkpoint_sequence = 0
+    probe_sequence = 0
+    for pack_order, manifest_path in enumerate(manifest_paths, 1):
         manifest = json.loads(manifest_path.read_text())
-        for checkpoint in manifest["checkpoints"]:
+        for checkpoint_order, checkpoint in enumerate(manifest["checkpoints"], 1):
+            checkpoint_sequence += 1
             checkpoints.append({
                 "manifest_path": str(manifest_path),
+                "pack_order": pack_order,
+                "pack_label": _pack_label(manifest_path),
+                "checkpoint_sequence": checkpoint_sequence,
+                "checkpoint_order": checkpoint_order,
                 "checkpoint_id": checkpoint["id"],
                 "checkpoint_title": checkpoint["title"],
                 "objective": checkpoint["objective"],
             })
-            for probe in checkpoint["probes"]:
+            for probe_order, probe in enumerate(checkpoint["probes"], 1):
+                probe_sequence += 1
+                probe_id = probe["id"]
                 probes.append({
                     "manifest_path": str(manifest_path),
+                    "pack_order": pack_order,
+                    "pack_label": _pack_label(manifest_path),
+                    "checkpoint_sequence": checkpoint_sequence,
+                    "checkpoint_order": checkpoint_order,
+                    "probe_sequence": probe_sequence,
+                    "probe_order": probe_order,
                     "checkpoint_id": checkpoint["id"],
                     "checkpoint_title": checkpoint["title"],
-                    "probe_id": probe["id"],
+                    "probe_id": probe_id,
                     "label": probe["label"],
                     "candidate_host_labels": probe.get("candidate_host_labels", []),
                     "candidate_slot_windows": probe.get("candidate_slot_windows", []),
@@ -72,6 +98,8 @@ def load_bundle(manifest_paths: list[Path]) -> dict:
                     "fallback_presets": probe.get("fallback_presets", []),
                     "fallback_preset_names": [_basename(item) for item in probe.get("fallback_presets", [])],
                     "notes": probe.get("notes", ""),
+                    "before_filename": f"{probe_id}.before.fxp",
+                    "after_filename": f"{probe_id}.after.fxp",
                 })
     return {
         "manifest_paths": [str(path) for path in manifest_paths],
@@ -90,6 +118,16 @@ def render_markdown(bundle: dict) -> str:
     lines.append(f"- checkpoints: {bundle['checkpoint_count']}")
     lines.append(f"- probes: {bundle['probe_count']}")
     lines.append("")
+    lines.append("## Capture Queue")
+    for probe in sorted(bundle["probes"], key=lambda item: item["probe_sequence"]):
+        lines.append(
+            f"{probe['probe_sequence']}. "
+            f"[{probe['checkpoint_id']}.{probe['probe_order']}] "
+            f"`{probe['probe_id']}` — {probe['label']} "
+            f"(preset: `{probe['recommended_preset_name']}`; "
+            f"files: `{probe['before_filename']}` / `{probe['after_filename']}`)"
+        )
+    lines.append("")
 
     checkpoints = {}
     for checkpoint in bundle["checkpoints"]:
@@ -102,10 +140,16 @@ def render_markdown(bundle: dict) -> str:
     for checkpoint_id in sorted(probes_by_checkpoint):
         checkpoint = checkpoints[checkpoint_id]
         lines.append(f"## {checkpoint_id} — {checkpoint['checkpoint_title']}")
+        lines.append(f"- queue: checkpoint {checkpoint['checkpoint_sequence']} of {bundle['checkpoint_count']} ({checkpoint['pack_label']} pack, position {checkpoint['checkpoint_order']})")
         lines.append(f"- objective: {checkpoint['objective']}")
         lines.append(f"- manifest: `{checkpoint['manifest_path']}`")
         for probe in probes_by_checkpoint[checkpoint_id]:
-            lines.append(f"- `{probe['probe_id']}` — {probe['label']}")
+            lines.append(
+                f"- step {probe['probe_sequence']} (`{probe['probe_id']}`) — {probe['label']}"
+            )
+            lines.append(
+                f"  files: `{probe['before_filename']}` then `{probe['after_filename']}`"
+            )
             if probe["candidate_host_labels"]:
                 lines.append(f"  labels: {', '.join(probe['candidate_host_labels'])}")
             if probe["candidate_slot_windows"]:
@@ -125,8 +169,14 @@ def render_tsv(bundle: dict) -> str:
         [
             "checkpoint_id",
             "checkpoint_title",
+            "pack_label",
+            "checkpoint_sequence",
+            "probe_sequence",
+            "probe_order",
             "probe_id",
             "label",
+            "before_filename",
+            "after_filename",
             "candidate_host_labels",
             "candidate_slot_windows",
             "recommended_preset",
@@ -139,8 +189,14 @@ def render_tsv(bundle: dict) -> str:
         rows.append([
             probe["checkpoint_id"],
             probe["checkpoint_title"],
+            probe["pack_label"],
+            str(probe["checkpoint_sequence"]),
+            str(probe["probe_sequence"]),
+            str(probe["probe_order"]),
             probe["probe_id"],
             probe["label"],
+            probe["before_filename"],
+            probe["after_filename"],
             " | ".join(probe["candidate_host_labels"]),
             " | ".join(probe["candidate_slot_windows"]),
             probe["recommended_preset"],

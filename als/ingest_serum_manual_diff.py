@@ -24,12 +24,20 @@ import re
 from collections import defaultdict
 from pathlib import Path
 
-from parse_serum import (
-    cluster_vst2_slot_rows,
-    diff_vst2_float_slots,
-    extract_serum_vst2_host_param_catalog,
-    parse_fxp_file,
-)
+try:
+    from parse_serum import (
+        cluster_vst2_slot_rows,
+        diff_vst2_float_slots,
+        extract_serum_vst2_host_param_catalog,
+        parse_fxp_file,
+    )
+except ModuleNotFoundError:
+    from .parse_serum import (
+        cluster_vst2_slot_rows,
+        diff_vst2_float_slots,
+        extract_serum_vst2_host_param_catalog,
+        parse_fxp_file,
+    )
 
 
 def parse_window(window: str) -> tuple[int, int]:
@@ -116,6 +124,135 @@ def overlap_with_expected(clusters: list[dict], windows: list[str]) -> list[dict
     return overlaps
 
 
+def _cluster_slot_count(cluster: dict) -> int:
+    rows = cluster.get("rows") or []
+    if rows:
+        return len(rows)
+    return cluster["end_index"] - cluster["start_index"] + 1
+
+
+def _classify_probe_result(result: dict) -> dict:
+    overlapping = [item for item in result["window_overlaps"] if item["matched_windows"]]
+    clusters = result["clusters"]
+    if not clusters:
+        status = "no_diff"
+        primary_cluster = None
+    elif len(overlapping) == 1 and len(clusters) == 1:
+        status = "confirmed"
+        primary_cluster = overlapping[0]["cluster"]
+    elif overlapping:
+        status = "expected_hit"
+        primary_cluster = overlapping[0]["cluster"]
+    elif len(clusters) == 1:
+        status = "unexpected_cluster"
+        primary_cluster = f"{clusters[0]['start_index']}-{clusters[0]['end_index']}"
+    else:
+        status = "ambiguous"
+        primary_cluster = f"{clusters[0]['start_index']}-{clusters[0]['end_index']}"
+    return {
+        "status": status,
+        "cluster_count": len(clusters),
+        "expected_hit_count": len(overlapping),
+        "primary_cluster": primary_cluster,
+        "matched_windows": sorted({window for item in overlapping for window in item["matched_windows"]}),
+    }
+
+
+def _build_consensus(results: list[dict]) -> dict:
+    cluster_rows = {}
+    window_rows = defaultdict(lambda: {
+        "window": "",
+        "probe_ids": [],
+        "labels": [],
+        "modules": [],
+        "statuses": [],
+    })
+    status_counts = defaultdict(int)
+    follow_up = []
+
+    for result in results:
+        outcome = result["outcome"]
+        status_counts[outcome["status"]] += 1
+        if outcome["status"] != "confirmed":
+            follow_up.append({
+                "probe_id": result["probe_id"],
+                "label": result["label"],
+                "checkpoint": result["checkpoint"],
+                "status": outcome["status"],
+                "primary_cluster": outcome["primary_cluster"],
+                "matched_windows": outcome["matched_windows"],
+                "matched_modules": result["matched_modules"],
+                "diff_count": result["diff_count"],
+            })
+
+        for cluster in result["clusters"]:
+            cluster_key = f"{cluster['start_index']}-{cluster['end_index']}"
+            row = cluster_rows.setdefault(cluster_key, {
+                "cluster": cluster_key,
+                "slot_count": _cluster_slot_count(cluster),
+                "probe_ids": [],
+                "labels": [],
+                "modules": [],
+                "statuses": [],
+                "matched_windows": [],
+            })
+            row["probe_ids"].append(result["probe_id"])
+            row["labels"].append(result["label"])
+            row["modules"].extend(result["matched_modules"])
+            row["statuses"].append(outcome["status"])
+
+        for overlap in result["window_overlaps"]:
+            for window in overlap["matched_windows"]:
+                row = window_rows[window]
+                row["window"] = window
+                row["probe_ids"].append(result["probe_id"])
+                row["labels"].append(result["label"])
+                row["modules"].extend(result["matched_modules"])
+                row["statuses"].append(outcome["status"])
+
+    def _dedupe(values: list[str]) -> list[str]:
+        return sorted(dict.fromkeys(values))
+
+    cluster_consensus = []
+    for cluster_key, row in sorted(cluster_rows.items()):
+        cluster_consensus.append({
+            "cluster": cluster_key,
+            "slot_count": row["slot_count"],
+            "probe_count": len(row["probe_ids"]),
+            "probe_ids": _dedupe(row["probe_ids"]),
+            "labels": _dedupe(row["labels"]),
+            "modules": _dedupe(row["modules"]),
+            "statuses": _dedupe(row["statuses"]),
+        })
+
+    window_consensus = []
+    for window, row in sorted(window_rows.items()):
+        window_consensus.append({
+            "window": window,
+            "probe_count": len(row["probe_ids"]),
+            "probe_ids": _dedupe(row["probe_ids"]),
+            "labels": _dedupe(row["labels"]),
+            "modules": _dedupe(row["modules"]),
+            "statuses": _dedupe(row["statuses"]),
+        })
+
+    priority = {
+        "no_diff": 0,
+        "unexpected_cluster": 1,
+        "ambiguous": 2,
+        "expected_hit": 3,
+        "confirmed": 4,
+    }
+    follow_up.sort(key=lambda item: (priority.get(item["status"], 99), item["checkpoint"], item["probe_id"]))
+
+    return {
+        "status_counts": dict(status_counts),
+        "cluster_consensus": cluster_consensus,
+        "window_consensus": window_consensus,
+        "follow_up_queue": follow_up,
+    }
+
+
 def summarise_probe_result(
     checkpoint: dict,
     probe: dict,
@@ -136,7 +273,7 @@ def summarise_probe_result(
     )
     clusters = cluster_vst2_slot_rows(changes, max_index_gap=0)
     matched_entries = _match_host_entries(probe.get("candidate_host_labels", []), label_index)
-    return {
+    result = {
         "checkpoint": checkpoint["id"],
         "checkpoint_title": checkpoint["title"],
         "manifest_path": str(source_manifest_path),
@@ -152,28 +289,20 @@ def summarise_probe_result(
         "matched_host_labels": [entry["label"] for entry in matched_entries],
         "matched_modules": sorted({entry["module"] for entry in matched_entries}),
     }
+    result["outcome"] = _classify_probe_result(result)
+    return result
 
 
-def main():
-    parser = argparse.ArgumentParser(description="Ingest deferred manual Serum VST2 .fxp diffs.")
-    parser.add_argument("--pairs-dir", required=True, help="Directory containing <probe_id>.before.fxp / <probe_id>.after.fxp pairs")
-    parser.add_argument(
-        "--manifest",
-        action="append",
-        default=[],
-        help="Probe manifest JSON path. Pass multiple times to ingest across primary + phase-2 probe packs.",
-    )
-    parser.add_argument("--probe", action="append", default=[], help="Restrict to one or more probe ids")
-    parser.add_argument("--slots", type=int, default=180, help="How many float slots to diff")
-    parser.add_argument("--threshold", type=float, default=0.01, help="Minimum delta threshold")
-    args = parser.parse_args()
-
+def build_ingest_report(
+    pairs_dir: Path,
+    manifest_paths: list[Path],
+    selected_probe_ids: list[str],
+    slots: int,
+    threshold: float,
+) -> dict:
     catalog = extract_serum_vst2_host_param_catalog()
     label_index = _build_label_index(catalog)
-    manifest_paths = [Path(path) for path in args.manifest] if args.manifest else [DEFAULT_MANIFEST]
     lookup = build_probe_lookup(manifest_paths)
-    pairs_dir = Path(args.pairs_dir)
-    selected_probe_ids = args.probe or sorted(lookup.keys())
 
     results = []
     missing = []
@@ -200,18 +329,51 @@ def main():
                 source_manifest_path,
                 before_path,
                 after_path,
-                slots=args.slots,
-                threshold=args.threshold,
+                slots=slots,
+                threshold=threshold,
                 label_index=label_index,
             )
         )
 
-    print(json.dumps({
+    return {
         "pairs_dir": str(pairs_dir),
         "manifest_paths": [str(path) for path in manifest_paths],
         "results": results,
         "missing": missing,
-    }, indent=2))
+        "consensus": _build_consensus(results),
+    }
+
+
+def main():
+    parser = argparse.ArgumentParser(description="Ingest deferred manual Serum VST2 .fxp diffs.")
+    parser.add_argument("--pairs-dir", required=True, help="Directory containing <probe_id>.before.fxp / <probe_id>.after.fxp pairs")
+    parser.add_argument(
+        "--manifest",
+        action="append",
+        default=[],
+        help="Probe manifest JSON path. Pass multiple times to ingest across primary + phase-2 probe packs.",
+    )
+    parser.add_argument("--probe", action="append", default=[], help="Restrict to one or more probe ids")
+    parser.add_argument("--slots", type=int, default=180, help="How many float slots to diff")
+    parser.add_argument("--threshold", type=float, default=0.01, help="Minimum delta threshold")
+    parser.add_argument("--out", help="Optional JSON path to persist the normalized ingest report")
+    args = parser.parse_args()
+    manifest_paths = [Path(path) for path in args.manifest] if args.manifest else [DEFAULT_MANIFEST]
+    pairs_dir = Path(args.pairs_dir)
+    lookup = build_probe_lookup(manifest_paths)
+    selected_probe_ids = args.probe or sorted(lookup.keys())
+
+    report = build_ingest_report(
+        pairs_dir=pairs_dir,
+        manifest_paths=manifest_paths,
+        selected_probe_ids=selected_probe_ids,
+        slots=args.slots,
+        threshold=args.threshold,
+    )
+    payload = json.dumps(report, indent=2)
+    if args.out:
+        Path(args.out).write_text(payload + "\n")
+    print(payload)
 
 
 if __name__ == "__main__":

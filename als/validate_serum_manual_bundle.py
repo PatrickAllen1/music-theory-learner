@@ -9,16 +9,22 @@ Checks:
 - every preset path referenced by the manifests exists
 - the merged probe coverage report is fully covered
 - the bundle renderer can load the manifests
+- optional: a pairs directory contains every expected <probe_id>.before/.after file
 """
 
 from __future__ import annotations
 
 import json
 import sys
+from argparse import ArgumentParser
 from pathlib import Path
 
-from render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
-from report_serum_vst2_probe_coverage import build_probe_coverage_report
+try:
+    from render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
+    from report_serum_vst2_probe_coverage import build_probe_coverage_report
+except ModuleNotFoundError:
+    from .render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
+    from .report_serum_vst2_probe_coverage import build_probe_coverage_report
 
 
 def _collect_missing_preset_paths(manifest_paths: list[Path]) -> list[dict]:
@@ -46,7 +52,67 @@ def _collect_missing_preset_paths(manifest_paths: list[Path]) -> list[dict]:
     return missing
 
 
+def _collect_pairs_status(bundle: dict, pairs_dir: Path) -> dict:
+    expected = {}
+    by_checkpoint = {}
+    for probe in bundle["probes"]:
+        before_path = pairs_dir / probe["before_filename"]
+        after_path = pairs_dir / probe["after_filename"]
+        pair = {
+            "probe_id": probe["probe_id"],
+            "checkpoint_id": probe["checkpoint_id"],
+            "label": probe["label"],
+            "before_filename": probe["before_filename"],
+            "after_filename": probe["after_filename"],
+            "before_exists": before_path.exists(),
+            "after_exists": after_path.exists(),
+        }
+        pair["complete"] = pair["before_exists"] and pair["after_exists"]
+        expected[pair["before_filename"]] = pair["probe_id"]
+        expected[pair["after_filename"]] = pair["probe_id"]
+        by_checkpoint.setdefault(probe["checkpoint_id"], []).append(pair)
+
+    stray_files = []
+    if pairs_dir.exists():
+        for path in sorted(pairs_dir.iterdir()):
+            if not path.is_file():
+                continue
+            if path.name not in expected:
+                stray_files.append(path.name)
+
+    checkpoint_summary = {}
+    missing_pairs = []
+    complete_probe_count = 0
+    for checkpoint_id, pairs in by_checkpoint.items():
+        complete = sum(1 for pair in pairs if pair["complete"])
+        complete_probe_count += complete
+        missing = [pair for pair in pairs if not pair["complete"]]
+        missing_pairs.extend(missing)
+        checkpoint_summary[checkpoint_id] = {
+            "complete_probe_count": complete,
+            "probe_count": len(pairs),
+            "missing_pairs": missing,
+        }
+
+    return {
+        "pairs_dir": str(pairs_dir),
+        "probe_count": len(bundle["probes"]),
+        "complete_probe_count": complete_probe_count,
+        "missing_probe_count": len(bundle["probes"]) - complete_probe_count,
+        "checkpoint_summary": checkpoint_summary,
+        "missing_pairs": missing_pairs,
+        "stray_files": stray_files,
+    }
+
+
 def main() -> None:
+    parser = ArgumentParser(description="Validate the Serum VST2 manual bundle and optional pairs directory.")
+    parser.add_argument(
+        "--pairs-dir",
+        help="Optional directory expected to contain <probe_id>.before.fxp / <probe_id>.after.fxp pairs.",
+    )
+    args = parser.parse_args()
+
     manifest_paths = list(DEFAULT_MANIFESTS)
 
     try:
@@ -55,6 +121,7 @@ def main() -> None:
         bundle = load_bundle(manifest_paths)
         coverage = build_probe_coverage_report(manifest_paths)
         missing_preset_paths = _collect_missing_preset_paths(manifest_paths)
+        pairs_status = _collect_pairs_status(bundle, Path(args.pairs_dir)) if args.pairs_dir else None
     except Exception as exc:
         print(json.dumps({"ok": False, "error": str(exc)}), file=sys.stderr)
         sys.exit(1)
@@ -66,13 +133,15 @@ def main() -> None:
     }
 
     result = {
-        "ok": not missing_preset_paths and not partial_or_none,
+        "ok": not missing_preset_paths and not partial_or_none and not (pairs_status and pairs_status["missing_probe_count"]),
         "manifest_count": len(manifest_paths),
         "probe_count": bundle["probe_count"],
         "coverage_status_counts": coverage["status_counts"],
         "missing_preset_paths": missing_preset_paths,
         "non_full_modules": partial_or_none,
     }
+    if pairs_status:
+        result["pairs_status"] = pairs_status
     print(json.dumps(result, indent=2))
     if not result["ok"]:
         sys.exit(1)

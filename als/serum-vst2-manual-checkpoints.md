@@ -7,6 +7,12 @@ Deferred manual checkpoint pack for the current Serum VST2 mapping pass. This is
 - `als/serum-vst2-phase3-probes.json` for checkpoint G
 - `als/serum-vst2-phase4-probes.json` for checkpoint H
 
+Session prep helper:
+
+```bash
+python3 als/prepare_serum_manual_session.py --out-dir /tmp/serum-manual-session
+```
+
 Common diff command after saving the two `.fxp` variants:
 
 ```bash
@@ -20,6 +26,18 @@ python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --manifest als/serum-vst2-phase4-probes.json
+```
+
+One-shot post-diff wrapper:
+
+```bash
+python3 als/run_serum_vst2_postdiff.py --pairs-dir /path/to/serum-probe-pairs --out-dir /tmp/serum-postdiff
+```
+
+Preflight a capture folder before ingest:
+
+```bash
+python3 als/validate_serum_manual_bundle.py --pairs-dir /path/to/serum-probe-pairs
 ```
 
 ## Checkpoint A
