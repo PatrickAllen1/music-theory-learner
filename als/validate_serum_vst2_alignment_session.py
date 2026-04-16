@@ -61,6 +61,7 @@ def main() -> None:
         "missing_files": missing,
         "implementation_target_count": len(actions.get("implementation_targets", [])),
         "action_count": len(actions.get("actions", [])),
+        "targets_dir_exists": (alignment_dir / "targets").exists(),
     }
     if state_path:
         result["alignment_state_path"] = str(state_path)

@@ -69,6 +69,7 @@ python3 als/prepare_serum_vst2_alignment_session.py --postdiff-dir /tmp/serum-po
 ```
 
 The alignment workpack now includes `alignment_actions.tsv` and `alignment_actions.json` for prioritized parser edit targets.
+It also includes a `targets/` folder with one TSV and JSON file per implementation target when actions exist.
 
 Validate and refresh alignment state:
 

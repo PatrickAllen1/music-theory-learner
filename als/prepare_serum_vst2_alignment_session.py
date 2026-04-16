@@ -144,6 +144,35 @@ def _render_alignment_actions_tsv(actions: dict) -> str:
     return "\n".join("\t".join(cell.replace("\t", " ").replace("\n", " ") for cell in row) for row in rows) + "\n"
 
 
+def _slugify_target(path: str) -> str:
+    return path.replace("/", "__").replace(".", "_")
+
+
+def _render_target_actions_tsv(actions: list[dict]) -> str:
+    rows = [[
+        "module",
+        "priority_score",
+        "manual_section",
+        "evidenced_uncovered_count",
+        "dark_uncovered_count",
+        "probe_ids",
+        "clusters",
+        "windows",
+    ]]
+    for item in actions:
+        rows.append([
+            item["module"],
+            str(item["priority_score"]),
+            item["manual_section"],
+            str(item["evidenced_uncovered_count"]),
+            str(item["dark_uncovered_count"]),
+            " | ".join(item["probe_ids"]),
+            " | ".join(item["clusters"]),
+            " | ".join(item["windows"]),
+        ])
+    return "\n".join("\t".join(cell.replace("\t", " ").replace("\n", " ") for cell in row) for row in rows) + "\n"
+
+
 def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
@@ -175,6 +204,21 @@ def main() -> None:
     _write(out_dir / "alignment_actions.json", json.dumps(actions, indent=2) + "\n", args.force)
     _write(out_dir / "alignment_state.json", json.dumps(build_alignment_progress(out_dir), indent=2) + "\n", args.force)
 
+    target_dir = out_dir / "targets"
+    target_dir.mkdir(parents=True, exist_ok=True)
+    for item in actions.get("implementation_targets", []):
+        target = item["implementation_target"]
+        target_actions = [row for row in actions.get("actions", []) if row["implementation_target"] == target]
+        slug = _slugify_target(target)
+        _write(target_dir / f"{slug}.json", json.dumps({
+            "implementation_target": target,
+            "module_count": item["module_count"],
+            "modules": item["modules"],
+            "probe_ids": item["probe_ids"],
+            "actions": target_actions,
+        }, indent=2) + "\n", args.force)
+        _write(target_dir / f"{slug}.tsv", _render_target_actions_tsv(target_actions), args.force)
+
     print(json.dumps({
         "ok": True,
         "postdiff_dir": str(postdiff_dir),
@@ -188,6 +232,7 @@ def main() -> None:
             "gaps.json",
             "alignment_actions.json",
             "alignment_state.json",
+            "targets/",
         ],
         "ready_module_count": coverage.get("ready_module_count", 0),
         "still_dark_module_count": coverage.get("still_dark_module_count", 0),
