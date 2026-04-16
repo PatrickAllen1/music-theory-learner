@@ -160,6 +160,22 @@ That means the next controlled-diff passes should probably focus on:
 
 instead of trying to decode the entire unknown space in one shot
 
+### Slot range summary helper
+
+```bash
+python3 als/summarize_serum_vst2_slot_range.py --start 88 --end 96
+python3 als/summarize_serum_vst2_slot_range.py --start 154 --end 163 --top 5
+python3 als/summarize_serum_vst2_slot_range.py --start 121 --end 130 --json
+```
+
+This is the fastest way to inspect one slot corridor with the current
+evidence. It combines:
+
+- per-slot kind / spread / prevalence from the corpus
+- current candidate module and family signatures
+- known hot-zone hints from the latest reverse-engineering passes
+- FX-enable anchor hints when the range overlaps `154-163`
+
 ## What we can parse confidently now
 
 From the existing VST2 map plus standalone `.fxp` extraction:
@@ -490,6 +506,26 @@ The practical consequence is:
   family and one FX from the `88-96` family
 - those two saves should tell us much more than toggling modules that keep
   collapsing into the same broad candidate window
+
+## Additional corridor findings
+
+Two previously fuzzy non-FX corridors now have better working interpretations:
+
+- `40-43` behaves like a pure 4-toggle block and is currently the best
+  `voicing_toggles` candidate in the corpus
+- `44` does not belong to that toggle family and is more likely a neighboring
+  continuous control
+- `166-175` behaves like a non-FX global/voicing tail rather than matrix state
+- inside that tail, `172-173` currently looks like a smaller pitch-or-misc
+  subpair
+
+These are still evidence-based hypotheses, but they are strong enough to change
+how the next controlled-save diffs should be targeted:
+
+- use `Note Latch` as the first clean probe for `40-43`
+- use `Polyphony Count` as the first clean probe for `166-175`
+- if `172-173` is the next target after that, test `Bend Range Up` or
+  `Bend Range Down`
 
 ## Good immediate targets
 
