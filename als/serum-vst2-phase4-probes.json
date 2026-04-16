@@ -160,7 +160,7 @@
           "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Face Melter.fxp",
           "fallback_presets": [
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp",
-            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Sidewinda.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Bass- Sidewinda.fxp",
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - If Bass could kill.fxp"
           ],
           "notes": "This extends the earlier distortion probe beyond drive/mode/on to wet, output level, bands, freq, bandwidth, and pre/post."

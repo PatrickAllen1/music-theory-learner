@@ -321,6 +321,8 @@ python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs -
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --manifest als/serum-vst2-phase4-probes.json
+python3 als/render_serum_manual_bundle.py
+python3 als/render_serum_manual_bundle.py --format tsv > /tmp/serum-manual-bundle.tsv
 ```
 
 The autonomous batch now has a deferred-manual layer:
@@ -337,6 +339,9 @@ The autonomous batch now has a deferred-manual layer:
 - [`als/serum-vst2-phase4-probes.json`](./serum-vst2-phase4-probes.json) is
   the phase-4 cleanup pack for the remaining broad FX and canonical LFO
   surfaces after A-G
+- [`als/render_serum_manual_bundle.py`](./render_serum_manual_bundle.py)
+  renders the full A-H probe set into one ordered Markdown, JSON, or TSV
+  checklist for the final manual Serum session
 - [`als/ingest_serum_manual_diff.py`](./ingest_serum_manual_diff.py) ingests
   final `.before.fxp` / `.after.fxp` pairs using the `<probe_id>.before.fxp`
   and `<probe_id>.after.fxp` naming convention, now supports multiple

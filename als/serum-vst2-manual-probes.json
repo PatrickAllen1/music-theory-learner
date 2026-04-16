@@ -31,7 +31,7 @@
           "candidate_host_labels": ["Polyphony Count"],
           "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Stab - digi.fxp",
           "fallback_presets": [
-            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - Dusty Heever.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese -  Dusty Heever.fxp",
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad -  Alicee.fxp",
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead - If U Ever.fxp",
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Face Melter.fxp"
@@ -197,7 +197,7 @@
           "fallback_presets": [
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass - 100%.fxp",
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad - Yoboy.fxp",
-            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Sidewinda.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Bass- Sidewinda.fxp",
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp"
           ],
           "notes": "Lead- Saturn has a single named macro on a sparse lead, so macro depth movement should be easier to isolate."
@@ -387,7 +387,7 @@
           "fallback_presets": [
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Duality.fxp",
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - If Bass could kill.fxp",
-            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Optic Sine.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Bass- Optic Sine.fxp",
             "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp"
           ],
           "notes": "Wide reese patches show the strongest combination of LFO activity and restrained envelope shape for a matrix-curve probe."
