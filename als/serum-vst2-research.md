@@ -141,6 +141,15 @@ Current matrix-specific read after adding candidate-window summaries:
 - `matrix_curve` still has no convincing candidate window after those
   exclusions, which reinforces the need for an eventual manual curve diff
 
+Bank-split read from the corpus profiler:
+
+- `garage` keeps two broad unknown corridors alive: `34-66` and `71-163`
+- `speed_garage` fractures the early band into smaller regions such as
+  `35-48`, `51-65`, and `71-102`
+- that instability is another sign that the remaining matrix surfaces should
+  not be overfit to one single inferred island before the deferred manual
+  save-diffs land
+
 ### Corpus slot profiler
 
 ```bash
