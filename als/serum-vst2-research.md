@@ -30,6 +30,9 @@ capture pass:
 - `promote_serum_vst2_mapping.py` and the updated post-diff wrapper now emit a
   smaller `mapping.json` artifact so accepted manual-diff results can feed the
   next parser-alignment phase without reparsing the full ingest report.
+- `report_serum_vst2_postdiff_gaps.py` and the updated wrapper now emit
+  `gaps.json`, which turns a completed manual batch into a checkpoint-by-
+  checkpoint unresolved queue for the next reverse-engineering pass.
 - `validate_serum_manual_bundle.py --pairs-dir ...` now doubles as a preflight
   checker for missing `<probe_id>.before/.after` files, grouped by checkpoint.
 - `run_serum_vst2_postdiff.py` turns a completed pair folder into a persistent

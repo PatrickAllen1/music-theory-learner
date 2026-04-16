@@ -18,11 +18,13 @@ from pathlib import Path
 try:
     from ingest_serum_manual_diff import build_ingest_report
     from promote_serum_vst2_mapping import build_mapping
-    from render_serum_manual_bundle import DEFAULT_MANIFESTS
+    from report_serum_vst2_postdiff_gaps import build_gap_report
+    from render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
 except ModuleNotFoundError:
     from .ingest_serum_manual_diff import build_ingest_report
     from .promote_serum_vst2_mapping import build_mapping
-    from .render_serum_manual_bundle import DEFAULT_MANIFESTS
+    from .report_serum_vst2_postdiff_gaps import build_gap_report
+    from .render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
 
 
 def make_parser() -> argparse.ArgumentParser:
@@ -95,6 +97,16 @@ def render_summary(report: dict) -> str:
             lines.append(f"- `{item['probe_id']}` — {item['reason']}")
         lines.append("")
 
+    gaps = report.get("gaps")
+    if gaps:
+        lines.append("## Checkpoint Status")
+        for checkpoint_id, row in gaps["checkpoint_status"].items():
+            lines.append(
+                f"- `{checkpoint_id}` — {row['status']} "
+                f"(promoted: {row['promoted_count']}, follow-up: {row['follow_up_count']}, missing: {row['missing_count']})"
+            )
+        lines.append("")
+
     return "\n".join(lines)
 
 
@@ -119,14 +131,19 @@ def main() -> None:
         slots=args.slots,
         threshold=args.threshold,
     )
+    mapping = build_mapping(report, set(args.accept_status))
+    bundle = load_bundle(manifest_paths)
+    report["gaps"] = build_gap_report(mapping, bundle)
 
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     ingest_path = out_dir / "ingest.json"
     mapping_path = out_dir / "mapping.json"
+    gaps_path = out_dir / "gaps.json"
     summary_path = out_dir / "summary.md"
     ingest_path.write_text(json.dumps(report, indent=2) + "\n")
-    mapping_path.write_text(json.dumps(build_mapping(report, set(args.accept_status)), indent=2) + "\n")
+    mapping_path.write_text(json.dumps(mapping, indent=2) + "\n")
+    gaps_path.write_text(json.dumps(report["gaps"], indent=2) + "\n")
     summary_path.write_text(render_summary(report))
 
     print(json.dumps({
@@ -134,6 +151,7 @@ def main() -> None:
         "out_dir": str(out_dir),
         "ingest_path": str(ingest_path),
         "mapping_path": str(mapping_path),
+        "gaps_path": str(gaps_path),
         "summary_path": str(summary_path),
         "result_count": len(report["results"]),
         "missing_count": len(report["missing"]),

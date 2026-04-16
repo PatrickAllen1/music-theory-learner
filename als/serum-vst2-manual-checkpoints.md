@@ -46,6 +46,7 @@ The wrapper now writes:
 
 - `ingest.json` with raw per-probe diff summaries plus consensus/follow-up queues
 - `mapping.json` with promoted mappings for accepted statuses (`confirmed` and `expected_hit` by default)
+- `gaps.json` with unresolved checkpoint/probe status after promotion
 - `summary.md` with the readable post-diff queue
 
 Preflight a capture folder before ingest:
