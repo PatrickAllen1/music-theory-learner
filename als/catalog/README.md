@@ -24,6 +24,14 @@ python3 als/build_serum_profile.py \
   --index-out als/catalog/index.json
 ```
 
+Search the generated profile catalog:
+
+```bash
+python3 als/search_serum_profiles.py --role bass
+python3 als/search_serum_profiles.py --role lead --tone bright
+python3 als/search_serum_profiles.py --dest-module VoiceFilter
+```
+
 The canonical schema for each profile is:
 
 - [../schemas/serum-preset-profile.schema.json](../schemas/serum-preset-profile.schema.json)

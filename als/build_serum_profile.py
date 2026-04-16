@@ -222,12 +222,28 @@ def build_catalog(analysis_paths: list[Path]) -> dict:
     analyses = []
     total_profiles = 0
     role_counts: dict[str, int] = {}
+    tone_counts: dict[str, int] = {}
+    mix_counts: dict[str, int] = {}
+    profile_summaries = []
     for analysis_path in analysis_paths:
         profiles = build_profiles(analysis_path)
         total_profiles += len(profiles)
         for profile in profiles:
             for role in profile["classification"]["role_candidates"]:
                 role_counts[role] = role_counts.get(role, 0) + 1
+            for tone in profile["classification"]["tone_tags"]:
+                tone_counts[tone] = tone_counts.get(tone, 0) + 1
+            for mix in profile["classification"]["mix_tags"]:
+                mix_counts[mix] = mix_counts.get(mix, 0) + 1
+            profile_summaries.append({
+                "profile_id": profile["profile_id"],
+                "analysis_slug": profile["source"]["analysis_slug"],
+                "track": profile["source"]["track"],
+                "role_candidates": profile["classification"]["role_candidates"],
+                "tone_tags": profile["classification"]["tone_tags"],
+                "mix_tags": profile["classification"]["mix_tags"],
+                "wavetable_refs": profile["summary"]["wavetable_refs"],
+            })
         analyses.append({
             "analysis_path": str(analysis_path),
             "analysis_stem": analysis_path.stem,
@@ -240,6 +256,9 @@ def build_catalog(analysis_paths: list[Path]) -> dict:
         "analysis_count": len(analysis_paths),
         "profile_count": total_profiles,
         "role_counts": dict(sorted(role_counts.items())),
+        "tone_counts": dict(sorted(tone_counts.items())),
+        "mix_counts": dict(sorted(mix_counts.items())),
+        "profiles": profile_summaries,
         "analyses": analyses,
     }
 

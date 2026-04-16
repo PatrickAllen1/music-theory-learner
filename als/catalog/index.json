@@ -12,6 +12,797 @@
     "sub": 1,
     "unknown": 11
   },
+  "tone_counts": {
+    "bright": 4,
+    "dark": 8,
+    "gritty": 5,
+    "modulated": 10,
+    "unknown": 25,
+    "wide": 9
+  },
+  "mix_counts": {
+    "background": 10,
+    "low_end_anchor": 15,
+    "mid_focus": 9,
+    "side_heavy": 9,
+    "unknown": 6
+  },
+  "profiles": [
+    {
+      "profile_id": "bl3ss-camrinwatsin-kisses:organ-bass:i1",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Organ Bass",
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Analog/Mellow But Instable.wav",
+        "Analog/OrganNoise.wav"
+      ]
+    },
+    {
+      "profile_id": "bl3ss-camrinwatsin-kisses:fm-bass:i2",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "FM Bass",
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Analog/OrganNoise.wav"
+      ]
+    },
+    {
+      "profile_id": "bl3ss-camrinwatsin-kisses:pluck-1:i3",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Pluck 1",
+      "role_candidates": [
+        "pluck"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "bl3ss-camrinwatsin-kisses:saws-1:i4",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Saws 1",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "unknown"
+      ],
+      "wavetable_refs": [
+        "Analog/ARP white.wav",
+        "Analog/Basic Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "bl3ss-camrinwatsin-kisses:saws-2:i5",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Saws 2",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "unknown"
+      ],
+      "wavetable_refs": [
+        "Analog/ARP white.wav"
+      ]
+    },
+    {
+      "profile_id": "bl3ss-camrinwatsin-kisses:lead:i6",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Lead",
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "wavetable_refs": [
+        "Analog/ARP white.wav"
+      ]
+    },
+    {
+      "profile_id": "bl3ss-camrinwatsin-kisses:pad-1:i7",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Pad 1",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "bl3ss-camrinwatsin-kisses:pad-2:i8",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Pad 2",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "bl3ss-camrinwatsin-kisses:pad-3:i9",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Pad 3",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "interplanetary-criminal-slow-burner:bass:i1",
+      "analysis_slug": "interplanetary-criminal-slow-burner",
+      "track": "Bass",
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "dark",
+        "gritty",
+        "modulated",
+        "wide"
+      ],
+      "mix_tags": [
+        "low_end_anchor",
+        "side_heavy"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "interplanetary-criminal-slow-burner:break-bass:i2",
+      "analysis_slug": "interplanetary-criminal-slow-burner",
+      "track": "Break Bass",
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "dark",
+        "modulated"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "wavetable_refs": [
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "interplanetary-criminal-slow-burner:90s-piano:i3",
+      "analysis_slug": "interplanetary-criminal-slow-burner",
+      "track": "90s Piano",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "dark",
+        "modulated",
+        "wide"
+      ],
+      "mix_tags": [
+        "side_heavy"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Analog/SawRounded.wav",
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "interplanetary-criminal-slow-burner:organ:i4",
+      "analysis_slug": "interplanetary-criminal-slow-burner",
+      "track": "Organ",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "dark",
+        "modulated"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "interplanetary-criminal-slow-burner:laser-fx:i5",
+      "analysis_slug": "interplanetary-criminal-slow-burner",
+      "track": "Laser Fx",
+      "role_candidates": [
+        "fx"
+      ],
+      "tone_tags": [
+        "dark",
+        "gritty",
+        "modulated",
+        "wide"
+      ],
+      "mix_tags": [
+        "side_heavy"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic_McB.wav",
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:bass:i1",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "bass",
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:mid-bass:i2",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "mid bass",
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:sub:i3",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "sub",
+      "role_candidates": [
+        "sub"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:rave-lead:i4",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "rave lead",
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:rave-lead-2:i5",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "rave lead 2",
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:saw:i6",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "saw",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "unknown"
+      ],
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:pad:i7",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "pad",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "wavetable_refs": []
+    },
+    {
+      "profile_id": "kettama-it-gets-better:pluck:i8",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "pluck",
+      "role_candidates": [
+        "pluck"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:main-pad:i9",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "main pad",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "wavetable_refs": [
+        "Analog/SawRounded.wav",
+        "Organics/H-Breath.wav",
+        "Vowel/OOH_YAH_OO.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:drop-pad:i10",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "drop pad",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "wavetable_refs": [
+        "Analog/Acid.wav",
+        "Analog/Basic Mini.wav",
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:lead:i11",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "lead",
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "wavetable_refs": [
+        "Analog/BS2 - Filthy.wav",
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:lead-2:i12",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "lead 2",
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Analog/PWM C64.wav",
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:chord:i13",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "chord",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "wavetable_refs": [
+        "Attacks_Kick/XF_KikAtk_55.wav",
+        "Vowel/ML Addifunk.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:main-chord:i14",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "main chord",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "kettama-it-gets-better:main-chord-2:i15",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "main chord 2",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ]
+    },
+    {
+      "profile_id": "mph-raw:bass:i1",
+      "analysis_slug": "mph-raw",
+      "track": "Bass",
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "dark",
+        "gritty",
+        "modulated"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "wavetable_refs": [
+        "Analog/Analog_BD_Sin.wav",
+        "Analog/Basic Shapes.wav",
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "mph-raw:pluck-bass:i2",
+      "analysis_slug": "mph-raw",
+      "track": "Pluck Bass",
+      "role_candidates": [
+        "bass",
+        "pluck"
+      ],
+      "tone_tags": [
+        "dark",
+        "gritty"
+      ],
+      "mix_tags": [
+        "low_end_anchor",
+        "mid_focus"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "mph-raw:lead:i3",
+      "analysis_slug": "mph-raw",
+      "track": "Lead",
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "dark",
+        "modulated"
+      ],
+      "mix_tags": [
+        "low_end_anchor",
+        "mid_focus"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Analog/Basic_Cjw.wav"
+      ]
+    },
+    {
+      "profile_id": "mph-raw:reese-basic:i4",
+      "analysis_slug": "mph-raw",
+      "track": "Reese Basic",
+      "role_candidates": [
+        "reese"
+      ],
+      "tone_tags": [
+        "wide"
+      ],
+      "mix_tags": [
+        "low_end_anchor",
+        "side_heavy"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "mph-raw:reese:i5",
+      "analysis_slug": "mph-raw",
+      "track": "Reese",
+      "role_candidates": [
+        "reese"
+      ],
+      "tone_tags": [
+        "gritty",
+        "wide"
+      ],
+      "mix_tags": [
+        "low_end_anchor",
+        "side_heavy"
+      ],
+      "wavetable_refs": [
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "mph-raw:drone-synth:i6",
+      "analysis_slug": "mph-raw",
+      "track": "Drone Synth",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "bright",
+        "wide"
+      ],
+      "mix_tags": [
+        "side_heavy"
+      ],
+      "wavetable_refs": [
+        "Analog/BS2 - Subby Saw.wav",
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "mph-raw:riser-basic:i7",
+      "analysis_slug": "mph-raw",
+      "track": "Riser Basic",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "wide"
+      ],
+      "mix_tags": [
+        "side_heavy"
+      ],
+      "wavetable_refs": [
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "sammy-virji-cops-and-robbers:bass:i1",
+      "analysis_slug": "sammy-virji-cops-and-robbers",
+      "track": "Bass",
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "sammy-virji-cops-and-robbers:strings-1:i2",
+      "analysis_slug": "sammy-virji-cops-and-robbers",
+      "track": "Strings 1",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "bright",
+        "modulated"
+      ],
+      "mix_tags": [
+        "unknown"
+      ],
+      "wavetable_refs": [
+        "S2 Tables/Default Shapes.wav",
+        "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR1.wav",
+        "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR2.wav"
+      ]
+    },
+    {
+      "profile_id": "sammy-virji-cops-and-robbers:strings-2:i3",
+      "analysis_slug": "sammy-virji-cops-and-robbers",
+      "track": "Strings 2",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "bright",
+        "modulated"
+      ],
+      "mix_tags": [
+        "unknown"
+      ],
+      "wavetable_refs": [
+        "S2 Tables/Default Shapes.wav",
+        "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR1.wav",
+        "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR2.wav"
+      ]
+    },
+    {
+      "profile_id": "sammy-virji-cops-and-robbers:strings-3:i4",
+      "analysis_slug": "sammy-virji-cops-and-robbers",
+      "track": "Strings 3",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "bright",
+        "modulated"
+      ],
+      "mix_tags": [
+        "unknown"
+      ],
+      "wavetable_refs": [
+        "S2 Tables/Default Shapes.wav",
+        "SYMPHONY2/STRINGS/Cello Long/Cello Long Hi RR2.wav",
+        "SYMPHONY2/STRINGS/Cello Long/Cello Long Mid RR1.wav"
+      ]
+    },
+    {
+      "profile_id": "sammy-virji-cops-and-robbers:saw:i5",
+      "analysis_slug": "sammy-virji-cops-and-robbers",
+      "track": "Saw",
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "wide"
+      ],
+      "mix_tags": [
+        "side_heavy"
+      ],
+      "wavetable_refs": [
+        "S2 Tables/Default Shapes.wav"
+      ]
+    },
+    {
+      "profile_id": "sammy-virji-cops-and-robbers:chord:i6",
+      "analysis_slug": "sammy-virji-cops-and-robbers",
+      "track": "Chord",
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "wide"
+      ],
+      "mix_tags": [
+        "background",
+        "low_end_anchor",
+        "side_heavy"
+      ],
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "S2 Tables/Default Shapes.wav"
+      ]
+    }
+  ],
   "analyses": [
     {
       "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
