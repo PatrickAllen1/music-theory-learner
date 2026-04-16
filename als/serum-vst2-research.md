@@ -410,6 +410,77 @@ That gives us a better next proof path:
 3. check whether the changed slot falls inside `154-163`
 4. repeat for a second FX module to test ordering inside the family
 
+## Exclusion-aware FX correlation pass
+
+The first FX-enable correlation pass produced strong-looking hits around
+`137-145`, but that region overlaps the current best `global_portamento`
+candidates:
+
+- `140-143`
+- `149-152`
+- `150-153`
+
+That means early FX correlations into `137-145` are likely contaminated by a
+non-FX region.
+
+The ranking/correlation tools now support explicit exclusion ranges, which is
+useful for stripping known or likely non-target regions out of the candidate
+pool before comparing FX modules.
+
+Example:
+
+```bash
+python3 als/rank_serum_vst2_module_candidates.py --module fx_eq \
+  --exclude-range 40-44 \
+  --exclude-range 137-145 \
+  --exclude-range 154-163
+
+python3 als/correlate_serum_vst2_fx_enables.py \
+  --module-exclude-range 40-44 \
+  --module-exclude-range 137-145 \
+  --module-exclude-range 154-163
+```
+
+The current working interpretation of those excluded ranges is:
+
+- `40-44`: likely oscillator/filter/global boolean region, not a safe FX target
+- `137-145`: likely polluted by `global_portamento`
+- `154-163`: the high-confidence FX enable family itself, so it should not also
+  be treated as an FX parameter window
+
+Once those ranges are excluded, the strongest FX parameter families shift:
+
+- `fx_distortion` / `fx_filter`: `88-95`
+- `fx_eq`: `88-96`
+- `fx_compressor`: `88-93`
+- `fx_delay`: `121-132`
+- `fx_flanger` / `fx_chorus`: `123-129`
+- `fx_phaser` / `fx_hyper_dimension`: `123-130`
+
+That does not prove exact assignments, but it is a better search space than the
+earlier broad `137-145` guess.
+
+The strongest exclusion-aware correlations inside the `154-163` FX-enable block
+now look like this:
+
+- slot `158` strongly aligns with the `121-130` family
+  - `fx_flanger` / `fx_chorus` window `123-129`: `delta 0.141798`, `pearson 0.704613`
+  - `fx_phaser` / `fx_hyper_dimension` window `123-130`: `delta 0.129998`, `pearson 0.674650`
+  - `fx_delay` window `121-132`: `delta 0.124852`, `pearson 0.705655`
+- slot `161` strongly aligns with the `88-96` family
+  - `fx_distortion` / `fx_filter` window `88-95`: `delta 0.165771`, `pearson 0.660423`
+  - `fx_eq` window `88-96`: `delta 0.155637`, `pearson 0.679637`
+  - `fx_compressor` window `88-93`: `delta 0.084283`, `pearson 0.537714`
+- slot `155` weakly favors `fx_delay`, but the signal is much weaker than
+  slots `158` and `161`
+
+The practical consequence is:
+
+- the next controlled-save diff should prioritize one FX from the `121-130`
+  family and one FX from the `88-96` family
+- those two saves should tell us much more than toggling modules that keep
+  collapsing into the same broad candidate window
+
 ## Good immediate targets
 
 - `Lead- Just` vs `Lead- Saturn`

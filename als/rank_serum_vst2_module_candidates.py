@@ -12,6 +12,7 @@ Examples:
     python3 als/rank_serum_vst2_module_candidates.py --module fx_filter --top 20
     python3 als/rank_serum_vst2_module_candidates.py --module global_portamento --window-size 4
     python3 als/rank_serum_vst2_module_candidates.py --family fx_enable_toggles
+    python3 als/rank_serum_vst2_module_candidates.py --family voicing_toggles --exclude-range 154-163
 """
 
 import argparse
@@ -83,6 +84,12 @@ def make_parser() -> argparse.ArgumentParser:
         default=0,
         help="Override the default window size derived from the target module entry count",
     )
+    parser.add_argument(
+        "--exclude-range",
+        action="append",
+        default=[],
+        help="Exclude candidate windows overlapping an index range like 154-163. May be passed multiple times.",
+    )
     return parser
 
 
@@ -146,6 +153,29 @@ def _iter_contiguous_windows(rows: list[dict], window_size: int) -> list[list[di
             continue
         windows.append(window)
     return windows
+
+
+def _parse_exclude_ranges(ranges: list[str]) -> list[tuple[int, int]]:
+    parsed = []
+    for item in ranges:
+        left, right = item.split("-", 1)
+        start = int(left)
+        end = int(right)
+        if start > end:
+            start, end = end, start
+        parsed.append((start, end))
+    return parsed
+
+
+def _window_overlaps_ranges(window: list[dict], ranges: list[tuple[int, int]]) -> bool:
+    if not ranges:
+        return False
+    start = window[0]["index"]
+    end = window[-1]["index"]
+    for range_start, range_end in ranges:
+        if not (end < range_start or start > range_end):
+            return True
+    return False
 
 
 def _normalize_slot_kind(kind: str) -> str:
@@ -253,7 +283,7 @@ def rank_module_candidates(module: str, bank: str, slots: int, threshold: float,
     }
 
 
-def rank_target_candidates(target: str, target_type: str, bank: str, slots: int, threshold: float, top: int, window_size: int) -> dict:
+def rank_target_candidates(target: str, target_type: str, bank: str, slots: int, threshold: float, top: int, window_size: int, exclude_ranges: list[tuple[int, int]] | None = None) -> dict:
     if target_type == "family":
         target_signature = _build_synthetic_family_signature(target)
     else:
@@ -261,11 +291,13 @@ def rank_target_candidates(target: str, target_type: str, bank: str, slots: int,
         if target_signature["entry_count"] == 0:
             raise ValueError(f"unknown or empty module: {target}")
 
+    exclude_ranges = exclude_ranges or []
     if window_size <= 0:
         window_size = target_signature["entry_count"]
 
     rows = _load_unknown_slot_rows(bank=bank, slots=slots, threshold=threshold)
     windows = _iter_contiguous_windows(rows, window_size=window_size)
+    windows = [window for window in windows if not _window_overlaps_ranges(window, exclude_ranges)]
     ranked = []
     for window in windows:
         scored = _score_window(window, target_signature)
@@ -317,6 +349,7 @@ def rank_target_candidates(target: str, target_type: str, bank: str, slots: int,
         "slots_profiled": slots,
         "threshold": threshold,
         "candidate_window_size": window_size,
+        "exclude_ranges": exclude_ranges,
         "top_windows": top_ranked,
         "clusters": cluster_summaries,
         "note": "These are behavior-based candidates only; controlled Serum save-diffs are still required to prove mappings.",
@@ -338,6 +371,7 @@ def main():
             threshold=args.threshold,
             top=args.top,
             window_size=args.window_size,
+            exclude_ranges=_parse_exclude_ranges(args.exclude_range),
         )
     else:
         result = rank_target_candidates(
@@ -348,6 +382,7 @@ def main():
             threshold=args.threshold,
             top=args.top,
             window_size=args.window_size,
+            exclude_ranges=_parse_exclude_ranges(args.exclude_range),
         )
     print(json.dumps(result, indent=2))
 
