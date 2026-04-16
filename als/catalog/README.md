@@ -30,6 +30,8 @@ Search the generated profile catalog:
 python3 als/search_serum_profiles.py --role bass
 python3 als/search_serum_profiles.py --role lead --tone bright
 python3 als/search_serum_profiles.py --dest-module VoiceFilter
+python3 als/search_serum_profiles.py --rendered-only --max-attack-ms 30
+python3 als/search_serum_profiles.py --rendered-only --min-side-ratio 0.4 --max-centroid-hz 1200
 ```
 
 Suggest targeted parameter moves for a profile:

@@ -78,7 +78,14 @@ def _queue_profile_ids(session_dir: Path) -> set[str]:
     return {row["profile_id"] for row in payload.get("queue", []) if row.get("profile_id")}
 
 
-def _build_profile_audio_summary(profile_id: str, descriptors: list[dict], session_dir: Path, descriptor_dir: Path, summary_path: Path) -> dict:
+def _build_profile_audio_summary(
+    profile_id: str,
+    descriptors: list[dict],
+    session_dir: Path,
+    descriptor_dir: Path,
+    summary_path: Path,
+    aggregate: dict,
+) -> dict:
     first = descriptors[0]
     return {
         "profile_id": profile_id,
@@ -105,6 +112,12 @@ def _build_profile_audio_summary(profile_id: str, descriptors: list[dict], sessi
         "summary": {
             "rendered": True,
             "summary_path": str(summary_path),
+            "mean_peak_dbfs": aggregate.get("mean_peak_dbfs"),
+            "mean_rms_dbfs": aggregate.get("mean_rms_dbfs"),
+            "mean_centroid_hz": aggregate.get("mean_centroid_hz"),
+            "mean_rolloff_hz": aggregate.get("mean_rolloff_hz"),
+            "mean_side_ratio": aggregate.get("mean_side_ratio"),
+            "mean_attack_time_ms": aggregate.get("mean_attack_time_ms"),
         },
     }
 
@@ -121,10 +134,16 @@ def main() -> None:
     grouped = _profile_summary_rows(descriptors)
     queued_profile_ids = _queue_profile_ids(session_dir)
 
+    aggregate_by_profile = {
+        row["profile_id"]: row
+        for row in descriptor_index.get("profile_summaries", [])
+        if row.get("profile_id")
+    }
     audio_index_profiles = []
     for profile_id, rows in sorted(grouped.items()):
         summary_path = audio_profiles_dir / f"{_slugify(profile_id)}.json"
-        payload = _build_profile_audio_summary(profile_id, rows, session_dir, descriptor_dir, summary_path)
+        aggregate = aggregate_by_profile.get(profile_id, {})
+        payload = _build_profile_audio_summary(profile_id, rows, session_dir, descriptor_dir, summary_path, aggregate)
         _write_json(summary_path, payload, args.force)
         audio_index_profiles.append({
             "profile_id": profile_id,
@@ -132,6 +151,12 @@ def main() -> None:
             "track": payload["track"],
             "primary_role": payload["primary_role"],
             "descriptor_count": payload["descriptor_count"],
+            "mean_peak_dbfs": payload["summary"]["mean_peak_dbfs"],
+            "mean_rms_dbfs": payload["summary"]["mean_rms_dbfs"],
+            "mean_centroid_hz": payload["summary"]["mean_centroid_hz"],
+            "mean_rolloff_hz": payload["summary"]["mean_rolloff_hz"],
+            "mean_side_ratio": payload["summary"]["mean_side_ratio"],
+            "mean_attack_time_ms": payload["summary"]["mean_attack_time_ms"],
             "summary_path": str(summary_path),
         })
 

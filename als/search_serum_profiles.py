@@ -19,6 +19,7 @@ from pathlib import Path
 
 
 DEFAULT_CATALOG_DIR = Path("als/catalog/profiles")
+_AUDIO_SUMMARY_CACHE: dict[str, dict | None] = {}
 
 
 def make_parser() -> argparse.ArgumentParser:
@@ -31,6 +32,15 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--analysis", help="Case-insensitive substring match against analysis slug.")
     parser.add_argument("--wavetable", action="append", default=[], help="Case-insensitive substring match against wavetable refs. Pass multiple times.")
     parser.add_argument("--dest-module", action="append", default=[], help="Case-insensitive exact/substring match against mod-matrix destination modules.")
+    parser.add_argument("--rendered-only", action="store_true", help="Only return profiles with attached rendered audio summaries.")
+    parser.add_argument("--min-centroid-hz", type=float, help="Minimum mean spectral centroid from attached audio summaries.")
+    parser.add_argument("--max-centroid-hz", type=float, help="Maximum mean spectral centroid from attached audio summaries.")
+    parser.add_argument("--min-side-ratio", type=float, help="Minimum mean stereo side ratio from attached audio summaries.")
+    parser.add_argument("--max-side-ratio", type=float, help="Maximum mean stereo side ratio from attached audio summaries.")
+    parser.add_argument("--min-attack-ms", type=float, help="Minimum mean attack time in milliseconds from attached audio summaries.")
+    parser.add_argument("--max-attack-ms", type=float, help="Maximum mean attack time in milliseconds from attached audio summaries.")
+    parser.add_argument("--min-rms-dbfs", type=float, help="Minimum mean RMS level in dBFS from attached audio summaries.")
+    parser.add_argument("--max-rms-dbfs", type=float, help="Maximum mean RMS level in dBFS from attached audio summaries.")
     parser.add_argument("--limit", type=int, default=20, help="Maximum number of results. Default: 20")
     parser.add_argument("--format", choices=["json", "text"], default="text", help="Output format.")
     parser.add_argument("--summary-only", action="store_true", help="Output only the top-level summary and minimal result rows.")
@@ -58,6 +68,41 @@ def _dest_modules(profile: dict) -> set[str]:
     return modules
 
 
+def _audio_summary(profile: dict) -> dict | None:
+    descriptor_path = profile.get("audio_reference", {}).get("descriptor_path")
+    if not descriptor_path:
+        return None
+    if descriptor_path in _AUDIO_SUMMARY_CACHE:
+        return _AUDIO_SUMMARY_CACHE[descriptor_path]
+    path = Path(descriptor_path)
+    if not path.exists():
+        _AUDIO_SUMMARY_CACHE[descriptor_path] = None
+        return None
+    summary = json.loads(path.read_text())
+    _AUDIO_SUMMARY_CACHE[descriptor_path] = summary
+    return summary
+
+
+def _audio_metric(profile: dict, key: str) -> float | None:
+    summary = _audio_summary(profile)
+    if not summary:
+        return None
+    value = summary.get("summary", {}).get(key)
+    return value if isinstance(value, (int, float)) else None
+
+
+def _within_bounds(value: float | None, lower: float | None, upper: float | None) -> bool:
+    if lower is None and upper is None:
+        return True
+    if value is None:
+        return False
+    if lower is not None and value < lower:
+        return False
+    if upper is not None and value > upper:
+        return False
+    return True
+
+
 def profile_matches(profile: dict, args: argparse.Namespace) -> bool:
     roles = _lower_list(profile["classification"]["role_candidates"])
     tones = _lower_list(profile["classification"]["tone_tags"])
@@ -66,6 +111,7 @@ def profile_matches(profile: dict, args: argparse.Namespace) -> bool:
     track = (profile["source"].get("track") or "").lower()
     analysis = (profile["source"].get("analysis_slug") or "").lower()
     dest_modules = _dest_modules(profile)
+    audio_status = profile.get("audio_reference", {}).get("status")
 
     if any(role.lower() not in roles for role in args.role):
         return False
@@ -85,6 +131,16 @@ def profile_matches(profile: dict, args: argparse.Namespace) -> bool:
         needle = dest_module.lower()
         if not any(needle in module for module in dest_modules):
             return False
+    if args.rendered_only and audio_status != "rendered":
+        return False
+    if not _within_bounds(_audio_metric(profile, "mean_centroid_hz"), args.min_centroid_hz, args.max_centroid_hz):
+        return False
+    if not _within_bounds(_audio_metric(profile, "mean_side_ratio"), args.min_side_ratio, args.max_side_ratio):
+        return False
+    if not _within_bounds(_audio_metric(profile, "mean_attack_time_ms"), args.min_attack_ms, args.max_attack_ms):
+        return False
+    if not _within_bounds(_audio_metric(profile, "mean_rms_dbfs"), args.min_rms_dbfs, args.max_rms_dbfs):
+        return False
     return True
 
 
@@ -103,6 +159,8 @@ def score_profile(profile: dict, args: argparse.Namespace) -> int:
     for dest_module in args.dest_module:
         needle = dest_module.lower()
         score += sum(1 for module in _dest_modules(profile) if needle in module)
+    if profile.get("audio_reference", {}).get("status") == "rendered":
+        score += 1
     return score
 
 
@@ -122,6 +180,15 @@ def build_report(profiles: list[dict], args: argparse.Namespace) -> dict:
             "analysis": args.analysis,
             "wavetable": args.wavetable,
             "dest_module": args.dest_module,
+            "rendered_only": args.rendered_only,
+            "min_centroid_hz": args.min_centroid_hz,
+            "max_centroid_hz": args.max_centroid_hz,
+            "min_side_ratio": args.min_side_ratio,
+            "max_side_ratio": args.max_side_ratio,
+            "min_attack_ms": args.min_attack_ms,
+            "max_attack_ms": args.max_attack_ms,
+            "min_rms_dbfs": args.min_rms_dbfs,
+            "max_rms_dbfs": args.max_rms_dbfs,
         },
         "results": matches,
     }
@@ -143,12 +210,23 @@ def render_text(report: dict, summary_only: bool) -> str:
             f"tone: {', '.join(profile['classification']['tone_tags'])}; "
             f"mix: {', '.join(profile['classification']['mix_tags'])}]"
         )
+        audio_summary = _audio_summary(profile)
         if not summary_only:
             if profile["summary"]["wavetable_refs"]:
                 lines.append(f"  wavetables: {', '.join(profile['summary']['wavetable_refs'])}")
             mod_modules = sorted(_dest_modules(profile))
             if mod_modules:
                 lines.append(f"  mod dests: {', '.join(mod_modules)}")
+            if audio_summary:
+                summary = audio_summary.get("summary", {})
+                lines.append(
+                    "  audio: "
+                    f"status={profile.get('audio_reference', {}).get('status')}; "
+                    f"centroid={summary.get('mean_centroid_hz')}; "
+                    f"attack_ms={summary.get('mean_attack_time_ms')}; "
+                    f"side_ratio={summary.get('mean_side_ratio')}; "
+                    f"rms_dbfs={summary.get('mean_rms_dbfs')}"
+                )
             notes = profile["classification"].get("notes") or []
             if notes:
                 lines.append(f"  notes: {' | '.join(notes)}")
@@ -173,6 +251,8 @@ def main() -> None:
                     "role_candidates": profile["classification"]["role_candidates"],
                     "tone_tags": profile["classification"]["tone_tags"],
                     "mix_tags": profile["classification"]["mix_tags"],
+                    "audio_status": profile.get("audio_reference", {}).get("status"),
+                    "audio_summary": (_audio_summary(profile) or {}).get("summary"),
                 }
                 for profile in report["results"]
             ],
