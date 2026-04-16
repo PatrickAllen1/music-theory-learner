@@ -114,6 +114,14 @@ python3 als/report_serum_brief_coverage.py
 python3 als/report_serum_brief_coverage.py --format json
 ```
 
+Report whether each brief is actually ready for lesson-packet export after
+refinement and mutation planning:
+
+```bash
+python3 als/report_serum_packet_readiness.py
+python3 als/report_serum_packet_readiness.py --format json
+```
+
 Prepare one consolidated priority render session across all briefs:
 
 ```bash
