@@ -105,6 +105,7 @@ Important limit:
 ```bash
 python3 als/report_serum_vst2_coverage.py --summary-only
 python3 als/report_serum_vst2_coverage.py --category fx
+python3 als/report_serum_vst2_coverage.py --summary-only --module matrix_source --include-module-candidates --exclude-range 140-143 --exclude-range 154-163 --exclude-range 166-179
 ```
 
 This cross-references the current standalone `.fxp` parser against the binary
@@ -115,6 +116,8 @@ What it tells us:
 - which named Serum host controls are already covered by the parser
 - which broad categories are still dark
 - where to spend the next controlled-diff mapping pass
+- optionally, the best current candidate windows for an uncovered module when
+  `--include-module-candidates` is enabled
 
 Current safe-coverage picture from that report:
 
@@ -126,6 +129,17 @@ Current safe-coverage picture from that report:
 - FX: effectively missing
 - matrix: entirely missing
 - macros: labels covered, macro-source controls still missing
+
+Current matrix-specific read after adding candidate-window summaries:
+
+- `matrix_source`, `matrix_destination`, `matrix_output`: still collapse back
+  toward `34-65` / `35-66` once the known `140-143`, `154-163`, and
+  `166-179` corridors are excluded, so there is still no clean isolated matrix
+  island
+- `matrix_depth` behaves similarly, with stronger scores but the same broad
+  lower-mid corridor
+- `matrix_curve` still has no convincing candidate window after those
+  exclusions, which reinforces the need for an eventual manual curve diff
 
 ### Corpus slot profiler
 
@@ -175,6 +189,25 @@ evidence. It combines:
 - current candidate module and family signatures
 - known hot-zone hints from the latest reverse-engineering passes
 - FX-enable anchor hints when the range overlaps `154-163`
+
+### Deferred manual probe pack
+
+```bash
+python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
+```
+
+The autonomous batch now has a deferred-manual layer:
+
+- [`als/serum-vst2-manual-probes.json`](./serum-vst2-manual-probes.json)
+  is the machine-readable checkpoint manifest
+- [`als/serum-vst2-manual-checkpoints.md`](./serum-vst2-manual-checkpoints.md)
+  is the human handoff pack
+- [`als/ingest_serum_manual_diff.py`](./ingest_serum_manual_diff.py) ingests
+  final `.before.fxp` / `.after.fxp` pairs using the `<probe_id>.before.fxp`
+  and `<probe_id>.after.fxp` naming convention
+
+That means the remaining manual Serum saves can happen in one bundled pass at
+the end of the autonomous run instead of interrupting each analysis wave.
 
 ## What we can parse confidently now
 

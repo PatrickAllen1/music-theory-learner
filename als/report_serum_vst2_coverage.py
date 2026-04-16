@@ -14,7 +14,12 @@ import argparse
 import json
 import sys
 
-from parse_serum import SERUM_VST2_PLUGIN_BINARY_PATH, build_serum_vst2_host_coverage_report
+try:
+    from parse_serum import SERUM_VST2_PLUGIN_BINARY_PATH, build_serum_vst2_host_coverage_report
+    from rank_serum_vst2_module_candidates import rank_target_candidates
+except ModuleNotFoundError:
+    from .parse_serum import SERUM_VST2_PLUGIN_BINARY_PATH, build_serum_vst2_host_coverage_report
+    from .rank_serum_vst2_module_candidates import rank_target_candidates
 
 
 def make_parser() -> argparse.ArgumentParser:
@@ -43,10 +48,66 @@ def make_parser() -> argparse.ArgumentParser:
         default=12,
         help="When using --summary-only, include up to N uncovered labels per category",
     )
+    parser.add_argument(
+        "--include-module-candidates",
+        action="store_true",
+        help="Augment module summaries with best current candidate windows from the corpus ranker",
+    )
+    parser.add_argument(
+        "--candidate-bank",
+        choices=["garage", "speed_garage", "all"],
+        default="all",
+        help="Which preset bank(s) to use for --include-module-candidates",
+    )
+    parser.add_argument(
+        "--candidate-top",
+        type=int,
+        default=2,
+        help="How many candidate windows to retain per module when using --include-module-candidates",
+    )
+    parser.add_argument(
+        "--exclude-range",
+        action="append",
+        default=[],
+        help="Exclude candidate windows overlapping a slot range like 154-163. May be passed multiple times.",
+    )
     return parser
 
 
-def _trim_summary(report: dict, limit_uncovered: int) -> dict:
+def _build_candidate_window_summary(module: str, bank: str, top: int, exclude_ranges: list[str]) -> dict:
+    try:
+        ranked = rank_target_candidates(
+            target=module,
+            target_type="module",
+            bank=bank,
+            slots=180,
+            threshold=0.01,
+            top=top,
+            window_size=0,
+            exclude_ranges=[tuple(int(part) for part in item.split("-", 1)) for item in exclude_ranges],
+        )
+    except Exception as exc:
+        return {"error": str(exc)}
+
+    return {
+        "bank": ranked["bank"],
+        "candidate_window_size": ranked["candidate_window_size"],
+        "top_windows": [
+            {
+                "range": f"{window['start_index']}-{window['end_index']}",
+                "score": window["score"],
+                "kind_match_score": window["kind_match_score"],
+            }
+            for window in ranked.get("top_windows", [])
+        ],
+        "top_cluster_ranges": [
+            f"{cluster['start_index']}-{cluster['end_index']}"
+            for cluster in ranked.get("clusters", [])[:top]
+        ],
+    }
+
+
+def _trim_summary(report: dict, limit_uncovered: int, include_module_candidates: bool, candidate_bank: str, candidate_top: int, exclude_ranges: list[str]) -> dict:
     categories = {}
     for name, summary in report["categories"].items():
         categories[name] = {
@@ -60,7 +121,7 @@ def _trim_summary(report: dict, limit_uncovered: int) -> dict:
 
     modules = {}
     for name, summary in report.get("modules", {}).items():
-        modules[name] = {
+        module_summary = {
             "manual_section": summary["manual_section"],
             "total": summary["total"],
             "covered": summary["covered"],
@@ -69,6 +130,14 @@ def _trim_summary(report: dict, limit_uncovered: int) -> dict:
             "covered_labels": summary["covered_labels"],
             "uncovered_labels": summary["uncovered_labels"][:limit_uncovered],
         }
+        if include_module_candidates and summary["uncovered"] > 0:
+            module_summary["candidate_windows"] = _build_candidate_window_summary(
+                module=name,
+                bank=candidate_bank,
+                top=candidate_top,
+                exclude_ranges=exclude_ranges,
+            )
+        modules[name] = module_summary
 
     return {
         "binary_path": report["binary_path"],
@@ -136,7 +205,14 @@ def main():
         }
 
     if args.summary_only:
-        report = _trim_summary(report, args.limit_uncovered)
+        report = _trim_summary(
+            report,
+            args.limit_uncovered,
+            args.include_module_candidates,
+            args.candidate_bank,
+            args.candidate_top,
+            args.exclude_range,
+        )
 
     print(json.dumps(report, indent=2))
 

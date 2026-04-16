@@ -1,0 +1,236 @@
+{
+  "metadata": {
+    "version": 1,
+    "description": "Deferred manual Serum VST2 controlled-diff probe pack for end-of-run FXP collection.",
+    "default_diff_command": "python3 als/parse_serum_preset.py --diff before.fxp after.fxp --slots 180 --threshold 0.01 --cluster-gap 0"
+  },
+  "checkpoints": [
+    {
+      "id": "A",
+      "title": "Voicing and global tail",
+      "objective": "Prove the 40-43 voicing toggle strip, then map the 166-175 global/voicing tail and 172-173 pitch-or-misc subpair.",
+      "probes": [
+        {
+          "id": "note_latch",
+          "label": "Note Latch",
+          "candidate_slot_windows": ["40-43"],
+          "candidate_host_labels": ["Note Latch"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Just.fxp"
+          ],
+          "notes": "Flip only Note Latch and keep all other voicing controls fixed."
+        },
+        {
+          "id": "polyphony_count",
+          "label": "Polyphony Count",
+          "candidate_slot_windows": ["166-175"],
+          "candidate_host_labels": ["Polyphony Count"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Stab - digi.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - Dusty Heever.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad -  Alicee.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead - If U Ever.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Face Melter.fxp"
+          ],
+          "notes": "Change only Polyphony Count to isolate the dominant discrete slot in the 166-175 tail."
+        },
+        {
+          "id": "bend_range",
+          "label": "Bend Range Up/Down",
+          "candidate_slot_windows": ["172-173"],
+          "candidate_host_labels": ["Bend Range Up", "Bend Range Down"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Speed On Smoke.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Rudeboy.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Don't Stop.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Big W.fxp"
+          ],
+          "notes": "Prefer Bend Range Up first. If noisy, retry with Bend Range Down on the same preset family."
+        }
+      ]
+    },
+    {
+      "id": "B",
+      "title": "Ambiguous FX corridors",
+      "objective": "Use enum and BPM-sync probes to collapse the 88-96 and 121-130 corridors into narrower FX families.",
+      "probes": [
+        {
+          "id": "eq_type",
+          "label": "EQ TypL / EQ TypH",
+          "candidate_slot_windows": ["88-96", "94-95"],
+          "candidate_host_labels": ["EQ TypL", "EQ TypH"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp"
+          ],
+          "notes": "Best current EQ-type candidates because 88-96 is active, 161 is on, and the surrounding 154-163 state is relatively sparse."
+        },
+        {
+          "id": "chorus_flanger_bpm_sync",
+          "label": "Cho_BPM_Sync / Flg_BPM_Sync",
+          "candidate_slot_windows": ["121-130", "127-128"],
+          "candidate_host_labels": ["Cho_BPM_Sync", "Flg_BPM_Sync"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Rudeboy.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp"
+          ],
+          "notes": "The warp pair is the best current match for the 121-130 corridor and already shows a sync-friendly 127/128 pattern."
+        }
+      ]
+    },
+    {
+      "id": "C",
+      "title": "FX enable block ordering",
+      "objective": "Use one-module enable toggles to pin the 154-163 FX enable block and disambiguate the 158/161/162 anchors.",
+      "probes": [
+        {
+          "id": "eq_on",
+          "label": "EQ On",
+          "candidate_slot_windows": ["154-163"],
+          "candidate_host_labels": ["EQ On", "EQ Enable"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese -  Dusty Heever.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Stab - digi.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp"
+          ],
+          "notes": "Best current EQ-enable candidates because 161 is off while the 88-96 strip is still active enough to make the flip audible."
+        },
+        {
+          "id": "delay_on",
+          "label": "Delay On",
+          "candidate_slot_windows": ["154-163"],
+          "candidate_host_labels": ["Dly Enable", "Dly_On"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Big W.fxp"
+          ],
+          "notes": "Keeps the 121-130 delay-side corridor alive while leaving 158 off or less dominant before the toggle."
+        },
+        {
+          "id": "hyper_or_filter_on",
+          "label": "Hyper On / Filter On",
+          "candidate_slot_windows": ["154-163"],
+          "candidate_host_labels": ["Hyp Enable", "Hyp On", "FX Fil On", "FX Fil Enable"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Rudeboy.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese -  Dusty Heever.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Stab - digi.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Bass- Turn Back Time.fxp"
+          ],
+          "notes": "Use Hyper first to split the 162/163 boundary. Filter On is the explicit fallback if Hyper is too noisy."
+        }
+      ]
+    },
+    {
+      "id": "D",
+      "title": "Portamento corridor and slot 44 neighbor",
+      "objective": "Resolve the 137-145 portamento/global corridor and separate slot 44 from the 40-43 voicing toggle block.",
+      "probes": [
+        {
+          "id": "portamento",
+          "label": "Portamento Time / Curve / Porta Mode / Porta Scaled",
+          "candidate_slot_windows": ["137-145"],
+          "candidate_host_labels": [
+            "Portamento Time",
+            "Portamento Curve",
+            "Porta Mode",
+            "Porta Scaled"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad - Yoboy.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass - Donkey.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Turbo Sally.fxp"
+          ],
+          "notes": "Run the same shortlist through all four portamento controls before moving to the slot 44 probe."
+        },
+        {
+          "id": "slot_44_neighbor",
+          "label": "Slot 44 neighbor probe",
+          "candidate_slot_windows": ["44"],
+          "candidate_host_labels": [],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad -  Alicee.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Flanger.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Nora.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pluck - Pussy.fxp"
+          ],
+          "notes": "Run this after the portamento probes. The goal is to prove slot 44 is a separate continuous neighbor."
+        }
+      ]
+    },
+    {
+      "id": "E",
+      "title": "Macro and matrix tail",
+      "objective": "Use macro and matrix edits to resolve the late-stage macro/matrix surfaces and any remaining tail ambiguity.",
+      "probes": [
+        {
+          "id": "macro_rename",
+          "label": "Macro rename",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": ["Macro 1", "Macro 2", "Macro 3", "Macro 4"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Just.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad - Yoboy.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Face Melter.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Bass- Sidewinda.fxp"
+          ],
+          "notes": "Lead- Just has four already-named macros, so a rename-only save should stay isolated cleanly."
+        },
+        {
+          "id": "macro_amount",
+          "label": "Macro amount",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": ["Macro 1 Source", "Macro 2 Source", "Macro 3 Source", "Macro 4 Source"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass - 100%.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad - Yoboy.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Sidewinda.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp"
+          ],
+          "notes": "Lead- Saturn has a single named macro on a sparse lead, so macro depth movement should be easier to isolate."
+        },
+        {
+          "id": "mod_route",
+          "label": "Mod route add/remove",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": ["Mod Source 1", "Mod Dest 1", "Mod Matrix Depth 1"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Duality.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Wide Reese.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - If Bass could kill.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Bass- Sidewinda.fxp"
+          ],
+          "notes": "Pad- June has an obvious LFO hint and no custom macro clutter, making route add/remove easier to isolate."
+        },
+        {
+          "id": "matrix_curve",
+          "label": "Matrix Curve change",
+          "candidate_slot_windows": ["178-179"],
+          "candidate_host_labels": ["Matrix Curve A 1", "Matrix Curve B 1"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Wide Reese.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Duality.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - If Bass could kill.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Optic Sine.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp"
+          ],
+          "notes": "Wide reese patches show the strongest combination of LFO activity and restrained envelope shape for a matrix-curve probe."
+        }
+      ]
+    }
+  ]
+}
