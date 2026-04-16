@@ -1,0 +1,349 @@
+{
+  "metadata": {
+    "version": 1,
+    "description": "Third-stage deferred manual Serum VST2 probe pack for the remaining dark surfaces after the primary checkpoints and phase-2 expansion pack.",
+    "default_diff_command": "python3 als/parse_serum_preset.py --diff before.fxp after.fxp --slots 180 --threshold 0.01 --cluster-gap 0"
+  },
+  "checkpoints": [
+    {
+      "id": "G",
+      "title": "Dark-surface cleanup probes",
+      "objective": "Target the remaining uncovered families after checkpoints A-F: compressor, phaser, reverb, sub/noise, oscillator detail, envelopes, matrix aux/output, chaos, and low-confidence host-global settings.",
+      "probes": [
+        {
+          "id": "compressor_core",
+          "label": "Compressor core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Comp Enable",
+            "Comp_Wet",
+            "FX Comp Level",
+            "Cmp_Thr",
+            "Cmp_Rat",
+            "Cmp_Att",
+            "Cmp_Rel",
+            "Comp_On",
+            "Comp_Wet #2",
+            "CmpGain"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Stab - digi.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass - 100%.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Duality.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Wide Reese.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead - If U Ever.fxp"
+          ],
+          "notes": "Use a dense stab or reese and move only one compressor control per save. This probe also covers the leftover generic CmpGain label in the broad FX bucket."
+        },
+        {
+          "id": "phaser_core",
+          "label": "Phaser core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Phs Enable",
+            "FX Phaser Level",
+            "Phs_Wet",
+            "Phs_BPM_Sync",
+            "Phs_Rate",
+            "Phs_Dpth",
+            "Phs_Frq",
+            "Phs_Feed",
+            "Phs_Stereo",
+            "Phs_On"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Flanger.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad -  Alicee.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp"
+          ],
+          "notes": "Pad- Flanger already exposes a phaser-oriented macro label, so it is the cleanest phaser-core anchor in the current corpus."
+        },
+        {
+          "id": "reverb_core",
+          "label": "Reverb core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Rev Enable",
+            "FX Reverb Level",
+            "Rev_On",
+            "Reverb Type -"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad -  Alicee.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp"
+          ],
+          "notes": "Use a pad with an obvious reverb macro and flip one reverb parameter at a time."
+        },
+        {
+          "id": "sub_oscillator_core",
+          "label": "Sub oscillator core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "SubOscShape",
+            "SubOscOctave",
+            "Sub Osc Pan",
+            "Sub Osc Shape",
+            "Sub Oscillator Octave",
+            "Osc Enable sub",
+            "SubOsc Direct"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass - Basic Warper.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass - Warpie.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass - Donkey.fxp"
+          ],
+          "notes": "Start on the explicit sub patch and move one sub control per save so the direct-vs-filtered sub path stays isolated."
+        },
+        {
+          "id": "noise_oscillator_core",
+          "label": "Noise oscillator core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Noise Oscillator Color",
+            "Noise Oscillator Fine",
+            "Noise Oscillator Pan",
+            "Noise Random Phase",
+            "Noise Initial Phase",
+            "Osc Enable noise",
+            "Noise Osc Direct"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Just.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Stab - digi.fxp"
+          ],
+          "notes": "Use a textured pad so noise color, pan, phase, and direct routing all stay audible."
+        },
+        {
+          "id": "oscillator_detail_core",
+          "label": "Oscillator A/B detail family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "A Uni LR",
+            "A Uni Warp",
+            "A Uni WTPos",
+            "A Uni Stack",
+            "Osc A On",
+            "A Fine",
+            "A Warp",
+            "A Coarse Pitch",
+            "A Random Phase",
+            "A Initial Phase",
+            "Osc A PitchTrack",
+            "Warp Menu OSC A",
+            "Osc Enable (Osc A)",
+            "B Uni LR",
+            "B Uni Warp",
+            "B Uni WTPos",
+            "B Uni Stack",
+            "Osc B On",
+            "B Fine",
+            "B Warp",
+            "B Coarse Pitch",
+            "B Random Phase",
+            "B Initial Phase",
+            "Osc B PitchTrack",
+            "Osc Enable B"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Wide Reese.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - Dusty Heever.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Duality.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Just.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp"
+          ],
+          "notes": "Run one A-side control per save first, then repeat on the B-side. Wide Reese is the best current dual-oscillator anchor."
+        },
+        {
+          "id": "envelope_family",
+          "label": "Envelope hold and curve family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Amp Hold",
+            "Env2 Hld",
+            "Env3 Atk",
+            "Env3 Hld",
+            "Env3 Dec",
+            "Env3 Sus",
+            "Env3 Rel",
+            "Attack Curve",
+            "Decay Curve",
+            "Release Curve",
+            "Attack Curve #2",
+            "Decay Curve #2",
+            "Release Curve #2",
+            "Attack Curve #3",
+            "Decay Curve #3",
+            "Release Curve #3"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Pads/PD Hold This Note [FP].fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Pads/PD Post Rock Pad 2 [SW].fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Pads/PD Emotional More [KG].fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Pads/PD Newdrone [GS].fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Pads/PD Tibet Wind Atmos [ASL].fxp"
+          ],
+          "notes": "This is the best current single-family probe for Amp Hold, Env2 Hold, Env3 ADSR, and the envelope-curve surfaces."
+        },
+        {
+          "id": "matrix_aux_source_family",
+          "label": "Matrix aux-source family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Mod Aux Source 1",
+            "Mod Aux Source 2",
+            "Mod Aux Source 3",
+            "Mod Aux Source 4",
+            "Mod Aux Source 5",
+            "Mod Aux Source 6",
+            "Mod Aux Source 7",
+            "Mod Aux Source 8",
+            "Mod Aux Source 9",
+            "Mod Aux Source 10",
+            "Mod Aux Source 11",
+            "Mod Aux Source 12",
+            "Mod Aux Source 13",
+            "Mod Aux Source 14",
+            "Mod Aux Source 15",
+            "Mod Aux Source 16",
+            "Mod Aux Source 17",
+            "Mod Aux Source 18",
+            "Mod Aux Source 19",
+            "Mod Aux Source 20",
+            "Mod Aux Source 21",
+            "Mod Aux Source 22",
+            "Mod Aux Source 23",
+            "Mod Aux Source 24",
+            "Mod Aux Source 25",
+            "Mod Aux Source 26",
+            "Mod Aux Source 27",
+            "Mod Aux Source 28",
+            "Mod Aux Source 29",
+            "Mod Aux Source 30",
+            "Mod Aux Source 31",
+            "Mod Aux Source 32"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Blind Date.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Wide Reese.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Duality.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - If Bass could kill.fxp"
+          ],
+          "notes": "Pad- June is still the cleanest routing candidate. Use one route slot first so the aux-source write path stays isolated."
+        },
+        {
+          "id": "matrix_output_family",
+          "label": "Matrix output family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Mod Matrix Output 1",
+            "Mod Matrix Output 2",
+            "Mod Matrix Output 3",
+            "Mod Matrix Output 4",
+            "Mod Matrix Output 5",
+            "Mod Matrix Output 6",
+            "Mod Matrix Output 7",
+            "Mod Matrix Output 8",
+            "Mod Matrix Output 9",
+            "Mod Matrix Output 10",
+            "Mod Matrix Output 11",
+            "Mod Matrix Output 12",
+            "Mod Matrix Output 13",
+            "Mod Matrix Output 14",
+            "Mod Matrix Output 15",
+            "Mod Matrix Output 16",
+            "Mod Matrix Output 17",
+            "Mod Matrix Output 18",
+            "Mod Matrix Output 19",
+            "Mod Matrix Output 20",
+            "Mod Matrix Output 21",
+            "Mod Matrix Output 22",
+            "Mod Matrix Output 23",
+            "Mod Matrix Output 24",
+            "Mod Matrix Output 25",
+            "Mod Matrix Output 26",
+            "Mod Matrix Output 27",
+            "Mod Matrix Output 28",
+            "Mod Matrix Output 29",
+            "Mod Matrix Output 30",
+            "Mod Matrix Output 31",
+            "Mod Matrix Output 32"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Blind Date.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Wide Reese.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Duality.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - If Bass could kill.fxp"
+          ],
+          "notes": "Run this beside the aux-source probe on the same shortlist. The goal is to prove the matrix-output write path separately from source and depth."
+        },
+        {
+          "id": "chaos_family",
+          "label": "Chaos family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Chaos 1 BPM Sync",
+            "Chaos 2 BPM Sync",
+            "Chaos 1 Rate",
+            "Chaos 2 Rate",
+            "Chaos 1 Mono",
+            "Chaos 2 Mono",
+            "Chaos 1 SNH (Sample And Hold)",
+            "Chaos 2 SNH (Sample And Hold)",
+            "Chaos Source 1",
+            "Chaos Source 2"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/FX/FX PowerUp Long [KG].fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Pads/PD Newdrone [GS].fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Pads/PD Hold This Note [FP].fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Pads/PD Tibet Wind Atmos [ASL].fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp"
+          ],
+          "notes": "Use a motion-heavy patch so chaos rate, sync, mono, and sample-and-hold changes stay audible."
+        },
+        {
+          "id": "global_host_misc",
+          "label": "Global host misc family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Master Volume",
+            "Quality",
+            "GUI Size"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp"
+          ],
+          "notes": "Low-confidence host-global sweep. These controls may not serialize cleanly into .fxp, so run them only after the synthesis-critical probes if you still want to chase the remaining global labels."
+        },
+        {
+          "id": "delay_level_bridge",
+          "label": "Delay level bridge",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "FX Delay Level"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Big W.fxp"
+          ],
+          "notes": "This is the smallest bridge probe left in the generic FX bucket. Run it only if you want the delayed-level label covered explicitly."
+        }
+      ]
+    }
+  ]
+}

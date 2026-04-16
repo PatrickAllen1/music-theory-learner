@@ -33,6 +33,7 @@
             "Legato",
             "Unison Stereo Width",
             "Unison Warp",
+            "Unison WTPos",
             "Unison Stack",
             "Unison Detune Mode"
           ],
@@ -64,8 +65,11 @@
           "label": "Filter topology and routing family",
           "candidate_slot_windows": [],
           "candidate_host_labels": [
+            "Filter On",
             "Fil Type",
             "Fil Var",
+            "Fil Ster",
+            "Filter Enable",
             "Filter KeyTrack",
             "OscA>Fil",
             "OscB>Fil",

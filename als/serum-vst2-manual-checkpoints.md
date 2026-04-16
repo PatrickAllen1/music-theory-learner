@@ -1,6 +1,10 @@
 # Serum VST2 Manual Checkpoints
 
-Deferred manual checkpoint pack for the current Serum VST2 mapping pass. This is the primary end-of-run handoff for controlled save-diff work. The machine-readable companion is `als/serum-vst2-manual-probes.json`. If checkpoints A-E are not enough, layer in `als/serum-vst2-expansion-probes.json` rather than replacing the primary pack.
+Deferred manual checkpoint pack for the current Serum VST2 mapping pass. This is the primary end-of-run handoff for controlled save-diff work. The machine-readable companions are:
+
+- `als/serum-vst2-manual-probes.json` for checkpoints A-E
+- `als/serum-vst2-expansion-probes.json` for checkpoint F
+- `als/serum-vst2-phase3-probes.json` for checkpoint G
 
 Common diff command after saving the two `.fxp` variants:
 
@@ -13,6 +17,7 @@ End-of-run ingest command for a folder of completed pairs:
 ```bash
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
+python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json
 ```
 
 ## Checkpoint A
@@ -83,3 +88,18 @@ python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs -
 - Missing FX core family: `Distortion On / Drive / Mode`
 - Best preset: `Garage/Bass- Face Melter.fxp`
 - Fallbacks: `Garage/Bass- Crackhead.fxp`, `Garage/Bass- Sidewinda.fxp`, `Garage/Reese - If Bass could kill.fxp`, `Garage/Lead- Saturn.fxp`
+
+## After F
+- If checkpoint F still leaves dark surfaces, layer in `als/serum-vst2-phase3-probes.json`.
+- Phase-3 targets:
+- Compressor core: `Comp Enable`, `Comp_Wet`, `Cmp_Thr`, `Cmp_Rat`, `Cmp_Att`, `Cmp_Rel`, `Comp_On`, `CmpGain`
+- Phaser core: `Phs Enable`, `Phs_BPM_Sync`, `Phs_Rate`, `Phs_Dpth`, `Phs_Frq`, `Phs_Feed`, `Phs_Stereo`, `Phs_On`
+- Reverb core: `Rev Enable`, `FX Reverb Level`, `Rev_On`, `Reverb Type -`
+- Sub oscillator core: `SubOscShape`, `SubOscOctave`, `Sub Osc Pan`, `Osc Enable sub`, `SubOsc Direct`
+- Noise oscillator core: `Noise Oscillator Color`, `Noise Oscillator Fine`, `Noise Oscillator Pan`, `Noise Random Phase`, `Noise Initial Phase`, `Osc Enable noise`, `Noise Osc Direct`
+- Oscillator A/B detail: on/off, fine, coarse, random phase, initial phase, pitch track, unison LR/warp/WTPos/stack
+- Envelope family: `Amp Hold`, `Env2 Hld`, full `Env3` ADSR, and the envelope-curve family
+- Matrix aux/output families: `Mod Aux Source 1-32` and `Mod Matrix Output 1-32`
+- Chaos family: both Chaos rate/sync/mono/SNH/source lanes
+- Low-confidence host-global sweep: `Master Volume`, `Quality`, `GUI Size`
+- Delay bridge: `FX Delay Level`

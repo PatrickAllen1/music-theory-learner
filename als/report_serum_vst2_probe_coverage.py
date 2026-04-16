@@ -15,6 +15,7 @@ Examples:
     python3 als/report_serum_vst2_probe_coverage.py --module fx_eq
     python3 als/report_serum_vst2_probe_coverage.py --status none
     python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --summary-only
+    python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --summary-only
 """
 
 import argparse

@@ -162,6 +162,7 @@ Examples:
 ```bash
 python3 als/report_serum_vst2_probe_coverage.py --summary-only
 python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --summary-only
+python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json --summary-only
 python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --status none
 ```
 
@@ -205,6 +206,24 @@ Best post-A-E manual expansion targets from the current evidence:
 The current second-stage choice is to prefer `Distortion` over `Reverb`
 because it appears less broadly shared across the corpus and should be easier
 to isolate cleanly in a controlled save-diff.
+
+Current three-pack state after adding the phase-3 cleanup manifest:
+
+- `25` uncovered modules are now fully targeted by the deferred manual bundle
+- `11` uncovered modules remain partial
+- `0` uncovered modules remain completely unplanned
+
+The remaining partial set is mostly the broad repeated families and alias-heavy
+surfaces:
+
+- large FX cores that still need deeper parameter sweeps: `fx_eq`, `fx_delay`,
+  `fx_chorus`, `fx_flanger`, `fx_filter`, `fx_hyper_dimension`,
+  `fx_distortion`, and one duplicate compressor wet label
+- `lfo`, which still needs a wider post-`LFO1Rate` sweep
+- `envelope_curve`, where the `#2` / `#3` labels collapse onto duplicate host
+  names in the current catalog
+- `other`, which is still a mixed residue bucket rather than a trustworthy
+  single Serum surface
 
 ### Corpus slot profiler
 
@@ -261,6 +280,7 @@ evidence. It combines:
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-expansion-probes.json
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
+python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json
 ```
 
 The autonomous batch now has a deferred-manual layer:
@@ -272,6 +292,8 @@ The autonomous batch now has a deferred-manual layer:
 - [`als/serum-vst2-expansion-probes.json`](./serum-vst2-expansion-probes.json)
   is the phase-2 machine-readable probe pack to use if checkpoints A-E are not
   enough
+- [`als/serum-vst2-phase3-probes.json`](./serum-vst2-phase3-probes.json) is
+  the phase-3 cleanup pack for the remaining dark surfaces after A-F
 - [`als/ingest_serum_manual_diff.py`](./ingest_serum_manual_diff.py) ingests
   final `.before.fxp` / `.after.fxp` pairs using the `<probe_id>.before.fxp`
   and `<probe_id>.after.fxp` naming convention, now supports multiple

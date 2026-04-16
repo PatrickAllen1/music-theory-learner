@@ -14,6 +14,7 @@ Examples:
     python3 als/ingest_serum_manual_diff.py --pairs-dir /tmp/serum-probes
     python3 als/ingest_serum_manual_diff.py --pairs-dir /tmp/serum-probes --probe note_latch
     python3 als/ingest_serum_manual_diff.py --pairs-dir /tmp/serum-probes --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
+    python3 als/ingest_serum_manual_diff.py --pairs-dir /tmp/serum-probes --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --manifest als/serum-vst2-phase3-probes.json
 """
 
 import argparse
