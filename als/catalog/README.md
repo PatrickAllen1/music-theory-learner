@@ -122,10 +122,26 @@ python3 als/report_serum_packet_readiness.py
 python3 als/report_serum_packet_readiness.py --format json
 ```
 
+Rank which non-rendered profiles should be rendered next based on packet
+readiness pressure, fallback pressure, and conflict participation:
+
+```bash
+python3 als/report_serum_render_backlog.py
+python3 als/report_serum_render_backlog.py --format json
+```
+
+Report which sound targets are still underserved by the current catalog:
+
+```bash
+python3 als/report_serum_catalog_gaps.py
+python3 als/report_serum_catalog_gaps.py --format json
+```
+
 Prepare one consolidated priority render session across all briefs:
 
 ```bash
 python3 als/prepare_serum_priority_render_session.py --out-dir als/audio-session/priority-renders
+python3 als/prepare_serum_priority_render_session.py --out-dir als/audio-session/priority-renders --priority-source backlog
 ```
 
 Find similar alternatives to a chosen profile:

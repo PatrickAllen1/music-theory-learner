@@ -19,10 +19,12 @@ from pathlib import Path
 try:
     from prepare_serum_audio_session import build_queue, render_readme, render_tsv
     from report_serum_brief_coverage import build_report as build_coverage_report
+    from report_serum_render_backlog import build_report as build_render_backlog_report
     from search_serum_profiles import load_profiles
 except ModuleNotFoundError:
     from .prepare_serum_audio_session import build_queue, render_readme, render_tsv
     from .report_serum_brief_coverage import build_report as build_coverage_report
+    from .report_serum_render_backlog import build_report as build_render_backlog_report
     from .search_serum_profiles import load_profiles
 
 
@@ -40,8 +42,10 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--prefer-rendered", action="store_true", help="Prefer rendered profiles where available when computing coverage.")
     parser.add_argument("--limit-per-part", type=int, default=5, help="Max candidates to inspect per blueprint part. Default: 5")
     parser.add_argument("--mutation-limit", type=int, default=6, help="Max mutation suggestions per part. Default: 6")
+    parser.add_argument("--max-swaps", type=int, default=2, help="Maximum refinement swaps to apply for readiness-aware ranking. Default: 2")
     parser.add_argument("--profile-limit", type=int, default=6, help="Maximum number of profiles to include. Default: 6")
     parser.add_argument("--include-medium", action="store_true", help="Include medium-priority profiles after high-priority ones.")
+    parser.add_argument("--priority-source", choices=["backlog", "coverage"], default="backlog", help="How to rank profiles for rendering. Default: backlog")
     parser.add_argument("--force", action="store_true", help="Overwrite existing metadata files.")
     return parser
 
@@ -64,6 +68,18 @@ def _coverage_namespace(args: argparse.Namespace) -> Namespace:
     )
 
 
+def _backlog_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        catalog_dir=args.catalog_dir,
+        briefs=args.briefs,
+        prefer_rendered=args.prefer_rendered,
+        limit_per_part=args.limit_per_part,
+        mutation_limit=args.mutation_limit,
+        max_swaps=args.max_swaps,
+        format="json",
+    )
+
+
 def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
@@ -73,12 +89,24 @@ def main() -> None:
     renders_dir.mkdir(parents=True, exist_ok=True)
 
     coverage = build_coverage_report(_coverage_namespace(args))
-    priorities = coverage["render_priorities"]
-    allowed = {"high"}
-    if args.include_medium:
-        allowed.add("medium")
-    chosen_rows = [row for row in priorities if row["render_priority"] in allowed][: args.profile_limit]
-    selected_profile_ids = [row["profile_id"] for row in chosen_rows]
+    backlog = build_render_backlog_report(_backlog_namespace(args))
+
+    if args.priority_source == "coverage":
+        priorities = coverage["render_priorities"]
+        allowed = {"high"}
+        if args.include_medium:
+            allowed.add("medium")
+        chosen_rows = [row for row in priorities if row["render_priority"] in allowed][: args.profile_limit]
+        selected_profile_ids = [row["profile_id"] for row in chosen_rows]
+        selection_metadata = chosen_rows
+    else:
+        priorities = backlog["backlog"]
+        allowed = {"high"}
+        if args.include_medium:
+            allowed.add("medium")
+        chosen_rows = [row for row in priorities if row["priority"] in allowed][: args.profile_limit]
+        selected_profile_ids = [row["profile_id"] for row in chosen_rows]
+        selection_metadata = chosen_rows
 
     profiles = load_profiles(Path(args.catalog_dir))
     by_id = {profile["profile_id"]: profile for profile in profiles}
@@ -92,6 +120,7 @@ def main() -> None:
         "selected_profile_ids": selected_profile_ids,
         "include_medium": args.include_medium,
         "profile_limit": args.profile_limit,
+        "priority_source": args.priority_source,
     }, indent=2) + "\n"
 
     _write_text(out_dir / "README.md", readme, args.force)
@@ -102,9 +131,13 @@ def main() -> None:
         "queue_count": len(queue),
         "queue": queue,
         "coverage": coverage,
+        "render_backlog": backlog,
+        "priority_source": args.priority_source,
+        "selection_metadata": selection_metadata,
         "selected_profile_ids": selected_profile_ids,
     }, indent=2) + "\n", args.force)
     _write_text(out_dir / "coverage-report.json", json.dumps(coverage, indent=2) + "\n", args.force)
+    _write_text(out_dir / "render-backlog.json", json.dumps(backlog, indent=2) + "\n", args.force)
     _write_text(out_dir / "session_config.json", json.dumps({
         "catalog_dir": str(Path(args.catalog_dir)),
         "briefs_path": str(Path(args.briefs)),
@@ -112,6 +145,7 @@ def main() -> None:
         "profile_ids": selected_profile_ids,
         "profile_limit": args.profile_limit,
         "include_medium": args.include_medium,
+        "priority_source": args.priority_source,
     }, indent=2) + "\n", args.force)
     _write_text(out_dir / ".gitignore", "renders/*.wav\n", args.force)
 
