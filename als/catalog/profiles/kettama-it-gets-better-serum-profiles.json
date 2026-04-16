@@ -1,0 +1,950 @@
+[
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:bass:i1",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "bass",
+      "instance_index": 1,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:mid-bass:i2",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "mid bass",
+      "instance_index": 2,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:sub:i3",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "sub",
+      "instance_index": 3,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "sub"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:rave-lead:i4",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "rave lead",
+      "instance_index": 4,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "notes": [
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:rave-lead-2:i5",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "rave lead 2",
+      "instance_index": 5,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "notes": [
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:saw:i6",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "saw",
+      "instance_index": 6,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "unknown"
+      ],
+      "notes": []
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:pad:i7",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "pad",
+      "instance_index": 7,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:pluck:i8",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "pluck",
+      "instance_index": 8,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pluck"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "notes": [
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:main-pad:i9",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "main pad",
+      "instance_index": 9,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/SawRounded.wav",
+        "Organics/H-Breath.wav",
+        "Vowel/OOH_YAH_OO.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/SawRounded.wav",
+        "Vowel/OOH_YAH_OO.wav",
+        "Organics/H-Breath.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:drop-pad:i10",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "drop pad",
+      "instance_index": 10,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Acid.wav",
+        "Analog/Basic Mini.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Basic Mini.wav",
+        "Analog/Acid.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:lead:i11",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "lead",
+      "instance_index": 11,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "notes": [
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/BS2 - Filthy.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/BS2 - Filthy.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:lead-2:i12",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "lead 2",
+      "instance_index": 12,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "notes": [
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Analog/PWM C64.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Analog/PWM C64.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:chord:i13",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "chord",
+      "instance_index": 13,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Attacks_Kick/XF_KikAtk_55.wav",
+        "Vowel/ML Addifunk.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Vowel/ML Addifunk.wav",
+        "Attacks_Kick/XF_KikAtk_55.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:main-chord:i14",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "main chord",
+      "instance_index": 14,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "kettama-it-gets-better:main-chord-2:i15",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum_x64",
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_slug": "kettama-it-gets-better",
+      "track": "main chord 2",
+      "instance_index": 15,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  }
+]

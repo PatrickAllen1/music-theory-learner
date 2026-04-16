@@ -1,0 +1,1019 @@
+[
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "mph-raw:bass:i1",
+    "source": {
+      "kind": "als_serum2_instance",
+      "plugin": "Serum 2",
+      "analysis_path": "als/analysis/mph-raw-serum.json",
+      "analysis_slug": "mph-raw",
+      "track": "Bass",
+      "instance_index": 1,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "dark",
+        "gritty",
+        "modulated"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Analog_BD_Sin.wav",
+        "Analog/Basic Shapes.wav",
+        "S2 Tables/Default Shapes.wav"
+      ],
+      "oscillator_count": 2,
+      "filter_count": 1,
+      "envelope_count": 4,
+      "lfo_count": 10,
+      "mod_route_count": 6
+    },
+    "synthesis": {
+      "wavetables": {
+        "osc_a": "Analog/Analog_BD_Sin.wav",
+        "osc_b": "Analog/Basic Shapes.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamFine": 30.9999942779541,
+          "kParamOctave": -2.0
+        },
+        "osc_b": {
+          "kParamEnable": 1.0,
+          "kParamFine": 32.00000524520874,
+          "kParamOctave": -1.0,
+          "kParamPitch": 7.000000476837158,
+          "kParamVolume": 0.2768588994109109
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamDrive": 52.006328105926514,
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.2785618305206299,
+          "kParamReso": 24.364034831523895,
+          "kParamType": "MgL24"
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamAttack": 0.00039015987093509764,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 57.815730571746826,
+          "kParamCurve3": 61.426544189453125,
+          "kParamDecay": 0.4444068162969319,
+          "kParamRelease": 0.32626316971639746,
+          "kParamSustain": 0.6887155771255493
+        },
+        "env_1": {
+          "kParamAttack": 0.0004988561741851921,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 66.60000085830688,
+          "kParamCurve3": 66.60000085830688,
+          "kParamDecay": 0.4619751695871116,
+          "kParamRelease": 0.34374311732054946,
+          "kParamSustain": 0.560360848903656
+        },
+        "env_2": {
+          "kParamAttack": 0.0005153631860372535,
+          "kParamCurve1": 49.950000643730164,
+          "kParamCurve2": 66.60000085830688,
+          "kParamCurve3": 66.60000085830688,
+          "kParamRelease": 0.014700845522658526
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "lfos": {
+        "lfo_0": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_1": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_2": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_3": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_4": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_5": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_6": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_7": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free"
+        },
+        "lfo_8": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamDotted": 1.0,
+          "kParamRate": 0.10000069729266844,
+          "kParamRate10x": 1.0,
+          "kParamTriplets": 1.0,
+          "kParamType": "Lorenz"
+        },
+        "lfo_9": {
+          "kParamBeatSync": 0.0,
+          "kParamDefaultMode": 0.0,
+          "kParamDotted": 1.0,
+          "kParamRate": 0.10000069729266844,
+          "kParamRate10x": 1.0,
+          "kParamTriplets": 1.0,
+          "kParamType": "Rossler"
+        }
+      },
+      "mod_matrix": {
+        "slot_0": {
+          "source": "ModWheel?",
+          "source_raw": [
+            25,
+            0
+          ],
+          "dest_module": "VoiceFilter",
+          "dest_instance": 0,
+          "dest_param": "kParamFreq",
+          "amount": 14.43
+        },
+        "slot_1": {
+          "source": "ModWheel?",
+          "source_raw": [
+            25,
+            0
+          ],
+          "dest_module": "VoiceFilter",
+          "dest_instance": 0,
+          "dest_param": "kParamReso",
+          "amount": -61.03
+        },
+        "slot_2": {
+          "source": "PitchBend?",
+          "source_raw": [
+            26,
+            0
+          ],
+          "dest_module": "FXDistortion",
+          "dest_instance": 1,
+          "dest_param": "kParamWet",
+          "amount": 62.32
+        },
+        "slot_3": {
+          "source": "PitchBend?",
+          "source_raw": [
+            26,
+            0
+          ],
+          "dest_module": "FXDistortion",
+          "dest_instance": 1,
+          "dest_param": "kParamDrive",
+          "amount": 34.54
+        },
+        "slot_4": {
+          "source": "Env4",
+          "source_raw": [
+            3,
+            0
+          ],
+          "dest_module": "VoiceFilter",
+          "dest_instance": 0,
+          "dest_param": "kParamFreq",
+          "amount": 19.05
+        },
+        "slot_5": {
+          "source": "Gate?",
+          "source_raw": [
+            29,
+            0
+          ],
+          "dest_module": "Env",
+          "dest_instance": 0,
+          "dest_param": "kParamSustain",
+          "amount": 31.13
+        }
+      },
+      "global": {
+        "kParamBendRangeDn": -1.0,
+        "kParamBendRangeUp": 1.0,
+        "kParamLimitSameNotePolyphony": 1.0,
+        "kParamMasterVolume": 0.399372882357639,
+        "kParamMonoToggle": 1.0,
+        "kParamS1Compatibility": 1.0
+      },
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.95,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "mph-raw:pluck-bass:i2",
+    "source": {
+      "kind": "als_serum2_instance",
+      "plugin": "Serum 2",
+      "analysis_path": "als/analysis/mph-raw-serum.json",
+      "analysis_slug": "mph-raw",
+      "track": "Pluck Bass",
+      "instance_index": 2,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "bass",
+        "pluck"
+      ],
+      "tone_tags": [
+        "dark",
+        "gritty"
+      ],
+      "mix_tags": [
+        "low_end_anchor",
+        "mid_focus"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function.",
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "S2 Tables/Default Shapes.wav"
+      ],
+      "oscillator_count": 1,
+      "filter_count": 1,
+      "envelope_count": 4,
+      "lfo_count": 0,
+      "mod_route_count": 1
+    },
+    "synthesis": {
+      "wavetables": {
+        "osc_a": "Analog/Basic Shapes.wav",
+        "osc_b": "S2 Tables/Default Shapes.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamDetune": 0.02039883377203311,
+          "kParamOctave": -2.0
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamDrive": 47.22703397274017,
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.320004940032959,
+          "kParamReso": 42.35424101352692
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001,
+          "kParamDecay": 0.1894198061515556,
+          "kParamRelease": 0.20275075121050204,
+          "kParamSustain": 0.1247854232788086
+        },
+        "env_1": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_2": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "lfos": {},
+      "mod_matrix": {
+        "slot_0": {
+          "source": "Env3",
+          "source_raw": [
+            2,
+            0
+          ],
+          "dest_module": "VoiceFilter",
+          "dest_instance": 0,
+          "dest_param": "kParamFreq",
+          "amount": 25.59
+        }
+      },
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.95,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "mph-raw:lead:i3",
+    "source": {
+      "kind": "als_serum2_instance",
+      "plugin": "Serum 2",
+      "analysis_path": "als/analysis/mph-raw-serum.json",
+      "analysis_slug": "mph-raw",
+      "track": "Lead",
+      "instance_index": 3,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "dark",
+        "modulated"
+      ],
+      "mix_tags": [
+        "low_end_anchor",
+        "mid_focus"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function.",
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Analog/Basic_Cjw.wav"
+      ],
+      "oscillator_count": 3,
+      "filter_count": 1,
+      "envelope_count": 4,
+      "lfo_count": 1,
+      "mod_route_count": 10
+    },
+    "synthesis": {
+      "wavetables": {
+        "osc_a": "Analog/Basic_Cjw.wav",
+        "osc_c": "Analog/Basic Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamDetune": 0.015609298122868154,
+          "kParamVolume": 0.0
+        },
+        "osc_b": {
+          "kParamEnable": 1.0,
+          "kParamOctave": -1.0,
+          "kParamVolume": 0.05870024413226481
+        },
+        "osc_c": {
+          "kParamEnable": 1.0,
+          "kParamOctave": 1.0,
+          "kParamVolume": 0.0
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamDrive": 8.229803293943405,
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.24272431433200836,
+          "kParamReso": 12.402654439210892,
+          "kParamType": "MgL18"
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamAttack": 0.005599806152351428,
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001,
+          "kParamDecay": 0.3467308905311275,
+          "kParamHold": 0.03433140581868335,
+          "kParamRelease": 0.7440835238305581,
+          "kParamSustain": 0.41304272413253784
+        },
+        "env_1": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 99.70259666442871,
+          "kParamCurve3": 66.60000000000001,
+          "kParamDecay": 0.2763899612303191,
+          "kParamHold": 0.016719096706846487,
+          "kParamRelease": 0.09098914195748137,
+          "kParamSustain": 0.11124001443386078
+        },
+        "env_2": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "lfos": {
+        "lfo_0": {
+          "kParamDefaultMode": 0.0,
+          "kParamMode": "Free",
+          "kParamRate": 0.6663891237410722
+        }
+      },
+      "mod_matrix": {
+        "slot_0": {
+          "source": "Env4",
+          "source_raw": [
+            3,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 0,
+          "dest_param": "kParamFine",
+          "amount": 55.64
+        },
+        "slot_1": {
+          "source": "Env3",
+          "source_raw": [
+            2,
+            0
+          ],
+          "dest_module": "VoiceFilter",
+          "dest_instance": 0,
+          "dest_param": "kParamFreq",
+          "amount": 54.94
+        },
+        "slot_2": {
+          "source": "Env3",
+          "source_raw": [
+            2,
+            0
+          ],
+          "dest_module": "FXDistortion",
+          "dest_instance": 1,
+          "dest_param": "kParamDrive",
+          "amount": 32.81
+        },
+        "slot_3": {
+          "source": "Env3",
+          "source_raw": [
+            2,
+            0
+          ],
+          "dest_module": "WTOsc",
+          "dest_instance": 0,
+          "dest_param": "kParamTablePos",
+          "amount": 3.47
+        },
+        "slot_4": {
+          "source": "Env3",
+          "source_raw": [
+            2,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 2,
+          "dest_param": "kParamFine",
+          "amount": 19.78
+        },
+        "slot_5": {
+          "source": "Env3",
+          "source_raw": [
+            2,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 2,
+          "dest_param": "kParamVolume",
+          "amount": 65.92
+        },
+        "slot_6": {
+          "source": "Env3",
+          "source_raw": [
+            2,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 0,
+          "dest_param": "kParamVolume",
+          "amount": 74.43
+        },
+        "slot_7": {
+          "source": "Env3",
+          "source_raw": [
+            2,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 1,
+          "dest_param": "kParamFine",
+          "amount": 42.31
+        },
+        "slot_8": {
+          "source": "Env4",
+          "source_raw": [
+            3,
+            0
+          ],
+          "dest_module": "Oscillator",
+          "dest_instance": 4,
+          "dest_param": "kParamVolume",
+          "amount": 43.25
+        },
+        "slot_9": {
+          "source": "ModWheel?",
+          "source_raw": [
+            25,
+            0
+          ],
+          "dest_module": "Env",
+          "dest_instance": 0,
+          "dest_param": "kParamSustain",
+          "amount": 58.7
+        }
+      },
+      "global": {
+        "kParamLegato": 1.0,
+        "kParamMasterVolume": 1.0,
+        "kParamModWheel": 10.12137234210968,
+        "kParamMonoToggle": 1.0,
+        "kParamPortaAlways": 1.0,
+        "kParamPortamentoTime": 0.015876758305659825
+      },
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.95,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "mph-raw:reese-basic:i4",
+    "source": {
+      "kind": "als_serum2_instance",
+      "plugin": "Serum 2",
+      "analysis_path": "als/analysis/mph-raw-serum.json",
+      "analysis_slug": "mph-raw",
+      "track": "Reese Basic",
+      "instance_index": 4,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "reese"
+      ],
+      "tone_tags": [
+        "wide"
+      ],
+      "mix_tags": [
+        "low_end_anchor",
+        "side_heavy"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function.",
+        "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "S2 Tables/Default Shapes.wav"
+      ],
+      "oscillator_count": 3,
+      "filter_count": 1,
+      "envelope_count": 4,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": {
+        "osc_a": "Analog/Basic Shapes.wav",
+        "osc_b": "Analog/Basic Shapes.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamFine": 30.9999942779541,
+          "kParamUnison": 7.0,
+          "kParamVolume": 0.15826198214428183
+        },
+        "osc_b": {
+          "kParamEnable": 1.0,
+          "kParamFine": 12.000000476837158,
+          "kParamPitch": 4.000000476837158,
+          "kParamUnison": 2.0,
+          "kParamVolume": 0.6368561918900502
+        },
+        "osc_c": {
+          "kParamEnable": 1.0,
+          "kParamOctave": -1.0,
+          "kParamVolume": 0.3163823787900242
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamDrive": 9.07624065876007,
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.5662667155265808,
+          "kParamType": "MgL24"
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_1": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_2": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {
+        "kParamMasterVolume": 0.20225145163144104
+      },
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.95,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "mph-raw:reese:i5",
+    "source": {
+      "kind": "als_serum2_instance",
+      "plugin": "Serum 2",
+      "analysis_path": "als/analysis/mph-raw-serum.json",
+      "analysis_slug": "mph-raw",
+      "track": "Reese",
+      "instance_index": 5,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "reese"
+      ],
+      "tone_tags": [
+        "gritty",
+        "wide"
+      ],
+      "mix_tags": [
+        "low_end_anchor",
+        "side_heavy"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function.",
+        "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "S2 Tables/Default Shapes.wav"
+      ],
+      "oscillator_count": 1,
+      "filter_count": 1,
+      "envelope_count": 4,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": {
+        "osc_a": "S2 Tables/Default Shapes.wav",
+        "osc_b": "S2 Tables/Default Shapes.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamOctave": -2.0,
+          "kParamUnison": 6.0
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamDrive": 23.924557864665985,
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.48017504811286926,
+          "kParamType": "MgL18"
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_1": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_2": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.95,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "mph-raw:drone-synth:i6",
+    "source": {
+      "kind": "als_serum2_instance",
+      "plugin": "Serum 2",
+      "analysis_path": "als/analysis/mph-raw-serum.json",
+      "analysis_slug": "mph-raw",
+      "track": "Drone Synth",
+      "instance_index": 6,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "bright",
+        "wide"
+      ],
+      "mix_tags": [
+        "side_heavy"
+      ],
+      "notes": [
+        "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/BS2 - Subby Saw.wav",
+        "S2 Tables/Default Shapes.wav"
+      ],
+      "oscillator_count": 2,
+      "filter_count": 1,
+      "envelope_count": 4,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": {
+        "osc_a": "Analog/BS2 - Subby Saw.wav",
+        "osc_b": "S2 Tables/Default Shapes.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamDetune": 0.019631325973826996,
+          "kParamUnison": 4.0
+        },
+        "osc_b": {
+          "kParamEnable": 1.0,
+          "kParamUnison": 5.0
+        }
+      },
+      "filters": {
+        "filter_0": {
+          "kParamEnable": 1.0,
+          "kParamFreq": 0.7598251700401306
+        }
+      },
+      "envelopes": {
+        "env_0": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001,
+          "kParamRelease": 0.2256868173138081
+        },
+        "env_1": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_2": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {
+        "kParamMasterVolume": 0.15427456449246163
+      },
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.95,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "mph-raw:riser-basic:i7",
+    "source": {
+      "kind": "als_serum2_instance",
+      "plugin": "Serum 2",
+      "analysis_path": "als/analysis/mph-raw-serum.json",
+      "analysis_slug": "mph-raw",
+      "track": "Riser Basic",
+      "instance_index": 7,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "wide"
+      ],
+      "mix_tags": [
+        "side_heavy"
+      ],
+      "notes": [
+        "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "S2 Tables/Default Shapes.wav"
+      ],
+      "oscillator_count": 1,
+      "filter_count": 0,
+      "envelope_count": 4,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": {
+        "osc_a": "S2 Tables/Default Shapes.wav",
+        "osc_b": "S2 Tables/Default Shapes.wav",
+        "osc_c": "S2 Tables/Default Shapes.wav"
+      },
+      "oscillators": {
+        "osc_a": {
+          "kParamDetune": 0.36066330440860733,
+          "kParamOctave": 1.0,
+          "kParamUnison": 6.0
+        }
+      },
+      "filters": {},
+      "envelopes": {
+        "env_0": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_1": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_2": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        },
+        "env_3": {
+          "kParamCurve1": 50.0,
+          "kParamCurve2": 66.60000000000001,
+          "kParamCurve3": 66.60000000000001
+        }
+      },
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {
+        "kParamBendRangeUp": 11.0
+      },
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.95,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  }
+]

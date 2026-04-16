@@ -1,0 +1,566 @@
+[
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "bl3ss-camrinwatsin-kisses:organ-bass:i1",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum",
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Organ Bass",
+      "instance_index": 1,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Analog/Mellow But Instable.wav",
+        "Analog/OrganNoise.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Mellow But Instable.wav",
+        "Analog/Basic Shapes.wav",
+        "Analog/OrganNoise.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "bl3ss-camrinwatsin-kisses:fm-bass:i2",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum",
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "FM Bass",
+      "instance_index": 2,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "bass"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "low_end_anchor"
+      ],
+      "notes": [
+        "Likely carries low-end weight or bass function."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Analog/OrganNoise.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Analog/OrganNoise.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "bl3ss-camrinwatsin-kisses:pluck-1:i3",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum",
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Pluck 1",
+      "instance_index": 3,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pluck"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "notes": [
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "bl3ss-camrinwatsin-kisses:saws-1:i4",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum",
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Saws 1",
+      "instance_index": 4,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "unknown"
+      ],
+      "notes": []
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/ARP white.wav",
+        "Analog/Basic Shapes.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/Basic Shapes.wav",
+        "Analog/ARP white.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "bl3ss-camrinwatsin-kisses:saws-2:i5",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum",
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Saws 2",
+      "instance_index": 5,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "unknown"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "unknown"
+      ],
+      "notes": []
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/ARP white.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/ARP white.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "bl3ss-camrinwatsin-kisses:lead:i6",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum",
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Lead",
+      "instance_index": 6,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "lead"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "mid_focus"
+      ],
+      "notes": [
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Analog/ARP white.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Analog/ARP white.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "bl3ss-camrinwatsin-kisses:pad-1:i7",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum",
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Pad 1",
+      "instance_index": 7,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "bl3ss-camrinwatsin-kisses:pad-2:i8",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum",
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Pad 2",
+      "instance_index": 8,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  },
+  {
+    "profile_version": "0.1.0",
+    "profile_id": "bl3ss-camrinwatsin-kisses:pad-3:i9",
+    "source": {
+      "kind": "unknown",
+      "plugin": "Serum",
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_slug": "bl3ss-camrinwatsin-kisses",
+      "track": "Pad 3",
+      "instance_index": 9,
+      "preset_name": null,
+      "bank": null,
+      "vendor": null,
+      "source_path": null
+    },
+    "classification": {
+      "role_candidates": [
+        "pad"
+      ],
+      "tone_tags": [
+        "unknown"
+      ],
+      "mix_tags": [
+        "background"
+      ],
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
+    },
+    "summary": {
+      "wavetable_refs": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillator_count": 0,
+      "filter_count": 0,
+      "envelope_count": 0,
+      "lfo_count": 0,
+      "mod_route_count": 0
+    },
+    "synthesis": {
+      "wavetables": [
+        "Organics/AC hum1.wav"
+      ],
+      "oscillators": {},
+      "filters": {},
+      "envelopes": {},
+      "lfos": {},
+      "mod_matrix": {},
+      "global": {},
+      "effects": null
+    },
+    "audio_reference": {
+      "status": "not_rendered",
+      "render_paths": [],
+      "descriptor_path": null
+    },
+    "confidence": {
+      "source": 0.5,
+      "classification": 0.45,
+      "mix_hints": 0.35
+    }
+  }
+]

@@ -12,6 +12,7 @@ produced from Ableton sessions containing Serum instances.
 Examples:
     python3 als/build_serum_profile.py --analysis-json als/analysis/mph-raw-serum.json
     python3 als/build_serum_profile.py --analysis-json als/analysis/mph-raw-serum.json --out als/catalog/mph-raw-profiles.json
+    python3 als/build_serum_profile.py --analysis-dir als/analysis --catalog-dir als/catalog/profiles --index-out als/catalog/index.json
 """
 
 from __future__ import annotations
@@ -27,8 +28,12 @@ PROFILE_VERSION = "0.1.0"
 
 def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Build normalized Serum preset profiles from existing analysis JSON.")
-    parser.add_argument("--analysis-json", required=True, help="Path to an existing als/analysis/*-serum.json file.")
+    parser.add_argument("--analysis-json", help="Path to an existing als/analysis/*-serum.json file.")
+    parser.add_argument("--analysis-dir", help="Directory containing existing als/analysis/*-serum.json files.")
+    parser.add_argument("--glob", default="*-serum.json", help="Glob to use with --analysis-dir. Default: *-serum.json")
     parser.add_argument("--out", help="Optional output JSON path.")
+    parser.add_argument("--catalog-dir", help="Optional directory to receive one profile JSON per analysis file.")
+    parser.add_argument("--index-out", help="Optional path for a catalog index JSON.")
     return parser
 
 
@@ -59,8 +64,23 @@ def infer_role_candidates(track_name: str | None) -> list[str]:
     return roles or ["unknown"]
 
 
+def _mapping_section(value) -> dict:
+    return value if isinstance(value, dict) else {}
+
+
+def _wavetable_refs(instance: dict) -> list[str]:
+    value = instance.get("wavetables")
+    if isinstance(value, dict):
+        refs = value.values()
+    elif isinstance(value, list):
+        refs = value
+    else:
+        refs = []
+    return sorted({ref for ref in refs if isinstance(ref, str) and ref})
+
+
 def _first_filter_freq(instance: dict) -> float | None:
-    for filter_row in (instance.get("filters") or {}).values():
+    for filter_row in _mapping_section(instance.get("filters")).values():
         value = filter_row.get("kParamFreq")
         if isinstance(value, (int, float)):
             return float(value)
@@ -69,7 +89,7 @@ def _first_filter_freq(instance: dict) -> float | None:
 
 def _max_filter_drive(instance: dict) -> float | None:
     drives = []
-    for filter_row in (instance.get("filters") or {}).values():
+    for filter_row in _mapping_section(instance.get("filters")).values():
         value = filter_row.get("kParamDrive")
         if isinstance(value, (int, float)):
             drives.append(float(value))
@@ -77,7 +97,7 @@ def _max_filter_drive(instance: dict) -> float | None:
 
 
 def _has_unisonish_hint(instance: dict) -> bool:
-    for osc_row in (instance.get("oscillators") or {}).values():
+    for osc_row in _mapping_section(instance.get("oscillators")).values():
         for key, value in osc_row.items():
             if "unison" in key.lower() and isinstance(value, (int, float)) and value not in (0, 1):
                 return True
@@ -85,7 +105,7 @@ def _has_unisonish_hint(instance: dict) -> bool:
 
 
 def _low_octave_hint(instance: dict) -> bool:
-    for osc_row in (instance.get("oscillators") or {}).values():
+    for osc_row in _mapping_section(instance.get("oscillators")).values():
         value = osc_row.get("kParamOctave")
         if isinstance(value, (int, float)) and value <= -1:
             return True
@@ -160,21 +180,21 @@ def build_profile(analysis_path: Path, analysis: dict, instance: dict, instance_
             "notes": notes
         },
         "summary": {
-            "wavetable_refs": sorted(set((instance.get("wavetables") or {}).values())),
-            "oscillator_count": len(instance.get("oscillators") or {}),
-            "filter_count": len(instance.get("filters") or {}),
-            "envelope_count": len(instance.get("envelopes") or {}),
-            "lfo_count": len(instance.get("lfos") or {}),
-            "mod_route_count": len(instance.get("mod_matrix") or {})
+            "wavetable_refs": _wavetable_refs(instance),
+            "oscillator_count": len(_mapping_section(instance.get("oscillators"))),
+            "filter_count": len(_mapping_section(instance.get("filters"))),
+            "envelope_count": len(_mapping_section(instance.get("envelopes"))),
+            "lfo_count": len(_mapping_section(instance.get("lfos"))),
+            "mod_route_count": len(_mapping_section(instance.get("mod_matrix")))
         },
         "synthesis": {
-            "wavetables": instance.get("wavetables") or {},
-            "oscillators": instance.get("oscillators") or {},
-            "filters": instance.get("filters") or {},
-            "envelopes": instance.get("envelopes") or {},
-            "lfos": instance.get("lfos") or {},
-            "mod_matrix": instance.get("mod_matrix") or {},
-            "global": instance.get("global") or {},
+            "wavetables": instance.get("wavetables") if instance.get("wavetables") is not None else {},
+            "oscillators": _mapping_section(instance.get("oscillators")),
+            "filters": _mapping_section(instance.get("filters")),
+            "envelopes": _mapping_section(instance.get("envelopes")),
+            "lfos": _mapping_section(instance.get("lfos")),
+            "mod_matrix": _mapping_section(instance.get("mod_matrix")),
+            "global": _mapping_section(instance.get("global")),
             "effects": instance.get("effects") or instance.get("fx")
         },
         "audio_reference": {
@@ -198,15 +218,63 @@ def build_profiles(analysis_path: Path) -> list[dict]:
     return profiles
 
 
+def build_catalog(analysis_paths: list[Path]) -> dict:
+    analyses = []
+    total_profiles = 0
+    role_counts: dict[str, int] = {}
+    for analysis_path in analysis_paths:
+        profiles = build_profiles(analysis_path)
+        total_profiles += len(profiles)
+        for profile in profiles:
+            for role in profile["classification"]["role_candidates"]:
+                role_counts[role] = role_counts.get(role, 0) + 1
+        analyses.append({
+            "analysis_path": str(analysis_path),
+            "analysis_stem": analysis_path.stem,
+            "profile_count": len(profiles),
+            "profile_ids": [profile["profile_id"] for profile in profiles],
+            "tracks": [profile["source"]["track"] for profile in profiles],
+        })
+    return {
+        "profile_version": PROFILE_VERSION,
+        "analysis_count": len(analysis_paths),
+        "profile_count": total_profiles,
+        "role_counts": dict(sorted(role_counts.items())),
+        "analyses": analyses,
+    }
+
+
 def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
-    analysis_path = Path(args.analysis_json)
-    profiles = build_profiles(analysis_path)
-    output = json.dumps(profiles, indent=2) + "\n"
-    if args.out:
-        Path(args.out).write_text(output)
-    print(output, end="")
+    if bool(args.analysis_json) == bool(args.analysis_dir):
+        parser.error("pass exactly one of --analysis-json or --analysis-dir")
+
+    if args.analysis_json:
+        analysis_path = Path(args.analysis_json)
+        profiles = build_profiles(analysis_path)
+        output = json.dumps(profiles, indent=2) + "\n"
+        if args.out:
+            Path(args.out).write_text(output)
+        print(output, end="")
+        return
+
+    analysis_dir = Path(args.analysis_dir)
+    analysis_paths = sorted(analysis_dir.glob(args.glob))
+    if not analysis_paths:
+        parser.error(f"no files matched {args.glob!r} under {analysis_dir}")
+
+    catalog = build_catalog(analysis_paths)
+    if args.catalog_dir:
+        catalog_dir = Path(args.catalog_dir)
+        catalog_dir.mkdir(parents=True, exist_ok=True)
+        for analysis_path in analysis_paths:
+            out_path = catalog_dir / f"{analysis_path.stem}-profiles.json"
+            out_path.write_text(json.dumps(build_profiles(analysis_path), indent=2) + "\n")
+    if args.index_out:
+        Path(args.index_out).parent.mkdir(parents=True, exist_ok=True)
+        Path(args.index_out).write_text(json.dumps(catalog, indent=2) + "\n")
+    print(json.dumps(catalog, indent=2))
 
 
 if __name__ == "__main__":

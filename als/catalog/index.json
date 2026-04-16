@@ -1,0 +1,146 @@
+{
+  "profile_version": "0.1.0",
+  "analysis_count": 5,
+  "profile_count": 42,
+  "role_counts": {
+    "bass": 9,
+    "fx": 1,
+    "lead": 6,
+    "pad": 10,
+    "pluck": 3,
+    "reese": 2,
+    "sub": 1,
+    "unknown": 11
+  },
+  "analyses": [
+    {
+      "analysis_path": "als/analysis/bl3ss-camrinwatsin-kisses-serum.json",
+      "analysis_stem": "bl3ss-camrinwatsin-kisses-serum",
+      "profile_count": 9,
+      "profile_ids": [
+        "bl3ss-camrinwatsin-kisses:organ-bass:i1",
+        "bl3ss-camrinwatsin-kisses:fm-bass:i2",
+        "bl3ss-camrinwatsin-kisses:pluck-1:i3",
+        "bl3ss-camrinwatsin-kisses:saws-1:i4",
+        "bl3ss-camrinwatsin-kisses:saws-2:i5",
+        "bl3ss-camrinwatsin-kisses:lead:i6",
+        "bl3ss-camrinwatsin-kisses:pad-1:i7",
+        "bl3ss-camrinwatsin-kisses:pad-2:i8",
+        "bl3ss-camrinwatsin-kisses:pad-3:i9"
+      ],
+      "tracks": [
+        "Organ Bass",
+        "FM Bass",
+        "Pluck 1",
+        "Saws 1",
+        "Saws 2",
+        "Lead",
+        "Pad 1",
+        "Pad 2",
+        "Pad 3"
+      ]
+    },
+    {
+      "analysis_path": "als/analysis/interplanetary-criminal-slow-burner-serum.json",
+      "analysis_stem": "interplanetary-criminal-slow-burner-serum",
+      "profile_count": 5,
+      "profile_ids": [
+        "interplanetary-criminal-slow-burner:bass:i1",
+        "interplanetary-criminal-slow-burner:break-bass:i2",
+        "interplanetary-criminal-slow-burner:90s-piano:i3",
+        "interplanetary-criminal-slow-burner:organ:i4",
+        "interplanetary-criminal-slow-burner:laser-fx:i5"
+      ],
+      "tracks": [
+        "Bass",
+        "Break Bass",
+        "90s Piano",
+        "Organ",
+        "Laser Fx"
+      ]
+    },
+    {
+      "analysis_path": "als/analysis/kettama-it-gets-better-serum.json",
+      "analysis_stem": "kettama-it-gets-better-serum",
+      "profile_count": 15,
+      "profile_ids": [
+        "kettama-it-gets-better:bass:i1",
+        "kettama-it-gets-better:mid-bass:i2",
+        "kettama-it-gets-better:sub:i3",
+        "kettama-it-gets-better:rave-lead:i4",
+        "kettama-it-gets-better:rave-lead-2:i5",
+        "kettama-it-gets-better:saw:i6",
+        "kettama-it-gets-better:pad:i7",
+        "kettama-it-gets-better:pluck:i8",
+        "kettama-it-gets-better:main-pad:i9",
+        "kettama-it-gets-better:drop-pad:i10",
+        "kettama-it-gets-better:lead:i11",
+        "kettama-it-gets-better:lead-2:i12",
+        "kettama-it-gets-better:chord:i13",
+        "kettama-it-gets-better:main-chord:i14",
+        "kettama-it-gets-better:main-chord-2:i15"
+      ],
+      "tracks": [
+        "bass",
+        "mid bass",
+        "sub",
+        "rave lead",
+        "rave lead 2",
+        "saw",
+        "pad",
+        "pluck",
+        "main pad",
+        "drop pad",
+        "lead",
+        "lead 2",
+        "chord",
+        "main chord",
+        "main chord 2"
+      ]
+    },
+    {
+      "analysis_path": "als/analysis/mph-raw-serum.json",
+      "analysis_stem": "mph-raw-serum",
+      "profile_count": 7,
+      "profile_ids": [
+        "mph-raw:bass:i1",
+        "mph-raw:pluck-bass:i2",
+        "mph-raw:lead:i3",
+        "mph-raw:reese-basic:i4",
+        "mph-raw:reese:i5",
+        "mph-raw:drone-synth:i6",
+        "mph-raw:riser-basic:i7"
+      ],
+      "tracks": [
+        "Bass",
+        "Pluck Bass",
+        "Lead",
+        "Reese Basic",
+        "Reese",
+        "Drone Synth",
+        "Riser Basic"
+      ]
+    },
+    {
+      "analysis_path": "als/analysis/sammy-virji-cops-and-robbers-serum.json",
+      "analysis_stem": "sammy-virji-cops-and-robbers-serum",
+      "profile_count": 6,
+      "profile_ids": [
+        "sammy-virji-cops-and-robbers:bass:i1",
+        "sammy-virji-cops-and-robbers:strings-1:i2",
+        "sammy-virji-cops-and-robbers:strings-2:i3",
+        "sammy-virji-cops-and-robbers:strings-3:i4",
+        "sammy-virji-cops-and-robbers:saw:i5",
+        "sammy-virji-cops-and-robbers:chord:i6"
+      ],
+      "tracks": [
+        "Bass",
+        "Strings 1",
+        "Strings 2",
+        "Strings 3",
+        "Saw",
+        "Chord"
+      ]
+    }
+  ]
+}
