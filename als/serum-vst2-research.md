@@ -55,6 +55,9 @@ capture pass:
 - `report_serum_vst2_alignment_actions.py` and the updated alignment-session
   prep now turn that workpack into prioritized parser actions grouped by
   implementation target.
+- `report_serum_vst2_alignment_progress.py` and
+  `validate_serum_vst2_alignment_session.py` give the parser-alignment phase the
+  same kind of stateful/resumable workflow as the manual capture phase.
 - `validate_serum_manual_bundle.py --pairs-dir ...` now doubles as a preflight
   checker for missing `<probe_id>.before/.after` files, grouped by checkpoint.
 - `run_serum_vst2_postdiff.py` turns a completed pair folder into a persistent

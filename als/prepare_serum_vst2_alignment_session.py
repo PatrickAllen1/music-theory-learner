@@ -15,11 +15,13 @@ import json
 from pathlib import Path
 
 try:
+    from report_serum_vst2_alignment_progress import build_alignment_progress
     from report_serum_vst2_alignment_actions import build_alignment_actions
     from report_serum_vst2_mapping_coverage import build_mapping_coverage_report
     from report_serum_vst2_postdiff_gaps import build_gap_report
     from render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
 except ModuleNotFoundError:
+    from .report_serum_vst2_alignment_progress import build_alignment_progress
     from .report_serum_vst2_alignment_actions import build_alignment_actions
     from .report_serum_vst2_mapping_coverage import build_mapping_coverage_report
     from .report_serum_vst2_postdiff_gaps import build_gap_report
@@ -171,6 +173,7 @@ def main() -> None:
     _write(out_dir / "mapping_coverage.json", json.dumps(coverage, indent=2) + "\n", args.force)
     _write(out_dir / "gaps.json", json.dumps(gaps, indent=2) + "\n", args.force)
     _write(out_dir / "alignment_actions.json", json.dumps(actions, indent=2) + "\n", args.force)
+    _write(out_dir / "alignment_state.json", json.dumps(build_alignment_progress(out_dir), indent=2) + "\n", args.force)
 
     print(json.dumps({
         "ok": True,
@@ -184,6 +187,7 @@ def main() -> None:
             "mapping_coverage.json",
             "gaps.json",
             "alignment_actions.json",
+            "alignment_state.json",
         ],
         "ready_module_count": coverage.get("ready_module_count", 0),
         "still_dark_module_count": coverage.get("still_dark_module_count", 0),
