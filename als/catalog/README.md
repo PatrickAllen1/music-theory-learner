@@ -151,6 +151,13 @@ python3 als/prepare_serum_render_handoff.py --out-dir als/audio-session/render-h
 python3 als/prepare_serum_render_handoff.py --out-dir als/audio-session/render-handoff --include-medium
 ```
 
+After the WAVs have been rendered into that handoff bundle, ingest them and
+recompute the readiness/backlog/gap reports:
+
+```bash
+python3 als/complete_serum_render_handoff.py --handoff-dir als/audio-session/render-handoff
+```
+
 Find similar alternatives to a chosen profile:
 
 ```bash

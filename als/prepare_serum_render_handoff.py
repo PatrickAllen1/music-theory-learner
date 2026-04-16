@@ -129,7 +129,7 @@ def _handoff_readme(out_dir: Path, targets: list[dict], backlog: dict, gaps: dic
     lines.append("1. Open `render_targets.tsv` and work from the top row down.")
     lines.append("2. Use `audio-session/audio_queue.tsv` for the exact clips and filenames.")
     lines.append("3. Render the WAV files into `audio-session/renders/` with the exact filenames.")
-    lines.append("4. Later, run the existing audio-feature attachment workflow on that session.")
+    lines.append("4. Later, run `complete_serum_render_handoff.py` on this bundle to ingest the renders and recompute readiness.")
     lines.append("")
     lines.append("## Files")
     lines.append("- `render_targets.tsv`: ranked profiles and why they matter")
@@ -172,6 +172,17 @@ def main() -> None:
     _write_text(out_dir / "render-backlog.json", json.dumps(backlog, indent=2) + "\n", args.force)
     _write_text(out_dir / "catalog-gaps.json", json.dumps(gaps, indent=2) + "\n", args.force)
     _write_text(out_dir / "packet-readiness.json", json.dumps(readiness, indent=2) + "\n", args.force)
+    _write_text(out_dir / "handoff_config.json", json.dumps({
+        "catalog_dir": str(Path(args.catalog_dir)),
+        "briefs_path": str(Path(args.briefs)),
+        "spec_path": str(spec_path),
+        "prefer_rendered": args.prefer_rendered,
+        "limit_per_part": args.limit_per_part,
+        "mutation_limit": args.mutation_limit,
+        "max_swaps": args.max_swaps,
+        "profile_limit": args.profile_limit,
+        "include_medium": args.include_medium,
+    }, indent=2) + "\n", args.force)
 
     _write_text(audio_dir / "README.md", render_readme(queue, audio_dir, spec_path), args.force)
     _write_text(audio_dir / "audio_queue.tsv", render_tsv(queue), args.force)
@@ -204,6 +215,7 @@ def main() -> None:
             "render-backlog.json",
             "catalog-gaps.json",
             "packet-readiness.json",
+            "handoff_config.json",
             "audio-session/",
         ],
     }, indent=2))
