@@ -17,9 +17,11 @@ from pathlib import Path
 
 try:
     from ingest_serum_manual_diff import build_ingest_report
+    from promote_serum_vst2_mapping import build_mapping
     from render_serum_manual_bundle import DEFAULT_MANIFESTS
 except ModuleNotFoundError:
     from .ingest_serum_manual_diff import build_ingest_report
+    from .promote_serum_vst2_mapping import build_mapping
     from .render_serum_manual_bundle import DEFAULT_MANIFESTS
 
 
@@ -35,6 +37,12 @@ def make_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--checkpoint", action="append", default=[], help="Restrict the post-diff run to one or more checkpoint ids.")
     parser.add_argument("--probe", action="append", default=[], help="Restrict the post-diff run to one or more probe ids.")
+    parser.add_argument(
+        "--accept-status",
+        action="append",
+        default=["confirmed", "expected_hit"],
+        help="Consensus outcome statuses to promote into mapping.json.",
+    )
     parser.add_argument("--slots", type=int, default=180, help="How many float slots to diff")
     parser.add_argument("--threshold", type=float, default=0.01, help="Minimum delta threshold")
     return parser
@@ -115,14 +123,17 @@ def main() -> None:
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
     ingest_path = out_dir / "ingest.json"
+    mapping_path = out_dir / "mapping.json"
     summary_path = out_dir / "summary.md"
     ingest_path.write_text(json.dumps(report, indent=2) + "\n")
+    mapping_path.write_text(json.dumps(build_mapping(report, set(args.accept_status)), indent=2) + "\n")
     summary_path.write_text(render_summary(report))
 
     print(json.dumps({
         "ok": True,
         "out_dir": str(out_dir),
         "ingest_path": str(ingest_path),
+        "mapping_path": str(mapping_path),
         "summary_path": str(summary_path),
         "result_count": len(report["results"]),
         "missing_count": len(report["missing"]),

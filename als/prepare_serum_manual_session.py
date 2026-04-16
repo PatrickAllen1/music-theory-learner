@@ -32,6 +32,10 @@ except ModuleNotFoundError:
         render_markdown,
         render_tsv,
     )
+try:
+    from serum_vst2_manual_plan import build_probe_subgroups
+except ModuleNotFoundError:
+    from .serum_vst2_manual_plan import build_probe_subgroups
 
 
 def make_parser() -> argparse.ArgumentParser:
@@ -69,6 +73,7 @@ def _build_readme(bundle: dict, pairs_dir: Path) -> str:
     lines.append("3. Change only the target control for that probe.")
     lines.append("4. Save the edited state as the listed `after` filename inside `pairs/`.")
     lines.append("5. Move to the next queue item only after both files exist.")
+    lines.append("6. For oversized probes, use `subprobe_queue.tsv` to work through the label chunks in order.")
     lines.append("")
     lines.append("## Preflight")
     lines.append("```bash")
@@ -92,6 +97,31 @@ def _build_readme(bundle: dict, pairs_dir: Path) -> str:
     return "\n".join(lines) + "\n"
 
 
+def _render_subprobe_tsv(bundle: dict) -> str:
+    rows = [[
+        "probe_sequence",
+        "checkpoint_id",
+        "probe_id",
+        "subprobe_index",
+        "subprobe_title",
+        "label_count",
+        "labels",
+    ]]
+    for probe in bundle["probes"]:
+        subgroups = probe.get("subgroups") or build_probe_subgroups(probe)
+        for index, subgroup in enumerate(subgroups, 1):
+            rows.append([
+                str(probe["probe_sequence"]),
+                probe["checkpoint_id"],
+                probe["probe_id"],
+                str(index),
+                subgroup["title"],
+                str(len(subgroup["labels"])),
+                " | ".join(subgroup["labels"]),
+            ])
+    return "\n".join("\t".join(cell.replace("\t", " ").replace("\n", " ") for cell in row) for row in rows) + "\n"
+
+
 def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
@@ -109,6 +139,7 @@ def main() -> None:
     _write_text(out_dir / "README.md", _build_readme(bundle, pairs_dir), args.force)
     _write_text(out_dir / "capture_queue.tsv", render_tsv(bundle), args.force)
     _write_text(out_dir / "capture_queue.json", json.dumps(bundle, indent=2) + "\n", args.force)
+    _write_text(out_dir / "subprobe_queue.tsv", _render_subprobe_tsv(bundle), args.force)
     _write_text(
         out_dir / "expected-files.txt",
         "".join(f"{probe['before_filename']}\n{probe['after_filename']}\n" for probe in bundle["probes"]),
@@ -126,6 +157,7 @@ def main() -> None:
             "README.md",
             "capture_queue.tsv",
             "capture_queue.json",
+            "subprobe_queue.tsv",
             "expected-files.txt",
             ".gitignore",
         ],

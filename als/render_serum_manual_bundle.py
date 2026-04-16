@@ -16,6 +16,10 @@ import argparse
 import json
 from pathlib import Path
 
+try:
+    from serum_vst2_manual_plan import build_probe_subgroups, checkpoint_defer_until
+except ModuleNotFoundError:
+    from .serum_vst2_manual_plan import build_probe_subgroups, checkpoint_defer_until
 
 DEFAULT_MANIFESTS = [
     Path("als/serum-vst2-manual-probes.json"),
@@ -77,11 +81,12 @@ def load_bundle(manifest_paths: list[Path]) -> dict:
                 "checkpoint_id": checkpoint["id"],
                 "checkpoint_title": checkpoint["title"],
                 "objective": checkpoint["objective"],
+                "defer_until": checkpoint_defer_until(checkpoint["id"]),
             })
             for probe_order, probe in enumerate(checkpoint["probes"], 1):
                 probe_sequence += 1
                 probe_id = probe["id"]
-                probes.append({
+                row = {
                     "manifest_path": str(manifest_path),
                     "pack_order": pack_order,
                     "pack_label": _pack_label(manifest_path),
@@ -102,7 +107,9 @@ def load_bundle(manifest_paths: list[Path]) -> dict:
                     "notes": probe.get("notes", ""),
                     "before_filename": f"{probe_id}.before.fxp",
                     "after_filename": f"{probe_id}.after.fxp",
-                })
+                }
+                row["subgroups"] = build_probe_subgroups(row)
+                probes.append(row)
     return {
         "manifest_paths": [str(path) for path in manifest_paths],
         "checkpoint_count": len(checkpoints),
@@ -170,6 +177,8 @@ def render_markdown(bundle: dict) -> str:
         checkpoint = checkpoints[checkpoint_id]
         lines.append(f"## {checkpoint_id} — {checkpoint['checkpoint_title']}")
         lines.append(f"- queue: checkpoint {checkpoint['checkpoint_sequence']} of {bundle['checkpoint_count']} ({checkpoint['pack_label']} pack, position {checkpoint['checkpoint_order']})")
+        if checkpoint["defer_until"]:
+            lines.append(f"- defer until: {', '.join(checkpoint['defer_until'])}")
         lines.append(f"- objective: {checkpoint['objective']}")
         lines.append(f"- manifest: `{checkpoint['manifest_path']}`")
         for probe in probes_by_checkpoint[checkpoint_id]:
@@ -189,6 +198,8 @@ def render_markdown(bundle: dict) -> str:
                 lines.append(f"  fallbacks: {', '.join(f'`{name}`' for name in probe['fallback_preset_names'])}")
             if probe["notes"]:
                 lines.append(f"  notes: {probe['notes']}")
+            if probe["subgroups"]:
+                lines.append(f"  subgroups: {', '.join(group['title'] for group in probe['subgroups'])}")
         lines.append("")
     return "\n".join(lines).rstrip() + "\n"
 
@@ -206,6 +217,7 @@ def render_tsv(bundle: dict) -> str:
             "label",
             "before_filename",
             "after_filename",
+            "subgroup_titles",
             "candidate_host_labels",
             "candidate_slot_windows",
             "recommended_preset",
@@ -226,6 +238,7 @@ def render_tsv(bundle: dict) -> str:
             probe["label"],
             probe["before_filename"],
             probe["after_filename"],
+            " | ".join(group["title"] for group in probe["subgroups"]),
             " | ".join(probe["candidate_host_labels"]),
             " | ".join(probe["candidate_slot_windows"]),
             probe["recommended_preset"],

@@ -14,6 +14,12 @@ python3 als/prepare_serum_manual_session.py --out-dir /tmp/serum-manual-session
 python3 als/prepare_serum_manual_session.py --out-dir /tmp/serum-manual-session-A --checkpoint A --force
 ```
 
+The prepared session folder now includes:
+
+- `capture_queue.tsv` for the canonical probe order
+- `subprobe_queue.tsv` for chunked views of oversized probes like matrix, oscillator-detail, and LFO families
+- `expected-files.txt` for the exact `.before/.after` filenames
+
 Common diff command after saving the two `.fxp` variants:
 
 ```bash
@@ -36,10 +42,17 @@ python3 als/run_serum_vst2_postdiff.py --pairs-dir /path/to/serum-probe-pairs --
 python3 als/run_serum_vst2_postdiff.py --pairs-dir /path/to/serum-probe-pairs --out-dir /tmp/serum-postdiff-A --checkpoint A
 ```
 
+The wrapper now writes:
+
+- `ingest.json` with raw per-probe diff summaries plus consensus/follow-up queues
+- `mapping.json` with promoted mappings for accepted statuses (`confirmed` and `expected_hit` by default)
+- `summary.md` with the readable post-diff queue
+
 Preflight a capture folder before ingest:
 
 ```bash
 python3 als/validate_serum_manual_bundle.py --pairs-dir /path/to/serum-probe-pairs
+python3 als/validate_serum_manual_bundle.py --pairs-dir /path/to/serum-probe-pairs --ingest-json /tmp/serum-postdiff/ingest.json --reject-status no_diff --reject-status unexpected_cluster --max-follow-up 0
 ```
 
 ## Checkpoint A

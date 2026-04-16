@@ -111,6 +111,18 @@ def main() -> None:
         "--pairs-dir",
         help="Optional directory expected to contain <probe_id>.before.fxp / <probe_id>.after.fxp pairs.",
     )
+    parser.add_argument("--ingest-json", help="Optional ingest artifact from run_serum_vst2_postdiff.py or ingest_serum_manual_diff.py.")
+    parser.add_argument(
+        "--reject-status",
+        action="append",
+        default=[],
+        help="If --ingest-json is provided, fail when consensus.status_counts includes any of these statuses.",
+    )
+    parser.add_argument(
+        "--max-follow-up",
+        type=int,
+        help="If --ingest-json is provided, fail when the consensus follow-up queue exceeds this length.",
+    )
     parser.add_argument("--checkpoint", action="append", default=[], help="Restrict validation to one or more checkpoint ids.")
     parser.add_argument("--probe", action="append", default=[], help="Restrict validation to one or more probe ids.")
     args = parser.parse_args()
@@ -126,6 +138,7 @@ def main() -> None:
         coverage = build_probe_coverage_report(manifest_paths)
         missing_preset_paths = _collect_missing_preset_paths(manifest_paths)
         pairs_status = _collect_pairs_status(bundle, Path(args.pairs_dir)) if args.pairs_dir else None
+        ingest_report = json.loads(Path(args.ingest_json).read_text()) if args.ingest_json else None
     except Exception as exc:
         print(json.dumps({"ok": False, "error": str(exc)}), file=sys.stderr)
         sys.exit(1)
@@ -136,8 +149,37 @@ def main() -> None:
         if summary["probe_status"] != "full"
     }
 
+    ingest_status = None
+    rejected_status_hits = {}
+    follow_up_limit_exceeded = False
+    if ingest_report:
+        consensus = ingest_report.get("consensus", {})
+        status_counts = consensus.get("status_counts", {})
+        follow_up_queue = consensus.get("follow_up_queue", [])
+        rejected_status_hits = {
+            status: count
+            for status, count in status_counts.items()
+            if status in set(args.reject_status) and count
+        }
+        follow_up_limit_exceeded = args.max_follow_up is not None and len(follow_up_queue) > args.max_follow_up
+        ingest_status = {
+            "result_count": len(ingest_report.get("results", [])),
+            "missing_count": len(ingest_report.get("missing", [])),
+            "status_counts": status_counts,
+            "follow_up_count": len(follow_up_queue),
+            "rejected_status_hits": rejected_status_hits,
+            "max_follow_up": args.max_follow_up,
+            "follow_up_limit_exceeded": follow_up_limit_exceeded,
+        }
+
     result = {
-        "ok": not missing_preset_paths and not partial_or_none and not (pairs_status and pairs_status["missing_probe_count"]),
+        "ok": (
+            not missing_preset_paths
+            and not partial_or_none
+            and not (pairs_status and pairs_status["missing_probe_count"])
+            and not rejected_status_hits
+            and not follow_up_limit_exceeded
+        ),
         "manifest_count": len(manifest_paths),
         "probe_count": bundle["probe_count"],
         "coverage_status_counts": coverage["status_counts"],
@@ -146,6 +188,8 @@ def main() -> None:
     }
     if pairs_status:
         result["pairs_status"] = pairs_status
+    if ingest_status:
+        result["ingest_status"] = ingest_status
     print(json.dumps(result, indent=2))
     if not result["ok"]:
         sys.exit(1)

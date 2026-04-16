@@ -21,6 +21,15 @@ capture pass:
 - `prepare_serum_manual_session.py` writes a capture-ready folder with a
   numbered queue, expected pair filenames, and the merged bundle metadata. It
   can also emit checkpoint- or probe-scoped session folders for resumable runs.
+- The rendered bundle now carries explicit checkpoint defer chains plus
+  machine-generated subgroups for oversized probes such as matrix, oscillator,
+  and extended LFO families.
+- `validate_serum_manual_bundle.py` can now gate a completed ingest artifact
+  with `--ingest-json`, `--reject-status`, and `--max-follow-up`, so the final
+  manual pass has an objective promotion check instead of a loose eyeball pass.
+- `promote_serum_vst2_mapping.py` and the updated post-diff wrapper now emit a
+  smaller `mapping.json` artifact so accepted manual-diff results can feed the
+  next parser-alignment phase without reparsing the full ingest report.
 - `validate_serum_manual_bundle.py --pairs-dir ...` now doubles as a preflight
   checker for missing `<probe_id>.before/.after` files, grouped by checkpoint.
 - `run_serum_vst2_postdiff.py` turns a completed pair folder into a persistent
