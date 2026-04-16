@@ -1,0 +1,218 @@
+[
+  {
+    "id": "span_001",
+    "section": "General Features",
+    "text": "Tempo: 136 BPM (house section) → 174 BPM (drum and bass section). Key: G minor (written in), but chord sequence starts on E flat — effectively E flat Lydian; very similar to E flat major but with a sharpened fourth (the A natural).",
+    "tags": ["arrangement", "theory"]
+  },
+  {
+    "id": "span_002",
+    "section": "Structure & Arrangement > Song Structure",
+    "text": "The recreation covers about 32 bars in length. There is a main drop of 16 bars and then a second half of that drop which is kind of like a verse. The overall structure is quite a pop-like structure — a very radio-focused song structure with big sections of 16 bars and eight bars, with classic pop sections like a breakdown, verse, a buildup or pre-chorus, and then the chorus itself.",
+    "tags": ["arrangement"]
+  },
+  {
+    "id": "span_003",
+    "section": "Structure & Arrangement > Tempo Change",
+    "text": "The song starts out with a tempo of 136 beats per minute for the house section and then goes all the way up to 174 beats per minute for the drum and bass section at the end. The tempo doesn't come back down at the end of the song.",
+    "tags": ["arrangement"]
+  },
+  {
+    "id": "span_004",
+    "section": "Structure & Arrangement > Tempo Change",
+    "text": "The tempo change seems to start about halfway through the big 16-bar breakdown section — approximately at bar 25 — so by the time you get to the actual buildup to the drum and bass section, you can already hear just a very slight increase in tempo, which gives it this sense of something big is about to change.",
+    "tags": ["arrangement"]
+  },
+  {
+    "id": "span_005",
+    "section": "Structure & Arrangement > Element Sequencing (Non-overlap)",
+    "text": "The main piano chords and the arp synth play together at one point with very contrasting rhythms which helps them stand out from each other. When we get into the drop, only the trumpet sound plays. Then when the trumpet stops playing, the arp starts to play. This helps keep the track nice and clean — not muddying up the track with too many sounds.",
+    "tags": ["arrangement"]
+  },
+  {
+    "id": "span_006",
+    "section": "Key & Theory > Key & Mode",
+    "text": "The key of the track is G minor, but we start on a different note than the root note of the key. The first chord starts on the E flat, which is one to two steps below the root note G in the scale. That means it is in E flat Lydian — very similar to E flat major but with a sharpened fourth. That sharpened fourth is the A natural. The track was written in G minor but all that was done is shifting down those two steps — a very nice way to create a new interesting chord sequence within a minor scale.",
+    "tags": ["theory"]
+  },
+  {
+    "id": "span_007",
+    "section": "Key & Theory > Chord Progression",
+    "text": "We have the following chords used in the sequence: E flat, F, G, B flat, C, and D — which makes up six out of the seven chords. The only one missed is the A chord. In a minor key, the chord built on the note one step above the root is the diminished chord, and diminished chords just do not sound too great.",
+    "tags": ["theory"]
+  },
+  {
+    "id": "span_008",
+    "section": "Key & Theory > Chord Progression",
+    "text": "The last two chords lead back into the E flat at the beginning: C → D → E flat.",
+    "tags": ["theory"]
+  },
+  {
+    "id": "span_009",
+    "section": "Key & Theory > Stretched Voicing",
+    "text": "The main lead jumps between the first note of whatever chord is being played (the bass note) and the third note but an octave above where it would usually be within a standard triad. The root note of the chord is the E flat; the third note would generally be the G, but it is shifted up by an octave. This creates an epic, anthemic feel to leads.",
+    "tags": ["theory", "lead"]
+  },
+  {
+    "id": "span_010",
+    "section": "Key & Theory > Stretched Voicing",
+    "text": "The second-to-last chord lands on the C with the note above being the D — a major second interval instead of the expected third. Having it shifted down to the second note creates a bit more of a lift between the second-to-last chord and the last chord, helping to build tension before releasing back at the beginning.",
+    "tags": ["theory"]
+  },
+  {
+    "id": "span_011",
+    "section": "Key & Theory > Four-bar Melody Structure",
+    "text": "The whole sequence is split into four-bar sections with the first two bars being the same in each four-bar section, and then the second half is the big difference. This is a great trick for writing any repetitive melody — just changing up the second half of a four-bar sequence gives the melody a little bit more longevity instead of repeating the exact same thing over and over again.",
+    "tags": ["theory", "arrangement"]
+  },
+  {
+    "id": "span_012",
+    "section": "Trumpet Lead > Musical Role & Notes",
+    "text": "The trumpet is the main lead sound in the song apart from the vocals. It is quite a simple melody focusing around the stretched voicing idea — jumping between the bass note of each chord and the third note an octave above. The only exception is a note like the F, which is more of a passing note. The second-to-last chord lands on the C with the note above being the D — a major second interval instead of the expected third.",
+    "tags": ["lead", "theory"]
+  },
+  {
+    "id": "span_013",
+    "section": "Trumpet Lead > Patch (Serum)",
+    "text": "Using Serum. Oscillator A and B are both on saw wave. Both have unison set to the maximum with some detune. Oscillator B is an octave above oscillator A — this helps add that brassy feel. Volume envelope: fast attack because it is a punchy brass stab. Sustain dropped down with a decay of 320 milliseconds and a longer release. Envelope 2 assigned to the filter with the filter very low. The attack is about 50 milliseconds — this provides that brassy stab at the beginning. No sustain, longest decay time.",
+    "tags": ["sound_design", "lead"]
+  },
+  {
+    "id": "span_014",
+    "section": "Trumpet Lead > Effects & Processing",
+    "text": "Heavy tube distortion — lots of heavy distortion to bring out those brassy tones. The multiband compressor is not used. EQ with some gain added at about 2,000 Hz with a high shelf. A filter at the end of the chain at about 14k, 12 dB slope — rolling off very high frequencies. A lot of the low end has been taken out. High frequencies boosted. OTT at 23%. Filters are used for automation.",
+    "tags": ["fx", "lead"]
+  },
+  {
+    "id": "span_015",
+    "section": "Arpeggio Synth > Pattern & Rhythm",
+    "text": "In the first two bars, the pattern goes from highest note to lowest to the one in between. At bar three the pattern changes to a regular down pattern — possibly because starting one of the notes a little bit too late can cause the arpegiator to produce different patterns. The top note in each chord follows the melody of the trumpet pattern. The chord sequences use three notes, which creates a syncopated rhythm because three sixteenth notes do not divide evenly into groups of four.",
+    "tags": ["theory", "arrangement"]
+  },
+  {
+    "id": "span_016",
+    "section": "Arpeggio Synth > Note Range Management",
+    "text": "Using inversions and shifting notes up and down octaves keeps a nice tight window for the notes. The highest note is D4 and the lowest note is D2 — a two-octave window. This means a lot less crossover with the low end of the bass, so they do not start to get in each other's way and become muddy.",
+    "tags": ["theory", "mix"]
+  },
+  {
+    "id": "span_017",
+    "section": "Arpeggio Synth > Chord Voicing vs Bass",
+    "text": "When we get back to the G minor chord at the beginning, paired with the E flat on the bottom, the E flat gives the chord a completely new meaning. The root note of the G chord becomes the third, the B flat is the fifth, and the top note D is a seventh note — providing a little bit of tension. From the third chord onwards there is more regular voicing with the G as the root note, the fifth in between, and the third note on top but an octave above.",
+    "tags": ["theory"]
+  },
+  {
+    "id": "span_018",
+    "section": "Piano & Pad Group > Piano (Ableton Grand)",
+    "text": "The piano chords are simple — root note down on the bass with the stretched voicing (third note moved up to the octave above), plus an additional fifth note on top. More of a background layer to help harmonize the other instruments. The melody above the chords uses a syncopated rhythm where each note is a 3/16th note length (a dotted eighth note), resetting every two bars.",
+    "tags": ["theory", "arrangement"]
+  },
+  {
+    "id": "span_019",
+    "section": "Piano & Pad Group > Piano (Ableton Grand)",
+    "text": "Processing: auto filter for automation, glue compression with a long attack and a medium release — doing very little, just to control the punch and the tail.",
+    "tags": ["fx", "mix"]
+  },
+  {
+    "id": "span_020",
+    "section": "Piano & Pad Group > Organ Layer (Serum)",
+    "text": "A Serum patch — fairly simple, kind of like an organ sound. Just a saw wave with the harmonic series on the third harmonic to bring out some more mid frequencies. Filter to cut off all of the low frequencies.",
+    "tags": ["sound_design"]
+  },
+  {
+    "id": "span_021",
+    "section": "Piano & Pad Group > Respace Layer (Diva)",
+    "text": "Diva is used for variety and because Diva is very good at creating warm, low, subie bass sounds. Two oscillators, both set to saw wave. One detuned to minus 31 cents, the other to about plus 30 cents — equal and opposite instead of tuning just one up or down.",
+    "tags": ["sound_design"]
+  },
+  {
+    "id": "span_022",
+    "section": "Piano & Pad Group > Respace Layer (Diva)",
+    "text": "This bass sound is used in the breakdown as a layer underneath the pianos, and should not be too subie — if it is too subie it might detract from the drop later on. So when the filter cutoff is brought down, the resonance is brought up. On Pro Q3 this accentuates some of the upper harmonics more than the fundamental. A limiter was added after this to smooth out any very big volume jumps.",
+    "tags": ["sound_design", "mix"]
+  },
+  {
+    "id": "span_023",
+    "section": "Vocals > Melody Shape & Pitch Trend",
+    "text": "There is a trend of the notes slowly increasing in pitch as time goes on — starting very low in the breakdown, coming up to the middle point in the buildup, and then right at the end the highest notes of the vocal in the track. This provides a nice lift as you go into the chorus/drop. If you are writing any kind of vocals, this is a great technique to bring energy into your chorus from your verses.",
+    "tags": ["theory", "arrangement"]
+  },
+  {
+    "id": "span_024",
+    "section": "Vocals > Interval Analysis — Breakdown",
+    "text": "Looking at the intervals with E flat as the main root note: start on the D (the seventh), then the sixth, fifth, fourth — all quite fast. The main notes rested on are the B flat (fifth) and the G (third). When leading into the next chord, the G to D interval changes: fifth, fourth, third, second, third, and then we rest on the fourth note — a slightly tense note. It creates a little bit of tension in the vocal during the breakdown section.",
+    "tags": ["theory"]
+  },
+  {
+    "id": "span_025",
+    "section": "Vocals > Interval Analysis — Buildup",
+    "text": "A big change in melody: E flat up to F (the second), then the sixth, and the fifth that we rest on — more stability. Then the root note, F is first, root (the seventh interval), then moving up to the root note at the top for stability before the next section. In the buildup the melody is much more simplified: E flat is the base note, F is the second, D is the seventh — tension in the first half released in the second half. Always landing on the fifth at the end to tame any interesting movement done before.",
+    "tags": ["theory"]
+  },
+  {
+    "id": "span_026",
+    "section": "Vocals > Tension & Release Structure",
+    "text": "The first half of the main melody is really tense — using the fourth, the second, and the seventh (the in-between notes) to create tension. A regular chord would have the first, third, and fifth, so the fourth, second, and seventh are all in between those. The real tension release comes in the section looped in the main drop. In that section, G is the root note underneath, the fourth note on top is slightly tense, but then the third, and then a focus on the root note of G with big eighth notes.",
+    "tags": ["theory"]
+  },
+  {
+    "id": "span_027",
+    "section": "Vocals > Tension & Release Structure",
+    "text": "The vocal melody mainly uses minor pentatonic notes. The A natural (the sharpened fourth) appears but is not rested on for too long, so it does not create too much tension. This applies across the breakdown, buildup, and drop sections.",
+    "tags": ["theory"]
+  },
+  {
+    "id": "span_028",
+    "section": "Bass > Sub Bass Patch (Serum)",
+    "text": "The subbase has a square wave creating odd-numbered harmonics and a saw wave blended in at lower volume for warmth and fullness. Filter: 24 dB, quite low cutoff. Envelope 2 affecting the filter cutoff with a fast attack, 5-millisecond decay, and zero sustain. EQ: a boost at about 3 kHz to add presence to the attack of the bass sound. OTT added to bring out extra punch.",
+    "tags": ["sound_design", "bass"]
+  },
+  {
+    "id": "span_029",
+    "section": "Bass > MIDI Note Length Effect",
+    "text": "The MIDI note length effect is set to eighth notes and the gate is turned down to 83% of an eighth note — just shortening the notes. This helps create more of that stabby, rolling, percussive bass sound.",
+    "tags": ["sound_design", "bass"]
+  },
+  {
+    "id": "span_030",
+    "section": "Bass > Wide Bass Patch (Serum)",
+    "text": "The wide bass sound receives MIDI from the sub track above. A saw wave and a square wave — the saw wave is an octave above. Both have unison. White noise layered in for extra brightness and pluck. Filter: 18 dB, modulated by envelope 2 with no sustain and 700-millisecond decay. Envelope 1: no sustain, 500–600 millisecond decay. EQ with high frequencies boosted. High pass filter up to about 72 Hz to reduce crossover with the sub bass. OTT at 18% depth.",
+    "tags": ["sound_design", "bass"]
+  },
+  {
+    "id": "span_031",
+    "section": "Bass > MIDI Routing (Track Input)",
+    "text": "Two separate tracks instead of an instrument rack. The wide track has its input set to the sub track above, on post effects. Pressing in on the MIDI track makes it ignore its own MIDI and receive MIDI from the selected track. When the pattern in the sub part is changed, it also sends that MIDI to the wide part underneath. You can keep adding more tracks, each one selecting the input from the track above.",
+    "tags": ["arrangement", "sound_design"]
+  },
+  {
+    "id": "span_032",
+    "section": "Bass > Bass Group Processing",
+    "text": "Both bass layers are grouped together with effects to glue them. Decapitator for saturation — helps blend the two elements into one. OTT at 19% to bring up higher frequencies. EQ for extra bite around 3K in the presence region. A separate EQ in mid-side mode: cutting below 250 Hz on the sides only — no wide bass signals. LFO Tool for sidechain linked to the kick drum. Final auto filter for automation.",
+    "tags": ["mix", "fx", "bass"]
+  },
+  {
+    "id": "span_033",
+    "section": "Drums > Pattern",
+    "text": "The drum pattern is the classic standard drum and bass pattern: kick on the first beat, snare on the second, kick on the off beat in between beats three and four, then snare on the fourth beat. The high hat pattern mainly focuses around eighth notes and quarter notes. It sounds like there is some kind of alternating clap coming in on the second snare. The bass plays an eighth-note rolling pattern — used to ensure a very strong driving energy in the track.",
+    "tags": ["drums", "arrangement"]
+  },
+  {
+    "id": "span_034",
+    "section": "Drums > Kick Processing",
+    "text": "A lot of EQ work: focusing on the lower part of the kick, increasing low-mid punch, ducking some of the mid frequencies to get rid of a knocky effect. A boost at about 2K for the slap. 10K frequencies boosted too because the kick is extremely bright. Raw multiband distortion applied. Another EQ. A little bit of compression — C XT comp, 3:1 ratio, only two dB, long attack and fairly quick release, helping add extra punch at the beginning. Soft clipper used: before the soft clipper the volume is 3.4 dB, after still 3.4 dB, but it sounds a lot louder because soft clipping is increasing the volume back up.",
+    "tags": ["drums", "mix", "fx"]
+  },
+  {
+    "id": "span_035",
+    "section": "Drums > Snare Layers",
+    "text": "Four snare layers: a low acoustic snare providing body; a higher-pitched snappier snare; another snare sample providing crunch and more of the tail; and a Serum instance adding white noise fizz to accentuate the tail. EQ to increase low body (fundamental frequency), cut the middle from the crunchy second layer, tame harsh frequencies, and boost high frequencies. Overall volume brought back up using Decapitator. Then a bit of soft clipping.",
+    "tags": ["drums", "mix", "fx"]
+  },
+  {
+    "id": "span_036",
+    "section": "Buildup & Group Processing",
+    "text": "All instruments are grouped into a music group with a Valhalla Room reverb. During the buildup — about halfway through — the reverb mix is automated to go all the way up to 100%, so the musical elements drop further back into the mix as the drums and vocal come forward. Soothe is used for sidechain dynamic EQing from the drum bus to the musical track group — just creating more separation between the drums and the musical elements.",
+    "tags": ["arrangement", "fx", "mix"]
+  }
+]

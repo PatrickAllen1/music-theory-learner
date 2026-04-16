@@ -746,5 +746,521 @@
       "Add a small amount of release (1-3ms) to avoid digital clicking artifacts at note-off — fully zero release can create clicks on some synths.",
       "Keep reverb short and high-passed so the reverb tail doesn't undermine the hard-gate feel of the envelope."
     ]
+  },
+  {
+    "id": "tempo-automation-mid-section",
+    "name": "Tempo change starting mid-section for anticipatory lift",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "The tempo automation begins approximately halfway through a large section (bar 25 of a 32-bar breakdown/buildup) rather than cleanly at the start of a new section. By the time the genre shift arrives, the listener can already hear a slight tempo increase, creating a sense that something big is about to happen.",
+    "when_to_use": "When transitioning between two genres or tempos within a single track and you want the shift to feel gradual and inevitable rather than abrupt. Particularly effective when the destination tempo is significantly higher (e.g. 136 → 174 BPM).",
+    "works_well_with": [
+      "reverb-100pct-buildup-automation",
+      "melody-ascending-breakdown-to-drop",
+      "long 16-bar buildup sections"
+    ],
+    "likely_clashes_with": [
+      "DJ-friendly arrangements where clean tempo cuts are required for mixing",
+      "software that quantizes tempo changes to bar/beat boundaries"
+    ],
+    "why": "A sudden tempo change at a section boundary feels mechanical — the ear notices the jump all at once. Starting the automation mid-section eases the listener into the new tempo so the arrival feels earned rather than imposed.",
+    "mitigations": [
+      "Use gradual automation curves (not stepped) for the tempo change so the acceleration is smooth.",
+      "If DJ compatibility matters, consider whether this technique makes the track unusable in a mix context — it likely does."
+    ]
+  },
+  {
+    "id": "mode-shift-starting-two-below-root",
+    "name": "Mode shift — start chord sequence two steps below the minor root",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "A track written in a minor key (e.g. G minor) starts its chord sequence on the note two scale steps below the root (E flat), which frames the sequence as the Lydian mode of that starting note (E flat Lydian). This is very similar to the major scale of that note but with a sharpened fourth.",
+    "when_to_use": "When you want to write within a minor key but create a more interesting, slightly ambiguous harmonic flavour without leaving the scale. The Lydian starting point adds a brightness and openness that straight minor does not have.",
+    "works_well_with": [
+      "stretched-voicing-third-octave-up",
+      "diminished-chord-avoidance",
+      "four-bar-repeat-second-half-variation",
+      "non-chord-tone-tension-resolution"
+    ],
+    "likely_clashes_with": [
+      "heavy use of the flattened seventh chord (which is strongly minor in character and conflicts with the Lydian brightness)",
+      "melodies that rely on the minor third as the main emotional hook — the Lydian starting point de-emphasises that"
+    ],
+    "why": "Starting two scale steps below the root recontextualises the entire sequence. The same notes now function differently relative to the new starting point, giving familiar scale material a fresh emotional colour without modulating to a different key.",
+    "mitigations": [
+      "Keep awareness that you are still in the original minor key — not every chord will carry Lydian brightness, so let the sequence breathe across its full range of chords.",
+      "Avoid the sharpened fourth (A natural in E flat Lydian) as a resting note if you want to reduce the Lydian flavour in particular moments."
+    ]
+  },
+  {
+    "id": "stretched-voicing-third-octave-up",
+    "name": "Stretched voicing — 3rd moved up an octave for epic lead or chord",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "Instead of playing a standard triad (root, 3rd, 5th), the 3rd is shifted up by an octave. The lead or chord voicing becomes root + 3rd-octave-up, creating a wide, open interval that sounds epic and anthemic.",
+    "when_to_use": "When a lead melody or chord pad needs to feel large and triumphant rather than close and intimate. Particularly effective on lead synths, trumpet-style patches, and piano accompaniment where the upper note needs to 'sing' over the arrangement.",
+    "works_well_with": [
+      "mode-shift-starting-two-below-root",
+      "inversion-note-range-management",
+      "trumpet-serum-osc-b-octave-above",
+      "melody-ascending-breakdown-to-drop"
+    ],
+    "likely_clashes_with": [
+      "dense, close-voiced chords where the wide interval creates a gap that other elements bleed into",
+      "bass-heavy arrangements where the root + wide-3rd voicing leaves a large empty space in the mid-register"
+    ],
+    "why": "A standard triad in close position sounds harmonically full but compact. Moving the 3rd up an octave creates a large open space between the root and the melody note — the ear hears both as distinct pitches rather than a chord, which reads as powerful and exposed.",
+    "mitigations": [
+      "Fill the space between root and the high 3rd with a 5th to thicken the voicing without closing it.",
+      "For the second-to-last chord in the sequence, consider using a major 2nd instead of the octave-up 3rd to add variety and pre-resolution tension."
+    ]
+  },
+  {
+    "id": "diminished-chord-avoidance",
+    "name": "Diminished chord avoidance in minor key progressions",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "When writing a chord sequence in a minor key, the chord built on the note one scale step above the root (the diminished chord) is skipped entirely. The sequence uses six of the seven available chords — all except the diminished.",
+    "when_to_use": "In melodic electronic music, pop, or any context where chord progressions should feel smooth and resolved. The diminished chord's dissonance stands out harshly compared to the other chords in a minor key, making it jarring in most melodic contexts.",
+    "works_well_with": [
+      "mode-shift-starting-two-below-root",
+      "four-bar-repeat-second-half-variation",
+      "non-chord-tone-tension-resolution"
+    ],
+    "likely_clashes_with": [
+      "jazz or classical harmony where the diminished chord and its resolutions are an expected part of the vocabulary",
+      "intentional tension-building moments where the diminished sound is precisely what's needed"
+    ],
+    "why": "The diminished chord contains a tritone interval — the most dissonant interval in Western harmony. In a minor key progression built for melodic smoothness, it clashes without the resolution context that makes it work in jazz or classical settings.",
+    "mitigations": [
+      "If you need the scale step that would be the diminished root, use it as a passing melody note rather than a chord.",
+      "The remaining six chords provide enough harmonic motion for a complete, interesting sequence."
+    ]
+  },
+  {
+    "id": "four-bar-repeat-second-half-variation",
+    "name": "Four-bar melody — repeat bars 1–2, vary bars 3–4",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "A four-bar melodic phrase is structured so that bars 1 and 2 are identical in each repetition, but bars 3 and 4 differ. The repetition creates familiarity and hook; the variation prevents the melody from feeling static.",
+    "when_to_use": "For any looping lead melody, arp sequence, or vocal hook that needs to hold attention across multiple repetitions. Works in any genre where short melodic loops are the primary hook vehicle.",
+    "works_well_with": [
+      "melody-ascending-breakdown-to-drop",
+      "syncopated-three-16th-note-arp",
+      "stretched-voicing-third-octave-up",
+      "element-sequencing-no-overlap"
+    ],
+    "likely_clashes_with": [
+      "through-composed melodies where each bar should be different — this technique relies on deliberate repetition",
+      "very short two-bar loops where there is not enough space to establish the repeated half before the variation arrives"
+    ],
+    "why": "Repetition alone creates a loop; variation alone creates a melody that never lands. The 2+2 split gives the listener exactly one repetition to recognise the pattern before it changes — the change is then satisfying rather than surprising.",
+    "mitigations": [
+      "Make the variation in bars 3–4 substantial enough to register as different, but related enough to feel like the same musical idea.",
+      "Use the same rhythm in both halves — rhythmic consistency makes the pitch variation feel intentional rather than random."
+    ]
+  },
+  {
+    "id": "melody-ascending-breakdown-to-drop",
+    "name": "Ascending pitch trend across sections (breakdown → buildup → drop)",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "The overall pitch register of a melody (vocal or instrumental) gradually increases across the arc of a song: lowest range in the breakdown, middle range in the buildup, highest range in the drop/chorus. The energy build is reinforced by the physical lift of higher pitches.",
+    "when_to_use": "Whenever a track has a clear structural arc from low energy to high energy. Particularly powerful in pop-structured electronic music where the drop needs to feel like the emotional peak.",
+    "works_well_with": [
+      "four-bar-repeat-second-half-variation",
+      "reverb-100pct-buildup-automation",
+      "non-chord-tone-tension-resolution",
+      "tempo-automation-mid-section"
+    ],
+    "likely_clashes_with": [
+      "arrangements where the breakdown already uses high notes — starting high leaves no room for the ascending arc",
+      "minor-key tracks where the highest available notes create extreme dissonance at the peak"
+    ],
+    "why": "Higher pitches carry more acoustic energy and are perceptually more exciting. Writing the melody so that it physically rises across sections aligns the musical content with the emotional narrative of the arrangement.",
+    "mitigations": [
+      "Plan the pitch range of each section before writing — ensure the breakdown sits comfortably low, leaving the peak range free for the drop.",
+      "The ascent doesn't need to be constant — it is the overall shape that matters, not every individual phrase."
+    ]
+  },
+  {
+    "id": "non-chord-tone-tension-resolution",
+    "name": "Non-chord-tone tension then resolution to stable chord tones",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "The first half of a melodic phrase emphasises the 4th, 2nd, and 7th intervals (the notes between the stable chord tones of root, 3rd, and 5th). These create tension. The second half resolves to the root, 3rd, or 5th for release.",
+    "when_to_use": "In any lead or vocal melody that needs emotional movement within a phrase. The technique creates a micro tension-release arc inside each phrase, making the melody feel purposeful rather than random.",
+    "works_well_with": [
+      "four-bar-repeat-second-half-variation",
+      "melody-ascending-breakdown-to-drop",
+      "passing-note-technique",
+      "mode-shift-starting-two-below-root"
+    ],
+    "likely_clashes_with": [
+      "melodies that are meant to be consistently stable and reassuring — tension notes will undermine that",
+      "very dense harmonic arrangements where the listener is already processing a lot of dissonance"
+    ],
+    "why": "The root, 3rd, and 5th are the stable tones of a chord — they rest comfortably against the harmonic background. The 2nd, 4th, and 7th create mild dissonance by sitting between those stable points. Leading from dissonance to consonance is one of the most fundamental mechanisms of melodic satisfaction.",
+    "mitigations": [
+      "Do not rest on tension notes — use them as passing or approach notes and resolve quickly.",
+      "The 4th resolves naturally downward to the 3rd; the 7th resolves downward to the root or upward to the octave. Follow these voice-leading tendencies."
+    ]
+  },
+  {
+    "id": "syncopated-three-16th-note-arp",
+    "name": "Three-note arp in 16th-note grid — built-in syncopation",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "An arpeggiator or melodic sequence uses exactly three notes per chord, each a sixteenth note in length. Because three does not divide evenly into a four-beat bar, the pattern naturally creates syncopation — the accent shifts position on each repetition.",
+    "when_to_use": "When you want rhythmic interest and syncopation in an arp or melodic line without programming complex rhythms manually. The three-note grouping does the work automatically.",
+    "works_well_with": [
+      "four-bar-repeat-second-half-variation",
+      "inversion-note-range-management",
+      "element-sequencing-no-overlap",
+      "stretched-voicing-third-octave-up"
+    ],
+    "likely_clashes_with": [
+      "arrangements that need a very regular, on-the-grid feel — the syncopation may feel off rather than intentional in that context",
+      "bass lines that are strictly on eighth notes — the conflicting accents can create rhythmic confusion rather than groove"
+    ],
+    "why": "Three and four are coprime — they share no common factor. This means a three-note pattern cycling against a four-beat grid will not align to the same position until after twelve sixteenth notes (three bars), generating a constantly shifting accent pattern.",
+    "mitigations": [
+      "Pair the syncopated arp with a rhythmically regular element (e.g. a steady rolling bass) to keep the groove anchored.",
+      "Keep the arp notes themselves simple — the rhythmic complexity is the main interest, so busy melodic content on top can feel cluttered."
+    ]
+  },
+  {
+    "id": "inversion-note-range-management",
+    "name": "Inversion and octave shift to keep notes in a tight two-octave window",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "Chord voicings for an arp or pad are built using inversions and octave transpositions to constrain all notes to a fixed range — for example, D2 to D4. Notes that would fall outside this window are moved up or down by an octave.",
+    "when_to_use": "When writing polyphonic sequences (arps, chord patterns) that need to coexist with a bass without frequency overlap or muddiness. Also useful when the melodic pattern needs to stay in a singable or present register.",
+    "works_well_with": [
+      "syncopated-three-16th-note-arp",
+      "stretched-voicing-third-octave-up",
+      "mid-side-eq-low-cut-sides",
+      "square-plus-saw-subbase"
+    ],
+    "likely_clashes_with": [
+      "arrangements where dramatic leaps between registers are part of the emotional design",
+      "very wide voicings where the character of the open spread is the point — constraining range closes that up"
+    ],
+    "why": "Without range management, arp voices can jump into the bass register or disappear into the very high register depending on the chord position. A fixed window ensures consistent presence in the mix and prevents low-end collision with the bass.",
+    "mitigations": [
+      "Set the window boundaries by the bass range on the bottom (where the sub lives) and the lead range on the top (where the melody sits).",
+      "If a note lands uncomfortably at the edge of the window, use the inversion that moves it back toward the centre rather than forcing it to the boundary."
+    ]
+  },
+  {
+    "id": "trumpet-serum-osc-b-octave-above",
+    "name": "Serum trumpet — both oscs on saw, osc B one octave above",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "In Serum, both oscillators are set to saw wave with maximum unison and some detune. Oscillator B is pitched one octave above oscillator A. The octave above adds upper harmonics and brightness that gives the sound a brassy, trumpet-like character.",
+    "when_to_use": "When synthesising a brass or trumpet lead without using a sample library. The second oscillator an octave up adds the harmonic content that makes a saw wave sound brassy rather than simply buzzy.",
+    "works_well_with": [
+      "filter-envelope-50ms-attack-brass",
+      "stretched-voicing-third-octave-up",
+      "heavy tube distortion"
+    ],
+    "likely_clashes_with": [
+      "arrangements where the lead needs to sit low in the mix — the octave-above oscillator adds a lot of upper harmonic energy that can dominate the high-mid register",
+      "pads using the same octave-above technique — two elements with this character in the same arrangement will compete"
+    ],
+    "why": "Real brass instruments produce strong upper harmonics — the sound is harmonically complex, not just a fundamental with a few overtones. The octave-above oscillator in Serum approximates this harmonic richness in a way that a single saw wave (even with unison) cannot.",
+    "mitigations": [
+      "High-pass the low end of the patch to stop it competing with the bass — the brassy character lives in the mids and upper mids.",
+      "Use tube distortion to further enrich the harmonic content — distortion on the already-complex waveform adds the gritty, compressed quality of a real brass instrument."
+    ]
+  },
+  {
+    "id": "filter-envelope-50ms-attack-brass",
+    "name": "Filter envelope with 50ms attack for brassy stab bloom",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "Envelope 2 is routed to the filter cutoff with a 50-millisecond attack (not instant), zero sustain, and a long decay. The filter opens slowly over 50ms and then falls away. This creates the characteristic bloom and swell of a brass stab at the beginning of each note.",
+    "when_to_use": "When synthesising brass stabs or punchy melodic elements where an instant-open filter would sound too harsh or synthetic. The 50ms attack adds a natural-sounding swell that mimics the way a brass instrument's tone develops.",
+    "works_well_with": [
+      "trumpet-serum-osc-b-octave-above",
+      "stretched-voicing-third-octave-up",
+      "heavy tube distortion"
+    ],
+    "likely_clashes_with": [
+      "very short notes where the 50ms attack takes up most of the note duration — the bloom never fully develops",
+      "ambient pads where you want the filter to open instantly — the 50ms delay creates an unintentional soft attack feel"
+    ],
+    "why": "The attack on a filter envelope controls how fast the filter opens. An instant open sounds mechanical; a 50ms attack means the note starts with the filter partially closed and blooms open — this is what creates the push and swell of a brass stab.",
+    "mitigations": [
+      "If the stab feels too slow, reduce the attack toward 20-30ms — the bloom should be heard but not feel sluggish.",
+      "The decay length controls how long the filter stays open: short decay for a punchy stab, longer decay for a more sustained brass tone."
+    ]
+  },
+  {
+    "id": "note-length-midi-effect-83pct",
+    "name": "MIDI note length effect at 83% gate for stabby rolling bass",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "A MIDI note length effect is inserted before the bass synth. All notes are set to eighth-note length in the MIDI editor, but the effect gate is set to 83% — shortening each note to 83% of an eighth note. This creates a small gap between notes that makes the bass feel stabby and percussive rather than connected and smooth.",
+    "when_to_use": "When a rolling eighth-note bass pattern needs a percussive, punchy feel. Particularly useful in drum and bass where the bass needs to drive rhythmically alongside the kick and snare without sounding legato.",
+    "works_well_with": [
+      "square-plus-saw-subbase",
+      "midi-track-input-routing",
+      "element-sequencing-no-overlap"
+    ],
+    "likely_clashes_with": [
+      "legato bass lines where the notes are meant to connect smoothly — the shortened gate cuts off the sustain before the next note begins",
+      "bass patches with very long release tails — the note may end before the next note starts but the release tail keeps playing, reducing the staccato effect"
+    ],
+    "why": "A slight gap between notes registers as a rhythmic hit rather than a held tone. 83% of an eighth note leaves a 17% rest — small enough to not feel sparse, large enough to give each note a defined attack-and-release rather than a continuous sustain.",
+    "mitigations": [
+      "Adjust the gate percentage by ear — lower values create more space and more percussive feel; higher values (closer to 100%) are more legato.",
+      "If the synth's own release is too long, shorten it so the release tail does not fill the gap created by the note length effect."
+    ]
+  },
+  {
+    "id": "midi-track-input-routing",
+    "name": "MIDI track input routing — one track drives another without instrument rack",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "A second synth track has its MIDI input set to receive from a first synth track (set to post effects). The second track ignores its own MIDI content and plays exactly the same pattern as the first. Changes to the first track's MIDI pattern automatically update the second track.",
+    "when_to_use": "When layering two synth patches on the same MIDI pattern — for example, a sub bass and a wide bass — and you want both to always play the same notes without using an instrument rack or duplicating MIDI clips manually.",
+    "works_well_with": [
+      "square-plus-saw-subbase",
+      "white-noise-pluck-brightness",
+      "bass-group-decapitator-glue",
+      "note-length-midi-effect-83pct"
+    ],
+    "likely_clashes_with": [
+      "situations where the two tracks need slightly different MIDI patterns — this routing locks them together",
+      "complex MIDI effect chains on the source track where post-effects behaviour may be unexpected"
+    ],
+    "why": "Instrument racks combine multiple synths in one device but can feel complex to manage. Track input routing achieves the same layering in a more transparent way — each synth lives on its own track with its own effects chain, and the routing ensures they always play together.",
+    "mitigations": [
+      "Make sure the input is set to post effects if there are MIDI effects on the source track — otherwise the dependent track will receive the pre-effect MIDI.",
+      "This technique can be chained: a third track can receive from the second, and so on — useful for stacking more than two layers."
+    ]
+  },
+  {
+    "id": "square-plus-saw-subbase",
+    "name": "Square + saw blend for sub bass — odd harmonics + warmth",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "A Serum sub bass patch uses a square wave as the primary oscillator (generating only odd-numbered harmonics) with a saw wave blended in at lower volume. The square gives the bass its characteristic harmonic structure; the saw adds even harmonics for warmth and fullness.",
+    "when_to_use": "When a sub bass needs to be more than just a sine wave but not as harmonically dense as a pure saw. The square/saw blend sits between a clean sub and a bright bass, with useful mid-frequency content from both waveform types.",
+    "works_well_with": [
+      "note-length-midi-effect-83pct",
+      "midi-track-input-routing",
+      "bass-group-decapitator-glue",
+      "mid-side-eq-low-cut-sides"
+    ],
+    "likely_clashes_with": [
+      "very bright wide bass layers in the same register — the square/saw blend already has significant harmonic content and can clash with another harmonically rich layer",
+      "arrangements where the sub needs to be clean and near-sine — any saw content adds upper harmonics that will bleed into the mid register"
+    ],
+    "why": "A square wave's odd harmonic series gives it a hollow, woody quality. Adding a small amount of saw (which has both odd and even harmonics) fills in the even harmonics and makes the overall timbre feel warmer and fuller without changing the fundamental character.",
+    "mitigations": [
+      "Keep the saw wave significantly lower in volume than the square — the square should dominate; the saw is a blending agent, not a second lead voice.",
+      "Use a low-pass filter to control how much of both waveforms' upper harmonics pass through — too much will turn the sub into a mid-frequency instrument."
+    ]
+  },
+  {
+    "id": "white-noise-pluck-brightness",
+    "name": "White noise layered into synth patch for pluck brightness",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "A white noise oscillator is enabled inside the synth patch (Serum) and blended in at low level alongside the main oscillators. The noise adds broadband high-frequency content that accentuates the attack transient and gives the sound a more plucky, bright character.",
+    "when_to_use": "When a bass or lead patch needs more 'snap' or brightness at the attack without affecting the tonal body of the sound. Common in plucky bass, mallet-like leads, and percussive synth sounds.",
+    "works_well_with": [
+      "midi-track-input-routing",
+      "note-length-midi-effect-83pct",
+      "filter-envelope-50ms-attack-brass"
+    ],
+    "likely_clashes_with": [
+      "patches where a clean, smooth tone is required — the broadband noise content adds harshness if not carefully filtered",
+      "high-resonance filter sweeps — the noise feeds into the resonance peak and can create whistling or harsh artifacts"
+    ],
+    "why": "White noise contains energy at all frequencies simultaneously. In small amounts, it contributes brightness and transient edge that pitched waveforms lack. The effect is similar to the way a real plucked string instrument has a noisy attack — the string's initial contact creates broadband transient energy before the pitched tone settles.",
+    "mitigations": [
+      "Keep the noise level very low — it should add brightness, not be audible as noise.",
+      "Apply an envelope to the noise oscillator that mirrors the attack shape of the amp envelope — this keeps the noise concentrated in the transient rather than throughout the note."
+    ]
+  },
+  {
+    "id": "equal-opposite-detune",
+    "name": "Equal and opposite oscillator detuning — symmetric pitch centering",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "Two oscillators are detuned symmetrically in opposite directions (e.g. oscillator A at -31 cents, oscillator B at +30 cents) rather than leaving one at 0 and tuning the other up or down. The pitch center of the combined sound stays accurate to the MIDI note.",
+    "when_to_use": "Whenever two oscillators are detuned for warmth, width, or chorus-like movement. Symmetric detuning keeps the instrument in tune relative to other elements while still achieving the thickening or width effect.",
+    "works_well_with": [
+      "trumpet-serum-osc-b-octave-above",
+      "square-plus-saw-subbase",
+      "resonance-raised-suppress-fundamental"
+    ],
+    "likely_clashes_with": [
+      "patches where a deliberate pitch drift or microtuning to a specific non-equal-tempered interval is the goal"
+    ],
+    "why": "When one oscillator is at 0 cents and another at +30 cents, the combined pitch center sits +15 cents sharp. Tuning them to -15 and +15 (or close equivalents) keeps the center at 0. This matters most for melodic instruments and bass patches where intonation relative to other tracks is important.",
+    "mitigations": [
+      "The values do not need to be mathematically exact — close enough by ear is sufficient, as long as the sound does not feel sharp or flat.",
+      "For pads where exact pitch is less critical, asymmetric detuning is fine — this technique matters most for bass and leads where intonation is audible."
+    ]
+  },
+  {
+    "id": "resonance-raised-suppress-fundamental",
+    "name": "Filter resonance raised to suppress fundamental — upper harmonic emphasis",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "When the filter cutoff is lowered on a pad or bass, the resonance is simultaneously raised. This accentuates the upper harmonics at the cutoff frequency while reducing the fundamental. The result is a sound that is present in the mid-to-upper register without contributing weight in the sub/bass register.",
+    "when_to_use": "When a sound needs to be heard in a breakdown or lighter section without competing with the low-end weight that the drop will carry. Raising resonance while lowering cutoff keeps the sound 'there' without being 'heavy'.",
+    "works_well_with": [
+      "equal-opposite-detune",
+      "reverb-100pct-buildup-automation",
+      "mid-side-eq-low-cut-sides"
+    ],
+    "likely_clashes_with": [
+      "patches where the fundamental is load-bearing — removing it makes the sound feel thin and disconnected",
+      "high resonance settings that create a strong pitched whistling at the cutoff frequency, which can clash with the harmonic content of the arrangement"
+    ],
+    "why": "The filter resonance creates a boost at the cutoff frequency. By lowering the cutoff and raising the resonance together, you shift the point of emphasis upward in the harmonic spectrum — the fundamental is filtered out while the resonance peak adds presence in the upper partials. This is particularly useful for breakdown layers that would otherwise undermine the impact of the drop.",
+    "mitigations": [
+      "Use a spectrum analyser or reference while setting these values — high resonance can introduce peaks that are not obvious by ear alone.",
+      "Apply a limiter after the filter if resonance peaks cause volume spikes at certain pitches."
+    ]
+  },
+  {
+    "id": "multi-layer-snare-four-parts",
+    "name": "Four-layer snare: body + snap + crunch + white noise tail",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "Four separate elements are layered to form a single snare sound: (1) a low acoustic snare sample for body and fundamental; (2) a higher-pitched, snappier snare sample for the snappy attack; (3) a crunchy snare sample for the tail and texture; (4) a Serum white noise synth for fizzy tail accentuation.",
+    "when_to_use": "When a single snare sample does not deliver the combination of body, attack, crunch, and tail that the track needs. Each layer is optimised for one quality — layering them gives independent control over each aspect of the snare character.",
+    "works_well_with": [
+      "drum-bus-glue-and-clip",
+      "heavy EQ and Decapitator on the group",
+      "soft-clipper for level management"
+    ],
+    "likely_clashes_with": [
+      "live drum recordings where a multi-layer approach adds an unnatural quality",
+      "genres where a single-hit, raw snare character is part of the aesthetic (e.g. lo-fi, minimal)"
+    ],
+    "why": "No single snare sample excels at all four qualities simultaneously. A full-bodied sample is often not snappy enough; a snappy sample often lacks body; a sample with good body and snap often has an unsatisfying tail. Splitting the roles across layers gives each quality its own optimised source.",
+    "mitigations": [
+      "Balance levels carefully — the body layer should not be so loud that it makes the whole snare sound 'soft', and the crunch layer should not overpower the fundamental.",
+      "Apply EQ to each individual layer before mixing them — this prevents frequency overlap between layers (e.g. the crunch layer adding too much low body that competes with the body layer)."
+    ]
+  },
+  {
+    "id": "reverb-100pct-buildup-automation",
+    "name": "Reverb mix automated to 100% wet during buildup — instruments recede into distance",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "A Valhalla Room reverb on the music group has its wet/dry mix automated from a normal value to 100% wet during the buildup. As the reverb becomes fully wet, the melodic instruments seem to move far back in the mix depth, creating space for drums and vocals to come forward.",
+    "when_to_use": "In the buildup section before a drop, when the melodic elements need to gradually de-emphasise to create space for the high-energy arrival. Automating to 100% wet is more dramatic than a volume fade because the sound stays present but loses focus.",
+    "works_well_with": [
+      "tempo-automation-mid-section",
+      "melody-ascending-breakdown-to-drop",
+      "soothe-sidechain-drums-to-music",
+      "element-sequencing-no-overlap"
+    ],
+    "likely_clashes_with": [
+      "very long reverb tails that persist into the drop — the wet reverb sound can bleed into the drop and muddy the arrival",
+      "reverb on already heavily reverb'd sounds — applying 100% wet reverb on top of an already ambient sound creates an uncontrolled wash"
+    ],
+    "why": "100% wet reverb removes the direct signal entirely and replaces it with the reverb tail. The instruments are still audible (the reverb colours them) but they lose the presence and definition of the direct signal — they sound like they are in a large room, far from the listener. This creates depth without silence.",
+    "mitigations": [
+      "Use a reverb with a relatively short or medium decay time — very long decay at 100% wet will fill the entire frequency spectrum and obscure the drums entering underneath.",
+      "Automate the reverb mix back to a low value at the drop arrival so the instruments return to clarity exactly when the drop hits."
+    ]
+  },
+  {
+    "id": "soothe-sidechain-drums-to-music",
+    "name": "Soothe dynamic EQ as sidechain from drum bus to music group",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "Soothe (or a similar dynamic EQ) is inserted on the music group and configured to receive a sidechain signal from the drum bus. When the drums hit, Soothe dynamically reduces the frequencies in the music group that compete with the drums, creating separation without obvious compression pumping.",
+    "when_to_use": "When drums and melodic elements occupy overlapping frequency ranges and standard compression sidechain creates obvious pumping that does not suit the track. Soothe's frequency-specific approach creates separation that sounds natural.",
+    "works_well_with": [
+      "reverb-100pct-buildup-automation",
+      "bass-group-decapitator-glue",
+      "element-sequencing-no-overlap"
+    ],
+    "likely_clashes_with": [
+      "arrangements where the pumping sidechain effect is intentional and desired — Soothe's transparent processing removes that character",
+      "very fast or complex drum patterns where Soothe may over-process the music group due to constant triggering"
+    ],
+    "why": "Standard compressor sidechain reduces the entire signal level when the sidechain triggers. Soothe identifies which specific frequencies in the target signal are conflicting with the sidechain source and only reduces those — all other frequencies are unaffected. The result is transparent separation rather than audible ducking.",
+    "mitigations": [
+      "Set Soothe's sensitivity carefully — too aggressive and the music group sounds thin whenever the drums play; too light and the separation effect is lost.",
+      "Use the sidechain in combination with careful EQ on individual tracks to pre-reduce frequency conflicts before Soothe has to deal with them."
+    ]
+  },
+  {
+    "id": "bass-group-decapitator-glue",
+    "name": "Decapitator saturation on bass group to glue layered sub and wide bass",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "After sub bass and wide bass are grouped together, Decapitator is applied on the group. The shared saturation adds harmonic content that is common to both layers, making them blend into a single cohesive bass sound rather than two audibly separate elements.",
+    "when_to_use": "When layering two or more bass patches (e.g. sub + wide) that need to sound like one instrument. Saturation on the group bus is more effective than saturation on individual tracks because it creates shared harmonic content across the combined signal.",
+    "works_well_with": [
+      "square-plus-saw-subbase",
+      "white-noise-pluck-brightness",
+      "midi-track-input-routing",
+      "mid-side-eq-low-cut-sides"
+    ],
+    "likely_clashes_with": [
+      "very clean bass arrangements where any distortion or saturation is unwanted",
+      "sub-heavy tracks where saturation on the group adds too much upper harmonic content and pulls energy away from the sub register"
+    ],
+    "why": "Separate bass layers have independent harmonic structures — even when playing the same notes, they can sound like they exist in different sonic spaces. Saturation applied to the summed signal generates new harmonics that are derived from the combined waveform, effectively fusing the layers into one tonal object.",
+    "mitigations": [
+      "Keep the Decapitator drive low — the goal is blend, not distortion. A small amount of warmth is enough.",
+      "Follow with OTT at low depth to bring up the shared higher frequencies that the saturation has added — this further integrates the layers."
+    ]
+  },
+  {
+    "id": "mid-side-eq-low-cut-sides",
+    "name": "Mid-side EQ — cut below 250 Hz on sides only for mono bass",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "A mid-side EQ is applied on the bass group with a high-pass filter cutting below 250 Hz on the side channel only. The mid channel (centre) retains all low frequencies; the sides have no content below 250 Hz. This keeps the bass fully mono-compatible while allowing the upper bass register to have some width.",
+    "when_to_use": "When a bass patch uses stereo processing (unison, chorus, wide effects) that adds low-frequency side content. This is problematic for club systems that sum to mono. The M/S EQ removes the problematic low-frequency width without collapsing the entire bass to mono.",
+    "works_well_with": [
+      "bass-group-decapitator-glue",
+      "square-plus-saw-subbase",
+      "midi-track-input-routing"
+    ],
+    "likely_clashes_with": [
+      "mid-side processing applied after this point — subsequent M/S operations need to account for the already-altered side signal",
+      "very low 250 Hz cutoff point for some genres — in situations where width is wanted down to a lower frequency, this approach cuts too high"
+    ],
+    "why": "Sub-bass frequencies below roughly 150-200 Hz are perceived as non-directional — the ear cannot locate them in space. Side content at those frequencies does not add width; it only creates phase cancellation when summed to mono. Cutting the sides below 250 Hz removes this risk with a safety margin above the strictly non-directional range.",
+    "mitigations": [
+      "Verify the cutoff frequency by checking mono compatibility — sum to mono and listen for level loss or tonal changes in the bass.",
+      "If the bass has meaningful character between 200-250 Hz that would be lost from the sides, lower the cutoff to 150 Hz or so, accepting slightly more mono risk."
+    ]
+  },
+  {
+    "id": "passing-note-technique",
+    "name": "Passing notes — brief tension notes never held long enough to feel jarring",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "Notes outside the pentatonic scale or the chord's stable tones (particularly the sharpened fourth in a Lydian/minor context) are used briefly in a melody but are never rested on. They pass through quickly and are immediately followed by a stable resolution note.",
+    "when_to_use": "When a melody needs a touch of tension and interest without committing to a dissonant note long enough to feel wrong. Particularly useful with scale tones that are chromatically close to stable tones and create brief colour before resolving.",
+    "works_well_with": [
+      "non-chord-tone-tension-resolution",
+      "four-bar-repeat-second-half-variation",
+      "melody-ascending-breakdown-to-drop",
+      "diminished-chord-avoidance"
+    ],
+    "likely_clashes_with": [
+      "very slow melodies where every note is held for a long time — a passing note that lasts too long stops being a passing note and starts being a dissonant held note",
+      "arrangements with very dense harmonic content where additional tension notes overload the listener's harmonic processing"
+    ],
+    "why": "A note that passes through on its way to a stable landing registers as musical movement and colour. The same note held for a full beat or more registers as a wrong note or an intentional dissonance. Duration is the difference between a passing note and a dissonant note.",
+    "mitigations": [
+      "Keep passing notes short — sixteenth notes or shorter are ideal in most melodic contexts.",
+      "Always follow a passing note with a stable chord tone immediately — the resolution is what validates the tension of the passing note."
+    ]
+  },
+  {
+    "id": "element-sequencing-no-overlap",
+    "name": "Element sequencing — lead and arp alternate, not stack",
+    "source": "Go Back — Sub Focus × John Summit",
+    "what_it_does": "The trumpet lead and the arp synth do not play simultaneously in the drop — the trumpet plays its phrase, stops, then the arp plays. Where piano and arp do overlap, they have strongly contrasting rhythms (sustained chords vs. syncopated three-16th note pattern) so they occupy different rhythmic space.",
+    "when_to_use": "When an arrangement contains multiple melodic elements and the mix is at risk of becoming cluttered. Alternating rather than stacking similar-texture elements keeps the arrangement clean while maintaining melodic interest across the full length of the section.",
+    "works_well_with": [
+      "four-bar-repeat-second-half-variation",
+      "syncopated-three-16th-note-arp",
+      "reverb-100pct-buildup-automation",
+      "soothe-sidechain-drums-to-music"
+    ],
+    "likely_clashes_with": [
+      "arrangements that rely on layered density as a core sonic identity — alternating elements will feel sparse in that context",
+      "tracks where both elements are needed simultaneously to provide enough harmonic content for the drop"
+    ],
+    "why": "Stacking multiple melodic elements creates richness but also competition in the mid-register, particularly when the vocal also occupies that space. Alternating gives each element a moment of focus while keeping the total arrangement from becoming overcrowded. The contrast between 'trumpet on' and 'arp on' also provides arrangement-level movement.",
+    "mitigations": [
+      "Ensure each element's solo moment is interesting enough to hold attention on its own — if either element sounds thin alone, it may need harmonic support.",
+      "Use transitions between the elements (even a single beat of overlap or a tail) to avoid an abrupt switch feel."
+    ]
   }
 ]
