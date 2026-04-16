@@ -470,6 +470,27 @@ def infer_serum_vst2_host_control_kind(label: str) -> str:
     if not label:
         return "unknown"
 
+    explicit_kinds = {
+        "Portamento Time": "continuous",
+        "Portamento Curve": "continuous",
+        "Porta Mode": "discrete_or_enum",
+        "Porta Scaled": "boolean_or_toggle",
+        "Attack Curve": "continuous",
+        "Decay Curve": "continuous",
+        "Release Curve": "continuous",
+        "Bend Range Up": "discrete_or_enum",
+        "Bend Range Down": "discrete_or_enum",
+        "Polyphony Count": "discrete_or_enum",
+        "Quality": "discrete_or_enum",
+        "GUI Size": "discrete_or_enum",
+        "Reverb Type -": "discrete_or_enum",
+        "Monophonic / Polyphonic switch": "boolean_or_toggle",
+        "Legato": "boolean_or_toggle",
+        "Note Latch": "boolean_or_toggle",
+    }
+    if label in explicit_kinds:
+        return explicit_kinds[label]
+
     boolean_tokens = (
         "_On",
         "PitchTrack",
@@ -813,6 +834,38 @@ def build_serum_vst2_host_coverage_report(binary_path=SERUM_VST2_PLUGIN_BINARY_P
         "categories": category_summaries,
         "modules": module_summaries,
         "entries": enriched_entries,
+    }
+
+
+def get_serum_vst2_module_entries(module: str, binary_path=SERUM_VST2_PLUGIN_BINARY_PATH) -> list[dict]:
+    """Return the host-catalog entries for a single inferred module."""
+    catalog = extract_serum_vst2_host_param_catalog(binary_path=binary_path)
+    return [entry for entry in catalog["entries"] if entry["module"] == module]
+
+
+def build_serum_vst2_module_signature(module: str, binary_path=SERUM_VST2_PLUGIN_BINARY_PATH) -> dict:
+    """Summarize the control-shape signature for one Serum host module."""
+    entries = get_serum_vst2_module_entries(module, binary_path=binary_path)
+    if not entries:
+        return {
+            "module": module,
+            "entry_count": 0,
+            "manual_section": "",
+            "control_kind_counts": {},
+            "labels": [],
+        }
+
+    control_kind_counts = {}
+    for entry in entries:
+        kind = entry["control_kind_hint"]
+        control_kind_counts[kind] = control_kind_counts.get(kind, 0) + 1
+
+    return {
+        "module": module,
+        "entry_count": len(entries),
+        "manual_section": entries[0]["manual_section"],
+        "control_kind_counts": control_kind_counts,
+        "labels": [entry["label"] for entry in entries],
     }
 
 

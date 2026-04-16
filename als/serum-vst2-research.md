@@ -314,6 +314,60 @@ This does not prove slot indices by itself, but it materially improves the next
 alignment step because we can target a narrower, semantically-correct surface
 instead of treating `fx` or `global` as one flat bucket.
 
+## Existing ALS anchors
+
+The local ALS analysis set already contains named Serum 2 global/voicing params
+that are useful as semantic anchors, even though they do not directly reveal the
+old VST2 slot layout. Examples from the analysis JSON:
+
+- `kParamPortamentoTime`
+- `kParamLegato`
+- `kParamPortaAlways`
+- `kParamMonoToggle`
+
+These confirm that portamento / legato / mono are real, active controls in the
+kind of bass and lead patches we care about. They should inform targeting, but
+they should NOT be used to claim a direct VST2 slot mapping.
+
+## Module candidate ranking
+
+There is now a helper script for behavior-based candidate ranking:
+
+- `python3 als/rank_serum_vst2_module_candidates.py --module global_portamento`
+
+This script:
+
+- takes a host module's expected control kinds from the extracted VST2 host
+  catalog
+- profiles unknown VST2 float slots across the preset corpus
+- ranks contiguous unknown windows by how well they match the target module's
+  kind signature
+
+It still does not prove mappings, but it turns "somewhere in the unknown
+region" into a short candidate list for controlled diffs.
+
+Current `global_portamento` signature:
+
+- `continuous`: 2
+- `discrete_or_enum`: 1
+- `boolean_or_toggle`: 1
+
+Current top candidate windows from the Garage / Speed Garage corpus:
+
+- `140-143`
+- `149-152`
+- `150-153`
+- `128-131`
+- `138-141`
+
+These are the best current targets for the next controlled-save pass if we want
+to prove:
+
+- Portamento Time
+- Portamento Curve
+- Porta Mode
+- Porta Scaled
+
 ## Good immediate targets
 
 - `Lead- Just` vs `Lead- Saturn`
