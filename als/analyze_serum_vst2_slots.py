@@ -22,14 +22,24 @@ import statistics
 from collections import Counter
 from pathlib import Path
 
-from parse_serum import (
-    SERUM_VST2_PARAM_BY_INDEX,
-    SERUM_VST2_PARAMS,
-    SERUM_V2_PARAM_OFFSET,
-    cluster_vst2_slot_rows,
-    extract_vst2_float_slots,
-    parse_fxp_file,
-)
+try:
+    from parse_serum import (
+        SERUM_VST2_PARAM_BY_INDEX,
+        SERUM_VST2_PARAMS,
+        SERUM_V2_PARAM_OFFSET,
+        cluster_vst2_slot_rows,
+        extract_vst2_float_slots,
+        parse_fxp_file,
+    )
+except ModuleNotFoundError:
+    from .parse_serum import (
+        SERUM_VST2_PARAM_BY_INDEX,
+        SERUM_VST2_PARAMS,
+        SERUM_V2_PARAM_OFFSET,
+        cluster_vst2_slot_rows,
+        extract_vst2_float_slots,
+        parse_fxp_file,
+    )
 
 DEFAULT_BANKS = {
     "garage": Path("/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage"),

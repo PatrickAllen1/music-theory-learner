@@ -19,14 +19,24 @@ import statistics
 from collections import Counter
 from pathlib import Path
 
-from analyze_serum_vst2_slots import DEFAULT_BANKS, summarise_slot
-from parse_serum import (
-    SERUM_V2_PARAM_OFFSET,
-    build_serum_vst2_module_signature,
-    cluster_vst2_slot_rows,
-    extract_vst2_float_slots,
-    parse_fxp_file,
-)
+try:
+    from analyze_serum_vst2_slots import DEFAULT_BANKS, summarise_slot
+    from parse_serum import (
+        SERUM_V2_PARAM_OFFSET,
+        build_serum_vst2_module_signature,
+        cluster_vst2_slot_rows,
+        extract_vst2_float_slots,
+        parse_fxp_file,
+    )
+except ModuleNotFoundError:
+    from .analyze_serum_vst2_slots import DEFAULT_BANKS, summarise_slot
+    from .parse_serum import (
+        SERUM_V2_PARAM_OFFSET,
+        build_serum_vst2_module_signature,
+        cluster_vst2_slot_rows,
+        extract_vst2_float_slots,
+        parse_fxp_file,
+    )
 
 
 def make_parser() -> argparse.ArgumentParser:
