@@ -107,6 +107,20 @@ python3 als/generate_serum_guided_build_steps.py --brief ukg-2step-dark-stab
 python3 als/generate_serum_guided_build_steps.py --brief ukg-4x4-pluck-driver --format json
 ```
 
+Generate a full-song production blueprint that wraps the refined synth stack
+with arrangement, sample slots, processing chains, returns, and export rules:
+
+```bash
+python3 als/design_full_song_blueprint.py --brief ukg-2step-dark-stab
+python3 als/design_full_song_blueprint.py --brief ukg-4x4-pluck-driver --format json
+```
+
+Compare two full-song blueprints before turning either one into a lesson:
+
+```bash
+python3 als/compare_full_song_blueprints.py --left-brief ukg-2step-dark-stab --right-brief ukg-4x4-pluck-driver
+```
+
 Export the whole lesson packet in one shot:
 
 ```bash

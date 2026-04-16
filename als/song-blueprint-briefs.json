@@ -1,0 +1,186 @@
+{
+  "brief_version": "0.1.0",
+  "briefs": {
+    "ukg-4x4-pluck-driver": {
+      "description": "Full-song blueprint for a 4-on-floor UKG cut with a dark bass bed, soft pad support, bright pluck hook, and compact transition FX.",
+      "serum_brief_id": "ukg-4x4-pluck-driver",
+      "template_id": "ukg-4x4-core",
+      "bpm": 134,
+      "key": "G minor",
+      "energy_profile": "Controlled 4-on-floor drive with a front-and-center pluck hook and enough open space for vocal chops later.",
+      "harmonic_plan": {
+        "center": "G minor",
+        "progression": [
+          "Gm9",
+          "Ebmaj7",
+          "Bbadd9"
+        ],
+        "movement_note": "Keep the hook rhythmic and repetitive while the harmonic bed does the width work.",
+        "bass_strategy": "Bass stays root-heavy with short approach notes and leaves room for the pluck to define the motif."
+      },
+      "drum_strategy": "Program a club-weighted 4x4 kick lane first, then use tops and one loop layer for motion rather than overfilling the percussion grid.",
+      "melodic_strategy": "The hook pluck owns the memorable phrase; the support pad should never outshine it.",
+      "arrangement_notes": [
+        "Intro starts with drums, atmosphere, and a filtered pad teaser before the pluck fully arrives.",
+        "Drop B should add one extra answering percussion or FX element so it feels upgraded, not repeated.",
+        "Leave the vocal space lane empty until the groove already works without it."
+      ],
+      "reserved_spaces": [
+        "One vocal-chop lane for a later call-and-response phrase",
+        "One transition-impact lane at the end of the break",
+        "One atmosphere lane for intro and outro air"
+      ],
+      "sample_slot_overrides": {
+        "drum_loop_layer": {
+          "required": false,
+          "purpose": "Optional brushed garage loop to add movement under the pluck sections."
+        },
+        "vocal_space": {
+          "required": true,
+          "purpose": "Keep a lane open for a later female chop or spoken phrase."
+        }
+      },
+      "synth_layers": {
+        "bass-foundation": {
+          "job_in_track": "anchor the drop with a mono-safe low-end line that leaves rhythmic space around the pluck hook",
+          "arrangement_role": "present in both drops, lightly teased in the break",
+          "chain_id": "bass_anchor"
+        },
+        "support-pad": {
+          "job_in_track": "supply width and emotional wash without stealing focus from the pluck",
+          "arrangement_role": "teased in intro, full in drops, widened in break",
+          "chain_id": "chord_bed"
+        },
+        "hook-pluck": {
+          "job_in_track": "carry the recognisable motif and define the record's top-line identity",
+          "arrangement_role": "introduced late in intro, featured in drops, partially muted in break",
+          "chain_id": "hook_foreground"
+        },
+        "transition-fx": {
+          "job_in_track": "mark arrangement boundaries and stop the repetitive pluck loop from feeling static",
+          "arrangement_role": "used at end of intro, break, and final drop pickup",
+          "chain_id": "fx_transition"
+        }
+      }
+    },
+    "ukg-4x4-lead-driver": {
+      "description": "Full-song blueprint for a 4-on-floor UKG arrangement where a wide chord bed supports a brighter lead and a clean support stab.",
+      "serum_brief_id": "ukg-4x4-lead-driver",
+      "template_id": "ukg-4x4-core",
+      "bpm": 136,
+      "key": "E minor",
+      "energy_profile": "More melodic than the pluck-driver brief, with the lead acting as the hook and the stab filling the response lane.",
+      "harmonic_plan": {
+        "center": "E minor",
+        "progression": [
+          "Em9",
+          "Cmaj7",
+          "Dadd9"
+        ],
+        "movement_note": "The lead should phrase across the bar line while the support stab answers inside the groove.",
+        "bass_strategy": "Bass stays simple and grounded so the melodic layers can carry the personality."
+      },
+      "drum_strategy": "Use the same 4x4 anchor as the pluck driver but leave more top-end space for the lead and response stab.",
+      "melodic_strategy": "The lead owns the singable phrase; the stab is there to answer and reinforce rhythm, not compete.",
+      "arrangement_notes": [
+        "The lead should not fully appear in the first 8 bars of the intro.",
+        "Drop B should add one extra response phrase or wider delay throw to feel larger.",
+        "If a vocal space is filled later, it should live between lead phrases rather than under every bar."
+      ],
+      "reserved_spaces": [
+        "One vocal lane for a phrase-based topline",
+        "One background texture lane that can stay empty if the hook already carries enough air"
+      ],
+      "sample_slot_overrides": {
+        "atmosphere": {
+          "required": true,
+          "purpose": "Needed to keep the melodic intro from sounding naked before the lead enters."
+        }
+      },
+      "synth_layers": {
+        "bass-foundation": {
+          "job_in_track": "keep the low end stable and uncluttered beneath a more melodic top stack",
+          "arrangement_role": "present in both drops, filtered down in the break",
+          "chain_id": "bass_anchor"
+        },
+        "chord-bed": {
+          "job_in_track": "create width and harmonic glue behind the lead without fogging the center",
+          "arrangement_role": "teased early, fully open in the break, tucked under the lead in drops",
+          "chain_id": "chord_bed"
+        },
+        "main-lead": {
+          "job_in_track": "carry the core hook and establish the record's emotional identity",
+          "arrangement_role": "appears late in intro, dominates both drops, strips back in break",
+          "chain_id": "hook_foreground"
+        },
+        "support-stab": {
+          "job_in_track": "answer the lead rhythmically and add percussive harmony",
+          "arrangement_role": "mostly drop-only, with one teaser phrase before Drop A",
+          "chain_id": "hook_support"
+        }
+      }
+    },
+    "ukg-2step-dark-stab": {
+      "description": "Full-song blueprint for a darker 2-step UKG record built around a bass/reese conversation and a chopped stab hook.",
+      "serum_brief_id": "ukg-2step-dark-stab",
+      "template_id": "ukg-2step-core",
+      "bpm": 138,
+      "key": "F# minor",
+      "energy_profile": "Darker and more syncopated than the 4x4 briefs, with the stab acting like a vocal replacement and the bass stack carrying most of the aggression.",
+      "harmonic_plan": {
+        "center": "F# minor",
+        "progression": [
+          "F#m9",
+          "Dmaj7",
+          "Aadd9"
+        ],
+        "movement_note": "The dark pad handles the atmosphere while the chopped stab and bass conversation create the hook.",
+        "bass_strategy": "The main bass holds the center while the reese answers in the low-mid stereo field without duplicating the sub."
+      },
+      "drum_strategy": "Build the groove around kick, snare/clap, hats, and one rolling top layer, then let empty space do as much work as the hits.",
+      "melodic_strategy": "Treat the bright stab like a chopped vocal feature: memorable, clipped, and rhythm-first.",
+      "arrangement_notes": [
+        "Intro should hint at the dark pad and top groove before the full bass conversation lands.",
+        "Break should widen the dark pad and vocal-space lane while muting one of the bass roles.",
+        "Switch-up should feel like a deliberate left turn, not just a shorter break."
+      ],
+      "reserved_spaces": [
+        "One vocal chop lane that can mirror the stab rhythm later",
+        "One breakbeat or garage-loop lane for Groove B only",
+        "One atmosphere lane for the intro and break"
+      ],
+      "sample_slot_overrides": {
+        "drum_loop_layer": {
+          "required": true,
+          "purpose": "Groove B should gain a loop layer or break fragment so the second half develops."
+        },
+        "perc_fill": {
+          "required": true,
+          "purpose": "The 2-step pocket needs one answering percussion or rim move."
+        }
+      },
+      "synth_layers": {
+        "bass-foundation": {
+          "job_in_track": "own the center low end and drive the groove with short, punchy phrases",
+          "arrangement_role": "present in both groove sections, filtered in the break, simplified in the switch-up",
+          "chain_id": "bass_anchor"
+        },
+        "secondary-reese": {
+          "job_in_track": "answer the main bass in the low-mid stereo field without doubling the true sub lane",
+          "arrangement_role": "drop-heavy, partly muted in the break, widened in Groove B",
+          "chain_id": "secondary_low_mid"
+        },
+        "dark-pad": {
+          "job_in_track": "supply tension and negative-space atmosphere behind the rhythm section",
+          "arrangement_role": "intro and break feature layer, lower in the drops",
+          "chain_id": "chord_bed"
+        },
+        "chop-stab": {
+          "job_in_track": "function like the vocal-identifying hook even if no actual vocal sample is added",
+          "arrangement_role": "sparingly introduced before Groove A, hook focus in both grooves, echoed in the switch-up",
+          "chain_id": "hook_foreground"
+        }
+      }
+    }
+  }
+}

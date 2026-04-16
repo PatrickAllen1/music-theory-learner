@@ -1,0 +1,509 @@
+{
+  "template_version": "0.1.0",
+  "templates": {
+    "ukg-4x4-core": {
+      "description": "4-on-floor UK garage production template with a club-weighted low end, front-half drum establishment, and two-drop release shape.",
+      "arrangement_sections": [
+        {
+          "section_id": "intro",
+          "length_bars": 16,
+          "goal": "Establish kick, tops, and one harmonic teaser without exposing the full hook.",
+          "energy_level": "low"
+        },
+        {
+          "section_id": "drop_a",
+          "length_bars": 16,
+          "goal": "Reveal the full groove and primary synth conversation.",
+          "energy_level": "high"
+        },
+        {
+          "section_id": "break",
+          "length_bars": 8,
+          "goal": "Thin the drums, open the space, and set up the second drop.",
+          "energy_level": "mid"
+        },
+        {
+          "section_id": "drop_b",
+          "length_bars": 16,
+          "goal": "Bring back the groove with one extra layer, stronger automation, and clearer hook focus.",
+          "energy_level": "high"
+        },
+        {
+          "section_id": "outro",
+          "length_bars": 8,
+          "goal": "Deconstruct back to drums and one support layer for a DJ-safe exit.",
+          "energy_level": "low"
+        }
+      ],
+      "sample_slots": [
+        {
+          "slot_id": "kick",
+          "slot_type": "kick",
+          "required": true,
+          "lane": "Drum Rack or audio track",
+          "purpose": "Primary 4-on-floor anchor.",
+          "processing_chain_id": "drum_one_shot"
+        },
+        {
+          "slot_id": "clap_snare",
+          "slot_type": "clap_snare",
+          "required": true,
+          "lane": "Drum Rack",
+          "purpose": "Backbeat definition on beats 2 and 4.",
+          "processing_chain_id": "drum_one_shot"
+        },
+        {
+          "slot_id": "closed_hat",
+          "slot_type": "closed_hat",
+          "required": true,
+          "lane": "Drum Rack",
+          "purpose": "Ticking top-end groove that glues to the kick pattern.",
+          "processing_chain_id": "tops_tick"
+        },
+        {
+          "slot_id": "open_hat_or_shaker",
+          "slot_type": "top_loop_support",
+          "required": true,
+          "lane": "Drum Rack",
+          "purpose": "Offbeat lift and shuffle support.",
+          "processing_chain_id": "tops_tick"
+        },
+        {
+          "slot_id": "percussion_or_rim",
+          "slot_type": "perc",
+          "required": false,
+          "lane": "Drum Rack or audio track",
+          "purpose": "Fills the groove between the kick and clap without stealing focus.",
+          "processing_chain_id": "tops_tick"
+        },
+        {
+          "slot_id": "drum_loop_layer",
+          "slot_type": "drum_loop",
+          "required": false,
+          "lane": "Audio track",
+          "purpose": "Adds motion, grit, or room around the programmed drums.",
+          "processing_chain_id": "loop_layer"
+        },
+        {
+          "slot_id": "vocal_space",
+          "slot_type": "vocal_space",
+          "required": false,
+          "lane": "Audio track",
+          "purpose": "Reserved lane for chop, adlib, or a later vocal phrase.",
+          "processing_chain_id": "vocal_space"
+        },
+        {
+          "slot_id": "transition_fx",
+          "slot_type": "transition_fx",
+          "required": true,
+          "lane": "Audio track",
+          "purpose": "Uplifter, downlifter, impact, or reverse texture used to mark section changes.",
+          "processing_chain_id": "fx_transition"
+        },
+        {
+          "slot_id": "atmosphere",
+          "slot_type": "atmosphere",
+          "required": false,
+          "lane": "Audio track",
+          "purpose": "Background air that keeps the intro and break from feeling empty.",
+          "processing_chain_id": "fx_bed"
+        }
+      ],
+      "role_chain_defaults": {
+        "bass": "bass_anchor",
+        "sub": "bass_anchor",
+        "reese": "secondary_low_mid",
+        "pad": "chord_bed",
+        "lead": "hook_foreground",
+        "pluck": "hook_foreground",
+        "stab": "hook_support",
+        "fx": "fx_bed"
+      },
+      "processing_chains": {
+        "drum_one_shot": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight for low-end cleanup or top-end shaping only where needed",
+            "Saturator for density at low dry/wet",
+            "Glue Compressor on the drum bus rather than on every one-shot"
+          ]
+        },
+        "tops_tick": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight high-pass to keep the kick lane clean",
+            "Utility to set width intentionally",
+            "Short send to room reverb only if the loop feels too dry"
+          ]
+        },
+        "loop_layer": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight high-pass to keep the loop out of the sub region",
+            "Auto Pan or sidechain tool if the loop crowds the kick",
+            "Saturator or Drum Buss for grit if the layer feels flat"
+          ]
+        },
+        "bass_anchor": {
+          "target": "insert",
+          "devices": [
+            "Utility set mono-safe below the groove center",
+            "EQ Eight to trim excess low-mid bloom before bus saturation",
+            "Saturator or mild clipping for density",
+            "Sidechain compression or envelope shaping against the kick"
+          ]
+        },
+        "secondary_low_mid": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight high-pass above the true sub lane",
+            "Saturator to add bite",
+            "Compressor or sidechain to keep it behind the bass anchor"
+          ]
+        },
+        "chord_bed": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight high-pass to protect the bass lane",
+            "Chorus/Ensemble or detune source for width if the patch is too narrow",
+            "Send to long reverb and shorter delay return",
+            "Sidechain or rhythmic ducking to keep the groove breathing"
+          ]
+        },
+        "hook_foreground": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight to clear low-end spill",
+            "Saturator or gentle drive if the hook lacks edge",
+            "Delay send for phrase tails",
+            "Controlled reverb so the hook stays in front of the pad"
+          ]
+        },
+        "hook_support": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight to carve out overlap with the main hook",
+            "Short reverb or room send for placement",
+            "Sidechain or envelope shaping if it clouds the backbeat"
+          ]
+        },
+        "vocal_space": {
+          "target": "insert",
+          "devices": [
+            "High-pass to stop the lane stealing body from the bass and chords",
+            "Delay and reverb sends only, unless the sample needs texture",
+            "Transient reduction or clip fading to keep it gluey"
+          ]
+        },
+        "fx_transition": {
+          "target": "insert",
+          "devices": [
+            "Filter automation for risers and downlifters",
+            "Reverb or delay throw printed into the section boundary",
+            "Utility gain ride to stop transitions peaking over the groove"
+          ]
+        },
+        "fx_bed": {
+          "target": "insert",
+          "devices": [
+            "High-pass filter so the bed lives above the rhythm section",
+            "Long reverb or texture delay",
+            "Subtle sidechain if the bed makes drops feel static"
+          ]
+        }
+      },
+      "returns": [
+        {
+          "return_id": "A",
+          "name": "Short Room",
+          "purpose": "Light glue for drums, stabs, and vocal chops."
+        },
+        {
+          "return_id": "B",
+          "name": "Long Hall",
+          "purpose": "Wash for pads, breakdowns, and atmosphere."
+        },
+        {
+          "return_id": "C",
+          "name": "Dub Delay",
+          "purpose": "Phrase-end throws on hooks and vocals."
+        }
+      ],
+      "automation_rules": [
+        "Open filter or send level slightly into the break rather than automating every bar.",
+        "Reset most FX sends on the first bar of each drop so the groove re-enters dry and confident.",
+        "Use one obvious throw or transition per section change rather than filling every gap."
+      ],
+      "mix_rules": [
+        "Only one true low_end_anchor should own the sub information at a time.",
+        "Pads and atmospheres must be high-passed and intentionally backgrounded.",
+        "Hooks should sit in front by tone and timing, not only by raw volume.",
+        "Leave one lane open for a later chop or one-shot if the arrangement feels overfilled."
+      ],
+      "export_plan": {
+        "target_bounce": "24-bit WAV master and lesson reference bounce",
+        "headroom_note": "Keep enough pre-limiter headroom that the drop still breathes.",
+        "final_checks": [
+          "Drop entry hits harder than the break",
+          "Low end stays centered",
+          "Transition FX do not peak above the hook",
+          "Outro is usable for a DJ mix-out"
+        ]
+      }
+    },
+    "ukg-2step-core": {
+      "description": "2-step UK garage production template with syncopated drum space, denser bass conversation, and darker midrange support.",
+      "arrangement_sections": [
+        {
+          "section_id": "intro",
+          "length_bars": 16,
+          "goal": "Introduce a trimmed version of the groove and one support layer while leaving the main stab hidden.",
+          "energy_level": "low"
+        },
+        {
+          "section_id": "groove_a",
+          "length_bars": 16,
+          "goal": "Expose the full 2-step rhythm, bass conversation, and main stab feature.",
+          "energy_level": "high"
+        },
+        {
+          "section_id": "break",
+          "length_bars": 8,
+          "goal": "Strip out the heavy drums and widen the support layers before the second groove section.",
+          "energy_level": "mid"
+        },
+        {
+          "section_id": "groove_b",
+          "length_bars": 16,
+          "goal": "Return with the same core groove plus one extra loop, response, or automation lift.",
+          "energy_level": "high"
+        },
+        {
+          "section_id": "switch_up",
+          "length_bars": 8,
+          "goal": "Create a short rhythmic left turn, half-time tease, or filtered reset.",
+          "energy_level": "mid"
+        },
+        {
+          "section_id": "outro",
+          "length_bars": 8,
+          "goal": "Reduce back to kick skeleton, selected tops, and one support texture.",
+          "energy_level": "low"
+        }
+      ],
+      "sample_slots": [
+        {
+          "slot_id": "kick",
+          "slot_type": "kick",
+          "required": true,
+          "lane": "Drum Rack or audio track",
+          "purpose": "Anchor for syncopated drums and sidechain timing.",
+          "processing_chain_id": "drum_one_shot"
+        },
+        {
+          "slot_id": "snare_or_clap",
+          "slot_type": "clap_snare",
+          "required": true,
+          "lane": "Drum Rack",
+          "purpose": "Defines the backbeat around the swing pocket.",
+          "processing_chain_id": "drum_one_shot"
+        },
+        {
+          "slot_id": "closed_hat",
+          "slot_type": "closed_hat",
+          "required": true,
+          "lane": "Drum Rack",
+          "purpose": "Drives the shuffle and ties ghost placements together.",
+          "processing_chain_id": "tops_tick"
+        },
+        {
+          "slot_id": "shaker_or_top_loop",
+          "slot_type": "top_loop_support",
+          "required": true,
+          "lane": "Audio track or Drum Rack",
+          "purpose": "Adds rolling motion between the snare holes.",
+          "processing_chain_id": "tops_tick"
+        },
+        {
+          "slot_id": "perc_fill",
+          "slot_type": "perc",
+          "required": false,
+          "lane": "Drum Rack",
+          "purpose": "Answering rhythm or turnaround hit for the 2-step pocket.",
+          "processing_chain_id": "tops_tick"
+        },
+        {
+          "slot_id": "drum_loop_layer",
+          "slot_type": "drum_loop",
+          "required": false,
+          "lane": "Audio track",
+          "purpose": "Break or garage loop layer that adds movement without replacing the programmed groove.",
+          "processing_chain_id": "loop_layer"
+        },
+        {
+          "slot_id": "vocal_space",
+          "slot_type": "vocal_space",
+          "required": true,
+          "lane": "Audio track",
+          "purpose": "Reserved lane for chopped vocal punctuation or call-and-response chop.",
+          "processing_chain_id": "vocal_space"
+        },
+        {
+          "slot_id": "transition_fx",
+          "slot_type": "transition_fx",
+          "required": true,
+          "lane": "Audio track",
+          "purpose": "Marks switch-up and groove returns.",
+          "processing_chain_id": "fx_transition"
+        },
+        {
+          "slot_id": "atmosphere",
+          "slot_type": "atmosphere",
+          "required": false,
+          "lane": "Audio track",
+          "purpose": "Dark bed or texture for the intro and break.",
+          "processing_chain_id": "fx_bed"
+        }
+      ],
+      "role_chain_defaults": {
+        "bass": "bass_anchor",
+        "sub": "bass_anchor",
+        "reese": "secondary_low_mid",
+        "pad": "chord_bed",
+        "lead": "hook_foreground",
+        "pluck": "hook_support",
+        "stab": "hook_foreground",
+        "fx": "fx_bed"
+      },
+      "processing_chains": {
+        "drum_one_shot": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight cleanup and gain staging",
+            "Saturator or Drum Buss for body if the hit feels small",
+            "Glue Compressor only at the bus level"
+          ]
+        },
+        "tops_tick": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight high-pass to stay out of the kick lane",
+            "Transient shaping or clip fades to keep the pocket tight",
+            "Optional room send for glue"
+          ]
+        },
+        "loop_layer": {
+          "target": "insert",
+          "devices": [
+            "High-pass filter to remove low-end spill",
+            "Duck or sidechain against the kick",
+            "Saturator if the loop needs dirt"
+          ]
+        },
+        "bass_anchor": {
+          "target": "insert",
+          "devices": [
+            "Mono-safe Utility",
+            "EQ Eight notch if the stab and bass fight in low mids",
+            "Saturator or clipping for consistency",
+            "Sidechain envelope shaping against the kick"
+          ]
+        },
+        "secondary_low_mid": {
+          "target": "insert",
+          "devices": [
+            "High-pass above the true sub range",
+            "Drive or chorus only if it helps the stereo conversation",
+            "Compression to keep it behind the main bass lane"
+          ]
+        },
+        "chord_bed": {
+          "target": "insert",
+          "devices": [
+            "High-pass EQ",
+            "Long reverb and delay sends",
+            "Rhythmic ducking to stay out of the stab rhythm"
+          ]
+        },
+        "hook_foreground": {
+          "target": "insert",
+          "devices": [
+            "EQ Eight cleanup",
+            "Drive or transient emphasis if the stab needs bite",
+            "Delay throws and tightly controlled reverb"
+          ]
+        },
+        "hook_support": {
+          "target": "insert",
+          "devices": [
+            "EQ carve around the main stab lane",
+            "Short ambience send",
+            "Transient softening if it feels too pointy"
+          ]
+        },
+        "vocal_space": {
+          "target": "insert",
+          "devices": [
+            "High-pass and clip trimming",
+            "Delay/reverb send rather than heavy inserts",
+            "Duck or fade the transient if it jumps over the stab"
+          ]
+        },
+        "fx_transition": {
+          "target": "insert",
+          "devices": [
+            "Filter automation",
+            "Throw reverb or delay into section changes",
+            "Gain rides to keep transitions under control"
+          ]
+        },
+        "fx_bed": {
+          "target": "insert",
+          "devices": [
+            "High-pass filtering",
+            "Long spatial FX",
+            "Subtle ducking if the bed flattens the drop"
+          ]
+        }
+      },
+      "returns": [
+        {
+          "return_id": "A",
+          "name": "Tight Room",
+          "purpose": "Short placement for drums, chops, and small stabs."
+        },
+        {
+          "return_id": "B",
+          "name": "Long Plate/Hall",
+          "purpose": "Dark tail for pads, breakdowns, and emotional lift."
+        },
+        {
+          "return_id": "C",
+          "name": "Dub Delay",
+          "purpose": "Call-and-response throws on stabs or vocal snippets."
+        }
+      ],
+      "automation_rules": [
+        "Use mutes and rhythmic dropouts to create tension before the groove returns.",
+        "Automate send lifts on the final half-bar into groove resets or switch-ups.",
+        "Reserve the biggest FX movement for the switch-up or final groove return."
+      ],
+      "mix_rules": [
+        "Keep the bass anchor centered and make the reese or support layer carry the side energy.",
+        "If the stab owns the hook, the pad should stay wider and softer.",
+        "Do not fill every rhythmic gap with percussion; 2-step needs holes to groove.",
+        "Keep a vocal or sample lane open even if the track stays instrumental in the lesson."
+      ],
+      "export_plan": {
+        "target_bounce": "24-bit WAV master and lesson reference bounce",
+        "headroom_note": "Keep enough pre-limiter headroom for the groove to stay punchy after mastering.",
+        "final_checks": [
+          "2-step syncopation is still obvious after FX and loop layers",
+          "Stab or hook remains the clear focal point",
+          "Break and switch-up both justify their bar count",
+          "Outro leaves a usable DJ exit"
+        ]
+      }
+    }
+  }
+}
