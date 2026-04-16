@@ -81,9 +81,7 @@ def _refine_namespace(args: argparse.Namespace) -> Namespace:
     )
 
 
-def main() -> None:
-    parser = make_parser()
-    args = parser.parse_args()
+def export_packet(args: argparse.Namespace) -> dict:
     out_dir = Path(args.out_dir)
     out_dir.mkdir(parents=True, exist_ok=True)
 
@@ -145,13 +143,32 @@ def main() -> None:
     }
     _write_text(out_dir / "packet-manifest.json", json.dumps(manifest, indent=2) + "\n", args.force)
 
-    print(json.dumps({
+    return {
         "ok": True,
         "out_dir": str(out_dir),
         "brief_id": blueprint["brief_id"],
         "profile_count": len(selected_profiles),
         "queue_count": len(queue),
+        "blueprint": blueprint,
+        "lesson_notes": lesson_notes,
+        "mutation_plan": mutation_plan,
+        "audio_queue": queue,
+        "manifest": manifest,
         "files": manifest["files"],
+    }
+
+
+def main() -> None:
+    parser = make_parser()
+    args = parser.parse_args()
+    result = export_packet(args)
+    print(json.dumps({
+        "ok": result["ok"],
+        "out_dir": result["out_dir"],
+        "brief_id": result["brief_id"],
+        "profile_count": result["profile_count"],
+        "queue_count": result["queue_count"],
+        "files": result["files"],
     }, indent=2))
 
 

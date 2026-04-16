@@ -157,6 +157,29 @@ python3 als/report_serum_lesson_author_queue.py
 python3 als/report_serum_lesson_author_queue.py --format json
 ```
 
+Recommend real Garage/Speed Garage bank presets for one weak brief:
+
+```bash
+python3 als/report_serum_brief_bank_candidates.py --brief ukg-2step-dark-stab
+python3 als/report_serum_brief_bank_candidates.py --brief ukg-4x4-pluck-driver --format json
+```
+
+Prepare one author-ready bundle for a specific brief:
+
+```bash
+python3 als/prepare_serum_lesson_author_bundle.py --brief ukg-2step-dark-stab --out-dir als/lesson-author/ukg-2step-dark-stab
+python3 als/prepare_serum_lesson_author_bundle.py --brief ukg-4x4-pluck-driver --out-dir als/lesson-author/ukg-4x4-pluck-driver --prefer-rendered
+```
+
+The author bundle includes:
+
+- `packet/` with the refined lesson packet
+- `render-blockers.tsv` / `render-blockers.json`
+- `bank-candidates.tsv` / `bank-candidates.json`
+- `author-queue.json`
+- `packet-readiness.json`
+- `README.md` with explicit next actions
+
 Prepare one consolidated priority render session across all briefs:
 
 ```bash
