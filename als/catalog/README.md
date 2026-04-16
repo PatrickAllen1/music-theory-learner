@@ -100,6 +100,13 @@ python3 als/generate_serum_guided_build_synth_plan.py --brief ukg-2step-dark-sta
 python3 als/generate_serum_guided_build_synth_plan.py --brief ukg-4x4-pluck-driver --format json
 ```
 
+Generate draft guided-build step objects for the synth section:
+
+```bash
+python3 als/generate_serum_guided_build_steps.py --brief ukg-2step-dark-stab
+python3 als/generate_serum_guided_build_steps.py --brief ukg-4x4-pluck-driver --format json
+```
+
 Export the whole lesson packet in one shot:
 
 ```bash
@@ -182,6 +189,7 @@ The author bundle includes:
 
 - `packet/` with the refined lesson packet
 - `synth-plan.md` / `synth-plan.json`
+- `synth-steps.md` / `synth-steps.json`
 - `render-blockers.tsv` / `render-blockers.json`
 - `bank-candidates.tsv` / `bank-candidates.json`
 - `author-queue.json`

@@ -18,6 +18,7 @@ from argparse import Namespace
 from pathlib import Path
 
 try:
+    from generate_serum_guided_build_steps import build_report as build_synth_steps_report, render_text as render_synth_steps_text
     from export_serum_lesson_packet import export_packet
     from generate_serum_guided_build_synth_plan import build_report as build_synth_plan_report, render_text as render_synth_plan_text
     from report_serum_brief_bank_candidates import build_report as build_brief_bank_report
@@ -25,6 +26,7 @@ try:
     from report_serum_packet_readiness import build_report as build_packet_readiness_report
     from report_serum_render_backlog import build_report as build_render_backlog_report
 except ModuleNotFoundError:
+    from .generate_serum_guided_build_steps import build_report as build_synth_steps_report, render_text as render_synth_steps_text
     from .export_serum_lesson_packet import export_packet
     from .generate_serum_guided_build_synth_plan import build_report as build_synth_plan_report, render_text as render_synth_plan_text
     from .report_serum_brief_bank_candidates import build_report as build_brief_bank_report
@@ -109,6 +111,22 @@ def _bank_namespace(args: argparse.Namespace) -> Namespace:
 
 
 def _synth_plan_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        brief=args.brief,
+        catalog_dir=args.catalog_dir,
+        briefs=args.briefs,
+        prefer_rendered=args.prefer_rendered,
+        limit_per_part=args.limit_per_part,
+        mutation_limit=args.mutation_limit,
+        max_swaps=args.max_swaps,
+        bank_dir=args.bank_dir,
+        bank_top_per_part=args.bank_top_per_part,
+        render_limit=args.render_limit,
+        format="json",
+    )
+
+
+def _synth_steps_namespace(args: argparse.Namespace) -> Namespace:
     return Namespace(
         brief=args.brief,
         catalog_dir=args.catalog_dir,
@@ -284,6 +302,7 @@ def _author_summary(
     lines.append("## Bundle Files")
     lines.append("- `packet/` contains the refined packet export.")
     lines.append("- `synth-plan.md` / `synth-plan.json` translate the chosen stack into per-part lesson-authoring steps.")
+    lines.append("- `synth-steps.md` / `synth-steps.json` turn those synth sections into draft lesson `steps[]` objects.")
     lines.append("- `render-blockers.tsv` shows the exact profiles that still need audio truth.")
     lines.append("- `bank-candidates.tsv` shows real S1 bank presets worth trying when a part is weak or under-specified.")
     lines.append("")
@@ -302,6 +321,7 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     render_backlog = build_render_backlog_report(namespace)
     bank_candidates = build_brief_bank_report(_bank_namespace(args))
     synth_plan = build_synth_plan_report(_synth_plan_namespace(args))
+    synth_steps = build_synth_steps_report(_synth_steps_namespace(args))
 
     author_row = _find_row(author_queue["queue"], args.brief)
     readiness_row = _find_row(packet_readiness["briefs"], args.brief)
@@ -315,6 +335,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     _write_text(out_dir / "bank-candidates.tsv", _bank_candidates_tsv(bank_candidates), args.force)
     _write_text(out_dir / "synth-plan.json", json.dumps(synth_plan, indent=2) + "\n", args.force)
     _write_text(out_dir / "synth-plan.md", render_synth_plan_text(synth_plan) + "\n", args.force)
+    _write_text(out_dir / "synth-steps.json", json.dumps(synth_steps, indent=2) + "\n", args.force)
+    _write_text(out_dir / "synth-steps.md", render_synth_steps_text(synth_steps) + "\n", args.force)
     _write_text(out_dir / "README.md", _author_summary(packet, author_row, readiness_row, render_blockers, bank_candidates, synth_plan, packet_dir), args.force)
 
     manifest = {
@@ -332,6 +354,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             "bank_candidates_tsv": str(out_dir / "bank-candidates.tsv"),
             "synth_plan_json": str(out_dir / "synth-plan.json"),
             "synth_plan_md": str(out_dir / "synth-plan.md"),
+            "synth_steps_json": str(out_dir / "synth-steps.json"),
+            "synth_steps_md": str(out_dir / "synth-steps.md"),
             "packet_manifest_json": str(packet_dir / "packet-manifest.json"),
         },
     }
