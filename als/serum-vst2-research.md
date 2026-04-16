@@ -157,6 +157,14 @@ Bank-split read from the corpus profiler:
 `als/report_serum_vst2_probe_coverage.py` cross-references the deferred manual
 probe manifest against the host catalog and current parser coverage state.
 
+Examples:
+
+```bash
+python3 als/report_serum_vst2_probe_coverage.py --summary-only
+python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --summary-only
+python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --status none
+```
+
 Current high-level read:
 
 - fully covered by the current A-E manifest:
@@ -252,6 +260,7 @@ evidence. It combines:
 ```bash
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-expansion-probes.json
+python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
 ```
 
 The autonomous batch now has a deferred-manual layer:
@@ -265,8 +274,10 @@ The autonomous batch now has a deferred-manual layer:
   enough
 - [`als/ingest_serum_manual_diff.py`](./ingest_serum_manual_diff.py) ingests
   final `.before.fxp` / `.after.fxp` pairs using the `<probe_id>.before.fxp`
-  and `<probe_id>.after.fxp` naming convention, and now echoes the matched
-  host labels and modules for each probe alongside the moved slot clusters
+  and `<probe_id>.after.fxp` naming convention, now supports multiple
+  `--manifest` flags for primary + phase-2 ingestion, and echoes the matched
+  host labels and modules plus manifest provenance for each probe alongside the
+  moved slot clusters
 
 That means the remaining manual Serum saves can happen in one bundled pass at
 the end of the autonomous run instead of interrupting each analysis wave.

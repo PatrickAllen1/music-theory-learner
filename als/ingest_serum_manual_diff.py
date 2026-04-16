@@ -13,6 +13,7 @@ Pair naming convention inside --pairs-dir:
 Examples:
     python3 als/ingest_serum_manual_diff.py --pairs-dir /tmp/serum-probes
     python3 als/ingest_serum_manual_diff.py --pairs-dir /tmp/serum-probes --probe note_latch
+    python3 als/ingest_serum_manual_diff.py --pairs-dir /tmp/serum-probes --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
 """
 
 import argparse
@@ -35,6 +36,9 @@ def parse_window(window: str) -> tuple[int, int]:
         return index, index
     start, end = window.split("-", 1)
     return int(start), int(end)
+
+
+DEFAULT_MANIFEST = Path("als/serum-vst2-manual-probes.json")
 
 
 def load_manifest(path: Path) -> dict:
@@ -66,14 +70,30 @@ def _match_host_entries(labels: list[str], label_index: dict[str, list[dict]]) -
     return matches
 
 
-def iter_probes(manifest: dict):
+def iter_probes(manifest_path: Path, manifest: dict):
     for checkpoint in manifest["checkpoints"]:
         for probe in checkpoint["probes"]:
-            yield checkpoint, probe
+            yield checkpoint, probe, manifest_path
 
 
-def build_probe_lookup(manifest: dict) -> dict:
-    return {probe["id"]: (checkpoint, probe) for checkpoint, probe in iter_probes(manifest)}
+def build_probe_lookup(manifest_paths: list[Path]) -> dict:
+    lookup = {}
+    duplicates = []
+    for manifest_path in manifest_paths:
+        manifest = load_manifest(manifest_path)
+        for checkpoint, probe, source_manifest_path in iter_probes(manifest_path, manifest):
+            probe_id = probe["id"]
+            if probe_id in lookup:
+                duplicates.append({
+                    "probe_id": probe_id,
+                    "first_manifest": str(lookup[probe_id][2]),
+                    "second_manifest": str(source_manifest_path),
+                })
+                continue
+            lookup[probe_id] = (checkpoint, probe, source_manifest_path)
+    if duplicates:
+        raise ValueError(f"duplicate probe ids across manifests: {duplicates}")
+    return lookup
 
 
 def overlap_with_expected(clusters: list[dict], windows: list[str]) -> list[dict]:
@@ -97,6 +117,7 @@ def overlap_with_expected(clusters: list[dict], windows: list[str]) -> list[dict
 def summarise_probe_result(
     checkpoint: dict,
     probe: dict,
+    source_manifest_path: Path,
     before_path: Path,
     after_path: Path,
     slots: int,
@@ -116,6 +137,7 @@ def summarise_probe_result(
     return {
         "checkpoint": checkpoint["id"],
         "checkpoint_title": checkpoint["title"],
+        "manifest_path": str(source_manifest_path),
         "probe_id": probe["id"],
         "label": probe["label"],
         "before_path": str(before_path),
@@ -133,16 +155,21 @@ def summarise_probe_result(
 def main():
     parser = argparse.ArgumentParser(description="Ingest deferred manual Serum VST2 .fxp diffs.")
     parser.add_argument("--pairs-dir", required=True, help="Directory containing <probe_id>.before.fxp / <probe_id>.after.fxp pairs")
-    parser.add_argument("--manifest", default="als/serum-vst2-manual-probes.json", help="Probe manifest JSON path")
+    parser.add_argument(
+        "--manifest",
+        action="append",
+        default=[],
+        help="Probe manifest JSON path. Pass multiple times to ingest across primary + phase-2 probe packs.",
+    )
     parser.add_argument("--probe", action="append", default=[], help="Restrict to one or more probe ids")
     parser.add_argument("--slots", type=int, default=180, help="How many float slots to diff")
     parser.add_argument("--threshold", type=float, default=0.01, help="Minimum delta threshold")
     args = parser.parse_args()
 
-    manifest = load_manifest(Path(args.manifest))
     catalog = extract_serum_vst2_host_param_catalog()
     label_index = _build_label_index(catalog)
-    lookup = build_probe_lookup(manifest)
+    manifest_paths = [Path(path) for path in args.manifest] if args.manifest else [DEFAULT_MANIFEST]
+    lookup = build_probe_lookup(manifest_paths)
     pairs_dir = Path(args.pairs_dir)
     selected_probe_ids = args.probe or sorted(lookup.keys())
 
@@ -152,12 +179,13 @@ def main():
         if probe_id not in lookup:
             missing.append({"probe_id": probe_id, "reason": "unknown probe id"})
             continue
-        checkpoint, probe = lookup[probe_id]
+        checkpoint, probe, source_manifest_path = lookup[probe_id]
         before_path = pairs_dir / f"{probe_id}.before.fxp"
         after_path = pairs_dir / f"{probe_id}.after.fxp"
         if not before_path.exists() or not after_path.exists():
             missing.append({
                 "probe_id": probe_id,
+                "manifest_path": str(source_manifest_path),
                 "reason": "missing pair",
                 "expected_before": str(before_path),
                 "expected_after": str(after_path),
@@ -167,6 +195,7 @@ def main():
             summarise_probe_result(
                 checkpoint,
                 probe,
+                source_manifest_path,
                 before_path,
                 after_path,
                 slots=args.slots,
@@ -177,7 +206,7 @@ def main():
 
     print(json.dumps({
         "pairs_dir": str(pairs_dir),
-        "manifest": str(Path(args.manifest)),
+        "manifest_paths": [str(path) for path in manifest_paths],
         "results": results,
         "missing": missing,
     }, indent=2))

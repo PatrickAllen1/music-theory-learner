@@ -14,6 +14,7 @@ Examples:
     python3 als/report_serum_vst2_probe_coverage.py --summary-only
     python3 als/report_serum_vst2_probe_coverage.py --module fx_eq
     python3 als/report_serum_vst2_probe_coverage.py --status none
+    python3 als/report_serum_vst2_probe_coverage.py --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json --summary-only
 """
 
 import argparse
@@ -34,7 +35,12 @@ DEFAULT_MANIFEST = Path("als/serum-vst2-manual-probes.json")
 
 def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Report how deferred manual probes cover uncovered Serum VST2 host modules.")
-    parser.add_argument("--manifest", default=str(DEFAULT_MANIFEST), help="Path to the manual probe manifest JSON")
+    parser.add_argument(
+        "--manifest",
+        action="append",
+        default=[],
+        help="Path to a manual probe manifest JSON. Pass multiple times to report combined coverage.",
+    )
     parser.add_argument("--summary-only", action="store_true", help="Only print top-level totals and per-module summaries")
     parser.add_argument("--module", help="Restrict output to one module, e.g. fx_eq or matrix_curve")
     parser.add_argument(
@@ -101,12 +107,21 @@ def _classify_module_probe_status(uncovered_labels: list[str], probe_labels: set
     return "partial"
 
 
-def build_probe_coverage_report(manifest_path: Path) -> dict:
-    manifest = _load_manifest(manifest_path)
+def _load_manifests(paths: list[Path]) -> list[dict]:
+    return [_load_manifest(path) for path in paths]
+
+
+def build_probe_coverage_report(manifest_paths: list[Path]) -> dict:
+    manifests = _load_manifests(manifest_paths)
     catalog = extract_serum_vst2_host_param_catalog()
     coverage = build_serum_vst2_host_coverage_report()
     label_index = _build_label_index(catalog)
-    probe_rows = _build_probe_rows(manifest, label_index)
+    probe_rows = []
+    for manifest_path, manifest in zip(manifest_paths, manifests):
+        rows = _build_probe_rows(manifest, label_index)
+        for row in rows:
+            row["manifest_path"] = str(manifest_path)
+        probe_rows.extend(rows)
 
     probe_rows_by_module = defaultdict(list)
     for row in probe_rows:
@@ -138,7 +153,7 @@ def build_probe_coverage_report(manifest_path: Path) -> dict:
         status_counts[summary["probe_status"]] += 1
 
     return {
-        "manifest_path": str(manifest_path),
+        "manifest_paths": [str(path) for path in manifest_paths],
         "probe_count": len(probe_rows),
         "uncovered_module_count": len(module_summaries),
         "status_counts": dict(status_counts),
@@ -159,7 +174,7 @@ def _trim_summary(report: dict) -> dict:
             "probe_labels": summary["probe_labels"][:8],
         }
     return {
-        "manifest_path": report["manifest_path"],
+        "manifest_paths": report["manifest_paths"],
         "probe_count": report["probe_count"],
         "uncovered_module_count": report["uncovered_module_count"],
         "status_counts": report["status_counts"],
@@ -172,7 +187,8 @@ def main():
     args = parser.parse_args()
 
     try:
-        report = build_probe_coverage_report(Path(args.manifest))
+        manifest_args = [Path(path) for path in args.manifest] if args.manifest else [DEFAULT_MANIFEST]
+        report = build_probe_coverage_report(manifest_args)
     except Exception as exc:
         print(json.dumps({"error": str(exc)}), file=sys.stderr)
         sys.exit(1)

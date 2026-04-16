@@ -1,6 +1,6 @@
 # Serum VST2 Manual Checkpoints
 
-Deferred manual checkpoint pack for the current Serum VST2 mapping pass. This is the end-of-run handoff for controlled save-diff work. The machine-readable companion is `als/serum-vst2-manual-probes.json`.
+Deferred manual checkpoint pack for the current Serum VST2 mapping pass. This is the primary end-of-run handoff for controlled save-diff work. The machine-readable companion is `als/serum-vst2-manual-probes.json`. If checkpoints A-E are not enough, layer in `als/serum-vst2-expansion-probes.json` rather than replacing the primary pack.
 
 Common diff command after saving the two `.fxp` variants:
 
@@ -12,6 +12,7 @@ End-of-run ingest command for a folder of completed pairs:
 
 ```bash
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
+python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-manual-probes.json --manifest als/serum-vst2-expansion-probes.json
 ```
 
 ## Checkpoint A
