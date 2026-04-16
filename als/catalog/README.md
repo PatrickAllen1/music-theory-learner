@@ -88,6 +88,13 @@ Prepare one consolidated priority render session across all briefs:
 python3 als/prepare_serum_priority_render_session.py --out-dir als/audio-session/priority-renders
 ```
 
+Find similar alternatives to a chosen profile:
+
+```bash
+python3 als/find_similar_serum_profiles.py --profile-id mph-raw:bass:i1
+python3 als/find_similar_serum_profiles.py --profile-id mph-raw:bass:i1 --prefer-rendered --format json
+```
+
 Compare two chosen profiles for clash risk and separation moves:
 
 ```bash
