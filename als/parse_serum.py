@@ -97,6 +97,73 @@ SERUM_VST2_PARAMS = [
     (33, "lfo1_attack",       "LFO1 Attack",          "L", None),
 ]
 
+SERUM_VST2_PARAM_BY_INDEX = {
+    idx: {
+        "key": key,
+        "label": label,
+        "confidence": conf,
+        "decoder_hint": hint,
+    }
+    for idx, key, label, conf, hint in SERUM_VST2_PARAMS
+}
+
+# Safe host-label aliases for the currently-decoded VST2 preset fields.
+# These describe which Serum host-facing controls we already cover, but do not
+# imply a direct float-slot index match to the host automation parameter order.
+SERUM_VST2_KEY_TO_HOST_LABEL = {
+    "osc_a_level": "A Vol",
+    "osc_a_detune": "A UniDet",
+    "osc_a_pan": "A Pan",
+    "osc_a_wtpos": "A WTPos",
+    "osc_a_oct": "A Octave",
+    "osc_a_semi": "A Semi",
+    "osc_a_uni_voices": "A Unison",
+    "osc_a_uni_blend": "A UniBlend",
+    "osc_b_level": "B Vol",
+    "osc_b_detune": "B UniDet",
+    "osc_b_pan": "B Pan",
+    "osc_b_wtpos": "B WTPos",
+    "osc_b_oct": "B Octave",
+    "osc_b_semi": "B Semi",
+    "osc_b_uni_voices": "B Unison",
+    "osc_b_uni_blend": "B UniBlend",
+    "sub_level": "Sub Osc Level",
+    "noise_level": "Noise Oscillator Level",
+    "flt_cutoff": "Fil Cutoff",
+    "flt_res": "Fil Reso",
+    "flt_drive": "Fil Drive",
+    "flt_mix": "Fil Mix",
+    "env1_attack": "Amp Atk",
+    "env1_decay": "Amp Dec",
+    "env1_sustain": "Amp Sus",
+    "env1_release": "Amp Rel",
+    "env2_attack": "Env2 Atk",
+    "env2_decay": "Env2 Dec",
+    "env2_sustain": "Env2 Sus",
+    "env2_release": "Env2 Rel",
+    "lfo1_rate": "LFO1Rate",
+}
+SERUM_VST2_EMBEDDED_TEXT_TO_HOST_LABEL = {
+    "macro_1": "Macro 1",
+    "macro_2": "Macro 2",
+    "macro_3": "Macro 3",
+    "macro_4": "Macro 4",
+}
+
+SERUM_VST2_TEXT_PREFIXES = ("KJHEGICH",)
+SERUM_VST2_TEXT_REGIONS = {
+    "embedded_preset_name": (18784, 18848),
+    "embedded_vendor": (18848, 18896),
+    "embedded_bank": (18896, 18928),
+    "macro_1": (19024, 19064),
+    "macro_2": (19064, 19096),
+    "macro_3": (19096, 19128),
+    "macro_4": (19128, 19160),
+}
+SERUM_VST2_PLUGIN_BINARY_PATH = Path("/Library/Audio/Plug-Ins/VST/Serum.vst/Contents/MacOS/Serum")
+SERUM_VST2_HOST_PARAM_CATALOG_START = "Master Volume"
+SERUM_VST2_HOST_PARAM_CATALOG_STOP = "FFT Table Edit"
+
 # ---------------------------------------------------------------------------
 # Serum 2 mod source type ID → human-readable label
 # Based on CBOR structure analysis. IDs 0-13 are confident (Env/LFO in order).
@@ -132,14 +199,653 @@ def decode_param(raw_val, hint):
     return round(raw_val, 4)
 
 
+def _clean_vst2_text(text: str) -> str:
+    """Normalize embedded printable text extracted from a VST2 chunk."""
+    cleaned = text.strip().strip("\x00")
+    for prefix in SERUM_VST2_TEXT_PREFIXES:
+        if cleaned.startswith(prefix):
+            cleaned = cleaned[len(prefix):].strip()
+    return cleaned
+
+
+def extract_printable_strings(data: bytes, min_length=4, start_offset=0, end_offset=None, max_results=None):
+    """Extract printable ASCII strings with offsets from a byte buffer."""
+    if min_length < 1:
+        raise ValueError("min_length must be >= 1")
+
+    if end_offset is None or end_offset > len(data):
+        end_offset = len(data)
+    if start_offset < 0 or start_offset > end_offset:
+        raise ValueError("invalid printable string scan range")
+
+    pattern = rb"[\x20-\x7e]{%d,}" % min_length
+    matches = []
+    for match in re.finditer(pattern, data[start_offset:end_offset]):
+        text = match.group().decode("ascii", errors="replace")
+        matches.append({
+            "offset": start_offset + match.start(),
+            "length": len(text),
+            "text": text,
+        })
+        if max_results is not None and len(matches) >= max_results:
+            break
+    return matches
+
+
+def _extract_best_printable_string(data: bytes, start: int, end: int) -> str:
+    """Return the longest printable string inside a bounded region."""
+    candidates = extract_printable_strings(
+        data,
+        min_length=1,
+        start_offset=start,
+        end_offset=end,
+    )
+    if not candidates:
+        return ""
+
+    cleaned_candidates = []
+    for candidate in candidates:
+        cleaned = _clean_vst2_text(candidate["text"])
+        if cleaned:
+            cleaned_candidates.append(cleaned)
+
+    if not cleaned_candidates:
+        return ""
+
+    return max(cleaned_candidates, key=len)
+
+
+def extract_vst2_embedded_text(data: bytes) -> dict:
+    """Extract human-readable metadata fields embedded in a VST2 Serum chunk."""
+    metadata = {}
+    macro_labels = {}
+
+    for field, (start, end) in SERUM_VST2_TEXT_REGIONS.items():
+        if start >= len(data):
+            continue
+        value = _extract_best_printable_string(data, start, min(end, len(data)))
+        if not value:
+            continue
+
+        if field.startswith("macro_"):
+            macro_labels[field] = value
+        else:
+            metadata[field] = value
+
+    if macro_labels:
+        metadata["macro_labels"] = macro_labels
+
+    return metadata
+
+
+def _is_serum_host_param_label(text: str) -> bool:
+    """Heuristic filter for host-facing parameter labels in the Serum VST2 binary."""
+    text = text.strip()
+    if not text or len(text) > 40 or text.endswith("."):
+        return False
+
+    disallowed_prefixes = (
+        "Adjust",
+        "Sets",
+        "Routes",
+        "Selects",
+        "Boosts",
+        "This",
+        "Keep",
+        "controls",
+        "determines",
+        "Creates",
+        "Alter",
+        "Pitch",
+        "Stereo",
+        "Enabling",
+        "drag",
+        "Drag",
+        "Low ",
+        "Hi ",
+        "note:",
+        "middle:",
+        "positive",
+        "negative",
+        "Most",
+        "a dry",
+        "boosts",
+        "sets ",
+        "you want",
+        "or automation",
+        "(including",
+        "choose ",
+        "choose",
+        "whether ",
+        "if you ",
+        "Enable ",
+        "Enable or",
+        "Wet/Dry ",
+        "Threshold ",
+        "Ratio ",
+        "Attack Time ",
+        "Release Time ",
+        "Hold Time ",
+        "Decay Time ",
+        "Sustain Level ",
+        "Center Frequency",
+        "Bandwidth ",
+        "Feedback",
+        "Delay time",
+        "Number of voices",
+        "Restarts ",
+        "Adds ",
+        "Makes ",
+        "Set the ",
+        "Additioinal",
+        "Select the ",
+        "Choose ",
+        "Scales ",
+        "original ",
+        "Hall was",
+        "Click here",
+        "Determines ",
+        "Determines when",
+        "Adjust ",
+        "Adjusts ",
+        "It is ",
+        "Note the ",
+        "Allows ",
+        "Specify",
+        "Specifies ",
+        "makeup ",
+        "Enables ",
+        "This is ",
+        "Lfo Depth ",
+        "Also handy",
+        "Bypass For",
+        "Show / Hide ",
+    )
+    if any(text.startswith(prefix) for prefix in disallowed_prefixes):
+        return False
+
+    if text.startswith("--") or text.startswith("@"):
+        return False
+    if re.search(r"[{}\[\];]", text):
+        return False
+    if re.fullmatch(r"[0-9.]+", text):
+        return False
+    return True
+
+
+def _split_inline_label_description(text: str) -> tuple[str, str] | None:
+    """Split strings like 'Noise Oscillator Color - pitch...' into label/description."""
+    text = text.strip()
+    if " - " not in text:
+        return None
+    label, description = text.split(" - ", 1)
+    label = label.strip()
+    description = description.strip()
+    if not label or not description:
+        return None
+    if not _is_serum_host_param_label(label):
+        return None
+    return label, description
+
+
+def classify_serum_vst2_host_param_label(label: str) -> str:
+    """Group host-facing Serum VST2 labels into broad functional categories."""
+    label = label.strip()
+    if not label:
+        return "other"
+
+    fx_prefixes = (
+        "Dist_",
+        "Flg_",
+        "Phs_",
+        "Cho_",
+        "Dly_",
+        "Cmp_",
+        "Cmp",
+        "Comp_",
+        "EQ",
+        "EQ_",
+        "Rev_",
+        "Hyp_",
+        "FX Fil",
+        "FX ",
+        "Hyper ",
+    )
+    if label.startswith(fx_prefixes):
+        return "fx"
+
+    if label.startswith(("Mod Matrix", "Mod Source", "Mod Aux Source", "Mod Dest", "Matrix Curve")):
+        return "matrix"
+
+    if label.startswith("Macro "):
+        return "macro"
+
+    if label.startswith(("LFO", "Chaos ")) or "LFO" in label:
+        return "modulation"
+
+    if label.startswith(("A ", "Warp Menu OSC A", "Osc A", "Osc Enable (Osc A)")):
+        return "osc_a"
+
+    if label.startswith(("B ", "Osc B", "Osc Enable B")):
+        return "osc_b"
+
+    if label.startswith(("Noise ", "Osc Enable noise", "Noise Osc Direct")):
+        return "noise"
+
+    if label.startswith(("Sub ", "SubOsc", "Sub Osc", "Osc Enable sub", "SubOsc Direct")):
+        return "sub"
+
+    if label.startswith(("Fil ", "Filter ", "Filter Enable", "Filter KeyTrack", "OscA>Fil", "OscB>Fil", "OscN>Fil", "OscS>Fil")):
+        return "filter"
+
+    if label.startswith(("Amp ", "Env2 ", "Env3 ", "Env4 ", "Attack Curve", "Decay Curve", "Release Curve")):
+        return "envelope"
+
+    global_prefixes = (
+        "Master ",
+        "Porta",
+        "Portamento",
+        "Bend Range",
+        "Monophonic",
+        "Legato",
+        "Polyphony",
+        "Quality",
+        "Lock ",
+        "Note Latch",
+        "GUI Size",
+        "Reverb Type",
+        "Osc A PitchTrack",
+        "Osc B PitchTrack",
+        "Unison ",
+    )
+    if label.startswith(global_prefixes):
+        return "global"
+
+    return "other"
+
+
+def infer_serum_vst2_host_control_kind(label: str) -> str:
+    """Infer the likely automation/control kind from a Serum host label."""
+    label = label.strip()
+    if not label:
+        return "unknown"
+
+    boolean_tokens = (
+        "_On",
+        "PitchTrack",
+        "BPM_Sync",
+        "Link",
+        "Retrig",
+        "Legato",
+        "Note Latch",
+    )
+    if any(token in label for token in boolean_tokens) or " Enable" in label or label in {
+        "Monophonic / Polyphonic switch",
+        "Porta Scaled",
+    }:
+        return "boolean_or_toggle"
+
+    enum_tokens = (
+        " Type",
+        "_Type",
+        " Mode",
+        "_Mode",
+        " Shape",
+        "_Shape",
+        "Curve",
+        "Output",
+        "Source",
+        " Dest",
+        "_Dest",
+        "Octave",
+        "Menu",
+        "Stack",
+        "Detune Mode",
+        "Quality",
+        "Polyphony Count",
+        "GUI Size",
+        "Reverb Type",
+    )
+    if any(token in label for token in enum_tokens):
+        return "discrete_or_enum"
+
+    return "continuous"
+
+
+def describe_serum_vst2_host_param(label: str, description: str = "") -> dict:
+    """Attach higher-level structure using the Serum manual's section layout."""
+    category = classify_serum_vst2_host_param_label(label)
+    module = category
+    manual_section = {
+        "osc_a": "Oscillator A",
+        "osc_b": "Oscillator B",
+        "noise": "Noise Oscillator",
+        "sub": "Sub Oscillator",
+        "filter": "Filter",
+        "envelope": "Envelopes",
+        "modulation": "LFO / Chaos",
+        "matrix": "Mod Matrix",
+        "macro": "Macros",
+        "global": "Voicing / Global",
+        "fx": "FX",
+        "other": "Other",
+    }.get(category, "Other")
+
+    if category == "fx":
+        fx_modules = (
+            ("Dist_", "fx_distortion", "FX > Distortion"),
+            ("Flg_", "fx_flanger", "FX > Flanger"),
+            ("Phs_", "fx_phaser", "FX > Phaser"),
+            ("Cho_", "fx_chorus", "FX > Chorus"),
+            ("Dly_", "fx_delay", "FX > Delay"),
+            ("Cmp_", "fx_compressor", "FX > Compressor"),
+            ("Comp_", "fx_compressor", "FX > Compressor"),
+            ("Rev_", "fx_reverb", "FX > Reverb"),
+            ("EQ", "fx_eq", "FX > EQ"),
+            ("FX Fil", "fx_filter", "FX > Filter"),
+            ("Hyp_", "fx_hyper_dimension", "FX > Hyper/Dimension"),
+            ("Hyper ", "fx_hyper_dimension", "FX > Hyper/Dimension"),
+        )
+        for prefix, candidate_module, candidate_section in fx_modules:
+            if label.startswith(prefix):
+                module = candidate_module
+                manual_section = candidate_section
+                break
+    elif category == "matrix":
+        if label.startswith("Mod Matrix Depth"):
+            module = "matrix_depth"
+        elif label.startswith("Mod Matrix Output"):
+            module = "matrix_output"
+        elif label.startswith("Mod Source"):
+            module = "matrix_source"
+        elif label.startswith("Mod Aux Source"):
+            module = "matrix_aux_source"
+        elif label.startswith("Mod Dest"):
+            module = "matrix_destination"
+        elif label.startswith("Matrix Curve"):
+            module = "matrix_curve"
+        manual_section = "Mod Matrix"
+    elif category == "modulation":
+        if label.startswith("Chaos "):
+            module = "chaos"
+            manual_section = "Global > Chaos"
+        else:
+            module = "lfo"
+            manual_section = "LFO Controls"
+    elif category == "envelope":
+        if label.startswith("Amp "):
+            module = "env1_amp"
+            manual_section = "Envelope 1 / Amp"
+        elif label.startswith("Env2 "):
+            module = "env2"
+            manual_section = "Envelope 2"
+        elif label.startswith("Env3 "):
+            module = "env3"
+            manual_section = "Envelope 3"
+        elif label.startswith("Env4 "):
+            module = "env4"
+            manual_section = "Envelope 4"
+        elif "Curve" in label:
+            module = "envelope_curve"
+            manual_section = "Envelope Curves"
+    elif category == "filter":
+        if label.startswith(("OscA>Fil", "OscB>Fil", "OscN>Fil", "OscS>Fil")):
+            module = "filter_routing"
+            manual_section = "Filter Routing"
+        else:
+            module = "filter_core"
+            manual_section = "Filter"
+    elif category == "global":
+        if label == "Master Volume":
+            module = "global_master"
+            manual_section = "Master"
+        elif label.startswith(("Porta", "Portamento")):
+            module = "global_portamento"
+            manual_section = "Voicing > Portamento"
+        elif label.startswith(("Bend Range", "Osc A PitchTrack", "Osc B PitchTrack")):
+            module = "global_pitch"
+            manual_section = "Global > Pitch"
+        elif label.startswith(("Monophonic", "Legato", "Polyphony", "Unison ", "Note Latch")):
+            module = "global_voicing"
+            manual_section = "Voicing"
+        else:
+            module = "global_misc"
+            manual_section = "Global"
+
+    return {
+        "category": category,
+        "module": module,
+        "manual_section": manual_section,
+        "control_kind_hint": infer_serum_vst2_host_control_kind(label),
+        "description_present": bool(description.strip()),
+    }
+
+
+def extract_serum_vst2_host_param_catalog(binary_path=SERUM_VST2_PLUGIN_BINARY_PATH) -> dict:
+    """Extract a host-side parameter catalog from the installed Serum VST2 binary.
+
+    This does not map parameter labels to preset float-slot offsets. It only
+    extracts the host-facing labels and nearby descriptions from the plugin
+    binary, which is useful for later alignment work.
+    """
+    binary_path = Path(binary_path)
+    data = binary_path.read_bytes()
+    printable = extract_printable_strings(data, min_length=4)
+    start_indexes = [
+        i for i, row in enumerate(printable)
+        if row["text"].strip() == SERUM_VST2_HOST_PARAM_CATALOG_START
+    ]
+    if not start_indexes:
+        raise ValueError("could not find Serum VST2 host parameter catalog anchor")
+
+    stop_text_prefixes = (
+        "Click to edit this wavetable.",
+        "Edit the current visible wavetable",
+        "Closes wavetable editor.",
+        "Closes this graph editor.",
+    )
+
+    best_catalog = None
+    for start_idx in start_indexes:
+        stop_idx = None
+        for j in range(start_idx + 1, len(printable)):
+            text = printable[j]["text"].strip()
+            if text == SERUM_VST2_HOST_PARAM_CATALOG_STOP:
+                stop_idx = j
+                break
+        if stop_idx is None:
+            continue
+
+        region = printable[start_idx:stop_idx]
+        entries = []
+        i = 0
+        while i < len(region):
+            label_text = region[i]["text"].strip()
+            inline = _split_inline_label_description(label_text)
+            if inline is not None:
+                label, inline_description = inline
+            else:
+                label = label_text
+                inline_description = ""
+
+            if not _is_serum_host_param_label(label):
+                i += 1
+                continue
+
+            description_parts = []
+            if inline_description:
+                description_parts.append(inline_description)
+            j = i + 1
+            while j < len(region):
+                next_text = region[j]["text"].strip()
+                next_inline = _split_inline_label_description(next_text)
+                if next_inline is not None:
+                    break
+                if _is_serum_host_param_label(next_text):
+                    break
+                if any(next_text.startswith(prefix) for prefix in stop_text_prefixes):
+                    break
+                if next_text:
+                    description_parts.append(next_text)
+                j += 1
+
+            entries.append({
+                "label": label,
+                "description": " ".join(description_parts).strip(),
+                "offset": region[i]["offset"],
+            })
+            i = j
+
+        # Keep the richest catalog copy when the binary contains multiple slices.
+        if best_catalog is None or len(entries) > len(best_catalog["entries"]):
+            best_catalog = {
+                "binary_path": str(binary_path),
+                "start_offset": region[0]["offset"],
+                "end_offset": region[-1]["offset"],
+                "entry_count": len(entries),
+                "entries": entries,
+            }
+
+    if best_catalog is None:
+        raise ValueError("could not isolate a Serum VST2 host parameter catalog region")
+
+    occurrences = {}
+    for entry in best_catalog["entries"]:
+        label = entry["label"]
+        occurrences[label] = occurrences.get(label, 0) + 1
+        if occurrences[label] > 1:
+            entry["occurrence"] = occurrences[label]
+            entry["key"] = f"{label} #{occurrences[label]}"
+        else:
+            entry["key"] = label
+        entry.update(describe_serum_vst2_host_param(entry["label"], entry.get("description", "")))
+
+    return best_catalog
+
+
+def build_serum_vst2_host_coverage_report(binary_path=SERUM_VST2_PLUGIN_BINARY_PATH) -> dict:
+    """Summarize which Serum host labels are already covered by the current parser."""
+    catalog = extract_serum_vst2_host_param_catalog(binary_path=binary_path)
+
+    coverage_sources = {}
+    for parser_key, host_label in SERUM_VST2_KEY_TO_HOST_LABEL.items():
+        coverage_sources.setdefault(host_label, []).append({
+            "source": "vst2_slot",
+            "parser_key": parser_key,
+        })
+
+    for embedded_key, host_label in SERUM_VST2_EMBEDDED_TEXT_TO_HOST_LABEL.items():
+        coverage_sources.setdefault(host_label, []).append({
+            "source": "embedded_text",
+            "field": embedded_key,
+        })
+
+    category_summaries = {}
+    module_summaries = {}
+    enriched_entries = []
+    covered_count = 0
+
+    for entry in catalog["entries"]:
+        category = entry["category"]
+        module = entry["module"]
+        sources = coverage_sources.get(entry["label"], [])
+        covered = bool(sources)
+        if covered:
+            covered_count += 1
+
+        enriched = {
+            **entry,
+            "category": category,
+            "covered": covered,
+        }
+        if sources:
+            enriched["coverage_sources"] = sources
+        enriched_entries.append(enriched)
+
+        summary = category_summaries.setdefault(category, {
+            "total": 0,
+            "covered": 0,
+            "uncovered": 0,
+            "covered_labels": [],
+            "uncovered_labels": [],
+        })
+        summary["total"] += 1
+        if covered:
+            summary["covered"] += 1
+            summary["covered_labels"].append(entry["key"])
+        else:
+            summary["uncovered"] += 1
+            summary["uncovered_labels"].append(entry["key"])
+
+        module_summary = module_summaries.setdefault(module, {
+            "manual_section": entry["manual_section"],
+            "total": 0,
+            "covered": 0,
+            "uncovered": 0,
+            "covered_labels": [],
+            "uncovered_labels": [],
+        })
+        module_summary["total"] += 1
+        if covered:
+            module_summary["covered"] += 1
+            module_summary["covered_labels"].append(entry["key"])
+        else:
+            module_summary["uncovered"] += 1
+            module_summary["uncovered_labels"].append(entry["key"])
+
+    for summary in category_summaries.values():
+        total = summary["total"] or 1
+        summary["covered_pct"] = round(summary["covered"] / total * 100, 1)
+    for summary in module_summaries.values():
+        total = summary["total"] or 1
+        summary["covered_pct"] = round(summary["covered"] / total * 100, 1)
+
+    return {
+        "binary_path": catalog["binary_path"],
+        "catalog_entry_count": catalog["entry_count"],
+        "covered_entry_count": covered_count,
+        "uncovered_entry_count": catalog["entry_count"] - covered_count,
+        "covered_pct": round(covered_count / max(catalog["entry_count"], 1) * 100, 1),
+        "coverage_sources": {
+            "vst2_slot_aliases": SERUM_VST2_KEY_TO_HOST_LABEL,
+            "embedded_text_aliases": SERUM_VST2_EMBEDDED_TEXT_TO_HOST_LABEL,
+        },
+        "categories": category_summaries,
+        "modules": module_summaries,
+        "entries": enriched_entries,
+    }
+
+
 # ---------------------------------------------------------------------------
 # VST2 parser (Serum_x64 / Serum)
 # ---------------------------------------------------------------------------
 
-def parse_vst2_buffer(hex_data: str) -> dict:
-    """Parse a VST2 Serum/Serum_x64 Buffer hex string."""
-    raw = bytes.fromhex(re.sub(r"\s+", "", hex_data))
-    data = zlib.decompress(raw)
+def _extract_vst2_decompressed_data(raw: bytes) -> bytes:
+    """Extract and decompress a VST2 Serum chunk from raw bytes.
+
+    ALS VST2 buffers are typically just the compressed zlib payload.
+    Standalone .fxp files wrap the same payload in an FXP container header,
+    so we scan for the first valid zlib stream when direct decompression fails.
+    """
+    try:
+        return zlib.decompress(raw)
+    except zlib.error:
+        pass
+
+    headers = (b"\x78\x01", b"\x78\x9c", b"\x78\xda")
+    for i in range(max(0, len(raw) - 2)):
+        if raw[i:i + 2] not in headers:
+            continue
+        try:
+            return zlib.decompress(raw[i:])
+        except zlib.error:
+            continue
+
+    raise ValueError("no zlib-compressed Serum VST2 chunk found")
+
+
+def _parse_vst2_decompressed_data(data: bytes) -> dict:
+    """Parse already-decompressed VST2 Serum/Serum_x64 state bytes."""
 
     result = {}
 
@@ -155,6 +861,10 @@ def parse_vst2_buffer(hex_data: str) -> dict:
             wavetables.append(name)
     result["wavetables"] = wavetables
 
+    text_metadata = extract_vst2_embedded_text(data)
+    if text_metadata:
+        result["text_metadata"] = text_metadata
+
     # 2. Parameter floats starting at SERUM_V2_PARAM_OFFSET
     if len(data) > SERUM_V2_PARAM_OFFSET + 44 * 4:
         params_raw = {}
@@ -165,16 +875,155 @@ def parse_vst2_buffer(hex_data: str) -> dict:
                 val = struct.unpack_from("<f", data, byte_off)[0]
                 if 0.0 <= val <= 1.0:
                     params_raw[key] = round(val, 4)
-                    decoded[key] = {
+                    decoded_entry = {
                         "label": label,
                         "raw": round(val, 4),
                         "value": decode_param(val, hint),
                         "confidence": conf,
                     }
+                    host_label = SERUM_VST2_KEY_TO_HOST_LABEL.get(key)
+                    if host_label:
+                        decoded_entry["host_label"] = host_label
+                    decoded[key] = decoded_entry
         result["params_raw"] = params_raw
         result["params"] = decoded
 
     result["format"] = "vst2"
+    return result
+
+
+def extract_vst2_float_slots(data: bytes, start_offset=SERUM_V2_PARAM_OFFSET, count=256):
+    """Extract a raw float slot view from decompressed VST2 Serum state bytes."""
+    slots = []
+    for idx in range(count):
+        byte_off = start_offset + idx * 4
+        if byte_off + 4 > len(data):
+            break
+
+        val = struct.unpack_from("<f", data, byte_off)[0]
+        meta = SERUM_VST2_PARAM_BY_INDEX.get(idx)
+        slot = {
+            "index": idx,
+            "offset": byte_off,
+            "raw": val,
+            "rounded": round(val, 6),
+        }
+        if meta:
+            slot["known_param"] = meta["key"]
+            slot["label"] = meta["label"]
+            slot["confidence"] = meta["confidence"]
+            slot["decoded"] = decode_param(val, meta["decoder_hint"])
+        slots.append(slot)
+    return slots
+
+
+def diff_vst2_float_slots(data_a: bytes, data_b: bytes, start_offset=SERUM_V2_PARAM_OFFSET, count=256, threshold=0.001):
+    """Diff raw VST2 float slots between two decompressed Serum state blobs."""
+    slots_a = extract_vst2_float_slots(data_a, start_offset=start_offset, count=count)
+    slots_b = extract_vst2_float_slots(data_b, start_offset=start_offset, count=count)
+    changes = []
+
+    for slot_a, slot_b in zip(slots_a, slots_b):
+        delta = abs(slot_a["raw"] - slot_b["raw"])
+        if delta < threshold:
+            continue
+
+        change = {
+            "index": slot_a["index"],
+            "offset": slot_a["offset"],
+            "a": round(slot_a["raw"], 6),
+            "b": round(slot_b["raw"], 6),
+            "delta": round(slot_b["raw"] - slot_a["raw"], 6),
+        }
+        for key in ("known_param", "label", "confidence"):
+            if key in slot_a:
+                change[key] = slot_a[key]
+        if "decoded" in slot_a or "decoded" in slot_b:
+            change["decoded_a"] = slot_a.get("decoded")
+            change["decoded_b"] = slot_b.get("decoded")
+        changes.append(change)
+
+    return changes
+
+
+def cluster_vst2_slot_rows(rows: list[dict], max_index_gap=1) -> list[dict]:
+    """Group nearby varying slot rows into contiguous clusters."""
+    if max_index_gap < 0:
+        raise ValueError("max_index_gap must be >= 0")
+    if not rows:
+        return []
+
+    ordered = sorted(rows, key=lambda row: row["index"])
+    groups = [[ordered[0]]]
+
+    for row in ordered[1:]:
+        if row["index"] - groups[-1][-1]["index"] <= max_index_gap + 1:
+            groups[-1].append(row)
+            continue
+        groups.append([row])
+
+    clusters = []
+    for group in groups:
+        cluster = {
+            "start_index": group[0]["index"],
+            "end_index": group[-1]["index"],
+            "count": len(group),
+            "indices": [row["index"] for row in group],
+        }
+
+        known_params = []
+        for row in group:
+            if "known_param" in row and row["known_param"] not in known_params:
+                known_params.append(row["known_param"])
+        if known_params:
+            cluster["known_params"] = known_params
+
+        if any("delta" in row for row in group):
+            cluster["max_abs_delta"] = round(max(abs(row.get("delta", 0.0)) for row in group), 6)
+        if any("spread" in row for row in group):
+            cluster["max_spread"] = round(max(row.get("spread", 0.0) for row in group), 6)
+
+        clusters.append(cluster)
+
+    return clusters
+
+
+def parse_vst2_buffer(hex_data: str) -> dict:
+    """Parse a VST2 Serum/Serum_x64 Buffer hex string from an ALS file."""
+    raw = bytes.fromhex(re.sub(r"\s+", "", hex_data))
+    data = _extract_vst2_decompressed_data(raw)
+    return _parse_vst2_decompressed_data(data)
+
+
+def parse_fxp_file(path) -> dict:
+    """Parse a standalone Serum VST2 .fxp preset file."""
+    preset_path = Path(path)
+    raw = preset_path.read_bytes()
+    data = _extract_vst2_decompressed_data(raw)
+    result = _parse_vst2_decompressed_data(data)
+
+    header = {}
+    if raw[:4] == b"CcnK" and len(raw) >= 60:
+        fxp_type = raw[8:12].decode("ascii", errors="replace")
+        version = struct.unpack_from(">I", raw, 12)[0]
+        plugin_id = raw[16:20].decode("ascii", errors="replace")
+        plugin_version = struct.unpack_from(">I", raw, 20)[0]
+        param_count = struct.unpack_from(">I", raw, 24)[0]
+        preset_name = raw[28:56].split(b"\x00", 1)[0].decode("utf-8", errors="replace")
+        header = {
+            "container": "fxp",
+            "fxp_type": fxp_type,
+            "version": version,
+            "plugin_id": plugin_id,
+            "plugin_version": plugin_version,
+            "param_count": param_count,
+            "preset_name": preset_name,
+        }
+
+    result["path"] = str(preset_path)
+    result["_decompressed_data"] = data
+    if header:
+        result["header"] = header
     return result
 
 
@@ -416,6 +1265,13 @@ def summarise_instance(inst: dict) -> dict:
 
     if fmt == "vst2":
         out["wavetables"] = inst.get("wavetables", [])
+        text_metadata = inst.get("text_metadata", {})
+        if text_metadata.get("embedded_vendor"):
+            out["vendor"] = text_metadata["embedded_vendor"]
+        if text_metadata.get("embedded_bank"):
+            out["bank"] = text_metadata["embedded_bank"]
+        if text_metadata.get("macro_labels"):
+            out["macro_labels"] = text_metadata["macro_labels"]
         params = inst.get("params", {})
         interesting = {}
 
