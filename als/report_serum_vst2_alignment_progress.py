@@ -22,14 +22,37 @@ def make_parser() -> argparse.ArgumentParser:
     parser = argparse.ArgumentParser(description="Report progress for a Serum VST2 parser-alignment workpack.")
     parser.add_argument("--alignment-dir", required=True, help="Directory created by prepare_serum_vst2_alignment_session.py.")
     parser.add_argument("--done-target", action="append", default=[], help="Mark one or more implementation targets as done in the emitted state.")
+    parser.add_argument("--reset", action="store_true", help="Ignore any existing alignment_state.json when computing progress.")
     parser.add_argument("--write-state", action="store_true", help="Write alignment_state.json in the alignment directory.")
     parser.add_argument("--summary-only", action="store_true", help="Only print counts and next target.")
     return parser
 
 
-def build_alignment_progress(alignment_dir: Path, done_targets: set[str] | None = None) -> dict:
+def _load_existing_done_targets(alignment_dir: Path) -> set[str]:
+    state_path = alignment_dir / "alignment_state.json"
+    if not state_path.exists():
+        return set()
+    try:
+        state = json.loads(state_path.read_text())
+    except Exception:
+        return set()
+    return {
+        row["implementation_target"]
+        for row in state.get("targets", [])
+        if row.get("done") and row.get("implementation_target")
+    }
+
+
+def build_alignment_progress(
+    alignment_dir: Path,
+    done_targets: set[str] | None = None,
+    *,
+    include_existing: bool = True,
+) -> dict:
     actions = json.loads((alignment_dir / "alignment_actions.json").read_text())
-    done_targets = done_targets or set()
+    done_targets = set(done_targets or set())
+    if include_existing:
+        done_targets.update(_load_existing_done_targets(alignment_dir))
     rows = []
     grouped = defaultdict(lambda: {"modules": [], "done": False})
     next_target = None
@@ -69,7 +92,11 @@ def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
     alignment_dir = Path(args.alignment_dir)
-    report = build_alignment_progress(alignment_dir, done_targets=set(args.done_target))
+    report = build_alignment_progress(
+        alignment_dir,
+        done_targets=set(args.done_target),
+        include_existing=not args.reset,
+    )
     if args.write_state:
         (alignment_dir / "alignment_state.json").write_text(json.dumps(report, indent=2) + "\n")
     if args.summary_only:
