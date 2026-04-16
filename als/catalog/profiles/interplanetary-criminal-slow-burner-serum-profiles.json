@@ -19,6 +19,7 @@
         "bass"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "gritty",
         "modulated",
@@ -283,6 +284,7 @@
         "bass"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "modulated"
       ],
@@ -496,18 +498,24 @@
     },
     "classification": {
       "role_candidates": [
-        "unknown"
+        "stab"
       ],
       "tone_tags": [
+        "bright",
+        "clean",
         "dark",
         "modulated",
         "wide"
       ],
       "mix_tags": [
+        "high_air",
+        "mid_focus",
         "side_heavy"
       ],
       "notes": [
-        "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
+        "Lead/pluck/stab role suggests a more forward midrange position.",
+        "Detected unison-style width hints; likely side-heavy unless collapsed in the mix.",
+        "Bright melodic role suggests more upper-mid or air presence."
       ]
     },
     "summary": {
@@ -803,17 +811,21 @@
     },
     "classification": {
       "role_candidates": [
-        "unknown"
+        "stab",
+        "pad"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "modulated"
       ],
       "mix_tags": [
-        "low_end_anchor"
+        "background",
+        "mid_focus"
       ],
       "notes": [
-        "Likely carries low-end weight or bass function."
+        "Pad-like role suggests supportive/background placement.",
+        "Lead/pluck/stab role suggests a more forward midrange position."
       ]
     },
     "summary": {
@@ -1072,15 +1084,18 @@
         "fx"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "gritty",
         "modulated",
         "wide"
       ],
       "mix_tags": [
+        "background",
         "side_heavy"
       ],
       "notes": [
+        "FX/riser role suggests transitional or background placement.",
         "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
       ]
     },

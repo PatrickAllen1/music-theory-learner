@@ -141,6 +141,7 @@ Files:
 - add `als/prepare_serum_audio_session.py`
 - add `als/render_serum_audio.py`
 - add `als/extract_serum_audio_features.py`
+- add `als/attach_serum_audio_descriptors.py`
 
 Acceptance criteria:
 
@@ -238,6 +239,8 @@ Already added in this pass:
 - [suggest_serum_mutations.py](./suggest_serum_mutations.py)
 - [serum-audio-audition-spec.json](./serum-audio-audition-spec.json)
 - [prepare_serum_audio_session.py](./prepare_serum_audio_session.py)
+- [extract_serum_audio_features.py](./extract_serum_audio_features.py)
+- [attach_serum_audio_descriptors.py](./attach_serum_audio_descriptors.py)
 - [palette_builder.py](./palette_builder.py)
 
 Recommended next code pass:

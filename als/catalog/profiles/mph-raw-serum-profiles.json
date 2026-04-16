@@ -19,6 +19,7 @@
         "bass"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "gritty",
         "modulated"
@@ -264,6 +265,7 @@
         "pluck"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "gritty"
       ],
@@ -380,15 +382,14 @@
         "lead"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "modulated"
       ],
       "mix_tags": [
-        "low_end_anchor",
         "mid_focus"
       ],
       "notes": [
-        "Likely carries low-end weight or bass function.",
         "Lead/pluck/stab role suggests a more forward midrange position."
       ]
     },
@@ -624,6 +625,7 @@
         "reese"
       ],
       "tone_tags": [
+        "clean",
         "wide"
       ],
       "mix_tags": [
@@ -739,6 +741,7 @@
         "reese"
       ],
       "tone_tags": [
+        "clean",
         "gritty",
         "wide"
       ],
@@ -836,16 +839,22 @@
     },
     "classification": {
       "role_candidates": [
-        "unknown"
+        "pad",
+        "fx"
       ],
       "tone_tags": [
         "bright",
+        "clean",
+        "dark",
         "wide"
       ],
       "mix_tags": [
+        "background",
         "side_heavy"
       ],
       "notes": [
+        "Pad-like role suggests supportive/background placement.",
+        "FX/riser role suggests transitional or background placement.",
         "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
       ]
     },
@@ -940,15 +949,18 @@
     },
     "classification": {
       "role_candidates": [
-        "unknown"
+        "fx"
       ],
       "tone_tags": [
+        "clean",
         "wide"
       ],
       "mix_tags": [
+        "background",
         "side_heavy"
       ],
       "notes": [
+        "FX/riser role suggests transitional or background placement.",
         "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
       ]
     },

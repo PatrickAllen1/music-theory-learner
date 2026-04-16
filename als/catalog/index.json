@@ -4,28 +4,31 @@
   "profile_count": 42,
   "role_counts": {
     "bass": 9,
-    "fx": 1,
-    "lead": 6,
-    "pad": 10,
+    "fx": 3,
+    "lead": 10,
+    "pad": 16,
     "pluck": 3,
     "reese": 2,
-    "sub": 1,
-    "unknown": 11
+    "stab": 3,
+    "sub": 1
   },
   "tone_counts": {
-    "bright": 4,
-    "dark": 8,
+    "bright": 10,
+    "clean": 28,
+    "dark": 11,
     "gritty": 5,
+    "hard": 4,
     "modulated": 10,
-    "unknown": 25,
+    "soft": 22,
     "wide": 9
   },
   "mix_counts": {
-    "background": 10,
-    "low_end_anchor": 15,
-    "mid_focus": 9,
-    "side_heavy": 9,
-    "unknown": 6
+    "background": 18,
+    "high_air": 4,
+    "low_end_anchor": 12,
+    "mid_focus": 16,
+    "mono_safe": 1,
+    "side_heavy": 9
   },
   "profiles": [
     {
@@ -33,13 +36,19 @@
       "analysis_slug": "bl3ss-camrinwatsin-kisses",
       "track": "Organ Bass",
       "role_candidates": [
-        "bass"
+        "bass",
+        "stab",
+        "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "dark",
+        "hard"
       ],
       "mix_tags": [
-        "low_end_anchor"
+        "background",
+        "low_end_anchor",
+        "mid_focus"
       ],
       "wavetable_refs": [
         "Analog/Basic Shapes.wav",
@@ -55,7 +64,8 @@
         "bass"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "hard"
       ],
       "mix_tags": [
         "low_end_anchor"
@@ -73,7 +83,8 @@
         "pluck"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -88,13 +99,15 @@
       "analysis_slug": "bl3ss-camrinwatsin-kisses",
       "track": "Saws 1",
       "role_candidates": [
-        "unknown"
+        "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "bright",
+        "clean"
       ],
       "mix_tags": [
-        "unknown"
+        "high_air",
+        "mid_focus"
       ],
       "wavetable_refs": [
         "Analog/ARP white.wav",
@@ -106,13 +119,14 @@
       "analysis_slug": "bl3ss-camrinwatsin-kisses",
       "track": "Saws 2",
       "role_candidates": [
-        "unknown"
+        "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "bright"
       ],
       "mix_tags": [
-        "unknown"
+        "high_air",
+        "mid_focus"
       ],
       "wavetable_refs": [
         "Analog/ARP white.wav"
@@ -126,9 +140,10 @@
         "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "bright"
       ],
       "mix_tags": [
+        "high_air",
         "mid_focus"
       ],
       "wavetable_refs": [
@@ -143,7 +158,7 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -160,7 +175,7 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -177,7 +192,7 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -194,6 +209,7 @@
         "bass"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "gritty",
         "modulated",
@@ -216,6 +232,7 @@
         "bass"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "modulated"
       ],
@@ -231,14 +248,18 @@
       "analysis_slug": "interplanetary-criminal-slow-burner",
       "track": "90s Piano",
       "role_candidates": [
-        "unknown"
+        "stab"
       ],
       "tone_tags": [
+        "bright",
+        "clean",
         "dark",
         "modulated",
         "wide"
       ],
       "mix_tags": [
+        "high_air",
+        "mid_focus",
         "side_heavy"
       ],
       "wavetable_refs": [
@@ -252,14 +273,17 @@
       "analysis_slug": "interplanetary-criminal-slow-burner",
       "track": "Organ",
       "role_candidates": [
-        "unknown"
+        "stab",
+        "pad"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "modulated"
       ],
       "mix_tags": [
-        "low_end_anchor"
+        "background",
+        "mid_focus"
       ],
       "wavetable_refs": [
         "Analog/Basic Shapes.wav",
@@ -274,12 +298,14 @@
         "fx"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "gritty",
         "modulated",
         "wide"
       ],
       "mix_tags": [
+        "background",
         "side_heavy"
       ],
       "wavetable_refs": [
@@ -295,7 +321,8 @@
         "bass"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
         "low_end_anchor"
@@ -313,7 +340,7 @@
         "bass"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "low_end_anchor"
@@ -330,10 +357,12 @@
         "sub"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
-        "low_end_anchor"
+        "low_end_anchor",
+        "mono_safe"
       ],
       "wavetable_refs": [
         "Analog/Basic Shapes.wav",
@@ -348,7 +377,7 @@
         "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -365,7 +394,7 @@
         "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -379,13 +408,13 @@
       "analysis_slug": "kettama-it-gets-better",
       "track": "saw",
       "role_candidates": [
-        "unknown"
+        "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
-        "unknown"
+        "mid_focus"
       ],
       "wavetable_refs": [
         "Organics/AC hum1.wav"
@@ -399,7 +428,7 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -414,7 +443,8 @@
         "pluck"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -432,7 +462,9 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "bright",
+        "dark",
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -451,7 +483,10 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "bright",
+        "clean",
+        "hard",
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -470,7 +505,8 @@
         "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "hard",
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -488,7 +524,8 @@
         "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -507,7 +544,7 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -525,7 +562,7 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -542,7 +579,8 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -560,6 +598,7 @@
         "bass"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "gritty",
         "modulated"
@@ -582,6 +621,7 @@
         "pluck"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "gritty"
       ],
@@ -602,11 +642,11 @@
         "lead"
       ],
       "tone_tags": [
+        "clean",
         "dark",
         "modulated"
       ],
       "mix_tags": [
-        "low_end_anchor",
         "mid_focus"
       ],
       "wavetable_refs": [
@@ -622,6 +662,7 @@
         "reese"
       ],
       "tone_tags": [
+        "clean",
         "wide"
       ],
       "mix_tags": [
@@ -641,6 +682,7 @@
         "reese"
       ],
       "tone_tags": [
+        "clean",
         "gritty",
         "wide"
       ],
@@ -657,13 +699,17 @@
       "analysis_slug": "mph-raw",
       "track": "Drone Synth",
       "role_candidates": [
-        "unknown"
+        "pad",
+        "fx"
       ],
       "tone_tags": [
         "bright",
+        "clean",
+        "dark",
         "wide"
       ],
       "mix_tags": [
+        "background",
         "side_heavy"
       ],
       "wavetable_refs": [
@@ -676,12 +722,14 @@
       "analysis_slug": "mph-raw",
       "track": "Riser Basic",
       "role_candidates": [
-        "unknown"
+        "fx"
       ],
       "tone_tags": [
+        "clean",
         "wide"
       ],
       "mix_tags": [
+        "background",
         "side_heavy"
       ],
       "wavetable_refs": [
@@ -696,7 +744,7 @@
         "bass"
       ],
       "tone_tags": [
-        "unknown"
+        "clean"
       ],
       "mix_tags": [
         "low_end_anchor"
@@ -710,14 +758,16 @@
       "analysis_slug": "sammy-virji-cops-and-robbers",
       "track": "Strings 1",
       "role_candidates": [
-        "unknown"
+        "pad"
       ],
       "tone_tags": [
         "bright",
-        "modulated"
+        "clean",
+        "modulated",
+        "soft"
       ],
       "mix_tags": [
-        "unknown"
+        "background"
       ],
       "wavetable_refs": [
         "S2 Tables/Default Shapes.wav",
@@ -730,14 +780,16 @@
       "analysis_slug": "sammy-virji-cops-and-robbers",
       "track": "Strings 2",
       "role_candidates": [
-        "unknown"
+        "pad"
       ],
       "tone_tags": [
         "bright",
-        "modulated"
+        "clean",
+        "modulated",
+        "soft"
       ],
       "mix_tags": [
-        "unknown"
+        "background"
       ],
       "wavetable_refs": [
         "S2 Tables/Default Shapes.wav",
@@ -750,14 +802,16 @@
       "analysis_slug": "sammy-virji-cops-and-robbers",
       "track": "Strings 3",
       "role_candidates": [
-        "unknown"
+        "pad"
       ],
       "tone_tags": [
         "bright",
-        "modulated"
+        "clean",
+        "modulated",
+        "soft"
       ],
       "mix_tags": [
-        "unknown"
+        "background"
       ],
       "wavetable_refs": [
         "S2 Tables/Default Shapes.wav",
@@ -770,12 +824,14 @@
       "analysis_slug": "sammy-virji-cops-and-robbers",
       "track": "Saw",
       "role_candidates": [
-        "unknown"
+        "lead"
       ],
       "tone_tags": [
+        "clean",
         "wide"
       ],
       "mix_tags": [
+        "mid_focus",
         "side_heavy"
       ],
       "wavetable_refs": [
@@ -790,11 +846,11 @@
         "pad"
       ],
       "tone_tags": [
+        "clean",
         "wide"
       ],
       "mix_tags": [
         "background",
-        "low_end_anchor",
         "side_heavy"
       ],
       "wavetable_refs": [

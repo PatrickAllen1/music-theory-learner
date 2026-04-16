@@ -19,7 +19,8 @@
         "bass"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
         "low_end_anchor"
@@ -83,7 +84,7 @@
         "bass"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "low_end_anchor"
@@ -145,13 +146,16 @@
         "sub"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
-        "low_end_anchor"
+        "low_end_anchor",
+        "mono_safe"
       ],
       "notes": [
-        "Likely carries low-end weight or bass function."
+        "Likely carries low-end weight or bass function.",
+        "Sub role implies a preference for mono-stable low-end."
       ]
     },
     "summary": {
@@ -209,7 +213,7 @@
         "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -271,7 +275,7 @@
         "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -330,15 +334,17 @@
     },
     "classification": {
       "role_candidates": [
-        "unknown"
+        "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
-        "unknown"
+        "mid_focus"
       ],
-      "notes": []
+      "notes": [
+        "Lead/pluck/stab role suggests a more forward midrange position."
+      ]
     },
     "summary": {
       "wavetable_refs": [
@@ -393,7 +399,7 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -451,7 +457,8 @@
         "pluck"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -515,7 +522,9 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "bright",
+        "dark",
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -581,7 +590,10 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "bright",
+        "clean",
+        "hard",
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -647,7 +659,8 @@
         "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "hard",
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -711,7 +724,8 @@
         "lead"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
         "mid_focus"
@@ -777,7 +791,7 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -841,7 +855,7 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "soft"
       ],
       "mix_tags": [
         "background"
@@ -903,7 +917,8 @@
         "pad"
       ],
       "tone_tags": [
-        "unknown"
+        "clean",
+        "soft"
       ],
       "mix_tags": [
         "background"

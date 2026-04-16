@@ -61,7 +61,25 @@ def infer_role_candidates(track_name: str | None) -> list[str]:
         roles.append("stab")
     if "fx" in text or "sweep" in text:
         roles.append("fx")
-    return roles or ["unknown"]
+    if "riser" in text or "uplift" in text:
+        roles.append("fx")
+    if "drone" in text:
+        roles.append("pad")
+        roles.append("fx")
+    if "string" in text:
+        roles.append("pad")
+    if "saw" in text:
+        roles.append("lead")
+    if "piano" in text:
+        roles.append("stab")
+    if "organ" in text:
+        roles.append("stab")
+        roles.append("pad")
+    deduped = []
+    for role in roles:
+        if role not in deduped:
+            deduped.append(role)
+    return deduped or ["unknown"]
 
 
 def _mapping_section(value) -> dict:
@@ -77,6 +95,11 @@ def _wavetable_refs(instance: dict) -> list[str]:
     else:
         refs = []
     return sorted({ref for ref in refs if isinstance(ref, str) and ref})
+
+
+def _wavetable_text(profile_or_instance: dict) -> str:
+    refs = _wavetable_refs(profile_or_instance) if "summary" not in profile_or_instance else profile_or_instance["summary"]["wavetable_refs"]
+    return " ".join(refs).lower()
 
 
 def _first_filter_freq(instance: dict) -> float | None:
@@ -112,8 +135,9 @@ def _low_octave_hint(instance: dict) -> bool:
     return False
 
 
-def infer_tone_tags(instance: dict) -> list[str]:
+def infer_tone_tags(instance: dict, roles: list[str] | None = None) -> list[str]:
     tags = set()
+    role_set = set(roles or [])
     freq = _first_filter_freq(instance)
     if freq is not None:
         if freq <= 0.33:
@@ -127,26 +151,57 @@ def infer_tone_tags(instance: dict) -> list[str]:
         tags.add("wide")
     if len(instance.get("mod_matrix") or {}) >= 4:
         tags.add("modulated")
+    wavetable_text = _wavetable_text(instance)
+    if any(token in wavetable_text for token in ("white", "saw", "acid", "arp")):
+        tags.add("bright")
+    if any(token in wavetable_text for token in ("sin", "sub", "bd_sin", "mellow", "rounded")):
+        tags.add("dark")
+    if any(token in wavetable_text for token in ("basic shapes", "default shapes", "basic mini")):
+        tags.add("clean")
+    if any(token in wavetable_text for token in ("hum", "vowel", "strings", "cello")):
+        tags.add("soft")
+    if any(token in wavetable_text for token in ("noise", "filthy", "acid")):
+        tags.add("hard")
     if not tags:
-        tags.add("unknown")
+        if "pad" in role_set:
+            tags.add("soft")
+        elif role_set & {"lead", "pluck", "stab"}:
+            tags.add("bright")
+        elif role_set & {"sub", "bass", "reese"}:
+            tags.add("dark")
+        elif "fx" in role_set:
+            tags.add("bright")
+        else:
+            tags.add("unknown")
     return sorted(tags)
 
 
 def infer_mix_tags(instance: dict, roles: list[str]) -> tuple[list[str], list[str]]:
     tags = set()
     notes = []
-    if any(role in roles for role in ("sub", "bass", "reese")) or _low_octave_hint(instance):
+    role_set = set(roles)
+    tone_tags = infer_tone_tags(instance, roles)
+    if role_set & {"sub", "bass", "reese"} or (_low_octave_hint(instance) and not role_set & {"lead", "pluck", "stab", "pad", "fx"}):
         tags.add("low_end_anchor")
         notes.append("Likely carries low-end weight or bass function.")
-    if "pad" in roles:
+    if "pad" in role_set:
         tags.add("background")
         notes.append("Pad-like role suggests supportive/background placement.")
-    if "lead" in roles or "pluck" in roles or "stab" in roles:
+    if role_set & {"lead", "pluck", "stab"}:
         tags.add("mid_focus")
         notes.append("Lead/pluck/stab role suggests a more forward midrange position.")
-    if "wide" in infer_tone_tags(instance):
+    if "fx" in role_set:
+        tags.add("background")
+        notes.append("FX/riser role suggests transitional or background placement.")
+    if "wide" in tone_tags:
         tags.add("side_heavy")
         notes.append("Detected unison-style width hints; likely side-heavy unless collapsed in the mix.")
+    if "sub" in role_set and "side_heavy" not in tags:
+        tags.add("mono_safe")
+        notes.append("Sub role implies a preference for mono-stable low-end.")
+    if role_set & {"lead", "pluck", "stab"} and "bright" in tone_tags:
+        tags.add("high_air")
+        notes.append("Bright melodic role suggests more upper-mid or air presence.")
     if not tags:
         tags.add("unknown")
     return sorted(tags), notes
@@ -155,7 +210,7 @@ def infer_mix_tags(instance: dict, roles: list[str]) -> tuple[list[str], list[st
 def build_profile(analysis_path: Path, analysis: dict, instance: dict, instance_index: int) -> dict:
     track_name = instance.get("track")
     roles = infer_role_candidates(track_name)
-    tone_tags = infer_tone_tags(instance)
+    tone_tags = infer_tone_tags(instance, roles)
     mix_tags, notes = infer_mix_tags(instance, roles)
 
     return {

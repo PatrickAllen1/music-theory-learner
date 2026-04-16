@@ -19,7 +19,7 @@
         "bass"
       ],
       "tone_tags": [
-        "unknown"
+        "clean"
       ],
       "mix_tags": [
         "low_end_anchor"
@@ -125,16 +125,20 @@
     },
     "classification": {
       "role_candidates": [
-        "unknown"
+        "pad"
       ],
       "tone_tags": [
         "bright",
-        "modulated"
+        "clean",
+        "modulated",
+        "soft"
       ],
       "mix_tags": [
-        "unknown"
+        "background"
       ],
-      "notes": []
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
     },
     "summary": {
       "wavetable_refs": [
@@ -423,16 +427,20 @@
     },
     "classification": {
       "role_candidates": [
-        "unknown"
+        "pad"
       ],
       "tone_tags": [
         "bright",
-        "modulated"
+        "clean",
+        "modulated",
+        "soft"
       ],
       "mix_tags": [
-        "unknown"
+        "background"
       ],
-      "notes": []
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
     },
     "summary": {
       "wavetable_refs": [
@@ -744,16 +752,20 @@
     },
     "classification": {
       "role_candidates": [
-        "unknown"
+        "pad"
       ],
       "tone_tags": [
         "bright",
-        "modulated"
+        "clean",
+        "modulated",
+        "soft"
       ],
       "mix_tags": [
-        "unknown"
+        "background"
       ],
-      "notes": []
+      "notes": [
+        "Pad-like role suggests supportive/background placement."
+      ]
     },
     "summary": {
       "wavetable_refs": [
@@ -1062,15 +1074,18 @@
     },
     "classification": {
       "role_candidates": [
-        "unknown"
+        "lead"
       ],
       "tone_tags": [
+        "clean",
         "wide"
       ],
       "mix_tags": [
+        "mid_focus",
         "side_heavy"
       ],
       "notes": [
+        "Lead/pluck/stab role suggests a more forward midrange position.",
         "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
       ]
     },
@@ -1163,15 +1178,14 @@
         "pad"
       ],
       "tone_tags": [
+        "clean",
         "wide"
       ],
       "mix_tags": [
         "background",
-        "low_end_anchor",
         "side_heavy"
       ],
       "notes": [
-        "Likely carries low-end weight or bass function.",
         "Pad-like role suggests supportive/background placement.",
         "Detected unison-style width hints; likely side-heavy unless collapsed in the mix."
       ]

@@ -47,6 +47,14 @@ python3 als/prepare_serum_audio_session.py --out-dir als/audio-session --role ba
 python3 als/prepare_serum_audio_session.py --out-dir als/audio-session --profile-id mph-raw:bass:i1 --force
 ```
 
+Extract audio descriptors from rendered audition WAV files and attach them back
+to the catalog:
+
+```bash
+python3 als/extract_serum_audio_features.py --session-dir als/audio-session --force
+python3 als/attach_serum_audio_descriptors.py --session-dir als/audio-session --force
+```
+
 The audition spec is:
 
 - [../serum-audio-audition-spec.json](../serum-audio-audition-spec.json)
