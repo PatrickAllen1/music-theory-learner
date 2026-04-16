@@ -1,0 +1,150 @@
+[
+  {
+    "tags": ["theory"],
+    "text": "We're between 140 and 150 BPM — maybe between like 130 and 150 — so we're at 143 here."
+  },
+  {
+    "tags": ["theory"],
+    "text": "We're in D-sharp minor."
+  },
+  {
+    "tags": ["arrangement"],
+    "text": "All throughout the track you're going to have these chords."
+  },
+  {
+    "tags": ["theory"],
+    "text": "It's a D-sharp minor 9 — root, third, fourth, sixth, and then a ninth."
+  },
+  {
+    "tags": ["arrangement"],
+    "text": "The same chord is being played on both pads. One's playing like a rhythm and then the other one's just playing a chord, but they're the same chord, and it kind of just creates this big kind of like ethereal wash."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "Two sine waves, low pass with a nice envelope on it and an envelope like that."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "A ton of Unison — voices all the way up."
+  },
+  {
+    "tags": ["fx"],
+    "text": "Chorus, delay, Reverb, autopan to make it kind of bounce off the kick as if it's being side-chained."
+  },
+  {
+    "tags": ["mix"],
+    "text": "High pass."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "Two square waves, they're detuned. Low bass filter, LFO is moving it, no envelope, and a bit of key tracking plus automation."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "AMP up like that, bunch of Unison, slow LFO on the filter."
+  },
+  {
+    "tags": ["fx"],
+    "text": "Chorus, delay, Reverb, autopan, side chain, high pass."
+  },
+  {
+    "tags": ["mix", "arrangement"],
+    "text": "They're panned a bit too, so it kind of spreads them a little and it helps the overall width of the track."
+  },
+  {
+    "tags": ["sound_design", "drums"],
+    "text": "Just a nice fat lo-fi 909 techno-type kick."
+  },
+  {
+    "tags": ["bass", "arrangement"],
+    "text": "The bassline is doing this every time and then just changing the note."
+  },
+  {
+    "tags": ["bass", "theory"],
+    "text": "We're in D-sharp minor so it's like root note, third, seventh — sixth, excuse me — fifth, seventh."
+  },
+  {
+    "tags": ["bass", "sound_design"],
+    "text": "There's an Amber wavetable and then a saw wave. The Amber isn't quite as loud but it adds a lot of fatness to the bass."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "Low pass filter with a nice envelope on it. That same envelope is also on the wavetable position on the first oscillator."
+  },
+  {
+    "tags": ["fx"],
+    "text": "Auto pan to make it bounce off the kick."
+  },
+  {
+    "tags": ["mix"],
+    "text": "On the group there's a little bit of saturator. The dry/wet is down to maybe like 35%. It's not really trying to fix anything — all it's doing is it's gluing these a little bit more."
+  },
+  {
+    "tags": ["drums"],
+    "text": "Just a nice 909 hat — made it a bit shorter and also pitched it down so it grooves really well with the bass and kick. You can even make it shorter and just dial that groove in."
+  },
+  {
+    "tags": ["drums", "arrangement"],
+    "text": "There's a house loop which is just high-passed — getting some life and some atmosphere, and it kind of adds to that main hi-hat."
+  },
+  {
+    "tags": ["drums", "mix"],
+    "text": "There are some breakbeats — mainly doing autopan to make it like side-chained, and then a high pass filter."
+  },
+  {
+    "tags": ["drums"],
+    "text": "There's an amen — chopped a bit to fit. One more break on top of that."
+  },
+  {
+    "tags": ["drums", "mix"],
+    "text": "A bit of saturator on the drum group as well — same story. This one is making it a bit fatter but it's really just gluing everything, kind of helping to turn it into one thing without destroying it."
+  },
+  {
+    "tags": ["arrangement"],
+    "text": "It's that really repetitive rhythm — like with the bassline — and then just changing the note. It bounces off the bass: that contrast helps to create a lot more groove and rhythm in the track."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "It's a little vocal stab — warped and stretched a lot, and then the transient was taken off: you can see a little bit of release."
+  },
+  {
+    "tags": ["fx"],
+    "text": "Delay, Reverb, and an autopan to make it bounce off the kick side-chain style."
+  },
+  {
+    "tags": ["arrangement"],
+    "text": "These are panned a little bit, which really helps to keep everything where it's meant to be and makes it feel more like call and response because they're really talking to each other."
+  },
+  {
+    "tags": ["lead", "arrangement"],
+    "text": "Notes are really simple — if we're in D minor we're playing with fourth, third, ninth, and then a root down here. It's really only a few notes but it just creates these little kind of melodic things at the end of every two bars."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "Sub oscillator, Transformations, and then another Transformations — both panned."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "Filter moving around with LFOs — just trying to bring it to life and make it a bit more exciting."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "Unison voices turned down all the way — you barely hear that Unison but it just gives it that kind of chunky sort of feel."
+  },
+  {
+    "tags": ["fx"],
+    "text": "A lot of Reverb. Autopan to make it bounce off the kick. High pass."
+  },
+  {
+    "tags": ["lead", "arrangement"],
+    "text": "Like sixth or fifth sixth, route."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "It's a pretty basic patch — basically a super saw. Shimmer Unison voices all the way up. That also helps make it different from the other one because one's very Unison and then one's clearly not."
+  },
+  {
+    "tags": ["fx"],
+    "text": "A bit of Reverb. A bit of autopan to make it bounce off the kick. High pass filter."
+  }
+]
