@@ -62,6 +62,13 @@ Prepare an audio render session directly from the chosen blueprint stack:
 python3 als/prepare_serum_blueprint_audio_session.py --brief ukg-4x4-lead-driver --out-dir als/audio-session/ukg-4x4-lead-driver
 ```
 
+Generate lesson-facing notes from the chosen blueprint:
+
+```bash
+python3 als/generate_serum_lesson_notes.py --brief ukg-4x4-pluck-driver
+python3 als/generate_serum_lesson_notes.py --brief ukg-4x4-lead-driver --format json
+```
+
 Compare two chosen profiles for clash risk and separation moves:
 
 ```bash
