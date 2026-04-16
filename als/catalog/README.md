@@ -75,6 +75,19 @@ Export the whole lesson packet in one shot:
 python3 als/export_serum_lesson_packet.py --brief ukg-4x4-pluck-driver --out-dir als/lesson-packets/ukg-4x4-pluck-driver
 ```
 
+Report how well the current catalog covers all briefs and which profiles to render first:
+
+```bash
+python3 als/report_serum_brief_coverage.py
+python3 als/report_serum_brief_coverage.py --format json
+```
+
+Prepare one consolidated priority render session across all briefs:
+
+```bash
+python3 als/prepare_serum_priority_render_session.py --out-dir als/audio-session/priority-renders
+```
+
 Compare two chosen profiles for clash risk and separation moves:
 
 ```bash
