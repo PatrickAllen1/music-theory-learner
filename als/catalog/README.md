@@ -69,6 +69,12 @@ python3 als/generate_serum_lesson_notes.py --brief ukg-4x4-pluck-driver
 python3 als/generate_serum_lesson_notes.py --brief ukg-4x4-lead-driver --format json
 ```
 
+Export the whole lesson packet in one shot:
+
+```bash
+python3 als/export_serum_lesson_packet.py --brief ukg-4x4-pluck-driver --out-dir als/lesson-packets/ukg-4x4-pluck-driver
+```
+
 Compare two chosen profiles for clash risk and separation moves:
 
 ```bash
