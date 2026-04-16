@@ -277,6 +277,157 @@
     ]
   },
   {
+    "id": "minor-9-omit-5th-7th-voicing",
+    "name": "Minor 9 voicing — omit 5th and 7th",
+    "source": "Kettamapge / Raw — MPH",
+    "what_it_does": "Voices a minor 9 chord using only the root, 3rd, 4th, 6th, and 9th — deliberately skipping the 5th and 7th. The omission removes the most 'resolved' intervals, leaving the chord open-ended and ambiguous rather than fully defined.",
+    "when_to_use": "When building an ethereal pad wash that needs harmonic colour without sounding like a conventional chord. Common in atonal or key-center tracks where full chord definition would feel too resolved.",
+    "works_well_with": [
+      "dual-layer pad (rhythmic + sustained)",
+      "one-note pitch-bend lead",
+      "atonal / key-center arrangement",
+      "stable root-locked sub"
+    ],
+    "likely_clashes_with": [
+      "strong tonal melody that emphasises the 5th or 7th — exposes the omission as a gap rather than a choice",
+      "bass lines that imply the missing 5th or 7th — the chord and bass will define a different harmony than intended"
+    ],
+    "why": "The 5th grounds a chord; the 7th defines its function (major 7, dominant 7, minor 7). Removing both creates maximum ambiguity — the chord has colour but no clear tonal resolution, which is what gives the 'ethereal wash' quality.",
+    "mitigations": [
+      "If the track needs more tonal grounding, reintroduce the 5th in the bass rather than the chord — it anchors without closing the harmonic ambiguity in the pad.",
+      "Avoid melodic elements that emphasise the 5th or 7th strongly — they'll fill in what you deliberately left out."
+    ]
+  },
+  {
+    "id": "dual-layer-pad-rhythmic-sustained",
+    "name": "Dual-layer pad — rhythmic + sustained",
+    "source": "Kettamapge",
+    "what_it_does": "Two instances of the same chord patch run simultaneously — one with an envelope-driven LPF that creates rhythmic movement (playing the chord as a rhythm), one with an LFO-driven LPF that sustains and breathes. Both are panned apart from each other for stereo width.",
+    "when_to_use": "When a single pad sounds either too static (sustained only) or too choppy (rhythmic only). Layering both creates depth — the rhythmic layer drives energy while the sustained layer fills space.",
+    "works_well_with": [
+      "minor 9 voicing (omit 5th and 7th)",
+      "autopan sidechain simulation on both layers",
+      "high-pass on both layers to keep the low end clean",
+      "stable root-locked sub"
+    ],
+    "likely_clashes_with": [
+      "busy mid-range arrangement with other chordal elements — the two-layer pad already occupies significant harmonic space",
+      "another wide stereo element in the same frequency range — panning the two layers apart is already using the stereo field"
+    ],
+    "why": "The rhythmic layer gives the pad motion without requiring a separate rhythmic instrument. The sustained layer provides the wash and prevents the rhythmic layer from sounding naked between hits. Together they create a self-contained harmonic texture.",
+    "mitigations": [
+      "Keep both layers high-passed to avoid low-end buildup — the pad's job is mid and upper-mid colour.",
+      "If the layered pad feels too wide, reduce the pan spread slightly — the two layers don't need to be hard left/right to create width."
+    ]
+  },
+  {
+    "id": "hi-hat-pitch-tune-for-groove",
+    "name": "Hi-hat pitch-tuning and shortening for groove",
+    "source": "Kettamapge",
+    "what_it_does": "A 909 hi-hat is shortened (reduced decay/release) and pitched down until it sits tonally in the same register as the kick and bass, creating a more cohesive groove feel between the three elements.",
+    "when_to_use": "When a hi-hat sounds disconnected from the kick and bass — too bright, too long, or clashing in tone — and the groove feels like separate parts rather than one unit.",
+    "works_well_with": [
+      "909-style kick",
+      "low-mid focused bass",
+      "velocity-led drum groove",
+      "drum bus glue processing"
+    ],
+    "likely_clashes_with": [
+      "very bright, high-frequency-focused arrangements where a pitched-down hat gets buried",
+      "tracks where hi-hat brightness is a defining character — pitching down removes that presence"
+    ],
+    "why": "Tuning the hi-hat down brings its fundamental closer to the kick's and bass's frequency range. The ear hears them as belonging to the same tonal world rather than a bright element sitting on top of a darker one.",
+    "mitigations": [
+      "Don't over-pitch — dial in by ear until the hat grooves with the kick, not until it disappears into the low-mid.",
+      "Keep the shortened decay tight — if the hat decays into the next kick, it blurs the groove rather than locking it."
+    ]
+  },
+  {
+    "id": "lfo-on-pan-modulation-routing",
+    "name": "LFO on pan — non-obvious modulation matrix routing",
+    "source": "Kettamapge",
+    "what_it_does": "An LFO is routed to the oscillator or voice pan position inside the modulation matrix (Wavetable or similar), creating slow, organic panning movement on a lead or pad without using a separate autopan effect.",
+    "when_to_use": "When a static lead or pad sounds lifeless and needs movement, but adding autopan as an insert effect would feel too mechanical or too synchronized with the kick.",
+    "works_well_with": [
+      "Wavetable modulation matrix",
+      "lead sounds with slow LFO rates",
+      "reverb-heavy patches where the panning movement feels spatial rather than rhythmic"
+    ],
+    "likely_clashes_with": [
+      "autopan sidechain effects running simultaneously — two pan movement sources create erratic, uncontrolled stereo motion",
+      "mono-compatibility-sensitive mixes — slow panning LFOs can cause phase issues when summed to mono"
+    ],
+    "why": "Routing the LFO internally (into the pan parameter directly) makes the movement part of the voice's behaviour rather than a send effect. The result feels organic rather than processed.",
+    "mitigations": [
+      "Keep the LFO rate slow — fast rates read as tremolo, not space.",
+      "Check mono compatibility if the track will be played on club systems — internal LFO pan can create phase cancellation when summed."
+    ]
+  },
+  {
+    "id": "minimal-vs-maximal-unison-lead-contrast",
+    "name": "Minimal vs maximal unison — lead contrast pair",
+    "source": "Kettamapge",
+    "what_it_does": "Two lead sounds in the same arrangement are given opposite unison treatments: Lead 1 has unison voices turned all the way down (barely any spread — just adds slight 'chunky' texture), Lead 2 has Shimmer Unison with voices all the way up (full, wide supersaw spread). The contrast between them is the sound design strategy.",
+    "when_to_use": "When two call-and-response leads need to sound distinct without using different waveforms or octaves. The unison differential creates immediate timbral separation.",
+    "works_well_with": [
+      "call-and-response arrangement (leads panned apart)",
+      "dual-layer pad (the unison contrast mirrors the rhythmic/sustained pad contrast)",
+      "reverb on both leads to blend them into the same space despite different timbres"
+    ],
+    "likely_clashes_with": [
+      "a third lead or pad element with a medium unison setting — it sits between the two extremes and muddies the contrast",
+      "heavy low-mid content in the leads — full Shimmer Unison in the low-mid range creates significant stereo width that conflicts with other wide elements"
+    ],
+    "why": "Maximum unison spread is immediately recognizable as a supersaw; near-zero unison reads as clean and focused. Placing them together makes each one define the other by contrast — the 'big' one sounds bigger next to the tight one, and vice versa.",
+    "mitigations": [
+      "High-pass both leads so the unison width stays in the upper-mid and high range — full unison in the low-mid stacks badly.",
+      "If both leads are competing for space, pan them further apart so the stereo width of the maximal-unison lead doesn't swallow the minimal-unison one."
+    ]
+  },
+  {
+    "id": "vocal-stab-warp-transient-removal",
+    "name": "Vocal stab warp + transient removal",
+    "source": "Kettamapge",
+    "what_it_does": "A short vocal sample is warped and time-stretched significantly, then the transient is removed (attack of the amplitude envelope trimmed or release-only shape applied). The result is a rhythmically malleable, smooth-attack stab that bounces off the bassline without fighting the kick transient.",
+    "when_to_use": "When a vocal sample feels too sharp or percussive in the mix and competes with the kick and bass. Removing the transient lets it sit in the groove rather than punctuating it.",
+    "works_well_with": [
+      "autopan sidechain simulation",
+      "delay and reverb to extend the tail",
+      "repetitive rhythmic bassline — the stab's rhythm mirrors and contrasts the bass movement"
+    ],
+    "likely_clashes_with": [
+      "busy lead or melodic arrangement — the stretched vocal sits in a specific tonal range and will clash with pitched elements in the same area",
+      "fast BPM tracks where the warped texture becomes too obvious — time-stretching artifacts are more audible at extremes"
+    ],
+    "why": "Removing the transient stops the stab from competing with the kick for the attack moment. The smooth onset means it blooms into the mix rather than hitting it, which makes it feel like part of the groove rather than a percussion element.",
+    "mitigations": [
+      "Use the release-only envelope shape rather than full transient removal — a small amount of attack keeps some definition.",
+      "Add delay (in tempo) so the tail of the stab extends into the next phrase, reinforcing the repetitive rhythm."
+    ]
+  },
+  {
+    "id": "wavetable-plus-saw-bass-fatness",
+    "name": "Wavetable + saw layering for bass fatness (Amber)",
+    "source": "Kettamapge",
+    "what_it_does": "A Wavetable patch combines an Amber wavetable oscillator (lower volume, adds harmonic richness and fatness) with a straight saw wave oscillator (main body). The Amber wavetable's complex harmonic content fattens the bass without making it louder — it adds thickness in the mid-frequency content of the bass.",
+    "when_to_use": "When a saw wave bass sounds thin or one-dimensional in the mid-range, but adding more low-end would cause sub conflicts.",
+    "works_well_with": [
+      "low-pass filter with envelope modulation",
+      "envelope on wavetable position (first oscillator) for timbral movement",
+      "kick + bass group saturator (35% dry/wet) for glue",
+      "stable root-locked sub below"
+    ],
+    "likely_clashes_with": [
+      "already harmonically dense mid-range — the Amber wavetable adds complexity that can muddy a busy mix",
+      "wide stereo pad in the same frequency band — the bass fatness sits in the same area as typical pad content"
+    ],
+    "why": "The Amber wavetable adds upper harmonics and complexity without significantly increasing the fundamental — it makes the bass feel 'fatter' in perception without actually adding more low-end energy. The saw wave handles the core body.",
+    "mitigations": [
+      "Keep the Amber wavetable oscillator noticeably lower in volume than the saw — it's a seasoning, not a second oscillator.",
+      "Use the same envelope on the wavetable position as on the filter cutoff — this keeps the harmonic complexity and the tonal movement synchronized."
+    ]
+  },
+  {
     "id": "sample-stab-pitch-correction",
     "name": "Sample stab pitch correction and sequencing",
     "source": "Raw — MPH",
@@ -297,6 +448,303 @@
       "Use only the first chord of the sample — the rest of the sample's harmonic movement will conflict.",
       "Detune carefully by ear — a few cents makes the difference between in-tune and slightly pitchy.",
       "Keep the stab short (no sustain) so its harmonic content reads as rhythmic colour, not a chord."
+    ]
+  },
+  {
+    "id": "kick-tuned-to-bassline",
+    "name": "Kick tuned to bassline root",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "The kick drum's fundamental pitch is tuned to match the bass root note so the two elements lock together tonally. When mistuned, the kick loses punch and sounds disconnected from the bass; when tuned, the low-end registers as a single cohesive hit.",
+    "when_to_use": "In any track where the kick and bass share overlapping low-end frequencies — especially when using a 909-style kick, which has a pitched fundamental.",
+    "works_well_with": [
+      "reese-bass-notch-filter",
+      "bass-to-mono-utility",
+      "drum bus glue compression",
+      "sample-selection-as-groove"
+    ],
+    "likely_clashes_with": [
+      "bass lines that move through multiple root notes — the kick can only be tuned to one pitch, so it will clash when the bass changes",
+      "already-processed kicks where the fundamental has been removed or heavily shaped"
+    ],
+    "why": "The kick and bass share the same physical register. If their fundamentals clash in pitch, the low-end sounds muddy or indistinct. Tuning them together makes the combined hit feel more powerful than either element alone.",
+    "mitigations": [
+      "Tune the kick to the root note the bass returns to most often — usually the tonic.",
+      "If the bass moves significantly, consider sidechain ducking the bass under the kick rather than tuning — it gives clarity without requiring pitch lock."
+    ]
+  },
+  {
+    "id": "sample-selection-as-groove",
+    "name": "Sample selection as the primary groove tool",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "The groove feel of the hi-hat pattern comes from the inherent character of the sample itself — choosing a very short, punchy closed hat over an open or long-decaying one. The sample IS the sound design decision; no additional processing is needed to shape the groove.",
+    "when_to_use": "When you want a hi-hat groove that feels right immediately without spending time on envelope shaping, EQ, or processing. The right sample carries the groove natively.",
+    "works_well_with": [
+      "kick-tuned-to-bassline",
+      "velocity-led drum groove",
+      "minimal drum bus processing"
+    ],
+    "likely_clashes_with": [
+      "heavy drum bus compression that removes the natural character the sample choice was providing",
+      "pitch-tuning the hi-hat significantly — may alter the punchy transient that made the sample choice effective"
+    ],
+    "why": "Every sample has an intrinsic feel baked into its transient shape, decay, and tone. Choosing the right one is faster and more reliable than processing the wrong one into shape — the sample choice is itself a sound design decision.",
+    "mitigations": [
+      "Audition many samples against the full mix before committing — the right sample will snap into the groove immediately.",
+      "Avoid over-processing a sample that works — light high-passing and volume setting is usually enough."
+    ]
+  },
+  {
+    "id": "crash-every-4-bars-high-passed",
+    "name": "Periodic crash as arrangement marker — high-passed",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "A crash cymbal placed every four bars acts as a low-cost arrangement marker. It is high-passed to remove low-end and mud from the mix, with a small amount of reverb to give it space.",
+    "when_to_use": "When you need to mark phrase boundaries (every 4 or 8 bars) without a full breakdown or arrangement change. Common in house music to signal the repeat of a section.",
+    "works_well_with": [
+      "kick-tuned-to-bassline",
+      "sample-selection-as-groove",
+      "autopan or reverb send on the crash channel"
+    ],
+    "likely_clashes_with": [
+      "dense high-frequency content in the arrangement — a crash will get buried if the hi-hat and synth content is already bright",
+      "very short crash samples that don't have enough tail to carry through the phrase"
+    ],
+    "why": "Crashes naturally carry a lot of low-end and low-mid energy that adds mud to a mix. High-passing removes that energy while keeping the bright, shimmering attack that signals the phrase boundary. The reverb extends the tail without adding low-end back.",
+    "mitigations": [
+      "Set the high-pass at least at 200-300 Hz or higher — crashes carry more low-end than they appear to.",
+      "Keep the reverb pre-delay short so the crash's attack still reads clearly before the tail spreads."
+    ]
+  },
+  {
+    "id": "reese-bass-notch-filter",
+    "name": "Reese bass notch filter for hollow UK bass feel",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "A notch (band-reject) filter is applied to the mid-range of a Reese bass, cutting the frequencies that give it too much body and presence. The result is a hollow, UK bass-style tone where the lows are preserved but the mid-range is scooped out.",
+    "when_to_use": "When a Reese bass has too much mid-range presence for the intended style — specifically when you want that classic hollow, dark UK bass / techno character instead of a full, mid-forward sound.",
+    "works_well_with": [
+      "kick-tuned-to-bassline",
+      "bass-to-mono-utility",
+      "sub oscillator layered below the Reese for low-end body",
+      "low-pass filter to control the high harmonic content separately"
+    ],
+    "likely_clashes_with": [
+      "arrangements where the bass needs to cut through a dense mid-range — the notch removes the frequencies that carry in a busy mix",
+      "tracks where the pad or lead already has a hollow, scooped sound — notching the bass too can make the whole arrangement feel thin"
+    ],
+    "why": "The mid-range is what makes a Reese sound 'present' in a mix. Removing it creates the hollow character — the bass is felt in the low end but doesn't push into the space where pads and leads live. The notch is more surgical than a general mid cut.",
+    "mitigations": [
+      "Layer a sub oscillator below the Reese to maintain low-end body — the notch removes mids but also reduces the perceived fullness of the bass.",
+      "Tune the notch frequency by ear rather than setting a fixed value — the 'hollow' sweet spot varies with the bass pitch and the mix context."
+    ]
+  },
+  {
+    "id": "bass-to-mono-utility",
+    "name": "Bass to mono via Utility device",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "The bass signal is collapsed to mono using Ableton's Utility device (or equivalent). Any stereo width from unison detuning or stereo processing is removed, ensuring the sub and bass frequencies are fully mono-compatible.",
+    "when_to_use": "Whenever a bass patch uses unison, stereo effects, or any processing that introduces width. Sub frequencies should always be mono for club system compatibility.",
+    "works_well_with": [
+      "reese-bass-notch-filter",
+      "kick-tuned-to-bassline",
+      "wide stereo pad or lead above the bass (the mono bass makes room for the stereo elements)"
+    ],
+    "likely_clashes_with": [
+      "intentionally wide bass design where the stereo spread is the point — using Utility at the end removes that design choice",
+      "mid-side processing downstream — collapsing to mono before M/S processing gives you no side signal to work with"
+    ],
+    "why": "Bass frequencies below roughly 150-200 Hz are non-directional — the ear cannot perceive stereo information at those frequencies, but phase differences can cause cancellation when the signal is summed to mono (as club systems often do). Collapsing to mono eliminates that risk.",
+    "mitigations": [
+      "Place the Utility at the end of the bass channel's device chain so all processing runs in stereo first — only collapse at the output.",
+      "If you want some width in the upper bass register, use a multiband approach: mono below 150 Hz, allow stereo above."
+    ]
+  },
+  {
+    "id": "pad-chord-inversion-epic",
+    "name": "Pad chord inversion for epic, triumphant voicing",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "Pad chords are voiced root–5th–3rd (instead of the standard root–3rd–5th) by inverting the voicing. The higher position of the 3rd makes the chord sound more open and triumphant. Bringing the top notes up further increases the epic quality; bringing them down blends the pad more into the background.",
+    "when_to_use": "When a pad needs to sound assertive and present rather than blending into the background. Especially useful when the pad is the main harmonic carrier and needs to establish the key clearly.",
+    "works_well_with": [
+      "stabs playing matching chord tones in the high register",
+      "bass-to-mono-utility (the mono bass handles the root, freeing the pad to invert without low-end conflict)",
+      "reese-bass-notch-filter (the hollow bass leaves space for the pad's mid-register voicing)"
+    ],
+    "likely_clashes_with": [
+      "a bass line that also plays the 3rd prominently — stacking the 3rd in both bass and pad can make the harmony feel top-heavy",
+      "very long, slow reverb on the pad — inversions that create open voicings can sound diffuse when heavily washed with reverb"
+    ],
+    "why": "Standard root–3rd–5th voicings place the strongest harmonic identifier (the 3rd) close to the root, which can make chords sound dense or dark. Moving the 3rd to the top of the voicing exposes it above the 5th, creating an open, spread sound that reads as bright and triumphant.",
+    "mitigations": [
+      "Balance the pad level against the bass — the inverted voicing exposes the upper register, which can dominate if the pad is too loud.",
+      "Use the voicing height dynamically: lower position for verses/building sections, higher position for drops/peaks."
+    ]
+  },
+  {
+    "id": "unison-voices-amount-zero",
+    "name": "Unison voices set, amount at zero — subtle texture",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "Unison voices are set to a value (e.g. 4) but the detune amount is set to zero or near-zero. This adds a tiny, barely-audible thickening to the sound without introducing obvious chorus-like spreading or detune artifacts.",
+    "when_to_use": "When a sound needs a very slight 'weight' or texture added without the obvious spreading that full unison creates. Works as a subtle fattening tool that stays under conscious awareness.",
+    "works_well_with": [
+      "wavetable pads with LFO oscillator position movement",
+      "100pct-wet-reverb (the subtle voices blend into the reverb tail)",
+      "ping-pong-echo-lr-timing-offset (the stereo echo provides the spread; the low-amount unison adds thickness without competing)"
+    ],
+    "likely_clashes_with": [
+      "patches where CPU overhead is a concern — additional voices at zero amount cost processing without adding audible benefit",
+      "patches that already have chorus or ensemble effects — the low-amount unison adds nothing on top of existing spread effects"
+    ],
+    "why": "Even at zero detune amount, additional voices contribute a very slight phase relationship between them that adds minimal density. The result is a sound that feels slightly heavier than a single voice without any perceivable pitch spread.",
+    "mitigations": [
+      "Compare with voices set to 1 (off) to confirm you can actually hear a difference — if you cannot, remove it to save CPU.",
+      "Keep the amount genuinely at or near zero — even a small non-zero amount will start to read as audible detune."
+    ]
+  },
+  {
+    "id": "ping-pong-echo-lr-timing-offset",
+    "name": "Ping-pong echo with L/R timing offset for stereo spread",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "An echo or delay effect has the left and right channel delay times set to different values (e.g. left at a short time, right at a longer time). The asymmetry creates a wide, spacious stereo spread that sounds natural rather than processed.",
+    "when_to_use": "When a pad or synth needs stereo width added post-synthesis, without using a chorus or conventional ping-pong delay that sounds obviously rhythmic or artificial.",
+    "works_well_with": [
+      "100pct-wet-reverb (echo spread + reverb wash creates a complete spatial environment)",
+      "unison-voices-amount-zero (the echo width complements the subtle voice thickening)",
+      "high-pass filter post-effects (removes low-end added by the echo wash)"
+    ],
+    "likely_clashes_with": [
+      "mono-compatibility-critical mixes — different L/R delay times create phase relationships that can cancel when summed to mono",
+      "very rhythmic sounds where the L/R timing offset makes the echo pattern feel cluttered or arrhythmic"
+    ],
+    "why": "Standard ping-pong delay alternates a single delay time between channels, which reads as an effect. Different L/R times create an asymmetric reflection pattern that mimics natural acoustic space — the brain reads it as 'wide' rather than 'processed'.",
+    "mitigations": [
+      "Check mono compatibility — sum to mono and verify the delayed signal doesn't cancel significantly.",
+      "Keep the time offset subtle — large differences between L and R create obvious rhythmic artifacts rather than smooth spread."
+    ]
+  },
+  {
+    "id": "100pct-wet-reverb",
+    "name": "100% wet reverb for washed-out pad texture",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "A reverb is set to 100% wet (dry signal fully replaced by the reverb return). The direct sound is removed; only the reverb tail remains. This creates a washed-out, diffuse, 'watery' texture where the original timbre is heard only through the reverb's colouration.",
+    "when_to_use": "When you want a pad to feel atmospheric and distant — the sound should wash rather than sit. Common in deep house pads and ethereal electronic textures where the 'cloud' quality is more important than note clarity.",
+    "works_well_with": [
+      "ping-pong-echo-lr-timing-offset (echo for width, 100% wet reverb for depth and wash)",
+      "unison-voices-amount-zero (the voices thicken the reverb input without adding obvious spread)",
+      "pad-chord-inversion-epic (inversion exposes upper chord tones that remain audible even through heavy reverb)"
+    ],
+    "likely_clashes_with": [
+      "rhythmic, staccato sounds — 100% wet removes the attack clarity that rhythmic sounds depend on",
+      "arrangements where the pad needs to cut through — a fully wet reverb moves the sound far back in the mix depth"
+    ],
+    "why": "Setting reverb to 100% wet removes the direct signal entirely, which means there's no sharp attack to hear — only the bloom of the reverb. This creates the signature 'watery' or 'gaseous' quality because there's no moment where the sound is 'dry'; it exists only as reverberation.",
+    "mitigations": [
+      "Reduce reverb wet level slightly (e.g. to 80-90%) if note clarity is needed — even a small amount of dry signal restores some attack definition.",
+      "Use a long pre-delay before applying 100% wet — this separates the implied attack position (where the note starts) from the wash, giving the rhythm more definition."
+    ]
+  },
+  {
+    "id": "layered-stab-impact-plus-body",
+    "name": "Layered stab — impact layer + body layer",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "Two separate sounds are layered to form one stab: the first is high-passed and provides the transient punch and impact; the second has reverb and body but lacks punch on its own. Together they form a single complete stab with both attack definition and sustain weight.",
+    "when_to_use": "When a single stab sound is either too punchy and brittle (missing body) or too warm and reverb-heavy (missing impact). Splitting those qualities across two samples or patches gives you independent control over each component.",
+    "works_well_with": [
+      "crash-every-4-bars-high-passed (similar logic — high-pass separates the impact register from the mud register)",
+      "autopan sidechain on the impact layer",
+      "piano layer playing the same chord (the piano adds harmonic identity; the stab layers add texture and weight)"
+    ],
+    "likely_clashes_with": [
+      "very dense arrangements where two stab channels compete with existing mid-range content",
+      "tracks where the kick already dominates the attack moment — a high-passed impact stab can compete with the kick transient"
+    ],
+    "why": "No single sample or patch perfectly captures both a defined attack and a full-bodied sustain. Splitting the roles across two layers means each one is optimized for its purpose: the impact layer can be heavily processed for punch without worrying about body; the body layer can be reverb-heavy without worrying about muddying the attack.",
+    "mitigations": [
+      "Keep the impact layer high-passed at a consistent frequency so it doesn't overlap with the kick in the low-mid.",
+      "Balance the two layers so neither dominates — the impact layer should punctuate, not overpower; the body layer should fill, not swamp."
+    ]
+  },
+  {
+    "id": "note-length-as-sound-design",
+    "name": "Note length as the primary sound design tool",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "Short, stabby MIDI note lengths are used as the main shaping tool for a lead sound, independently of synth envelope settings. The brevity of the note itself creates the percussive, staccato character — longer notes change the sound's identity even if the synth patch is identical.",
+    "when_to_use": "When a sound needs a tight, punchy, staccato feel and envelope settings alone aren't achieving it — or when you want to preserve the character of a sound while controlling its length in the MIDI editor rather than the synth.",
+    "works_well_with": [
+      "brick-wall-amp-envelope (the instant-release envelope means note length in MIDI directly controls how long you hear the sound)",
+      "sidechain-aware note placement (short notes are easier to place between kick hits)",
+      "reese-bass-notch-filter (short bass notes with notch filter give tight, punchy UK bass stabs)"
+    ],
+    "likely_clashes_with": [
+      "long reverb tails — short notes with heavy reverb lose the staccato quality as the tail extends the perceived note length",
+      "sounds with slow attack envelopes — very short notes may end before the envelope reaches full level, producing a quiet, thin result"
+    ],
+    "why": "For sounds with fast envelope settings (especially brick-wall attack/release), MIDI note length directly controls duration. This means the sound design is partially happening in the piano roll — making notes longer or shorter changes the character as much as adjusting synth parameters.",
+    "mitigations": [
+      "When note length is critical to the sound, commit to it early and don't increase it casually — the change in character is significant.",
+      "If you need the sound to last longer without changing the staccato attack feel, increase the synth's release rather than the MIDI note length."
+    ]
+  },
+  {
+    "id": "lead-without-sidechain",
+    "name": "Lead intentionally without sidechain/autopan",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "The lead melody element deliberately does not have autopan sidechain applied, while other elements (pad, bass, stabs) do. This keeps the lead's melodic pattern audible and readable against the pumping of the sidechained elements.",
+    "when_to_use": "When a lead carries a specific rhythmic or melodic pattern that needs to be clearly heard — especially when other elements are heavily sidechained and the pumping effect would obscure the lead's phrasing.",
+    "works_well_with": [
+      "note-length-as-sound-design (short, stabby notes need to be clearly heard to register their rhythmic pattern)",
+      "brick-wall-amp-envelope (the instant on/off of the envelope makes the pattern extremely clear without sidechain interference)",
+      "heavily sidechained pad and bass (the contrast between pumping elements and the stable lead makes the lead's pattern more distinct)"
+    ],
+    "likely_clashes_with": [
+      "tracks where a consistent, pumping energy is the primary vibe — a stable lead breaks the rhythmic texture",
+      "leads with long sustain or reverb tails — without sidechain, a reverb-heavy lead can accumulate and cloud the mix"
+    ],
+    "why": "Sidechain and autopan create rhythmic pumping that can obscure subtle melodic patterns. When the lead needs its pattern to be recognizable — especially when it's doing something specific and interesting — removing sidechain lets the pattern speak clearly. The contrast between the pumping elements and the stable lead also highlights both.",
+    "mitigations": [
+      "Keep the lead's reverb and tail short so it doesn't accumulate energy without sidechain to clear it.",
+      "Balance the lead volume carefully — without sidechain ducking it on the kick, it may need to sit lower in the mix than usual."
+    ]
+  },
+  {
+    "id": "tension-plus-reverb-deep-house-string",
+    "name": "Tension + heavy reverb for deep house strings",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "Ableton's Tension instrument, using the String Exciter mode, is combined with a large amount of reverb to approximate the classic M1-style deep house string sound. The Tension patch provides a slightly uneven, organic tonal source; the reverb is what creates the 'string' quality — without it, the sound is merely adequate.",
+    "when_to_use": "When you want a deep house string texture without using a sample library, the M1, or a preset. Tension gives you a malleable, synthesized starting point that the reverb then transforms into something string-like.",
+    "works_well_with": [
+      "100pct-wet-reverb (the fully wet reverb transforms the Tension output into an atmospheric wash)",
+      "high-pass filter post-reverb (removes the low-end added by the reverb)",
+      "pad-chord-inversion-epic (the string and pad can share the same chord voicing for a layered harmonic texture)"
+    ],
+    "likely_clashes_with": [
+      "arrangements already dense with reverb-heavy pads — adding another heavily reverb'd element in the same register creates a washed-out, undefined harmonic wash",
+      "tracks where string articulation or realistic bowing is important — Tension + reverb creates atmosphere, not realism"
+    ],
+    "why": "Tension's String Exciter mode creates a physically-modelled plucked/bowed string sound that is unevenly toned in a way that plain saw, square, or sine waves are not. This unevenness gives the reverb something organic to work with — the reverb tail then smears that unevenness into the characteristic deep house string bloom.",
+    "mitigations": [
+      "High-pass the output aggressively — the reverb adds significant low-end that conflicts with the bass.",
+      "If the Tension patch sounds too artificial before the reverb, adjust the Exciter parameters (bow speed, position) rather than adding more reverb."
+    ]
+  },
+  {
+    "id": "brick-wall-amp-envelope",
+    "name": "Brick-wall amplitude envelope — instant attack, instant release",
+    "source": "Kettama × Interplanetary Criminal",
+    "what_it_does": "The amplitude envelope is set with no attack (0ms), no release (0ms), and maximum sustain — the sound starts instantly when a note is played and stops instantly when the note is released. Duration is controlled entirely by note length in the MIDI editor.",
+    "when_to_use": "When you want a sound to behave exactly like a gate — it's on while the key is held, off the moment it's released. Common in stabby lead sounds where exact note length control is essential to the groove.",
+    "works_well_with": [
+      "note-length-as-sound-design (the brick-wall envelope makes MIDI note length the exact control over sound duration)",
+      "lead-without-sidechain (the instant on/off makes the melodic pattern extremely readable)",
+      "short, monophonic leads where legato behavior would smear the pattern"
+    ],
+    "likely_clashes_with": [
+      "sounds where a natural decay is part of the tonal character — brick-wall release cuts that off abruptly",
+      "heavily reverbed patches — the reverb tail continues after the instant release, undermining the hard-gate effect",
+      "polyphonic playing where notes overlap — instant release on each voice creates clicking artifacts in polyphonic contexts"
+    ],
+    "why": "Standard envelope settings (even fast ones) introduce a small amount of attack bloom and release tail. A brick-wall envelope removes both entirely — what you play in the MIDI editor is exactly what you hear. This gives maximum rhythmic precision and makes the sound design fully dependent on note placement.",
+    "mitigations": [
+      "Add a small amount of release (1-3ms) to avoid digital clicking artifacts at note-off — fully zero release can create clicks on some synths.",
+      "Keep reverb short and high-passed so the reverb tail doesn't undermine the hard-gate feel of the envelope."
     ]
   }
 ]
