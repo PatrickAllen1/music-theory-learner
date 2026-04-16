@@ -1,0 +1,101 @@
+{
+  "metadata": {
+    "version": 1,
+    "description": "Second-stage deferred manual Serum VST2 probe pack to run after checkpoints A-E if the first pass does not collapse enough of the remaining dark surfaces.",
+    "default_diff_command": "python3 als/parse_serum_preset.py --diff before.fxp after.fxp --slots 180 --threshold 0.01 --cluster-gap 0"
+  },
+  "checkpoints": [
+    {
+      "id": "F",
+      "title": "Post-A-E expansion probes",
+      "objective": "Target the highest-value remaining dark families after checkpoints A-E: oscillator warp, remaining voicing, post-LFO1 modulation, filter topology/routing, and one missing FX core.",
+      "probes": [
+        {
+          "id": "osc_warp_family",
+          "label": "Oscillator warp family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": ["A Warp", "B Warp", "Warp Menu OSC A"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Speed On Smoke.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Rudeboy.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass - Basic Warper.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass - Warpie.fxp"
+          ],
+          "notes": "Use a warp-forward preset with minimal FX and change only one warp parameter per save."
+        },
+        {
+          "id": "voicing_remaining",
+          "label": "Remaining global voicing family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Monophonic / Polyphonic switch",
+            "Legato",
+            "Unison Stereo Width",
+            "Unison Warp",
+            "Unison Stack",
+            "Unison Detune Mode"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Wide Reese.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Stab - digi.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Duality.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp"
+          ],
+          "notes": "Wide or unison-heavy patches are the cleanest baseline for the remaining voicing controls."
+        },
+        {
+          "id": "post_lfo1_modulation",
+          "label": "Post-LFO1 modulation family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": ["LFO2Rate", "LFO2 smooth", "LFO3Rate", "LFO3 smooth"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- Wanderlust.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Just.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Speed Garage/Warp- Shakhov.fxp"
+          ],
+          "notes": "Start with LFO2 Rate or LFO2 smooth. Fall back to LFO3 only if the patch keeps LFO2 too quiet."
+        },
+        {
+          "id": "filter_topology_routing",
+          "label": "Filter topology and routing family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": [
+            "Fil Type",
+            "Fil Var",
+            "Filter KeyTrack",
+            "OscA>Fil",
+            "OscB>Fil",
+            "OscN>Fil",
+            "OscS>Fil"
+          ],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Sub- Turn The Page.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - Dusty Heever.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Stab - digi.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Pad- June.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp"
+          ],
+          "notes": "Sub and reese patches usually expose filter topology and routing more cleanly than decorative pad usage."
+        },
+        {
+          "id": "distortion_core",
+          "label": "Distortion core family",
+          "candidate_slot_windows": [],
+          "candidate_host_labels": ["Dist_On", "Dist_Drv", "Dist_Mode"],
+          "recommended_preset": "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Face Melter.fxp",
+          "fallback_presets": [
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Crackhead.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Bass- Sidewinda.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Reese - If Bass could kill.fxp",
+            "/Library/Audio/Presets/Xfer Records/Serum 2 Presets/Presets/S1 Presets/Garage/Lead- Saturn.fxp"
+          ],
+          "notes": "Distortion is the cleaner missing FX core than reverb because it appears less broadly shared and should isolate more cleanly."
+        }
+      ]
+    }
+  ]
+}

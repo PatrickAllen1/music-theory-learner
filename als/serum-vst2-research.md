@@ -194,6 +194,10 @@ Best post-A-E manual expansion targets from the current evidence:
 5. one missing FX module core (`Distortion On / Drive / Mode` or
    `Reverb On / Type`)
 
+The current second-stage choice is to prefer `Distortion` over `Reverb`
+because it appears less broadly shared across the corpus and should be easier
+to isolate cleanly in a controlled save-diff.
+
 ### Corpus slot profiler
 
 ```bash
@@ -247,6 +251,7 @@ evidence. It combines:
 
 ```bash
 python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
+python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs --manifest als/serum-vst2-expansion-probes.json
 ```
 
 The autonomous batch now has a deferred-manual layer:
@@ -255,6 +260,9 @@ The autonomous batch now has a deferred-manual layer:
   is the machine-readable checkpoint manifest
 - [`als/serum-vst2-manual-checkpoints.md`](./serum-vst2-manual-checkpoints.md)
   is the human handoff pack
+- [`als/serum-vst2-expansion-probes.json`](./serum-vst2-expansion-probes.json)
+  is the phase-2 machine-readable probe pack to use if checkpoints A-E are not
+  enough
 - [`als/ingest_serum_manual_diff.py`](./ingest_serum_manual_diff.py) ingests
   final `.before.fxp` / `.after.fxp` pairs using the `<probe_id>.before.fxp`
   and `<probe_id>.after.fxp` naming convention, and now echoes the matched

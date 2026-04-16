@@ -66,8 +66,19 @@ python3 als/ingest_serum_manual_diff.py --pairs-dir /path/to/serum-probe-pairs
 
 ## After A-E
 - If A-E is not enough, the next highest-value unplanned manual probes are:
+- Machine-readable companion: `als/serum-vst2-expansion-probes.json`
 - `Osc A/B Warp`: `A Warp`, `B Warp`, `Warp Menu OSC A`
+- Best preset: `Speed Garage/Warp- Speed On Smoke.fxp`
+- Fallbacks: `Speed Garage/Warp- Shakhov.fxp`, `Speed Garage/Warp- Rudeboy.fxp`, `Garage/Bass - Basic Warper.fxp`, `Garage/Bass - Warpie.fxp`
 - Remaining global voicing: `Monophonic / Polyphonic switch`, `Legato`, `Unison Stereo Width`, `Unison Warp`, `Unison Stack`, `Unison Detune Mode`
+- Best preset: `Garage/Bass- Wide Reese.fxp`
+- Fallbacks: `Garage/Lead- Saturn.fxp`, `Garage/Stab - digi.fxp`, `Garage/Bass- Duality.fxp`, `Speed Garage/Warp- Shakhov.fxp`
 - LFO family beyond `LFO1Rate`: `LFO2 Rate` / `LFO2 smooth`, then `LFO3`
+- Best preset: `Garage/Pad- June.fxp`
+- Fallbacks: `Garage/Pad- Wanderlust.fxp`, `Garage/Lead- Saturn.fxp`, `Garage/Lead- Just.fxp`, `Speed Garage/Warp- Shakhov.fxp`
 - Filter topology and routing: `Fil Type`, `Fil Var`, `Filter KeyTrack`, `OscA/B/N/S>Fil`
-- One missing FX module core: `Distortion On / Drive / Mode` or `Reverb On / Type`
+- Best preset: `Garage/Sub- Turn The Page.fxp`
+- Fallbacks: `Garage/Reese - Dusty Heever.fxp`, `Garage/Stab - digi.fxp`, `Garage/Pad- June.fxp`, `Garage/Lead- Saturn.fxp`
+- Missing FX core family: `Distortion On / Drive / Mode`
+- Best preset: `Garage/Bass- Face Melter.fxp`
+- Fallbacks: `Garage/Bass- Crackhead.fxp`, `Garage/Bass- Sidewinda.fxp`, `Garage/Reese - If Bass could kill.fxp`, `Garage/Lead- Saturn.fxp`
