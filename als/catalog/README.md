@@ -144,6 +144,13 @@ python3 als/prepare_serum_priority_render_session.py --out-dir als/audio-session
 python3 als/prepare_serum_priority_render_session.py --out-dir als/audio-session/priority-renders --priority-source backlog
 ```
 
+Prepare a full render handoff bundle for the later Ableton/Serum pass:
+
+```bash
+python3 als/prepare_serum_render_handoff.py --out-dir als/audio-session/render-handoff
+python3 als/prepare_serum_render_handoff.py --out-dir als/audio-session/render-handoff --include-medium
+```
+
 Find similar alternatives to a chosen profile:
 
 ```bash
