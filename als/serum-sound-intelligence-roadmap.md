@@ -57,6 +57,8 @@ Planned artifacts:
   scaffolds
 - `als/design_full_song_blueprint.py` complete track blueprint for drums,
   harmony, melody, arrangement, FX, mix, and export
+- `als/song-production-templates.json` per-layer Ableton chain templates,
+  return/send architecture, and sample-slot definitions
 - `als/compile_guided_build_lesson.py` conversion from full song blueprint to
   lesson JSON
 
@@ -227,10 +229,30 @@ Deliverables:
 
 - a reusable full-song blueprint format that captures:
   - drum sample choices and exact groove logic
+  - reserved sample slots for:
+    - kick / clap / snare / hat / shaker / percussion
+    - drum-loop layers
+    - vocal chops or vocal-space placeholders
+    - transitions, uplifters, downlifters, impacts, and atmospheres
   - bass/chord/melody roles and synth assignments
   - harmonic plan
   - arrangement sections and section goals
-  - FX, transitions, and mix notes
+  - per-layer processing plans for:
+    - drums
+    - bass and sub
+    - pad / chord layers
+    - pluck / lead / stab layers
+    - FX layers
+  - send/return architecture:
+    - reverb returns
+    - delay throws
+    - parallel saturation / compression when needed
+  - section-aware automation rules:
+    - send lifts
+    - filter openings
+    - reverb/delay throws
+    - arrangement mutes and drop-entry resets
+  - mix-space rules and reserved spaces for later samples or vocal additions
   - export expectations
 - brief-driven helpers that can output release-shaped UKG song plans instead of
   isolated synth suggestions
@@ -239,6 +261,7 @@ Files:
 
 - add `als/design_full_song_blueprint.py`
 - add `als/song-blueprint-briefs.json`
+- add `als/song-production-templates.json`
 - add `als/compare_full_song_blueprints.py`
 
 Acceptance criteria:
@@ -248,6 +271,11 @@ Acceptance criteria:
 - the blueprint is detailed enough that a human could build the same finished
   song from it
 - the blueprint reads like a song plan first and a teaching aid second
+- the blueprint includes enough production detail that every major layer has:
+  - a defined sound source
+  - a processing path
+  - an arrangement role
+  - a reserved space for any still-unfilled sample or vocal layer
 
 ## Phase 8: Guided-Lesson Compilation
 
@@ -262,10 +290,19 @@ Deliverables:
   - guided-build-style `steps[]`
   - lesson metadata
   - rationale for each section and sound choice
+  - exact production steps for:
+    - loading samples
+    - loading synths
+    - applying Ableton devices
+    - routing to returns
+    - automating transitions and drop entries
+    - staging mix and export passes
 - structured rules for converting:
   - production decisions -> learner instructions
   - arrangement sections -> lesson sequencing
   - mix/export choices -> exact final steps
+  - sample-slot placeholders -> explicit “leave this lane open for later fill”
+    instructions when the song plan intentionally reserves space
 
 Files:
 
@@ -278,6 +315,8 @@ Acceptance criteria:
 - the lesson remains fully hand-held and pre-composed
 - resulting JSON is close enough to existing `src/content/guided-builds/originals/*.json`
   that only light editorial cleanup is needed
+- the compiled lesson includes production steps for effects, routing, and
+  sample-space management, not only note writing and synth choice
 
 ## Phase 9: Quality Gate And Audio Verification
 
@@ -291,6 +330,8 @@ Deliverables:
   - release-shaped arrangement
   - no unresolved key sound roles
   - no major fallback-heavy synth parts left unreviewed
+  - no unplanned empty sample lanes
+  - no undefined layer processing on core parts
   - mix/export scaffolding present
 - audio-verification workflow for the highest-impact synth parts and blueprint
   choices
@@ -309,6 +350,8 @@ Acceptance criteria:
   coverage
 - render/audio verification is attached to the song-authoring loop, not treated
   as a separate afterthought
+- a blueprint cannot pass as “ready” if it still lacks core sample placement
+  decisions or effect-chain decisions for important layers
 
 ## Manual vs Automatable Work
 
@@ -321,6 +364,7 @@ Automatable now:
 - tag generation
 - search and retrieval
 - song-blueprint generation from briefs
+- layer-by-layer production templating
 - lesson-step scaffolding from frozen song decisions
 
 Manual or host-dependent:
@@ -342,8 +386,10 @@ Important distinction:
 4. Add a reproducible audio-render workflow.
 5. Add semantic tagging and retrieval.
 6. Build full-song blueprints on top of the sound-intelligence layer.
-7. Compile those blueprints into guided-build lesson JSON.
-8. Add quality gates so “full-quality song first” remains the rule.
+7. Add per-layer production templates and sample-slot planning to those
+   blueprints.
+8. Compile those blueprints into guided-build lesson JSON.
+9. Add quality gates so “full-quality song first” remains the rule.
 
 ## Immediate Next Files
 
@@ -367,5 +413,7 @@ Recommended next code pass:
 - tighten semantic tagging so fewer profiles remain `unknown`
 - add the full-song blueprint layer so the system can author whole tracks, not
   only synth sections
+- add explicit Ableton production templates so every core layer has device-chain
+  guidance and every song leaves intentional room for sample-based layers
 - add the lesson compiler layer so finished song decisions can be turned into
   guided-build JSON
