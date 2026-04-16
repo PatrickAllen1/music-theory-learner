@@ -220,6 +220,7 @@ The first directly-parsed non-float metadata is now confirmed:
 - bank / pack name
 - some macro labels
 - a large host-parameter label catalog from the installed Serum binary
+- a merged host-catalog preamble that now captures the FX enable block before `Master Volume`
 
 That matters because it gives us a second evidence source beyond float deltas:
 we can now tell whether a preset intentionally exposes named performance
@@ -229,8 +230,11 @@ are likely to be macro-linked or FX-related.
 The new binary catalog matters for a different reason:
 
 - we no longer have to guess the names of many Serum controls
-- we can mine the plugin binary for labels like `Dist_Wet`, `Dly_TimL`,
-  `Comp_Wet`, `Mod Matrix Depth 1`, and `Matrix Curve A 1`
+- we can mine the plugin binary for labels like `Flg Enable`, `FX Reverb Level`,
+  `Rev Enable`, `Reverb Type -`, `Dist_Wet`, `Dly_TimL`, `Comp_Wet`,
+  `Mod Matrix Depth 1`, and `Matrix Curve A 1`
+- `fx_reverb` now correctly groups the reverb labels instead of dumping
+  `Reverb Type -` into `global_misc`
 - the remaining job is alignment: proving which slot or slot cluster corresponds
   to which named control
 

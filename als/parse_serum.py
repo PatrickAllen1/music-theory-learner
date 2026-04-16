@@ -161,6 +161,10 @@ SERUM_VST2_TEXT_REGIONS = {
     "macro_4": (19128, 19160),
 }
 SERUM_VST2_PLUGIN_BINARY_PATH = Path("/Library/Audio/Plug-Ins/VST/Serum.vst/Contents/MacOS/Serum")
+SERUM_VST2_HOST_PARAM_CATALOG_RUNS = (
+    ("Flg Enable", "Master Volume"),
+    ("Master Volume", "FFT Table Edit"),
+)
 SERUM_VST2_HOST_PARAM_CATALOG_START = "Master Volume"
 SERUM_VST2_HOST_PARAM_CATALOG_STOP = "FFT Table Edit"
 
@@ -388,6 +392,50 @@ def _split_inline_label_description(text: str) -> tuple[str, str] | None:
     return label, description
 
 
+def _extract_serum_vst2_host_param_entries(region: list[dict], stop_text_prefixes: tuple[str, ...]) -> list[dict]:
+    """Parse a contiguous printable-string region into host parameter entries."""
+    entries = []
+    i = 0
+    while i < len(region):
+        label_text = region[i]["text"].strip()
+        inline = _split_inline_label_description(label_text)
+        if inline is not None:
+            label, inline_description = inline
+        else:
+            label = label_text
+            inline_description = ""
+
+        if not _is_serum_host_param_label(label):
+            i += 1
+            continue
+
+        description_parts = []
+        if inline_description:
+            description_parts.append(inline_description)
+        j = i + 1
+        while j < len(region):
+            next_text = region[j]["text"].strip()
+            next_inline = _split_inline_label_description(next_text)
+            if next_inline is not None:
+                break
+            if _is_serum_host_param_label(next_text):
+                break
+            if any(next_text.startswith(prefix) for prefix in stop_text_prefixes):
+                break
+            if next_text:
+                description_parts.append(next_text)
+            j += 1
+
+        entries.append({
+            "label": label,
+            "description": " ".join(description_parts).strip(),
+            "offset": region[i]["offset"],
+        })
+        i = j
+
+    return entries
+
+
 def classify_serum_vst2_host_param_label(label: str) -> str:
     """Group host-facing Serum VST2 labels into broad functional categories."""
     label = label.strip()
@@ -397,16 +445,34 @@ def classify_serum_vst2_host_param_label(label: str) -> str:
     fx_prefixes = (
         "Dist_",
         "Flg_",
+        "Flg ",
         "Phs_",
+        "Phs ",
         "Cho_",
+        "Cho ",
         "Dly_",
+        "Dly ",
         "Cmp_",
         "Cmp",
         "Comp_",
+        "Comp ",
         "EQ",
         "EQ_",
         "Rev_",
+        "Rev ",
+        "Reverb ",
+        "FX Reverb",
+        "FX Dist",
+        "FX Flg",
+        "FX Phas",
+        "FX Chor",
+        "FX Dly",
+        "FX Comp",
+        "FX DimExp",
+        "FX Filter",
+        "FX Hyper",
         "Hyp_",
+        "Hyp ",
         "FX Fil",
         "FX ",
         "Hyper ",
@@ -555,6 +621,22 @@ def describe_serum_vst2_host_param(label: str, description: str = "") -> dict:
 
     if category == "fx":
         fx_modules = (
+            ("Flg ", "fx_flanger", "FX > Flanger"),
+            ("Phs ", "fx_phaser", "FX > Phaser"),
+            ("Cho ", "fx_chorus", "FX > Chorus"),
+            ("Dly ", "fx_delay", "FX > Delay"),
+            ("Comp ", "fx_compressor", "FX > Compressor"),
+            ("Hyp ", "fx_hyper_dimension", "FX > Hyper/Dimension"),
+            ("FX Dist", "fx_distortion", "FX > Distortion"),
+            ("FX Flg", "fx_flanger", "FX > Flanger"),
+            ("FX Phas", "fx_phaser", "FX > Phaser"),
+            ("FX Chor", "fx_chorus", "FX > Chorus"),
+            ("FX Dly", "fx_delay", "FX > Delay"),
+            ("FX Comp", "fx_compressor", "FX > Compressor"),
+            ("FX Reverb", "fx_reverb", "FX > Reverb"),
+            ("FX DimExp", "fx_hyper_dimension", "FX > Hyper/Dimension"),
+            ("FX Filter", "fx_filter", "FX > Filter"),
+            ("FX Hyper", "fx_hyper_dimension", "FX > Hyper/Dimension"),
             ("Dist_", "fx_distortion", "FX > Distortion"),
             ("Flg_", "fx_flanger", "FX > Flanger"),
             ("Phs_", "fx_phaser", "FX > Phaser"),
@@ -563,6 +645,8 @@ def describe_serum_vst2_host_param(label: str, description: str = "") -> dict:
             ("Cmp_", "fx_compressor", "FX > Compressor"),
             ("Comp_", "fx_compressor", "FX > Compressor"),
             ("Rev_", "fx_reverb", "FX > Reverb"),
+            ("Rev ", "fx_reverb", "FX > Reverb"),
+            ("Reverb ", "fx_reverb", "FX > Reverb"),
             ("EQ", "fx_eq", "FX > EQ"),
             ("FX Fil", "fx_filter", "FX > Filter"),
             ("Hyp_", "fx_hyper_dimension", "FX > Hyper/Dimension"),
@@ -646,19 +730,14 @@ def describe_serum_vst2_host_param(label: str, description: str = "") -> dict:
 def extract_serum_vst2_host_param_catalog(binary_path=SERUM_VST2_PLUGIN_BINARY_PATH) -> dict:
     """Extract a host-side parameter catalog from the installed Serum VST2 binary.
 
-    This does not map parameter labels to preset float-slot offsets. It only
-    extracts the host-facing labels and nearby descriptions from the plugin
-    binary, which is useful for later alignment work.
+    This does not map parameter labels to preset float-slot offsets. It extracts
+    host-facing labels and nearby descriptions from the plugin binary by
+    merging the high-signal FX/global preamble with the main parameter surface,
+    which is useful for later alignment work.
     """
     binary_path = Path(binary_path)
     data = binary_path.read_bytes()
     printable = extract_printable_strings(data, min_length=4)
-    start_indexes = [
-        i for i, row in enumerate(printable)
-        if row["text"].strip() == SERUM_VST2_HOST_PARAM_CATALOG_START
-    ]
-    if not start_indexes:
-        raise ValueError("could not find Serum VST2 host parameter catalog anchor")
 
     stop_text_prefixes = (
         "Click to edit this wavetable.",
@@ -667,72 +746,53 @@ def extract_serum_vst2_host_param_catalog(binary_path=SERUM_VST2_PLUGIN_BINARY_P
         "Closes this graph editor.",
     )
 
-    best_catalog = None
-    for start_idx in start_indexes:
-        stop_idx = None
-        for j in range(start_idx + 1, len(printable)):
-            text = printable[j]["text"].strip()
-            if text == SERUM_VST2_HOST_PARAM_CATALOG_STOP:
-                stop_idx = j
-                break
+    candidate_catalogs = []
+    for start_text, stop_text in SERUM_VST2_HOST_PARAM_CATALOG_RUNS:
+        start_idx = next(
+            (i for i, row in enumerate(printable) if row["text"].strip() == start_text),
+            None,
+        )
+        if start_idx is None:
+            continue
+
+        stop_idx = next(
+            (j for j in range(start_idx + 1, len(printable)) if printable[j]["text"].strip() == stop_text),
+            None,
+        )
         if stop_idx is None:
             continue
 
         region = printable[start_idx:stop_idx]
-        entries = []
-        i = 0
-        while i < len(region):
-            label_text = region[i]["text"].strip()
-            inline = _split_inline_label_description(label_text)
-            if inline is not None:
-                label, inline_description = inline
-            else:
-                label = label_text
-                inline_description = ""
+        entries = _extract_serum_vst2_host_param_entries(region, stop_text_prefixes)
+        if not entries:
+            continue
 
-            if not _is_serum_host_param_label(label):
-                i += 1
-                continue
+        candidate_catalogs.append({
+            "start_label": start_text,
+            "stop_label": stop_text,
+            "start_offset": region[0]["offset"],
+            "end_offset": region[-1]["offset"],
+            "entry_count": len(entries),
+            "entries": entries,
+        })
 
-            description_parts = []
-            if inline_description:
-                description_parts.append(inline_description)
-            j = i + 1
-            while j < len(region):
-                next_text = region[j]["text"].strip()
-                next_inline = _split_inline_label_description(next_text)
-                if next_inline is not None:
-                    break
-                if _is_serum_host_param_label(next_text):
-                    break
-                if any(next_text.startswith(prefix) for prefix in stop_text_prefixes):
-                    break
-                if next_text:
-                    description_parts.append(next_text)
-                j += 1
-
-            entries.append({
-                "label": label,
-                "description": " ".join(description_parts).strip(),
-                "offset": region[i]["offset"],
-            })
-            i = j
-
-        # Keep the richest catalog copy when the binary contains multiple slices.
-        if best_catalog is None or len(entries) > len(best_catalog["entries"]):
-            best_catalog = {
-                "binary_path": str(binary_path),
-                "start_offset": region[0]["offset"],
-                "end_offset": region[-1]["offset"],
-                "entry_count": len(entries),
-                "entries": entries,
-            }
-
-    if best_catalog is None:
+    if not candidate_catalogs:
         raise ValueError("could not isolate a Serum VST2 host parameter catalog region")
 
+    merged_entries = []
+    seen_offsets = set()
+    for candidate in sorted(candidate_catalogs, key=lambda item: item["start_offset"]):
+        for entry in candidate["entries"]:
+            offset = entry["offset"]
+            if offset in seen_offsets:
+                continue
+            seen_offsets.add(offset)
+            merged_entries.append(entry)
+
+    merged_entries.sort(key=lambda entry: entry["offset"])
+
     occurrences = {}
-    for entry in best_catalog["entries"]:
+    for entry in merged_entries:
         label = entry["label"]
         occurrences[label] = occurrences.get(label, 0) + 1
         if occurrences[label] > 1:
@@ -742,7 +802,14 @@ def extract_serum_vst2_host_param_catalog(binary_path=SERUM_VST2_PLUGIN_BINARY_P
             entry["key"] = label
         entry.update(describe_serum_vst2_host_param(entry["label"], entry.get("description", "")))
 
-    return best_catalog
+    return {
+        "binary_path": str(binary_path),
+        "start_offset": merged_entries[0]["offset"],
+        "end_offset": merged_entries[-1]["offset"],
+        "entry_count": len(merged_entries),
+        "entries": merged_entries,
+        "source_regions": candidate_catalogs,
+    }
 
 
 def build_serum_vst2_host_coverage_report(binary_path=SERUM_VST2_PLUGIN_BINARY_PATH) -> dict:
