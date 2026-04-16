@@ -1,0 +1,305 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://music-theory-learner.local/als/schemas/serum-preset-profile.schema.json",
+  "title": "Serum Preset Profile",
+  "type": "object",
+  "additionalProperties": false,
+  "required": [
+    "profile_version",
+    "profile_id",
+    "source",
+    "classification",
+    "summary",
+    "synthesis",
+    "audio_reference",
+    "confidence"
+  ],
+  "properties": {
+    "profile_version": {
+      "type": "string"
+    },
+    "profile_id": {
+      "type": "string"
+    },
+    "source": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "kind",
+        "plugin"
+      ],
+      "properties": {
+        "kind": {
+          "type": "string",
+          "enum": [
+            "als_serum2_instance",
+            "serum2_vst3_state",
+            "serum_vst2_fxp",
+            "unknown"
+          ]
+        },
+        "plugin": {
+          "type": "string"
+        },
+        "analysis_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "analysis_slug": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "track": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "instance_index": {
+          "type": [
+            "integer",
+            "null"
+          ]
+        },
+        "preset_name": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "bank": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "vendor": {
+          "type": [
+            "string",
+            "null"
+          ]
+        },
+        "source_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "classification": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "role_candidates",
+        "tone_tags",
+        "mix_tags"
+      ],
+      "properties": {
+        "role_candidates": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "sub",
+              "bass",
+              "reese",
+              "pad",
+              "lead",
+              "pluck",
+              "stab",
+              "fx",
+              "unknown"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "tone_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "dark",
+              "bright",
+              "clean",
+              "gritty",
+              "wide",
+              "narrow",
+              "soft",
+              "hard",
+              "hollow",
+              "dense",
+              "modulated",
+              "unknown"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "mix_tags": {
+          "type": "array",
+          "items": {
+            "type": "string",
+            "enum": [
+              "low_end_anchor",
+              "mid_focus",
+              "high_air",
+              "mono_safe",
+              "side_heavy",
+              "transient_forward",
+              "background",
+              "unknown"
+            ]
+          },
+          "uniqueItems": true
+        },
+        "notes": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        }
+      }
+    },
+    "summary": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "wavetable_refs",
+        "oscillator_count",
+        "filter_count",
+        "envelope_count",
+        "lfo_count",
+        "mod_route_count"
+      ],
+      "properties": {
+        "wavetable_refs": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "oscillator_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "filter_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "envelope_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "lfo_count": {
+          "type": "integer",
+          "minimum": 0
+        },
+        "mod_route_count": {
+          "type": "integer",
+          "minimum": 0
+        }
+      }
+    },
+    "synthesis": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "wavetables",
+        "oscillators",
+        "filters",
+        "envelopes",
+        "lfos",
+        "mod_matrix",
+        "global"
+      ],
+      "properties": {
+        "wavetables": {
+          "type": "object"
+        },
+        "oscillators": {
+          "type": "object"
+        },
+        "filters": {
+          "type": "object"
+        },
+        "envelopes": {
+          "type": "object"
+        },
+        "lfos": {
+          "type": "object"
+        },
+        "mod_matrix": {
+          "type": "object"
+        },
+        "global": {
+          "type": "object"
+        },
+        "effects": {
+          "type": [
+            "object",
+            "null"
+          ]
+        }
+      }
+    },
+    "audio_reference": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "status"
+      ],
+      "properties": {
+        "status": {
+          "type": "string",
+          "enum": [
+            "not_rendered",
+            "render_pending",
+            "rendered"
+          ]
+        },
+        "render_paths": {
+          "type": "array",
+          "items": {
+            "type": "string"
+          }
+        },
+        "descriptor_path": {
+          "type": [
+            "string",
+            "null"
+          ]
+        }
+      }
+    },
+    "confidence": {
+      "type": "object",
+      "additionalProperties": false,
+      "required": [
+        "source",
+        "classification",
+        "mix_hints"
+      ],
+      "properties": {
+        "source": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "classification": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        },
+        "mix_hints": {
+          "type": "number",
+          "minimum": 0,
+          "maximum": 1
+        }
+      }
+    }
+  }
+}
