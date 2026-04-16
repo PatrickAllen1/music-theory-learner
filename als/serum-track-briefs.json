@@ -1,0 +1,104 @@
+{
+  "brief_version": "0.1.0",
+  "briefs": {
+    "ukg-4x4-pluck-driver": {
+      "description": "4-on-floor UKG stack with dark low-end, soft support pad, bright pluck hook, and light transition FX.",
+      "parts": [
+        {
+          "part_id": "bass-foundation",
+          "role": "bass",
+          "tone": ["dark"],
+          "mix": ["low_end_anchor"],
+          "goals": ["darker", "mono_safer", "tighter"]
+        },
+        {
+          "part_id": "support-pad",
+          "role": "pad",
+          "tone": ["soft"],
+          "mix": ["background"],
+          "goals": ["cleaner", "longer_tail"]
+        },
+        {
+          "part_id": "hook-pluck",
+          "role": "pluck",
+          "tone": ["bright"],
+          "mix": ["mid_focus"],
+          "goals": ["more_presence", "tighter"]
+        },
+        {
+          "part_id": "transition-fx",
+          "role": "fx",
+          "tone": ["wide"],
+          "mix": ["background"],
+          "goals": ["more_motion", "wider"]
+        }
+      ]
+    },
+    "ukg-4x4-lead-driver": {
+      "description": "4-on-floor UKG stack with grounded bass, wide bed, and a forward lead for the main hook.",
+      "parts": [
+        {
+          "part_id": "bass-foundation",
+          "role": "bass",
+          "tone": ["dark", "clean"],
+          "mix": ["low_end_anchor"],
+          "goals": ["mono_safer", "cleaner", "tighter"]
+        },
+        {
+          "part_id": "chord-bed",
+          "role": "pad",
+          "tone": ["soft", "wide"],
+          "mix": ["background"],
+          "goals": ["longer_tail", "wider"]
+        },
+        {
+          "part_id": "main-lead",
+          "role": "lead",
+          "tone": ["bright"],
+          "mix": ["mid_focus"],
+          "goals": ["more_presence", "harder_attack"]
+        },
+        {
+          "part_id": "support-stab",
+          "role": "stab",
+          "tone": ["clean"],
+          "mix": ["mid_focus"],
+          "goals": ["tighter", "less_busy"]
+        }
+      ]
+    },
+    "ukg-2step-dark-stab": {
+      "description": "2-step oriented stack with a heavier bass center, darker support bed, and a chopped stab feature.",
+      "parts": [
+        {
+          "part_id": "bass-foundation",
+          "role": "bass",
+          "tone": ["dark", "gritty"],
+          "mix": ["low_end_anchor"],
+          "goals": ["more_grit", "mono_safer", "tighter"]
+        },
+        {
+          "part_id": "secondary-reese",
+          "role": "reese",
+          "tone": ["wide"],
+          "mix": ["low_end_anchor"],
+          "goals": ["less_sub", "cleaner"]
+        },
+        {
+          "part_id": "dark-pad",
+          "role": "pad",
+          "tone": ["dark", "soft"],
+          "mix": ["background"],
+          "goals": ["cleaner", "longer_tail"]
+        },
+        {
+          "part_id": "chop-stab",
+          "role": "stab",
+          "tone": ["bright"],
+          "mix": ["mid_focus"],
+          "goals": ["harder_attack", "tighter", "more_presence"]
+        }
+      ]
+    }
+  }
+}

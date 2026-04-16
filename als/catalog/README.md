@@ -49,6 +49,13 @@ python3 als/recommend_serum_part.py --role bass --goal darker --goal mono_safer
 python3 als/recommend_serum_part.py --role lead --tone bright --prefer-rendered --goal tighter --goal more_presence
 ```
 
+Build a whole Serum stack from a reusable UKG brief:
+
+```bash
+python3 als/design_serum_track_blueprint.py --brief ukg-4x4-pluck-driver
+python3 als/design_serum_track_blueprint.py --brief ukg-4x4-lead-driver --prefer-rendered --format json
+```
+
 Prepare a manual audio audition session:
 
 ```bash
