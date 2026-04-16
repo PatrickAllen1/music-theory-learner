@@ -45,6 +45,10 @@ capture pass:
 - The wrapper also emits `mapping_coverage.json`, which compares promoted manual
   evidence against the current parser coverage so the next implementation pass
   starts from “ready for alignment” modules instead of raw diffs.
+- `prepare_serum_vst2_alignment_session.py` packages `mapping.json`,
+  `mapping_coverage.json`, and `gaps.json` into an alignment workpack with a
+  brief and TSV queue, so the next parser coding session has a clean starting
+  point.
 - `validate_serum_manual_bundle.py --pairs-dir ...` now doubles as a preflight
   checker for missing `<probe_id>.before/.after` files, grouped by checkpoint.
 - `run_serum_vst2_postdiff.py` turns a completed pair folder into a persistent

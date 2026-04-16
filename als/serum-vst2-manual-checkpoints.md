@@ -60,6 +60,12 @@ The wrapper now writes:
 
 `mapping.json` also includes aggregated `parser_work_items`, so the next parser-alignment pass can start with file-level edit groups instead of raw promoted rows.
 
+Turn a completed postdiff folder into a parser-alignment workpack:
+
+```bash
+python3 als/prepare_serum_vst2_alignment_session.py --postdiff-dir /tmp/serum-postdiff --out-dir /tmp/serum-alignment
+```
+
 Preflight a capture folder before ingest:
 
 ```bash
