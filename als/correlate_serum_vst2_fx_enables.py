@@ -12,6 +12,7 @@ Examples:
     python3 als/correlate_serum_vst2_fx_enables.py
     python3 als/correlate_serum_vst2_fx_enables.py --enable-start 154 --enable-end 163
     python3 als/correlate_serum_vst2_fx_enables.py --module-exclude-range 40-44 --module-exclude-range 137-145 --module-exclude-range 154-163
+    python3 als/correlate_serum_vst2_fx_enables.py --summary
 """
 
 import argparse
@@ -50,6 +51,13 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--enable-start", type=int, default=154, help="Start index for the FX enable boolean block")
     parser.add_argument("--enable-end", type=int, default=163, help="End index for the FX enable boolean block")
     parser.add_argument("--top", type=int, default=3, help="How many best pairings to print per slot/module")
+    parser.add_argument(
+        "--summary",
+        "--summary-only",
+        dest="summary",
+        action="store_true",
+        help="Print a concise ordering summary instead of the full JSON payload",
+    )
     parser.add_argument(
         "--module-exclude-range",
         action="append",
@@ -279,6 +287,73 @@ def analyze_fx_enable_correlations(
     }
 
 
+def _format_score(value: float) -> str:
+    return f"{value:.6f}"
+
+
+def _format_candidate(candidate: dict) -> str:
+    window = candidate["candidate_window"]
+    module_label = "/".join(candidate.get("modules", [candidate["module"]])) if "module" in candidate else "/".join(candidate["modules"])
+    return (
+        f"{module_label} {window['start_index']}-{window['end_index']} "
+        f"delta={_format_score(candidate['activity_delta'])} pearson={_format_score(candidate['pearson'])}"
+    )
+
+
+def print_summary(result: dict, top: int) -> None:
+    enable_start, enable_end = result["enable_range"]
+    module_exclusions = result["module_exclude_ranges"]
+    print(f"Corpus: {result['preset_count']} presets | enable range: {enable_start}-{enable_end}")
+    if module_exclusions:
+        exclusions = ", ".join(f"{start}-{end}" for start, end in module_exclusions)
+        print(f"Excluded ranges: {exclusions}")
+    print("")
+
+    print("Strongest family per slot:")
+    for slot in range(enable_start, enable_end + 1):
+        candidates = result["best_by_enable_slot_groups"].get(str(slot), [])
+        if not candidates:
+            continue
+        print(f"  {slot}:")
+        for candidate in candidates[:top]:
+            print(f"    - {_format_candidate(candidate)}")
+    print("")
+
+    print("Strongest slot per family:")
+    for module, candidates in sorted(result["best_by_module"].items()):
+        if not candidates:
+            continue
+        best = candidates[0]
+        print(f"  {module}: {best['enable_slot']} -> {_format_candidate(best)}")
+    print("")
+
+    ranked_slots = []
+    for slot in range(enable_start, enable_end + 1):
+        candidates = result["best_by_enable_slot_groups"].get(str(slot), [])
+        if not candidates:
+            continue
+        ranked_slots.append({
+            "slot": slot,
+            "best": candidates[0],
+        })
+    ranked_slots.sort(key=lambda item: (item["best"]["activity_delta"], item["best"]["pearson"]), reverse=True)
+
+    print("Anchors:")
+    if ranked_slots:
+        primary = ranked_slots[0]
+        print(f"  primary: slot {primary['slot']} -> {_format_candidate(primary['best'])}")
+    if len(ranked_slots) > 1:
+        primary_modules = set(primary["best"]["modules"]) if ranked_slots else set()
+        secondary = next(
+            (item for item in ranked_slots[1:] if set(item["best"]["modules"]) != primary_modules),
+            ranked_slots[1],
+        )
+        print(f"  secondary: slot {secondary['slot']} -> {_format_candidate(secondary['best'])}")
+    if ranked_slots:
+        noise = min(ranked_slots, key=lambda item: (item["best"]["activity_delta"], item["best"]["pearson"]))
+        print(f"  noise: slot {noise['slot']} -> {_format_candidate(noise['best'])}")
+
+
 def main():
     args = make_parser().parse_args()
     result = analyze_fx_enable_correlations(
@@ -288,6 +363,9 @@ def main():
         top=args.top,
         module_exclude_ranges=_parse_ranges(args.module_exclude_range),
     )
+    if args.summary:
+        print_summary(result, top=args.top)
+        return
     print(json.dumps(result, indent=2))
 
 

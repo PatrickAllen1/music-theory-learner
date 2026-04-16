@@ -443,6 +443,12 @@ python3 als/correlate_serum_vst2_fx_enables.py \
   --module-exclude-range 40-44 \
   --module-exclude-range 137-145 \
   --module-exclude-range 154-163
+
+python3 als/correlate_serum_vst2_fx_enables.py \
+  --summary \
+  --module-exclude-range 40-44 \
+  --module-exclude-range 137-145 \
+  --module-exclude-range 154-163
 ```
 
 The current working interpretation of those excluded ranges is:
@@ -495,3 +501,12 @@ The practical consequence is:
 - one preset saved twice with only one modulation matrix route added
 
 Those controlled diffs will tell us much more than broad preset-family comparison.
+
+## Summary mode
+
+The correlation script also supports `--summary` for a compact ordering view
+instead of the full JSON payload. It prints:
+
+- the strongest family per enable slot
+- the strongest slot per family
+- primary, secondary, and noise anchors
