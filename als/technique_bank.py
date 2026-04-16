@@ -243,6 +243,7 @@ def analyze_recommended_techniques(recommendations: list[dict], bank: list[dict]
         (row for row in interactions.values() if row["kind"] == "watchout"),
         key=lambda row: (-len(row["evidence"]), row["left_id"], row["right_id"]),
     )
+    decision_commitments = build_decision_commitments(reinforcements, watchouts, selected_map)
 
     return {
         "selected_count": len(selected_entries),
@@ -253,4 +254,52 @@ def analyze_recommended_techniques(recommendations: list[dict], bank: list[dict]
         "reinforcements": reinforcements,
         "watchouts": watchouts,
         "unmatched_references": unmatched,
+        "decision_commitments": decision_commitments,
+    }
+
+
+def build_decision_commitments(
+    reinforcements: list[dict],
+    watchouts: list[dict],
+    selected_map: dict[str, dict],
+) -> dict:
+    required_pairings = []
+    mandatory_constraints = []
+
+    for row in reinforcements:
+        evidence = row["evidence"][0] if row["evidence"] else None
+        primary_id = evidence["from_id"] if evidence else row["left_id"]
+        support_id = evidence["matched_id"] if evidence else row["right_id"]
+        primary_name = selected_map.get(primary_id, {}).get("name", primary_id)
+        support_name = selected_map.get(support_id, {}).get("name", support_id)
+        required_pairings.append({
+            "primary_id": primary_id,
+            "support_id": support_id,
+            "primary_name": primary_name,
+            "support_name": support_name,
+            "rule": f"If you use `{primary_name}`, back it up with `{support_name}` rather than treating it as a standalone move.",
+            "why": evidence["phrase"] if evidence else "",
+        })
+
+    for row in watchouts:
+        left_name = selected_map.get(row["left_id"], {}).get("name", row["left_id"])
+        right_name = selected_map.get(row["right_id"], {}).get("name", row["right_id"])
+        evidence = row["evidence"][0]["phrase"] if row["evidence"] else ""
+        required_moves = row["mitigations"][:3]
+        rule = f"If you keep `{left_name}` and `{right_name}` together, you must apply the mitigation moves instead of hoping they will naturally mesh."
+        mandatory_constraints.append({
+            "left_id": row["left_id"],
+            "right_id": row["right_id"],
+            "left_name": left_name,
+            "right_name": right_name,
+            "rule": rule,
+            "why": evidence,
+            "required_moves": required_moves,
+        })
+
+    return {
+        "required_pairing_count": len(required_pairings),
+        "mandatory_constraint_count": len(mandatory_constraints),
+        "required_pairings": required_pairings,
+        "mandatory_constraints": mandatory_constraints,
     }

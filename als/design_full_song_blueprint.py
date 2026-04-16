@@ -345,6 +345,20 @@ def render_text(report: dict) -> str:
             lines.append(f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}")
             if row["mitigations"]:
                 lines.append(f"  mitigations: {' | '.join(row['mitigations'][:3])}")
+    commitments = interaction["decision_commitments"]
+    if commitments["required_pairings"] or commitments["mandatory_constraints"]:
+        lines.append("")
+        lines.append("## Production Commitments")
+        for row in commitments["required_pairings"]:
+            lines.append(f"- pairing :: {row['rule']}")
+            if row["why"]:
+                lines.append(f"  why: {row['why']}")
+        for row in commitments["mandatory_constraints"]:
+            lines.append(f"- constraint :: {row['rule']}")
+            if row["why"]:
+                lines.append(f"  why: {row['why']}")
+            if row["required_moves"]:
+                lines.append(f"  must do: {' | '.join(row['required_moves'])}")
     if report["readiness"]["issues"]:
         lines.append("")
         lines.append("## Readiness Issues")

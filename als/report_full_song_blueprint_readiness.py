@@ -92,6 +92,7 @@ def _next_actions(blueprint: dict, lesson: dict) -> list[str]:
     actions = []
     readiness = blueprint["readiness"]
     technique_interactions = blueprint["production_techniques"]["interaction_analysis"]
+    commitments = technique_interactions["decision_commitments"]
     if readiness["unresolved_synth_parts"]:
         actions.append("resolve the missing synth parts before treating the song as lesson-ready")
     if readiness["fallback_synth_parts"]:
@@ -101,7 +102,9 @@ def _next_actions(blueprint: dict, lesson: dict) -> list[str]:
     if readiness["missing_processing_chains"]:
         actions.append("assign processing chains to every required lane")
     if technique_interactions["watchout_count"]:
-        actions.append("decide which recommended production techniques can coexist and apply the listed mitigations")
+        actions.append("honor the production commitments and apply the listed mitigation moves where techniques intentionally collide")
+    if commitments["required_pairing_count"]:
+        actions.append("treat the required technique pairings as part of the arrangement and mix plan, not optional flavor")
     if lesson["vague_step_ids"]:
         actions.append("tighten the remaining draft-style lesson wording")
     if lesson["readiness"] != "strong":
@@ -140,6 +143,8 @@ def build_report(args: argparse.Namespace) -> dict:
             "compiler_warning_count": len(compiler["compiler_warnings"]),
             "technique_reinforcements": blueprint["production_techniques"]["interaction_analysis"]["reinforcement_count"],
             "technique_watchouts": blueprint["production_techniques"]["interaction_analysis"]["watchout_count"],
+            "technique_required_pairings": blueprint["production_techniques"]["interaction_analysis"]["decision_commitments"]["required_pairing_count"],
+            "technique_mandatory_constraints": blueprint["production_techniques"]["interaction_analysis"]["decision_commitments"]["mandatory_constraint_count"],
             "blueprint_issues": blueprint["readiness"]["issues"],
             "lesson_warnings": lesson["warnings"],
             "next_actions": _next_actions(blueprint, lesson),
@@ -180,7 +185,8 @@ def render_text(report: dict) -> str:
             f"blueprint={row['blueprint_readiness']}; lesson={row['lesson_readiness']}; "
             f"bars={row['total_bars']}; synth_conflicts={row['synth_conflicts']}; "
             f"fallbacks={row['fallback_synth_parts']}; vague_steps={len(row['vague_step_ids'])}; "
-            f"technique_watchouts={row['technique_watchouts']}"
+            f"technique_watchouts={row['technique_watchouts']}; "
+            f"required_pairings={row['technique_required_pairings']}"
         )
         if row["blueprint_issues"]:
             lines.append(f"  blueprint issues: {' | '.join(row['blueprint_issues'])}")

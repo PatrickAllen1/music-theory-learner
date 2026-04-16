@@ -318,6 +318,11 @@ def _author_summary(
         f"{full_song_blueprint['production_techniques']['interaction_analysis']['reinforcement_count']} reinforcements / "
         f"{full_song_blueprint['production_techniques']['interaction_analysis']['watchout_count']} watchouts"
     )
+    lines.append(
+        f"- production commitments: "
+        f"{full_song_blueprint['production_techniques']['interaction_analysis']['decision_commitments']['required_pairing_count']} pairings / "
+        f"{full_song_blueprint['production_techniques']['interaction_analysis']['decision_commitments']['mandatory_constraint_count']} constraints"
+    )
     lines.append("")
     lines.append("## Next Actions")
     for step in song_readiness_row["next_actions"]:
@@ -364,6 +369,20 @@ def _author_summary(
             lines.append(f"  evidence: {' | '.join(item['phrase'] for item in row['evidence'])}")
             if row["mitigations"]:
                 lines.append(f"  mitigations: {' | '.join(row['mitigations'][:2])}")
+        lines.append("")
+    commitments = interaction["decision_commitments"]
+    if commitments["required_pairings"] or commitments["mandatory_constraints"]:
+        lines.append("## Production Commitments")
+        for row in commitments["required_pairings"][:3]:
+            lines.append(f"- pairing :: {row['rule']}")
+            if row["why"]:
+                lines.append(f"  why: {row['why']}")
+        for row in commitments["mandatory_constraints"][:3]:
+            lines.append(f"- constraint :: {row['rule']}")
+            if row["why"]:
+                lines.append(f"  why: {row['why']}")
+            if row["required_moves"]:
+                lines.append(f"  must do: {' | '.join(row['required_moves'][:2])}")
         lines.append("")
     lines.append("## Bundle Files")
     lines.append("- `packet/` contains the refined packet export.")
@@ -457,6 +476,32 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
                 if (
                     full_song_blueprint["production_techniques"]["interaction_analysis"]["reinforcements"]
                     or full_song_blueprint["production_techniques"]["interaction_analysis"]["watchouts"]
+                )
+                else ["- none detected"]
+            ),
+            "",
+            "## Production Commitments",
+            *(
+                [
+                    *[
+                        "\n".join([
+                            f"- pairing :: {row['rule']}",
+                            f"  why: {row['why']}" if row["why"] else "",
+                        ]).rstrip()
+                        for row in full_song_blueprint["production_techniques"]["interaction_analysis"]["decision_commitments"]["required_pairings"]
+                    ],
+                    *[
+                        "\n".join([
+                            f"- constraint :: {row['rule']}",
+                            f"  why: {row['why']}" if row["why"] else "",
+                            f"  must do: {' | '.join(row['required_moves'][:3])}" if row["required_moves"] else "",
+                        ]).rstrip()
+                        for row in full_song_blueprint["production_techniques"]["interaction_analysis"]["decision_commitments"]["mandatory_constraints"]
+                    ],
+                ]
+                if (
+                    full_song_blueprint["production_techniques"]["interaction_analysis"]["decision_commitments"]["required_pairings"]
+                    or full_song_blueprint["production_techniques"]["interaction_analysis"]["decision_commitments"]["mandatory_constraints"]
                 )
                 else ["- none detected"]
             ),
