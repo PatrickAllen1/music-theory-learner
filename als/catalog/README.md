@@ -70,6 +70,14 @@ python3 als/refine_serum_track_blueprint.py --brief ukg-4x4-pluck-driver
 python3 als/refine_serum_track_blueprint.py --brief ukg-2step-dark-stab --prefer-rendered --format json
 ```
 
+Generate a blueprint-level mutation plan that combines part goals with
+pairwise conflict fixes:
+
+```bash
+python3 als/suggest_serum_blueprint_mutations.py --brief ukg-2step-dark-stab
+python3 als/suggest_serum_blueprint_mutations.py --brief ukg-4x4-pluck-driver --refine --format json
+```
+
 Prepare an audio render session directly from the chosen blueprint stack:
 
 ```bash
@@ -91,6 +99,13 @@ Export the whole lesson packet in one shot:
 python3 als/export_serum_lesson_packet.py --brief ukg-4x4-pluck-driver --out-dir als/lesson-packets/ukg-4x4-pluck-driver
 python3 als/export_serum_lesson_packet.py --brief ukg-4x4-pluck-driver --refine --out-dir als/lesson-packets/ukg-4x4-pluck-driver
 ```
+
+The lesson packet now includes:
+
+- `blueprint.json` / `blueprint.md`
+- `lesson-notes.json` / `lesson-notes.md`
+- `mutation-plan.json` / `mutation-plan.md`
+- `audio-session/`
 
 Report how well the current catalog covers all briefs and which profiles to render first:
 

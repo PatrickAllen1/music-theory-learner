@@ -20,12 +20,14 @@ try:
     from design_serum_track_blueprint import build_report as build_blueprint_report, render_text as render_blueprint_text
     from refine_serum_track_blueprint import build_report as build_refined_blueprint_report, render_text as render_refined_blueprint_text
     from generate_serum_lesson_notes import build_report as build_lesson_notes_report, render_text as render_lesson_notes_text
+    from suggest_serum_blueprint_mutations import build_report as build_mutation_plan_report, render_text as render_mutation_plan_text
     from prepare_serum_audio_session import build_queue, render_readme, render_tsv
     from search_serum_profiles import load_profiles
 except ModuleNotFoundError:
     from .design_serum_track_blueprint import build_report as build_blueprint_report, render_text as render_blueprint_text
     from .refine_serum_track_blueprint import build_report as build_refined_blueprint_report, render_text as render_refined_blueprint_text
     from .generate_serum_lesson_notes import build_report as build_lesson_notes_report, render_text as render_lesson_notes_text
+    from .suggest_serum_blueprint_mutations import build_report as build_mutation_plan_report, render_text as render_mutation_plan_text
     from .prepare_serum_audio_session import build_queue, render_readme, render_tsv
     from .search_serum_profiles import load_profiles
 
@@ -89,6 +91,7 @@ def main() -> None:
     refine_args = _refine_namespace(args)
     blueprint = build_refined_blueprint_report(refine_args) if args.refine else build_blueprint_report(report_args)
     lesson_notes = build_lesson_notes_report(refine_args if args.refine else report_args)
+    mutation_plan = build_mutation_plan_report(refine_args if args.refine else report_args)
 
     profiles = load_profiles(Path(args.catalog_dir))
     by_id = {profile["profile_id"]: profile for profile in profiles}
@@ -102,6 +105,8 @@ def main() -> None:
     _write_text(out_dir / "blueprint.md", (render_refined_blueprint_text(blueprint) if args.refine else render_blueprint_text(blueprint)) + "\n", args.force)
     _write_text(out_dir / "lesson-notes.json", json.dumps(lesson_notes, indent=2) + "\n", args.force)
     _write_text(out_dir / "lesson-notes.md", render_lesson_notes_text(lesson_notes) + "\n", args.force)
+    _write_text(out_dir / "mutation-plan.json", json.dumps(mutation_plan, indent=2) + "\n", args.force)
+    _write_text(out_dir / "mutation-plan.md", render_mutation_plan_text(mutation_plan) + "\n", args.force)
 
     audio_dir = out_dir / "audio-session"
     renders_dir = audio_dir / "renders"
@@ -133,6 +138,8 @@ def main() -> None:
             "blueprint_md": str(out_dir / "blueprint.md"),
             "lesson_notes_json": str(out_dir / "lesson-notes.json"),
             "lesson_notes_md": str(out_dir / "lesson-notes.md"),
+            "mutation_plan_json": str(out_dir / "mutation-plan.json"),
+            "mutation_plan_md": str(out_dir / "mutation-plan.md"),
             "audio_session_dir": str(audio_dir),
         },
     }
