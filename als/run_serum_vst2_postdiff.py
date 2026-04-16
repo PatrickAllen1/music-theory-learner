@@ -21,12 +21,14 @@ try:
     from report_serum_vst2_postdiff_gaps import build_gap_report
     from report_serum_vst2_mapping_coverage import build_mapping_coverage_report
     from render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
+    from serum_vst2_session_config import load_session_config_from_pairs_dir
 except ModuleNotFoundError:
     from .ingest_serum_manual_diff import build_ingest_report
     from .promote_serum_vst2_mapping import build_mapping
     from .report_serum_vst2_postdiff_gaps import build_gap_report
     from .report_serum_vst2_mapping_coverage import build_mapping_coverage_report
     from .render_serum_manual_bundle import DEFAULT_MANIFESTS, load_bundle
+    from .serum_vst2_session_config import load_session_config_from_pairs_dir
 
 
 def make_parser() -> argparse.ArgumentParser:
@@ -115,9 +117,16 @@ def render_summary(report: dict) -> str:
 def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
-    manifest_paths = [Path(path) for path in args.manifest] if args.manifest else DEFAULT_MANIFESTS
+    manifest_paths = [Path(path) for path in args.manifest] if args.manifest else []
     checkpoint_filter = set(args.checkpoint)
     probe_filter = set(args.probe)
+    session_config = load_session_config_from_pairs_dir(Path(args.pairs_dir))
+    if session_config and not manifest_paths and not checkpoint_filter and not probe_filter:
+        manifest_paths = [Path(path) for path in session_config.get("manifest_paths", [])]
+        checkpoint_filter = set(session_config.get("checkpoint_ids", []))
+        probe_filter = set(session_config.get("probe_ids", []))
+    if not manifest_paths:
+        manifest_paths = list(DEFAULT_MANIFESTS)
     selected_probe_ids = sorted({
         probe["id"]
         for manifest_path in manifest_paths

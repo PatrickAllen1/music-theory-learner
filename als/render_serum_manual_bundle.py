@@ -24,6 +24,10 @@ try:
     from report_serum_vst2_session_progress import build_session_progress
 except ModuleNotFoundError:
     from .report_serum_vst2_session_progress import build_session_progress
+try:
+    from serum_vst2_session_config import load_session_bundle, session_dir_from_pairs_dir
+except ModuleNotFoundError:
+    from .serum_vst2_session_config import load_session_bundle, session_dir_from_pairs_dir
 
 DEFAULT_MANIFESTS = [
     Path("als/serum-vst2-manual-probes.json"),
@@ -60,6 +64,7 @@ def make_parser() -> argparse.ArgumentParser:
     )
     parser.add_argument("--checkpoint", action="append", default=[], help="Restrict output to one or more checkpoint ids.")
     parser.add_argument("--probe", action="append", default=[], help="Restrict output to one or more probe ids.")
+    parser.add_argument("--session-dir", help="Optional prepared session directory. If provided, render the locked capture_queue.json scope.")
     parser.add_argument("--state-json", help="Optional session_state.json path to annotate completion and next-up status.")
     parser.add_argument("--pairs-dir", help="Optional pairs/ directory. If provided, derive live session state from its parent session folder.")
     return parser
@@ -287,12 +292,23 @@ def render_tsv(bundle: dict) -> str:
 def main() -> None:
     parser = make_parser()
     args = parser.parse_args()
-    manifest_paths = [Path(path) for path in args.manifest] if args.manifest else DEFAULT_MANIFESTS
-    bundle = load_bundle(manifest_paths)
-    if args.checkpoint or args.probe:
-        bundle = filter_bundle(bundle, checkpoint_ids=args.checkpoint, probe_ids=args.probe)
+    session_dir = None
+    if args.session_dir:
+        session_dir = Path(args.session_dir)
+    elif args.pairs_dir:
+        session_dir = session_dir_from_pairs_dir(Path(args.pairs_dir))
+
+    bundle = None
+    if session_dir and not args.manifest and not args.checkpoint and not args.probe:
+        bundle = load_session_bundle(session_dir)
+
+    if bundle is None:
+        manifest_paths = [Path(path) for path in args.manifest] if args.manifest else DEFAULT_MANIFESTS
+        bundle = load_bundle(manifest_paths)
+        if args.checkpoint or args.probe:
+            bundle = filter_bundle(bundle, checkpoint_ids=args.checkpoint, probe_ids=args.probe)
     if args.pairs_dir:
-        session_dir = Path(args.pairs_dir).resolve().parent
+        session_dir = session_dir_from_pairs_dir(Path(args.pairs_dir))
         bundle = apply_state(bundle, build_session_progress(session_dir))
     elif args.state_json:
         bundle = apply_state(bundle, json.loads(Path(args.state_json).read_text()))

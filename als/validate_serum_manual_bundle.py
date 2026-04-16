@@ -23,10 +23,12 @@ try:
     from render_serum_manual_bundle import DEFAULT_MANIFESTS, filter_bundle, load_bundle
     from report_serum_vst2_probe_coverage import build_probe_coverage_report
     from report_serum_vst2_session_progress import build_session_progress
+    from serum_vst2_session_config import load_session_config_from_pairs_dir, session_dir_from_pairs_dir
 except ModuleNotFoundError:
     from .render_serum_manual_bundle import DEFAULT_MANIFESTS, filter_bundle, load_bundle
     from .report_serum_vst2_probe_coverage import build_probe_coverage_report
     from .report_serum_vst2_session_progress import build_session_progress
+    from .serum_vst2_session_config import load_session_config_from_pairs_dir, session_dir_from_pairs_dir
 
 
 def _collect_missing_preset_paths(manifest_paths: list[Path]) -> list[dict]:
@@ -135,13 +137,22 @@ def main() -> None:
     args = parser.parse_args()
 
     manifest_paths = list(DEFAULT_MANIFESTS)
+    checkpoint_ids = list(args.checkpoint)
+    probe_ids = list(args.probe)
+    session_config = None
+    if args.pairs_dir:
+        session_config = load_session_config_from_pairs_dir(Path(args.pairs_dir))
+    if session_config and not checkpoint_ids and not probe_ids:
+        manifest_paths = [Path(path) for path in session_config.get("manifest_paths", [])]
+        checkpoint_ids = list(session_config.get("checkpoint_ids", []))
+        probe_ids = list(session_config.get("probe_ids", []))
 
     try:
         for manifest_path in manifest_paths:
             json.loads(manifest_path.read_text())
         bundle = load_bundle(manifest_paths)
-        if args.checkpoint or args.probe:
-            bundle = filter_bundle(bundle, checkpoint_ids=args.checkpoint, probe_ids=args.probe)
+        if checkpoint_ids or probe_ids:
+            bundle = filter_bundle(bundle, checkpoint_ids=checkpoint_ids, probe_ids=probe_ids)
         coverage = build_probe_coverage_report(manifest_paths)
         missing_preset_paths = _collect_missing_preset_paths(manifest_paths)
         pairs_status = _collect_pairs_status(bundle, Path(args.pairs_dir)) if args.pairs_dir else None
@@ -193,10 +204,12 @@ def main() -> None:
         "missing_preset_paths": missing_preset_paths,
         "non_full_modules": partial_or_none,
     }
+    if session_config:
+        result["session_config_path"] = str(session_dir_from_pairs_dir(Path(args.pairs_dir)) / "session_config.json")
     if pairs_status:
         result["pairs_status"] = pairs_status
         if args.write_session_state:
-            session_dir = Path(args.pairs_dir).resolve().parent
+            session_dir = session_dir_from_pairs_dir(Path(args.pairs_dir))
             state_path = session_dir / "session_state.json"
             state = build_session_progress(session_dir)
             state_path.write_text(json.dumps(state, indent=2) + "\n")

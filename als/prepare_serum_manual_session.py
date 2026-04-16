@@ -40,6 +40,10 @@ try:
     from report_serum_vst2_session_progress import build_session_progress
 except ModuleNotFoundError:
     from .report_serum_vst2_session_progress import build_session_progress
+try:
+    from serum_vst2_session_config import build_session_config
+except ModuleNotFoundError:
+    from .serum_vst2_session_config import build_session_config
 
 
 def make_parser() -> argparse.ArgumentParser:
@@ -63,7 +67,7 @@ def _write_text(path: Path, content: str, force: bool) -> None:
     path.write_text(content)
 
 
-def _build_readme(bundle: dict, pairs_dir: Path) -> str:
+def _build_readme(bundle: dict, session_dir: Path, pairs_dir: Path) -> str:
     lines = []
     lines.append("# Serum VST2 Manual Session")
     lines.append("")
@@ -87,12 +91,9 @@ def _build_readme(bundle: dict, pairs_dir: Path) -> str:
     lines.append("## Ingest")
     lines.append("```bash")
     lines.append(
-        "python3 als/ingest_serum_manual_diff.py "
+        "python3 als/run_serum_vst2_postdiff.py "
         f"--pairs-dir {pairs_dir} "
-        "--manifest als/serum-vst2-manual-probes.json "
-        "--manifest als/serum-vst2-expansion-probes.json "
-        "--manifest als/serum-vst2-phase3-probes.json "
-        "--manifest als/serum-vst2-phase4-probes.json"
+        f"--out-dir {session_dir / 'postdiff'}"
     )
     lines.append("```")
     lines.append("")
@@ -140,7 +141,7 @@ def main() -> None:
     out_dir.mkdir(parents=True, exist_ok=True)
     pairs_dir.mkdir(parents=True, exist_ok=True)
 
-    _write_text(out_dir / "README.md", _build_readme(bundle, pairs_dir), args.force)
+    _write_text(out_dir / "README.md", _build_readme(bundle, out_dir, pairs_dir), args.force)
     _write_text(out_dir / "capture_queue.tsv", render_tsv(bundle), args.force)
     _write_text(out_dir / "capture_queue.json", json.dumps(bundle, indent=2) + "\n", args.force)
     _write_text(out_dir / "subprobe_queue.tsv", _render_subprobe_tsv(bundle), args.force)
@@ -150,6 +151,20 @@ def main() -> None:
         args.force,
     )
     _write_text(out_dir / ".gitignore", "pairs/*.fxp\n", args.force)
+    _write_text(
+        out_dir / "session_config.json",
+        json.dumps(
+            build_session_config(
+                session_dir=out_dir,
+                pairs_dir=pairs_dir,
+                manifest_paths=manifest_paths,
+                checkpoint_ids=args.checkpoint,
+                probe_ids=args.probe,
+            ),
+            indent=2,
+        ) + "\n",
+        args.force,
+    )
     _write_text(out_dir / "session_state.json", json.dumps(build_session_progress(out_dir), indent=2) + "\n", args.force)
 
     print(json.dumps({
@@ -164,6 +179,7 @@ def main() -> None:
             "capture_queue.json",
             "subprobe_queue.tsv",
             "expected-files.txt",
+            "session_config.json",
             "session_state.json",
             ".gitignore",
         ],
