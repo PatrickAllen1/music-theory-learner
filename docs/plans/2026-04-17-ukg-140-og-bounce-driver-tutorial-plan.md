@@ -177,6 +177,7 @@ Detailed template available now:
 - [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-05-identity-hook-answer.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-05-identity-hook-answer.md)
 - [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-06-arrangement-build.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-06-arrangement-build.md)
 - [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-07-transitions-toolkit.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-07-transitions-toolkit.md)
+- [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-08-mix.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-08-mix.md)
 
 ## Estimated Scope
 - `Part 0`: `10–20 min`
@@ -187,7 +188,7 @@ Detailed template available now:
 - `Part 5`: `40–60 min`
 - `Part 6`: `60–90 min`
 - `Part 7`: `45–60 min`
-- `Part 8`: `45–75 min`
+- `Part 8`: `60–90 min`
 - `Part 9`: `20–30 min`
 
 Total likely guided runtime:
