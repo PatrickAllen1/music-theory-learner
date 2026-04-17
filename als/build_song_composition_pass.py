@@ -195,6 +195,14 @@ def _section_composition(section: dict, progression: list[str], hook_cells: dict
             "bass_behavior": "Mute the full release runs. Keep only occasional root reminders or a filtered tail.",
             "hook_behavior": "Either no hook or one sparse ghost response every 4 bars so the center lane feels intentional, not unfinished.",
         }
+    if section_id == "transition_b":
+        return {
+            "section_id": section_id,
+            "bars": section["bars"],
+            "harmonic_behavior": "Keep the break's upward spread alive, then tighten the voicing back toward the drop over the second half of the section.",
+            "bass_behavior": "Bring back the bass as a filtered teaser with root holds, short octave peeks, and one more urgent phrase-end pull into the second-drop downbeat.",
+            "hook_behavior": "Keep the hook mostly absent. Let a filtered ghost pickup appear only near the section end so the re-entry feels teased, not spoiled.",
+        }
     if section_id == "drop_a":
         return {
             "section_id": section_id,
@@ -322,6 +330,10 @@ def build_report(args: argparse.Namespace) -> dict:
         "break_chord_widening": {
             "decision": "In the break, 'stretch the chords' by length and by voicing upward. Let the upper chord tones and reverb tail do more of the work than the low mids.",
             "why": "Longer notes alone will not open the record up. The break has to widen vertically so Drop B can feel bigger by comparison.",
+        },
+        "transition_b_reentry_design": {
+            "decision": "Use the extra 16 bars as a dedicated re-entry switch: different transition drums, filtered bass teaser, and rising phrase pressure, not just a longer break or a delayed second drop.",
+            "why": "This keeps the arrangement from feeling robotic. The second half earns itself through a designed transition instead of arriving because the timeline got extended.",
         },
     }
 

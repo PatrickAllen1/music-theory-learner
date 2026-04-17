@@ -3096,5 +3096,71 @@
       "Drop the hook to half density when the answer voice enters.",
       "Alternate hook and answer by phrase so each one gets a clear turn."
     ]
+  },
+  {
+    "id": "model-led-composition-over-rigid-rules",
+    "name": "Use rules as guardrails, not as the composition brain",
+    "source": "Song authoring follow-up — ukg-140-og-bounce-driver",
+    "what_it_does": "Keeps the production system from turning into robotic if/then songwriting by treating formal constraints as scaffolding for active taste, hierarchy, and design decisions.",
+    "when_to_use": "Any time a track plan is becoming over-mechanised or when multiple valid arrangements exist and the final call needs musical judgment rather than another rule.",
+    "works_well_with": [
+      "reference-role-specialization",
+      "bigger-drop-by-substitution-not-stacking",
+      "choose-the-rolling-bass-mechanism-early"
+    ],
+    "likely_clashes_with": [
+      "expanding the song only by adding more rule branches",
+      "assuming every arrangement decision can be solved by a script",
+      "treating reference material like a checklist instead of design input"
+    ],
+    "why": "Strong records come from deciding which tension is worth keeping and which idea should disappear. Guardrails keep the song coherent, but taste has to make the final shape.",
+    "mitigations": [
+      "Freeze the brief, then make explicit aesthetic decisions section by section instead of adding more automation logic.",
+      "When two options both pass the rules, pick the one with the stronger emotional contrast and clearer role separation."
+    ]
+  },
+  {
+    "id": "dedicated-reentry-transition-section",
+    "name": "Give the second-half re-entry its own transition section",
+    "source": "Song authoring follow-up — ukg-140-og-bounce-driver",
+    "what_it_does": "Creates a distinct pre-drop switch with fresh drums, filtered bass return, and rising phrase pressure so the next drop feels earned rather than merely delayed.",
+    "when_to_use": "Longer club arrangements where the second major drop needs a stronger sense of anticipation or when the break alone does not provide enough propulsion back into the groove.",
+    "works_well_with": [
+      "intro-bass-teaser-prevents-boring-starts",
+      "map-top-end-owners-by-section",
+      "one-clean-transition-move-per-boundary"
+    ],
+    "likely_clashes_with": [
+      "treating the break as the only transition device",
+      "bringing the full drop drums back too early",
+      "adding 16 bars without changing the musical mechanism"
+    ],
+    "why": "A dedicated re-entry section gives the track a second kind of anticipation. The listener hears the groove preparing to return instead of simply waiting for the break to end.",
+    "mitigations": [
+      "Change the drum language in the transition instead of reusing the main drop pattern unchanged.",
+      "Use filtered bass teaser behavior and one phrase-end pickup rather than spending the full drop idea early."
+    ]
+  },
+  {
+    "id": "intro-bass-teaser-prevents-boring-starts",
+    "name": "Bass teasers keep intros and re-entries from feeling empty",
+    "source": "Song authoring follow-up — ukg-140-og-bounce-driver",
+    "what_it_does": "Uses held roots, octave peeks, and filtered returns to imply the coming low-end identity before the full bass language arrives.",
+    "when_to_use": "Intros, mid-song re-entry sections, or any arrangement moment where full bass commitment would be too early but total bass absence would feel flat.",
+    "works_well_with": [
+      "dedicated-reentry-transition-section",
+      "modern-ukg-rolling-bass-floor",
+      "rolling-bass-rhythmic-primary-tonal-secondary"
+    ],
+    "likely_clashes_with": [
+      "full-release bass phrases appearing before the drop",
+      "pitch-bend gimmicks that make the teaser feel like a different song",
+      "top-end transitions with no low-end implication underneath them"
+    ],
+    "why": "A teaser gives the listener something to lean toward. It keeps anticipation active without spending the full bass phrase or making the intro/transitions feel inert.",
+    "mitigations": [
+      "Limit the teaser to root holds, octave peeks, and one urgent phrase-end pull.",
+      "Filter the teaser more heavily than the real drop bass so the payoff still opens up."
+    ]
   }
 ]

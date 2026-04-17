@@ -155,6 +155,11 @@ def _section_focus(blueprint: dict, section: dict) -> dict:
         support.extend(item["part_id"] for item in [harmony] if item)
         support.extend(item["slot_id"] for item in [loop, atmosphere] if item)
         keep_open.extend(item["slot_id"] for item in [vocal] if item)
+    elif "transition" in section_id:
+        primary.extend(item["slot_id"] for item in [kick, loop, transition] if item)
+        support.extend(item["part_id"] for item in [bass, harmony] if item)
+        support.extend(item["slot_id"] for item in [atmosphere] if item)
+        keep_open.extend(item["slot_id"] for item in [vocal] if item)
     elif "break" in section_id:
         primary.extend(item["part_id"] for item in [harmony] if item)
         support.extend(item["slot_id"] for item in [atmosphere, vocal, transition] if item)

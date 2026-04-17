@@ -151,7 +151,7 @@ def _build_order(composition: dict, midi_plan: dict) -> list[dict]:
         {
             "stage": 5,
             "name": "Section writing and variant placement",
-            "goal": "Turn the stance into a real 128-bar record by assigning the exact phrase variants section by section.",
+            "goal": "Turn the stance into a real 144-bar record by assigning the exact phrase variants section by section.",
             "do_now": [
                 "Lay in the section assignments exactly as the MIDI plan specifies.",
                 "Check that Drop A Lift grows only by pocket/top-end density.",

@@ -137,6 +137,19 @@ def _drum_variants() -> list[dict]:
         _event("F#1", "1.4.3", 0.25, 60, "late offbeat hat"),
         _event("F#1", "2.4.3", 0.25, 60, "late offbeat hat"),
     ]
+    transition_switch = [
+        *_kicks("1", [95, 0, 94, 0], include_zero=False),
+        *_kicks("2", [96, 92, 95, 90]),
+        _event("D1", "1.4.1", 0.25, 88, "late clap"),
+        _event("D1", "2.2.1", 0.25, 89, "clap return"),
+        _event("D1", "2.4.1", 0.25, 92, "clap return"),
+        *_off_hat("1", [58, 0, 63, 0]),
+        *_off_hat("2", [68, 66, 70, 72]),
+        _event("A#1", "1.3.4", 0.25, 43, "transition ghost"),
+        _event("A#1", "2.2.4", 0.25, 44, "transition ghost"),
+        _event("G#1", "2.4.3", 0.25, 54, "shaker lift"),
+        _event("A1", "2.4.3", 0.75, 62, "open hat re-entry"),
+    ]
     outro_strip = [
         *_kicks("1", [96, 92, 95, 90]),
         *_kicks("2", [96, 92, 95, 90]),
@@ -178,6 +191,13 @@ def _drum_variants() -> list[dict]:
             "Break sections. Strip the pattern down so the harmony and future sample lane can breathe.",
             break_sparse,
             "This is intentional negative space, not an unfinished beat.",
+        ),
+        _variant(
+            "drum_transition_switch_2bar",
+            2,
+            "Re-entry transition. Different drums pull the section back toward the drop through sparse first-half kicks, returning claps, and a sharper open-hat release.",
+            transition_switch,
+            "This should feel like an active switch-up, not just the break lasting longer.",
         ),
         _variant(
             "drum_outro_strip_2bar",
@@ -250,6 +270,12 @@ def _chord_variants() -> list[dict]:
         *_stack("5.1.1", 7.5, [("F2", 69), ("C3", 65), ("G3", 63), ("A3", 61)]),
         *_stack("7.1.1", 7.5, [("C3", 69), ("G3", 65), ("D4", 63), ("E4", 61)]),
     ]
+    transition_pulse = [
+        *_stack("1.1.1", 3.0, [("D3", 71), ("A3", 67), ("C4", 65), ("E4", 63), ("F4", 61)]),
+        *_stack("2.1.1", 3.0, [("Bb2", 71), ("F3", 67), ("A3", 65), ("C4", 63)]),
+        *_stack("3.1.1", 3.0, [("F2", 70), ("C3", 66), ("G3", 64), ("A3", 62)]),
+        *_stack("4.1.1", 3.0, [("C3", 70), ("G3", 66), ("D4", 64), ("E4", 62)]),
+    ]
     return [
         _variant(
             "chord_intro_hint_4bar",
@@ -292,6 +318,13 @@ def _chord_variants() -> list[dict]:
             "Break. Stretch each chord to two bars and let the color tones ring.",
             break_stretch,
             "This is where the track breathes emotionally without losing key center.",
+        ),
+        _variant(
+            "chord_transition_b_pulse_4bar",
+            4,
+            "Re-entry transition. Pull the break voicings back into a tighter pulse so Drop B can hit as a fresh reopening.",
+            transition_pulse,
+            "The transition should tighten the harmony, not leave it floating like the break forever.",
         ),
     ]
 
@@ -350,6 +383,18 @@ def _bass_variants() -> list[dict]:
         _event("Bb0", "2.1.1", 1.0, 82, "root reminder"),
         _event("F1", "3.1.1", 1.0, 83, "root reminder"),
         _event("C1", "4.1.1", 1.0, 81, "root reminder"),
+    ]
+    transition_tease = [
+        _event("D1", "1.1.1", 1.5, 90, "filtered root hold"),
+        _event("D1", "1.4.3", 0.25, 77, "urgent pulse"),
+        _event("Bb0", "2.1.1", 1.25, 88, "filtered root hold"),
+        _event("Bb1", "2.4.1", 0.25, 79, "octave peek"),
+        _event("F1", "3.1.1", 1.25, 89, "filtered root hold"),
+        _event("F1", "3.3.3", 0.25, 78, "urgent pulse"),
+        _event("C1", "4.1.1", 1.0, 91, "filtered root hold"),
+        _event("C2", "4.3.1", 0.25, 81, "octave rise"),
+        _event("D2", "4.4.1", 0.25, 83, "drop pull"),
+        _event("F2", "4.4.3", 0.25, 79, "drop lift"),
     ]
     drop_b_core = [
         _event("D1", "1.1.1", 1.25, 97, "root hold"),
@@ -415,6 +460,13 @@ def _bass_variants() -> list[dict]:
             "Break. Root reminders only, no full release runs.",
             break_sparse,
             "The break should imply weight while leaving the mid lane and sample lane open.",
+        ),
+        _variant(
+            "bass_transition_b_tease_4bar",
+            4,
+            "Re-entry transition. Filtered root holds and octave peeks pull the section back toward Drop B without spending the full rolling phrase yet.",
+            transition_tease,
+            "This should feel like the bass returning with intent, not like a second intro pasted into the middle.",
         ),
         _variant(
             "bass_drop_b_core_4bar",
@@ -495,6 +547,11 @@ def _hook_variants() -> list[dict]:
     break_ghost = [
         _event("A4", "4.4.1", 0.5, 66, "ghost response"),
     ]
+    transition_pickup = [
+        _event("A4", "4.3.3", 0.25, 70, "filtered pickup"),
+        _event("C5", "4.4.1", 0.25, 73, "filtered pickup"),
+        _event("D5", "4.4.3", 0.5, 78, "drop cue"),
+    ]
     drop_b = [
         _event("A4", "4.3.1", 0.25, 80, "drop-b cell"),
         _event("C5", "4.3.3", 0.25, 84, "drop-b cell"),
@@ -542,6 +599,13 @@ def _hook_variants() -> list[dict]:
             "Break. One ghost response every four bars at most.",
             break_ghost,
             "The break has to leave the center lane open for a future vocal or texture.",
+        ),
+        _variant(
+            "hook_transition_b_pickup_4bar",
+            4,
+            "Re-entry transition. Keep the hook mostly absent, then give one filtered pickup before Drop B lands.",
+            transition_pickup,
+            "This should tease the re-entry without stealing the full Drop B payoff.",
         ),
         _variant(
             "hook_drop_b_phrase_4bar",
@@ -688,8 +752,20 @@ def _section_assignments() -> list[dict]:
             "notes": "Let the air bed and upward-widened stretched chords carry the break instrumentally. If a future sample ever appears, keep it narrow and phrase-end only in roughly A3-F5.",
         },
         {
-            "section_id": "drop_b",
+            "section_id": "transition_b",
             "bars": "81-96",
+            "part_variants": {
+                "drums": "drum_transition_switch_2bar",
+                "bass-foundation": "bass_transition_b_tease_4bar",
+                "og-reese-answer": None,
+                "chord-bed": "chord_transition_b_pulse_4bar",
+                "hook-response": "hook_transition_b_pickup_4bar",
+            },
+            "notes": "Use fresh transition drums and a filtered bass return so the second drop feels actively pulled in. This section should feel like a re-entry switch, not like the break continuing.",
+        },
+        {
+            "section_id": "drop_b",
+            "bars": "97-112",
             "part_variants": {
                 "drums": "drum_drop_core_2bar",
                 "bass-foundation": "bass_drop_b_core_4bar",
@@ -701,7 +777,7 @@ def _section_assignments() -> list[dict]:
         },
         {
             "section_id": "drop_b_lift",
-            "bars": "97-112",
+            "bars": "113-128",
             "part_variants": {
                 "drums": "drum_drop_lift_2bar",
                 "bass-foundation": "bass_drop_b_lift_4bar",
@@ -713,7 +789,7 @@ def _section_assignments() -> list[dict]:
         },
         {
             "section_id": "outro",
-            "bars": "113-128",
+            "bars": "129-144",
             "part_variants": {
                 "drums": "drum_outro_strip_2bar",
                 "bass-foundation": "bass_break_sparse_4bar",
@@ -734,10 +810,11 @@ def _support_layers() -> list[dict]:
             "owners": [
                 "filtered open-hat tease inside drum_intro_b_tease_2bar",
                 "offbeat open-hat accents inside drum_drop_core_2bar / drum_drop_lift_2bar",
+                "the sharper re-entry hats and clap return inside drum_transition_switch_2bar",
                 "the clipped attack on hook-response",
                 "the phrase-end warm answer stab in Drop B",
             ],
-            "rule": "If the drop feels closed-in, solve it here before widening the chords or brightening the whole mix. Tease it in Intro B, feature it in Drop A, reduce it in the break, and make it strongest in Drop B Lift.",
+            "rule": "If the drop feels closed-in, solve it here before widening the chords or brightening the whole mix. Tease it in Intro B, feature it in Drop A, reduce it in the break, use it to pull the re-entry forward in transition_b, and make it strongest in Drop B Lift.",
         },
         {
             "layer_id": "air_bed",

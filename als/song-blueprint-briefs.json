@@ -208,12 +208,13 @@
         "movement_note": "Let the harmony feel musically rich like Sammy Virji or Y U QT, but keep the actual hook phrase economical and instrumental-led rather than depending on a later sample.",
         "bass_strategy": "Bass owns a rolling 1-6-3-7 backbone with a stable sub and a moving harmonic layer driven by note-length variation, filter motion, and phrase-end releases. No new harmonic content is introduced in the bass after Drop A until Drop B blooms."
       },
-      "drum_strategy": "Build from a body-forward 4x4 core, then add swingy tops, filtered loop bounce, and one restrained break layer so the groove feels huge without sacrificing the pocket.",
+      "drum_strategy": "Build from a body-forward 4x4 core, then add swingy tops, filtered loop bounce, and one explicit transition drum language so the groove feels huge without sacrificing the pocket or flattening the section changes.",
       "melodic_strategy": "The instrumental hook should behave like a response lane rather than a full topline: enough identity to carry the record now through rhythm and timbre, but disciplined enough that a later re-version could trade in a vocal or sample.",
       "arrangement_notes": [
         "Intro should establish kick, tuned hats, and filtered loop bounce before revealing the full rolling bass language.",
         "Drop A should feel bass-and-groove led first, with the hook-response lane entering as punctuation rather than constant chatter.",
         "Break should widen the chord bed, thin the drums, and let the instrumental atmosphere own the center before any future sample version exists.",
+        "After the break, use a dedicated re-entry transition section with different drums and a filtered bass teaser so Drop B feels earned instead of simply later.",
         "Drop B should add harmonic bloom and one stronger phrase-end answer lane while keeping the low end just as disciplined as Drop A.",
         "When the answer lane enters in Drop B, the hook should step back to half density so the section grows by substitution instead of stacking.",
         "The instrumental v1 should treat the center lane as intentionally carried by hook pocket, air bed, and upward-widened break chords rather than by a placeholder sample."
@@ -249,12 +250,18 @@
           "goal": "Widen the chord bed upward, thin the drums, and let the air layer own the center so the instrumental break feels complete before any future vocal version.",
           "energy_level": "mid"
         },
-        {
-          "section_id": "drop_b",
-          "length_bars": 16,
-          "goal": "Bring the full groove back with harder loop support, harmonic bloom, and a phrase-end answer lane while the hook drops to half density.",
-          "energy_level": "high"
-        },
+          {
+            "section_id": "transition_b",
+            "length_bars": 16,
+            "goal": "Use a dedicated re-entry switch with fresh transition drums, a filtered bass teaser, and rising phrase pressure so the second drop feels properly earned.",
+            "energy_level": "mid"
+          },
+          {
+            "section_id": "drop_b",
+            "length_bars": 16,
+            "goal": "Bring the full groove back with harder loop support, harmonic bloom, and a phrase-end answer lane while the hook drops to half density.",
+            "energy_level": "high"
+          },
         {
           "section_id": "drop_b_lift",
           "length_bars": 16,
@@ -295,22 +302,22 @@
       "synth_layers": {
         "bass-foundation": {
           "job_in_track": "own the centered sub and rolling low-end punch while keeping the phrasing bouncy and modern UKG rather than overdesigned",
-          "arrangement_role": "present in both drops, filtered in the intro, simplified in the break",
+          "arrangement_role": "present in both drops, filtered in the intro and re-entry transition, simplified in the break",
           "chain_id": "bass_anchor"
         },
         "og-reese-answer": {
           "job_in_track": "add a warm phrase-end answer in the melodic register without duplicating the true sub lane or becoming a second bassline",
-          "arrangement_role": "drop punctuation only, absent in the break, more decisive in Drop B",
+          "arrangement_role": "drop punctuation only, absent in the break and transition, more decisive in Drop B",
           "chain_id": "hook_support"
         },
         "chord-bed": {
           "job_in_track": "carry the musical robustness and width so the track feels like a song rather than just a bass tool",
-          "arrangement_role": "teased in intro, widened in break, tucked behind the groove in drops",
+          "arrangement_role": "teased in intro, widened in break, pulsed in the transition, tucked behind the groove in drops",
           "chain_id": "chord_bed"
         },
         "hook-response": {
           "job_in_track": "provide a memorable instrumental answer that can carry the record on its own before any later vocal or sample version exists",
-          "arrangement_role": "sparing in Drop A, more active in Drop B, mostly absent in the break",
+          "arrangement_role": "sparing in Drop A, mostly absent in the break and transition, more active in Drop B",
           "chain_id": "hook_support"
         }
       }
