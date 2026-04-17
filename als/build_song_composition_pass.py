@@ -280,8 +280,9 @@ def build_report(args: argparse.Namespace) -> dict:
     }
 
     sample_strategy = {
-        "center_lane_rule": "The vocal/sample lane stays empty until the instrumental version already works; when it enters, it replaces hook density rather than stacking with it.",
-        "drop_b_role": "Phrase-end answers or resequenced chops only, not a constant topline.",
+        "version_strategy": "Version 1 must stand on its own instrumentally. Any future sample version is a re-version, not a dependency for finishing the track.",
+        "center_lane_rule": "Do not leave the center empty out of habit. In the instrumental, let the hook and atmosphere carry it; in a future vocal version, the sample would replace hook density rather than stack on top of it.",
+        "drop_b_role": "In the instrumental, use a short abrasive stab answer at phrase ends. If a future sample arrives, it should occupy that phrase-end function instead of becoming a constant topline.",
         "transition_role": "Use one printed throw or delay-tail transition per major section boundary, not every 4 bars.",
     }
 
@@ -291,12 +292,16 @@ def build_report(args: argparse.Namespace) -> dict:
             "why": "That keeps the intro OG and physically grounded. A bend would make the record feel more slippery and modern than this lane wants.",
         },
         "drop_b_reese_architecture": {
-            "decision": "Use the Reese as a separate mid-bass answer voice above the sub, not the same bass voice morphing. Let it speak only at phrase tails and carve it above the sub range.",
-            "why": "A second voice creates more drama and low-mid width, but only works if the true sub ownership never leaves the bass foundation.",
+            "decision": "Do not add a second melodic bass voice in Drop B. Recast the answer lane as a short abrasive phrase-end stab that lives above the sub and leaves the bass-foundation untouched.",
+            "why": "That keeps Drop B bigger by color and punctuation instead of turning it into Drop A plus more low-mid weight.",
         },
         "break_sample_lane_target": {
             "decision": "Reserve the break center lane for a narrow vocal/chop or phrase-end texture roughly in the A3-F5 zone. Avoid long tonal samples that introduce new thirds outside the progression.",
             "why": "That keeps the harmonic plan flexible while still leaving room for a real sample idea later.",
+        },
+        "hook_voice_identity": {
+            "decision": "Make the hook a clipped organ-pluck / woody garage stab with a late offbeat entry and just enough transient bite to read through the drums.",
+            "why": "The hook notes are economical. Its identity has to come from rhythm and timbre, not extra melodic information.",
         },
     }
 

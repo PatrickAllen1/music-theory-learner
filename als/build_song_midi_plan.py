@@ -107,6 +107,7 @@ def _drum_variants() -> list[dict]:
         _event("A#1", "1.4.4", 0.25, 44, "ghost hat"),
         _event("A#1", "2.2.4", 0.25, 42, "ghost hat"),
         _event("A#1", "2.4.4", 0.25, 45, "ghost hat"),
+        _event("A1", "2.4.3", 0.5, 58, "open hat"),
     ]
     drop_lift = drop_core + [
         _event("G#1", "1.2.3", 0.25, 49, "shaker"),
@@ -115,6 +116,7 @@ def _drum_variants() -> list[dict]:
         _event("G#1", "2.4.3", 0.25, 48, "shaker"),
         _event("A#1", "1.3.4", 0.25, 40, "lift ghost"),
         _event("A#1", "2.3.4", 0.25, 41, "lift ghost"),
+        _event("A1", "1.4.3", 0.5, 56, "open hat"),
     ]
     break_sparse = [
         *_kicks("1", [92, 0, 94, 0], include_zero=False),
@@ -202,19 +204,25 @@ def _chord_variants() -> list[dict]:
     ]
     intro_full = [
         *_stack("1.1.1", 3.5, [("D3", 72), ("A3", 68), ("C4", 66), ("E4", 64), ("F4", 62)]),
-        *_stack("2.1.1", 3.5, [("Bb2", 72), ("F3", 68), ("A3", 66), ("C4", 64)]),
+        *_stack("2.1.1", 3.5, [("Bb2", 72), ("F3", 68), ("C4", 66), ("D4", 64)]),
         *_stack("3.1.1", 3.5, [("F2", 71), ("C3", 67), ("G3", 65), ("A3", 63)]),
         *_stack("4.1.1", 3.5, [("C3", 71), ("G3", 67), ("D4", 65), ("E4", 63)]),
     ]
     drop_core = [
         *_stack("1.1.1", 3.5, [("D3", 74), ("A3", 70), ("C4", 68), ("E4", 66), ("F4", 64)]),
-        *_stack("2.1.1", 3.5, [("Bb2", 74), ("F3", 70), ("A3", 68), ("C4", 66)]),
+        *_stack("2.1.1", 3.5, [("Bb2", 74), ("F3", 70), ("C4", 68), ("D4", 66)]),
         *_stack("3.1.1", 3.5, [("F2", 73), ("C3", 69), ("G3", 67), ("A3", 65)]),
         *_stack("4.1.1", 3.5, [("C3", 73), ("G3", 69), ("D4", 67), ("E4", 65)]),
     ]
-    drop_lift = [
+    drop_a_lift = [
         *_stack("1.1.1", 3.5, [("D3", 74), ("A3", 70), ("C4", 68), ("E4", 66), ("F4", 64)]),
-        *_stack("2.1.1", 3.5, [("Bb2", 74), ("F3", 70), ("A3", 68), ("D4", 67)]),
+        *_stack("2.1.1", 3.5, [("Bb2", 74), ("F3", 70), ("C4", 68), ("D4", 67)]),
+        *_stack("3.1.1", 3.5, [("F2", 73), ("C3", 69), ("G3", 67), ("A3", 65), ("C4", 63)]),
+        *_stack("4.1.1", 3.5, [("C3", 73), ("G3", 69), ("D4", 67), ("E4", 65), ("G4", 63)]),
+    ]
+    drop_b_bloom = [
+        *_stack("1.1.1", 3.5, [("D3", 74), ("A3", 70), ("C4", 68), ("E4", 66), ("F4", 64)]),
+        *_stack("2.1.1", 3.5, [("Bb2", 74), ("F3", 70), ("A3", 68), ("C4", 66), ("D4", 64)]),
         *_stack("3.1.1", 3.5, [("F2", 73), ("C3", 69), ("G3", 67), ("A3", 65), ("C4", 63)]),
         *_stack("4.1.1", 3.5, [("C3", 73), ("G3", 69), ("D4", 67), ("E4", 65), ("G4", 63)]),
     ]
@@ -247,11 +255,18 @@ def _chord_variants() -> list[dict]:
             "The track should feel emotionally robust even when the hook stays small.",
         ),
         _variant(
-            "chord_drop_lift_4bar",
+            "chord_drop_a_lift_4bar",
             4,
-            "Drop A/B lift. Same progression with brighter upper color on the hopeful bars.",
-            drop_lift,
-            "Lift comes from color-tone emphasis, not from changing the progression.",
+            "Drop A lift. Same progression with brighter upper color, but still no exposed Bb major-7 yet.",
+            drop_a_lift,
+            "The first lift gets bigger without spending the full harmonic bloom too early.",
+        ),
+        _variant(
+            "chord_drop_b_bloom_4bar",
+            4,
+            "Drop B and its lift. This is where the Bb major-7 color finally blooms.",
+            drop_b_bloom,
+            "The hopeful widening is saved for the back half of the record so Drop B grows by harmony, not just loudness.",
         ),
         _variant(
             "chord_break_stretch_8bar",
@@ -388,48 +403,48 @@ def _bass_variants() -> list[dict]:
     ]
 
 
-def _reese_variants() -> list[dict]:
+def _answer_stab_variants() -> list[dict]:
     drop_a_tail = [
-        _event("G2", "4.4.1", 0.25, 72, "phrase tail"),
-        _event("D3", "4.4.3", 0.5, 76, "answer tail"),
+        _event("A4", "4.4.1", 0.25, 70, "stab tone"),
+        _event("D5", "4.4.1", 0.25, 76, "stab tone"),
     ]
     drop_b_conversation = [
-        _event("F2", "2.4.1", 0.25, 74, "mid-bass answer"),
-        _event("D3", "2.4.3", 0.25, 78, "answer top"),
-        _event("G2", "4.4.1", 0.25, 75, "mid-bass answer"),
-        _event("D3", "4.4.3", 0.25, 79, "answer top"),
+        _event("A4", "2.4.1", 0.25, 74, "phrase-end stab"),
+        _event("D5", "2.4.1", 0.25, 80, "phrase-end stab"),
+        _event("G4", "4.4.1", 0.25, 75, "phrase-end stab"),
+        _event("D5", "4.4.1", 0.25, 81, "phrase-end stab"),
     ]
     drop_b_lift = [
-        _event("A2", "1.4.1", 0.25, 74, "color tail"),
-        _event("C3", "1.4.3", 0.25, 78, "tail answer"),
-        _event("F2", "2.4.1", 0.25, 75, "mid-bass answer"),
-        _event("A2", "2.4.3", 0.25, 77, "maj7 color"),
-        _event("C3", "3.4.1", 0.25, 75, "mid-bass answer"),
-        _event("G2", "3.4.3", 0.25, 77, "ninth answer"),
-        _event("G2", "4.4.1", 0.25, 76, "mid-bass answer"),
-        _event("D3", "4.4.3", 0.25, 80, "final tail"),
+        _event("C5", "1.4.1", 0.25, 76, "accent stab"),
+        _event("F5", "1.4.1", 0.25, 82, "accent stab"),
+        _event("A4", "2.4.1", 0.25, 75, "phrase-end stab"),
+        _event("D5", "2.4.1", 0.25, 81, "phrase-end stab"),
+        _event("A4", "3.4.1", 0.25, 76, "accent stab"),
+        _event("C5", "3.4.1", 0.25, 80, "accent stab"),
+        _event("G4", "4.4.1", 0.25, 76, "phrase-end stab"),
+        _event("D5", "4.4.1", 0.25, 82, "phrase-end stab"),
     ]
     return [
         _variant(
-            "reese_drop_a_tail_4bar",
+            "answer_drop_a_tail_4bar",
             4,
-            "Drop A. Tiny phrase-end tail only, never a constant layer.",
+            "Drop A. Tiny phrase-end stab only, never a constant layer.",
             drop_a_tail,
-            "This is a second voice above the sub, not the sub morphing itself.",
+            "This should feel like a clipped punctuation mark, not another bassline.",
         ),
         _variant(
-            "reese_drop_b_conversation_4bar",
+            "answer_drop_b_conversation_4bar",
             4,
-            "Drop B. Phrase-end conversation with the bass spine on bars 2 and 4.",
+            "Drop B. Phrase-end abrasive stab answer on bars 2 and 4.",
             drop_b_conversation,
-            "Keep this voice carved above the sub; it is drama in the low mids, not extra subs.",
+            "This is where the section gets bigger by punctuation and brightness, not by another moving bass.",
         ),
         _variant(
-            "reese_drop_b_lift_4bar",
+            "answer_drop_b_lift_4bar",
             4,
-            "Drop B lift. Slightly more frequent answers, still only at phrase tails.",
+            "Drop B lift. Slightly more frequent stabs, still only at phrase tails and lift points.",
             drop_b_lift,
-            "The reese should answer the bass, not double every strong beat.",
+            "Keep the answer lane short and biting so it doesn't crowd the hook or sub.",
         ),
     ]
 
@@ -536,25 +551,25 @@ def _parts(composition: dict) -> list[dict]:
         },
         {
             "part_id": "og-reese-answer",
-            "writing_role": "Separate low-mid answer voice that adds aggression at phrase tails.",
-            "register_focus": "F2-D3",
-            "playback_rule": "Treat as a second voice, not the bass morphing. High-pass or carve it above the sub so the bass-foundation keeps ownership below ~150 Hz.",
-            "variants": _reese_variants(),
+            "writing_role": "Short abrasive phrase-end stab answer that adds bite without becoming a second bassline.",
+            "register_focus": "G4-F5",
+            "playback_rule": "Rewrite this slot away from a Reese. Keep it clipped, bright, and short so the bass-foundation stays the only true low-end voice.",
+            "variants": _answer_stab_variants(),
             "inspiration": _top_inspiration(phrase_rows, {"bass", "hook"}),
         },
         {
             "part_id": "chord-bed",
             "writing_role": "Dark-but-hopeful harmonic wash that carries emotional depth without taking the center lane.",
             "register_focus": "Bb2-G4",
-            "playback_rule": "Keep the full progression stable; the hopeful feeling should come from maj7/add9 color tones, not brighter overall sound.",
+            "playback_rule": "Keep the full progression stable. Drop A stays triad/add9-led; the exposed Bb major-7 color is reserved for the break and Drop B.",
             "variants": _chord_variants(),
             "inspiration": _top_inspiration(phrase_rows, {"harmony", "arrangement"}),
         },
         {
             "part_id": "hook-response",
-            "writing_role": "Phrase-end melodic identity with enough space for a future sample to replace it.",
+            "writing_role": "Instrumental-led phrase-end melodic identity with enough space for a future re-versioned sample, not a dependency on one.",
             "register_focus": "G4-F5",
-            "playback_rule": "Stay off the kick, speak at phrase ends, and leave bar-4 center-lane space in the biggest sections.",
+            "playback_rule": "Stay off the kick, enter late on the offbeat, and make the timbre carry as much identity as the notes do.",
             "variants": _hook_variants(),
             "inspiration": _top_inspiration(phrase_rows, {"hook", "melody"}),
         },
@@ -612,11 +627,11 @@ def _section_assignments() -> list[dict]:
             "part_variants": {
                 "drums": "drum_drop_core_2bar",
                 "bass-foundation": "bass_drop_a_core_4bar",
-                "og-reese-answer": "reese_drop_a_tail_4bar",
+                "og-reese-answer": "answer_drop_a_tail_4bar",
                 "chord-bed": "chord_drop_core_4bar",
                 "hook-response": "hook_drop_a_phrase_4bar",
             },
-            "notes": "The bass owns the section. The hook and reese only answer at phrase tails.",
+            "notes": "The bass owns the section. The hook and stab only answer at phrase tails, and the Bb chord still avoids exposing its maj7 color.",
         },
         {
             "section_id": "drop_a_lift",
@@ -624,11 +639,11 @@ def _section_assignments() -> list[dict]:
             "part_variants": {
                 "drums": "drum_drop_lift_2bar",
                 "bass-foundation": "bass_drop_a_lift_4bar",
-                "og-reese-answer": "reese_drop_a_tail_4bar",
-                "chord-bed": "chord_drop_lift_4bar",
+                "og-reese-answer": "answer_drop_a_tail_4bar",
+                "chord-bed": "chord_drop_a_lift_4bar",
                 "hook-response": "hook_drop_a_lift_4bar",
             },
-            "notes": "Bigger by density and upper color. Still leave the center lane uncluttered enough for future sample planning.",
+            "notes": "Bigger by density and upper color. Still no exposed Bb maj7 yet, and the instrumental has to stand on its own.",
         },
         {
             "section_id": "break",
@@ -640,7 +655,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_break_stretch_8bar",
                 "hook-response": "hook_break_ghost_4bar",
             },
-            "notes": "Reserve the center for a narrow mono or lightly widened phrase-end sample in roughly A3-F5. Avoid long sustained sample notes that state new thirds outside the progression.",
+            "notes": "Let the air bed and stretched chords carry the break instrumentally. If a future sample ever appears, keep it narrow and phrase-end only in roughly A3-F5.",
         },
         {
             "section_id": "drop_b",
@@ -648,11 +663,11 @@ def _section_assignments() -> list[dict]:
             "part_variants": {
                 "drums": "drum_drop_core_2bar",
                 "bass-foundation": "bass_drop_b_core_4bar",
-                "og-reese-answer": "reese_drop_b_conversation_4bar",
-                "chord-bed": "chord_drop_lift_4bar",
+                "og-reese-answer": "answer_drop_b_conversation_4bar",
+                "chord-bed": "chord_drop_b_bloom_4bar",
                 "hook-response": "hook_drop_b_phrase_4bar",
             },
-            "notes": "The reese is now a separate answer voice above the sub. Carve it and let it speak only at the ends of phrases.",
+            "notes": "This is where the harmonic bloom and phrase-end stab answer arrive. The bass stays the only true low-end voice.",
         },
         {
             "section_id": "drop_b_lift",
@@ -660,11 +675,11 @@ def _section_assignments() -> list[dict]:
             "part_variants": {
                 "drums": "drum_drop_lift_2bar",
                 "bass-foundation": "bass_drop_b_lift_4bar",
-                "og-reese-answer": "reese_drop_b_lift_4bar",
-                "chord-bed": "chord_drop_lift_4bar",
+                "og-reese-answer": "answer_drop_b_lift_4bar",
+                "chord-bed": "chord_drop_b_bloom_4bar",
                 "hook-response": "hook_drop_b_lift_4bar",
             },
-            "notes": "Use either the hook or the sample answer at a phrase end, not both. This is the biggest section, so subtraction matters more than adding a fifth layer.",
+            "notes": "Use either the hook or the stab answer to dominate a phrase end, not both equally. This is the biggest section, so subtraction matters more than adding another layer.",
         },
         {
             "section_id": "outro",
@@ -681,6 +696,31 @@ def _section_assignments() -> list[dict]:
     ]
 
 
+def _support_layers() -> list[dict]:
+    return [
+        {
+            "layer_id": "top_presence",
+            "role": "2-6 kHz bite and forward motion",
+            "owners": [
+                "offbeat open-hat accents inside drum_drop_core_2bar / drum_drop_lift_2bar",
+                "the clipped attack on hook-response",
+                "the phrase-end abrasive answer stab in Drop B",
+            ],
+            "rule": "If the drop feels closed-in, solve it here before widening the chords or brightening the whole mix.",
+        },
+        {
+            "layer_id": "air_bed",
+            "role": "8 kHz+ height and ceiling",
+            "owners": [
+                "constant quiet shimmer/noise bed from intro_b onward",
+                "more audible air in the break",
+                "tucked but present air return in the drops",
+            ],
+            "rule": "The air source should be constant enough that the record feels tall, but quiet enough that the hats still define the groove.",
+        },
+    ]
+
+
 def build_report(args: argparse.Namespace) -> dict:
     composition = build_song_composition_pass_report(_namespace(args))
     return {
@@ -691,6 +731,7 @@ def build_report(args: argparse.Namespace) -> dict:
         "frequency_strategy": composition["frequency_strategy"],
         "originality_guardrails": composition["originality_guardrails"],
         "parts": _parts(composition),
+        "support_layers": _support_layers(),
         "section_assignments": _section_assignments(),
     }
 
@@ -730,6 +771,12 @@ def render_text(report: dict) -> str:
                 for event in variant["events"][:6]
             )
             lines.append(f"    preview: {preview}")
+    lines.append("")
+    lines.append("## Support Layers")
+    for row in report["support_layers"]:
+        lines.append(f"- `{row['layer_id']}` :: {row['role']}")
+        lines.append(f"  owners: {' | '.join(row['owners'])}")
+        lines.append(f"  rule: {row['rule']}")
     lines.append("")
     lines.append("## Section Assignments")
     for row in report["section_assignments"]:
