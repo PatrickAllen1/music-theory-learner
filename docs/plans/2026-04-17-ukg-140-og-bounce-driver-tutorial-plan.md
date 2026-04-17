@@ -36,6 +36,41 @@ This means every important move should be:
 - explainable in plain language
 - checkpointed with a listening task
 
+## Publishing / Delivery Notes
+### Accessibility
+- every screenshot should ship with one-line alt-text describing:
+  - what lane is shown
+  - what changed
+  - what the learner should notice
+- key moves must still be understandable from text alone if a screenshot is unavailable
+
+### Completion verification
+- each part should end with:
+  - one learner bounce
+  - one expected-output description
+  - one solution bounce in the downloadable asset pack when publishing allows it
+- the learner should always be able to A/B against:
+  - the commercial reference axis
+  - the tutorial checkpoint bounce
+
+### Support / maintenance
+- public release should include one feedback path:
+  - GitHub issues
+  - or a dedicated tutorial support inbox / Discord channel
+- each part should carry:
+  - last-updated date
+  - Ableton version
+  - Serum version
+- if a UI update forces new screenshots, update the screenshot pack and note the version change in the chapter header
+
+### Asset / license policy
+- until a public commercial license is chosen, tutorial assets should be treated as `all rights reserved draft materials`
+- if the package is released publicly, the asset bundle must state the allowed use for:
+  - MIDI
+  - Serum presets
+  - checkpoint WAVs
+  - screenshots
+
 ## Audience
 - producer with basic Ableton and Serum familiarity
 - has finished a few tracks already
@@ -114,6 +149,9 @@ Use these references consistently during the tutorial:
 
 Use loudness-matched references in the project so the learner is not fooled by master volume.
 
+Verification note:
+- public reference names were checked against public catalog / press results on `2026-04-17`
+
 ## Recommended Authoring Order
 If this tutorial is written section-by-section, author it in this order:
 1. `Part 3: Bass Floor`
@@ -134,6 +172,8 @@ Reason:
 Detailed template available now:
 - [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-02-groove.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-02-groove.md)
 - [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-03-bass-floor.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-03-bass-floor.md)
+- [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-04-harmonic-bed.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-04-harmonic-bed.md)
+- [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-05-identity-hook-answer.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-05-identity-hook-answer.md)
 
 ## Estimated Scope
 - `Part 0`: `10–20 min`
@@ -160,8 +200,11 @@ Suggested session split:
 - `Session 2b`: Part `6`
   - arrangement build
   - by the end, the song should fully exist
-- `Session 3`: Parts `7–9`
-  - transitions, mix, master
+- `Session 3`: Part `7` plus rough mix checks
+  - transitions and section handoffs
+  - by the end, the arrangement should feel earned front-to-back
+- `Session 4`: Parts `8–9`
+  - mix, master, export, final A/B
   - by the end, the track should translate and export cleanly
 
 ## Part 0: Setup
@@ -230,7 +273,7 @@ Suggested session split:
 - kick tuning workflow
 - Simpler / sampler settings
 - kick bus processing
-- air-layer workflow, using the Production Plan air patch as the starting source of truth
+- air-layer workflow, using the Production Plan `Air patch` and `Return C: long filtered hall` sections as the starting source of truth
 
 ### Core teaching points
 - kick must be heavy and short enough for the bass to breathe
@@ -360,7 +403,7 @@ Suggested session split:
 - chord bus and returns
 
 ### What must be shown
-- chord-bed patch direction from the Production Plan as the starting source of truth
+- chord-bed patch direction from the Production Plan `Chord-bed patch` and `Chord duality mechanism` sections as the starting source of truth
 - voicing palette:
   - `Dm9`
   - restrained `Bb`
@@ -408,6 +451,7 @@ Suggested session split:
 - hook/answer processing chain
 
 ### What must be shown
+- hook and answer patch direction from the Production Plan `Hook and Answer Spec` section as the starting source of truth
 - exact rhythmic placement of:
   - `A4`
   - `C5`

@@ -68,7 +68,8 @@ Secondary check:
   - kick placeholder
   - clap placeholder
   - air layer if Part 1 is done
-- one drum rack or separate tracks for:
+- separate tracks are recommended for this tutorial, not one combined drum rack, so bus/EQ/timing decisions stay easy to see
+- use one track each for:
   - kick
   - clap
   - closed hats
@@ -142,6 +143,10 @@ Do not try to “make it more garage” by changing the kick rhythm. The garage 
 ### Screenshot
 - `drums-03-kick-pattern`
 
+### Visual MIDI Requirement
+- show one full bar
+- the MIDI note should be visibly short enough that the sample tail, not the MIDI length, is doing the sustain work
+
 ## Step 3: Build The Clap Layer
 ### Action
 1. Put the clap on beats `2` and `4`.
@@ -159,6 +164,10 @@ The clap is the second fixed anchor after the kick.
 
 ### Screenshot
 - `drums-04-clap-layer`
+
+### Visual MIDI Requirement
+- show one bar with the clap on beats `2` and `4`
+- if a support hit exists, make the layering visible in the screenshot
 
 ## Step 4: Add The Closed Hat Scaffold
 ### Action
@@ -180,11 +189,14 @@ This is not the swing layer. It is the stable top scaffold that lets the later g
 ### Screenshot
 - `drums-05-closed-hat-scaffold`
 
+### Visual MIDI Requirement
+- show at least one full bar so the scaffold pattern is readable before ghost hats are added
+
 ## Step 5: Add Ghost Hats
 ### Action
 1. Use a shorter, lighter hat sample than the main closed hat if needed.
 2. Place ghost hats on `1/16` subdivisions around the beat:
-   - start with the `e` and `a` of beats `2` and `4`
+   - starter loop: use the `e` and `a` of beats `2` and `4` in both bars of the first `2`-bar loop
    - later additions can include the `e` of beat `1` and the `a` of beat `3`
 3. Push them slightly late:
    - roughly `5–15` ticks behind the grid
@@ -235,6 +247,9 @@ If only one placement survives:
 ### Screenshot
 - `drums-08-open-hat-placement`
 
+### Visual MIDI Requirement
+- show one bar clearly enough that `& of 4` is labeled as the highest-priority placement
+
 ## Step 7: Add The Shaker Lane
 ### Action
 1. Program a lightly moving shaker line around the main hats.
@@ -244,6 +259,7 @@ If only one placement survives:
 Starting pattern:
 - begin with continuous `1/8` notes
 - only move to `1/16` density if the section needs more lift later
+- if the phrase still feels too empty, add single extra `1/16` pickups near the phrase boundary rather than converting the whole lane too early
 
 ### Why
 The shaker often carries the `5–8 kHz` lift that makes drops feel more alive without adding new low-mid clutter.
@@ -257,6 +273,7 @@ The shaker often carries the `5–8 kHz` lift that makes drops feel more alive w
 
 ### Visual MIDI Requirement
 - show one bar of the shaker pattern clearly enough that velocity shaping is visible
+- if extra `1/16` pickups are added later, capture a second screenshot showing where they enter
 
 ## Step 8: Set The Timing Policy
 ### Action
@@ -318,12 +335,16 @@ Inside one `16`-bar drop section, give each four-bar block a job:
 ### Practical Moves
 - `Bars 1–4`
   - keep the top loop and shaker support restrained
+  - use only the starter ghost-hat pattern
+  - keep the open hat to `& of 4` only if possible
 - `Bars 5–8`
   - add the `e` of beat `1` and the `a` of beat `3` if they were not present yet
 - `Bars 9–12`
-  - raise shaker velocity slightly and consider adding one extra open-hat emphasis
+  - raise shaker velocity by roughly `5–10` points
+  - consider adding one extra open-hat emphasis on `& of 2` every second bar
 - `Bars 13–16`
   - use a fill, riser, or brief cut
+  - allow the densest ghost-hat version here only
 
 ### Why
 If the drums repeat identically for all `16` bars, the section is not finished.
@@ -367,9 +388,10 @@ The lift variant should get bigger through:
 The kick remains the anchor. Growth comes from the tops and the phrase edge.
 
 Concrete lift changes:
-- add the later ghost-hat additions more consistently
-- slightly tighten shaker lift toward phrase ends
+- make the `e` of beat `1` and the `a` of beat `3` part of the regular loop instead of occasional additions
+- slightly tighten shaker lift toward phrase ends and raise the last-bar velocity by roughly `5–10` points
 - consider one extra open-hat emphasis rather than changing the kick
+- if a top loop exists, let it become a little more audible here before reaching for another percussion lane
 
 ### Screenshot
 - `drums-15-drop-core-vs-lift`
@@ -392,6 +414,11 @@ Compare against:
 - do the hats feel intentionally late or just messy?
 - does the kick feel physical without sounding harsh?
 - is there enough space left for the bass floor?
+
+Expected answer:
+- the starter loop should feel sparse but already bouncy before any lift additions
+- the lift version should have noticeably more top motion without changing the kick pattern
+- the ghost-hat density should still feel countable, not like a constant `1/16` wash
 
 ## Troubleshooting
 ### Problem: “The drums feel stiff.”

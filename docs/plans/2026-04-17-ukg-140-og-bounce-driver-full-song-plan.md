@@ -73,6 +73,9 @@ Creative references used for musical calibration:
 - `Sammy Virji - I Guess We're Not the Same`
 - `Y U QT - NRG`
 
+Verification note:
+- public track names were checked against public catalog / press results on `2026-04-17`
+
 Local sound/chain anchors are separate:
 - ALS anchor profiles later in this document are for sound-function inspiration only
 - they are not the same thing as the creative references above

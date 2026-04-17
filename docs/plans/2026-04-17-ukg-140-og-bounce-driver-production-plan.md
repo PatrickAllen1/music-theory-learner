@@ -50,12 +50,10 @@ Reference role split:
 - `Sammy Virji - I Guess We're Not the Same`: hook clarity, harmonic readability
 
 Verification note:
-- these references are locally grounded in:
-  - `als/analysis/kettama-it-gets-better-notes.md`
-  - `als/analysis/interplanetary-criminal-slow-burner-notes.md`
-  - `docs/transcripts/yuqt2_spans.json`
-  - `docs/transcripts/sammyvirjiiguesswerenotthesame_spans.json`
-- use these local artifacts as the truth source inside this repo
+- public track names checked against public catalog / press results on `2026-04-17`
+- maintainer note:
+  - these public references are also grounded by local ALS / transcript analysis inside this repo
+  - use those internal artifacts when finer-grained note or function evidence is needed during authoring
 - production-plan values are ranges and directions
 - tutorial parts are where exact starting values get locked for the learner
 
@@ -326,6 +324,11 @@ Oscillator direction:
 - Osc B: brighter harmonic support for FM color
 - use FM from B onto A lightly, just enough to get organ woodiness rather than bell harshness
 
+Filter direction:
+- smooth low-pass or gentle band-softening filter
+- keep enough upper-mid bite for the hook to read
+- starting cutoff should stay in the zone where the hook speaks clearly without getting fizzy
+
 Envelope direction:
 - fast attack
 - medium-short decay
@@ -337,6 +340,7 @@ Starting ranges:
 - decay: `80–200 ms`
 - sustain: `20–40%`
 - release: `60–150 ms`
+- filter cutoff starting zone: roughly `1.2–3.5 kHz` depending on oscillator brightness
 
 Processing direction:
 - light saturation
@@ -378,6 +382,7 @@ Starting deltas from the hook:
   - tiny slow filter or level motion only if needed
 - space:
   - mostly from `Return C: long filtered hall` rather than a wet in-patch effect
+  - this is the same main long-space return used by the chord bed, not a separate secret air-only hall by default
 
 ### Presence owner
 - combination of:
@@ -694,10 +699,6 @@ Working expectation:
   - rhythmic-first rolling motion
   - stable sub underneath
   - how much movement the mid layer carries
-
-Internal note:
-- the current repo still uses `docs/transcripts/yuqt2_spans.json` as the local knowledge source for this lane
-- if this package is published externally, swap in one named public Y U QT or SMTS reference everywhere
 
 ### Hook and harmony readability
 - `Sammy Virji - I Guess We're Not the Same`

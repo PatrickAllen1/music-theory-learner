@@ -49,7 +49,6 @@ If the bass starts feeling like the hook, the learner has gone too far.
 Primary A/B for this part:
 - `Y U QT - NRG`
   - listen for rhythmic roll, not just tone
-  - internal repo source is currently `docs/transcripts/yuqt2_spans.json`
 - `Interplanetary Criminal - Slow Burner`
   - listen for how the bass and kick breathe together
 
@@ -102,7 +101,7 @@ If they live on one track:
     - sustain: `100%`
     - release: `45 ms`
 13. Open the modulation matrix and confirm there is no `Velocity -> Level` routing on the sub.
-14. If there is one, remove it before continuing.
+14. If there is one, right-click the routing amount and delete that modulation before continuing.
 
 ### Why
 This keeps the sub:
@@ -312,7 +311,7 @@ The release notes are punctuation, not reharmonization.
 ## Step 8: Program Internal Pulse Without Extra Melody
 ### Action
 1. Inside the 4-bar phrase, add small note-length differences.
-2. If needed, split one sustaining note into two tied-feel notes around the middle of the bar or just before the next kick so the phrase breathes between kicks.
+2. If needed, split one sustaining note into two tied-feel notes around beat `2.5` or beat `3` so the phrase breathes before the phrase-end release note.
 3. Do **not** add a bunch of new pitches to create movement.
 
 Starting rhythm rule:
@@ -437,7 +436,9 @@ Compare against:
 
 Expected answer:
 - the main root pitch changes `4` times across the `4`-bar loop
+- across a `16`-bar drop span, expect `16` main root events if the loop repeats four times
 - extra pitch movement should come mainly from phrase-end release notes, not constant interior rewrites
+- a healthy first pass usually adds roughly `4–8` extra release-note pitch events across those `16` bars, not dozens of interior rewrites
 
 ## Troubleshooting
 ### Problem: “The bass feels static.”
