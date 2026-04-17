@@ -184,7 +184,7 @@ def _section_composition(section: dict, progression: list[str], hook_cells: dict
             "section_id": section_id,
             "bars": section["bars"],
             "harmonic_behavior": "Run the full progression once per 4 bars, but keep the top note emphasis subdued.",
-            "bass_behavior": "Introduce the root path and one held-note-then-release gesture per 2 bars.",
+            "bass_behavior": "Introduce the rolling root path with one octave hint every second bar and internal tonal movement that stays inside the sustain rather than turning into a hook.",
             "hook_behavior": "Use only the first two notes of the drop-A response cell as a teaser.",
         }
     if section_id == "break":
@@ -199,16 +199,16 @@ def _section_composition(section: dict, progression: list[str], hook_cells: dict
         return {
             "section_id": section_id,
             "bars": section["bars"],
-            "harmonic_behavior": "Full 4-chord loop with the pad tucked behind the bass and loop energy.",
-            "bass_behavior": "Held root through the first half of each bar, then short release notes on bars 2 and 4 only.",
+            "harmonic_behavior": "Full 4-chord loop with the pad tucked behind the bass and loop energy, but keep the Bb harmony triad/add9-led so the full bloom is still saved.",
+            "bass_behavior": "Let the bass roll across the phrase with subtle internal movement, then save the clearest release gesture for the phrase-end bars.",
             "hook_behavior": f"Use `{', '.join(hook_cells['drop_a'])}` as the offbeat response cell at phrase ends, not every bar.",
         }
     if section_id == "drop_a_lift":
         return {
             "section_id": section_id,
             "bars": section["bars"],
-            "harmonic_behavior": "Same progression, slightly brighter upper chord tone on the Fadd9 and Cadd9 bars.",
-            "bass_behavior": "Release notes every bar, but only one octave jump per 2-bar unit.",
+            "harmonic_behavior": "Same progression, slightly brighter upper chord tone on the Fadd9 and Cadd9 bars, but still no exposed Bb maj7 yet.",
+            "bass_behavior": "Increase the internal roll and note-length variation, but keep the biggest release gestures for the end of the phrase.",
             "hook_behavior": f"Alternate `{', '.join(hook_cells['drop_a'])}` with `{', '.join(hook_cells['answer_alt'])}`.",
         }
     if section_id == "drop_b":
@@ -216,16 +216,16 @@ def _section_composition(section: dict, progression: list[str], hook_cells: dict
             "section_id": section_id,
             "bars": section["bars"],
             "harmonic_behavior": "Reintroduce the full progression with more obvious hopeful color on Bbmaj7 and Cadd9.",
-            "bass_behavior": "Same held-then-release shape, but let the release note on the C chord hit the 9th for lift.",
-            "hook_behavior": f"Use `{', '.join(hook_cells['drop_b'])}` sparingly and leave a center gap for sample answers.",
+            "bass_behavior": "Same rolling shape, but let the phrase-end release on the C chord hit the 9th for lift while the sub stays stable underneath.",
+            "hook_behavior": f"Use `{', '.join(hook_cells['drop_b'])}` sparingly and leave room for a warm phrase-end answer stab instead of a second bass voice.",
         }
     if section_id == "drop_b_lift":
         return {
             "section_id": section_id,
             "bars": section["bars"],
             "harmonic_behavior": "Keep the progression stable; the change comes from phrase density, not reharmonisation.",
-            "bass_behavior": "Strongest ornament bars of the track, but still only from progression tones and chord color notes.",
-            "hook_behavior": "Sample lane or response lane takes the strongest phrase-end answer here; do not let both fight.",
+            "bass_behavior": "Strongest phrase-end release bars of the track, but still only from progression tones and chord color notes.",
+            "hook_behavior": "Hook lane or answer-stab lane takes the strongest phrase-end answer here; do not let both fight equally.",
         }
     return {
         "section_id": section_id,
@@ -272,11 +272,11 @@ def build_report(args: argparse.Namespace) -> dict:
     ]
 
     hook_plan = {
-        "thesis": "Three-note economy in Drop A, four-note payoff only in Drop B, always offbeat enough to leave the kick and future sample lane clear.",
+        "thesis": "Three-note economy in Drop A, four-note payoff only in Drop B, with a late offbeat entry so the hook lives in the pocket instead of on top of the kick.",
         "drop_a_cell": hook_cells["drop_a"],
         "drop_b_cell": hook_cells["drop_b"],
         "secondary_answer_cell": hook_cells["answer_alt"],
-        "note_logic": "Keep the hook mostly inside the D-minor / chord-color vocabulary, with only one brighter lift note when the section needs hope rather than more darkness.",
+        "note_logic": "Keep the hook mostly inside the D-minor / chord-color vocabulary, with only one brighter lift note when the section needs hope rather than more darkness. The memorability should come from offbeat placement and timbre, not extra notes.",
     }
 
     sample_strategy = {
@@ -324,7 +324,7 @@ def build_report(args: argparse.Namespace) -> dict:
     return {
         "brief_id": frozen["brief_id"],
         "readiness": frozen["readiness"],
-        "thesis": frozen["thesis"],
+        "thesis": "Build a 140 BPM D minor modern UKG / speed-garage record whose thesis is Kettama-level pressure plus a rolling low-end spine, while the harmony blooms from restrained Drop A austerity into hopeful back-half width without taking over the center lane.",
         "emotional_target": ["dark", "hopeful"],
         "architectural_decisions": architectural_decisions,
         "harmonic_language": {
@@ -334,10 +334,10 @@ def build_report(args: argparse.Namespace) -> dict:
             "rule": "Keep the song dark through the tonic and low-end center, but let maj7 / add9 color tones supply the hopeful feeling rather than brightening the whole track.",
         },
         "bass_plan": {
-            "thesis": "OG speed-garage low end: held root authority first, then short eighth-note or octave release figures built only from progression notes.",
+            "thesis": "Modern UKG low end: stable sub authority underneath a rolling phrase with textural motion and stronger phrase-end releases built only from progression notes.",
             "four_bar_root_path": [row["root_path_note"] for row in bass_language],
             "per_chord_release_language": bass_language,
-            "rule": "No ornamental note is allowed if it implies a new chord. The bass gets busier only by reusing the progression's own notes.",
+            "rule": "No ornamental note is allowed if it implies a new chord. Let the bass breathe across the phrase, but save the strongest release gestures for phrase ends rather than metronomic bar-2/bar-4 punctuation.",
         },
         "hook_plan": hook_plan,
         "section_plan": composition_sections,

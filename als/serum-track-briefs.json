@@ -101,21 +101,21 @@
       ]
     },
     "ukg-140-og-bounce-driver": {
-      "description": "140 BPM speed-garage stack with OG hollow bass pressure, a wide answering reese, musical chord support, and a restrained hook lane that still leaves room for future samples.",
+      "description": "140 BPM modern UKG / speed-garage stack with rolling bass pressure, a phrase-end answer stab, musical chord support, and an instrumental-led hook lane that can stand alone before any future sample re-version.",
       "parts": [
         {
           "part_id": "bass-foundation",
           "role": "bass",
           "tone": ["dark", "gritty"],
           "mix": ["low_end_anchor"],
-          "goals": ["mono_safer", "tighter", "more_grit"]
+          "goals": ["mono_safer", "tighter", "more_motion"]
         },
         {
           "part_id": "og-reese-answer",
-          "role": "reese",
-          "tone": ["wide"],
-          "mix": ["low_end_anchor"],
-          "goals": ["less_sub", "cleaner", "more_motion"]
+          "role": "stab",
+          "tone": ["warm", "present"],
+          "mix": ["mid_focus"],
+          "goals": ["tighter", "more_presence", "cleaner"]
         },
         {
           "part_id": "chord-bed",
@@ -127,7 +127,7 @@
         {
           "part_id": "hook-response",
           "role": "stab",
-          "tone": ["bright", "clean"],
+          "tone": ["warm", "clean"],
           "mix": ["mid_focus"],
           "goals": ["tighter", "less_busy", "more_presence"]
         }

@@ -183,7 +183,7 @@
       }
     },
     "ukg-140-og-bounce-driver": {
-      "description": "Full-song blueprint for a 140 BPM speed-garage record with Kettama-level impact, Interplanetary Criminal bounce, OG hollow bass language, and enough harmonic depth to support a future sample hook.",
+      "description": "Full-song blueprint for a 140 BPM modern UKG / speed-garage record with Kettama-level pressure, Interplanetary Criminal bounce, Soul Mass Transit System-style rolling bass language, and enough harmonic depth to stand instrumentally before any future sample version.",
       "serum_brief_id": "ukg-140-og-bounce-driver",
       "template_id": "ukg-4x4-core",
       "bpm": 140,
@@ -196,7 +196,7 @@
         "min": 3.0,
         "max": 5.0
       },
-      "energy_profile": "Hard 4-on-floor speed-garage pressure with an OG hollow bass spine, strong bounce from loops and hats, and a disciplined midrange lane left open for future sample work.",
+      "energy_profile": "Hard 4-on-floor pressure with rolling UKG low-end, strong bounce from loops and hats, and a disciplined midrange lane that still lets the instrumental stand on its own.",
       "harmonic_plan": {
         "center": "D minor",
         "progression": [
@@ -205,28 +205,28 @@
           "Fadd9",
           "Cadd9"
         ],
-        "movement_note": "Let the harmony feel musically rich like Sammy or Kettama, but keep the actual hook phrase economical so a later sample can still take over the center lane.",
-        "bass_strategy": "Bass owns a simple 1-6-3-7 backbone with offbeat bounce and octave ornaments, while the reese only answers in the low-mid stereo field and never steals the true sub."
+        "movement_note": "Let the harmony feel musically rich like Sammy Virji or Y U QT, but keep the actual hook phrase economical and instrumental-led rather than depending on a later sample.",
+        "bass_strategy": "Bass owns a rolling 1-6-3-7 backbone with internal motion and stronger phrase-end releases, while the answer lane stays in the melodic/harmonic register and never steals the true sub."
       },
-      "drum_strategy": "Build from a hard 4x4 speed-garage core, then add filtered loop bounce, tuned hats, and one restrained break layer so the groove feels huge without losing the kick-led spine.",
-      "melodic_strategy": "The instrumental hook should behave like a response lane rather than a full topline: enough identity to carry the record now, but simple enough that a chopped vocal or sample can later become the main foreground element.",
+      "drum_strategy": "Build from a body-forward 4x4 core, then add swingy tops, filtered loop bounce, and one restrained break layer so the groove feels huge without sacrificing the pocket.",
+      "melodic_strategy": "The instrumental hook should behave like a response lane rather than a full topline: enough identity to carry the record now through rhythm and timbre, but disciplined enough that a later re-version could trade in a vocal or sample.",
       "arrangement_notes": [
-        "Intro should establish kick, tuned hats, and filtered loop bounce before revealing the full bass conversation.",
+        "Intro should establish kick, tuned hats, and filtered loop bounce before revealing the full rolling bass language.",
         "Drop A should feel bass-and-groove led first, with the hook-response lane entering as punctuation rather than constant chatter.",
-        "Break should widen the chord bed, thin the drums, and preserve a clean center lane for future samples.",
-        "Drop B should add one stronger answering phrase or sample lane while keeping the low end just as disciplined as Drop A."
+        "Break should widen the chord bed, thin the drums, and let the instrumental atmosphere own the center before any future sample version exists.",
+        "Drop B should add harmonic bloom and one stronger phrase-end answer lane while keeping the low end just as disciplined as Drop A."
       ],
       "arrangement_sections": [
         {
           "section_id": "intro_a",
           "length_bars": 16,
-          "goal": "Establish the 4x4 kick, tuned tops, filtered loop bounce, and atmosphere without exposing the full bass conversation.",
+          "goal": "Establish the 4x4 kick, tuned tops, filtered loop bounce, and atmosphere without exposing the full bass roll.",
           "energy_level": "low"
         },
         {
           "section_id": "intro_b",
           "length_bars": 16,
-          "goal": "Tease the OG bass shape and chord width while still leaving the center lane and hook-response mostly open.",
+          "goal": "Tease the rolling bass shape and chord width while still leaving the center lane and hook-response mostly open.",
           "energy_level": "mid"
         },
         {
@@ -250,7 +250,7 @@
         {
           "section_id": "drop_b",
           "length_bars": 16,
-          "goal": "Bring the full groove back with harder loop support and a more confident bass/reese conversation.",
+          "goal": "Bring the full groove back with harder loop support, harmonic bloom, and a more confident phrase-end answer lane.",
           "energy_level": "high"
         },
         {
@@ -267,8 +267,8 @@
         }
       ],
       "reserved_spaces": [
-        "One chopped vocal or spoken sample lane in the center midrange",
-        "One phrase-end response lane for sample throws or hook answers in Drop B",
+        "One optional chopped vocal or spoken sample lane in the center midrange for a future re-version",
+        "One phrase-end response lane for hook or answer-stab punctuation in Drop B",
         "One transition-impact lane at the end of the break and final drop pickup",
         "One atmosphere lane for intro air and break lift"
       ],
@@ -292,14 +292,14 @@
       },
       "synth_layers": {
         "bass-foundation": {
-          "job_in_track": "own the centered sub and low-end punch while keeping the phrasing bouncy and OG rather than overdesigned",
+          "job_in_track": "own the centered sub and rolling low-end punch while keeping the phrasing bouncy and modern UKG rather than overdesigned",
           "arrangement_role": "present in both drops, filtered in the intro, simplified in the break",
           "chain_id": "bass_anchor"
         },
         "og-reese-answer": {
-          "job_in_track": "add hollow low-mid width and answer the bassline without duplicating the true sub lane",
-          "arrangement_role": "drop-heavy, thinned in the break, slightly more animated in Drop B",
-          "chain_id": "secondary_low_mid"
+          "job_in_track": "add a warm phrase-end answer in the melodic register without duplicating the true sub lane or becoming a second bassline",
+          "arrangement_role": "drop punctuation only, absent in the break, more decisive in Drop B",
+          "chain_id": "hook_support"
         },
         "chord-bed": {
           "job_in_track": "carry the musical robustness and width so the track feels like a song rather than just a bass tool",
@@ -307,7 +307,7 @@
           "chain_id": "chord_bed"
         },
         "hook-response": {
-          "job_in_track": "provide a memorable instrumental answer that can later make room for a vocal or sample without collapsing the identity of the record",
+          "job_in_track": "provide a memorable instrumental answer that can carry the record on its own before any later vocal or sample version exists",
           "arrangement_role": "sparing in Drop A, more active in Drop B, mostly absent in the break",
           "chain_id": "hook_support"
         }

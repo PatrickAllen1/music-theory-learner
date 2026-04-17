@@ -176,6 +176,29 @@
     ]
   },
   {
+    "id": "body-forward-drums-with-swingy-tops",
+    "name": "Body-forward drums with swingy tops",
+    "source": "Song authoring revision \u2014 ukg-140-og-bounce-driver",
+    "what_it_does": "Pairs a punchy, weighty kick with hats, shakers, and tops that breathe, swing, and humanise around it so the groove feels physical rather than rigid.",
+    "when_to_use": "When the drum reference set is Interplanetary Criminal, Sammy Virji, or other modern UKG records where pocket matters as much as impact.",
+    "works_well_with": [
+      "ghost hats",
+      "open-hat accents",
+      "velocity variation",
+      "filtered loop layers"
+    ],
+    "likely_clashes_with": [
+      "straight robotic hats",
+      "uniform velocities on every top hit",
+      "harsh top-end clipping"
+    ],
+    "why": "The kick can be disciplined and heavy while the tops do the work of creating movement and bounce around it.",
+    "mitigations": [
+      "Humanise ghost hats and top percussion slightly in timing and velocity.",
+      "Keep at least one open or airy hat element so the top end breathes."
+    ]
+  },
+  {
     "id": "brick-wall-amp-envelope",
     "name": "Brick-wall amplitude envelope \u2014 instant attack, instant release",
     "source": "Kettama \u00d7 Interplanetary Criminal",
@@ -1020,6 +1043,29 @@
     ]
   },
   {
+    "id": "modern-ukg-rolling-bass-floor",
+    "name": "Modern UKG rolling bass as the floor",
+    "source": "Song authoring revision \u2014 ukg-140-og-bounce-driver",
+    "what_it_does": "Keeps the bass functioning as the floor of the track while creating continuous motion inside the phrase through note-length variation, harmonic-layer breathing, and phrase-end release gestures rather than turning the bass into the main hook.",
+    "when_to_use": "When the target lane is Soul Mass Transit System / Interplanetary Criminal / modern UKG rather than classic speed-garage syncopated character bass.",
+    "works_well_with": [
+      "stable clean sub",
+      "internal filter or saturation motion",
+      "late phrase-end releases",
+      "4x4 kick-led grooves"
+    ],
+    "likely_clashes_with": [
+      "static held roots with no tone movement",
+      "OG-style bass-as-hook writing",
+      "second melodic bass voices in the same register"
+    ],
+    "why": "Modern UKG bass often feels rolling and alive even when it is structurally simple. The motion comes from phrasing and tone, not from turning every bar into a melodic statement.",
+    "mitigations": [
+      "Keep the deepest sub lane simple and mono-safe while letting a harmonic layer breathe above it.",
+      "Save the strongest release figures for phrase ends so the bass still reads as a floor, not a topline."
+    ]
+  },
+  {
     "id": "multi-layer-snare-four-parts",
     "name": "Four-layer snare: body + snap + crunch + white noise tail",
     "source": "Go Back \u2014 Sub Focus \u00d7 John Summit",
@@ -1390,6 +1436,29 @@
     ]
   },
   {
+    "id": "phrase-end-answer-stab-instead-of-second-bass",
+    "name": "Use a phrase-end answer stab instead of a second bass voice",
+    "source": "Song authoring revision \u2014 ukg-140-og-bounce-driver",
+    "what_it_does": "Makes a later drop feel bigger by introducing a short melodic or harmonic answer in the upper mids instead of adding another active low-mid bass voice.",
+    "when_to_use": "When Drop B needs a new conversation lane but the low-end architecture is already strong and you do not want the mix to turn muddy.",
+    "works_well_with": [
+      "harmonic bloom in Drop B",
+      "instrumental-led hooks",
+      "phrase-end punctuation",
+      "stable sub ownership"
+    ],
+    "likely_clashes_with": [
+      "adding a reese on top of an already full bass spine",
+      "making the answer too long or too harsh",
+      "letting both hook and answer dominate the same phrase end"
+    ],
+    "why": "A warm organ/piano or clipped stab can create a sense of escalation without threatening the bass foundation or overcrowding the low mids.",
+    "mitigations": [
+      "Keep the answer short and place it at phrase ends only.",
+      "Let either the hook or the answer take focus in a given phrase, not both equally."
+    ]
+  },
+  {
     "id": "piano-carries-harmony-stabs-add-impact",
     "name": "Piano carries harmonic identity while stabs add impact",
     "source": "Kettama \u00d7 Interplanetary Criminal",
@@ -1452,6 +1521,29 @@
     "mitigations": [
       "If you also use external sidechain, make one of them noticeably weaker so the two pumps do not fight.",
       "Keep the preset-level rhythm tied to the groove of the track rather than inventing a separate pulse."
+    ]
+  },
+  {
+    "id": "pressure-from-low-end-weight-not-drum-clipping",
+    "name": "Pressure comes from low-end weight and density, not hyper-clipped drums",
+    "source": "Song authoring revision \u2014 ukg-140-og-bounce-driver",
+    "what_it_does": "Builds impact from a body-forward kick, dense low-end tone, and confident mix weight while preserving bounce and swing in the tops.",
+    "when_to_use": "When referencing Kettama-style physicality without flattening the groove pocket that makes UKG bounce work.",
+    "works_well_with": [
+      "body-forward kick",
+      "swingy hats and tops",
+      "rolling bass architecture",
+      "moderate bus glue"
+    ],
+    "likely_clashes_with": [
+      "over-clipped techno-style drum buses",
+      "flattened transient envelopes",
+      "tops that are too crushed to swing"
+    ],
+    "why": "If the drums are clipped too aggressively, the pocket disappears and the record loses the bounce that gives modern UKG its movement.",
+    "mitigations": [
+      "Let the kick carry weight and keep the hats/tops more dynamic than the low end.",
+      "Use density and saturation in the low-end and buses before reaching for more clipping on every drum lane."
     ]
   },
   {
@@ -2493,6 +2585,29 @@
     "mitigations": [
       "High-pass the delayed return so the throw stays airy and doesn't smear the low mids.",
       "Use it on the transition phrase only \u2014 if every vocal repeat gets the same triplet tail, the trick stops feeling like a section marker."
+    ]
+  },
+  {
+    "id": "warm-organ-stab-carries-instrumental-hook",
+    "name": "Warm organ stab can carry an instrumental hook on its own",
+    "source": "Song authoring revision \u2014 ukg-140-og-bounce-driver",
+    "what_it_does": "Uses a warm organ or woody garage-stab timbre to give a sparse hook enough identity and melodic weight to stand without vocal content.",
+    "when_to_use": "When version 1 of a track has to work as a full instrumental before any future sample or vocal re-version exists.",
+    "works_well_with": [
+      "late offbeat hook entries",
+      "three-note hook cells",
+      "harmonic-rich chord beds",
+      "phrase-end answer stabs"
+    ],
+    "likely_clashes_with": [
+      "generic plucks with no envelope identity",
+      "hooks that rely on a future vocal to feel complete",
+      "overly abrasive timbres that fight the harmonic writing"
+    ],
+    "why": "A recognisable organ/garage stab timbre can make a minimal hook feel intentional and emotionally communicative without requiring extra melodic complexity.",
+    "mitigations": [
+      "Make the timbre and rhythmic pocket part of the hook identity, not just the notes.",
+      "Keep the tone warm/present rather than harsh so it sits with richer chord color."
     ]
   },
   {
