@@ -193,13 +193,13 @@ def _section_composition(section: dict, progression: list[str], hook_cells: dict
             "bars": section["bars"],
             "harmonic_behavior": "Stretch each chord to 2 bars and widen the voicings upward so the top voices and reverb tail linger on 9th / maj7 color tones.",
             "bass_behavior": "Mute the full release runs. Keep only occasional root reminders or a filtered tail.",
-            "hook_behavior": "Either no hook or one sparse ghost response every 4 bars so the center lane feels intentional, not unfinished.",
+            "hook_behavior": "Use at most one filtered ghost fragment every 4 bars. It should read as hook timbre in the air, not as a real melodic phrase.",
         }
     if section_id == "transition_b":
         return {
             "section_id": section_id,
             "bars": section["bars"],
-            "harmonic_behavior": "Keep the break's upward spread alive, then tighten the voicing back toward the drop over the second half of the section.",
+            "harmonic_behavior": "Pull the break's widened voicings back into a restrained pulsing state: still wider than Drop A in shape, but back at Drop-A-level harmonic density so Drop B can reveal the full bloom fresh.",
             "bass_behavior": "Bring back the bass as a filtered teaser with root holds, short octave peeks, and one more urgent phrase-end pull into the second-drop downbeat.",
             "hook_behavior": "Keep the hook mostly absent. Let a filtered ghost pickup appear only near the section end so the re-entry feels teased, not spoiled.",
         }
@@ -253,7 +253,7 @@ def build_report(args: argparse.Namespace) -> dict:
 
     harmonic_palette = []
     for chord, octave in zip(progression, chord_octaves):
-        harmonic_palette.append({
+        row = {
             "chord": chord,
             "voicing": _progression_voicing(chord, octave),
             "emotional_job": (
@@ -262,7 +262,11 @@ def build_report(args: argparse.Namespace) -> dict:
                 else "open forward motion" if chord.startswith("F")
                 else "suspended pre-return tension"
             ),
-        })
+        }
+        if chord.startswith("Bbmaj7"):
+            row["drop_a_restrained_voicing"] = ["Bb2", "F3", "C4"]
+            row["break_drop_b_bloom_voicing"] = row["voicing"]
+        harmonic_palette.append(row)
 
     bass_language = []
     bass_octaves = {"D": 2, "Bb": 1, "A#": 1, "F": 2, "C": 2}
@@ -331,6 +335,22 @@ def build_report(args: argparse.Namespace) -> dict:
             "decision": "In the break, 'stretch the chords' by length and by voicing upward. Let the upper chord tones and reverb tail do more of the work than the low mids.",
             "why": "Longer notes alone will not open the record up. The break has to widen vertically so Drop B can feel bigger by comparison.",
         },
+        "restrained_bb_voicing": {
+            "decision": "Before the bloom, treat the Bb harmony as a restrained root / fifth / ninth color: `Bb2, F3, C4`. Save the A natural major-7 exposure for the break and Drop B.",
+            "why": "That keeps Drop A austere and prevents the hopeful bloom from being spent too early. The major-7 has to arrive as a reveal, not as background decoration.",
+        },
+        "voice_leading_strategy": {
+            "decision": "Favor common-tone preservation and short top-line motion across the loop. Keep `A`/`C` anchored where possible between `Dm9` and the restrained `Bb` shape, then let the upper voices move by step into `Fadd9` and `Cadd9` rather than bouncing every chord in root position.",
+            "why": "The loop repeats for most of the record. Smooth voice leading makes it hypnotic; root-position jumping in the chord register fights the bass floor and makes the harmony feel stiff.",
+        },
+        "chord_delivery_mode": {
+            "decision": "Use a hybrid chord language: sustained pad wash as the emotional bed, plus restrained rhythmic pulse/stab behavior in transitions and lifts. Do not make the whole record only long pads or only stabs.",
+            "why": "This keeps the track in the modern UKG lane. Sustains carry width and emotion; pulses create groove and section definition.",
+        },
+        "transition_b_chord_state": {
+            "decision": "Treat Transition B chords as a rhythmic re-engagement state between the break and Drop B: pulsing, tightened, and harmonically restrained rather than fully bloomed.",
+            "why": "If Transition B already carries the full bloom, Drop B has no harmonic reveal left and only gets louder instead of more meaningful.",
+        },
         "transition_b_reentry_design": {
             "decision": "Use the extra 16 bars as a dedicated re-entry switch: different transition drums, filtered bass teaser, and rising phrase pressure, not just a longer break or a delayed second drop.",
             "why": "This keeps the arrangement from feeling robotic. The second half earns itself through a designed transition instead of arriving because the timeline got extended.",
@@ -363,6 +383,10 @@ def build_report(args: argparse.Namespace) -> dict:
             "progression": progression,
             "root_path": roots,
             "palette": harmonic_palette,
+            "delivery_mode": "Hybrid sustained pad + restrained rhythmic pulse",
+            "voice_leading_strategy": "Preserve common tones where possible and prefer stepwise upper-voice motion over root-position bouncing.",
+            "drop_a_bb_voicing": ["Bb2", "F3", "C4"],
+            "bloomed_bb_voicing": ["Bb2", "F3", "A3", "C4"],
             "rule": "Keep the song dark through the tonic and low-end center, but let maj7 / add9 color tones supply the hopeful feeling rather than brightening the whole track.",
         },
         "bass_plan": {

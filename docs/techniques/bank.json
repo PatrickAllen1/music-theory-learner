@@ -3162,5 +3162,159 @@
       "Limit the teaser to root holds, octave peeks, and one urgent phrase-end pull.",
       "Filter the teaser more heavily than the real drop bass so the payoff still opens up."
     ]
+  },
+  {
+    "id": "restrained-bb-voicing-before-bloom",
+    "name": "Use a restrained Bb voicing before revealing the full major-7 bloom",
+    "source": "Reviewer feedback — ukg-140-og-bounce-driver",
+    "what_it_does": "Keeps the Bb chord in a root / fifth / ninth shape before the back-half bloom, so the hopeful major-7 color arrives as a reveal instead of sitting in the background from the start.",
+    "when_to_use": "Minor-key club tracks where a later section needs to feel harmonically wider or more hopeful than the first drop.",
+    "works_well_with": [
+      "break-bloom-upward-voicing",
+      "drop-a-lift-bass-growth-non-harmonic",
+      "make-drop-b-bigger-by-substitution-not-stacking"
+    ],
+    "likely_clashes_with": [
+      "exposing the major-7 color in the first drop",
+      "using the same full bloom voicing in every section",
+      "trying to create back-half lift only through louder mix levels"
+    ],
+    "why": "A major-7 color only feels like bloom if the ear has first heard a more restrained version of the same harmony. Saving the A natural in Bbmaj7 for later lets the chord open emotionally without changing the root path.",
+    "mitigations": [
+      "Use `Bb-F-C` or another restrained shape before the bloom section.",
+      "Bring the full `Bbmaj7` color back only in the break and second drop."
+    ]
+  },
+  {
+    "id": "transition-chords-between-break-and-drop-bloom",
+    "name": "Transition chords should re-engage rhythm without giving away the full bloom",
+    "source": "Reviewer feedback — ukg-140-og-bounce-driver",
+    "what_it_does": "Places transition-section chords between break-width and second-drop bloom: pulsing and tightened back toward the groove, but still harmonically restrained enough that the next drop can reveal fresh color.",
+    "when_to_use": "Longer club arrangements with a dedicated re-entry section between a wide break and a bigger second drop.",
+    "works_well_with": [
+      "dedicated-reentry-transition-section",
+      "restrained-bb-voicing-before-bloom",
+      "make-drop-b-bigger-by-substitution-not-stacking"
+    ],
+    "likely_clashes_with": [
+      "letting the transition section carry the same harmonic bloom as the next drop",
+      "using the transition as only a longer break",
+      "reintroducing the full drop voicings before the re-entry lands"
+    ],
+    "why": "If the transition already has the full bloom state, the next drop has nothing harmonically new to reveal. The transition should re-engage the body and rhythm, not spend the emotional payoff early.",
+    "mitigations": [
+      "Tighten the chord pulse and reduce color tones during the transition.",
+      "Keep the full widened or maj7-rich voicings for the section after the re-entry."
+    ]
+  },
+  {
+    "id": "ghost-hook-in-break-as-texture-not-phrase",
+    "name": "Treat break hook ghosts as texture, not as a hidden phrase",
+    "source": "Reviewer feedback — ukg-140-og-bounce-driver",
+    "what_it_does": "Lets the break carry a memory of the hook timbre without actually replaying the hook phrase, preserving the sense that the melodic lane returns in the next drop rather than continuing through the break.",
+    "when_to_use": "Breaks that need to feel intentional and inhabited, but still need to leave space for a future hook return or sample entry.",
+    "works_well_with": [
+      "break-bloom-upward-voicing",
+      "map-top-end-owners-by-section",
+      "related-not-identical-hook-and-answer"
+    ],
+    "likely_clashes_with": [
+      "playing the full hook phrase quietly in the break",
+      "filling the break center lane with too much melodic information",
+      "using a ghost hook that competes with the widened chord bloom"
+    ],
+    "why": "A filtered note fragment, reversed tail, or timbral smear can keep the hook voice present in memory. A real phrase in the break weakens the sense of return when the hook re-enters later.",
+    "mitigations": [
+      "Use a single filtered note, tail, or reversed fragment instead of a full cell.",
+      "Keep the ghost low in the mix so it reads as atmosphere first."
+    ]
+  },
+  {
+    "id": "manual-late-ghost-hat-push-over-global-swing",
+    "name": "Push ghost hats late manually instead of relying on one global swing setting",
+    "source": "Reviewer feedback — ukg-140-og-bounce-driver",
+    "what_it_does": "Creates a more specific UKG pocket by leaving kick and clap rigid while ghost hats sit slightly behind the grid, giving the groove drag and bounce without making the whole arrangement mechanically shuffled.",
+    "when_to_use": "Garage and UKG drums where swing needs to feel intentional and element-specific rather than uniformly applied to every hit.",
+    "works_well_with": [
+      "within-variant-humanization",
+      "map-top-end-owners-by-section",
+      "dedicated-reentry-transition-section"
+    ],
+    "likely_clashes_with": [
+      "applying the same swing amount to every MIDI lane",
+      "random humanization that makes the groove feel loose instead of pocketed",
+      "moving kick or clap off-grid when they should stay authoritative"
+    ],
+    "why": "The bounce comes from contrast: rigid anchors against deliberately delayed ghost information. A global swing template often makes everything move together, which sounds more generic and less like a chosen pocket.",
+    "mitigations": [
+      "Keep kick and clap locked while pushing ghost hats late by a small consistent amount.",
+      "Use velocity shaping alongside timing shifts so the hats feel supportive rather than messy."
+    ]
+  },
+  {
+    "id": "tonic-tuned-layered-short-tail-kick",
+    "name": "Use a tonic-tuned layered kick with a short tail",
+    "source": "Reviewer feedback — ukg-140-og-bounce-driver",
+    "what_it_does": "Builds a kick from a body-focused low layer tuned to the tonic plus a shorter attack layer, then keeps the decay short enough that the bass can roll around it instead of constantly disappearing under the tail.",
+    "when_to_use": "Minor-key club tracks with a moving bass floor, especially when the kick needs to feel heavy without monopolising the sub range.",
+    "works_well_with": [
+      "rolling-bass-rhythmic-primary-tonal-secondary",
+      "resolve-sound-selection-conflicts-before-mix-fixes",
+      "map-top-end-owners-by-section"
+    ],
+    "likely_clashes_with": [
+      "long boomy kicks that force extreme bass ducking",
+      "single-sample kicks that cannot provide both weight and definition",
+      "untuned kick bodies that reinforce some root moves and fight others"
+    ],
+    "why": "A short, tonic-aligned kick lets the bass remain the floor between hits. Layering separates responsibilities so the low body does not have to carry transient definition too.",
+    "mitigations": [
+      "Tune the kick body to the tonic or fifth, then check it against the bass root path.",
+      "Keep the tail short before reaching for more sidechain or mix processing."
+    ]
+  },
+  {
+    "id": "within-variant-humanization",
+    "name": "Humanize inside each variant instead of looping it identically",
+    "source": "Reviewer feedback — ukg-140-og-bounce-driver",
+    "what_it_does": "Prevents section-based arrangement systems from sounding blocky by introducing phrase-level differences in timing, velocity, tone, or density within repeated 2-bar and 4-bar variants.",
+    "when_to_use": "Any time a track is being built from repeatable section variants, especially in groove-led club genres where a perfect loop quickly feels lifeless.",
+    "works_well_with": [
+      "model-led-composition-over-rigid-rules",
+      "manual-late-ghost-hat-push-over-global-swing",
+      "dedicated-reentry-transition-section"
+    ],
+    "likely_clashes_with": [
+      "treating every 16-bar section as four identical repetitions of the same loop",
+      "over-quantized drum programming",
+      "assuming arrangement changes alone will create groove life"
+    ],
+    "why": "A section can be architecturally correct and still feel dead if its loop repeats identically. Small phrase-level changes keep the groove breathing without abandoning the plan.",
+    "mitigations": [
+      "Change hat velocity, note length, filter amount, or fill behavior across phrase repetitions.",
+      "Use stronger phrase-end pushes in bars 8 and 16 rather than adding whole new layers."
+    ]
+  },
+  {
+    "id": "resolve-sound-selection-conflicts-before-mix-fixes",
+    "name": "Resolve sound-selection conflicts before trying to mix around them",
+    "source": "Reviewer feedback — ukg-140-og-bounce-driver",
+    "what_it_does": "Treats fallback patch choices and pairwise sound conflicts as selection problems to solve early, instead of hoping EQ or compression later will make mismatched sounds coexist.",
+    "when_to_use": "When a composition plan is frozen but some key sounds still feel like placeholders or occupy the same role/frequency space.",
+    "works_well_with": [
+      "model-led-composition-over-rigid-rules",
+      "choose-the-rolling-bass-mechanism-early",
+      "make-drop-b-bigger-by-substitution-not-stacking"
+    ],
+    "likely_clashes_with": [
+      "keeping fallback sounds because the session is already moving",
+      "trying to EQ away role conflicts between two similar layers",
+      "waiting until the mix stage to decide what should actually own the lane"
+    ],
+    "why": "If two sounds are fighting because they want the same role, mix processing usually produces a compromised version of both. Re-selecting or simplifying the sound choice is cleaner and faster.",
+    "mitigations": [
+      "Lock lane ownership before detailed mix work begins.",
+      "Replace or simplify fallback sounds before building automation and arrangement around them."
+    ]
   }
 ]

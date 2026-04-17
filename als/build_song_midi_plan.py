@@ -156,6 +156,26 @@ def _drum_variants() -> list[dict]:
         *_off_hat("1", [62, 60, 62, 58]),
         *_off_hat("2", [62, 60, 62, 58]),
     ]
+    phrase_end_fill = [
+        _event("D1", "1.3.3", 0.25, 88, "snare fill"),
+        _event("D1", "1.3.4", 0.25, 92, "snare fill"),
+        _event("D1", "1.4.1", 0.25, 96, "snare fill"),
+        _event("G#1", "1.4.2", 0.25, 70, "shaker lift"),
+        _event("A1", "1.4.3", 0.5, 72, "open hat throw"),
+    ]
+    section_riser = [
+        _event("G#1", "1.1.3", 0.25, 62, "shaker"),
+        _event("G#1", "1.2.3", 0.25, 68, "shaker"),
+        _event("G#1", "1.3.3", 0.25, 74, "shaker"),
+        _event("G#1", "1.4.3", 0.25, 80, "shaker"),
+        _event("A#1", "1.4.4", 0.25, 54, "ghost hat push"),
+        _event("A1", "1.4.3", 0.75, 78, "open hat riser"),
+    ]
+    pre_drop_cut = [
+        _event("D1", "1.4.1", 0.25, 90, "clap stab"),
+        _event("D1", "1.4.3", 0.25, 98, "snare stab"),
+        _event("A1", "1.4.3", 0.5, 76, "open hat throw"),
+    ]
     return [
         _variant(
             "drum_intro_core_2bar",
@@ -206,6 +226,27 @@ def _drum_variants() -> list[dict]:
             outro_strip,
             "The mix-out should still groove without feeling like a second drop.",
         ),
+        _variant(
+            "drum_phrase_end_fill_1bar",
+            1,
+            "Overlay fill for bar 8 / 16 boundaries. Use it sparingly to mark phrase turns without sounding EDM-obvious.",
+            phrase_end_fill,
+            "These fills should create excitement at the boundary, not replace the groove.",
+        ),
+        _variant(
+            "drum_section_riser_1bar",
+            1,
+            "Overlay riser for major section boundaries. Increase shaker and hat pressure into the downbeat of the next section.",
+            section_riser,
+            "This is the cleanest way to raise phrase pressure without changing the core kick pattern.",
+        ),
+        _variant(
+            "drum_pre_drop_cut_1bar",
+            1,
+            "Overlay pre-drop cut. Remove the full groove and let one last clap/snare/open-hat gesture tee up the next downbeat.",
+            pre_drop_cut,
+            "Use this before the biggest returns so the next kick lands harder.",
+        ),
     ]
 
 
@@ -238,23 +279,23 @@ def _off_hat(bar: str, velocities: list[int]) -> list[dict]:
 def _chord_variants() -> list[dict]:
     intro_hint = [
         *_stack("1.1.1", 7.5, [("D3", 72), ("A3", 68), ("C4", 66), ("E4", 64), ("F4", 62)]),
-        *_stack("3.1.1", 7.5, [("Bb2", 72), ("F3", 68), ("A3", 66), ("C4", 64)]),
+        *_stack("3.1.1", 7.5, [("Bb2", 72), ("F3", 68), ("C4", 64)]),
     ]
     intro_full = [
         *_stack("1.1.1", 3.5, [("D3", 72), ("A3", 68), ("C4", 66), ("E4", 64), ("F4", 62)]),
-        *_stack("2.1.1", 3.5, [("Bb2", 72), ("F3", 68), ("C4", 66), ("D4", 64)]),
+        *_stack("2.1.1", 3.5, [("Bb2", 72), ("F3", 68), ("C4", 66)]),
         *_stack("3.1.1", 3.5, [("F2", 71), ("C3", 67), ("G3", 65), ("A3", 63)]),
         *_stack("4.1.1", 3.5, [("C3", 71), ("G3", 67), ("D4", 65), ("E4", 63)]),
     ]
     drop_core = [
         *_stack("1.1.1", 3.5, [("D3", 74), ("A3", 70), ("C4", 68), ("E4", 66), ("F4", 64)]),
-        *_stack("2.1.1", 3.5, [("Bb2", 74), ("F3", 70), ("C4", 68), ("D4", 66)]),
+        *_stack("2.1.1", 3.5, [("Bb2", 74), ("F3", 70), ("C4", 68)]),
         *_stack("3.1.1", 3.5, [("F2", 73), ("C3", 69), ("G3", 67), ("A3", 65)]),
         *_stack("4.1.1", 3.5, [("C3", 73), ("G3", 69), ("D4", 67), ("E4", 65)]),
     ]
     drop_a_lift = [
         *_stack("1.1.1", 3.5, [("D3", 74), ("A3", 70), ("C4", 68), ("E4", 66), ("F4", 64)]),
-        *_stack("2.1.1", 3.5, [("Bb2", 74), ("F3", 70), ("C4", 68), ("D4", 67)]),
+        *_stack("2.1.1", 3.5, [("Bb2", 74), ("F3", 70), ("C4", 68)]),
         *_stack("3.1.1", 3.5, [("F2", 73), ("C3", 69), ("G3", 67), ("A3", 65), ("C4", 63)]),
         *_stack("4.1.1", 3.5, [("C3", 73), ("G3", 69), ("D4", 67), ("E4", 65), ("G4", 63)]),
     ]
@@ -272,7 +313,7 @@ def _chord_variants() -> list[dict]:
     ]
     transition_pulse = [
         *_stack("1.1.1", 3.0, [("D3", 71), ("A3", 67), ("C4", 65), ("E4", 63), ("F4", 61)]),
-        *_stack("2.1.1", 3.0, [("Bb2", 71), ("F3", 67), ("A3", 65), ("C4", 63)]),
+        *_stack("2.1.1", 3.0, [("Bb2", 71), ("F3", 67), ("C4", 63)]),
         *_stack("3.1.1", 3.0, [("F2", 70), ("C3", 66), ("G3", 64), ("A3", 62)]),
         *_stack("4.1.1", 3.0, [("C3", 70), ("G3", 66), ("D4", 64), ("E4", 62)]),
     ]
@@ -301,9 +342,9 @@ def _chord_variants() -> list[dict]:
         _variant(
             "chord_drop_a_lift_4bar",
             4,
-            "Drop A lift. Same progression with brighter upper color, but still no exposed Bb major-7 yet.",
+            "Drop A lift. Same harmonic content as Drop A, with only rhythmic and dynamic tightening in the upper voices.",
             drop_a_lift,
-            "The first lift gets bigger without spending the full harmonic bloom too early.",
+            "The first lift gets bigger by pulse and brightness, not by revealing new harmony.",
         ),
         _variant(
             "chord_drop_b_bloom_4bar",
@@ -322,9 +363,9 @@ def _chord_variants() -> list[dict]:
         _variant(
             "chord_transition_b_pulse_4bar",
             4,
-            "Re-entry transition. Pull the break voicings back into a tighter pulse so Drop B can hit as a fresh reopening.",
+            "Re-entry transition. Pull the break voicings back into a tighter pulse at restrained Drop-A-level harmonic density so Drop B can hit as a fresh reopening.",
             transition_pulse,
-            "The transition should tighten the harmony, not leave it floating like the break forever.",
+            "The transition should re-engage rhythm without giving away the full bloom before Drop B.",
         ),
     ]
 
@@ -540,12 +581,12 @@ def _hook_variants() -> list[dict]:
         _event("A4", "2.3.3", 0.25, 79, "hook cell"),
         _event("C5", "2.4.1", 0.25, 83, "hook cell"),
         _event("D5", "2.4.3", 0.5, 87, "hook resolve"),
-        _event("G4", "4.3.3", 0.25, 75, "answer cell"),
-        _event("A4", "4.4.1", 0.25, 79, "answer cell"),
-        _event("C5", "4.4.3", 0.5, 83, "answer resolve"),
+        _event("A4", "4.3.4", 0.25, 78, "hook cell"),
+        _event("C5", "4.4.1", 0.25, 82, "hook cell"),
+        _event("D5", "4.4.2", 0.5, 86, "hook resolve"),
     ]
     break_ghost = [
-        _event("A4", "4.4.1", 0.5, 66, "ghost response"),
+        _event("A4", "4.4.1", 0.5, 60, "ghost texture"),
     ]
     transition_pickup = [
         _event("A4", "4.3.3", 0.25, 70, "filtered pickup"),
@@ -596,9 +637,9 @@ def _hook_variants() -> list[dict]:
         _variant(
             "hook_break_ghost_4bar",
             4,
-            "Break. One ghost response every four bars at most.",
+            "Break. One filtered timbral ghost every four bars at most, not a real hook phrase.",
             break_ghost,
-            "The break has to leave the center lane open for a future vocal or texture.",
+            "The break ghost should read like a memory of the hook voice in the air, not a melodic statement.",
         ),
         _variant(
             "hook_transition_b_pickup_4bar",
@@ -631,7 +672,7 @@ def _parts(composition: dict) -> list[dict]:
             "part_id": "drums",
             "writing_role": "4x4 spine with garage offbeat bounce and only lift-level embellishment.",
             "register_focus": "transient / top-end groove",
-            "playback_rule": "Never rewrite the kick pattern. Energy changes happen through hat density, shaker brightness, and loop support.",
+            "playback_rule": "Never rewrite the kick pattern. Energy changes happen through hat density, shaker brightness, loop support, and phrase-end transitions. Kick and clap stay on-grid; ghost hats are intentionally late; do not use one global swing value to fake the pocket.",
             "variants": _drum_variants(),
             "inspiration": _top_inspiration(phrase_rows, {"drums", "arrangement"}),
         },
@@ -713,7 +754,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_intro_full_4bar",
                 "hook-response": "hook_intro_pickup_4bar",
             },
-            "notes": "The bass teaser is mechanical on purpose: root hold for two beats, then one short octave hint every second bar. The top end is only teased here, not fully opened.",
+            "notes": "The bass teaser is mechanical on purpose: root hold for two beats, then one short octave hint every second bar. The top end is only teased here, not fully opened. Use phrase-end hat density or a light fill in the final bar if the handoff to Drop A feels too flat.",
         },
         {
             "section_id": "drop_a",
@@ -725,7 +766,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_drop_core_4bar",
                 "hook-response": "hook_drop_a_phrase_4bar",
             },
-            "notes": "The bass owns the section. The hook and stab only answer at phrase tails, and the Bb chord still avoids exposing its maj7 color.",
+            "notes": "The bass owns the section. The hook and stab only answer at phrase tails, and the Bb chord still avoids exposing its maj7 color. Use phrase-end fills at bars 8 and 16 rather than changing the core kick pattern.",
         },
         {
             "section_id": "drop_a_lift",
@@ -737,7 +778,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_drop_a_lift_4bar",
                 "hook-response": "hook_drop_a_lift_4bar",
             },
-            "notes": "Bigger by top-end density and phrase pocket only. Still no exposed Bb maj7 yet, no new bass harmonic content, and the instrumental has to stand on its own.",
+            "notes": "Bigger by top-end density and phrase pocket only. Still no exposed Bb maj7 yet, no new bass harmonic content, and the instrumental has to stand on its own. Any extra pressure should come from shakers, ghost hats, or fill overlays, not new harmonic moves.",
         },
         {
             "section_id": "break",
@@ -749,7 +790,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_break_stretch_8bar",
                 "hook-response": "hook_break_ghost_4bar",
             },
-            "notes": "Let the air bed and upward-widened stretched chords carry the break instrumentally. If a future sample ever appears, keep it narrow and phrase-end only in roughly A3-F5.",
+            "notes": "Let the air bed and upward-widened stretched chords carry the break instrumentally. If a future sample ever appears, keep it narrow and phrase-end only in roughly A3-F5. The hook ghost here should feel textural, not like a secret extra phrase.",
         },
         {
             "section_id": "transition_b",
@@ -761,7 +802,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_transition_b_pulse_4bar",
                 "hook-response": "hook_transition_b_pickup_4bar",
             },
-            "notes": "Use fresh transition drums and a filtered bass return so the second drop feels actively pulled in. This section should feel like a re-entry switch, not like the break continuing.",
+            "notes": "Use fresh transition drums and a filtered bass return so the second drop feels actively pulled in. Keep the chords pulsing at restrained density here; this section should feel like a re-entry switch, not like the break continuing or Drop B arriving early. This is the best place for a dedicated riser and a pre-drop cut overlay.",
         },
         {
             "section_id": "drop_b",
@@ -773,7 +814,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_drop_b_bloom_4bar",
                 "hook-response": "hook_drop_b_phrase_4bar",
             },
-            "notes": "This is where the harmonic bloom and phrase-end stab answer arrive. The hook is half-density here so the answer can own the alternate phrase ending. The bass stays the only true low-end voice.",
+            "notes": "This is where the harmonic bloom and phrase-end stab answer arrive. The hook is half-density here so the answer can own the alternate phrase ending. The bass stays the only true low-end voice. Let the transition land, then keep the first four bars of the drop slightly cleaner before more top pressure returns.",
         },
         {
             "section_id": "drop_b_lift",
@@ -829,6 +870,50 @@ def _support_layers() -> list[dict]:
     ]
 
 
+def _drum_spec() -> dict:
+    return {
+        "kick": {
+            "tuning_target": "Tune the kick body to `D` (tonic), with the weight living around `D1/D2` rather than an untuned boom.",
+            "layering": "Layer a sub/body kick with a shorter click/attack layer. One sample should own weight; the other should own definition.",
+            "tail_length": "Keep the tail short, roughly `90-120ms`, so the rolling bass can breathe without extreme sidechain.",
+            "role": "Body-forward and physical, not harsh or over-clipped.",
+        },
+        "top_elements": {
+            "closed_hat_pattern": "Use offbeat hats as the stable garage scaffold, then let ghost hats create the real swing.",
+            "ghost_hat_placement": "Ghost hats should live on the `e` and `a` spaces around the beat and be intentionally pushed late by roughly `5-15 ticks`, not randomized.",
+            "open_hat_pattern": "Use restrained open hats in Intro B and full offbeat/open phrase-end hats in the drops. Let phrase-end open hats help mark the pocket rather than washing every offbeat equally.",
+            "clap_layering": "Clap lands on `2` and `4`. Layer with a tighter snare/rim element only when more presence is needed, not by default.",
+            "shaker_role": "Shaker sits in the `5-8 kHz` energy bed and is one of the main lift tools in drop lifts and transition bars.",
+        },
+        "midi_policy": {
+            "swing": "No global swing preset. Keep kick and clap on-grid. Push ghost hats late manually so the groove feels deliberate rather than mechanically shuffled.",
+            "velocity_ranges": {
+                "kick": "120-127 equivalent authority",
+                "clap": "110-127 with small variation",
+                "closed_hat": "60-110 with real variation",
+                "ghost_hat": "30-70, felt more than heard",
+                "open_hat": "90-120",
+                "shaker": "70-100 with phrase-end lift",
+            },
+            "humanization": "Kick and clap remain tight to grid. Closed hats and shakers can move slightly. Ghost hats should be consistently late, not randomly loose.",
+            "phrase_curve": "In bars `13-16` of a 16-bar section, lift hat/shaker velocity slightly so the transition pressure rises before the boundary.",
+        },
+        "micro_architecture": {
+            "bars_1_4": "Establish the core groove with kick/clap/offbeat hat and minimal extras.",
+            "bars_5_8": "Add ghost-hat life and loop support so the pocket deepens without sounding like a new pattern.",
+            "bars_9_12": "Increase shaker or open-hat energy slightly so the section feels alive rather than static.",
+            "bars_13_16": "Use phrase-end fills, risers, filter moves, and/or short groove drops to push toward the next section.",
+        },
+        "transition_toolkit": [
+            "Use `drum_phrase_end_fill_1bar` at selected 8-bar and 16-bar boundaries.",
+            "Use `drum_section_riser_1bar` at major section changes where you need energy to rise without changing the kick pattern.",
+            "Use `drum_pre_drop_cut_1bar` before the most important returns so the next downbeat lands harder.",
+            "Automate a high-pass filter on the drum bus during intros and transitions so the body opens into the drop instead of appearing instantly.",
+            "Increase ghost-hat density in the final four bars of big sections rather than waiting for the next section to do all the work.",
+        ],
+    }
+
+
 def build_report(args: argparse.Namespace) -> dict:
     composition = build_song_composition_pass_report(_namespace(args))
     return {
@@ -838,6 +923,7 @@ def build_report(args: argparse.Namespace) -> dict:
         "architectural_decisions": composition["architectural_decisions"],
         "frequency_strategy": composition["frequency_strategy"],
         "originality_guardrails": composition["originality_guardrails"],
+        "drum_spec": _drum_spec(),
         "parts": _parts(composition),
         "support_layers": _support_layers(),
         "section_assignments": _section_assignments(),
@@ -860,6 +946,22 @@ def render_text(report: dict) -> str:
     lines.append("## Frequency Strategy")
     for key, value in report["frequency_strategy"].items():
         lines.append(f"- {key.replace('_', ' ')}: {value}")
+    lines.append("")
+    lines.append("## Drum Spec")
+    lines.append(f"- kick tuning: {report['drum_spec']['kick']['tuning_target']}")
+    lines.append(f"- kick layering: {report['drum_spec']['kick']['layering']}")
+    lines.append(f"- kick tail: {report['drum_spec']['kick']['tail_length']}")
+    lines.append(f"- top hats: {report['drum_spec']['top_elements']['closed_hat_pattern']}")
+    lines.append(f"- ghost hats: {report['drum_spec']['top_elements']['ghost_hat_placement']}")
+    lines.append(f"- open hats: {report['drum_spec']['top_elements']['open_hat_pattern']}")
+    lines.append(f"- clap layering: {report['drum_spec']['top_elements']['clap_layering']}")
+    lines.append(f"- shaker role: {report['drum_spec']['top_elements']['shaker_role']}")
+    lines.append(f"- swing policy: {report['drum_spec']['midi_policy']['swing']}")
+    lines.append(f"- humanization: {report['drum_spec']['midi_policy']['humanization']}")
+    lines.append(f"- phrase curve: {report['drum_spec']['midi_policy']['phrase_curve']}")
+    lines.append("- transition toolkit:")
+    for row in report["drum_spec"]["transition_toolkit"]:
+        lines.append(f"  - {row}")
     lines.append("")
     lines.append("## Originality Guardrails")
     for row in report["originality_guardrails"]:
