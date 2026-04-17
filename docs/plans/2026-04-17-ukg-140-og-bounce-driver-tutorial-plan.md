@@ -174,6 +174,7 @@ Detailed template available now:
 - [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-03-bass-floor.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-03-bass-floor.md)
 - [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-04-harmonic-bed.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-04-harmonic-bed.md)
 - [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-05-identity-hook-answer.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-05-identity-hook-answer.md)
+- [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-06-arrangement-build.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-06-arrangement-build.md)
 
 ## Estimated Scope
 - `Part 0`: `10–20 min`
@@ -182,7 +183,7 @@ Detailed template available now:
 - `Part 3`: `60–90 min`
 - `Part 4`: `45–75 min`
 - `Part 5`: `40–60 min`
-- `Part 6`: `45–75 min`
+- `Part 6`: `60–90 min`
 - `Part 7`: `30–45 min`
 - `Part 8`: `45–75 min`
 - `Part 9`: `20–30 min`
