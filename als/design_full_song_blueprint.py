@@ -240,6 +240,7 @@ def build_report(args: argparse.Namespace) -> dict:
         "serum_brief_id": song_brief["serum_brief_id"],
         "bpm": song_brief["bpm"],
         "key": song_brief["key"],
+        "emotional_target": song_brief.get("emotional_target") or [],
         "energy_profile": song_brief["energy_profile"],
         "harmonic_plan": song_brief["harmonic_plan"],
         "drum_strategy": song_brief["drum_strategy"],

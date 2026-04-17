@@ -21,9 +21,13 @@ from pathlib import Path
 try:
     from build_song_decision_tree import build_report as build_song_decision_tree_report
     from design_full_song_blueprint import build_report as build_full_song_blueprint_report
+    from phrase_evidence import DEFAULT_ANALYSIS_DIR, DEFAULT_TRANSCRIPTS_DIR, build_phrase_library, recommend_for_blueprint
+    from technique_bank import DEFAULT_BANK_PATH, load_bank
 except ModuleNotFoundError:
     from .build_song_decision_tree import build_report as build_song_decision_tree_report
     from .design_full_song_blueprint import build_report as build_full_song_blueprint_report
+    from .phrase_evidence import DEFAULT_ANALYSIS_DIR, DEFAULT_TRANSCRIPTS_DIR, build_phrase_library, recommend_for_blueprint
+    from .technique_bank import DEFAULT_BANK_PATH, load_bank
 
 
 DEFAULT_CATALOG_DIR = Path("als/catalog/profiles")
@@ -39,10 +43,14 @@ def make_parser() -> argparse.ArgumentParser:
     parser.add_argument("--templates", default=str(DEFAULT_TEMPLATES_PATH), help="Song production templates JSON.")
     parser.add_argument("--catalog-dir", default=str(DEFAULT_CATALOG_DIR), help="Directory of generated *-profiles.json files.")
     parser.add_argument("--serum-briefs", default=str(DEFAULT_SERUM_BRIEFS_PATH), help="Serum brief manifest JSON.")
+    parser.add_argument("--analysis-dir", default=str(DEFAULT_ANALYSIS_DIR), help="ALS analysis JSON directory.")
+    parser.add_argument("--transcripts-dir", default=str(DEFAULT_TRANSCRIPTS_DIR), help="Transcript spans directory.")
+    parser.add_argument("--technique-bank", default=str(DEFAULT_BANK_PATH), help="Technique bank JSON path.")
     parser.add_argument("--prefer-rendered", action="store_true", help="Prefer rendered profiles where available.")
     parser.add_argument("--limit-per-part", type=int, default=5, help="Max candidates to inspect per part. Default: 5")
     parser.add_argument("--mutation-limit", type=int, default=6, help="Max mutation suggestions per part. Default: 6")
     parser.add_argument("--max-swaps", type=int, default=2, help="Maximum refinement swaps to apply. Default: 2")
+    parser.add_argument("--phrase-limit", type=int, default=8, help="Maximum phrase evidence rows. Default: 8")
     parser.add_argument("--format", choices=["text", "json"], default="text", help="Output format.")
     return parser
 
@@ -227,6 +235,13 @@ def _layer_hierarchy(blueprint: dict) -> list[dict]:
 def build_report(args: argparse.Namespace) -> dict:
     blueprint = build_full_song_blueprint_report(_namespace(args))
     decision_tree = build_song_decision_tree_report(_namespace(args))
+    bank = load_bank(Path(args.technique_bank))
+    phrase_library = build_phrase_library(
+        bank,
+        analysis_dir=Path(args.analysis_dir),
+        transcripts_dir=Path(args.transcripts_dir),
+    )
+    phrase_evidence = recommend_for_blueprint(blueprint, phrase_library, args.phrase_limit)
     bold_moves = _pick_bold_moves(decision_tree)
     rejected_moves = _pick_rejections(blueprint, decision_tree)
     stabilizers = _build_stabilizers(blueprint)
@@ -269,6 +284,7 @@ def build_report(args: argparse.Namespace) -> dict:
                 if layer.get("profile_id")
             ],
         },
+        "phrase_evidence": phrase_evidence,
         "decision_tree_summary": {
             "root_question": decision_tree["root_question"],
             "decision_order": decision_tree["decision_order"],
@@ -331,6 +347,16 @@ def render_text(report: dict) -> str:
     lines.append("- automation rules:")
     for row in report["ableton_reference_points"]["automation_rules"]:
         lines.append(f"  - {row}")
+    if report["phrase_evidence"]["recommendations"]:
+        lines.append("")
+        lines.append("## Phrase Evidence")
+        for row in report["phrase_evidence"]["recommendations"]:
+            lines.append(f"- `{row['title']}` [{row['kind']}/{row['role']}] source={row['source']}")
+            if row["matched_keywords"]:
+                lines.append(f"  matched: {', '.join(row['matched_keywords'])}")
+            if row["emotion_hints"]:
+                lines.append(f"  emotion: {', '.join(row['emotion_hints'])}")
+            lines.append(f"  {row['summary']}")
     return "\n".join(lines)
 
 

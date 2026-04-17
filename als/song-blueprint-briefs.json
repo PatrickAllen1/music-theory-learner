@@ -188,6 +188,10 @@
       "template_id": "ukg-4x4-core",
       "bpm": 140,
       "key": "D minor",
+      "emotional_target": [
+        "dark",
+        "hopeful"
+      ],
       "duration_target_minutes": {
         "min": 3.0,
         "max": 5.0
