@@ -60,7 +60,7 @@ Primary A/B for this part:
   - listen for physical kick weight and density
 
 Secondary check:
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for how the tops sit around a rolling bassline without overfilling the center
 
 ## Files / Assets Needed
@@ -104,10 +104,12 @@ Secondary check:
 ## Step 1: Build The Kick
 ### Action
 1. Load the kick body sample.
-2. Tune it to `D` if needed.
-3. Load the click layer on a separate chain or track.
-4. High-pass the click so it does not add false low end.
-5. Blend the click until the kick reads clearly on small speakers, then stop.
+2. Open the sample pitch controls in `Simpler`.
+3. Use `Transpose` to get the kick body close to `D`.
+4. Use `Detune` for the last fine adjustment if needed.
+5. Load the click layer on a separate chain or track.
+6. High-pass the click so it does not add false low end.
+7. Blend the click until the kick reads clearly on small speakers, then stop.
 
 ### Why
 The kick must:
@@ -199,7 +201,8 @@ This is not the swing layer. It is the stable top scaffold that lets the later g
    - starter loop: use the `e` and `a` of beats `2` and `4` in both bars of the first `2`-bar loop
    - later additions can include the `e` of beat `1` and the `a` of beat `3`
 3. Push them slightly late:
-   - roughly `5–15` ticks behind the grid
+  - roughly `5–15` ticks behind the grid
+  - in Ableton's note properties this is the same small note-offset field, roughly `2–7 ms` at `140 BPM`
 4. Keep them quiet enough that they are felt before they are consciously heard.
 
 ### Why
@@ -406,7 +409,7 @@ Compare against:
   - phrase-end movement
 - `KETTAMA - It Gets Better`
   - weight and density
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
   - how the tops leave room for a rolling bassline
 
 ### What To Listen For

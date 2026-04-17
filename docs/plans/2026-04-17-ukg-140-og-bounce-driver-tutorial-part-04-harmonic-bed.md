@@ -54,7 +54,7 @@ If the chords sound huge too early, the arrangement loses its staircase.
 Primary A/B for this part:
 - `Sammy Virji - I Guess We're Not the Same`
   - listen for harmonic readability and hook/chord coexistence
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for how harmonic support stays present without swallowing the groove
 
 Secondary check:
@@ -220,10 +220,11 @@ If the `Bb` bar already sounds openly hopeful in `Drop A`, it is too bloomed.
 ## Step 5: Apply Voice Leading Deliberately
 ### Action
 1. Play the 4-bar loop slowly.
-2. Check whether common tones can stay between chords:
-   - especially `A` / `C` behavior out of `Dm9`
-3. Keep upper voices moving by short steps where possible.
-4. Avoid bouncing every top note around by large leaps.
+2. Identify the common tones first:
+   - `Dm9` and restrained `Bb` can share `F` and `C`
+3. If your `Dm9` has `C4` and your restrained `Bb` has `C5`, drag one of them so the common tone stays in the same register.
+4. Keep upper voices moving by short steps where possible.
+5. Avoid bouncing every top note around by large leaps.
 
 ### Why
 The chords should feel written, not pasted.
@@ -287,6 +288,14 @@ You are not making:
 
 You are making one harmonic identity that behaves differently by section.
 
+Mechanical changes:
+- `Intro B`: darker filter, lower velocity, longer note lengths
+- `Drop A`: same clip family, but shorten note lengths slightly or increase the sidechain/pulse feel
+- `Drop A Lift`: keep the same notes, raise pulse velocity a little and open the filter slightly
+- `Break`: switch to the bloomed `Bbmaj7` clip, longer note values, wider send/width state
+- `Transition B`: return to restrained `Bb`, shorter pulse values, reduced width and reverb
+- `Drop B`: reopen width/send and use the bloomed `Bbmaj7` state again
+
 ### Screenshot
 - `chords-06-section-articulation-map`
 
@@ -299,7 +308,7 @@ On the `Chords` track or `Music` bus, build this starting chain:
 
 Starting direction:
 - high-pass the chord bed enough to stay out of bass ownership:
-  - start around `150–220 Hz`
+  - start around `180 Hz`, then move up if low-mid clouds
 - if the low-mid clouds up:
   - cut a little around `200–300 Hz` before thinning the bass floor
 - sidechain lightly from the kick:
@@ -331,10 +340,10 @@ If it is too weak:
    - but not so much wash that the hook loses its lane
 
 Starting width behavior:
-- `Drop A`: medium-wide, controlled
-- `Break`: widest point so far
-- `Transition B`: tighten again
-- `Drop B`: reopen near break scale, but with more pulse
+- `Drop A`: around `120%` equivalent width feel
+- `Break`: around `150%`
+- `Transition B`: tighten back toward `130%`
+- `Drop B`: reopen near `140%`, then widen slightly more again in the lift
 
 ### Why
 This is where the harmonic staging becomes a physical experience.
@@ -355,7 +364,7 @@ Bounce or loop `drums + bass + chords`.
 Compare against:
 - `Sammy Virji - I Guess We're Not the Same`
   - listen for chord readability in a club-weight mix
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for harmonic support sitting around groove rather than swallowing it
 - `KETTAMA - It Gets Better`
   - listen for whether the track still feels physical after the chords arrive

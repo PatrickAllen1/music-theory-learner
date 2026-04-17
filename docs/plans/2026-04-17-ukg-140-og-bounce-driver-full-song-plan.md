@@ -71,7 +71,7 @@ Creative references used for musical calibration:
 - `KETTAMA - It Gets Better`
 - `Interplanetary Criminal - Slow Burner`
 - `Sammy Virji - I Guess We're Not the Same`
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
 
 Verification note:
 - public track names were checked against public catalog / press results on `2026-04-17`
@@ -138,9 +138,10 @@ Why:
 - Late offbeat entry
 - Enough transient bite to read through the drums
 - Core rhythmic placement:
-  - late in beat `3`
+  - on the `a` of beat `3`
   - on beat `4`
-  - late in beat `4`
+  - on the `a` of beat `4`
+  - in `Drop B`, `F5` lands on beat `1` of the following bar on hook-owned bloom phrases
 - Drop B answer is:
   - same family
   - shorter
@@ -220,6 +221,9 @@ Meaning:
 - not a pure pad track
 - not a pure stab track
 
+Chord duality mechanism:
+- keep one main chord-bed instrument and create the section differences with MIDI length, velocity, width, and send behavior before introducing any second chord layer
+
 ## Bass Plan
 ### Thesis
 The bass is the `floor`, not the topline.
@@ -261,9 +265,10 @@ The bass is the `floor`, not the topline.
 ### Rhythmic behavior
 - stay off the kick
 - enter:
-  - late in beat `3`
+  - on the `a` of beat `3`
   - on beat `4`
-  - late in beat `4`
+  - on the `a` of beat `4`
+- in `Drop B`, `F5` lands on beat `1` of the following bar on hook-owned bloom phrases
 - phrase-end punctuation is the identity
 
 ### Drop B conversation

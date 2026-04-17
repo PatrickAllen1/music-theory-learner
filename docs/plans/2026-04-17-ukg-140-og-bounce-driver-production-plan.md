@@ -46,7 +46,7 @@ Interpretation:
 Reference role split:
 - `KETTAMA - It Gets Better`: pressure, weight, density
 - `Interplanetary Criminal - Slow Burner`: swing, hat drag, phrase-end groove
-- `Y U QT - NRG`: public rolling-bass proxy
+- `Y U QT - U Belong 2 Me (4x4 Mix)`: public rolling-bass proxy
 - `Sammy Virji - I Guess We're Not the Same`: hook clarity, harmonic readability
 
 Verification note:
@@ -133,13 +133,27 @@ This means:
   - Osc A: warm saw / triangle-leaning main body
   - Osc B: quieter support oscillator for upper tone or gentle motion
   - restrained unison only
+  - starting levels:
+    - `Osc A`: around `85%`
+    - `Osc B`: around `25–35%`
+  - starting detune:
+    - `0.03–0.05`
 - filter:
   - smooth low-pass or band-softening filter
   - tucked lower in `Drop A`
   - opened and widened in `Break / Drop B`
+  - starting values:
+    - cutoff `~2.2–3.2 kHz`
+    - resonance `8–12%`
+    - drive `5–10%`
 - envelope direction:
   - enough sustain to feel like a bed
   - enough decay / articulation that the pulse layer can still speak
+  - starting values:
+    - attack `5–15 ms`
+    - decay `700–1200 ms`
+    - sustain `55–75%`
+    - release `250–450 ms`
 - FX direction:
   - chorus or gentle width source
   - filtered reverb send
@@ -302,9 +316,10 @@ Capture requirement:
 ### Exact rhythmic identity
 - hook enters late, not on the kick
 - in the current plan the core cell lands around:
-  - late in beat `3`
+  - on the `a` of beat `3`
   - on beat `4`
-  - late in beat `4`
+  - on the `a` of beat `4`
+- on hook-owned `Drop B` bloom phrases, `F5` lands on beat `1` of the following bar
 
 ### Repetition pattern
 - `Drop A`: phrase-end only, not every bar
@@ -694,8 +709,8 @@ Working expectation:
   - phrase-end pocket
 
 ### Bass roll
-- `Y U QT - NRG`
-- check:
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
+  - check:
   - rhythmic-first rolling motion
   - stable sub underneath
   - how much movement the mid layer carries

@@ -58,7 +58,7 @@ Primary A/B for this part:
 - `Sammy Virji - I Guess We're Not the Same`
   - listen for low-note-count hook clarity
   - listen for how the hook stays readable without swallowing the groove
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for how hook energy can sit inside a rolling bass-led track
 
 Secondary check:
@@ -86,9 +86,10 @@ Use this as the source of truth:
 - answer cell: `G4 -> A4 -> C5`
 
 Rhythmic identity:
-- late in beat `3`
+- on the `a` of beat `3`
 - on beat `4`
-- late in beat `4`
+- on the `a` of beat `4`
+- on hook-owned `Drop B` bloom phrases, `F5` lands on beat `1` of the following bar
 
 Conversation rule:
 - `Drop B`: hook at half density
@@ -224,9 +225,9 @@ Create one `4`-bar `Drop A` hook clip using:
 - `A4 -> C5 -> D5`
 
 Starting rhythm:
-- late in beat `3`
+- on the `a` of beat `3`
 - on beat `4`
-- late in beat `4`
+- on the `a` of beat `4`
 
 Starting density rule:
 - use the hook as phrase-end punctuation, not every bar
@@ -248,7 +249,7 @@ not because it has lots of notes.
 ### Visual MIDI Requirement
 - show the full `4`-bar clip
 - label the `A4`, `C5`, and `D5`
-- annotate the late beat-3 / beat-4 / late beat-4 rhythm clearly
+- annotate the `3a -> 4 -> 4a` rhythm clearly
 
 ## Step 6: Program The Drop B Hook Variant
 ### Action
@@ -259,6 +260,7 @@ Rules:
 - `F5` is the bloom note
 - it should not appear in `Drop A` or `Drop A Lift`
 - keep the same rhythmic identity
+- when used, `F5` lands on beat `1` of the following bar as the phrase re-opens
 
 Starting density rule:
 - keep the hook at half density in `Drop B`
@@ -286,7 +288,9 @@ Placement rules:
 - do not let it speak in every bar
 
 Starting placement:
-- if the hook speaks on one phrase ending, let the answer speak on the next
+- in a first `16`-bar `Drop B` pass:
+  - let the hook own bars `4` and `12`
+  - let the answer own bars `8` and `16`
 - treat the answer as punctuation after the groove has already spoken
 
 ### Why
@@ -360,7 +364,7 @@ Bounce:
 Compare against:
 - `Sammy Virji - I Guess We're Not the Same`
   - listen for low-note-count hook clarity
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for identity living inside a bass-led track
 - `Interplanetary Criminal - Slow Burner`
   - listen for phrase-end punctuation and restraint

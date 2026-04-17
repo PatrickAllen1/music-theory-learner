@@ -142,7 +142,7 @@ Use these references consistently during the tutorial:
   - listen for kick weight, low-end size, mix density
 - `Interplanetary Criminal - Slow Burner`
   - listen for ghost-hat drag, phrase-end motion, re-entry pocket
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for rhythmic-first bass roll and stable sub support
 - `Sammy Virji - I Guess We're Not the Same`
   - listen for hook clarity and harmonic readability
@@ -381,7 +381,7 @@ Suggested session split:
 
 ### Listening checkpoint
 - drums + bass
-- A/B against `Y U QT - NRG` for roll
+- A/B against `Y U QT - U Belong 2 Me (4x4 Mix)` for roll
 
 ### Troubleshooting
 - if the bass feels static, first change gate and phrase pulse before adding more modulation

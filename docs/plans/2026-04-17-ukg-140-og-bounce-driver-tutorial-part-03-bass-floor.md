@@ -47,7 +47,7 @@ If the bass starts feeling like the hook, the learner has gone too far.
 
 ## Reference Axis
 Primary A/B for this part:
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for rhythmic roll, not just tone
 - `Interplanetary Criminal - Slow Burner`
   - listen for how the bass and kick breathe together
@@ -90,7 +90,7 @@ If they live on one track:
 5. Turn the `Sub` oscillator on.
 6. Set the sub waveform to `Sine`.
 7. Set `Sub Level` to `100%` while designing.
-8. Set `Direct Out` to `On` so the sub bypasses unnecessary in-patch coloration.
+8. In the `Sub` oscillator section, set `Direct Out` to `On` so the sub bypasses unnecessary in-patch coloration.
 9. Set `Voices` / unison to `1`.
 10. Set `Mono` to `On`.
 11. Set portamento / glide to a very small value:
@@ -145,7 +145,7 @@ The sub should not provide excitement. It should provide authority.
     - `Osc A`: `1 voice`
     - `Osc B`: `2 voices`
 11. Set `Osc B Detune` lightly:
-    - start around `0.05`
+    - start around `0.05` on Serum's `0.00–1.00` detune scale
 12. Route both through a low-pass filter:
     - type: `MG Low 12`
 13. Set initial filter settings:
@@ -420,7 +420,7 @@ You need both.
 Bounce or loop `drums + bass`.
 
 Compare against:
-- `Y U QT - NRG`
+- `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for roll character
 - `Interplanetary Criminal - Slow Burner`
   - listen for kick-bass breathing
