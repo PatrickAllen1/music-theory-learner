@@ -1,0 +1,46 @@
+[
+  {
+    "tags": ["theory"],
+    "text": "145 BPM speed garage in an Interplanetary Criminal / Y U QT lane."
+  },
+  {
+    "tags": ["drums", "sound_design"],
+    "text": "Kick choice: use a fat 909-style / tech-house-style kick and tune it to the bassline or key."
+  },
+  {
+    "tags": ["bass", "theory"],
+    "text": "In F minor, the bassline is built from only three functions — root, fourth, and sixth — repeated across different octaves."
+  },
+  {
+    "tags": ["bass", "arrangement"],
+    "text": "The groove in the bassline comes from the rhythm and the octave jumps, especially the 16th-note lift into the higher note."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "Reverse / sucking bass in Operator: three sine waves at different octaves, one slightly detuned, with the reverse effect created by an attack envelope on one oscillator and a little FM for extra bite."
+  },
+  {
+    "tags": ["sound_design", "fx"],
+    "text": "Bass processing: low-pass filter plus Auto Pan used as sidechain simulation."
+  },
+  {
+    "tags": ["drums", "mix"],
+    "text": "A quiet percussion loop can add a lot of energy in the mids and highs even when it is barely audible on its own."
+  },
+  {
+    "tags": ["drums"],
+    "text": "Clap lands at the end of each bar, and the main hi-hat is made extremely short so it behaves almost like a 16th-note tick."
+  },
+  {
+    "tags": ["drums", "mix"],
+    "text": "High-passed, sidechained house / percussion loops are crucial to the classic speed-garage feel."
+  },
+  {
+    "tags": ["sound_design", "fx", "arrangement"],
+    "text": "Build the vocal atmosphere from one sample split into two complementary layers: one reverbed and sidechained, the other delayed and panned so the phrase opens out."
+  },
+  {
+    "tags": ["arrangement", "fx"],
+    "text": "Use a third sparse punctuation vocal with delay, Auto Pan, and high-pass for occasional accents instead of keeping the vocal texture constant."
+  }
+]

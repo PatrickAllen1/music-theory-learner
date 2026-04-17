@@ -2677,5 +2677,248 @@
       "Use it only as a periodic rotation element, not a constant layer.",
       "Sidechain or duck against the kick so the width doesn't collapse the mono compatibility."
     ]
+  },
+  {
+    "id": "bass-width-from-highpassed-chorus-return",
+    "name": "Create bass width with a highs-only chorus return",
+    "source": "Y U QT 1",
+    "what_it_does": "Keeps the main bass dry and sub-stable, then creates width on a separate return by saturating the signal, high-passing the lows, adding chorus, and high-passing again so only the upper harmonic layer spreads.",
+    "when_to_use": "When a UKG / speed-garage bass needs to feel wide and expensive in the mids without compromising mono low-end weight.",
+    "works_well_with": [
+      "stable-root-locked-sub",
+      "mid-side-eq-low-cut-sides",
+      "body-forward-drums-with-swingy-tops",
+      "pressure-from-low-end-weight-not-drum-clipping"
+    ],
+    "likely_clashes_with": [
+      "full-range chorus directly on the bass channel",
+      "wide low-mid chord beds occupying the same band",
+      "uncarved loop layers living in the same frequency area"
+    ],
+    "why": "A separate high-passed return lets the bass feel wide in the harmonics while the fundamental remains clean and mono-safe. The ear hears size without the club system losing focus.",
+    "mitigations": [
+      "High-pass the return aggressively before and after chorus so the width never reaches the sub.",
+      "Sidechain the return slightly harder than the dry bass so the width breathes around the kick."
+    ]
+  },
+  {
+    "id": "filtered-kick-top-sidechain",
+    "name": "Filter the sidechain detector to the kick's top end for tighter ducking",
+    "source": "Y U QT 1",
+    "what_it_does": "Uses a filtered sidechain detector so the ducking responds more to the upper part of the kick than to the entire low-end body, resulting in a tighter and less over-sucked envelope.",
+    "when_to_use": "When a stab, pad, or atmosphere needs to get out of the way of the kick rhythmically but full-range sidechaining is removing too much body.",
+    "works_well_with": [
+      "warm-organ-stab-carries-instrumental-hook",
+      "stretched-tuned-vocal-atmos-bed",
+      "body-forward-drums-with-swingy-tops"
+    ],
+    "likely_clashes_with": [
+      "very soft or clickless kicks with no clear upper transient",
+      "parts that genuinely need full-range ducking from the whole kick body",
+      "already over-compressed sources"
+    ],
+    "why": "The top of the kick gives a sharper rhythmic trigger than the whole waveform. Responding to that transient can preserve tone while still making the groove read clearly.",
+    "mitigations": [
+      "If the ducking stops feeling deep enough, blend some low content back into the detector instead of abandoning the filter entirely.",
+      "Use slightly faster release times when filtering the detector so the movement feels intentional, not timid."
+    ]
+  },
+  {
+    "id": "layer-percussion-loops-by-frequency-role",
+    "name": "Layer percussion loops by complementary frequency role",
+    "source": "Y U QT 1",
+    "what_it_does": "Builds one usable groove loop from multiple smaller loops, each chosen for a different zone such as mid-range body, upper-high fizz, or in-between texture, then glues them with shared high-passing and controlled ducking.",
+    "when_to_use": "When a single loop sounds flat or generic and the groove needs more life without writing a huge amount of extra one-shots.",
+    "works_well_with": [
+      "high-passed-loop-energy-layers",
+      "body-forward-drums-with-swingy-tops",
+      "quiet-percussion-loop-mid-high-energy"
+    ],
+    "likely_clashes_with": [
+      "mindlessly stacking loops in the same band",
+      "full-range loops left unfiltered over a heavy bassline",
+      "too many top-end layers all ducking differently"
+    ],
+    "why": "Loops feel more intentional when each one owns a different frequency job. The result reads like one custom groove rather than several unrelated premade loops fighting each other.",
+    "mitigations": [
+      "Define the role of each loop before adding another one.",
+      "High-pass the full group until the bass and low mids stop feeling cloudy."
+    ]
+  },
+  {
+    "id": "pitched-rimshot-variation-mileage",
+    "name": "Pitch the same rimshot for extra groove mileage",
+    "source": "Y U QT 1",
+    "what_it_does": "Reuses one rimshot sample multiple times but changes the pitch on selected hits so it behaves like more than one percussion voice.",
+    "when_to_use": "When a groove needs constant small variations but you want to stay economical with sample choice and keep a unified texture.",
+    "works_well_with": [
+      "layer-percussion-loops-by-frequency-role",
+      "velocity-led drum groove",
+      "body-forward-drums-with-swingy-tops"
+    ],
+    "likely_clashes_with": [
+      "large pitch jumps that make the sample feel cartoonish",
+      "over-layered percussion where the variation gets masked anyway",
+      "arrangements already full of different rim and click sounds"
+    ],
+    "why": "Small pitch shifts preserve the same transient family while creating just enough contrast for the ear to hear development.",
+    "mitigations": [
+      "Reserve the pitch change for later hits in the phrase so it feels like a response, not random instability.",
+      "Keep the source sample short and punchy so transposition does not expose ugly tails."
+    ]
+  },
+  {
+    "id": "root-note-bass-from-progression",
+    "name": "Write the bassline from progression roots first, then add octave motion",
+    "source": "Y U QT 1",
+    "what_it_does": "Starts by defining the chord progression, then builds the bassline from the root notes alone before adding octave jumps and rhythm to create motion.",
+    "when_to_use": "When a garage or UKG bassline feels complicated in theory but should still feel harmonically obvious and club-functional.",
+    "works_well_with": [
+      "bass-ornaments-from-existing-progression-notes",
+      "modern-ukg-rolling-bass-floor",
+      "slight-gaps-between-bass-notes"
+    ],
+    "likely_clashes_with": [
+      "inventing bass notes before the progression is clear",
+      "ornaments that imply a different chord than the one underneath",
+      "trying to make the bassline carry too many harmonic twists"
+    ],
+    "why": "Root-first writing keeps the low end harmonically undeniable. Once the floor is stable, octave motion can add excitement without destabilising the tune.",
+    "mitigations": [
+      "Print the root-only version first and make sure it grooves before adding any octave or release notes.",
+      "If the line gets messy, strip it back to roots and reintroduce motion one event at a time."
+    ]
+  },
+  {
+    "id": "slight-gaps-between-bass-notes",
+    "name": "Leave tiny gaps between bass notes for punch and groove",
+    "source": "Y U QT 1",
+    "what_it_does": "Shortens bass notes so they do not fully touch, creating a slightly tighter and punchier line even when the pattern is mostly sustained.",
+    "when_to_use": "When a rolling bassline sounds heavy but slightly smeared, especially in 4x4 UKG where kick definition matters.",
+    "works_well_with": [
+      "root-note-bass-from-progression",
+      "modern-ukg-rolling-bass-floor",
+      "body-forward-drums-with-swingy-tops"
+    ],
+    "likely_clashes_with": [
+      "bass patches that rely on glide between notes",
+      "very long filter sweeps that need full overlap",
+      "extremely short envelopes where further shortening just kills weight"
+    ],
+    "why": "Even small pockets of silence can make a bassline feel more percussive and better locked to the drum groove.",
+    "mitigations": [
+      "Shorten by ear, not by a fixed percentage.",
+      "Keep the sub layer slightly longer than the harmonic layer if the line loses too much weight."
+    ]
+  },
+  {
+    "id": "stretched-tuned-vocal-atmos-bed",
+    "name": "Stretch and tune a vocal into an atmosphere bed",
+    "source": "Y U QT 1",
+    "what_it_does": "Takes a short vocal fragment, time-stretches it, pitches it into key, and reverbs it into a tuned atmosphere layer rather than a recognisable vocal phrase.",
+    "when_to_use": "When the track needs harmonic air and human texture without committing to a foreground vocal line.",
+    "works_well_with": [
+      "filtered-kick-top-sidechain",
+      "constant quiet air source",
+      "break-center-lane reserved for future phrase-end sample"
+    ],
+    "likely_clashes_with": [
+      "foreground vocals in the same register",
+      "untuned atmos beds that fight the chords",
+      "full-range reverbs that cloud the low mids"
+    ],
+    "why": "Stretching and tuning turns the vocal into a key-aware texture, and heavy reverb removes the need for lyrical readability while keeping a human emotional trace in the arrangement.",
+    "mitigations": [
+      "High-pass the atmosphere while keeping the useful fundamental area intact.",
+      "Reduce reverb size if the wash gets too blurry and loses pitch focus."
+    ]
+  },
+  {
+    "id": "three-note-root-4th-6th-bass-cell",
+    "name": "Build a rolling bass from root, 4th, and 6th across octaves",
+    "source": "Y U QT 2",
+    "what_it_does": "Uses only three note functions — root, fourth, and sixth — then repeats them across octaves so the bassline feels active and hooky without becoming harmonically dense.",
+    "when_to_use": "Modern UKG and speed-garage basslines where groove and identity need to come from a small note set plus rhythm, not from elaborate melodic writing.",
+    "works_well_with": [
+      "root-note-bass-from-progression",
+      "modern-ukg-rolling-bass-floor",
+      "16th-note-swing-66"
+    ],
+    "likely_clashes_with": [
+      "tracks whose harmony needs more functional chord tones in the bass",
+      "busy answer stabs already doing a lot of upper-register melodic work",
+      "overlong notes that blur the octave motion"
+    ],
+    "why": "A tight note vocabulary makes the bassline easier to groove and easier to mix. The octave moves create excitement while the pitch material stays disciplined.",
+    "mitigations": [
+      "Let rhythm and envelope changes do the expressive work rather than adding more notes.",
+      "If the line feels too repetitive, vary the octave destination before varying the pitch class."
+    ]
+  },
+  {
+    "id": "operator-reverse-bass-envelope",
+    "name": "Create reverse bass pull-in with an FM oscillator attack envelope",
+    "source": "Y U QT 2",
+    "what_it_does": "Uses Operator with sine waves and places an attack envelope on one oscillator so the FM relationship ramps in at the start of the note, creating a reverse / sucking-into-the-note character.",
+    "when_to_use": "When a bassline needs that modern UKG reverse-pull gesture without relying on audio reverses or resampling tricks.",
+    "works_well_with": [
+      "three-note-root-4th-6th-bass-cell",
+      "auto-pan-as-sidechain-simulation",
+      "kick-tuned-to-bassline"
+    ],
+    "likely_clashes_with": [
+      "patches that need an immediate clean transient",
+      "very busy bass patterns where every note having the pull-in effect becomes cartoonish",
+      "too much FM depth causing the pitch center to blur"
+    ],
+    "why": "The attack envelope delays the full FM tone just enough that the ear hears the bass pulling into focus instead of speaking instantly.",
+    "mitigations": [
+      "Keep the attack short enough that the line still feels punchy in a club groove.",
+      "Use the effect on the harmonic layer if the sub starts feeling too unstable."
+    ]
+  },
+  {
+    "id": "quiet-percussion-loop-mid-high-energy",
+    "name": "Use a quiet percussion loop to add mid/high energy",
+    "source": "Y U QT 2",
+    "what_it_does": "Adds a barely audible percussion loop whose real job is not obvious pattern information but extra life and forward motion in the mid and high bands.",
+    "when_to_use": "When the core drums are correct but the groove still feels flat or too exposed between the main hits.",
+    "works_well_with": [
+      "layer-percussion-loops-by-frequency-role",
+      "body-forward-drums-with-swingy-tops",
+      "high-passed-loop-energy-layers"
+    ],
+    "likely_clashes_with": [
+      "bright top-end stacks that are already crowded",
+      "loops with too much low-mid body",
+      "very dry minimal arrangements where any loop immediately becomes too obvious"
+    ],
+    "why": "A loop can contribute motion and glue even when you do not consciously hear it as a featured element.",
+    "mitigations": [
+      "Judge the loop in context, not solo.",
+      "High-pass it until it stops competing with the bass and clap."
+    ]
+  },
+  {
+    "id": "split-vocal-atmos-two-halves",
+    "name": "Split one vocal chop into two atmosphere halves",
+    "source": "Y U QT 2",
+    "what_it_does": "Takes one vocal phrase, splits it across two channels, and gives each half a different spatial role so the combined result feels wider and more alive than a single treated chop.",
+    "when_to_use": "When a vocal texture needs to feel like a call-and-response atmosphere rather than a single static wash.",
+    "works_well_with": [
+      "stretched-tuned-vocal-atmos-bed",
+      "filtered-kick-top-sidechain",
+      "phrase-end-answer-stab-instead-of-second-bass"
+    ],
+    "likely_clashes_with": [
+      "full lyrical vocals already occupying the center",
+      "too many stereo atmosphere layers competing for the same depth position",
+      "delays that ring for so long they smear the groove"
+    ],
+    "why": "Splitting the phrase lets one half stay grounded while the other can be delayed or panned, which creates motion without needing a completely new source.",
+    "mitigations": [
+      "Keep both halves derived from the same vocal so they still feel related.",
+      "Use one half more sparsely so the phrase does not become cluttered."
+    ]
   }
 ]

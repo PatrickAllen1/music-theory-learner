@@ -1,0 +1,46 @@
+[
+  {
+    "tags": ["theory"],
+    "text": "145 BPM speed garage. Suggested tempo lane is roughly 140-150 BPM."
+  },
+  {
+    "tags": ["sound_design", "arrangement"],
+    "text": "Start from a brass / orchestral stab and pitch it down to the root note. Pitching it down also slows the sample's internal movement so it fits the beat better."
+  },
+  {
+    "tags": ["sound_design", "fx", "mix"],
+    "text": "Main stab processing: OTT to bring out mids and highs, delay, and aggressive high-end EQ used as sound-design EQ rather than normal corrective EQ. Sidechain it to the kick with a filtered detector so the ducking focuses on the top end of the kick and feels tighter."
+  },
+  {
+    "tags": ["sound_design", "fx"],
+    "text": "Vocal atmosphere: stretch a vocal, pitch it into key, reverb it heavily so it becomes atmosphere, tighten the reverb size if needed, high-pass it while keeping the useful fundamental area, then filtered-sidechain it."
+  },
+  {
+    "tags": ["bass", "theory"],
+    "text": "Define the chord progression first — F minor, C minor, C# major, D# major — then build the bassline from the root notes of those chords."
+  },
+  {
+    "tags": ["bass", "arrangement"],
+    "text": "Use octave jumps to create swing and movement, and keep the bass notes slightly separated instead of fully touching so the line feels tighter and groovier."
+  },
+  {
+    "tags": ["sound_design"],
+    "text": "Bass patch in Operator: two sine waves FM-ing each other, one an octave up and slightly detuned, run through a low-pass filter with key tracking turned off so the cutoff stays fixed across the keyboard."
+  },
+  {
+    "tags": ["sound_design", "fx", "mix"],
+    "text": "Create bass width with a separate return layer: saturate it, high-pass the lows, add chorus, high-pass again, and keep the clean low-end in the dry bass. Sidechain both the return and the main bass."
+  },
+  {
+    "tags": ["drums", "sound_design"],
+    "text": "Core drums: short punchy kick, short clap, and a very short hi-hat pitched down slightly. Kick gets a small low cut and saturator to bring it forward."
+  },
+  {
+    "tags": ["drums", "arrangement"],
+    "text": "Background groove comes from a steady extra hat plus frequent rimshots. Reuse the same rimshot pitched differently on later hits to get more mileage from one sample."
+  },
+  {
+    "tags": ["drums", "mix", "sound_design"],
+    "text": "Layer multiple percussion loops that occupy different frequency roles, high-pass them together so they stay out of the bass, and use Auto Pan / volume shaping to keep them ducked and controlled around the kick."
+  }
+]
