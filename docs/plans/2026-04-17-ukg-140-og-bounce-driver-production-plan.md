@@ -114,6 +114,11 @@ This means:
 - not a pure pad track
 - not a pure stab track
 
+### Chord duality mechanism
+- use one core chord-bed patch for the sustained emotional layer
+- create section-dependent articulation with MIDI length, velocity, and bus/sidechain behavior rather than inventing a second unrelated chord instrument first
+- if a second stab layer is later needed, it must stay clearly subordinate to the main bed
+
 ### Chord articulation by section
 - `Intro A`: filtered wash hints only
 - `Intro B`: tucked full progression, long enough to feel bed-like
@@ -327,6 +332,12 @@ Envelope direction:
 - low sustain
 - short release
 
+Starting ranges:
+- attack: `0–5 ms`
+- decay: `80–200 ms`
+- sustain: `20–40%`
+- release: `60–150 ms`
+
 Processing direction:
 - light saturation
 - controlled compression
@@ -339,6 +350,11 @@ Processing direction:
 - shorter envelope
 - slightly dirtier tone
 - phrase-end only
+
+Starting deltas from the hook:
+- decay and release roughly `30–50%` shorter than the hook
+- saturation / bite roughly `20–40%` stronger than the hook
+- keep the dry signal slightly shorter before reaching for more FX
 
 ### Register relationship
 - hook should sit above the core chord bed enough to read clearly
@@ -361,7 +377,7 @@ Processing direction:
 - movement:
   - tiny slow filter or level motion only if needed
 - space:
-  - mostly from a filtered long reverb return rather than a wet in-patch effect
+  - mostly from `Return C: long filtered hall` rather than a wet in-patch effect
 
 ### Presence owner
 - combination of:

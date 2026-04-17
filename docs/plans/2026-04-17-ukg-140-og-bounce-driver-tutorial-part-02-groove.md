@@ -128,6 +128,10 @@ The kick must:
 Program the kick on every quarter note for the drop groove:
 - beats `1`, `2`, `3`, `4`
 
+Use short MIDI notes:
+- start with roughly `1/16` note MIDI length
+- let the sample tail do the real sustain work
+
 Keep the kick on-grid.
 
 ### Why
@@ -180,7 +184,8 @@ This is not the swing layer. It is the stable top scaffold that lets the later g
 ### Action
 1. Use a shorter, lighter hat sample than the main closed hat if needed.
 2. Place ghost hats on `1/16` subdivisions around the beat:
-   - especially the `e` and `a` spaces
+   - start with the `e` and `a` of beats `2` and `4`
+   - later additions can include the `e` of beat `1` and the `a` of beat `3`
 3. Push them slightly late:
    - roughly `5–15` ticks behind the grid
 4. Keep them quiet enough that they are felt before they are consciously heard.
@@ -200,6 +205,10 @@ If the ghost hats are not intentionally late, the track will sound like house wi
 - `drums-06-ghost-hat-placement`
 - `drums-07-ghost-hat-velocity`
 
+### Visual MIDI Requirement
+- show the full `2`-bar loop
+- annotate which ghost hats are the “starter” pattern and which ones are later additions
+
 ## Step 6: Add The Open Hat
 ### Action
 1. Place the open hat on selected offbeats.
@@ -211,6 +220,10 @@ If the ghost hats are not intentionally late, the track will sound like house wi
 The open hat should help signal lift and openness.
 
 It should not flood the groove.
+
+If only one placement survives:
+- keep the `&` of `4`
+- that placement usually gives the strongest garage push
 
 ### Starting Placement
 - begin with the `&` of `2` and/or `&` of `4`
@@ -228,6 +241,10 @@ It should not flood the groove.
 2. Use velocity variation to create phrase lift.
 3. Keep it humanized, but not sloppy.
 
+Starting pattern:
+- begin with continuous `1/8` notes
+- only move to `1/16` density if the section needs more lift later
+
 ### Why
 The shaker often carries the `5–8 kHz` lift that makes drops feel more alive without adding new low-mid clutter.
 
@@ -237,6 +254,9 @@ The shaker often carries the `5–8 kHz` lift that makes drops feel more alive w
 
 ### Screenshot
 - `drums-09-shaker-lane`
+
+### Visual MIDI Requirement
+- show one bar of the shaker pattern clearly enough that velocity shaping is visible
 
 ## Step 8: Set The Timing Policy
 ### Action
@@ -277,6 +297,9 @@ On the `Drums` group, build this starting chain:
 - enough to add density
 - not enough to flatten hat motion
 
+Starting range:
+- begin around `10–20%` of the intended drive amount and increase only if the loop still feels too thin
+
 ### Why
 The drums need to feel glued, not flattened.
 
@@ -296,9 +319,9 @@ Inside one `16`-bar drop section, give each four-bar block a job:
 - `Bars 1–4`
   - keep the top loop and shaker support restrained
 - `Bars 5–8`
-  - add more ghost-hat life
+  - add the `e` of beat `1` and the `a` of beat `3` if they were not present yet
 - `Bars 9–12`
-  - slightly lift open-hat or shaker energy
+  - raise shaker velocity slightly and consider adding one extra open-hat emphasis
 - `Bars 13–16`
   - use a fill, riser, or brief cut
 
@@ -307,6 +330,10 @@ If the drums repeat identically for all `16` bars, the section is not finished.
 
 ### Screenshot
 - `drums-13-16bar-micro-architecture`
+
+### Visual MIDI Requirement
+- show the full `16` bars in one screenshot
+- annotate what changes at bars `5`, `9`, and `13`
 
 ## Step 11: Add Phrase-End Fills
 ### Action
@@ -338,6 +365,11 @@ The lift variant should get bigger through:
 
 ### Why
 The kick remains the anchor. Growth comes from the tops and the phrase edge.
+
+Concrete lift changes:
+- add the later ghost-hat additions more consistently
+- slightly tighten shaker lift toward phrase ends
+- consider one extra open-hat emphasis rather than changing the kick
 
 ### Screenshot
 - `drums-15-drop-core-vs-lift`

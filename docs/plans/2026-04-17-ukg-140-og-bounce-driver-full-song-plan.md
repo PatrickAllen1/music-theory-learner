@@ -71,7 +71,7 @@ Creative references used for musical calibration:
 - `KETTAMA - It Gets Better`
 - `Interplanetary Criminal - Slow Burner`
 - `Sammy Virji - I Guess We're Not the Same`
-- `Y U QT lane study 2`
+- `Y U QT - NRG`
 
 Local sound/chain anchors are separate:
 - ALS anchor profiles later in this document are for sound-function inspiration only

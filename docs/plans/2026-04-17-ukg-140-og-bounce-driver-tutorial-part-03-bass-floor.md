@@ -102,6 +102,7 @@ If they live on one track:
     - sustain: `100%`
     - release: `45 ms`
 13. Open the modulation matrix and confirm there is no `Velocity -> Level` routing on the sub.
+14. If there is one, remove it before continuing.
 
 ### Why
 This keeps the sub:
@@ -218,7 +219,7 @@ If the learner hears “wobble,” the movement is too deep.
   - sync: on
   - rate: `1/2 bar` to `1 bar`
   - destination: filter cutoff
-  - depth: light
+  - depth: start around `10–20%`
 
 ### Screenshot Set
 - `mid-04-lfo-shape`
@@ -297,6 +298,7 @@ Starting placement:
 - first try the release note in the last `1/8` or `1/16` of the bar
 - treat it like a pickup into the next bar, not a new sustained event
 - do not add one to every bar automatically
+- this step is meant to fill the end-of-bar gap left by Step `6`
 
 ### Rule
 If a release note makes the chord feel like it changed, delete it.
@@ -317,6 +319,7 @@ Starting rhythm rule:
 - first try pulse by changing note lengths before adding extra note-ons
 - if you do add a second note-on inside a bar, keep it the same pitch before trying a new pitch
 - let phrase-end release notes be the first place a different pitch appears
+- keep this internal pulse earlier in the bar than the Step `7` release note so they do not collide at the bar end
 
 ### Why
 This is the main style-defining choice:
@@ -331,6 +334,13 @@ If the answer is no, the rhythm is not doing enough work.
 
 ### Screenshot
 - `bass-midi-03-gate-variation`
+
+### Visual MIDI Requirement
+- show the full `4`-bar phrase after internal pulse is added
+- the tutorial should show the progression:
+  - roots only
+  - roots + release notes
+  - roots + release notes + internal pulse
 
 ## Step 9: Create The Bass Bus Chain
 ### Action
@@ -424,6 +434,10 @@ Compare against:
 - does the kick still land with authority?
 - is the low end big without becoming slow?
 - does the phrase feel club-functional, not decorative?
+
+Expected answer:
+- the main root pitch changes `4` times across the `4`-bar loop
+- extra pitch movement should come mainly from phrase-end release notes, not constant interior rewrites
 
 ## Troubleshooting
 ### Problem: “The bass feels static.”

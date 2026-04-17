@@ -46,7 +46,7 @@ This means every important move should be:
 - not for someone who has never finished a track at all
 - not for someone who needs Ableton basics explained from zero
 - not for someone looking for a one-page shortcut instead of a full build walkthrough
-- if the learner already mixes professionally, the highest-value parts are likely `Parts 6–9`
+- if the learner already mixes professionally, `Parts 6–9` may hold the most new technical detail, but `Parts 3–5` still contain the style-specific writing logic
 
 ## Tutorial Promise
 By the end, the learner should be able to:
@@ -109,7 +109,6 @@ Use these references consistently during the tutorial:
   - listen for ghost-hat drag, phrase-end motion, re-entry pocket
 - `Y U QT - NRG`
   - listen for rhythmic-first bass roll and stable sub support
-  - internal repo source is still `docs/transcripts/yuqt2_spans.json` until a named public Y U QT or SMTS replacement is locked
 - `Sammy Virji - I Guess We're Not the Same`
   - listen for hook clarity and harmonic readability
 
@@ -155,8 +154,11 @@ Suggested session split:
 - `Session 1`: Parts `0–3`
   - setup through bass floor
   - by the end, the lane identity should already be clear
-- `Session 2`: Parts `4–6`
-  - harmony, hook/answer, and arrangement
+- `Session 2a`: Parts `4–5`
+  - harmony plus hook/answer
+  - by the end, the emotional and melodic identity should exist
+- `Session 2b`: Part `6`
+  - arrangement build
   - by the end, the song should fully exist
 - `Session 3`: Parts `7–9`
   - transitions, mix, master
@@ -228,7 +230,7 @@ Suggested session split:
 - kick tuning workflow
 - Simpler / sampler settings
 - kick bus processing
-- air-layer Serum 2 recipe or noise-source workflow
+- air-layer workflow, using the Production Plan air patch as the starting source of truth
 
 ### Core teaching points
 - kick must be heavy and short enough for the bass to breathe
@@ -336,7 +338,7 @@ Suggested session split:
 
 ### Listening checkpoint
 - drums + bass
-- A/B against Y U QT lane study for roll
+- A/B against `Y U QT - NRG` for roll
 
 ### Troubleshooting
 - if the bass feels static, first change gate and phrase pulse before adding more modulation
@@ -358,6 +360,7 @@ Suggested session split:
 - chord bus and returns
 
 ### What must be shown
+- chord-bed patch direction from the Production Plan as the starting source of truth
 - voicing palette:
   - `Dm9`
   - restrained `Bb`
