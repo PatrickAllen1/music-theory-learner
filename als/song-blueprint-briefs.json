@@ -206,7 +206,7 @@
           "Cadd9"
         ],
         "movement_note": "Let the harmony feel musically rich like Sammy Virji or Y U QT, but keep the actual hook phrase economical and instrumental-led rather than depending on a later sample.",
-        "bass_strategy": "Bass owns a rolling 1-6-3-7 backbone with internal motion and stronger phrase-end releases, while the answer lane stays in the melodic/harmonic register and never steals the true sub."
+        "bass_strategy": "Bass owns a rolling 1-6-3-7 backbone with a stable sub and a moving harmonic layer driven by note-length variation, filter motion, and phrase-end releases. No new harmonic content is introduced in the bass after Drop A until Drop B blooms."
       },
       "drum_strategy": "Build from a body-forward 4x4 core, then add swingy tops, filtered loop bounce, and one restrained break layer so the groove feels huge without sacrificing the pocket.",
       "melodic_strategy": "The instrumental hook should behave like a response lane rather than a full topline: enough identity to carry the record now through rhythm and timbre, but disciplined enough that a later re-version could trade in a vocal or sample.",
@@ -214,7 +214,8 @@
         "Intro should establish kick, tuned hats, and filtered loop bounce before revealing the full rolling bass language.",
         "Drop A should feel bass-and-groove led first, with the hook-response lane entering as punctuation rather than constant chatter.",
         "Break should widen the chord bed, thin the drums, and let the instrumental atmosphere own the center before any future sample version exists.",
-        "Drop B should add harmonic bloom and one stronger phrase-end answer lane while keeping the low end just as disciplined as Drop A."
+        "Drop B should add harmonic bloom and one stronger phrase-end answer lane while keeping the low end just as disciplined as Drop A.",
+        "The instrumental v1 should treat the center lane as intentionally carried by hook pocket, air bed, and upward-widened break chords rather than by a placeholder sample."
       ],
       "arrangement_sections": [
         {
@@ -238,13 +239,13 @@
         {
           "section_id": "drop_a_lift",
           "length_bars": 16,
-          "goal": "Develop the first drop with tighter percussion answers, loop energy, and one stronger response figure without overcrowding the center.",
+          "goal": "Develop the first drop through tighter percussion answers, loop energy, and top-end pocket only. Do not add new bass harmonic color here.",
           "energy_level": "high"
         },
         {
           "section_id": "break",
           "length_bars": 16,
-          "goal": "Widen the chord bed, thin the drums, and create real headroom for a future sample lane or spoken phrase.",
+          "goal": "Widen the chord bed upward, thin the drums, and let the air layer own the center so the instrumental break feels complete before any future vocal version.",
           "energy_level": "mid"
         },
         {
@@ -256,7 +257,7 @@
         {
           "section_id": "drop_b_lift",
           "length_bars": 16,
-          "goal": "Add the strongest answering phrase or sample response of the track while preserving low-end discipline and kick authority.",
+          "goal": "Add the strongest density lift through tops, widened chord spread, and hook/answer turn-taking while preserving low-end discipline and kick authority.",
           "energy_level": "high"
         },
         {
@@ -270,7 +271,7 @@
         "One optional chopped vocal or spoken sample lane in the center midrange for a future re-version",
         "One phrase-end response lane for hook or answer-stab punctuation in Drop B",
         "One transition-impact lane at the end of the break and final drop pickup",
-        "One atmosphere lane for intro air and break lift"
+        "One atmosphere lane that quietly spans the whole song and blooms in the break"
       ],
       "sample_slot_overrides": {
         "drum_loop_layer": {

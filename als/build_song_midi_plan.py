@@ -109,6 +109,17 @@ def _drum_variants() -> list[dict]:
         _event("A#1", "2.4.4", 0.25, 45, "ghost hat"),
         _event("A1", "2.4.3", 0.5, 58, "open hat"),
     ]
+    intro_b_tease = [
+        *_kicks("1", [96, 93, 95, 92]),
+        *_kicks("2", [96, 93, 95, 92]),
+        *_claps("1", [91, 89]),
+        *_claps("2", [91, 89]),
+        *_off_hat("1", [68, 66, 69, 65]),
+        *_off_hat("2", [68, 66, 70, 64]),
+        _event("A#1", "1.4.4", 0.25, 40, "ghost hat"),
+        _event("A#1", "2.4.4", 0.25, 41, "ghost hat"),
+        _event("A1", "2.4.3", 0.5, 46, "filtered open hat tease"),
+    ]
     drop_lift = drop_core + [
         _event("G#1", "1.2.3", 0.25, 49, "shaker"),
         _event("G#1", "1.4.3", 0.25, 47, "shaker"),
@@ -139,6 +150,13 @@ def _drum_variants() -> list[dict]:
             "Intro and low-density sections. 4x4 spine with only the essential garage offbeat.",
             intro_core,
             "Kick-led spine without over-selling the groove before the bass arrives.",
+        ),
+        _variant(
+            "drum_intro_b_tease_2bar",
+            2,
+            "Intro B. Tease the eventual open-hat/presence lane without fully opening the top yet.",
+            intro_b_tease,
+            "This keeps the section breathing while saving the full hat shimmer for Drop A.",
         ),
         _variant(
             "drum_drop_core_2bar",
@@ -313,19 +331,19 @@ def _bass_variants() -> list[dict]:
         _event("D1", "1.1.1", 1.25, 96, "root hold"),
         _event("D1", "1.3.1", 0.25, 82, "rolling pulse"),
         _event("A1", "1.3.3", 0.25, 79, "fifth release"),
-        _event("C2", "1.4.1", 0.25, 76, "minor seventh color"),
+        _event("D1", "1.4.1", 0.25, 76, "root rebound"),
         _event("Bb0", "2.1.1", 1.25, 94, "root hold"),
         _event("Bb1", "2.3.1", 0.25, 82, "octave release"),
         _event("F1", "2.4.1", 0.25, 78, "fifth release"),
-        _event("D1", "2.4.3", 0.25, 76, "major third response"),
+        _event("Bb0", "2.4.3", 0.25, 76, "root rebound"),
         _event("F1", "3.1.1", 1.25, 95, "root hold"),
         _event("F1", "3.3.1", 0.25, 81, "rolling pulse"),
         _event("C2", "3.3.3", 0.25, 79, "fifth release"),
-        _event("A1", "3.4.1", 0.25, 76, "third color"),
+        _event("F1", "3.4.1", 0.25, 76, "root rebound"),
         _event("C1", "4.1.1", 1.25, 93, "root hold"),
         _event("C2", "4.3.1", 0.25, 82, "octave release"),
         _event("G1", "4.4.1", 0.25, 78, "fifth release"),
-        _event("D2", "4.4.3", 0.25, 80, "ninth lift"),
+        _event("C1", "4.4.3", 0.25, 80, "root rebound"),
     ]
     break_sparse = [
         _event("D1", "1.1.1", 1.0, 84, "root reminder"),
@@ -387,9 +405,9 @@ def _bass_variants() -> list[dict]:
         _variant(
             "bass_drop_a_lift_4bar",
             4,
-            "Drop A lift. More release notes, but only one true octave jump per 2-bar unit.",
+            "Drop A lift. Same harmonic language as Drop A, but with slightly tighter pocket and tone opening.",
             drop_a_lift,
-            "This is denser without becoming jump-up chatter.",
+            "The lift comes from feel and density, not from new bass harmony.",
         ),
         _variant(
             "bass_break_sparse_4bar",
@@ -447,16 +465,16 @@ def _answer_stab_variants() -> list[dict]:
         _variant(
             "answer_drop_b_conversation_4bar",
             4,
-            "Drop B. Phrase-end abrasive stab answer on bars 2 and 4.",
+            "Drop B. Phrase-end warm organ-family answer on bars 2 and 4.",
             drop_b_conversation,
-            "This is where the section gets bigger by punctuation and brightness, not by another moving bass.",
+            "This is where the section gets bigger by punctuation and color, not by another moving bass.",
         ),
         _variant(
             "answer_drop_b_lift_4bar",
             4,
-            "Drop B lift. Slightly more frequent stabs, still only at phrase tails and lift points.",
+            "Drop B lift. Slightly more frequent warm answers, still only at phrase tails and lift points.",
             drop_b_lift,
-            "Keep the answer lane short and biting so it doesn't crowd the hook or sub.",
+            "Keep the answer lane short and warm so it doesn't crowd the hook or sub.",
         ),
     ]
 
@@ -514,9 +532,16 @@ def _hook_variants() -> list[dict]:
         _variant(
             "hook_drop_a_lift_4bar",
             4,
-            "Drop A lift. Alternate the main cell with a smaller answer cell.",
-            drop_a_lift,
-            "The hook grows by conversation, not by turning into a full topline.",
+            "Drop A lift. Keep the same three-note hook cell, but tighten the pocket on the second phrase-end.",
+            [
+                _event("A4", "2.3.3", 0.25, 79, "hook cell"),
+                _event("C5", "2.4.1", 0.25, 83, "hook cell"),
+                _event("D5", "2.4.3", 0.5, 87, "hook resolve"),
+                _event("A4", "4.3.4", 0.25, 78, "hook cell"),
+                _event("C5", "4.4.1", 0.25, 82, "hook cell"),
+                _event("D5", "4.4.2", 0.5, 86, "hook resolve"),
+            ],
+            "The hook gets bigger by phrasing and pressure, not by adding new melodic information.",
         ),
         _variant(
             "hook_break_ghost_4bar",
@@ -565,7 +590,7 @@ def _parts(composition: dict) -> list[dict]:
             "part_id": "og-reese-answer",
             "writing_role": "Warm organ/piano phrase-end stab answer that adds bite without becoming a second bassline.",
             "register_focus": "G4-F5",
-            "playback_rule": "Rewrite this slot away from a Reese. Keep it clipped, warm, and short so the bass-foundation stays the only true low-end voice and the answer still feels musical.",
+            "playback_rule": "Rewrite this slot away from a Reese. Keep it clipped, warm, and short so the bass-foundation stays the only true low-end voice. Use the same timbral family as the hook, but make the answer shorter and slightly dirtier.",
             "variants": _answer_stab_variants(),
             "inspiration": _top_inspiration(phrase_rows, {"bass", "hook"}),
         },
@@ -581,7 +606,7 @@ def _parts(composition: dict) -> list[dict]:
             "part_id": "hook-response",
             "writing_role": "Instrumental-led phrase-end melodic identity with enough space for a future re-versioned sample, not a dependency on one.",
             "register_focus": "G4-F5",
-            "playback_rule": "Stay off the kick, enter late on the offbeat, and let a warm organ/garage stab timbre carry as much identity as the notes do.",
+            "playback_rule": "Stay off the kick, enter late on the offbeat, and let a warm organ/garage stab timbre carry as much identity as the notes do. The hook should be slightly cleaner and longer-tailed than the answer stab.",
             "variants": _hook_variants(),
             "inspiration": _top_inspiration(phrase_rows, {"hook", "melody"}),
         },
@@ -625,13 +650,13 @@ def _section_assignments() -> list[dict]:
             "section_id": "intro_b",
             "bars": "17-32",
             "part_variants": {
-                "drums": "drum_drop_core_2bar",
+                "drums": "drum_intro_b_tease_2bar",
                 "bass-foundation": "bass_intro_b_tease_4bar",
                 "og-reese-answer": None,
                 "chord-bed": "chord_intro_full_4bar",
                 "hook-response": "hook_intro_pickup_4bar",
             },
-            "notes": "The bass teaser is mechanical on purpose: root hold for two beats, then one short octave hint every second bar.",
+            "notes": "The bass teaser is mechanical on purpose: root hold for two beats, then one short octave hint every second bar. The top end is only teased here, not fully opened.",
         },
         {
             "section_id": "drop_a",
@@ -655,7 +680,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_drop_a_lift_4bar",
                 "hook-response": "hook_drop_a_lift_4bar",
             },
-            "notes": "Bigger by density and upper color. Still no exposed Bb maj7 yet, and the instrumental has to stand on its own.",
+            "notes": "Bigger by top-end density and phrase pocket only. Still no exposed Bb maj7 yet, no new bass harmonic content, and the instrumental has to stand on its own.",
         },
         {
             "section_id": "break",
@@ -667,7 +692,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_break_stretch_8bar",
                 "hook-response": "hook_break_ghost_4bar",
             },
-            "notes": "Let the air bed and stretched chords carry the break instrumentally. If a future sample ever appears, keep it narrow and phrase-end only in roughly A3-F5.",
+            "notes": "Let the air bed and upward-widened stretched chords carry the break instrumentally. If a future sample ever appears, keep it narrow and phrase-end only in roughly A3-F5.",
         },
         {
             "section_id": "drop_b",
@@ -691,7 +716,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_drop_b_bloom_4bar",
                 "hook-response": "hook_drop_b_lift_4bar",
             },
-            "notes": "Use either the hook or the stab answer to dominate a phrase end, not both equally. This is the biggest section, so subtraction matters more than adding another layer.",
+            "notes": "Use either the hook or the stab answer to dominate a phrase end, not both equally. The biggest lift should come from tops and widened chord spread, not another new lane.",
         },
         {
             "section_id": "outro",
@@ -714,17 +739,18 @@ def _support_layers() -> list[dict]:
             "layer_id": "top_presence",
             "role": "2-6 kHz bite and forward motion",
             "owners": [
+                "filtered open-hat tease inside drum_intro_b_tease_2bar",
                 "offbeat open-hat accents inside drum_drop_core_2bar / drum_drop_lift_2bar",
                 "the clipped attack on hook-response",
-                "the phrase-end abrasive answer stab in Drop B",
+                "the phrase-end warm answer stab in Drop B",
             ],
-            "rule": "If the drop feels closed-in, solve it here before widening the chords or brightening the whole mix.",
+            "rule": "If the drop feels closed-in, solve it here before widening the chords or brightening the whole mix. Tease it in Intro B, feature it in Drop A, reduce it in the break, and make it strongest in Drop B Lift.",
         },
         {
             "layer_id": "air_bed",
             "role": "8 kHz+ height and ceiling",
             "owners": [
-                "constant quiet shimmer/noise bed from intro_b onward",
+                "constant quiet shimmer/noise bed from intro_a onward",
                 "more audible air in the break",
                 "tucked but present air return in the drops",
             ],

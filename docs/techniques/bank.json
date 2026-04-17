@@ -2920,5 +2920,115 @@
       "Keep both halves derived from the same vocal so they still feel related.",
       "Use one half more sparsely so the phrase does not become cluttered."
     ]
+  },
+  {
+    "id": "choose-the-rolling-bass-mechanism-early",
+    "name": "Choose the rolling bass mechanism before writing the full phrase",
+    "source": "Song authoring review — ukg-140-og-bounce-driver",
+    "what_it_does": "Forces an explicit decision about what is actually creating the 'roll' in a modern UKG bass: note-length motion, filter movement, saturation breathing, small phrase-end pitch events, or some combination.",
+    "when_to_use": "When a brief says 'rolling bass' but the actual production could still drift into static held notes with effects pasted on top.",
+    "works_well_with": [
+      "modern-ukg-rolling-bass-floor",
+      "root-note-bass-from-progression",
+      "slight-gaps-between-bass-notes"
+    ],
+    "likely_clashes_with": [
+      "treating 'rolling' as a vibe instead of a mechanism",
+      "adding too many melodic notes to force movement",
+      "relying on one LFO and hoping it feels like groove"
+    ],
+    "why": "Rolling bass is an architectural decision, not a post-effect. If the mechanism is unclear, the line usually ends up too static or too melodic.",
+    "mitigations": [
+      "Write the dry sub and the moving harmonic layer as separate jobs before layering them.",
+      "Limit phrase-end pitch events so the motion still reads as floor movement, not a second hook."
+    ]
+  },
+  {
+    "id": "drop-a-lift-no-new-bass-harmony",
+    "name": "Keep Drop A Lift bass growth non-harmonic",
+    "source": "Song authoring review — ukg-140-og-bounce-driver",
+    "what_it_does": "Makes the first lift feel bigger through top-end density, pocket, and bass tone opening rather than by introducing new harmonic color in the bassline.",
+    "when_to_use": "When Drop B is supposed to earn the first real harmonic bloom and the first drop still needs a lift without spending that card.",
+    "works_well_with": [
+      "delay-full-harmonic-bloom-until-drop-b",
+      "restrained-bassline-needs-character-tone",
+      "body-forward-drums-with-swingy-tops"
+    ],
+    "likely_clashes_with": [
+      "adding new maj7/9 tails in the bass during Drop A Lift",
+      "treating every lift as a reharmonisation opportunity",
+      "letting the bass become the melodic reveal too early"
+    ],
+    "why": "If the first lift adds new harmonic information, the second drop has less emotional room to open up.",
+    "mitigations": [
+      "Keep the Drop A Lift bass on the same pitch vocabulary as Drop A and change feel instead of harmony.",
+      "Let the top-end and drums carry the lift first."
+    ]
+  },
+  {
+    "id": "map-top-end-owners-by-section",
+    "name": "Map presence and air owners to specific sections",
+    "source": "Song authoring review — ukg-140-og-bounce-driver",
+    "what_it_does": "Assigns when each top-end function is active across the arrangement — filtered teaser in intro, full presence in the first drop, reduced presence in the break, strongest release in the final lift.",
+    "when_to_use": "Whenever the plan already knows which elements own presence and air, but not yet where they should appear or step back.",
+    "works_well_with": [
+      "top-end-needs-explicit-owners",
+      "body-forward-drums-with-swingy-tops",
+      "constant quiet air source"
+    ],
+    "likely_clashes_with": [
+      "leaving the same top-end stack on in every section",
+      "introducing the biggest air/presence lift too early",
+      "trying to fix a closed-in drop only with EQ after the fact"
+    ],
+    "why": "A track often sounds closed-in or flat because the right ingredients appear in the wrong sections, not because the ingredients are missing.",
+    "mitigations": [
+      "Write a section map for air and presence before detailed sound design.",
+      "Treat the break as the place where air is most obvious and the first drop as the place where presence first fully opens."
+    ]
+  },
+  {
+    "id": "related-not-identical-hook-and-answer",
+    "name": "Keep hook and answer timbrally related but functionally distinct",
+    "source": "Song authoring review — ukg-140-og-bounce-driver",
+    "what_it_does": "Uses the same core instrument family for hook and answer voices, while separating them by envelope, saturation, register, or cleanliness so the conversation feels coherent without sounding like one line doubled.",
+    "when_to_use": "When a track has an instrumental hook and a later response lane that are supposed to feel like the same world, not two unrelated sounds.",
+    "works_well_with": [
+      "warm-organ-stab-carries-instrumental-hook",
+      "bigger-drop-by-substitution-not-stacking",
+      "phrase-end-answer-stab-instead-of-second-bass"
+    ],
+    "likely_clashes_with": [
+      "using exactly the same patch for both roles with no differentiation",
+      "making the answer so different it feels like a new track element rather than a reply",
+      "letting both voices speak in the same register with the same envelope"
+    ],
+    "why": "Conversation needs both family resemblance and role contrast. Without resemblance the track loses cohesion; without contrast the dialogue collapses into self-doubling.",
+    "mitigations": [
+      "Keep the hook cleaner and longer-tailed, and make the answer shorter and slightly dirtier.",
+      "Differentiate by section function first, then by sound-design detail."
+    ]
+  },
+  {
+    "id": "break-needs-upward-voicing-bloom",
+    "name": "Break bloom should come from upward voicing, not just longer sustain",
+    "source": "Song authoring review — ukg-140-og-bounce-driver",
+    "what_it_does": "Makes the break feel wider and more hopeful by moving more chord information upward into the mids/highs rather than only holding the same voicing for longer.",
+    "when_to_use": "When the arrangement relies on a break opening the record up so the next drop can feel emotionally bigger without extra low-end layers.",
+    "works_well_with": [
+      "delay-full-harmonic-bloom-until-drop-b",
+      "top-end-needs-explicit-owners",
+      "constant quiet air source"
+    ],
+    "likely_clashes_with": [
+      "breaks that only lengthen notes but keep the same closed voicing",
+      "low-mid-heavy pads that still dominate the break",
+      "trying to create bloom only with reverb"
+    ],
+    "why": "Longer sustain increases duration, but upward voicing changes where the listener feels the harmony. That vertical opening is what makes the break breathe.",
+    "mitigations": [
+      "Open the break chord voicings upward before adding more effects.",
+      "Let the air bed and upper chord tones do more of the emotional work than the low mids."
+    ]
   }
 ]
