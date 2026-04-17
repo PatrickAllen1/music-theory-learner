@@ -21,8 +21,12 @@ from argparse import Namespace
 from pathlib import Path
 
 try:
+    from build_song_composition_pass import build_report as build_song_composition_pass_report
+    from build_song_midi_plan import build_report as build_song_midi_plan_report
     from design_full_song_blueprint import build_report as build_full_song_blueprint_report
 except ModuleNotFoundError:
+    from .build_song_composition_pass import build_report as build_song_composition_pass_report
+    from .build_song_midi_plan import build_report as build_song_midi_plan_report
     from .design_full_song_blueprint import build_report as build_full_song_blueprint_report
 
 
@@ -68,6 +72,25 @@ def _full_song_namespace(args: argparse.Namespace) -> Namespace:
         limit_per_part=args.limit_per_part,
         mutation_limit=args.mutation_limit,
         max_swaps=args.max_swaps,
+        format="json",
+    )
+
+
+def _composition_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        brief=args.brief,
+        song_briefs=args.song_briefs,
+        templates=args.templates,
+        catalog_dir=args.catalog_dir,
+        serum_briefs=args.serum_briefs,
+        analysis_dir=getattr(args, "analysis_dir", "als/analysis"),
+        transcripts_dir=getattr(args, "transcripts_dir", "docs/transcripts"),
+        technique_bank=getattr(args, "technique_bank", "docs/techniques/bank.json"),
+        prefer_rendered=args.prefer_rendered,
+        limit_per_part=args.limit_per_part,
+        mutation_limit=args.mutation_limit,
+        max_swaps=args.max_swaps,
+        phrase_limit=getattr(args, "phrase_limit", 8),
         format="json",
     )
 
@@ -126,7 +149,33 @@ def _optional_slots(blueprint: dict) -> list[dict]:
     return [row for row in blueprint["sample_lanes"] if not row["required"]]
 
 
-def _make_static_steps(blueprint: dict, synth_steps: list[dict]) -> list[dict]:
+def _variant_lookup(midi_plan: dict) -> dict[str, dict]:
+    out: dict[str, dict] = {}
+    for part in midi_plan["parts"]:
+        for variant in part["variants"]:
+            out[variant["variant_id"]] = variant
+    return out
+
+
+def _variant_summary(variant: dict | None) -> str:
+    if not variant:
+        return "No variant has been assigned yet."
+    preview = ", ".join(f"{row['note']}@{row['position']}" for row in variant.get("events", [])[:4])
+    return f"{variant['variant_id']}: {variant['usage']} Preview: {preview}."
+
+
+def _section_assignment_text(section_assignments: list[dict]) -> str:
+    rows = []
+    for row in section_assignments:
+        parts = row["part_variants"]
+        rows.append(
+            f"{row['section_id']} bars {row['bars']} -> drums={parts['drums']}, bass={parts['bass-foundation']}, "
+            f"chords={parts['chord-bed']}, hook={parts['hook-response']}"
+        )
+    return "; ".join(rows) + "."
+
+
+def _make_static_steps(blueprint: dict, composition: dict, midi_plan: dict, synth_steps: list[dict]) -> list[dict]:
     required_slots = _required_slots(blueprint)
     optional_slots = _optional_slots(blueprint)
     drum_slots = [row for row in blueprint["sample_lanes"] if row["slot_type"] in {"kick", "clap_snare", "closed_hat", "top_loop_support", "perc", "drum_loop"}]
@@ -136,6 +185,11 @@ def _make_static_steps(blueprint: dict, synth_steps: list[dict]) -> list[dict]:
     automation_text = " ".join(blueprint["automation_rules"])
     mix_text = " ".join(blueprint["mix_rules"])
     export_checks = "; ".join(blueprint["export_plan"]["final_checks"])
+    variants = _variant_lookup(midi_plan)
+    bass_core = variants.get("bass_drop_a_core_4bar")
+    hook_drop_a = variants.get("hook_drop_a_phrase_4bar")
+    hook_drop_b = variants.get("hook_drop_b_phrase_4bar")
+    answer_drop_b = variants.get("answer_drop_b_conversation_4bar")
 
     static_steps = [
         {
@@ -144,7 +198,8 @@ def _make_static_steps(blueprint: dict, synth_steps: list[dict]) -> list[dict]:
             "instruction": (
                 f"Create a new Ableton Live set at {blueprint['bpm']} BPM in {blueprint['key']} and save it with the brief id "
                 f"`{blueprint['brief_id']}`. Build these tracks in order: DRUMS, {synth_names}. Create these return tracks next: "
-                f"{return_names}. Keep the energy profile in front of you while you work: {blueprint['energy_profile']}"
+                f"{return_names}. Keep the energy profile in front of you while you work: {blueprint['energy_profile']} "
+                f"Song thesis: {composition['thesis']}"
             ),
             "why": (
                 "The whole lesson should behave like a full production, not a loop exercise. "
@@ -216,6 +271,61 @@ def _make_static_steps(blueprint: dict, synth_steps: list[dict]) -> list[dict]:
     static_steps.extend(
         [
             {
+                "title": "Write the harmonic and hook language",
+                "category": "melody",
+                "instruction": (
+                    f"Commit the core progression first: {' -> '.join(composition['harmonic_language']['progression'])}. "
+                    f"Keep this harmonic rule active: {composition['harmonic_language']['rule']} "
+                    f"Then write the hook from the frozen cells before adding sound polish: Drop A = "
+                    f"{' -> '.join(composition['hook_plan']['drop_a_cell'])}; Drop B = {' -> '.join(composition['hook_plan']['drop_b_cell'])}; "
+                    f"secondary answer = {' -> '.join(composition['hook_plan']['secondary_answer_cell'])}. "
+                    f"Keep this hook note rule in force: {composition['hook_plan']['note_logic']}"
+                ),
+                "why": (
+                    "The emotional staircase in this track comes from disciplined note choices. "
+                    "If the harmonic bloom or payoff notes arrive too early, the whole back-half lift collapses."
+                ),
+                "ableton_cheatsheet_id": "midi-editor",
+                "splice_search": None,
+                "tip": "Drop A stays smaller on purpose. Do not spend the Drop B payoff note early.",
+            },
+            {
+                "title": "Program the rolling bass as the floor",
+                "category": "bass",
+                "instruction": (
+                    f"Write the bass from the exact architecture, not from free improvisation. Thesis: {composition['bass_plan']['thesis']} "
+                    f"Four-bar root path: {' -> '.join(composition['bass_plan']['four_bar_root_path'])}. "
+                    f"Lock these decisions first: {composition['architectural_decisions']['intro_b_bass_gesture']['decision']} "
+                    f"{composition['architectural_decisions']['rolling_bass_mechanism']['decision']} "
+                    f"{composition['architectural_decisions']['rolling_bass_proportion']['decision']} "
+                    f"Use this main drop variant as the starting cell: {_variant_summary(bass_core)}"
+                ),
+                "why": (
+                    "This record only lands if the bass behaves like a modern rolling UKG floor instead of a static sub or an over-written hook."
+                ),
+                "ableton_cheatsheet_id": "serum-v2-oscillators",
+                "splice_search": None,
+                "tip": "Keep the roll rhythmic-primary. Tone movement supports it; it should not become the whole effect.",
+            },
+            {
+                "title": "Lock the hook and answer conversation",
+                "category": "melody",
+                "instruction": (
+                    f"Build the hook/answer lane as one conversation system. Hook voice identity: "
+                    f"{composition['architectural_decisions']['hook_voice_identity']['decision']} "
+                    f"Drop B conversation rule: {composition['architectural_decisions']['drop_b_conversation_rule']['decision']} "
+                    f"Reference variants: hook Drop A = {_variant_summary(hook_drop_a)} "
+                    f"hook Drop B = {_variant_summary(hook_drop_b)} answer Drop B = {_variant_summary(answer_drop_b)}"
+                ),
+                "why": (
+                    "The instrumental version needs a real identity lane, but it still has to leave space for a future re-version. "
+                    "That only works if the hook and answer alternate instead of competing."
+                ),
+                "ableton_cheatsheet_id": "midi-editor",
+                "splice_search": None,
+                "tip": "When the answer arrives in Drop B, the hook must step back to half density.",
+            },
+            {
                 "title": "Arrange the full song structure",
                 "category": "ableton",
                 "instruction": (
@@ -223,6 +333,8 @@ def _make_static_steps(blueprint: dict, synth_steps: list[dict]) -> list[dict]:
                     + _arrangement_text(blueprint)
                     + " Use the arrangement notes as guardrails: "
                     + " ".join(blueprint["arrangement_notes"])
+                    + " Section assignment shorthand: "
+                    + _section_assignment_text(midi_plan["section_assignments"])
                 ),
                 "why": "A release-shaped arrangement needs bar-count discipline. If the structure is fixed early, every later automation and layer choice has a clear job.",
                 "ableton_cheatsheet_id": "arrangement-view",
@@ -351,8 +463,10 @@ def _find_vague_step_ids(lesson: dict) -> list[int]:
 
 def build_report(args: argparse.Namespace) -> dict:
     blueprint = build_full_song_blueprint_report(_full_song_namespace(args))
+    composition = build_song_composition_pass_report(_composition_namespace(args))
+    midi_plan = build_song_midi_plan_report(_composition_namespace(args))
     synth_steps = _make_synth_steps(blueprint)
-    static_steps = _make_static_steps(blueprint, synth_steps)
+    static_steps = _make_static_steps(blueprint, composition, midi_plan, synth_steps)
     enriched_synth_steps = synth_steps
     all_steps = static_steps[:3] + enriched_synth_steps + static_steps[3:]
     steps = []
@@ -396,6 +510,8 @@ def build_report(args: argparse.Namespace) -> dict:
         "compiler_warnings": compiler_warnings,
         "lesson": lesson,
         "blueprint": blueprint,
+        "composition_pass": composition,
+        "song_midi_plan": midi_plan,
     }
 
 

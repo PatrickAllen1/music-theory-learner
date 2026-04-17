@@ -248,11 +248,23 @@ python3 als/prepare_serum_lesson_author_bundle.py --brief ukg-2step-dark-stab --
 python3 als/prepare_serum_lesson_author_bundle.py --brief ukg-4x4-pluck-driver --out-dir als/lesson-author/ukg-4x4-pluck-driver --prefer-rendered
 ```
 
+Prepare a studio-facing build session for the eventual Ableton writing pass:
+
+```bash
+python3 als/prepare_song_build_session.py --brief ukg-140-og-bounce-driver
+python3 als/prepare_song_build_session.py --brief ukg-140-og-bounce-driver --format json
+```
+
 The author bundle includes:
 
 - `packet/` with the refined lesson packet
 - `full-song-blueprint.json` / `full-song-blueprint.md`
 - `decision-tree.json` / `decision-tree.md`
+- `frozen-song-spec.json` / `frozen-song-spec.md`
+- `song-composition-pass.json` / `song-composition-pass.md`
+- `song-midi-plan.json` / `song-midi-plan.md`
+- `song-build-session.json` / `song-build-session.md`
+- `phrase-evidence.json` / `phrase-evidence.md`
 - `production-techniques.json` / `production-techniques.md`
 - `full-song-readiness.json`
 - `compiled-lesson.json` / `compiled-lesson.md`

@@ -18,6 +18,7 @@ from argparse import Namespace
 from pathlib import Path
 
 try:
+    from prepare_song_build_session import build_report as build_song_build_session_report, render_text as render_song_build_session_text
     from build_song_midi_plan import build_report as build_song_midi_plan_report, render_text as render_song_midi_plan_text
     from build_song_composition_pass import build_report as build_song_composition_pass_report, render_text as render_song_composition_pass_text
     from build_frozen_song_spec import build_report as build_frozen_song_spec_report, render_text as render_frozen_song_spec_text
@@ -35,6 +36,7 @@ try:
     from recommend_phrase_evidence import build_report as build_phrase_evidence_report, render_text as render_phrase_evidence_text
     from validate_guided_build_lesson import build_report as build_lesson_validation_report, render_text as render_lesson_validation_text
 except ModuleNotFoundError:
+    from .prepare_song_build_session import build_report as build_song_build_session_report, render_text as render_song_build_session_text
     from .build_song_midi_plan import build_report as build_song_midi_plan_report, render_text as render_song_midi_plan_text
     from .build_song_composition_pass import build_report as build_song_composition_pass_report, render_text as render_song_composition_pass_text
     from .build_frozen_song_spec import build_report as build_frozen_song_spec_report, render_text as render_frozen_song_spec_text
@@ -227,6 +229,25 @@ def _song_midi_plan_namespace(args: argparse.Namespace) -> Namespace:
     )
 
 
+def _song_build_session_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        brief=args.brief,
+        song_briefs=args.song_briefs,
+        templates=args.templates,
+        catalog_dir=args.catalog_dir,
+        serum_briefs=args.briefs,
+        analysis_dir="als/analysis",
+        transcripts_dir="docs/transcripts",
+        technique_bank="docs/techniques/bank.json",
+        prefer_rendered=args.prefer_rendered,
+        limit_per_part=args.limit_per_part,
+        mutation_limit=args.mutation_limit,
+        max_swaps=args.max_swaps,
+        phrase_limit=8,
+        format="json",
+    )
+
+
 def _bank_namespace(args: argparse.Namespace) -> Namespace:
     return Namespace(
         brief=args.brief,
@@ -389,6 +410,7 @@ def _author_summary(
     phrase_evidence: dict,
     composition_pass: dict,
     song_midi_plan: dict,
+    song_build_session: dict,
     compiled_lesson: dict,
     lesson_validation: dict,
     synth_plan: dict,
@@ -423,6 +445,7 @@ def _author_summary(
     lines.append(f"- phrase evidence rows: {phrase_evidence['result_count']}")
     lines.append(f"- composition sections: {len(composition_pass['section_plan'])}")
     lines.append(f"- MIDI plan parts: {len(song_midi_plan['parts'])}")
+    lines.append(f"- build session stages: {len(song_build_session['build_order'])}")
     lines.append(f"- production techniques attached: {full_song_blueprint['production_techniques']['result_count']}")
     lines.append(
         f"- technique interactions: "
@@ -486,6 +509,17 @@ def _author_summary(
     lines.append(f"- bass intro decision: {song_midi_plan['architectural_decisions']['intro_b_bass_gesture']['decision']}")
     lines.append(f"- reese architecture: {song_midi_plan['architectural_decisions']['drop_b_reese_architecture']['decision']}")
     lines.append("")
+    lines.append("## Build Session")
+    if song_build_session["reference_axes"]:
+        lines.append(
+            "- reference axes: "
+            + " | ".join(f"{row['axis']}={row['influence']}" for row in song_build_session["reference_axes"])
+        )
+    lines.append(
+        "- first build stages: "
+        + " | ".join(row["name"] for row in song_build_session["build_order"][:3])
+    )
+    lines.append("")
     interaction = full_song_blueprint["production_techniques"]["interaction_analysis"]
     if interaction["watchouts"] or interaction["reinforcements"]:
         lines.append("## Technique Interactions")
@@ -519,6 +553,7 @@ def _author_summary(
     lines.append("- `frozen-song-spec.json` / `frozen-song-spec.md` freeze the actual song stance, section focus, and stabilizers.")
     lines.append("- `song-composition-pass.json` / `song-composition-pass.md` turn that stance into actual bass, harmony, hook, and section-writing decisions.")
     lines.append("- `song-midi-plan.json` / `song-midi-plan.md` turn those section-writing decisions into exact drum, bass, chord, and hook note plans.")
+    lines.append("- `song-build-session.json` / `song-build-session.md` freeze the eventual Ableton build order, reference axes, and section listening targets.")
     lines.append("- `phrase-evidence.json` / `phrase-evidence.md` merge ALS MIDI, transcript spans, and composition techniques into note-writing references.")
     lines.append("- `production-techniques.json` / `production-techniques.md` show the transcript-derived moves that fit this brief.")
     lines.append("- `full-song-readiness.json` shows whether the song plan is release-shaped enough to proceed.")
@@ -550,6 +585,7 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     phrase_evidence = build_phrase_evidence_report(_phrase_evidence_namespace(args))
     composition_pass = build_song_composition_pass_report(_composition_pass_namespace(args))
     song_midi_plan = build_song_midi_plan_report(_song_midi_plan_namespace(args))
+    song_build_session = build_song_build_session_report(_song_build_session_namespace(args))
     compiled_lesson = build_compiled_lesson_report(_full_song_namespace(args))
     lesson_validation = build_lesson_validation_report(_full_song_namespace(args))
     synth_plan = build_synth_plan_report(_synth_plan_namespace(args))
@@ -577,6 +613,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     _write_text(out_dir / "song-composition-pass.md", render_song_composition_pass_text(composition_pass) + "\n", args.force)
     _write_text(out_dir / "song-midi-plan.json", json.dumps(song_midi_plan, indent=2) + "\n", args.force)
     _write_text(out_dir / "song-midi-plan.md", render_song_midi_plan_text(song_midi_plan) + "\n", args.force)
+    _write_text(out_dir / "song-build-session.json", json.dumps(song_build_session, indent=2) + "\n", args.force)
+    _write_text(out_dir / "song-build-session.md", render_song_build_session_text(song_build_session) + "\n", args.force)
     _write_text(out_dir / "phrase-evidence.json", json.dumps(phrase_evidence, indent=2) + "\n", args.force)
     _write_text(out_dir / "phrase-evidence.md", render_phrase_evidence_text(phrase_evidence) + "\n", args.force)
     _write_text(
@@ -681,6 +719,7 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             phrase_evidence,
             composition_pass,
             song_midi_plan,
+            song_build_session,
             compiled_lesson,
             lesson_validation,
             synth_plan,
@@ -713,6 +752,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             "song_composition_pass_md": str(out_dir / "song-composition-pass.md"),
             "song_midi_plan_json": str(out_dir / "song-midi-plan.json"),
             "song_midi_plan_md": str(out_dir / "song-midi-plan.md"),
+            "song_build_session_json": str(out_dir / "song-build-session.json"),
+            "song_build_session_md": str(out_dir / "song-build-session.md"),
             "phrase_evidence_json": str(out_dir / "phrase-evidence.json"),
             "phrase_evidence_md": str(out_dir / "phrase-evidence.md"),
             "production_techniques_json": str(out_dir / "production-techniques.json"),
