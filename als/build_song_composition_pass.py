@@ -285,11 +285,43 @@ def build_report(args: argparse.Namespace) -> dict:
         "transition_role": "Use one printed throw or delay-tail transition per major section boundary, not every 4 bars.",
     }
 
+    architectural_decisions = {
+        "intro_b_bass_gesture": {
+            "decision": "Make the teaser a held mono sub/root for the first two beats, then one short envelope-opened octave hint every second bar. No pitch-bend and no full release run yet.",
+            "why": "That keeps the intro OG and physically grounded. A bend would make the record feel more slippery and modern than this lane wants.",
+        },
+        "drop_b_reese_architecture": {
+            "decision": "Use the Reese as a separate mid-bass answer voice above the sub, not the same bass voice morphing. Let it speak only at phrase tails and carve it above the sub range.",
+            "why": "A second voice creates more drama and low-mid width, but only works if the true sub ownership never leaves the bass foundation.",
+        },
+        "break_sample_lane_target": {
+            "decision": "Reserve the break center lane for a narrow vocal/chop or phrase-end texture roughly in the A3-F5 zone. Avoid long tonal samples that introduce new thirds outside the progression.",
+            "why": "That keeps the harmonic plan flexible while still leaving room for a real sample idea later.",
+        },
+    }
+
+    frequency_strategy = {
+        "sub_low": "bass-foundation owns the 30-90 Hz center. Do not let the Reese or chord bed sit there continuously.",
+        "low_mid": "Reese answers and chord warmth can fill 120-300 Hz, but they must alternate or be carved so the drop feels dense instead of muddy.",
+        "mid": "The emotional read lives in the chord color tones and the hook-response cells. Keep this range expressive, not overcrowded.",
+        "presence": "The 2-6 kHz push has to come from tops, loop bite, hook attack, or a controlled stab edge. If the drops feel closed-in, solve it here before widening the chords.",
+        "air": "Reserve at least one subtle air source: top-loop fizz, reverb shimmer, or filtered noise/atmosphere. The record should feel tall, not sealed shut.",
+        "movement_rule": "Filter and narrow the intro, let the first drop open the presence band, let the break breathe into air, then make Drop B feel bigger by width and top-end release rather than by adding more sub layers.",
+    }
+
+    originality_guardrails = [
+        "Use ALS clips and transcript spans as mechanism evidence only. Do not lift any full note path, bar-length phrase, or exact hook contour intact.",
+        "Whenever a source suggests a useful move, keep the function but change at least two of: root path, interval contour, register, rhythmic placement, section placement, or harmonic context.",
+        "The hook-response lane must stay original enough that it does not read like a quote from Yosemite, Raw, or the analyzed ALS hooks.",
+        "If a phrase starts sounding too close to a source, simplify it and push the emotion through harmony, filtering, or arrangement instead of borrowing more notes.",
+    ]
+
     return {
         "brief_id": frozen["brief_id"],
         "readiness": frozen["readiness"],
         "thesis": frozen["thesis"],
         "emotional_target": ["dark", "hopeful"],
+        "architectural_decisions": architectural_decisions,
         "harmonic_language": {
             "progression": progression,
             "root_path": roots,
@@ -305,6 +337,8 @@ def build_report(args: argparse.Namespace) -> dict:
         "hook_plan": hook_plan,
         "section_plan": composition_sections,
         "sample_strategy": sample_strategy,
+        "frequency_strategy": frequency_strategy,
+        "originality_guardrails": originality_guardrails,
         "stabilizers": frozen["required_stabilizers"],
         "phrase_evidence": frozen["phrase_evidence"],
         "als_reference_points": frozen["ableton_reference_points"]["als_anchor_profiles"],
@@ -328,6 +362,11 @@ def render_text(report: dict) -> str:
     lines.append(f"- rule: {report['harmonic_language']['rule']}")
     for row in report["harmonic_language"]["palette"]:
         lines.append(f"- `{row['chord']}`: {' - '.join(row['voicing'])} :: {row['emotional_job']}")
+    lines.append("")
+    lines.append("## Architectural Decisions")
+    for key, value in report["architectural_decisions"].items():
+        lines.append(f"- {key.replace('_', ' ')}: {value['decision']}")
+        lines.append(f"  why: {value['why']}")
     lines.append("")
     lines.append("## Bass Plan")
     lines.append(f"- thesis: {report['bass_plan']['thesis']}")
@@ -353,6 +392,14 @@ def render_text(report: dict) -> str:
     lines.append("## Sample Strategy")
     for key, value in report["sample_strategy"].items():
         lines.append(f"- {key.replace('_', ' ')}: {value}")
+    lines.append("")
+    lines.append("## Frequency Strategy")
+    for key, value in report["frequency_strategy"].items():
+        lines.append(f"- {key.replace('_', ' ')}: {value}")
+    lines.append("")
+    lines.append("## Originality Guardrails")
+    for row in report["originality_guardrails"]:
+        lines.append(f"- {row}")
     lines.append("")
     lines.append("## ALS Reference Points")
     for row in report["als_reference_points"]:

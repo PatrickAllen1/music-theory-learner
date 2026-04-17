@@ -122,6 +122,20 @@ python3 als/build_song_decision_tree.py --brief ukg-2step-dark-stab
 python3 als/build_song_decision_tree.py --brief ukg-4x4-lead-driver --format json
 ```
 
+Turn the frozen song stance into actual bass, harmony, hook, and section-writing decisions:
+
+```bash
+python3 als/build_song_composition_pass.py --brief ukg-140-og-bounce-driver
+python3 als/build_song_composition_pass.py --brief ukg-140-og-bounce-driver --format json
+```
+
+Turn that composition pass into exact part-level MIDI variants and section assignments:
+
+```bash
+python3 als/build_song_midi_plan.py --brief ukg-140-og-bounce-driver
+python3 als/build_song_midi_plan.py --brief ukg-140-og-bounce-driver --format json
+```
+
 Recommend transcript-derived production techniques for a brief:
 
 ```bash
