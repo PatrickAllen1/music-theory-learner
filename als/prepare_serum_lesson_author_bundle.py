@@ -18,6 +18,7 @@ from argparse import Namespace
 from pathlib import Path
 
 try:
+    from build_song_composition_pass import build_report as build_song_composition_pass_report, render_text as render_song_composition_pass_text
     from build_frozen_song_spec import build_report as build_frozen_song_spec_report, render_text as render_frozen_song_spec_text
     from build_song_decision_tree import build_report as build_song_decision_tree_report, render_text as render_song_decision_tree_text
     from compile_guided_build_lesson import build_report as build_compiled_lesson_report, render_text as render_compiled_lesson_text
@@ -33,6 +34,7 @@ try:
     from recommend_phrase_evidence import build_report as build_phrase_evidence_report, render_text as render_phrase_evidence_text
     from validate_guided_build_lesson import build_report as build_lesson_validation_report, render_text as render_lesson_validation_text
 except ModuleNotFoundError:
+    from .build_song_composition_pass import build_report as build_song_composition_pass_report, render_text as render_song_composition_pass_text
     from .build_frozen_song_spec import build_report as build_frozen_song_spec_report, render_text as render_frozen_song_spec_text
     from .build_song_decision_tree import build_report as build_song_decision_tree_report, render_text as render_song_decision_tree_text
     from .compile_guided_build_lesson import build_report as build_compiled_lesson_report, render_text as render_compiled_lesson_text
@@ -148,6 +150,25 @@ def _decision_tree_namespace(args: argparse.Namespace) -> Namespace:
 
 
 def _frozen_song_namespace(args: argparse.Namespace) -> Namespace:
+    return Namespace(
+        brief=args.brief,
+        song_briefs=args.song_briefs,
+        templates=args.templates,
+        catalog_dir=args.catalog_dir,
+        serum_briefs=args.briefs,
+        analysis_dir="als/analysis",
+        transcripts_dir="docs/transcripts",
+        technique_bank="docs/techniques/bank.json",
+        prefer_rendered=args.prefer_rendered,
+        limit_per_part=args.limit_per_part,
+        mutation_limit=args.mutation_limit,
+        max_swaps=args.max_swaps,
+        phrase_limit=8,
+        format="json",
+    )
+
+
+def _composition_pass_namespace(args: argparse.Namespace) -> Namespace:
     return Namespace(
         brief=args.brief,
         song_briefs=args.song_briefs,
@@ -345,6 +366,7 @@ def _author_summary(
     decision_tree: dict,
     frozen_song_spec: dict,
     phrase_evidence: dict,
+    composition_pass: dict,
     compiled_lesson: dict,
     lesson_validation: dict,
     synth_plan: dict,
@@ -377,6 +399,7 @@ def _author_summary(
     lines.append(f"- decision branches: {len(decision_tree['branches'])}")
     lines.append(f"- frozen song spec sections: {len(frozen_song_spec['section_intent'])}")
     lines.append(f"- phrase evidence rows: {phrase_evidence['result_count']}")
+    lines.append(f"- composition sections: {len(composition_pass['section_plan'])}")
     lines.append(f"- production techniques attached: {full_song_blueprint['production_techniques']['result_count']}")
     lines.append(
         f"- technique interactions: "
@@ -429,6 +452,11 @@ def _author_summary(
             lines.append(f"- `{row['title']}` [{row['kind']}/{row['role']}] from {row['source']}")
             lines.append(f"  {row['summary']}")
         lines.append("")
+    lines.append("## Composition Pass")
+    lines.append(f"- harmonic rule: {composition_pass['harmonic_language']['rule']}")
+    lines.append(f"- bass rule: {composition_pass['bass_plan']['rule']}")
+    lines.append(f"- hook thesis: {composition_pass['hook_plan']['thesis']}")
+    lines.append("")
     interaction = full_song_blueprint["production_techniques"]["interaction_analysis"]
     if interaction["watchouts"] or interaction["reinforcements"]:
         lines.append("## Technique Interactions")
@@ -460,6 +488,7 @@ def _author_summary(
     lines.append("- `full-song-blueprint.json` / `full-song-blueprint.md` capture the actual production plan.")
     lines.append("- `decision-tree.json` / `decision-tree.md` prepare the model-led composition pass.")
     lines.append("- `frozen-song-spec.json` / `frozen-song-spec.md` freeze the actual song stance, section focus, and stabilizers.")
+    lines.append("- `song-composition-pass.json` / `song-composition-pass.md` turn that stance into actual bass, harmony, hook, and section-writing decisions.")
     lines.append("- `phrase-evidence.json` / `phrase-evidence.md` merge ALS MIDI, transcript spans, and composition techniques into note-writing references.")
     lines.append("- `production-techniques.json` / `production-techniques.md` show the transcript-derived moves that fit this brief.")
     lines.append("- `full-song-readiness.json` shows whether the song plan is release-shaped enough to proceed.")
@@ -489,6 +518,7 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     decision_tree = build_song_decision_tree_report(_decision_tree_namespace(args))
     frozen_song_spec = build_frozen_song_spec_report(_frozen_song_namespace(args))
     phrase_evidence = build_phrase_evidence_report(_phrase_evidence_namespace(args))
+    composition_pass = build_song_composition_pass_report(_composition_pass_namespace(args))
     compiled_lesson = build_compiled_lesson_report(_full_song_namespace(args))
     lesson_validation = build_lesson_validation_report(_full_song_namespace(args))
     synth_plan = build_synth_plan_report(_synth_plan_namespace(args))
@@ -512,6 +542,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
     _write_text(out_dir / "decision-tree.md", render_song_decision_tree_text(decision_tree) + "\n", args.force)
     _write_text(out_dir / "frozen-song-spec.json", json.dumps(frozen_song_spec, indent=2) + "\n", args.force)
     _write_text(out_dir / "frozen-song-spec.md", render_frozen_song_spec_text(frozen_song_spec) + "\n", args.force)
+    _write_text(out_dir / "song-composition-pass.json", json.dumps(composition_pass, indent=2) + "\n", args.force)
+    _write_text(out_dir / "song-composition-pass.md", render_song_composition_pass_text(composition_pass) + "\n", args.force)
     _write_text(out_dir / "phrase-evidence.json", json.dumps(phrase_evidence, indent=2) + "\n", args.force)
     _write_text(out_dir / "phrase-evidence.md", render_phrase_evidence_text(phrase_evidence) + "\n", args.force)
     _write_text(
@@ -614,6 +646,7 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             decision_tree,
             frozen_song_spec,
             phrase_evidence,
+            composition_pass,
             compiled_lesson,
             lesson_validation,
             synth_plan,
@@ -642,6 +675,8 @@ def prepare_bundle(args: argparse.Namespace) -> dict:
             "decision_tree_md": str(out_dir / "decision-tree.md"),
             "frozen_song_spec_json": str(out_dir / "frozen-song-spec.json"),
             "frozen_song_spec_md": str(out_dir / "frozen-song-spec.md"),
+            "song_composition_pass_json": str(out_dir / "song-composition-pass.json"),
+            "song_composition_pass_md": str(out_dir / "song-composition-pass.md"),
             "phrase_evidence_json": str(out_dir / "phrase-evidence.json"),
             "phrase_evidence_md": str(out_dir / "phrase-evidence.md"),
             "production_techniques_json": str(out_dir / "production-techniques.json"),
