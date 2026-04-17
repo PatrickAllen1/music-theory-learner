@@ -1,3 +1,8 @@
+# Kettamapge | Cleaned Transcript
+Source: kettamapge.docx
+
+---
+
 ## General Features
 
 We're between 140 and 150 BPM — maybe between like 130 and 150 — so we're at 143 here.
@@ -14,9 +19,9 @@ The same chord is being played on both pads. One's playing like a rhythm and the
 
 ### Synth 1 — Rhythmic (Analog)
 
-Instrument: Analog.
+Instrument: Analog — "I like Analog for these because the filter is so you can hear it, it just sounds so nice and juicy."
 
-Two sine waves, low pass with a nice envelope on it and an envelope like that.
+Two sine waves, low pass with a nice envelope on it.
 
 A ton of Unison — voices all the way up.
 
@@ -114,7 +119,7 @@ These are panned a little bit, which really helps to keep everything where it's 
 
 #### Arrangement Role
 
-Notes are really simple — if we're in D minor we're playing with fourth, third, ninth, and then a root down here. It's really only a few notes but it just creates these little kind of melodic things at the end of every two bars.
+Notes are really simple — [source says "D minor" here, but the surrounding track context is D-sharp minor] fourth, third, ninth, and then a root down here. It's really only a few notes but it just creates these little kind of melodic things at the end of every two bars.
 
 #### Patch
 
@@ -123,6 +128,8 @@ Instrument: Wavetable.
 Sub oscillator, Transformations, and then another Transformations — both panned.
 
 Filter moving around with LFOs — just trying to bring it to life and make it a bit more exciting.
+
+I think Wavetable is really cool because with the modulation matrix you can end up putting stuff in places you wouldn't think to. I wouldn't always put an LFO on the pan but when you do it sounds really cool.
 
 Unison voices turned down all the way — you barely hear that Unison but it just gives it that kind of chunky sort of feel.
 
@@ -138,7 +145,7 @@ High pass.
 
 #### Arrangement Role
 
-Like sixth or fifth sixth, route.
+[Transcript unclear: sounds like "fifth / sixth / root"].
 
 #### Patch
 

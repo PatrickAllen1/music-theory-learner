@@ -93,6 +93,10 @@ Using inversions and shifting notes up and down octaves helps keep a nice tight 
 
 When we get back to that G minor chord at the beginning, paired with the E flat on the bottom, the E flat gives the chord a completely new meaning. The root note of the G chord becomes the third, the B flat is the fifth, and the top note the D is a seventh note — providing a little bit of tension. From the third chord onwards there is more regular voicing with the G as the root note, the fifth in between, and the third note on top but an octave above.
 
+Undoing the inversions reveals: both of the first two chords are G minor (first, third, fifth) — but the second G minor chord starts on the second note of the triad instead of the first, which is why the arpeggiator shows a different pattern for it.
+
+The top note in each chord follows the melody of the trumpet pattern — that is the reason all the notes have been moved around and the pattern has changed slightly.
+
 I can imagine this is probably written on a piano, or just programmed in one note at a time, using the trumpet line as the top note and then placing all the other notes in so they fit around it.
 
 ---
@@ -104,6 +108,8 @@ I can imagine this is probably written on a piano, or just programmed in one not
 The piano chords are pretty simple — root note down on the bass with the stretched voicing where the third note has been moved up to the octave above, plus an additional fifth note on top. Nothing too crazy — more of a background layer to help harmonize the other instruments around them.
 
 The melody above the chords is used a little bit in the first house section but is not used anywhere really after this point, or if it is, it is very very quiet in the mix. The rhythm is that syncopated rhythm where each note is a 3/16th note length (a dotted eighth note), and it resets every two bars.
+
+Interval analysis of the piano melody — phrase 1 (E flat as root): the interval between the first note and E flat is a perfect fifth, then a perfect fourth, and then the most prominent note — the one that is rested on for quite a while — is a major seventh interval from E flat, which creates quite a lot of tension. There is a small F in here that is basically a passing note that blends up into the next section. Phrase 2 (G as root): the first note is the root note, drops down to the minor 7th underneath which creates a little bit of tension, then resolves down to B flat — the minor third interval — which is quite a pleasing interval. Tension, then release.
 
 Processing: auto filter for automation, a little bit of glue compression with a long attack and a medium release doing very little, just to control the punch and the tail.
 
@@ -120,6 +126,8 @@ This bass sound is used in the breakdown as a layer underneath the pianos, and i
 ---
 
 ## Vocals
+
+The vocal is an original vocal from Julia Church.
 
 ### Melody Shape & Pitch Trend
 

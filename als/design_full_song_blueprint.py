@@ -94,6 +94,10 @@ def _build_arrangement(sections: list[dict]) -> list[dict]:
     return arrangement
 
 
+def _resolve_arrangement_sections(song_brief: dict, template: dict) -> list[dict]:
+    return deepcopy(song_brief.get("arrangement_sections") or template["arrangement_sections"])
+
+
 def _merge_sample_slots(template_slots: list[dict], overrides: dict) -> list[dict]:
     merged = []
     overrides = overrides or {}
@@ -167,6 +171,8 @@ def _readiness(song_brief: dict, synth_report: dict, arrangement: list[dict], sa
     )
     required_sample_slots = sum(1 for lane in sample_lanes if lane["required"])
     total_bars = arrangement[-1]["end_bar"] if arrangement else 0
+    duration_minutes = round((total_bars * 4) / song_brief["bpm"], 2) if total_bars else 0.0
+    duration_target = song_brief.get("duration_target_minutes") or {}
 
     issues = []
     if unresolved_synth_parts:
@@ -181,6 +187,17 @@ def _readiness(song_brief: dict, synth_report: dict, arrangement: list[dict], sa
         issues.append("No required sample lanes were defined.")
     if total_bars < 56:
         issues.append("Arrangement is too short to feel release-shaped.")
+    if duration_target:
+        min_minutes = duration_target.get("min")
+        max_minutes = duration_target.get("max")
+        if min_minutes is not None and duration_minutes < float(min_minutes):
+            issues.append(
+                f"Arrangement runtime is too short for the target window ({duration_minutes} min < {min_minutes} min)."
+            )
+        if max_minutes is not None and duration_minutes > float(max_minutes):
+            issues.append(
+                f"Arrangement runtime is too long for the target window ({duration_minutes} min > {max_minutes} min)."
+            )
 
     if unresolved_synth_parts or missing_processing or total_bars < 56:
         label = "blocked"
@@ -191,6 +208,9 @@ def _readiness(song_brief: dict, synth_report: dict, arrangement: list[dict], sa
     else:
         label = "usable"
 
+    if duration_target and any("runtime is too" in issue for issue in issues):
+        label = "needs_work" if label != "blocked" else label
+
     return {
         "label": label,
         "unresolved_synth_parts": unresolved_synth_parts,
@@ -199,6 +219,8 @@ def _readiness(song_brief: dict, synth_report: dict, arrangement: list[dict], sa
         "missing_processing_chains": missing_processing,
         "required_sample_slots": required_sample_slots,
         "total_bars": total_bars,
+        "duration_minutes": duration_minutes,
+        "duration_target_minutes": duration_target or None,
         "issues": issues,
     }
 
@@ -207,7 +229,7 @@ def build_report(args: argparse.Namespace) -> dict:
     song_brief = _load_song_brief(Path(args.song_briefs), args.brief)
     template = _load_template(Path(args.templates), song_brief["template_id"])
     synth_report = build_refined_blueprint_report(_serum_namespace(args, song_brief["serum_brief_id"]))
-    arrangement = _build_arrangement(template["arrangement_sections"])
+    arrangement = _build_arrangement(_resolve_arrangement_sections(song_brief, template))
     sample_lanes = _build_drum_and_sample_lanes(song_brief, template)
     synth_layers = _build_synth_layers(song_brief, template, synth_report)
     readiness = _readiness(song_brief, synth_report, arrangement, sample_lanes, synth_layers)

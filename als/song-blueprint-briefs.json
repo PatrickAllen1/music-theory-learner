@@ -181,6 +181,133 @@
           "chain_id": "hook_foreground"
         }
       }
+    },
+    "ukg-140-og-bounce-driver": {
+      "description": "Full-song blueprint for a 140 BPM speed-garage record with Kettama-level impact, Interplanetary Criminal bounce, OG hollow bass language, and enough harmonic depth to support a future sample hook.",
+      "serum_brief_id": "ukg-140-og-bounce-driver",
+      "template_id": "ukg-4x4-core",
+      "bpm": 140,
+      "key": "D minor",
+      "duration_target_minutes": {
+        "min": 3.0,
+        "max": 5.0
+      },
+      "energy_profile": "Hard 4-on-floor speed-garage pressure with an OG hollow bass spine, strong bounce from loops and hats, and a disciplined midrange lane left open for future sample work.",
+      "harmonic_plan": {
+        "center": "D minor",
+        "progression": [
+          "Dm9",
+          "Bbmaj7",
+          "Fadd9",
+          "Cadd9"
+        ],
+        "movement_note": "Let the harmony feel musically rich like Sammy or Kettama, but keep the actual hook phrase economical so a later sample can still take over the center lane.",
+        "bass_strategy": "Bass owns a simple 1-6-3-7 backbone with offbeat bounce and octave ornaments, while the reese only answers in the low-mid stereo field and never steals the true sub."
+      },
+      "drum_strategy": "Build from a hard 4x4 speed-garage core, then add filtered loop bounce, tuned hats, and one restrained break layer so the groove feels huge without losing the kick-led spine.",
+      "melodic_strategy": "The instrumental hook should behave like a response lane rather than a full topline: enough identity to carry the record now, but simple enough that a chopped vocal or sample can later become the main foreground element.",
+      "arrangement_notes": [
+        "Intro should establish kick, tuned hats, and filtered loop bounce before revealing the full bass conversation.",
+        "Drop A should feel bass-and-groove led first, with the hook-response lane entering as punctuation rather than constant chatter.",
+        "Break should widen the chord bed, thin the drums, and preserve a clean center lane for future samples.",
+        "Drop B should add one stronger answering phrase or sample lane while keeping the low end just as disciplined as Drop A."
+      ],
+      "arrangement_sections": [
+        {
+          "section_id": "intro_a",
+          "length_bars": 16,
+          "goal": "Establish the 4x4 kick, tuned tops, filtered loop bounce, and atmosphere without exposing the full bass conversation.",
+          "energy_level": "low"
+        },
+        {
+          "section_id": "intro_b",
+          "length_bars": 16,
+          "goal": "Tease the OG bass shape and chord width while still leaving the center lane and hook-response mostly open.",
+          "energy_level": "mid"
+        },
+        {
+          "section_id": "drop_a",
+          "length_bars": 16,
+          "goal": "Reveal the full bass spine, restrained hook punctuation, and the first complete bounce pocket.",
+          "energy_level": "high"
+        },
+        {
+          "section_id": "drop_a_lift",
+          "length_bars": 16,
+          "goal": "Develop the first drop with tighter percussion answers, loop energy, and one stronger response figure without overcrowding the center.",
+          "energy_level": "high"
+        },
+        {
+          "section_id": "break",
+          "length_bars": 16,
+          "goal": "Widen the chord bed, thin the drums, and create real headroom for a future sample lane or spoken phrase.",
+          "energy_level": "mid"
+        },
+        {
+          "section_id": "drop_b",
+          "length_bars": 16,
+          "goal": "Bring the full groove back with harder loop support and a more confident bass/reese conversation.",
+          "energy_level": "high"
+        },
+        {
+          "section_id": "drop_b_lift",
+          "length_bars": 16,
+          "goal": "Add the strongest answering phrase or sample response of the track while preserving low-end discipline and kick authority.",
+          "energy_level": "high"
+        },
+        {
+          "section_id": "outro",
+          "length_bars": 16,
+          "goal": "Strip back to a DJ-safe mix-out with drums, bass suggestion, and enough atmosphere to exit cleanly.",
+          "energy_level": "low"
+        }
+      ],
+      "reserved_spaces": [
+        "One chopped vocal or spoken sample lane in the center midrange",
+        "One phrase-end response lane for sample throws or hook answers in Drop B",
+        "One transition-impact lane at the end of the break and final drop pickup",
+        "One atmosphere lane for intro air and break lift"
+      ],
+      "sample_slot_overrides": {
+        "drum_loop_layer": {
+          "required": true,
+          "purpose": "Filtered garage or hard-house loop layer to supply bounce and width around the 4x4 core."
+        },
+        "vocal_space": {
+          "required": true,
+          "purpose": "Reserve a true center lane for a future chopped vocal, adlib, or one-shot phrase."
+        },
+        "percussion_or_rim": {
+          "required": true,
+          "purpose": "One answering percussion or rim move to keep the groove bouncing between kick and clap."
+        },
+        "atmosphere": {
+          "required": true,
+          "purpose": "Needed to stop the intro and break from feeling too dry before the full stack lands."
+        }
+      },
+      "synth_layers": {
+        "bass-foundation": {
+          "job_in_track": "own the centered sub and low-end punch while keeping the phrasing bouncy and OG rather than overdesigned",
+          "arrangement_role": "present in both drops, filtered in the intro, simplified in the break",
+          "chain_id": "bass_anchor"
+        },
+        "og-reese-answer": {
+          "job_in_track": "add hollow low-mid width and answer the bassline without duplicating the true sub lane",
+          "arrangement_role": "drop-heavy, thinned in the break, slightly more animated in Drop B",
+          "chain_id": "secondary_low_mid"
+        },
+        "chord-bed": {
+          "job_in_track": "carry the musical robustness and width so the track feels like a song rather than just a bass tool",
+          "arrangement_role": "teased in intro, widened in break, tucked behind the groove in drops",
+          "chain_id": "chord_bed"
+        },
+        "hook-response": {
+          "job_in_track": "provide a memorable instrumental answer that can later make room for a vocal or sample without collapsing the identity of the record",
+          "arrangement_role": "sparing in Drop A, more active in Drop B, mostly absent in the break",
+          "chain_id": "hook_support"
+        }
+      }
     }
   }
 }

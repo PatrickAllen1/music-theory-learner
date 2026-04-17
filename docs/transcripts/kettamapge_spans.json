@@ -20,8 +20,12 @@
     "text": "The same chord is being played on both pads. One's playing like a rhythm and then the other one's just playing a chord, but they're the same chord, and it kind of just creates this big kind of like ethereal wash."
   },
   {
+    "tags": ["arrangement", "sound_design"],
+    "text": "The automation is basically the same on both pad layers, so the rhythmic and sustained versions move as one harmonic body instead of feeling like two unrelated patches."
+  },
+  {
     "tags": ["sound_design"],
-    "text": "Two sine waves, low pass with a nice envelope on it and an envelope like that."
+    "text": "Two sine waves, low pass with a nice envelope on it."
   },
   {
     "tags": ["sound_design"],
@@ -112,12 +116,12 @@
     "text": "Delay, Reverb, and an autopan to make it bounce off the kick side-chain style."
   },
   {
-    "tags": ["arrangement"],
+    "tags": ["lead", "arrangement", "mix"],
     "text": "These are panned a little bit, which really helps to keep everything where it's meant to be and makes it feel more like call and response because they're really talking to each other."
   },
   {
-    "tags": ["lead", "arrangement"],
-    "text": "Notes are really simple — if we're in D minor we're playing with fourth, third, ninth, and then a root down here. It's really only a few notes but it just creates these little kind of melodic things at the end of every two bars."
+    "tags": ["lead", "arrangement", "theory"],
+    "text": "Notes are really simple — [source says \"D minor\" here, but the broader track context is D-sharp minor] fourth, third, ninth, and then a root down here. It's really only a few notes but it just creates these little kind of melodic things at the end of every two bars."
   },
   {
     "tags": ["sound_design"],
@@ -128,6 +132,10 @@
     "text": "Filter moving around with LFOs — just trying to bring it to life and make it a bit more exciting."
   },
   {
+    "tags": ["sound_design", "mix"],
+    "text": "Wavetable modulation matrix move: putting an LFO on the pan adds animated stereo life you might not think to program at first."
+  },
+  {
     "tags": ["sound_design"],
     "text": "Unison voices turned down all the way — you barely hear that Unison but it just gives it that kind of chunky sort of feel."
   },
@@ -136,8 +144,8 @@
     "text": "A lot of Reverb. Autopan to make it bounce off the kick. High pass."
   },
   {
-    "tags": ["lead", "arrangement"],
-    "text": "Like sixth or fifth sixth, route."
+    "tags": ["lead", "arrangement", "theory"],
+    "text": "Lead 2 reply phrase sits around the fifth / sixth / root area — the transcript wording is unclear, but the role is a simpler supersaw response to Lead 1 rather than a new dense melody."
   },
   {
     "tags": ["sound_design"],

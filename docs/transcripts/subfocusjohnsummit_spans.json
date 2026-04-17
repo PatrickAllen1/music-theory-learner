@@ -104,7 +104,13 @@
   {
     "id": "span_018",
     "section": "Piano & Pad Group > Piano (Ableton Grand)",
-    "text": "The piano chords are simple — root note down on the bass with the stretched voicing (third note moved up to the octave above), plus an additional fifth note on top. More of a background layer to help harmonize the other instruments. The melody above the chords uses a syncopated rhythm where each note is a 3/16th note length (a dotted eighth note), resetting every two bars.",
+    "text": "The piano chords are simple — root note down on the bass with the stretched voicing (third note moved up to the octave above), plus an additional fifth note on top. More of a background layer to help harmonize the other instruments. The melody above the chords is mainly used in the first house section, then mostly drops out or becomes very quiet later. It uses a syncopated rhythm where each note is a 3/16th note length (a dotted eighth note), resetting every two bars.",
+    "tags": ["theory", "arrangement"]
+  },
+  {
+    "id": "span_018a",
+    "section": "Piano & Pad Group > Piano (Ableton Grand)",
+    "text": "Interval analysis of the piano melody — phrase 1 with E flat as root: perfect fifth, perfect fourth, then a held major seventh creating tension, plus a small F as a passing note. Phrase 2 with G as root: root, then minor 7th tension, then resolves to B flat as the minor third. Tension first, then release.",
     "tags": ["theory", "arrangement"]
   },
   {
