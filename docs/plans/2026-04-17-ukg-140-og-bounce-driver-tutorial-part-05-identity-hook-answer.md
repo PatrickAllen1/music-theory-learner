@@ -91,6 +91,10 @@ Rhythmic identity:
 - on the `a` of beat `4`
 - on hook-owned `Drop B` bloom phrases, `F5` lands on beat `1` of the following bar
 
+Kick relationship rule:
+- do not start the hook on beat `1` of its own bar
+- beat `4` and the following bar's beat `1` are allowed accent collisions when they make the phrase hit harder
+
 Conversation rule:
 - `Drop B`: hook at half density
 - answer phrase-end only
@@ -242,6 +246,10 @@ The hook has to feel memorable because of:
 - repetition discipline
 
 not because it has lots of notes.
+
+This phrase is allowed to collide with selected kicks:
+- beat `4` is a deliberate accent
+- `F5` on the next bar's beat `1` is the bloom accent
 
 ### Screenshot
 - `identity-midi-01-drop-a-hook`

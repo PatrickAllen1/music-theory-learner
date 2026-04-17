@@ -314,7 +314,8 @@ Capture requirement:
 - `Drop B`: `A4 C5 D5 F5`
 
 ### Exact rhythmic identity
-- hook enters late, not on the kick
+- hook enters late and avoids the bar's beat-`1` downbeat
+- collisions on beat `4` and next-bar beat `1` are intentional accent points, not mistakes
 - in the current plan the core cell lands around:
   - on the `a` of beat `3`
   - on beat `4`

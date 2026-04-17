@@ -135,7 +135,7 @@ Why:
 
 ### Hook voice identity
 - Clipped organ-pluck / woody garage stab
-- Late offbeat entry
+- Late-entry phrase with selective kick-aligned accents
 - Enough transient bite to read through the drums
 - Core rhythmic placement:
   - on the `a` of beat `3`
@@ -263,7 +263,8 @@ The bass is the `floor`, not the topline.
 - secondary answer cell: `G4 -> A4 -> C5`
 
 ### Rhythmic behavior
-- stay off the kick
+- avoid the downbeat of beat `1` as the hook entry point
+- selective kick collisions on beat `4` and next-bar beat `1` are intentional accents
 - enter:
   - on the `a` of beat `3`
   - on beat `4`
