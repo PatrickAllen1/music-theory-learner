@@ -1,0 +1,121 @@
+{
+  "id": "original-17-ukg-140-og-bounce-driver",
+  "title": "UKG 140 — OG Bounce Driver (D Minor)",
+  "build_type": "original",
+  "difficulty": "advanced",
+  "estimated_time_mins": 360,
+  "bpm": 140,
+  "key": "D minor",
+  "source_track_id": null,
+  "spinoff_level": null,
+  "description": "A full 144-bar modern UKG / speed-garage build: KETTAMA pressure, Interplanetary Criminal bounce, a rolling bass floor, restrained Drop A, bloomed Drop B, and a complete instrumental-first arrangement you can build later inside the app.",
+  "what_youll_learn": [
+    "How to build a dark-but-hopeful UKG record that grows by substitution instead of stacking",
+    "How to write a rhythmic-primary rolling bass floor in D minor at 140 BPM",
+    "How to stage harmonic bloom so Drop B feels earned instead of pre-spent",
+    "How to carry an instrumental with a low-note-count hook and phrase-end answer",
+    "How to move from plan to full-song execution while keeping sound blockers visible"
+  ],
+  "steps": [
+    {
+      "id": 1,
+      "title": "Set the session and freeze the song target",
+      "category": "ableton",
+      "instruction": "Create a new Ableton Live set at 140 BPM in D minor and save it as 'original-17-ukg-140-og-bounce-driver'. Build the core groups in this order: DRUMS, BASS, CHORDS, HOOK, ANSWER, AIR, FX, PREMASTER. Add returns named ROOM, PLATE, HALL, and DELAY. Load four references and trim them with Utility so they can be compared fairly: KETTAMA for pressure, Interplanetary Criminal for pocket, Y U QT for bass roll, and Sammy Virji for hook / harmony clarity. Add locators for the frozen 144-bar form: 1–16 Intro A, 17–32 Intro B, 33–48 Drop A, 49–64 Drop A Lift, 65–80 Break, 81–96 Transition B, 97–112 Drop B, 113–128 Drop B Lift, 129–144 Outro.",
+      "why": "This track is already composition-designed. The job now is not to discover a form from scratch but to rebuild the frozen architecture cleanly inside the DAW so later sound and mix decisions have somewhere stable to live.",
+      "ableton_cheatsheet_id": "track-grouping",
+      "splice_search": null,
+      "tip": "Do not start designing sounds before the session, returns, references, and section map exist. The routing and the form are part of the lesson, not admin work."
+    },
+    {
+      "id": 2,
+      "title": "Build the foundation: kick and air ceiling",
+      "category": "drums",
+      "instruction": "Choose one short tunable 909 / garage-compatible kick body and one short click layer. Tune the body to D in Simpler with Transpose and Detune, keep the tail around 90–120 ms, and layer the click only until the kick reads clearly without becoming bright or harsh. Program the kick on every quarter note with short MIDI notes so the sample tail does the sustain. Then build a quiet noise-only air layer in Serum 2, high-pass it aggressively, and feed most of its sense of space from the long filtered hall return. Keep the air low enough that you miss it when muted but do not hear it as its own statement.",
+      "why": "The whole song depends on a stable floor and a stable ceiling. If the kick tail is too long, the bass chapter gets over-sidechained later. If the air is too bright or too loud, the break has nowhere left to open.",
+      "ableton_cheatsheet_id": "simpler",
+      "splice_search": "uk garage kick short 909 punchy",
+      "tip": "This chapter does not create the groove yet. It only creates the physical center and the height the rest of the record leans on."
+    },
+    {
+      "id": 3,
+      "title": "Program the groove around the fixed kick",
+      "category": "drums",
+      "instruction": "Build the top-drum pocket around the unchanged 4x4 kick: clap on 2 and 4, closed hats as the fixed top pulse, ghost hats deliberately late rather than random, open hat with strong emphasis on the & of 4, and a shaker layer that stays supportive rather than brittle. Use manual timing offsets instead of global swing. Inside each 16-bar section, create micro-architecture: bars 1–4 establish, 5–8 deepen, 9–12 increase motion, 13–16 push the next boundary. Keep growth in the tops and phrase edge, never by rewriting the kick pattern.",
+      "why": "This lane is where the Interplanetary Criminal reference actually lives. The groove should bounce because of timing, velocity, and phrase pressure, not because the kick pattern changes or the hats get uniformly louder.",
+      "ableton_cheatsheet_id": "drum-rack",
+      "splice_search": "uk garage hats crisp shaker tight",
+      "tip": "If the groove only feels better when you add more hats, the timing is probably still too rigid."
+    },
+    {
+      "id": 4,
+      "title": "Write the rolling bass floor in D minor",
+      "category": "bass",
+      "instruction": "Build the bass as two lanes: a clean mono sine sub and a moving mid-bass layer. The 4-bar root path is D2 → Bb1 → F2 → C2 under Dm9 → Bb → Fadd9 → Cadd9. Keep the rolling behavior rhythmic-primary and tonal-secondary: note-length pulse, internal rhythmic life, small phrase-end pitch events, and light filter / saturation breathing. In Intro B the bass teaser should hold the root for the first two beats and only hint the octave every second bar. In Drop A and Drop A Lift, keep the bass authoritative and do not let it become a melodic lead. In Drop B you can reveal a little more phrase-end color, but the sub remains the only true low-end anchor.",
+      "why": "The track wants a modern rolling UKG floor, not an OG bass-hook. The listener should feel the bass as the body of the record while the movement comes from rhythm and tone rather than a busy note count.",
+      "ableton_cheatsheet_id": "serum-v2-oscillators",
+      "splice_search": null,
+      "tip": "If muting the filter movement destroys the roll entirely, the bass is too tonal and not rhythmic enough."
+    },
+    {
+      "id": 5,
+      "title": "Stage the chord bloom without spending it early",
+      "category": "chords",
+      "instruction": "Build one core chord-bed patch in Serum 2 and use articulation, width, and section state to make it behave differently through the arrangement. The progression is Dm9 → Bb → Fadd9 → Cadd9, but the Bb has two states: restrained Bb2 F3 C4 for Intro / Drop A / Drop A Lift / Transition B, and bloomed Bb2 F3 A3 C4 for Break / Drop B. Keep Drop A as a hybrid of sustained emotional bed plus restrained pulse. In the break, widen upward and let the bloomed Bbmaj7 color become obvious. In Transition B, tighten back down to the restrained Bb and rhythmic pulse. In Drop B and Drop B Lift, reopen the bloom without introducing a whole new harmonic story.",
+      "why": "The emotional architecture of the record is not 'dark and hopeful at the same time all the time.' It is dark first, then hopeful later. If you reveal the bloom early, Drop B can only get louder, not more meaningful.",
+      "ableton_cheatsheet_id": "serum-v2-envelopes",
+      "splice_search": null,
+      "tip": "On the Bb chord, omitting the 3rd in the bloomed voicing keeps the harmony emotional without clogging the tonic space."
+    },
+    {
+      "id": 6,
+      "title": "Give the instrumental an identity hook and answer",
+      "category": "chords",
+      "instruction": "Create a warm woody organ / garage stab as the hook voice and a related but shorter, slightly dirtier answer voice. The core hook rhythm uses late-entry accents: the phrase enters on the a of beat 3, then beat 4, then the a of beat 4. In Drop A and Drop A Lift, keep the hook economical and do not add new notes. In Drop B, let the hook drop to half density and let the answer own alternate phrase endings. The answer is phrase-end only and should sound like the same family as the hook, not a different instrument parachuted in from outside.",
+      "why": "This is how the track stays instrumental-first without feeling unfinished. The hook carries identity, but the answer creates the second-half conversation so the record can bloom by substitution rather than extra stacking.",
+      "ableton_cheatsheet_id": "serum-v2-filter",
+      "splice_search": null,
+      "tip": "If the hook and answer both speak at full density in Drop B, the section will feel busier instead of bigger."
+    },
+    {
+      "id": 7,
+      "title": "Assemble the full 144-bar arrangement",
+      "category": "ableton",
+      "instruction": "Build the song section by section from the frozen map instead of copying one loop across the timeline. Intro A is filtered groove plus air only. Intro B reveals the full progression in a tucked way, adds the bass teaser, and only a filtered hook pickup. Drop A is full rolling bass, restrained hook punctuation, restrained Bb state, and the first real top opening. Drop A Lift gets bigger only by top-end density and pocket. Break strips the drums, widens the chords upward, uses the bloomed Bbmaj7 state, and keeps the hook ghost textural. Transition B resets the drum language, restores filtered low-end implication, keeps the restrained Bb state, and does not bring the filtered hook pickup in until late. Drop B restores full body, harmonic bloom, and phrase-end answer. Drop B Lift is the most released top state. Outro strips the emotional layers before the physical ones and keeps a whisper of air.",
+      "why": "This track works because every section gets bigger or smaller for a different reason. If the arrangement is just layers toggling on and off with no section-specific logic, the whole record flattens into one long competent loop.",
+      "ableton_cheatsheet_id": "arrangement-view",
+      "splice_search": null,
+      "tip": "Inside every 16-bar section, bars 1–4 establish, 5–8 deepen, 9–12 increase motion, and 13–16 push the next boundary."
+    },
+    {
+      "id": 8,
+      "title": "Write the transitions and section-boundary automation",
+      "category": "ableton",
+      "instruction": "Give each major boundary its own job. 32→33 is a section riser plus drum-bus high-pass clearing off into the first full drop. 64→65 is a phrase-end fill, drum thinning, and upward chord / air release into the break. 80→81 is rhythmic wake-up: a new drum language, tighter chord pulse, and filtered bass re-implication, not the biggest riser in the song. 96→97 is the main re-entry: filtered hook pickup visible by 93–94, a pre-drop cut on the last beat or half-bar of 96, then full body return at 97. 128→129 removes top pressure first and keeps the air whisper alive. Use only the automation the transition job actually needs: drum-bus HP, hook throws, air-bed level, width handoffs already defined in the harmony chapter, and boundary mutes / cuts.",
+      "why": "Transitions are where the arrangement stops feeling like clip management and starts feeling like a record. The key is not to use the same riser at the same distance every time, and not to let transition FX do the work that subtraction and lane movement should do.",
+      "ableton_cheatsheet_id": "automation",
+      "splice_search": null,
+      "tip": "If Transition B still feels like a second break, increase rhythmic motion at 81 and reduce harmonic openness before trying a bigger riser."
+    },
+    {
+      "id": 9,
+      "title": "Mix the premaster and clear the known blockers",
+      "category": "mix",
+      "instruction": "Mix through the bus structure: Drum Bus, Bass Bus, Music Bus, then Premaster. Use the kick as the sidechain source for the sub, bass mid, chords, and air with descending amounts of ducking. Keep the low-mid ownership disciplined: 120–200 Hz led by bass character, 200–300 Hz by chord warmth, and cut the chord bed first if the low-mid clouds. Keep kick and sub mono, mid-bass narrow, chords medium-wide to wide by section, hook near-center, answer slightly wider, air wide but quiet. Before pushing the mix harder, address the named blockers directly: if `og-reese-answer` still masks the `bass-foundation` or the `hook-response`, replace it with a narrower warm phrase-end answer instead of mixing around it; if `chord-bed` or `hook-response` still feel fallback-heavy, choose a more committed final patch before continuing. Export checkpoint bounces through the premaster and compare each axis against the references at matched loudness.",
+      "why": "The remaining blockers are not abstract anymore. They are specific lane-ownership and patch-selection problems. Solving them in the mix chapter is acceptable only if the solution is simplification or replacement, not endless EQ and widening tricks.",
+      "ableton_cheatsheet_id": "eq-eight",
+      "splice_search": null,
+      "tip": "If the track only works loud or only works in stereo, the balances are still wrong upstream."
+    },
+    {
+      "id": 10,
+      "title": "Finish the master and save the build package",
+      "category": "mix",
+      "instruction": "Once the premaster already translates, build a restrained master chain: Utility, gentle Glue Compressor if needed, subtle saturation / soft clip, and a limiter with the ceiling around -1 dBTP. Loudness-match the premaster and master for comparison and confirm the master is denser without being flatter. Run final mono and small-speaker checks, then export both the premaster and final master. Save all checkpoint bounces, the final build notes, and any final patch decisions for chord-bed, hook-response, and answer so the screenshot / asset pack can be captured later when the track is actually built end to end.",
+      "why": "The point of this build is not just to finish a file once. It is to leave behind a stable production-ready version of the lesson so the real Ableton build, screenshots, and blocker-clearing pass can happen later without reopening the song design from zero.",
+      "ableton_cheatsheet_id": "limiter",
+      "splice_search": null,
+      "tip": "If the limiter removes punch, back off and return to the premaster. Mastering should confirm the track, not rescue it."
+    }
+  ]
+}

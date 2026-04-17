@@ -41,6 +41,7 @@ import original13 from "./originals/original-13-slow-ember.json";
 import original14 from "./originals/original-14-evening-run.json";
 import original15 from "./originals/original-15-pressure-drop.json";
 import original16 from "./originals/original-16-your-sound.json";
+import original17 from "./originals/original-17-ukg-140-og-bounce-driver.json";
 
 export const builds = [
   rep01,
@@ -86,6 +87,7 @@ export const builds = [
   original14,
   original15,
   original16,
+  original17,
 ];
 
 export const buildById = Object.fromEntries(builds.map((b) => [b.id, b]));
