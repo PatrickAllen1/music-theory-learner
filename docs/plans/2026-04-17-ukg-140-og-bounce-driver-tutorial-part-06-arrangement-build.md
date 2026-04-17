@@ -9,6 +9,14 @@ Teach the learner how to turn the finished lanes for `ukg-140-og-bounce-driver` 
 
 This part should convert the frozen architecture into exact section assembly, phrase planning, and energy control.
 
+Automation note:
+- this chapter builds the clip-placement and section-logic version of the arrangement first
+- use only coarse placeholder moves here when needed:
+  - temporary filter states
+  - obvious mutes / returns on or off
+  - rough width states already baked into section clips
+- detailed transition automation, sweeps, fills, FX throws, and section-boundary motion are authored in `Part 7: Transitions Toolkit`
+
 Related documents:
 - [2026-04-17-ukg-140-og-bounce-driver-full-song-plan.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-full-song-plan.md)
 - [2026-04-17-ukg-140-og-bounce-driver-production-plan.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-production-plan.md)
@@ -127,7 +135,17 @@ If the learner only arranges by ear with no timeline structure:
 
 ## Step 2: Lay In The Section Skeleton
 ### Action
-Place the section-level clip families first, before micro-edits:
+Place the section-level clip families first, before micro-edits.
+
+Do this in `2`-section chunks with playback after each chunk:
+- pass `1`: `Intro A` + `Intro B`
+- pass `2`: `Drop A` + `Drop A Lift`
+- pass `3`: `Break` + `Transition B`
+- pass `4`: `Drop B` + `Drop B Lift` + `Outro`
+
+If the learner prefers, audition the clip combinations in Session View first, then commit them to Arrangement View. Do not try to place all `144` bars blind with no playback checks.
+
+Section skeleton:
 
 - `Intro A`
   - drums: `drum_intro_core_2bar`
@@ -181,11 +199,16 @@ This gets the whole song on the page fast.
 You want to hear the architecture first, before spending an hour polishing one transition.
 
 ### Screenshot
-- `arrangement-02-section-skeleton`
+- `arrangement-02a-full-song-skeleton`
+- `arrangement-02b-intro-through-break`
+- `arrangement-02c-transition-b-through-outro`
 
 ### Visual Requirement
-- show the whole song on screen if possible
-- if not, show `Intro A` through `Break`, then `Transition B` through `Outro`
+- show the whole song on screen with all locators visible if possible
+- otherwise show:
+  - `Intro A` through `Break`
+  - `Transition B` through `Outro`
+- keep drums, bass, chords, hook, answer, and air lanes visible in each capture
 
 ## Step 3: Shape Intro A And Intro B
 ### Action
@@ -201,6 +224,10 @@ You want to hear the architecture first, before spending an hour polishing one t
   - one short octave hint every second bar
 - let the top-end tease open slightly
 - keep the hook as a filtered pickup only, not a full phrase
+- treat the teaser as one gesture:
+  - root authority first
+  - octave hint second
+  - never a full rolling bass phrase yet
 
 ### Why
 The first `32` bars need to feel like:
@@ -214,6 +241,7 @@ The first `32` bars need to feel like:
 ### Screenshot Set
 - `arrangement-03-intro-a`
 - `arrangement-04-intro-b`
+- `arrangement-04b-intro-transition-detail`
 
 ## Step 4: Build Drop A
 ### Action
@@ -222,7 +250,10 @@ For `33–48`:
 - let the hook appear only as restrained phrase-end punctuation
 - keep the `Bb` chord in its restrained state
 - keep the answer lane only as tail/support, not a full new voice
-- open the top end to its first full state
+- bring the top end to the `Drop A` state from the section map:
+  - full open-hat presence
+  - constant air ceiling
+  - but not yet the maximum top-end release held back for `Drop B Lift`
 
 ### Why
 `Drop A` is the force section.
@@ -239,6 +270,7 @@ for later.
 
 ### Screenshot
 - `arrangement-05-drop-a`
+- `arrangement-05b-drop-a-close`
 
 ## Step 5: Build Drop A Lift Without Leaking Bloom
 ### Action
@@ -268,6 +300,14 @@ they are stealing from `Break` and `Drop B`.
 
 ### Screenshot
 - `arrangement-06-drop-a-lift`
+- `arrangement-06b-drop-a-vs-lift-comparison`
+
+### Visual Requirement
+- show `Drop A` and `Drop A Lift` stacked or side by side
+- the screenshot should make it visually obvious that:
+  - chord state is the same
+  - hook note content is the same
+  - growth comes from density and feel, not new harmonic material
 
 ## Step 6: Build The Break
 ### Action
@@ -291,6 +331,11 @@ This is where the hope becomes audible.
 
 ### Screenshot
 - `arrangement-07-break`
+- `arrangement-07b-break-close`
+
+### Visual Requirement
+- show the bass lane visibly thinned
+- show the chord clips visibly longer / more open than `Drop A`
 
 ## Step 7: Build Transition B As A Re-Entry
 ### Action
@@ -299,7 +344,9 @@ For `81–96`:
 - bring back the bass as a filtered implication, not full body yet
 - pulse the chords rhythmically
 - return to the restrained `Bb2 F3 C4` state
-- let the filtered hook pickup appear only near the end
+- let the filtered hook pickup appear only near the end:
+  - first appearance around bars `93–94`
+  - not at bar `81`
 
 ### Why
 `Transition B` exists so `Drop B` feels earned.
@@ -318,6 +365,7 @@ It should not feel like:
 
 ### Screenshot
 - `arrangement-08-transition-b`
+- `arrangement-08b-transition-b-close`
 
 ## Step 8: Build Drop B Through Substitution
 ### Action
@@ -340,12 +388,19 @@ It should feel clearly bigger than `Drop A`, but still disciplined.
 
 ### Mechanical placement
 - first pass:
-  - hook owns bars `4` and `12`
-  - answer owns bars `8` and `16`
+  - hook owns bars `4` and `12` of `Drop B`
+    - full timeline bars `100` and `108`
+  - answer owns bars `8` and `16` of `Drop B`
+    - full timeline bars `104` and `112`
 - keep that alternation visible in the arrangement before refining smaller variations
 
 ### Screenshot
 - `arrangement-09-drop-b`
+- `arrangement-09b-drop-b-hook-answer-map`
+
+### Visual Requirement
+- show at least one full `16`-bar `Drop B` view
+- make the hook and answer lanes visible together so the alternation is obvious
 
 ## Step 9: Build Drop B Lift And Outro
 ### Action
@@ -392,6 +447,7 @@ This is what keeps the arrangement from sounding like copy-pasted blocks.
 
 ### Screenshot
 - `arrangement-12-phrase-architecture`
+- `arrangement-12b-drop-section-annotated`
 
 ### Visual Requirement
 - show one full `16`-bar drop section
@@ -408,7 +464,14 @@ Bounce the full rough arrangement and compare it to the planned energy staircase
 - `Transition B`: `6/10`
 - `Drop B`: `8/10`
 - `Drop B Lift`: `9/10`
-- `Outro`: `3/10`
+- `Outro`: `5/10`
+
+Measurement method:
+1. loudness-match the rough bounce to the references before judging
+2. listen section by section at a stable monitor level
+3. write down a perceived-energy score from `1–10` for each section
+4. compare those notes to the target curve
+5. if any section is off by more than `1` point, assume a growth mechanism leaked or failed
 
 ### Why
 This is the easiest way to catch leaks:
@@ -427,10 +490,13 @@ Bounce the full rough song.
 Compare against:
 - `Interplanetary Criminal - Slow Burner`
   - listen for re-entry pocket and transition logic
+  - identify the phrase position where the drums feel fully back after the reset, then compare that relative position to your `Transition B -> Drop B` handoff
 - `KETTAMA - It Gets Better`
   - listen for sustained pressure across stripped and full sections
+  - check whether your stripped sections still feel physically connected to the club record, not like demos
 - `Sammy Virji - I Guess We're Not the Same`
   - listen for how hook and harmonic information arrive in stages
+  - check whether your hook / harmony reveals are landing in distinct phases rather than all at once
 
 ### What To Listen For
 - does `Drop A` hit hard enough without spending bloom?
@@ -442,6 +508,7 @@ Compare against:
 - the second half should feel earned, not just louder
 - every section should have a different reason for being bigger or smaller
 - the arrangement should sound designed even before the final mix pass
+- the rough bounce should already make structural sense before detailed automation is written in `Part 7`
 
 ## Troubleshooting
 ### Problem: “The arrangement feels blocky.”
