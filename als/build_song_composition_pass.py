@@ -217,7 +217,7 @@ def _section_composition(section: dict, progression: list[str], hook_cells: dict
             "bars": section["bars"],
             "harmonic_behavior": "Reintroduce the full progression with more obvious hopeful color on Bbmaj7 and Cadd9.",
             "bass_behavior": "Same rolling shape, but let the phrase-end release on the C chord hit the 9th for lift while the sub stays stable underneath.",
-            "hook_behavior": f"Use `{', '.join(hook_cells['drop_b'])}` sparingly and leave room for a warm phrase-end organ-family answer stab instead of a second bass voice.",
+            "hook_behavior": f"Use `{', '.join(hook_cells['drop_b'])}` at half density and let the warm phrase-end organ-family answer occupy the alternate phrase ending instead of stacking both on every turn.",
         }
     if section_id == "drop_b_lift":
         return {
@@ -225,7 +225,7 @@ def _section_composition(section: dict, progression: list[str], hook_cells: dict
             "bars": section["bars"],
             "harmonic_behavior": "Keep the progression stable; the change comes from wider upper voicings and stronger top-end density, not reharmonisation.",
             "bass_behavior": "Strongest phrase-end release bars of the track, but still only from progression tones and chord color notes.",
-            "hook_behavior": "Hook lane or answer-stab lane takes the strongest phrase-end answer here; do not let both fight equally. The extra density should mainly live in the tops and widened chord spread.",
+            "hook_behavior": "Hook lane or answer-stab lane takes the strongest phrase-end answer here; do not let both fight equally. Keep them alternating by phrase while the extra density mainly lives in the tops and widened chord spread.",
         }
     return {
         "section_id": section_id,
@@ -295,6 +295,10 @@ def build_report(args: argparse.Namespace) -> dict:
             "decision": "Make the roll come from a clean stable sub plus a moving harmonic layer. The harmonic layer should breathe through note-length variation, filter/saturation motion, and only small phrase-end pitch events rather than constant melodic rewrites.",
             "why": "Modern UKG rolling bass feels alive because the floor moves inside the sustain. If the bass is only a held sub with FX on top, it will sound static; if it starts writing too many notes, it stops behaving like the floor.",
         },
+        "rolling_bass_proportion": {
+            "decision": "Treat the roll as rhythmic-primary and tonal-secondary. Note-length pulse and internal rhythmic life should do most of the work; filter/saturation breathing should support that motion rather than replace it.",
+            "why": "This keeps the bass in the IC / SMTS pocket. If tonal motion dominates, the line drifts toward ambient movement instead of club groove.",
+        },
         "drop_b_reese_architecture": {
             "decision": "Do not add a second melodic bass voice in Drop B. Recast the answer lane as a short warm organ/piano phrase-end stab that lives above the sub and leaves the bass-foundation untouched.",
             "why": "That keeps Drop B bigger by color and punctuation instead of turning it into Drop A plus more low-mid weight, while staying native to the IC / SMTS / Y U QT lane.",
@@ -308,8 +312,12 @@ def build_report(args: argparse.Namespace) -> dict:
             "why": "The hook notes are economical. Its identity has to come from rhythm and timbre, not extra melodic information, and the answer has to sound like a real conversation rather than the hook talking to itself.",
         },
         "top_end_section_map": {
-            "decision": "Keep a filtered whisper of the air bed from Intro A onward, tease the open-hat / presence layer in Intro B, open it fully in Drop A, strip it back in the break so the air bed and widened chords can breathe, then bring it back strongest in Drop B Lift.",
+            "decision": "Keep a filtered whisper of the air bed from Intro A onward, tease the open-hat / presence layer in Intro B, open it fully in Drop A, strip it back in the break so the air bed and widened chords can breathe, return to Drop-A-level presence in Drop B, then bring it back strongest in Drop B Lift.",
             "why": "Top-end elements only solve the 'closed-in' problem if they are mapped to sections. If they appear in the wrong places, the track either feels flat or gives away its biggest lift too early.",
+        },
+        "drop_b_conversation_rule": {
+            "decision": "Keep the Drop B answer phrase-end only, and reduce the hook to half density while the answer is present. The answer should punctuate alternate phrase endings rather than filling every gap inside the phrase.",
+            "why": "That preserves the conversation feel and stops Drop B from becoming Drop A Lift plus one extra layer.",
         },
         "break_chord_widening": {
             "decision": "In the break, 'stretch the chords' by length and by voicing upward. Let the upper chord tones and reverb tail do more of the work than the low mids.",
@@ -321,7 +329,7 @@ def build_report(args: argparse.Namespace) -> dict:
         "sub_low": "bass-foundation owns the 30-90 Hz center. Do not let the Reese or chord bed sit there continuously.",
         "low_mid": "Reese answers and chord warmth can fill 120-300 Hz, but they must alternate or be carved so the drop feels dense instead of muddy.",
         "mid": "The emotional read lives in the chord color tones and the hook-response cells. Keep this range expressive, not overcrowded.",
-        "presence": "The 2-6 kHz push has to come from tops, loop bite, hook attack, or a controlled answer-stab edge. In Intro B it should be teased; in Drop A it should open; in the break it should step back; in Drop B Lift it should be strongest.",
+        "presence": "The 2-6 kHz push has to come from tops, loop bite, hook attack, or a controlled answer-stab edge. In Intro B it should be teased; in Drop A it should open; in the break it should step back; in Drop B it should return to first-drop strength; in Drop B Lift it should be strongest.",
         "air": "Reserve at least one subtle air source that is quietly present from Intro A onward, most obvious in the break, and tucked back under the drops. The record should feel tall, not sealed shut.",
         "movement_rule": "Filter and narrow the intro, let the first drop open the presence band, let the break breathe into air and upward chord spread, then make Drop B feel bigger by width and top-end release rather than by adding more sub layers.",
     }

@@ -441,18 +441,11 @@ def _answer_stab_variants() -> list[dict]:
     drop_b_conversation = [
         _event("A4", "2.4.1", 0.25, 74, "phrase-end stab"),
         _event("D5", "2.4.1", 0.25, 80, "phrase-end stab"),
-        _event("G4", "4.4.1", 0.25, 75, "phrase-end stab"),
-        _event("D5", "4.4.1", 0.25, 81, "phrase-end stab"),
     ]
     drop_b_lift = [
-        _event("C5", "1.4.1", 0.25, 76, "accent stab"),
-        _event("F5", "1.4.1", 0.25, 82, "accent stab"),
-        _event("A4", "2.4.1", 0.25, 75, "phrase-end stab"),
-        _event("D5", "2.4.1", 0.25, 81, "phrase-end stab"),
-        _event("A4", "3.4.1", 0.25, 76, "accent stab"),
-        _event("C5", "3.4.1", 0.25, 80, "accent stab"),
         _event("G4", "4.4.1", 0.25, 76, "phrase-end stab"),
         _event("D5", "4.4.1", 0.25, 82, "phrase-end stab"),
+        _event("A4", "4.4.3", 0.25, 74, "tail smear"),
     ]
     return [
         _variant(
@@ -465,16 +458,16 @@ def _answer_stab_variants() -> list[dict]:
         _variant(
             "answer_drop_b_conversation_4bar",
             4,
-            "Drop B. Phrase-end warm organ-family answer on bars 2 and 4.",
+            "Drop B. Phrase-end warm organ-family answer on the alternate phrase ending only.",
             drop_b_conversation,
-            "This is where the section gets bigger by punctuation and color, not by another moving bass.",
+            "This lets the hook own one phrase ending and the answer own the other.",
         ),
         _variant(
             "answer_drop_b_lift_4bar",
             4,
-            "Drop B lift. Slightly more frequent warm answers, still only at phrase tails and lift points.",
+            "Drop B lift. Strongest warm answer, still only at the opposing phrase ending.",
             drop_b_lift,
-            "Keep the answer lane short and warm so it doesn't crowd the hook or sub.",
+            "Keep the answer lane short and warm so it alternates with the hook instead of talking over it.",
         ),
     ]
 
@@ -704,7 +697,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_drop_b_bloom_4bar",
                 "hook-response": "hook_drop_b_phrase_4bar",
             },
-            "notes": "This is where the harmonic bloom and phrase-end stab answer arrive. The bass stays the only true low-end voice.",
+            "notes": "This is where the harmonic bloom and phrase-end stab answer arrive. The hook is half-density here so the answer can own the alternate phrase ending. The bass stays the only true low-end voice.",
         },
         {
             "section_id": "drop_b_lift",
@@ -716,7 +709,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_drop_b_bloom_4bar",
                 "hook-response": "hook_drop_b_lift_4bar",
             },
-            "notes": "Use either the hook or the stab answer to dominate a phrase end, not both equally. The biggest lift should come from tops and widened chord spread, not another new lane.",
+            "notes": "Keep hook and answer alternating by phrase. The biggest lift should come from tops and widened chord spread, not another new lane.",
         },
         {
             "section_id": "outro",
@@ -728,7 +721,7 @@ def _section_assignments() -> list[dict]:
                 "chord-bed": "chord_intro_hint_4bar",
                 "hook-response": None,
             },
-            "notes": "Strip back to the most stable ideas for a DJ-safe exit.",
+            "notes": "Strip back to the most stable ideas for a DJ-safe exit, but keep a whisper of the air bed alive so the outro does not seal shut.",
         },
     ]
 

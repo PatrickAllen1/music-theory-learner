@@ -215,6 +215,7 @@
         "Drop A should feel bass-and-groove led first, with the hook-response lane entering as punctuation rather than constant chatter.",
         "Break should widen the chord bed, thin the drums, and let the instrumental atmosphere own the center before any future sample version exists.",
         "Drop B should add harmonic bloom and one stronger phrase-end answer lane while keeping the low end just as disciplined as Drop A.",
+        "When the answer lane enters in Drop B, the hook should step back to half density so the section grows by substitution instead of stacking.",
         "The instrumental v1 should treat the center lane as intentionally carried by hook pocket, air bed, and upward-widened break chords rather than by a placeholder sample."
       ],
       "arrangement_sections": [
@@ -251,7 +252,7 @@
         {
           "section_id": "drop_b",
           "length_bars": 16,
-          "goal": "Bring the full groove back with harder loop support, harmonic bloom, and a more confident phrase-end answer lane.",
+          "goal": "Bring the full groove back with harder loop support, harmonic bloom, and a phrase-end answer lane while the hook drops to half density.",
           "energy_level": "high"
         },
         {

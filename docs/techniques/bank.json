@@ -3030,5 +3030,71 @@
       "Open the break chord voicings upward before adding more effects.",
       "Let the air bed and upper chord tones do more of the emotional work than the low mids."
     ]
+  },
+  {
+    "id": "rolling-bass-rhythmic-primary-tonal-secondary",
+    "name": "Make rolling bass movement rhythmic-primary and tonal-secondary",
+    "source": "Song authoring review — ukg-140-og-bounce-driver",
+    "what_it_does": "Keeps the main sense of bass motion in note-length pulse and internal rhythmic life, while filter/saturation breathing acts as support rather than the main source of movement.",
+    "when_to_use": "When writing modern UKG or speed-garage basses influenced by Interplanetary Criminal or Soul Mass Transit System, where groove should dominate over ambient tonal drift.",
+    "works_well_with": [
+      "choose-the-rolling-bass-mechanism-early",
+      "modern-ukg-rolling-bass-floor",
+      "slight-gaps-between-bass-notes"
+    ],
+    "likely_clashes_with": [
+      "filter movement doing all the perceived motion",
+      "pads or textures whose modulation already dominates the groove feel",
+      "basslines with too many ornamental notes"
+    ],
+    "why": "If tonal modulation dominates, the bass can feel atmospheric rather than driving. Rhythmic-primary motion keeps the line in the club pocket.",
+    "mitigations": [
+      "Build the dry rhythmic pulse first, then add tonal breathing as seasoning.",
+      "If the bass still feels static, increase note-length contrast before adding more modulation."
+    ]
+  },
+  {
+    "id": "phrase-end-only-answer-placement",
+    "name": "Keep the answer voice at phrase ends, not inside every gap",
+    "source": "Song authoring review — ukg-140-og-bounce-driver",
+    "what_it_does": "Places the answer voice only at the close of 2-bar or 4-bar phrases so it feels like punctuation rather than a second concurrent topline.",
+    "when_to_use": "When a hook already carries the phrase-internal identity and the arrangement needs a conversational response without clutter.",
+    "works_well_with": [
+      "related-not-identical-hook-and-answer",
+      "bigger-drop-by-substitution-not-stacking",
+      "warm-organ-stab-carries-instrumental-hook"
+    ],
+    "likely_clashes_with": [
+      "answers filling every offbeat gap the hook leaves",
+      "hook and answer both speaking at every phrase ending",
+      "busy mids that already feel over-written"
+    ],
+    "why": "Phrase-end placement makes the answer read as structural punctuation, which preserves clarity and lets the listener feel the dialogue.",
+    "mitigations": [
+      "Reserve one phrase ending for the hook and the alternate ending for the answer.",
+      "If the section still feels too busy, remove the answer from the shorter phrase and keep it only on the longest cadence."
+    ]
+  },
+  {
+    "id": "answer-entry-requires-hook-step-back",
+    "name": "When the answer enters, the hook should step back",
+    "source": "Song authoring review — ukg-140-og-bounce-driver",
+    "what_it_does": "Reduces hook density when a response lane is introduced so the new voice actually changes the section rather than just stacking on top of the old one.",
+    "when_to_use": "Second drops, switch-ups, or any arrangement moment where a new answering voice is supposed to feel like a meaningful development.",
+    "works_well_with": [
+      "bigger-drop-by-substitution-not-stacking",
+      "phrase-end-only-answer-placement",
+      "related-not-identical-hook-and-answer"
+    ],
+    "likely_clashes_with": [
+      "leaving the hook at full density when the answer arrives",
+      "trying to make the section bigger by simply adding another melodic lane",
+      "dense top-end arrangements with no spare pocket"
+    ],
+    "why": "Substitution is what creates a new section identity. If the old lane does not yield any space, the new lane reads like clutter instead of escalation.",
+    "mitigations": [
+      "Drop the hook to half density when the answer voice enters.",
+      "Alternate hook and answer by phrase so each one gets a clear turn."
+    ]
   }
 ]
