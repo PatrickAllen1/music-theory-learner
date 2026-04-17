@@ -545,7 +545,7 @@ Arrangement assignment:
   - keep the function
   - push emotion via harmony, filtering, or arrangement instead
 
-## ALS Anchor Profiles
+## Sound-Function Anchors (Inspiration Only)
 - `bass-foundation`: `interplanetary-criminal-slow-burner:bass:i1`
 - `hook/organ support`: `interplanetary-criminal-slow-burner:organ:i4`
 - `chord-bed`: `bl3ss-camrinwatsin-kisses:pad-1:i7`
@@ -566,6 +566,11 @@ These are inspiration anchors for chain/function, not copying targets.
 
 Rule:
 - if a later section does not feel meaningfully more released than the one before it, the growth mechanism probably leaked early
+- treat the numbers as architectural signals, not rigid meter readings
+- the size of the jumps matters:
+  - `3 -> 7` is the first big drop-entry jump
+  - `7 -> 8` is controlled lift rather than a whole new section identity
+  - `8 -> 4` is an intentional release into the break
 
 ## Studio Build Order
 ### 1. Kick, core groove, and air ceiling

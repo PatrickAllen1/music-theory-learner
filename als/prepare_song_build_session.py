@@ -87,7 +87,7 @@ def _reference_axes() -> list[dict]:
         },
         {
             "axis": "bass_roll_character",
-            "influence": "Soul Mass Transit System / Y U QT lane",
+            "influence": "Soul Mass Transit System / Y U QT public proxy",
             "local_source": "docs/transcripts/yuqt2_spans.json",
             "listen_for": "Rolling bass motion that feels rhythmic first, tonal second, with the sub staying authoritative underneath.",
             "apply_to_this_track": "The moving harmonic layer should feel alive inside the phrase while the sub still reads as one confident floor.",
@@ -128,14 +128,14 @@ def _named_references() -> list[dict]:
         },
         {
             "axis": "bass_roll_character",
-            "track": "Y U QT lane study 2",
+            "track": "Y U QT - NRG",
             "local_source": "docs/transcripts/yuqt2_spans.json",
             "listen_for": [
                 "rolling bass motion that is rhythmic first, tonal second",
                 "sub staying stable underneath the motion",
                 "how much internal movement the mid layer carries before sounding melodic",
             ],
-            "why_this_track": "This is the closest local proxy for the modern rolling UKG bass lane until a dedicated SMTS transcript/analysis is added.",
+            "why_this_track": "This is the current named public proxy for the repo's Y U QT rolling-bass lane while the internal knowledge still comes from the local transcript study.",
         },
         {
             "axis": "hook_and_harmonic_readability",

@@ -45,7 +45,7 @@ Interpretation:
 Reference role split:
 - `KETTAMA - It Gets Better`: pressure, weight, density
 - `Interplanetary Criminal - Slow Burner`: swing, hat drag, phrase-end groove
-- `Y U QT lane study 2`: rolling bass motion proxy until a direct SMTS track study exists
+- `Y U QT - NRG`: public rolling-bass proxy
 - `Sammy Virji - I Guess We're Not the Same`: hook clarity, harmonic readability
 
 Verification note:
@@ -55,6 +55,8 @@ Verification note:
   - `docs/transcripts/yuqt2_spans.json`
   - `docs/transcripts/sammyvirjiiguesswerenotthesame_spans.json`
 - use these local artifacts as the truth source inside this repo
+- production-plan values are ranges and directions
+- tutorial parts are where exact starting values get locked for the learner
 
 ## Named Production Blockers
 ### Fallback-heavy parts
@@ -120,6 +122,27 @@ This means:
 - `Transition B`: rhythmic pulse returns, but harmonic density stays restrained
 - `Drop B`: same loop, obvious bloom
 - `Drop B Lift`: same harmony, more width and top release, not reharmonization
+
+### Chord-bed patch
+- engine: `Serum 2`
+- oscillator direction:
+  - Osc A: warm saw / triangle-leaning main body
+  - Osc B: quieter support oscillator for upper tone or gentle motion
+  - restrained unison only
+- filter:
+  - smooth low-pass or band-softening filter
+  - tucked lower in `Drop A`
+  - opened and widened in `Break / Drop B`
+- envelope direction:
+  - enough sustain to feel like a bed
+  - enough decay / articulation that the pulse layer can still speak
+- FX direction:
+  - chorus or gentle width source
+  - filtered reverb send
+  - mild saturation for glue
+- role:
+  - emotional bed first
+  - rhythmic pulse second
 
 ## Bass Spec
 ### Bass architecture
@@ -260,6 +283,10 @@ Suggested velocity behavior:
 - hats: crisp 909 / garage-usable tops rather than brittle techno hats
 - shaker: one source that still reads after filtering and velocity changes
 
+Starting source recommendation:
+- use `Ableton Core Library` / stock 909-compatible material as the first pass if exact external packs are not locked yet
+- replace only if a stock source cannot hit the required body, tuning, or decay target
+
 Capture requirement:
 - once the exact files are chosen in the real build, record the file names verbatim for the later tutorial
 
@@ -323,6 +350,18 @@ Processing direction:
 - most audible in the break
 - present quietly almost throughout
 
+### Air patch
+- engine: `Serum 2`
+- source:
+  - noise oscillator only
+  - no tonal oscillators needed by default
+- filter:
+  - high-pass aggressively so it behaves like ceiling, not pad
+- movement:
+  - tiny slow filter or level motion only if needed
+- space:
+  - mostly from a filtered long reverb return rather than a wet in-patch effect
+
 ### Presence owner
 - combination of:
   - open hats
@@ -336,6 +375,11 @@ Processing direction:
 - `300 Hz–2 kHz`: emotion + hook readability
 - `2–6 kHz`: presence
 - `8 kHz+`: air
+
+Starting split:
+- `120–200 Hz`: let bass character lead here
+- `200–300 Hz`: let chord warmth and some hook body live here more confidently
+- if the low-mid feels cloudy, cut the chord bed first before thinning the bass floor
 
 ### Stereo map
 - kick: mono / center
@@ -548,10 +592,18 @@ Practical method:
 - car / everyday playback
 - club-style low-end sanity if possible
 
+Mono tool:
+- put `Utility` last on the premaster and use it to check mono collapse quickly
+- also audition the `Bass` group in mono while balancing kick and sub
+
 ### CPU and freeze policy
 - Serum 2 plus multiple returns can get heavy fast
 - once a patch and MIDI are stable enough to teach, freeze or bounce that lane before stacking more sound-design experiments on top
 - keep the working session responsive enough that timing edits stay trustworthy
+
+Working expectation:
+- assume roughly `30–40` active tracks by the time the arrangement and returns are all present
+- expect to start freezing once there are more than roughly `8–12` active Serum instances or the timing edits stop feeling immediate
 
 ### Bounce workflow
 - export checkpoint bounces after:
@@ -620,11 +672,15 @@ Practical method:
   - phrase-end pocket
 
 ### Bass roll
-- `Y U QT lane study 2`
+- `Y U QT - NRG`
 - check:
   - rhythmic-first rolling motion
   - stable sub underneath
   - how much movement the mid layer carries
+
+Internal note:
+- the current repo still uses `docs/transcripts/yuqt2_spans.json` as the local knowledge source for this lane
+- if this package is published externally, swap in one named public Y U QT or SMTS reference everywhere
 
 ### Hook and harmony readability
 - `Sammy Virji - I Guess We're Not the Same`

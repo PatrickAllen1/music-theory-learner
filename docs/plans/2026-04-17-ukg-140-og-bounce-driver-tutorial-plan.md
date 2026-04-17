@@ -22,6 +22,14 @@ It should not invent new musical decisions. It should teach the reader how to re
   - Serum 2 patches
   - checkpoint audio bounces
 
+Asset delivery target:
+- one downloadable project bundle or zip containing:
+  - Ableton project
+  - Serum 2 presets
+  - core MIDI
+  - checkpoint WAVs
+  - screenshot pack or embedded screenshots in the written tutorial
+
 This means every important move should be:
 - clickable in Ableton
 - rebuildable in Serum
@@ -33,6 +41,12 @@ This means every important move should be:
 - has finished a few tracks already
 - understands MIDI, sidechain, EQ, and buses at a beginner-to-intermediate level
 - wants to understand `why` the choices work, not just copy settings
+
+## Who This Is Not For
+- not for someone who has never finished a track at all
+- not for someone who needs Ableton basics explained from zero
+- not for someone looking for a one-page shortcut instead of a full build walkthrough
+- if the learner already mixes professionally, the highest-value parts are likely `Parts 6–9`
 
 ## Tutorial Promise
 By the end, the learner should be able to:
@@ -93,8 +107,9 @@ Use these references consistently during the tutorial:
   - listen for kick weight, low-end size, mix density
 - `Interplanetary Criminal - Slow Burner`
   - listen for ghost-hat drag, phrase-end motion, re-entry pocket
-- `Y U QT lane study 2`
+- `Y U QT - NRG`
   - listen for rhythmic-first bass roll and stable sub support
+  - internal repo source is still `docs/transcripts/yuqt2_spans.json` until a named public Y U QT or SMTS replacement is locked
 - `Sammy Virji - I Guess We're Not the Same`
   - listen for hook clarity and harmonic readability
 
@@ -134,6 +149,17 @@ Detailed template available now:
 
 Total likely guided runtime:
 - roughly `6–10 hours` of build time depending on learner speed
+
+Suggested session split:
+- `Session 1`: Parts `0–3`
+  - setup through bass floor
+  - by the end, the lane identity should already be clear
+- `Session 2`: Parts `4–6`
+  - harmony, hook/answer, and arrangement
+  - by the end, the song should fully exist
+- `Session 3`: Parts `7–9`
+  - transitions, mix, master
+  - by the end, the track should translate and export cleanly
 
 ## Part 0: Setup
 ### Prerequisites
@@ -628,8 +654,13 @@ When this becomes the guided lesson:
 - references should become “listen for this” prompts, not hidden background context
 
 ## Remaining Blockers Before Final Tutorial Draft
-- lock exact final synth choices in place of fallback-heavy matches
-- resolve the remaining pairwise sound conflicts
+- lock exact final synth choices in place of fallback-heavy matches:
+  - `chord-bed`
+  - `hook-response`
+  - `og-reese-answer`
+- resolve the remaining pairwise sound conflicts:
+  - `bass-foundation` vs `og-reese-answer`
+  - `hook-response` vs `og-reese-answer`
 - do one audio verification pass so the tutorial reflects what actually works in sound, not only on paper
 
 These are not architecture blockers anymore. They are fidelity blockers for the final handheld lesson.

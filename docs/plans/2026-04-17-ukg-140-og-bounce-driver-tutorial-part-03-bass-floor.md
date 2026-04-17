@@ -47,8 +47,9 @@ If the bass starts feeling like the hook, the learner has gone too far.
 
 ## Reference Axis
 Primary A/B for this part:
-- `Y U QT lane study 2`
+- `Y U QT - NRG`
   - listen for rhythmic roll, not just tone
+  - internal repo source is currently `docs/transcripts/yuqt2_spans.json`
 - `Interplanetary Criminal - Slow Burner`
   - listen for how the bass and kick breathe together
 
@@ -90,7 +91,7 @@ If they live on one track:
 5. Turn the `Sub` oscillator on.
 6. Set the sub waveform to `Sine`.
 7. Set `Sub Level` to `100%` while designing.
-8. Set `Direct Out` to `On` if available, so the sub bypasses unnecessary in-patch coloration.
+8. Set `Direct Out` to `On` so the sub bypasses unnecessary in-patch coloration.
 9. Set `Voices` / unison to `1`.
 10. Set `Mono` to `On`.
 11. Set portamento / glide to a very small value:
@@ -100,7 +101,7 @@ If they live on one track:
     - decay: `0`
     - sustain: `100%`
     - release: `45 ms`
-13. Disable velocity-to-volume behavior if enabled.
+13. Open the modulation matrix and confirm there is no `Velocity -> Level` routing on the sub.
 
 ### Why
 This keeps the sub:
@@ -195,7 +196,8 @@ It does **not** need:
 1. Create `LFO 1` as a slow, smooth breathing shape.
 2. Set the rate so it breathes over phrase motion, not per note:
    - start around `1/2 bar` or `1 bar` synced
-3. Assign `LFO 1` lightly to filter cutoff.
+3. Drag `LFO 1` onto the filter cutoff.
+4. Set the modulation amount by dragging the modulation ring to a small value.
 4. Keep the modulation small:
    - enough to feel movement
    - not enough to sound like wobble bass
@@ -249,10 +251,15 @@ The bass needs attitude, but the width and space belong elsewhere in the mix.
 ## Step 6: Program The Root Path
 ### Action
 Create a `4`-bar MIDI clip on both bass tracks with these roots:
-- Bar 1: `D2`
-- Bar 2: `Bb1`
-- Bar 3: `F2`
-- Bar 4: `C2`
+- Bar 1: `D2` under `Dm9`
+- Bar 2: `Bb1` under `Bb`
+- Bar 3: `F2` under `Fadd9`
+- Bar 4: `C2` under `Cadd9`
+
+Starting placement:
+- put each root on beat `1`
+- let each root sustain for roughly `2` beats to just under `3` beats at first
+- this should feel like the `50–70%` gate target once the loop is playing at speed
 
 ### Gate Strategy
 Start with body notes in roughly this range:
@@ -269,6 +276,10 @@ This is the first source of rolling motion:
 ### Screenshot
 - `bass-midi-01-root-path`
 
+### Visual MIDI Requirement
+- show all `4` bars in one screenshot
+- label the chord above each bar in the tutorial annotation
+
 ## Step 7: Add Phrase-End Release Notes
 ### Action
 Add short release gestures only at phrase ends or controlled turn points.
@@ -282,6 +293,11 @@ Allowed vocabulary:
 Release-note gate feel:
 - roughly `15–35%`
 
+Starting placement:
+- first try the release note in the last `1/8` or `1/16` of the bar
+- treat it like a pickup into the next bar, not a new sustained event
+- do not add one to every bar automatically
+
 ### Rule
 If a release note makes the chord feel like it changed, delete it.
 
@@ -294,8 +310,13 @@ The release notes are punctuation, not reharmonization.
 ## Step 8: Program Internal Pulse Without Extra Melody
 ### Action
 1. Inside the 4-bar phrase, add small note-length differences.
-2. If needed, split one sustaining note into two tied-feel notes so the phrase breathes between kicks.
+2. If needed, split one sustaining note into two tied-feel notes around the middle of the bar or just before the next kick so the phrase breathes between kicks.
 3. Do **not** add a bunch of new pitches to create movement.
+
+Starting rhythm rule:
+- first try pulse by changing note lengths before adding extra note-ons
+- if you do add a second note-on inside a bar, keep it the same pitch before trying a new pitch
+- let phrase-end release notes be the first place a different pitch appears
 
 ### Why
 This is the main style-defining choice:
@@ -390,7 +411,7 @@ You need both.
 Bounce or loop `drums + bass`.
 
 Compare against:
-- `Y U QT lane study 2`
+- `Y U QT - NRG`
   - listen for roll character
 - `Interplanetary Criminal - Slow Burner`
   - listen for kick-bass breathing
@@ -398,6 +419,7 @@ Compare against:
   - listen for physical weight
 
 ### What To Listen For
+- how often the bass pitch actually changes across the phrase
 - does the bass roll because of rhythm, not just filter motion?
 - does the kick still land with authority?
 - is the low end big without becoming slow?
@@ -433,6 +455,13 @@ Fix order:
 1. reduce phrase-end note count
 2. reduce upper harmonic brightness
 3. simplify the gate pattern
+
+### Problem: “I followed the spec and it still sounds wrong.”
+Fix order:
+1. check kick and bass together in mono
+2. loudness-match the reference before judging tone
+3. solo the mid-bass without the sub and make sure Steps `6–8` are actually producing rhythmic life
+4. if needed, reduce modulation depth before changing the MIDI again
 
 ## Checkpoint Deliverables
 At the end of Part 3, save:
