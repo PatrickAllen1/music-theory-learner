@@ -17,6 +17,10 @@ It should not invent new musical decisions. It should teach the reader how to re
 - screenshot-friendly
 - designed for later conversion into a guided lesson flow
 - based on `Ableton Live 12` + `Serum 2`
+- assumes downloadable companion assets later:
+  - MIDI clips
+  - Serum 2 patches
+  - checkpoint audio bounces
 
 This means every important move should be:
 - clickable in Ableton
@@ -69,6 +73,20 @@ At the end of the tutorial, the learner should have:
   - Drop B
   - premaster
 
+## Screenshot Standard
+For every major Serum 2 patch, capture at least:
+- initialized patch / starting state
+- oscillator state
+- filter + envelope state
+- modulation state
+- FX state
+- final patch state in context
+
+For every major Ableton lane, capture at least:
+- device-chain overview
+- one close-up per important device
+- MIDI clip or automation lane where the musical behavior lives
+
 ## Reference Kit
 Use these references consistently during the tutorial:
 - `KETTAMA - It Gets Better`
@@ -79,6 +97,8 @@ Use these references consistently during the tutorial:
   - listen for rhythmic-first bass roll and stable sub support
 - `Sammy Virji - I Guess We're Not the Same`
   - listen for hook clarity and harmonic readability
+
+Use loudness-matched references in the project so the learner is not fooled by master volume.
 
 ## Recommended Authoring Order
 If this tutorial is written section-by-section, author it in this order:
@@ -97,7 +117,29 @@ Reason:
 - the drums define the pocket
 - everything else should build on those two identities
 
+Detailed template available now:
+- [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-03-bass-floor.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-03-bass-floor.md)
+
+## Estimated Scope
+- `Part 0`: `10–20 min`
+- `Part 1`: `20–30 min`
+- `Part 2`: `45–75 min`
+- `Part 3`: `60–90 min`
+- `Part 4`: `45–75 min`
+- `Part 5`: `40–60 min`
+- `Part 6`: `45–75 min`
+- `Part 7`: `30–45 min`
+- `Part 8`: `45–75 min`
+- `Part 9`: `20–30 min`
+
+Total likely guided runtime:
+- roughly `6–10 hours` of build time depending on learner speed
+
 ## Part 0: Setup
+### Prerequisites
+- learner can create groups, returns, and audio/MIDI tracks in Ableton
+- learner can load Serum 2 and save a preset
+
 ### Learning objectives
 - prepare an Ableton project that supports fast iteration
 - load references and meters before writing anything
@@ -136,7 +178,14 @@ Reason:
 - play 8 bars of silence + references loaded
 - confirm the learner knows what each reference axis is for
 
+### Troubleshooting
+- if the project already feels disorganized before any music exists, stop and clean the routing now
+- if the references are noticeably louder, trim them before any comparison
+
 ## Part 1: Foundation (Kick + Air Ceiling)
+### Prerequisites
+- the learner understands Simpler or can at least load and tune one-shot samples
+
 ### Learning objectives
 - build the physical center of the track before melodic material
 - understand why a constant quiet air ceiling matters
@@ -167,7 +216,14 @@ Reason:
 - `4` bars of kick + air
 - A/B against Kettama reference for body and scale
 
+### Troubleshooting
+- if the kick feels huge solo but disappears with bass later, the tail is probably too long
+- if the air layer sounds like hiss instead of height, it is too loud or too broadband
+
 ## Part 2: Groove (Top Drums)
+### Prerequisites
+- the learner can edit MIDI note timing and velocity confidently
+
 ### Learning objectives
 - build IC-style bounce with MIDI and timing, not just sample choice
 - understand why ghost hats need intentional lateness, not random looseness
@@ -210,7 +266,15 @@ Reason:
 - full drum loop
 - A/B against IC reference for pocket
 
+### Troubleshooting
+- if the groove feels random instead of swung, the hats are too loose rather than consistently late
+- if the drop feels stiff, the problem is often MIDI timing before it is sample choice
+
 ## Part 3: Bass Floor
+### Prerequisites
+- the learner can route sidechain in Ableton
+- the learner knows how to assign one LFO or envelope destination in Serum 2
+
 ### Learning objectives
 - layer a modern rolling UKG bass floor
 - understand `rhythmic-primary, tonal-secondary` bass motion
@@ -247,7 +311,15 @@ Reason:
 - drums + bass
 - A/B against Y U QT lane study for roll
 
+### Troubleshooting
+- if the bass feels static, first change gate and phrase pulse before adding more modulation
+- if the bass feels melodic, remove note events before removing tone
+- if the kick loses authority, shorten the kick or reduce mid-bass low content before increasing sidechain depth
+
 ## Part 4: Harmonic Bed
+### Prerequisites
+- the learner can enter chord MIDI and duplicate clips by section
+
 ### Learning objectives
 - write a loop that feels emotional without spending the bloom too early
 - understand why the `Bb` chord has restrained and bloomed states
@@ -286,7 +358,14 @@ Reason:
 - drums + bass + chords
 - A/B against Virji reference for emotional readability
 
+### Troubleshooting
+- if Drop A already feels “open,” the restrained `Bb` state is probably too bloomed
+- if the chords feel stiff, check voice leading before changing the patch
+
 ## Part 5: Identity (Hook + Answer)
+### Prerequisites
+- the learner can program short melodic clips and automate send effects
+
 ### Learning objectives
 - build an instrumental-first hook that carries the track
 - use conversation by substitution, not stacking
@@ -324,7 +403,14 @@ Reason:
 - full Drop A
 - A/B against Y U QT / Virji lane for hook clarity
 
+### Troubleshooting
+- if the hook feels generic, fix rhythm first, not note count
+- if the answer makes Drop B smaller, it is probably too dense or too continuous
+
 ## Part 6: Arrangement Build
+### Prerequisites
+- all core MIDI and sound lanes exist, even if some sounds are still placeholders
+
 ### Learning objectives
 - shape a `144`-bar club record with distinct growth mechanisms by section
 - understand why section growth must not all come from adding layers
@@ -366,7 +452,14 @@ Reason:
 - full arrangement bounce
 - check perceived energy curve from section to section
 
+### Troubleshooting
+- if a section feels blocky, add phrase architecture before adding new layers
+- if Drop B does not feel bigger than Drop A, a bloom mechanism probably leaked early
+
 ## Part 7: Transitions Toolkit
+### Prerequisites
+- the learner can automate filters, sends, and volume
+
 ### Learning objectives
 - make section changes exciting without turning the track into an FX demo
 - use transition elements deliberately and at known bar positions
@@ -399,7 +492,14 @@ Reason:
 - listen only to the bars around section boundaries
 - confirm each one has a unique personality
 
+### Troubleshooting
+- if every transition sounds the same, vary timing and subtraction before inventing new FX
+- if the return feels weak, the build probably reveals too much too early
+
 ## Part 8: Mix
+### Prerequisites
+- all arrangement decisions are stable enough that the learner is no longer rewriting the song
+
 ### Learning objectives
 - keep the track heavy, open, and club-readable
 - understand lane ownership by bus, band, and stereo position
@@ -437,7 +537,14 @@ Reason:
   - bass roll
   - hook clarity
 
+### Troubleshooting
+- if the track only works loud, the balances are wrong
+- if the low-mid feels muddy, solve lane ownership before adding more top end
+
 ## Part 9: Master
+### Prerequisites
+- premaster is translating well and has working headroom
+
 ### Learning objectives
 - finish the track to a club-ready but controlled loudness
 - verify translation before final export
@@ -470,6 +577,10 @@ Reason:
 - export premaster and final
 - compare against loudness-matched references
 
+### Troubleshooting
+- if loudness removes punch, back out of the limiter and fix the premaster
+- if the track folds in mono, the stereo map is wrong upstream, not just at the master
+
 ## Concept-To-Technique Map
 - `rolling bass floor`
   - stable sine sub
@@ -499,6 +610,15 @@ During the actual build session, capture:
   - hook / answer alternation
 - audio bounces at every listening checkpoint
 - note on what changed between each major checkpoint
+
+## Tutorial Troubleshooting Philosophy
+- always fix the musical cause before the mix symptom
+- always fix note density before adding more sound-design motion
+- always check timing before replacing samples
+- if a learner gets stuck, the tutorial should point them to:
+  - the likely cause
+  - the fastest diagnostic
+  - the safest correction
 
 ## Lesson Authoring Implications
 When this becomes the guided lesson:

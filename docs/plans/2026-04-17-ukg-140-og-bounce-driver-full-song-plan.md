@@ -25,6 +25,20 @@ Current unresolved issues:
 
 These are now production-readiness issues, not composition-architecture issues. The remaining work is exact sound ownership, low-mid separation, and resolving fallback sound choices before the later Ableton build.
 
+Named production blockers:
+- `chord-bed`: `bl3ss-camrinwatsin-kisses:pad-1:i7`
+  - reason: selected under `mix_only` fallback, no actionable mutation suggestions yet
+- `hook-response`: `interplanetary-criminal-slow-burner:organ:i4`
+  - reason: selected under `mix_only` fallback, involved in `1` remaining pairwise conflict
+- `og-reese-answer`: `bl3ss-camrinwatsin-kisses:organ-bass:i1`
+  - reason: selected under `mix_only` fallback, involved in `2` remaining pairwise conflicts, no actionable mutation suggestions yet
+
+Named sound conflicts:
+- `bass-foundation` vs `og-reese-answer`
+  - issue: both read as `low_end_anchor`, so the low end may stack too heavily
+- `hook-response` vs `og-reese-answer`
+  - issue: both want the forward midrange position
+
 ## Core Thesis
 Build a `140 BPM` `D minor` modern UKG / speed-garage record whose center is:
 - `Kettama`-level low-end pressure and density
@@ -52,6 +66,16 @@ It should **not** get bigger through:
 - `Interplanetary Criminal`: groove pocket, phrase-end movement, hat swing
 - `Soul Mass Transit System`: rolling bass-floor architecture
 - `Sammy Virji / Y U QT`: hook clarity, chord color, emotional readability
+
+Creative references used for musical calibration:
+- `KETTAMA - It Gets Better`
+- `Interplanetary Criminal - Slow Burner`
+- `Sammy Virji - I Guess We're Not the Same`
+- `Y U QT lane study 2`
+
+Local sound/chain anchors are separate:
+- ALS anchor profiles later in this document are for sound-function inspiration only
+- they are not the same thing as the creative references above
 
 ## Anti-Goals
 - no OG speed-garage bass-hook writing
@@ -110,6 +134,10 @@ Why:
 - Clipped organ-pluck / woody garage stab
 - Late offbeat entry
 - Enough transient bite to read through the drums
+- Core rhythmic placement:
+  - late in beat `3`
+  - on beat `4`
+  - late in beat `4`
 - Drop B answer is:
   - same family
   - shorter
@@ -142,6 +170,7 @@ Why:
   - filtered bass teaser
   - rising phrase pressure
   - pulsing restrained chords that sit between break-width and Drop B bloom
+- It should use the restrained `Bb` state: `Bb2 F3 C4`, not the bloomed `Bbmaj7` state
 - It should **not** feel like:
   - just a longer break
   - or a delayed second drop
@@ -169,6 +198,24 @@ Why:
 ### Harmonic restraint rule
 - `Drop A`: keep `Bb` triad/add9-led, no obvious major-7 bloom
 - `Break / Drop B`: let the `Bbmaj7` color open up
+
+### Voice-leading strategy
+- preserve common tones where possible
+- keep upper voices moving by short steps
+- avoid bouncing every chord in root position in the chord register
+
+Practical rule:
+- let `A` and/or `C` anchor the handoff from `Dm9` into the restrained `Bb` state where possible
+- let the top line move stepwise into `Fadd9` and `Cadd9`
+
+### Chord delivery mode
+- hybrid
+- sustained emotional bed
+- restrained rhythmic pulse / stab articulation in transitions and lifts
+
+Meaning:
+- not a pure pad track
+- not a pure stab track
 
 ## Bass Plan
 ### Thesis
@@ -210,7 +257,10 @@ The bass is the `floor`, not the topline.
 
 ### Rhythmic behavior
 - stay off the kick
-- enter late on the offbeat
+- enter:
+  - late in beat `3`
+  - on beat `4`
+  - late in beat `4`
 - phrase-end punctuation is the identity
 
 ### Drop B conversation
@@ -343,6 +393,7 @@ Arrangement assignment:
 - no new bass harmonic content
 - no new hook melodic reveal
 - same harmonic content as `Drop A`, only brighter pulse / dynamics
+- chord variant here must not add new harmonic color; it only tightens rhythm / dynamics
 
 Arrangement assignment:
 - drums: `drum_drop_lift_2bar`
@@ -372,6 +423,7 @@ Arrangement assignment:
 - tighter chord pulse
 - filtered hook pickup only near the end
 - chord state should stay more restrained than `Drop B`, even while the rhythm re-engages
+- use the restrained `Bb2 F3 C4` state here, not the bloomed `Bbmaj7` state
 
 Arrangement assignment:
 - drums: `drum_transition_switch_2bar`
@@ -466,6 +518,7 @@ Arrangement assignment:
 - if a sample appears later:
   - keep it narrow
   - phrase-end based
+  - keep it roughly inside `A3–F5`
   - avoid a long dominant topline
 - in the instrumental:
   - hook pocket
@@ -499,6 +552,20 @@ Arrangement assignment:
 - `hook-support / answer support`: `bl3ss-camrinwatsin-kisses:organ-bass:i1`
 
 These are inspiration anchors for chain/function, not copying targets.
+
+## Energy Curve
+- `Intro A`: `2/10`
+- `Intro B`: `3/10`
+- `Drop A`: `7/10`
+- `Drop A Lift`: `8/10`
+- `Break`: `4/10`
+- `Transition B`: `6/10`
+- `Drop B`: `8/10`
+- `Drop B Lift`: `9/10`
+- `Outro`: `5/10`
+
+Rule:
+- if a later section does not feel meaningfully more released than the one before it, the growth mechanism probably leaked early
 
 ## Studio Build Order
 ### 1. Kick, core groove, and air ceiling

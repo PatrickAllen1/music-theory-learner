@@ -16,6 +16,9 @@ It focuses on:
 It is not the tutorial sequence. That lives in:
 - [2026-04-17-ukg-140-og-bounce-driver-tutorial-plan.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-plan.md)
 
+Current full-depth tutorial template:
+- [2026-04-17-ukg-140-og-bounce-driver-tutorial-part-03-bass-floor.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-part-03-bass-floor.md)
+
 ## Current Status
 ### Composition-ready
 - Yes
@@ -44,6 +47,37 @@ Reference role split:
 - `Interplanetary Criminal - Slow Burner`: swing, hat drag, phrase-end groove
 - `Y U QT lane study 2`: rolling bass motion proxy until a direct SMTS track study exists
 - `Sammy Virji - I Guess We're Not the Same`: hook clarity, harmonic readability
+
+Verification note:
+- these references are locally grounded in:
+  - `als/analysis/kettama-it-gets-better-notes.md`
+  - `als/analysis/interplanetary-criminal-slow-burner-notes.md`
+  - `docs/transcripts/yuqt2_spans.json`
+  - `docs/transcripts/sammyvirjiiguesswerenotthesame_spans.json`
+- use these local artifacts as the truth source inside this repo
+
+## Named Production Blockers
+### Fallback-heavy parts
+- `chord-bed`
+  - current anchor: `bl3ss-camrinwatsin-kisses:pad-1:i7`
+  - issue: `mix_only` fallback, no actionable mutation suggestions
+- `hook-response`
+  - current anchor: `interplanetary-criminal-slow-burner:organ:i4`
+  - issue: `mix_only` fallback, involved in `1` remaining conflict
+- `og-reese-answer`
+  - current anchor: `bl3ss-camrinwatsin-kisses:organ-bass:i1`
+  - issue: `mix_only` fallback, involved in `2` remaining conflicts, no actionable mutation suggestions
+
+### Active pairwise conflicts
+- `bass-foundation` vs `og-reese-answer`
+  - both read as `low_end_anchor`, so the low end stacks too heavily
+- `hook-response` vs `og-reese-answer`
+  - both want the forward midrange position
+
+### Resolution direction
+- `og-reese-answer` is the most replaceable lane because the composition plan now wants a warm phrase-end answer rather than a second bass-heavy voice
+- `hook-response` should stay in the plan, but needs a stronger non-fallback patch choice
+- `chord-bed` needs a real final pad/stab patch instead of a fallback wide pad placeholder
 
 ## Harmony Spec
 ### Progression
@@ -96,7 +130,11 @@ This means:
 ### Sub patch
 - engine: `Serum 2`
 - source: `Sub oscillator` on sine
+- main oscillators: `off`
+- sub level: `100%` while designing, trim later at track level
+- unison: `1`
 - mono: `on`
+- velocity sensitivity: `off`
 - glide: only tiny if needed, `~5–20ms`
 - amp envelope:
   - attack `0`
@@ -109,12 +147,18 @@ This means:
 ### Mid-bass / harmonic layer patch
 - engine: `Serum 2`
 - source direction:
-  - Osc A square-leaning body
-  - Osc B saw or harmonic support
-  - low blend, slight detune only
+  - Osc A: `Basic Shapes`, square-leaning frame
+  - Osc B: `Basic Shapes`, saw-leaning support
+  - start blend roughly `70/30` in favor of Osc A
+  - keep detune light, roughly `0.03–0.07`
 - filter:
-  - low-pass
-  - light drive
+  - `MG Low 12` or similar smooth low-pass
+  - cutoff as the main motion lane
+  - light drive only
+- envelope / LFO:
+  - short amp attack
+  - sustained body
+  - one slow-breathing LFO or envelope-driven cutoff motion supporting phrase energy
 - role:
   - most motion and character
   - does not become a second hook
@@ -132,9 +176,13 @@ This means:
 - kick -> sub: strongest duck
   - fast attack
   - release matched to kick tail, roughly `90–120ms`
+  - ratio direction: `4:1` to `6:1`
+  - aim for clear but not collapsing ducking
 - kick -> mid-bass:
   - slightly lighter than sub
   - still clearly breathing
+  - ratio direction: `2:1` to `4:1`
+  - keep upper motion audible between kicks
 
 ### Glide behavior
 - default: hard-switch or ultra-short glide
@@ -205,6 +253,16 @@ Suggested velocity behavior:
 - `drum_section_riser_1bar`
 - `drum_pre_drop_cut_1bar`
 
+### Drum sample sourcing policy
+- kick body: short, tunable 909/garage-compatible low-end sample
+- kick click: short upper-transient click layer
+- clap: one main garage clap plus optional tighter snare/rim support
+- hats: crisp 909 / garage-usable tops rather than brittle techno hats
+- shaker: one source that still reads after filtering and velocity changes
+
+Capture requirement:
+- once the exact files are chosen in the real build, record the file names verbatim for the later tutorial
+
 ## Hook and Answer Spec
 ### Hook notes
 - `Drop A`: `A4 C5 D5`
@@ -229,6 +287,11 @@ Suggested velocity behavior:
 - not:
   - supersaw
   - vocal placeholder
+
+Oscillator direction:
+- Osc A: sine / triangle-leaning body
+- Osc B: brighter harmonic support for FM color
+- use FM from B onto A lightly, just enough to get organ woodiness rather than bell harshness
 
 Envelope direction:
 - fast attack
@@ -283,6 +346,16 @@ Processing direction:
 - chords: wide stereo
 - air: widest layer
 - loops/tops: stereo but controlled
+
+Starting width targets:
+- kick: `0–20%`
+- sub: `0%`
+- mid-bass: `0–40%` above the crossover only
+- hook dry signal: `0–30%`
+- answer dry signal: `20–40%`
+- chords: `120–150%` equivalent width feel
+- air: `140–170%` equivalent width feel
+- loops/tops: `90–120%`
 
 ## Arrangement and Transition Spec
 ### Growth rule by section
@@ -360,6 +433,64 @@ Processing direction:
 - FX / returns
 - Premaster
 
+### Device-chain order by bus
+#### Drum bus
+1. `EQ Eight`
+2. `Glue Compressor`
+3. `Saturator` or soft clip stage
+4. `Utility`
+
+Starting direction:
+- EQ Eight:
+  - remove obvious sub spill below the kick lane if needed
+- Glue Compressor:
+  - ratio `2:1` or `4:1`
+  - attack on the slower side so transients still punch
+  - release timed to groove, not maximum pumping
+- Saturator / soft clip:
+  - enough to add density
+  - not enough to flatten hats and clap movement
+
+#### Bass bus
+1. `EQ Eight`
+2. `Saturator`
+3. sidechain / control compression if needed
+4. `Utility`
+
+Starting direction:
+- EQ Eight:
+  - keep the sub clean and let the mid layer own character above the crossover
+- Saturator:
+  - most extra density should happen here, not on the sub patch itself
+- Utility:
+  - keep low end centered
+
+#### Music bus
+1. `EQ Eight`
+2. `Glue Compressor` or light bus compression if needed
+3. tonal saturation if needed
+4. `Utility`
+
+Starting direction:
+- keep the music bus breathing around the kick
+- avoid flattening chord bloom and hook punctuation into one slab
+
+### Track / file organization
+- keep one Ableton group per major lane:
+  - `Drums`
+  - `Bass`
+  - `Chords`
+  - `Hook`
+  - `Answer`
+  - `Air`
+  - `FX`
+- keep sample folders inside the project for:
+  - `Drums`
+  - `FX`
+  - `References`
+  - `Exports / Checkpoints`
+- save checkpoint sets by milestone, not only one rolling save
+
 ### Sidechain network
 - kick -> sub: deepest duck
 - kick -> bass mid: lighter duck
@@ -393,6 +524,20 @@ Processing direction:
 - subtle saturation / soft clip
 - limiter last
 
+### Reference loudness matching
+- loudness-match references before judging tone or weight
+- use a `Utility` gain trim on the reference track so the perceived comparison is not biased by louder masters
+- do the comparison at the premaster stage, not only after limiting
+
+Practical method:
+- pull references down until they feel subjectively matched against the current premaster
+- compare at the same monitoring level every time
+- judge one axis at a time:
+  - pressure
+  - groove pocket
+  - bass roll
+  - hook/harmony clarity
+
 ### Loudness direction
 - do not chase final loudness early
 - get translation right first
@@ -402,6 +547,62 @@ Processing direction:
 - phone / small speaker
 - car / everyday playback
 - club-style low-end sanity if possible
+
+### CPU and freeze policy
+- Serum 2 plus multiple returns can get heavy fast
+- once a patch and MIDI are stable enough to teach, freeze or bounce that lane before stacking more sound-design experiments on top
+- keep the working session responsive enough that timing edits stay trustworthy
+
+### Bounce workflow
+- export checkpoint bounces after:
+  - `kick + air`
+  - `full drums`
+  - `drums + bass`
+  - `drums + bass + chords`
+  - `Drop A`
+  - `Drop B`
+  - `premaster`
+- save them into the project `Exports / Checkpoints` folder so A/B and later tutorial capture use the same files
+
+## Return / FX Starting Spec
+### Return A: short room / ambience
+- use for light drum glue only
+- short decay
+- low send level
+
+### Return B: short plate
+- use for hook / answer family
+- keep pre-delay short enough that the attack stays readable
+
+### Return C: long filtered hall
+- use for chords and air
+- high-pass and low-pass the return so it adds space without mud
+
+### Return D: filtered delay
+- use for phrase-end throws
+- avoid constant wash
+
+## Master Starting Spec
+### Chain
+1. `Utility`
+2. `Glue Compressor`
+3. soft saturation / clip
+4. `Limiter`
+
+### Starting settings direction
+- Glue Compressor:
+  - ratio `2:1`
+  - gentle threshold
+  - aim for small gain reduction only
+- Limiter ceiling:
+  - around `-1 dBTP` ceiling target
+
+### Loudness direction
+- build stage:
+  - prioritize translation and punch
+- final stage:
+  - aim for modern club strength only after the mix works
+- do not force loudness until kick/bass balance survives mono and small speakers
 
 ## Reference Calibration
 ### Pressure
