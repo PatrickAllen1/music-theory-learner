@@ -326,6 +326,28 @@ Build these section behaviors from the same chord-bed lane:
 - `Transition B`: pulse returns, but keep the restrained `Bb` state
 - `Drop B`: bloomed harmony plus stronger width/reverb support
 
+Exact first-pass clip behavior:
+1. `Intro B`
+   - use the restrained `4`-bar clip
+   - keep note lengths long, ending close to `x.4.4`
+   - darker filter state
+2. `Drop A`
+   - use the same restrained `4`-bar clip
+   - shorten each chord slightly so they end closer to `x.4.2`
+   - let sidechain create the pulse feel
+3. `Drop A Lift`
+   - keep the same notes and same basic chord-end points as `Drop A`
+   - raise velocity slightly instead of changing harmony
+4. `Break`
+   - switch to the `8`-bar bloom clip
+   - keep the two-bar sustains exactly as written
+5. `Transition B`
+   - return to the restrained `4`-bar clip
+   - let chords end a little earlier again, around `x.4.1` or `x.4.2`, so the pulse is clearer
+6. `Drop B`
+   - return to the bloomed state
+   - if using the `4`-bar bloomed clip, make sure the `Bbmaj7` bar is active again before widening the sends
+
 ### Why
 This is the “single patch, section-dependent articulation” rule in practice.
 

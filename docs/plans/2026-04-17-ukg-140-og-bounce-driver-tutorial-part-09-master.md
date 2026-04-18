@@ -139,6 +139,12 @@ Target:
 - no obvious pumping
 - no flattening of the groove
 
+Starting values:
+1. Start with ratio `2:1`.
+2. Use a slower attack rather than a very fast one so the kick still gets through.
+3. Use auto release or a moderate release first, then adjust by ear.
+4. Aim for only a small amount of gain reduction, not multiple dB of constant squeeze.
+
 ### Why
 The drum pocket and hook punctuation are easy to damage here.
 
@@ -156,6 +162,12 @@ Target:
 - slightly firmer body
 - no brittle top-end
 - no blurry kick/bass relationship
+
+Ableton action order:
+1. Turn the clip / saturation stage on after the glue compressor is behaving.
+2. Increase it in very small increments.
+3. After each move, replay the same loud drop section instead of jumping around the song.
+4. Stop the moment the kick starts sounding flatter or the hats get grainy.
 
 ### Why
 This stage should reduce limiter strain, not become a tone-design experiment.

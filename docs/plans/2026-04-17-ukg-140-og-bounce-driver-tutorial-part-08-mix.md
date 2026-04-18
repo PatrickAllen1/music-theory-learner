@@ -276,6 +276,25 @@ Starting direction:
 - chords / air:
   - just enough to keep the groove clear
 
+Ableton action order:
+1. On `Bass Sub`, drop in a compressor that supports sidechain.
+2. Open the sidechain panel.
+3. Choose the kick track as the sidechain input.
+4. Start with:
+   - ratio around `4:1`
+   - fast attack
+   - release around `100 ms`
+5. Repeat on `Bass Mid`, but start lighter:
+   - ratio around `2:1`
+   - similar attack
+   - release around `90–110 ms`
+6. On `Chords`, start gentler still:
+   - ratio around `2:1`
+   - release around `120–180 ms`
+7. On `Air`, use the lightest version of all:
+   - enough that the ceiling breathes, not enough that it audibly pumps
+8. Solo-check each lane with the kick and then return to full mix context before deciding the setting is done.
+
 ### Why
 Sidechain here is for breathing and lane clarity, not for theatrical pumping.
 
@@ -293,6 +312,12 @@ Practical move order:
 1. solo-check the low-mid relationship between bass mid and chord bed
 2. cut the chord bed first if the low-mid clouds
 3. only then thin the bass mid if needed
+
+Exact first-pass move:
+1. Put `EQ Eight` on the chord bed or `Music Bus`.
+2. Start by trimming a little around `220–280 Hz`.
+3. Re-listen with bass and chords together.
+4. Only if the cloud is still there, trim the bass mid slightly lower in the range rather than gutting the whole chord layer.
 
 ### Why
 The low-mid is where warmth and mud live in the same room.
@@ -346,6 +371,14 @@ Use the returns for support, not wash.
 `Return D: filtered delay`
 - phrase-end throws only
 - avoid constant wash
+
+Ableton action order:
+1. Mute all sends first.
+2. Bring `Return A` in gently on drums.
+3. Bring `Return B` in on hook and answer.
+4. Bring `Return C` in on chords and air.
+5. Leave `Return D` off until phrase-end moments are working.
+6. If a return sounds exciting in solo but clouds the full mix, lower the send before touching the return plugin.
 
 ### Why
 The returns create depth and section state. They should not cover up weak lane balances.
