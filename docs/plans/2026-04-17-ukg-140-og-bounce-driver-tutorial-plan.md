@@ -17,6 +17,8 @@ It should not invent new musical decisions. It should teach the reader how to re
 - screenshot-friendly
 - designed for later conversion into a guided lesson flow
 - based on `Ableton Live 12` + `Serum 2`
+- assumes access to Ableton devices used in the lessons, especially `Simpler`, `EQ Eight`, `Utility`, `Glue Compressor`, `Saturator`, and a tuner
+- if the learner's Ableton edition does not include `Tuner`, the tutorial uses either a third-party tuner plugin or the `D1` / `D2` reference-tone fallback described in `Part 1`
 - assumes downloadable companion assets later:
   - MIDI clips
   - Serum 2 patches
@@ -270,7 +272,6 @@ Suggested session split:
 
 ### What the learner builds
 - layered kick tuned to `D`
-- basic clap placeholder
 - air layer that can live across the whole song
 
 ### What must be shown
@@ -638,7 +639,9 @@ Suggested session split:
 - glue compression
 - saturation / soft clipping
 - limiter setup
-- loudness targets
+- loudness targets:
+  - around `-8` to `-10 LUFS integrated`
+  - limiter ceiling around `-1 dBTP`
 - monitoring checks
 - export settings
 

@@ -72,12 +72,16 @@ Use the same reference set as the mix chapter, but judge different things:
 
 ## Files / Assets Needed
 - final premaster
-- master chain on the `Premaster` or final output lane
+- master chain on the `Premaster` lane
 - loudness-matched references
 - export folder ready inside `Exports / Checkpoints`
+- optional LUFS meter:
+  - Ableton loudness/metering if available
+  - or a third-party loudness meter such as `Youlean Loudness Meter 2`
 
 ## Master Targets
 - keep the ceiling around `-1 dBTP`
+- integrated LUFS target: around `-8` to `-10 LUFS` for a club-ready final
 - use only small glue compression
 - keep punch and low-end relationship intact
 - do not force loudness until the premaster survives:
@@ -94,7 +98,7 @@ Exact first-pass check:
 2. Start playback from `97.1.1`.
 3. Watch the `Premaster` meter.
 4. Make sure the premaster peak is still around `-6 dBFS`, not already near `0 dBFS`.
-5. Turn `Mono` on with the last `Utility` if it is available.
+5. Turn `Mono` on with the last `Utility` on the `Premaster` lane.
 6. Listen for:
    - the kick still landing cleanly
    - the bass still breathing with it
@@ -118,6 +122,11 @@ Build the chain in this order:
 2. `Glue Compressor`
 3. soft saturation / soft clip
 4. `Limiter`
+
+Important routing clarification:
+- the master chain for this tutorial lives on the `Premaster` lane
+- do not put the main chain on Ableton's built-in `Master` channel for this tutorial
+- leaving Ableton's real `Master` clean gives you one final safety point for monitoring and export
 
 Starting direction:
 - `Glue Compressor`
@@ -173,6 +182,9 @@ Starting values:
 2. Set attack to `10 ms`.
 3. Set release to `Auto`.
 4. Aim for about `1 dB` of gain reduction on the first pass, not multiple dB of constant squeeze.
+5. Watch the gain-reduction meter on `Glue Compressor`.
+6. On the loudest sections, the needle or bar should move around `-1 dB`.
+7. Between strong hits, it should return toward `0 dB` instead of staying pinned down.
 
 ### Why
 The drum pocket and hook punctuation are easy to damage here.
@@ -202,6 +214,11 @@ Ableton action order:
 ### Why
 This stage should reduce limiter strain, not become a tone-design experiment.
 
+`Analog Clip` is the first-pass mode because:
+- it controls transient peaks without turning the master stage into obvious sound design
+- it adds less tonal character than more dramatic curve or fold modes
+- the goal here is final control, not a new color
+
 ### Screenshot
 - `master-04-soft-clip-stage`
 
@@ -222,6 +239,9 @@ Exact first-pass action:
 4. Once the level is close, move in `+0.5 dB` steps only.
 5. Stop the moment the kick starts sounding flatter or the bass loses movement.
 6. If you cannot get enough level without damage, go back to `Part 8` instead of forcing the limiter harder.
+7. If you have a LUFS meter, check integrated loudness across the full export range.
+8. First-pass target is `-8` to `-10 LUFS integrated`.
+9. If the track reaches that range but the groove gets smaller, choose punch over loudness and back off.
 
 ### Why
 Loudness is the last move, not the first.
@@ -270,13 +290,14 @@ Check the final master in:
 Then compare against loudness-matched references again.
 
 Exact mono-check action:
-1. Put `Utility` last on the master lane if it is not already there.
-2. Turn `Mono` on.
-3. Listen through:
+1. Use the final `Utility` on the `Premaster` lane.
+2. If it is not last in the chain, drag it to the last position for this check.
+3. Turn `Mono` on.
+4. Listen through:
    - `33.1.1` to `49.1.1`
    - `65.1.1` to `81.1.1`
    - `97.1.1` to `113.1.1`
-4. Turn `Mono` back off before normal playback.
+5. Turn `Mono` back off before normal playback.
 
 ### Why
 The limiter can expose problems that were hidden in the premaster.
@@ -313,6 +334,17 @@ Exact first-pass export workflow:
 6. Name it clearly, for example:
    - `ukg-140-og-bounce-driver-master.wav`
 7. Put each file in the correct folder immediately instead of leaving exports on the desktop or downloads folder.
+8. For DJ distribution, also export:
+   - `16-bit WAV` with dither on, using triangular dither if available
+   - `MP3 320 kbps` for compatibility
+9. Put distribution files in:
+   - `Exports / Final / distribution`
+
+Why these export settings:
+- normalize `off` because the limiter already sets the final level; normalizing would change the level decision you just made
+- dither `off` for the `24-bit` archive because you are not reducing to `16-bit`
+- dither `on` for a `16-bit` distribution WAV because bit-depth reduction benefits from dithering
+- keep the premaster because it is the safety file if the master needs revision later
 
 ### Why
 Keeping the premaster and final master side by side is useful for:

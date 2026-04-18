@@ -284,12 +284,17 @@ Exact first-pass timing:
    - `32.1.1`
    - `32.4.4`
    - `33.1.1`
-3. Start the filter mostly open at `31.1.1`.
-4. Push the high-pass effect strongest at `32.4.4`.
-5. Return the filter to fully open again at `33.1.1`.
-6. If you use a pre-drop cut, make it happen only in the last beat:
+3. Set the cutoff values:
+   - `31.1.1`: `20 Hz`, effectively open
+   - `32.1.1`: `80 Hz`, enough to start thinning the drum weight
+   - `32.4.4`: `180 Hz`, strongest filtered moment before the drop
+   - `33.1.1`: `20 Hz`, fully open again
+4. Start the filter mostly open at `31.1.1`.
+5. Push the high-pass effect strongest at `32.4.4`.
+6. Return the filter to fully open again at `33.1.1`.
+7. If you use a pre-drop cut, make it happen only in the last beat:
    - `32.4.1` to `33.1.1`
-7. On the drum lanes:
+8. On the drum lanes:
    - keep `Kick Body` and `Kick Click` active through `32.4.1`
    - mute `Open Hat` at `32.4.3`
    - let the phrase-end fill own `32.4.3` and `32.4.4`
@@ -399,8 +404,11 @@ Exact first-pass timing:
 3. Start the true pre-drop subtraction at `96.4.1`.
 4. If the cut is too weak, extend it only to `96.3.3`, not earlier.
 5. Kill the riser and release the cut exactly at `97.1.1`.
-6. Make sure the full bass, drums, and bloom chord state all return on `97.1.1`, not staggered loosely across the bar.
-7. On the drum lanes:
+6. Make the riser clip itself end at `97.1.1`.
+7. If the riser audio has a tail that smears past the drop, crop or fade it so the audible tail is gone by `96.4.4`.
+8. If the riser is too long to crop cleanly, automate the `FX-Riser` lane volume to drop to `-inf` at `97.1.1`.
+9. Make sure the full bass, drums, and bloom chord state all return on `97.1.1`, not staggered loosely across the bar.
+10. On the drum lanes:
    - mute `Open Hat` and reduce `Shaker` during the cut from `96.4.1` to `97.1.1`
    - let the fill lane own `96.4.3` and `96.4.4`
    - restore `Kick Body`, `Kick Click`, `Clap`, `Closed Hat`, `Ghost Hat`, `Open Hat`, and `Shaker` together at `97.1.1`
@@ -442,7 +450,12 @@ For `112 -> 113`:
 
 Exact first-pass move:
 - add the phrase-end fill in bar `112`
-- raise `Return B` or `Return C` by one small visible automation step at `113.1.1`
+- raise the hook / answer `Return B` sends by `+2 dB` at `113.1.1`
+- keep that lift through `115.1.1`, then return the sends to their previous levels
+- first-pass values:
+  - `Hook` Send B: `-18 dB` -> `-16 dB`
+  - `Answer` Send B: `-16 dB` -> `-14 dB`
+- leave `Return C` unchanged on the first pass so the lift comes from hook / answer release, not extra chord wash
 - do not add any new MIDI note at `113.1.1`
 - if the lift still feels flat, add one extra `Open Hat` hit at `113.2.3` before inventing a new FX lane
 
@@ -502,15 +515,15 @@ Air-bed level:
 
 Exact first-pass automation points:
 1. On the drum-bus filter lane, create points at:
-   - `31.1.1`
-   - `32.1.1`
-   - `32.4.4`
-   - `33.1.1`
-   - `80.1.1`
-   - `81.1.1`
-   - `95.1.1`
-   - `96.4.1`
-   - `97.1.1`
+   - `31.1.1`: `20 Hz`
+   - `32.1.1`: `80 Hz`
+   - `32.4.4`: `180 Hz`
+   - `33.1.1`: `20 Hz`
+   - `80.1.1`: `120 Hz`
+   - `81.1.1`: `20 Hz`
+   - `95.1.1`: `20 Hz`
+   - `96.4.1`: `160 Hz`
+   - `97.1.1`: `20 Hz`
 2. On the hook send lane, create phrase-end throw points at:
    - `100.3.4`
    - `104.3.3`
@@ -546,6 +559,11 @@ Transitions are not only FX clips. Most of the excitement comes from controlled 
 - `transitions-10b-hook-send-automation`
 - `transitions-10c-air-width-automation`
 
+### Visual Automation Requirement
+- show the drum-bus high-pass automation lane across bars `30–35` so the `31.1.1`, `32.1.1`, `32.4.4`, and `33.1.1` values are visible
+- show the re-entry high-pass automation lane across bars `95–97` so the `95.1.1`, `96.4.1`, and `97.1.1` values are visible
+- show the hook / answer send automation around bars `112–115` so the `+2 dB` lift and return are visible
+
 ## Step 11: Boundary-Only A/B
 ### Action
 Bounce or loop only the bars around the boundaries:
@@ -563,6 +581,13 @@ What to check:
 - does `80 -> 81` feel like rhythm waking back up?
 - does `96 -> 97` clearly outclass the earlier re-entries?
 - does `128 -> 129` remain playable and mixable?
+
+Targeted reference assignment:
+- compare `31–33` mostly against `Interplanetary Criminal - Slow Burner` for first-drop pocket and drum-language entry
+- compare `63–65` mostly against `Sammy Virji - I Guess We're Not the Same` for musical release into a wider section
+- compare `79–81` mostly against `Interplanetary Criminal - Slow Burner` for rhythm waking back up after reduced pressure
+- compare `95–97` mostly against `KETTAMA - It Gets Better` for physical second-drop impact
+- compare `127–129` against all references only for practical DJ-playable stripdown, not for exact sound design
 
 ### Expected Answer
 - each major boundary should have a different personality

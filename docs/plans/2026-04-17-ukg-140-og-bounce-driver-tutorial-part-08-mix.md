@@ -110,6 +110,10 @@ Judge one axis at a time:
   - `Return C`: long filtered hall
   - `Return D`: filtered delay
 - one `Utility` on the premaster for mono checks
+- optional metering helpers:
+  - a spectrum analyzer such as `Voxengo SPAN`
+  - a loudness meter such as `Youlean Loudness Meter 2`
+  - if third-party meters are unavailable, still do the Ableton meter and reference A/B checks in this chapter, then confirm loudness in `Part 9`
 
 ## Mix Targets
 ### Gain staging
@@ -156,6 +160,12 @@ Ableton action order:
    - hook only if its peak is still above the target range after kick and bass are set
 5. Only after track levels are reasonable, adjust the bus levels.
 
+If a track is already too loud:
+1. Pull down the normal channel fader first.
+2. If the fader has to sit below about `-12 dB` and the track still peaks above `-8 dBFS`, add `Utility` as the first device on that track.
+3. Use `Utility Gain` to trim the track before it hits the rest of its devices.
+4. Avoid clip-gain edits unless the sample itself is clipping or one audio clip is wildly louder than the rest of the lane.
+
 ### Why
 If the session is already too hot before the buses exist, every later decision gets biased by level.
 
@@ -169,6 +179,12 @@ Route the session so each major job owns a bus:
 - `Bass Bus`
 - `Music Bus`
 - `Premaster`
+
+If `Part 0` was completed correctly, these buses already exist.
+
+First action:
+- verify membership and routing
+- do not create duplicate buses if the existing ones are correct
 
 Bus membership:
 - `Drum Bus`: kick, clap, hats, shaker, loops
@@ -185,15 +201,16 @@ Exact Ableton translation:
 5. When this chapter says "put EQ on the bus," click that parent group lane, not the child track below it.
 
 Ableton action order:
-1. Select the relevant tracks.
-2. Group them with `Cmd+G` on Mac or `Ctrl+G` on Windows if the buses do not already exist.
-3. Rename each bus immediately with `Cmd+R` / `Ctrl+R`.
-4. Drag the buses so they appear in this order:
+1. If the buses already exist, open each group and confirm the right child tracks are inside.
+2. If a bus is missing, select the relevant tracks.
+3. Group them with `Cmd+G` on Mac or `Ctrl+G` on Windows.
+4. Rename each bus immediately with `Cmd+R` / `Ctrl+R`.
+5. Drag the buses so they appear in this order:
    - `Drum Bus`
    - `Bass Bus`
    - `Music Bus`
    - `Premaster`
-5. Collapse and expand each bus once so you can visually confirm the right lanes are inside it.
+6. Collapse and expand each bus once so you can visually confirm the right lanes are inside it.
 
 ### Why
 The buses are where the track starts behaving like a record instead of a stack of channels.
@@ -238,6 +255,11 @@ First-pass settings:
 
 ### Why
 The drum bus should feel denser and more unified, but the groove still needs to breathe.
+
+### Saturation Warning
+- this drum-bus saturation is separate from the master saturation in `Part 9`
+- the two stages add up
+- keep this stage subtle and do not push the drum-bus drive past about `+2 dB` before mastering
 
 ### Screenshot Set
 - `mix-03a-drum-bus-overview`
@@ -339,6 +361,7 @@ Use the kick as the source for:
 - kick -> sub: deepest duck
 - kick -> bass mid: lighter duck
 - kick -> chords: gentle duck
+- kick -> answer: very light duck
 - kick -> air: very light duck
 
 Plain-English sidechain translation:
@@ -349,6 +372,8 @@ Plain-English sidechain translation:
 Starting direction:
 - sub release matched to the kick tail:
   - `105 ms` on the first pass
+  - shorten to `90–95 ms` if the kick body tail from `Part 1` is closer to `90 ms`
+  - lengthen to `115–120 ms` if the kick body tail from `Part 1` is closer to `120 ms`
 - bass mid:
   - enough duck that kick and bass breathe together
   - not so much that the bass loses rhythmic life between kicks
@@ -374,12 +399,17 @@ Ableton action order:
    - attack `1 ms`
    - release `150 ms`
    - aim for only a small visible gain dip
-7. On `Air`, use the lightest version of all:
+7. On `Answer`, use a very light duck:
+   - ratio `2:1`
+   - attack `1 ms`
+   - release `110 ms`
+   - threshold lowered only until the kick creates about `0.5–1 dB` of visible dip
+8. On `Air`, use the lightest version of all:
    - ratio `2:1`
    - attack `1 ms`
    - release `140 ms`
    - aim for barely visible gain reduction
-8. Solo-check each lane with the kick and then return to full mix context before deciding the setting is done.
+9. Solo-check each lane with the kick and then return to full mix context before deciding the setting is done.
 
 ### Why
 Sidechain here is for breathing and lane clarity, not for theatrical pumping.
@@ -396,8 +426,10 @@ Use the band split as the first-pass ownership map:
 
 Practical move order:
 1. solo-check the low-mid relationship between bass mid and chord bed
-2. cut the chord bed first if the low-mid clouds
-3. only then thin the bass mid if needed
+2. before adding EQ cuts, lower the louder of the two lanes by `1 dB` and listen again
+3. if a level move solves the clash, keep the level move and do not cut
+4. if the clash remains, cut the chord bed first
+5. only then thin the bass mid if needed
 
 Exact first-pass move:
 1. Put `EQ Eight` on the chord bed or `Music Bus`.
@@ -412,6 +444,7 @@ The low-mid is where warmth and mud live in the same room.
 
 ### Rule
 - do not solve a cloudy low-mid by just adding treble
+- if two elements mask each other, solo the pair and solve level first, EQ second
 
 ### Screenshot
 - `mix-07-low-mid-ownership`
@@ -500,21 +533,26 @@ The returns create depth and section state. They should not cover up weak lane b
 Loudness-match the references before judging tone or weight.
 
 Practical method:
-1. start by pulling the references down to `-10 dB` on `Utility`
-2. play your own section first
-3. switch to the reference without touching the speaker volume
-3. judge one axis at a time:
+1. Start by pulling the references down to `-10 dB` on `Utility`.
+2. Play your own section first.
+3. Switch to the reference without touching the speaker volume.
+4. Judge one axis at a time:
   - pressure
   - groove pocket
   - bass roll
   - hook / harmony clarity
-4. Do the comparison from the same song location each time:
+5. Do the comparison from the same song location each time:
    - use `Drop A` against the first-drop section of the reference
    - use `Drop B` against a full-drop section of the reference
-5. Write down one short note per reference instead of trying to remember all four judgments in your head.
+6. Write down one short note per reference instead of trying to remember all four judgments in your head.
+
+Optional meter check:
+- if you have a spectrum analyzer, place it on `Premaster` while checking low-mid and top-end balance
+- if you have a loudness meter, use it only to help match reference playback level here
+- do not chase final LUFS in this chapter; final loudness belongs to `Part 9`
 
 Exact Ableton mono-check action:
-1. Put `Utility` on the `Premaster` if it is not already there.
+1. Use the same final `Utility` on `Premaster` that was created in `Part 0`.
 2. Use the `Mono` button on that `Utility`.
 3. Turn `Mono` on for the check.
 4. Turn `Mono` back off before normal balancing continues.
@@ -534,18 +572,24 @@ Check the premaster in:
 - everyday playback if possible
 
 Exact mono-check action:
-1. Put `Utility` last on the premaster if it is not already there.
-2. Turn `Mono` on.
-3. Listen through:
+1. Use the same final `Utility` on `Premaster` from `Part 0`.
+2. If it was moved earlier in the chain, drag it to the last position temporarily for the check.
+3. Turn `Mono` on.
+4. Listen through:
    - a drop
    - the break
    - the `96 -> 97` re-entry
-4. Turn `Mono` back off before making stereo decisions again.
+5. Turn `Mono` back off before making stereo decisions again.
 
 Mono tool:
-- put `Utility` last on the premaster
+- use the final `Utility` from `Part 0` on the premaster
 - use it to check mono collapse quickly
 - also audition the `Bass` group in mono while balancing kick and sub
+
+Volume automation policy:
+- do not automate `Premaster` volume in this first mix pass
+- section energy should mostly come from arrangement and transition design
+- if a section still needs a tiny correction after A/B, automate individual lanes by about `+/-1 dB`, not the premaster
 
 What to listen for:
 - does the kick still land with authority?

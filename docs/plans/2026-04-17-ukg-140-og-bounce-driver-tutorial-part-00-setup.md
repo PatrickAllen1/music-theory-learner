@@ -151,17 +151,30 @@ The tutorial expects these returns to exist from the beginning so later chapters
 
 ## Step 4: Build The Bus Routing
 ### Action
-Route the groups into the bus structure:
-- `Drums` -> `Drum Bus`
-- `Bass` -> `Bass Bus`
-- `Chords`, `Hook`, `Answer`, `Air` -> `Music Bus`
-- buses -> `Premaster`
+Build the bus structure explicitly.
 
-If the learner prefers to keep lane groups visible and bus tracks separate, that is fine. The important point is that the session has these bus destinations ready:
-- `Drum Bus`
-- `Bass Bus`
-- `Music Bus`
-- `Premaster`
+First, create the buses:
+1. If the `Drums` parent group is not already named `Drum Bus`, click the parent group header, press `Cmd+R` on Mac or `Ctrl+R` on Windows, and rename it `Drum Bus`.
+2. If the `Bass` parent group is not already named `Bass Bus`, click the parent group header, press `Cmd+R` / `Ctrl+R`, and rename it `Bass Bus`.
+3. Select the `Chords`, `Hook`, `Answer`, and `Air` groups together.
+4. Press `Cmd+G` on Mac or `Ctrl+G` on Windows.
+5. Ableton creates one new parent group around those four groups.
+6. Rename that new parent group `Music Bus`.
+7. Keep `Premaster` as its own final audio/group lane before Ableton's real `Master`.
+
+Then route the buses:
+1. On `Drum Bus`, find the `Audio To` dropdown in the mixer.
+2. Set `Audio To` to `Premaster`.
+3. On `Bass Bus`, set `Audio To` to `Premaster`.
+4. On `Music Bus`, set `Audio To` to `Premaster`.
+5. On `Premaster`, leave `Audio To` set to `Master`.
+
+The result should be:
+- `Kick Body`, `Kick Click`, `Clap`, hats, shaker, and fills live inside `Drum Bus`
+- bass layers live inside `Bass Bus`
+- `Chords`, `Hook`, `Answer`, and `Air` live inside `Music Bus`
+- `Drum Bus`, `Bass Bus`, and `Music Bus` all feed `Premaster`
+- `Premaster` feeds Ableton's real `Master`
 
 Plain-English routing translation:
 - when the tutorial says "put EQ on `Drum Bus`," click the `Drum Bus` parent lane, not `Kick Body`
@@ -176,13 +189,24 @@ The tutorial later mixes by bus. If the routing is improvised halfway through th
 
 ## Step 5: Load The References And Gain-Trim Them
 ### Action
-1. Create one reference group or dedicated reference tracks.
-2. Load the four reference tracks.
-3. Put a `Utility` on each reference lane.
-4. Start by pulling each reference down by about `-10 dB` on its `Utility`.
-5. Solo one reference at a time and compare it against your empty session at the same monitor volume.
-6. If a reference still feels obviously too loud, pull it down another `2–3 dB`.
-7. Leave a note in the track name if one reference needed noticeably more trim than the others.
+1. Create four audio tracks for the references.
+2. Name them:
+   - `REF KETTAMA pressure`
+   - `REF IC groove`
+   - `REF YUQT bass roll`
+   - `REF Virji hook harmony`
+3. Select those four reference tracks together.
+4. Press `Cmd+G` on Mac or `Ctrl+G` on Windows.
+5. Rename the new parent group `References`.
+6. Route the `References` group directly to Ableton's real `Master`, not to `Premaster`.
+7. Load the four reference tracks onto the four reference lanes.
+8. Put a `Utility` on each reference lane.
+9. Start by pulling each reference down by about `-10 dB` on its `Utility`.
+10. Solo one reference at a time and compare it against your empty session at the same monitor volume.
+11. If a reference still feels obviously too loud, pull it down another `2–3 dB`.
+12. Leave a note in the track name if one reference needed noticeably more trim than the others.
+13. Mute the `References` group after trimming.
+14. Leave it muted by default. Unmute it only during A/B checks.
 
 ### Why
 References only help if they are in the session and usable from the start.
@@ -196,9 +220,15 @@ References only help if they are in the session and usable from the start.
 
 ## Step 6: Prepare The Premaster Lane
 ### Action
-1. Make sure all buses flow into `Premaster`.
-2. Put a `Utility` on the premaster.
-3. Leave headroom; do not place a limiter here yet unless it is clearly bypassed and documented as later-stage only.
+1. Click the `Drum Bus` mixer output dropdown labeled `Audio To`.
+2. Choose `Premaster`.
+3. Repeat the same `Audio To -> Premaster` routing on `Bass Bus`.
+4. Repeat the same `Audio To -> Premaster` routing on `Music Bus`.
+5. Click the `Premaster` mixer output dropdown.
+6. Make sure `Premaster` is routed to Ableton's real `Master`.
+7. Do not route `References` to `Premaster`; references should bypass your mix processing.
+8. Put a `Utility` on the premaster.
+9. Leave headroom; do not place a limiter here yet unless it is clearly bypassed and documented as later-stage only.
 
 ### Why
 The session should start with headroom discipline, not loudness chasing.
@@ -255,6 +285,9 @@ With no real music written yet:
 - the session feels organized, not improvised
 - the references are ready to use
 - there is no limiter-led loudness bias yet
+
+### Screenshot
+- `setup-08-zero-music-ready-state`
 
 ## Troubleshooting
 ### Problem: “The project already feels disorganized.”

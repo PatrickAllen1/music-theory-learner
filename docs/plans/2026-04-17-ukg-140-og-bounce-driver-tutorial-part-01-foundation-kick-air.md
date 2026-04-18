@@ -36,6 +36,10 @@ By the end of this part, the learner should have:
   - `Detune`
   - `EQ Eight`
   - `Utility`
+- learner has access to a tuner:
+  - Ableton `Tuner`
+  - or a third-party tuner plugin
+  - or a temporary `D1` / `D2` sine reference for ear-based tuning if no tuner device is available
 - the session from `Part 0` is already set to:
   - `140 BPM`
   - correct groups / returns
@@ -112,6 +116,13 @@ Concrete first-pass sample test:
 9. Set `Kick Click` fader to `-18 dB` for the first pass.
 10. Keep both panned center.
 
+Low-frequency body check:
+- after tuning, the kick body should have its main low thump below about `80 Hz`
+- `D1` is about `36.7 Hz`
+- `D2` is about `73.4 Hz`
+- if the tuner or analyzer mostly shows a high `D` like `D3` or `D4`, that sample is probably too high to be the kick body
+- if the sample has no obvious low thump below `80 Hz`, move it to `Kick Click` or reject it and pick another body sample
+
 ### Why
 The kick needs two jobs:
 - weight
@@ -156,8 +167,16 @@ Quick listening test:
 6. Do not panic about octave number at this stage:
    - `D1`, `D2`, or `D3` are all still `D`
    - the important thing is the note name first
+   - the next check decides whether that `D` is low enough to function as kick body
 7. Once the tuner is showing `D`, use `Detune` for the last small adjustment if the reading still wobbles sharp or flat.
 8. Keep the click layer unpitched unless it obviously fights the body.
+
+If Ableton `Tuner` is not available:
+1. Load any tuner plugin after `Simpler`, or create a temporary sine-wave reference that plays `D1` or `D2`.
+2. Trigger the kick body against that reference.
+3. Move `Transpose` in whole semitone steps until the kick body feels consonant with the `D` reference.
+4. Use `Detune` for the final small adjustment.
+5. Delete or mute the temporary reference before continuing.
 
 Exact first-pass method:
 1. Solo `Kick Body`.
@@ -165,7 +184,11 @@ Exact first-pass method:
 3. Read the note name on `Tuner`.
 4. Change `Transpose` in whole-number steps until the note name becomes `D`.
 5. Then move `Detune` in small steps until the reading sits closest to the center of `D`.
-6. Turn solo off and check the kick again in context before moving on.
+6. Confirm the body is still low enough:
+   - ideal: `D1` or `D2`
+   - acceptable: another low `D` with visible sub weight below `80 Hz`
+   - reject: a high `D` that sounds like click or tom, not kick body
+7. Turn solo off and check the kick again in context before moving on.
 
 What `Detune` means here:
 - if `Tuner` shows `D` but the needle leans sharp, move `Detune` down in `-5` cent steps
@@ -202,9 +225,16 @@ Practical method:
    - decay: `110 ms`
    - sustain: `0%`
    - release: `20 ms`
-5. If using a sample-end or fade handle instead of an envelope, drag the end/fade so the audible body is about `100 ms`.
-6. Replay the kick on loop after each tail move.
-7. Stop when the body ends before the next kick at `1/4` timing but still has a low thump.
+5. If the audio file itself has a long ringing tail, use the visible sample end / fade handle first:
+   - open the sample display in `Simpler`
+   - drag the sample end or fade so the audible body is about `100 ms`
+   - do this before relying on release time
+6. Use the volume envelope to control how the MIDI note triggers the sample.
+7. Do not rely on `Release` to fix a long sample file:
+   - release controls what happens after note-off
+   - the sample end / fade controls how much long tail exists in the audio
+8. Replay the kick on loop after each tail move.
+9. Stop when the body ends before the next kick at `1/4` timing but still has a low thump.
 
 Do not over-shorten it into a papery click.
 
@@ -318,22 +348,30 @@ Exact first-pass setup:
 2. Initialize the patch.
 3. Turn `Osc A` off.
 4. Turn `Osc B` off.
-5. Turn the `Noise` oscillator on.
-6. Choose a broad white-noise or bright-noise source.
-7. Set `Noise Level` to `35%`.
-8. Add a high-pass filter so the air behaves like top ceiling only.
-9. Set filter first pass:
+5. In Serum 2's main oscillator panel, find the `Noise` section beside or below `Osc A` / `Osc B`.
+6. Click the `Noise` section power button so the noise oscillator is on.
+7. Choose a broad white-noise or bright-noise source.
+8. Set `Noise Level` to `35%`.
+9. Add a high-pass filter so the air behaves like top ceiling only.
+10. Set filter first pass:
    - type: high-pass
    - cutoff: `7 kHz`
    - resonance: `0–5%`
    - drive: `0%`
-10. Create one `4`-bar MIDI clip on the `Air` track.
-11. In that clip, place one long note starting at `1.1.1`.
-12. Use a middle-register trigger note such as `C3`.
-13. Drag that note all the way to `4.4.4` so the noise source stays open across the whole clip.
-14. Set the `Air` track fader to `-28 dB`.
-15. Set `Air` `Send C` to `-18 dB`.
-16. On the very first pass, do not add LFO movement yet. Get the ceiling working as a static layer before adding motion.
+11. Create one `4`-bar MIDI clip on the `Air` track.
+12. In that clip, place one long note starting at `1.1.1`.
+13. Use a middle-register trigger note such as `C3`.
+14. Drag that note all the way to `4.4.4` so the noise source stays open across the whole clip.
+15. In Clip View, turn `Loop` on.
+16. Set loop start to `1.1.1`.
+17. Set loop end to `5.1.1`.
+18. Set the `Air` track fader to `-28 dB`.
+19. Set `Air` `Send C` to `-18 dB`.
+20. On the very first pass, do not add LFO movement yet. Get the ceiling working as a static layer before adding motion.
+
+Arrangement note:
+- this `4`-bar air loop is enough for the checkpoint
+- in `Part 6`, extend or duplicate it so the `Air` track plays continuously from bar `1.1.1` through bar `145.1.1`
 
 ### Why
 The air layer should create:
@@ -395,6 +433,15 @@ If it announces itself too early, later sections lose their sense of opening upw
 Bounce `4` bars of:
 - kick
 - air
+
+Exact export range:
+1. In Arrangement View, place the kick clip at bar `1.1.1`.
+2. Place the air clip at bar `1.1.1`.
+3. Set the loop brace / export range start to `1.1.1`.
+4. Set the loop brace / export range end to `5.1.1`.
+5. Export a `24-bit WAV`.
+6. Name it `checkpoint-01-kick-air.wav`.
+7. Put it in `Exports / Checkpoints`.
 
 Compare against the references.
 

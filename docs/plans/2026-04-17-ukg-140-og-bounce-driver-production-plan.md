@@ -692,7 +692,9 @@ Working expectation:
   - prioritize translation and punch
 - final stage:
   - aim for modern club strength only after the mix works
+  - target around `-8` to `-10 LUFS integrated` for the final club-ready master
 - do not force loudness until kick/bass balance survives mono and small speakers
+- keep limiter ceiling around `-1 dBTP`
 
 ## Reference Calibration
 ### Pressure

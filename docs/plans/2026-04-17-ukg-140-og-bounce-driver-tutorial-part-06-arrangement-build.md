@@ -246,7 +246,7 @@ You want to hear the architecture first, before spending an hour polishing one t
   - one short octave hint every second bar
 - let the top-end tease open in two visible stages:
   - first raise hats / air to the `Intro B` state by `17.1.1`
-  - then raise them one more small step by `25.1.1`
+  - then raise the `Open Hat` or `Air` lane by exactly `+1 dB` at `25.1.1`
 - keep the hook as a filtered pickup only, not a full phrase
 - treat the teaser as one gesture:
   - root authority first
@@ -335,7 +335,7 @@ they are stealing from `Break` and `Drop B`.
 Exact first-pass growth moves:
 1. Keep the same bass, chord, and hook clips from `33–48`.
 2. At `49.1.1`, swap only to the `drum_drop_lift_2bar` variant.
-3. At `57.1.1`, raise the shaker lane by `+1 dB` or one small visible fader move.
+3. At `57.1.1`, raise the shaker lane by exactly `+1 dB` on the first pass.
 4. At `61.1.1`, add the phrase-end fill that pushes into bar `65`.
 
 ### Screenshot
