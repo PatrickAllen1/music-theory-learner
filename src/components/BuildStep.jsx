@@ -1,3 +1,25 @@
+function BulletSection({ title, items, accent = "text-zinc-500" }) {
+  if (!items || items.length === 0) return null;
+
+  return (
+    <div className="mb-6">
+      <h3
+        className={`text-xs font-mono uppercase tracking-wider mb-2 ${accent}`}
+      >
+        {title}
+      </h3>
+      <ul className="space-y-2">
+        {items.map((item, index) => (
+          <li key={index} className="flex gap-3 text-sm leading-relaxed">
+            <span className="text-zinc-600 font-mono shrink-0">→</span>
+            <span className="text-zinc-300">{item}</span>
+          </li>
+        ))}
+      </ul>
+    </div>
+  );
+}
+
 export default function BuildStep({
   step,
   stepNumber,
@@ -22,9 +44,43 @@ export default function BuildStep({
 
       <h2 className="text-xl font-mono font-bold mb-4">{step.title}</h2>
 
+      {(step.focus || step.estimated_minutes) && (
+        <div className="flex flex-wrap gap-2 mb-4">
+          {step.focus && (
+            <span className="px-2.5 py-1 bg-zinc-900 border border-zinc-800 rounded text-xs font-mono text-zinc-300">
+              Focus: {step.focus}
+            </span>
+          )}
+          {step.estimated_minutes && (
+            <span className="px-2.5 py-1 bg-zinc-900 border border-zinc-800 rounded text-xs font-mono text-zinc-500">
+              ~{step.estimated_minutes} min
+            </span>
+          )}
+        </div>
+      )}
+
+      {step.outcome && (
+        <div className="mb-6 px-4 py-3 bg-zinc-900 border border-zinc-800 rounded-lg">
+          <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">
+            End State
+          </h3>
+          <p className="text-zinc-300 text-sm leading-relaxed">
+            {step.outcome}
+          </p>
+        </div>
+      )}
+
       <div className="p-5 bg-zinc-900 border border-zinc-700 rounded-lg mb-6">
         <p className="text-zinc-200 leading-relaxed">{step.instruction}</p>
       </div>
+
+      {step.instruction_sections?.map((section, index) => (
+        <BulletSection
+          key={`${section.title}-${index}`}
+          title={section.title}
+          items={section.items}
+        />
+      ))}
 
       <div className="mb-6">
         <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">
@@ -32,6 +88,23 @@ export default function BuildStep({
         </h3>
         <p className="text-zinc-400 text-sm leading-relaxed">{step.why}</p>
       </div>
+
+      <BulletSection title="Checklist" items={step.checklist} />
+      <BulletSection
+        title="Verify Before Moving On"
+        items={step.verify}
+        accent="text-green-500"
+      />
+      <BulletSection
+        title="Common Mistakes"
+        items={step.common_mistakes}
+        accent="text-amber-500"
+      />
+      <BulletSection
+        title="Save These Artifacts"
+        items={step.save_artifacts}
+        accent="text-blue-500"
+      />
 
       {step.tip && (
         <div className="px-4 py-3 bg-zinc-900 border-l-2 border-zinc-600 rounded mb-6">

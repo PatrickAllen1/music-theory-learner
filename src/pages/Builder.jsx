@@ -58,7 +58,56 @@ export default function Builder() {
 
   return (
     <div className="flex gap-8">
-      <div className="flex-1">
+      <div className="hidden xl:block w-72 shrink-0">
+        <div className="sticky top-8 p-4 bg-zinc-900 border border-zinc-800 rounded-lg">
+          <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-3">
+            Lesson Outline
+          </h3>
+          <div className="space-y-2 max-h-[75vh] overflow-auto pr-1">
+            {build.steps.map((buildStep, index) => {
+              const active = index === stepIndex;
+              const done = isStepComplete(build.id, buildStep.id);
+              return (
+                <button
+                  key={buildStep.id}
+                  onClick={() => setStepIndex(index)}
+                  className={`w-full text-left p-3 rounded border transition-colors ${
+                    active
+                      ? "border-zinc-500 bg-zinc-800"
+                      : "border-zinc-800 bg-zinc-950 hover:border-zinc-700"
+                  }`}
+                >
+                  <div className="flex items-start justify-between gap-3 mb-1">
+                    <span className="text-[11px] font-mono text-zinc-500">
+                      Step {index + 1}
+                    </span>
+                    {done && (
+                      <span className="text-[11px] font-mono text-green-400">
+                        done
+                      </span>
+                    )}
+                  </div>
+                  <div className="text-sm font-mono text-zinc-100 leading-snug mb-1">
+                    {buildStep.title}
+                  </div>
+                  <div className="flex flex-wrap gap-2">
+                    <span className="text-[11px] font-mono text-zinc-600 uppercase">
+                      {buildStep.category}
+                    </span>
+                    {buildStep.estimated_minutes && (
+                      <span className="text-[11px] font-mono text-zinc-600">
+                        ~{buildStep.estimated_minutes} min
+                      </span>
+                    )}
+                  </div>
+                </button>
+              );
+            })}
+          </div>
+        </div>
+      </div>
+
+      <div className="flex-1 min-w-0">
         <button
           onClick={() => {
             setBuild(null);
