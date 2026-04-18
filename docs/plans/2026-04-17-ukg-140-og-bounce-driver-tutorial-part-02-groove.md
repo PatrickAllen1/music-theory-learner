@@ -84,6 +84,14 @@ Secondary check:
   - optional top loop
 - one `Drums` group
 
+Plain-English drum terms used in this chapter:
+- `anchor drums`: kick and clap; these stay on-grid so the track has a firm spine
+- `top drums`: closed hats, ghost hats, open hats, shaker, and top loop; these create motion and air
+- `ghost hat`: a quiet hat hit that is felt as groove more than heard as a main hat
+- `support layer`: a quieter extra sample that reinforces another sound without becoming the main sound
+- `drum bus`: the `Drums` group channel; all drum tracks feed into it so one compressor/saturator can affect the kit together
+- `velocity`: the MIDI hit strength; higher values are louder/brighter, lower values are quieter/softer
+
 ## Sample Selection Rules
 ### Kick
 - choose one short, tunable 909/garage-compatible body sample
@@ -108,13 +116,19 @@ Secondary check:
 
 ## Step 1: Build The Kick
 ### Action
-1. Load the kick body sample.
-2. Open the sample pitch controls in `Simpler`.
-3. Use `Transpose` to get the kick body close to `D`.
-4. Use `Detune` for the last fine adjustment if needed.
-5. Load the click layer on a separate chain or track.
-6. High-pass the click so it does not add false low end.
-7. Blend the click until the kick reads clearly on small speakers, then stop.
+If you completed `Part 1`, reuse that kick. Do not rebuild it unless it failed the Part 1 checkpoint.
+
+If you are building it here:
+1. Load the kick body sample onto `Kick Body`.
+2. Add Ableton `Tuner` after `Simpler`.
+3. Use the Part 1 transpose map to make the kick body read `D` in `Tuner`.
+4. Set kick body tail target to `100 ms`.
+5. Load the click layer onto `Kick Click`.
+6. Add `EQ Eight` to `Kick Click`.
+7. Set `Kick Click` high-pass to `700 Hz`, slope `24 dB/oct`.
+8. Add `Utility` to `Kick Click`.
+9. Set `Kick Click` Utility Gain to `-8 dB`.
+10. If the click is louder than the body, lower Utility Gain to `-10 dB` or `-12 dB`.
 
 ### Why
 The kick must:
@@ -124,8 +138,11 @@ The kick must:
 
 ### Starting Spec
 - kick body tuned to `D`
-- kick body tail `~90–120 ms`
-- click layer high-passed and quieter than the body
+- kick body tail target `100 ms`
+- kick body acceptable tail window `90–120 ms`
+- click layer high-passed at `700 Hz`
+- click layer Utility Gain `-8 dB` first pass
+- both kick layers panned center
 
 ### Screenshot Set
 - `drums-01-kick-body`
@@ -172,8 +189,12 @@ Do not try to “make it more garage” by changing the kick rhythm. The garage 
 ## Step 3: Build The Clap Layer
 ### Action
 1. Put the clap on beats `2` and `4`.
-2. If needed, add a tighter snare/rim under it.
-3. Keep the support quieter than the main clap.
+2. Use one main garage clap first.
+3. Add a tighter snare/rim only if the clap disappears when hats are added.
+4. Put the support rim/snare on its own separate track, not inside the clap track.
+5. Set the main clap velocity to `118`.
+6. Set support rim/snare velocity to `92`.
+7. Set support rim/snare track fader `-6 dB` below the main clap track on the first pass.
 
 Exact first-pass `2`-bar clip entry:
 1. Create one `2`-bar MIDI clip on `Clap`.
@@ -191,8 +212,9 @@ The clap is the second fixed anchor after the kick.
 ### Starting Spec
 - placement: beats `2` and `4`
 - velocity:
-  - main clap `110–127`
-  - support slightly lower
+  - main clap `118`
+  - support rim/snare `92`
+- support track level: `-6 dB` below main clap
 
 ### Screenshot
 - `drums-04-clap-layer`
@@ -220,6 +242,12 @@ Exact first-pass `2`-bar scaffold:
    - `2.3.3`
    - `2.4.3`
 4. Start with those placements only before adding ghost hats.
+5. Set velocities in a repeating pattern:
+   - `1.1.3`: `78`
+   - `1.2.3`: `88`
+   - `1.3.3`: `74`
+   - `1.4.3`: `92`
+   - repeat the same shape in bar `2`
 
 ### Why
 This is not the swing layer. It is the stable top scaffold that lets the later ghost hats read clearly.
@@ -229,8 +257,8 @@ This is not the swing layer. It is the stable top scaffold that lets the later g
 - keep the first loop minimal
 
 ### Velocity
-- `60–110`
-- do not keep every hat the same velocity
+- first-pass values: `78`, `88`, `74`, `92`, then repeat
+- do not leave every closed hat at `100`
 
 ### Screenshot
 - `drums-05-closed-hat-scaffold`
@@ -244,10 +272,10 @@ This is not the swing layer. It is the stable top scaffold that lets the later g
 2. Place ghost hats on `1/16` subdivisions around the beat:
    - starter loop: use the `e` and `a` of beats `2` and `4` in both bars of the first `2`-bar loop
    - later additions can include the `e` of beat `1` and the `a` of beat `3`
-3. Push them slightly late:
-  - roughly `5–15` ticks behind the grid
-  - in Ableton's note properties this is the same small note-offset field, roughly `2–7 ms` at `140 BPM`
-4. Keep them quiet enough that they are felt before they are consciously heard.
+3. Push them late by `+4 ms` on the first pass.
+4. Do not push them earlier than the grid.
+5. Do not push them later than `+7 ms` during the first build.
+6. Keep them quieter than the main closed hats.
 
 Exact starter placements in the same `2`-bar clip:
 1. Create or open the `Ghost Hat` clip.
@@ -268,6 +296,13 @@ Exact starter placements in the same `2`-bar clip:
    - `2.1.2`
    - `2.3.4`
 6. After placing them, open the Note or Clip properties and nudge only the ghost hats late, not the main closed hats.
+7. Set starter ghost-hat velocities:
+   - `1.2.2`: `42`
+   - `1.2.4`: `56`
+   - `1.4.2`: `46`
+   - `1.4.4`: `62`
+   - repeat the same values in bar `2`
+8. If you add the optional ghost hats later, set them to velocity `38` first.
 
 ### Why
 This is the main source of bounce.
@@ -275,7 +310,9 @@ This is the main source of bounce.
 If the ghost hats are not intentionally late, the track will sound like house with extra hats rather than UKG.
 
 ### Starting Velocity
-- `30–70`
+- starter values: `42`, `56`, `46`, `62`
+- optional added ghosts: `38`
+- maximum first-pass ghost velocity: `70`
 
 ### Rule
 - do not use one global swing preset instead of these manual offsets
@@ -301,9 +338,11 @@ Exact first-pass placement:
 3. Start with the highest-priority placement only:
    - `1.4.3`
    - `2.4.3`
+   - velocity `104`
 4. If the section still needs more openness, add:
    - `1.2.3`
    - `2.2.3`
+   - velocity `96`
 5. If an open hat lands on the same exact slot as a closed hat, mute or remove the closed hat at that slot so the two hats do not stack awkwardly.
 
 ### Why
@@ -320,7 +359,8 @@ If only one placement survives:
 - test whether both are needed
 
 ### Velocity
-- `90–120`
+- `& of 4`: `104`
+- optional `& of 2`: `96`
 
 ### Screenshot
 - `drums-08-open-hat-placement`
@@ -336,8 +376,8 @@ If only one placement survives:
 
 Starting pattern:
 - begin with continuous `1/8` notes
-- only move to `1/16` density if the section needs more lift later
-- if the phrase still feels too empty, add single extra `1/16` pickups near the phrase boundary rather than converting the whole lane too early
+- do not move the whole shaker lane to constant `1/16` notes in the core loop
+- phrase lift comes from velocity and a few targeted pickups
 
 Exact first-pass `1`-bar shaker pattern:
 1. Create one `1`-bar MIDI clip on `Shaker`.
@@ -353,13 +393,24 @@ Exact first-pass `1`-bar shaker pattern:
    - `1.4.3`
 4. Duplicate that bar into bar `2` if you are building a `2`-bar loop.
 5. Start the later phrase-lift pickup by testing one extra note at `2.4.4`, not by filling the entire clip with `1/16` notes immediately.
+6. Set first-pass shaker velocities:
+   - `1.1.1`: `72`
+   - `1.1.3`: `84`
+   - `1.2.1`: `76`
+   - `1.2.3`: `88`
+   - `1.3.1`: `74`
+   - `1.3.3`: `86`
+   - `1.4.1`: `78`
+   - `1.4.3`: `94`
+7. If you add the pickup at `2.4.4`, set its velocity to `82`.
 
 ### Why
 The shaker often carries the `5–8 kHz` lift that makes drops feel more alive without adding new low-mid clutter.
 
 ### Velocity
-- `70–100`
-- let the last bar of a phrase rise slightly
+- first-pass range: `72–94`
+- phrase-end pickup: `82`
+- last-bar lift version: add `+6` velocity to existing shaker hits, capped at `100`
 
 ### Screenshot
 - `drums-09-shaker-lane`
@@ -403,20 +454,27 @@ On the `Drums` group, build this starting chain:
 
 ### Starting Settings
 #### EQ Eight
-- clean up obvious sub spill if needed
-- leave room for kick and bass to own the bottom cleanly
+- leave flat on the first pass
+- if there is low rumble that is not the kick body, turn on band `1`:
+  - type: high-pass
+  - frequency: `25 Hz`
+  - slope: `24 dB/oct`
 
 #### Glue Compressor
-- ratio `2:1` or `4:1`
-- slower attack so the kick still punches
-- release timed to the groove
+- ratio: `2:1`
+- attack: `10 ms`
+- release: `Auto`
+- threshold: lower until the loudest section shows `1 dB` of gain reduction
+- makeup: `off`
 
 #### Saturator / clip stage
-- enough to add density
-- not enough to flatten hat motion
+- drive: `+1 dB`
+- output: `-1 dB`
+- soft clip: `On`
 
-Starting range:
-- begin around `10–20%` of the intended drive amount and increase only if the loop still feels too thin
+#### Utility
+- width: `100%`
+- gain: `0 dB`
 
 ### Why
 The drums need to feel glued, not flattened.
@@ -555,9 +613,9 @@ The kick remains the anchor. Growth comes from the tops and the phrase edge.
 
 Concrete lift changes:
 - make the `e` of beat `1` and the `a` of beat `3` part of the regular loop instead of occasional additions
-- slightly tighten shaker lift toward phrase ends and raise the last-bar velocity by roughly `5–10` points
-- consider one extra open-hat emphasis rather than changing the kick
-- if a top loop exists, let it become a little more audible here before reaching for another percussion lane
+- raise last-bar shaker velocity by `+6`, capped at `100`
+- add open hat `& of 2` at velocity `96`
+- if a top loop exists, raise it by `+1.5 dB` in the lift before adding another percussion lane
 
 ### Screenshot
 - `drums-15-drop-core-vs-lift`
@@ -589,34 +647,40 @@ Expected answer:
 ## Troubleshooting
 ### Problem: “The drums feel stiff.”
 Fix order:
-1. check ghost-hat timing
-2. check velocity variation
-3. only then change samples
+1. open the `Ghost Hat` MIDI clip and check the ghost hats are nudged `+4 ms`
+2. if still stiff, move ghost hats to `+6 ms`
+3. check closed-hat velocities are not all identical
+4. only then change samples
 
 ### Problem: “The groove feels sloppy.”
 Fix order:
-1. pull ghost hats closer to the grid
-2. reduce random humanization
-3. keep kick and clap perfectly fixed
+1. pull ghost hats from `+6 ms` back to `+4 ms`
+2. if still sloppy, pull them to `+2 ms`
+3. remove random humanization from kick and clap
+4. keep kick and clap exactly on-grid
 
 ### Problem: “The drums feel exciting solo but too crowded with bass.”
 Fix order:
-1. reduce top-loop density
-2. reduce low-mid drum spill
-3. simplify the open hats
+1. mute optional open hats at `1.2.3` and `2.2.3`
+2. lower shaker by `-2 dB`
+3. high-pass any top loop at `300 Hz`
+4. check the drum bus is not clipping or adding more than `1 dB` gain reduction
 
 ### Problem: “The drops don’t lift.”
 Fix order:
-1. add phrase-end fills
-2. raise shaker/open-hat energy slightly
-3. check whether the section has any micro-architecture at all
+1. check bars `13–16` contain the phrase-end fill at `16.4.3` and `16.4.4`
+2. raise last-bar shaker velocities by `+6`, capped at `100`
+3. add optional open hat at `& of 2` with velocity `96`
+4. check the section has the bar `5`, bar `9`, and bar `13` micro-architecture changes
 
 ### Problem: “I followed the spec and it still sounds wrong.”
 Fix order:
 1. loudness-match the references
 2. listen to the drums alone in mono
-3. compare hat timing, not just sample tone
-4. if needed, rebuild the ghost hats before replacing the whole drum kit
+3. compare hat timing before sample tone
+4. check ghost hats are not louder than velocity `70`
+5. check the kick and clap are still on-grid
+6. rebuild the ghost hats before replacing the whole drum kit
 
 ## Checkpoint Deliverables
 At the end of Part 2, save:

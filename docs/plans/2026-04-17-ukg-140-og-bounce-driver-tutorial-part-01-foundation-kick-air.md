@@ -79,6 +79,9 @@ Plain-English kick terms used in this chapter:
 - `kick body`: the low thump part of the kick, the part you feel in your chest
 - `kick click`: the short upper tick that helps the kick read on smaller speakers
 - if you only have one usable kick sample right now, load it on `Kick Body` first and leave `Kick Click` empty until Step `4`
+- `Transpose`: coarse pitch movement in semitone steps, like moving a sample from `C` to `D`
+- `Detune`: fine pitch movement in cents, used after `Transpose` gets the sample close
+- `Tuner`: Ableton's device that tells you the note name it hears from the kick body
 
 ## Step 1: Choose The Kick Body And Click
 ### Action
@@ -96,6 +99,18 @@ Plain-English kick terms used in this chapter:
    - obvious low end
    - a long noisy tail
 7. Leave both tracks on their own channels. Do not combine them into one rack for this tutorial.
+
+Concrete first-pass sample test:
+1. Solo `Kick Body`.
+2. Turn your monitor volume down before auditioning.
+3. Pick a sample where the first impression is `low thump`, not `bright tick`.
+4. If you can still hear the kick tail ringing after the next quarter note at `140 BPM`, reject it for this first pass.
+5. Solo `Kick Click`.
+6. Pick a sample where the first impression is `tick`, `snap`, or `front edge`.
+7. If the click sample has a bass note or sub thump, reject it. The click layer must not create a second kick body.
+8. Set `Kick Body` fader to `-10 dB` for the first pass.
+9. Set `Kick Click` fader to `-18 dB` for the first pass.
+10. Keep both panned center.
 
 ### Why
 The kick needs two jobs:
@@ -131,6 +146,13 @@ Quick listening test:
    - if the tuner reads `D`, leave `Transpose` where it is
    - if the tuner reads `D#`, move `Transpose` to `-1`
    - if the tuner reads `E`, move `Transpose` to `-2`
+   - if the tuner reads `F`, move `Transpose` to `-3`
+   - if the tuner reads `F#`, move `Transpose` to `-4`
+   - if the tuner reads `G`, move `Transpose` to `-5`
+   - if the tuner reads `G#`, move `Transpose` to `+6` or `-6`; choose the one that keeps the kick sounding more natural
+   - if the tuner reads `A`, move `Transpose` to `+5`
+   - if the tuner reads `A#` / `Bb`, move `Transpose` to `+4`
+   - if the tuner reads `B`, move `Transpose` to `+3`
 6. Do not panic about octave number at this stage:
    - `D1`, `D2`, or `D3` are all still `D`
    - the important thing is the note name first
@@ -144,6 +166,12 @@ Exact first-pass method:
 4. Change `Transpose` in whole-number steps until the note name becomes `D`.
 5. Then move `Detune` in small steps until the reading sits closest to the center of `D`.
 6. Turn solo off and check the kick again in context before moving on.
+
+What `Detune` means here:
+- if `Tuner` shows `D` but the needle leans sharp, move `Detune` down in `-5` cent steps
+- if `Tuner` shows `D` but the needle leans flat, move `Detune` up in `+5` cent steps
+- stop once the body portion of the kick sits close to the center of `D`
+- do not chase every tiny tuner flicker during the click/transient; watch the lower body after the first attack
 
 ### Why
 The kick does not need to sing a melody, but it should reinforce the key center rather than fight it.
@@ -167,10 +195,16 @@ Shape the kick so the body tail lands around `90–120 ms`.
 
 Practical method:
 1. In `Simpler`, leave the sample start alone first unless there is obvious silence before the transient.
-2. Use the amp envelope or fade controls to shorten the tail.
-3. Start by trimming only a small amount.
-4. Replay the kick on loop after every small move.
-5. Stop when the kick no longer overruns the next bass lane mentally, but still has weight.
+2. Set `Simpler` playback so one MIDI note triggers one kick hit cleanly.
+3. If using `Simpler Classic`, enable the volume envelope.
+4. Set volume envelope first pass:
+   - attack: `0 ms`
+   - decay: `110 ms`
+   - sustain: `0%`
+   - release: `20 ms`
+5. If using a sample-end or fade handle instead of an envelope, drag the end/fade so the audible body is about `100 ms`.
+6. Replay the kick on loop after each tail move.
+7. Stop when the body ends before the next kick at `1/4` timing but still has a low thump.
 
 Do not over-shorten it into a papery click.
 
@@ -184,7 +218,9 @@ If the tail is too short:
 
 ### Starting Spec
 - body tuned to `D`
-- tail around `90–120 ms`
+- tail target: `100 ms`
+- acceptable first-pass tail window: `90–120 ms`
+- Simpler volume envelope: A `0 ms`, D `110 ms`, S `0%`, R `20 ms`
 - strong enough in solo to feel physical
 - short enough that the bass can later breathe beside it
 
@@ -194,9 +230,16 @@ If the tail is too short:
 ## Step 4: Layer The Click And Balance The Kick
 ### Action
 1. Put the click on a separate track or chain.
-2. High-pass the click so it adds no false low end.
-3. Blend the click until the kick speaks clearly.
-4. Stop before the click becomes the identity of the kick.
+2. Add `EQ Eight` to `Kick Click`.
+3. Turn on band `1`.
+4. Set band `1` to high-pass.
+5. Set high-pass frequency to `700 Hz`.
+6. Set slope to `24 dB/oct`.
+7. Add `Utility` after `EQ Eight`.
+8. Set `Utility Gain` to `-8 dB` on the first pass.
+9. Play `Kick Body` and `Kick Click` together.
+10. If the click is louder than the body, lower `Utility Gain` to `-10 dB` or `-12 dB`.
+11. Stop before the click becomes the identity of the kick.
 
 ### Why
 The click is support.
@@ -204,6 +247,7 @@ The body is still the instrument.
 
 ### Rule
 - if the kick sounds bright but not heavy, the click is too loud
+- first correction is always lowering `Kick Click`, not boosting `Kick Body`
 
 ### Screenshot Set
 - `foundation-04a-kick-click-eq`
@@ -262,7 +306,7 @@ Create an air layer in `Serum 2`:
 - noise oscillator only
 - no tonal oscillators by default
 - high-pass aggressively so it behaves like ceiling, not a pad
-- leave modulation off on the first pass unless the noise is so static that it sounds broken
+- leave modulation off on the first pass
 
 Route most of the sense of space from:
 - `Return C: long filtered hall`
@@ -275,14 +319,21 @@ Exact first-pass setup:
 3. Turn `Osc A` off.
 4. Turn `Osc B` off.
 5. Turn the `Noise` oscillator on.
-6. Choose a broad noise source rather than a tonal or pitched noise source.
-7. Add a high-pass filter so the air behaves like top ceiling only.
-8. Create one `4`-bar MIDI clip on the `Air` track.
-9. In that clip, place one long note starting at `1.1.1`.
-10. Use a middle-register trigger note such as `C3`.
-11. Drag that note all the way to `4.4.4` so the noise source stays open across the whole clip.
-12. Send the `Air` track to `Return C` and keep the dry channel quiet.
-13. On the very first pass, do not add LFO movement yet. Get the ceiling working as a static layer before adding motion.
+6. Choose a broad white-noise or bright-noise source.
+7. Set `Noise Level` to `35%`.
+8. Add a high-pass filter so the air behaves like top ceiling only.
+9. Set filter first pass:
+   - type: high-pass
+   - cutoff: `7 kHz`
+   - resonance: `0–5%`
+   - drive: `0%`
+10. Create one `4`-bar MIDI clip on the `Air` track.
+11. In that clip, place one long note starting at `1.1.1`.
+12. Use a middle-register trigger note such as `C3`.
+13. Drag that note all the way to `4.4.4` so the noise source stays open across the whole clip.
+14. Set the `Air` track fader to `-28 dB`.
+15. Set `Air` `Send C` to `-18 dB`.
+16. On the very first pass, do not add LFO movement yet. Get the ceiling working as a static layer before adding motion.
 
 ### Why
 The air layer should create:
@@ -297,8 +348,10 @@ It should not create:
 
 ### Starting Spec
 - noise-only source
-- aggressively high-passed
-- quiet in level
+- noise level: `35%`
+- high-pass cutoff: `7 kHz`
+- track fader: `-28 dB`
+- `Send C`: `-18 dB`
 - most audible later in the break
 - already present softly from the start
 
@@ -319,10 +372,13 @@ Check it in context:
 - then with the reference playing quietly afterward
 
 Starting level move:
-1. Pull the `Air` track down until it is obviously too quiet.
-2. Bring it back up slowly.
-3. Stop when muting it makes the session feel flatter, but unmuting it does not sound like “a new instrument appeared.”
-4. As a rough first-pass level, expect the `Air` track to sit far below the kick, often around the low `-20 dB` region or quieter before bus processing.
+1. Start with the `Air` track fader at `-28 dB`.
+2. Play the kick and air together.
+3. Mute and unmute `Air`.
+4. If muting `Air` changes nothing, raise the fader to `-26 dB`.
+5. If unmuting `Air` sounds like hiss arriving, lower the fader to `-30 dB`.
+6. Keep `Send C` at `-18 dB` for the first pass.
+7. Do not raise the air above `-24 dB` in this chapter.
 
 ### Why
 Air is a support layer.
@@ -355,27 +411,29 @@ What to check:
 ## Troubleshooting
 ### Problem: “The kick feels huge solo but weak in context.”
 Fix order:
-1. lower the click slightly
-2. shorten the kick tail a bit
-3. re-check the tuning against `D`
+1. lower `Kick Click` by `-2 dB`
+2. shorten the body decay from `110 ms` to `95 ms`
+3. re-check `Tuner` and make sure the body reads `D`
 
 ### Problem: “The kick feels clicky, not weighty.”
 Fix order:
-1. lower the click layer
-2. confirm the body sample still owns the low end
+1. lower `Kick Click` Utility from `-8 dB` to `-12 dB`
+2. solo `Kick Body` and check that it still has a low thump with the click muted
 3. choose a better body sample before over-processing
 
 ### Problem: “The air sounds like hiss.”
 Fix order:
-1. lower the air level
-2. high-pass it more aggressively
-3. reduce broadband noise and let `Return C` create the space instead
+1. lower `Air` fader from `-28 dB` to `-30 dB`
+2. raise the air high-pass cutoff from `7 kHz` to `8 kHz`
+3. lower `Noise Level` from `35%` to `25%`
+4. keep `Send C` at `-18 dB`
 
 ### Problem: “The air sounds like a pad.”
 Fix order:
 1. remove tonal oscillators
-2. reduce obvious movement
-3. make it less melodic and more textural
+2. turn off any LFO or pitch movement
+3. raise high-pass cutoff to `8 kHz`
+4. lower `Send C` from `-18 dB` to `-22 dB`
 
 ## What Must Be Captured For Later Lesson Conversion
 - kick body sample screenshot
