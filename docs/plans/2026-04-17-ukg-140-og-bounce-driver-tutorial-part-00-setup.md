@@ -223,7 +223,7 @@ The session should start with headroom discipline, not loudness chasing.
    - `33.1.1` -> `33–48 Drop A`
    - `49.1.1` -> `49–64 Drop A Lift`
    - `65.1.1` -> `65–80 Break`
-   - `81.1.1` -> `81–96 Transition B`
+   - `81.1.1` -> `81–96 Re-entry Build`
    - `97.1.1` -> `97–112 Drop B`
    - `113.1.1` -> `113–128 Drop B Lift`
    - `129.1.1` -> `129–144 Outro`

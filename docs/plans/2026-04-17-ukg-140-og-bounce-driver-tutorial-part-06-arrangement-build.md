@@ -4,7 +4,7 @@
 Teach the learner how to turn the finished lanes for `ukg-140-og-bounce-driver` into a full `144`-bar club arrangement that:
 - grows by different mechanisms in different sections
 - keeps `Drop A` restrained enough for `Drop B` to matter
-- makes `Transition B` a real re-entry, not a second break
+- makes the `Re-entry Build` a real re-entry, not a second break
 - feels designed rather than blocky
 
 This part should convert the frozen architecture into exact section assembly, phrase planning, and energy control.
@@ -30,7 +30,7 @@ By the end of this part, the learner should have:
   - `33–48 Drop A`
   - `49–64 Drop A Lift`
   - `65–80 Break`
-  - `81–96 Transition B`
+  - `81–96 Re-entry Build`
   - `97–112 Drop B`
   - `113–128 Drop B Lift`
   - `129–144 Outro`
@@ -106,7 +106,7 @@ Use this as the source of truth:
 - `33–48 Drop A`
 - `49–64 Drop A Lift`
 - `65–80 Break`
-- `81–96 Transition B`
+- `81–96 Re-entry Build`
 - `97–112 Drop B`
 - `113–128 Drop B Lift`
 - `129–144 Outro`
@@ -115,7 +115,7 @@ Growth rule by section:
 - `Drop A`: force and restraint
 - `Drop A Lift`: top-end density and pocket only
 - `Break`: upward harmonic bloom and air
-- `Transition B`: rhythmic re-engagement
+- `Re-entry Build`: rhythmic re-engagement
 - `Drop B`: harmonic bloom plus answer conversation
 - `Drop B Lift`: strongest release through alternation and top-end opening
 
@@ -131,7 +131,7 @@ The arrangement needs a visible map before clips start flying around.
 
 If the learner only arranges by ear with no timeline structure:
 - the middle sections will drift
-- `Transition B` will often disappear
+- the `Re-entry Build` will often disappear
 - the outro will be too short or too empty
 
 ### Screenshot
@@ -144,7 +144,7 @@ Place the section-level clip families first, before micro-edits.
 Do this in `2`-section chunks with playback after each chunk:
 - pass `1`: `Intro A` + `Intro B`
 - pass `2`: `Drop A` + `Drop A Lift`
-- pass `3`: `Break` + `Transition B`
+- pass `3`: `Break` + `Re-entry Build`
 - pass `4`: `Drop B` + `Drop B Lift` + `Outro`
 
 If the learner prefers, audition the clip combinations in Session View first, then commit them to Arrangement View. Do not try to place all `144` bars blind with no playback checks.
@@ -155,7 +155,7 @@ Exact first-pass arrangement placement:
 3. Place the `Drop A` clips from `33.1.1` to `49.1.1`.
 4. Place the `Drop A Lift` clips from `49.1.1` to `65.1.1`.
 5. Place the `Break` clips from `65.1.1` to `81.1.1`.
-6. Place the `Transition B` clips from `81.1.1` to `97.1.1`.
+6. Place the `Re-entry Build` clips from `81.1.1` to `97.1.1`.
 7. Place the `Drop B` clips from `97.1.1` to `113.1.1`.
 8. Place the `Drop B Lift` clips from `113.1.1` to `129.1.1`.
 9. Place the `Outro` clips from `129.1.1` to `145.1.1`.
@@ -187,11 +187,11 @@ Section skeleton:
   - bass: `bass_break_sparse_4bar`
   - chords: `chord_break_stretch_8bar`
   - hook texture: `hook_break_ghost_4bar`
-- `Transition B`
-  - drums: `drum_transition_switch_2bar`
-  - bass: `bass_transition_b_tease_4bar`
-  - chords: `chord_transition_b_pulse_4bar`
-  - hook: `hook_transition_b_pickup_4bar`
+- `Re-entry Build`
+  - drums: `drum_reentry_build_switch_2bar`
+  - bass: `bass_reentry_build_tease_4bar`
+  - chords: `chord_reentry_build_pulse_4bar`
+  - hook: `hook_reentry_build_pickup_4bar`
 - `Drop B`
   - drums: `drum_drop_core_2bar`
   - bass: `bass_drop_b_core_4bar`
@@ -217,13 +217,13 @@ You want to hear the architecture first, before spending an hour polishing one t
 ### Screenshot
 - `arrangement-02a-full-song-skeleton`
 - `arrangement-02b-intro-through-break`
-- `arrangement-02c-transition-b-through-outro`
+- `arrangement-02c-reentry-build-through-outro`
 
 ### Visual Requirement
 - show the whole song on screen with all locators visible if possible
 - otherwise show:
   - `Intro A` through `Break`
-  - `Transition B` through `Outro`
+  - `Re-entry Build` through `Outro`
 - keep drums, bass, chords, hook, answer, and air lanes visible in each capture
 
 ## Step 3: Shape Intro A And Intro B
@@ -371,7 +371,7 @@ This is where the hope becomes audible.
 - show the bass lane visibly thinned
 - show the chord clips visibly longer / more open than `Drop A`
 
-## Step 7: Build Transition B As A Re-Entry
+## Step 7: Build The Re-entry Build Section
 ### Action
 For `81–96`:
 - change the drum language so the re-entry feels fresh
@@ -389,7 +389,7 @@ Exact first-pass placement:
 4. Keep bars `95–96` for the final pre-drop handoff rather than filling them with extra hook notes.
 
 ### Why
-`Transition B` exists so `Drop B` feels earned.
+The `Re-entry Build` exists so `Drop B` feels earned.
 
 It should feel like:
 - rhythm waking back up
@@ -404,8 +404,8 @@ It should not feel like:
 - if the harmonic bloom is already obvious here, the section is too open
 
 ### Screenshot
-- `arrangement-08-transition-b`
-- `arrangement-08b-transition-b-close`
+- `arrangement-08-reentry-build`
+- `arrangement-08b-reentry-build-close`
 
 ## Step 8: Build Drop B Through Substitution
 ### Action
@@ -477,7 +477,7 @@ Inside each `16`-bar section, assign jobs to four-bar blocks:
 Practical examples:
 - in `Drop A`, the hook may first appear clearly in the last `4` bars
 - in `Break`, the widest chord/air state may arrive after the first `4` bars, not immediately
-- in `Transition B`, the hook pickup should stay later in the section, not at bar `81`
+- in the `Re-entry Build`, the hook pickup should stay later in the section, not at bar `81`
 - in `Drop B`, the answer should not speak every phrase
 
 ### Why
@@ -501,7 +501,7 @@ Bounce the full rough arrangement and compare it to the planned energy staircase
 - `Drop A`: `7/10`
 - `Drop A Lift`: `8/10`
 - `Break`: `4/10`
-- `Transition B`: `6/10`
+- `Re-entry Build`: `6/10`
 - `Drop B`: `8/10`
 - `Drop B Lift`: `9/10`
 - `Outro`: `5/10`
@@ -516,7 +516,7 @@ Measurement method:
 ### Why
 This is the easiest way to catch leaks:
 - if `Break` is too high, bloom leaked early
-- if `Transition B` is too low, it feels like a second break
+- if the `Re-entry Build` is too low, it feels like a second break
 - if `Drop B` is not clearly above `Drop A`, the substitution failed
 
 ### Rule
@@ -530,7 +530,7 @@ Bounce the full rough song.
 Compare against:
 - `Interplanetary Criminal - Slow Burner`
   - listen for re-entry pocket and transition logic
-  - identify the phrase position where the drums feel fully back after the reset, then compare that relative position to your `Transition B -> Drop B` handoff
+  - identify the phrase position where the drums feel fully back after the reset, then compare that relative position to your `Re-entry Build -> Drop B` handoff
 - `KETTAMA - It Gets Better`
   - listen for sustained pressure across stripped and full sections
   - check whether your stripped sections still feel physically connected to the club record, not like demos
@@ -540,7 +540,7 @@ Compare against:
 
 ### What To Listen For
 - does `Drop A` hit hard enough without spending bloom?
-- does `Transition B` feel like a re-entry and not a second break?
+- does the `Re-entry Build` feel like a re-entry and not a second break?
 - does `Drop B` feel bigger because of substitution and bloom, not pile-up?
 - does the outro still feel mixable?
 
@@ -557,7 +557,7 @@ Fix order:
 2. improve removal/addition timing
 3. only then add a new transition effect
 
-### Problem: “Transition B feels like another break.”
+### Problem: “The Re-entry Build feels like another break.”
 Fix order:
 1. restore more rhythmic motion
 2. reduce harmonic openness

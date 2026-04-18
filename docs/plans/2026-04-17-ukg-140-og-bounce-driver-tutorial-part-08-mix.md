@@ -393,7 +393,7 @@ Set the stereo image according to the frozen map:
 - chords:
   - `Drop A` around `120%`
   - `Break` around `150%`
-  - `Transition B` around `130%`
+  - `Re-entry Build` around `130%`
   - `Drop B` around `140%`
 - hook: center to slight stereo
 - answer: slightly wider than hook

@@ -25,7 +25,7 @@ By the end of this part, the learner should have:
 - width and reverb-send automation for:
   - `Drop A`
   - `Break`
-  - `Transition B`
+  - `Re-entry Build`
   - `Drop B`
 - one bounce of `drums + bass + chords`
 
@@ -329,7 +329,7 @@ Build these section behaviors from the same chord-bed lane:
 - `Drop A`: sustained bed plus restrained pulse
 - `Drop A Lift`: same harmony, slightly brighter pulse only
 - `Break`: stretched sustain, widest voicing state
-- `Transition B`: pulse returns, but keep the restrained `Bb` state
+- `Re-entry Build`: pulse returns, but keep the restrained `Bb` state
 - `Drop B`: bloomed harmony plus stronger width/reverb support
 
 Exact first-pass clip behavior:
@@ -347,7 +347,7 @@ Exact first-pass clip behavior:
 4. `Break`
    - switch to the `8`-bar bloom clip
    - keep the two-bar sustains exactly as written
-5. `Transition B`
+5. `Re-entry Build`
    - return to the restrained `4`-bar clip
    - let chords end a little earlier again, around `x.4.1` or `x.4.2`, so the pulse is clearer
 6. `Drop B`
@@ -369,7 +369,7 @@ Mechanical changes:
 - `Drop A`: same clip family, but shorten note lengths slightly or increase the sidechain/pulse feel
 - `Drop A Lift`: keep the same notes, raise pulse velocity a little and open the filter slightly
 - `Break`: switch to the bloomed `Bbmaj7` clip, longer note values, wider send/width state
-- `Transition B`: return to restrained `Bb`, shorter pulse values, reduced width and reverb
+- `Re-entry Build`: return to restrained `Bb`, shorter pulse values, reduced width and reverb
 - `Drop B`: reopen width/send and use the bloomed `Bbmaj7` state again
 
 ### Screenshot
@@ -409,7 +409,7 @@ If it is too weak:
 ### Action
 1. Keep `Drop A` narrower and drier than the break.
 2. Send more to `Return C: long filtered hall` in the break.
-3. Pull some of that space back in `Transition B`.
+3. Pull some of that space back in the `Re-entry Build`.
 4. Let `Drop B` reopen with:
    - more width
    - more air around the bed
@@ -418,7 +418,7 @@ If it is too weak:
 Starting width behavior:
 - `Drop A`: around `120%` equivalent width feel
 - `Break`: around `150%`
-- `Transition B`: tighten back toward `130%`
+- `Re-entry Build`: tighten back toward `130%`
 - `Drop B`: reopen near `140%`, then widen slightly more again in the lift
 
 ### Why

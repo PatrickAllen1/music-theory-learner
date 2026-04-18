@@ -20,6 +20,7 @@ Related documents:
 ## Outcome
 By the end of this part, the learner should have:
 - a clear transition job for every major boundary
+- a clear transition job for every minor boundary too
 - phrase-end drum fills and groove drops where needed
 - drum-bus filter and subtraction moves written at intros / transitions
 - send and width throws written only where they strengthen the handoff
@@ -52,6 +53,16 @@ Transitions here are:
 - bar-specific
 - partly subtractive
 - tied to the section growth mechanism
+
+Important naming note:
+- every section handoff in this song is a transition
+- `Intro A -> Intro B` is a transition
+- `Drop A -> Drop A Lift` is a transition
+- `Drop A Lift -> Break` is a transition
+- `Break -> Re-entry Build` is a transition
+- `Re-entry Build -> Drop B` is a transition
+- the old label `Transition B` was confusing because it made one full `16`-bar section sound like the only transition in the arrangement
+- in this tutorial, the dedicated `81–96` block is called the `Re-entry Build` because it is a full section whose job is to wake the groove back up before `Drop B`
 
 If every transition uses the same timing and same FX, the whole arrangement will flatten out even if the sounds are good.
 
@@ -111,12 +122,12 @@ Major boundaries:
   - drum thinning
   - widening reverb / chord bloom
 - `80 -> 81`
-  - break to `Transition B`
+  - break to `Re-entry Build`
   - re-entry drum switch
   - tighter chord pulse
   - filtered bass re-implication
 - `96 -> 97`
-  - `Transition B` to `Drop B`
+  - `Re-entry Build` to `Drop B`
   - pre-drop cut
   - filtered hook pickup resolving
   - full body return
@@ -313,12 +324,12 @@ The mistake here is overbuilding the handoff and making the break feel like a fa
 - `transitions-05a-lift-break-overview`
 - `transitions-05b-lift-break-send-width-close`
 
-## Step 6: Write The Break-To-Transition-B Re-Entry (`80 -> 81`)
+## Step 6: Write The Break-To-Re-entry-Build Handoff (`80 -> 81`)
 ### Action
 On bars `79–81`:
 - do not use the biggest riser in the song here
 - switch the drum language at `81` so the section feels newly awake
-- tighten the chord pulse back in from break-width to `Transition B` control
+- tighten the chord pulse back in from break-width to `Re-entry Build` control
 - reintroduce filtered bass implication at `81`
 - keep the hook pickup out until later in the section
 
@@ -327,10 +338,10 @@ Exact first-pass timing:
 2. Start the re-entry pressure at `80.1.1`.
 3. Switch to the tighter drum language exactly at `81.1.1`.
 4. Bring the filtered bass implication back at `81.1.1`, not mid-bar.
-5. Do not let the hook pickup enter before bar `93`; `Transition B` should wake up rhythm first.
+5. Do not let the hook pickup enter before bar `93`; the `Re-entry Build` should wake up rhythm first.
 
 ### Why
-`Transition B` is not another break and not `Drop B` early.
+The `Re-entry Build` is not another break and not `Drop B` early.
 
 It is the rhythmic wake-up section.
 
@@ -343,8 +354,8 @@ It is the rhythmic wake-up section.
 - if this handoff feels more harmonic than rhythmic, it is too open
 
 ### Screenshot Set
-- `transitions-06a-break-transitionb-overview`
-- `transitions-06b-break-transitionb-close`
+- `transitions-06a-break-reentry-build-overview`
+- `transitions-06b-break-reentry-build-close`
 
 ## Step 7: Write The Main Re-Entry (`96 -> 97`)
 ### Action
@@ -535,7 +546,7 @@ Fix order:
 2. reduce the amount of revealed information before the landing
 3. make the downbeat cleaner
 
-### Problem: “Transition B still feels like a second break.”
+### Problem: “The Re-entry Build still feels like a second break.”
 Fix order:
 1. increase rhythmic motion at `81`
 2. reduce harmonic openness

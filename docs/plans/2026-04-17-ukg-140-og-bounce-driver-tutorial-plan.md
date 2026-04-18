@@ -502,7 +502,7 @@ Suggested session split:
   - Drop A
   - Drop A Lift
   - Break
-  - Transition B
+  - Re-entry Build (`81–96`)
   - Drop B
   - Drop B Lift
   - Outro
@@ -518,12 +518,12 @@ Suggested session split:
 ### Core teaching points
 - `Drop A Lift` gets bigger by pocket and top-end only
 - `Break` gets bigger by upward harmonic bloom and air
-- `Transition B` re-engages rhythm without spending the Drop B reveal
+- the `Re-entry Build` re-engages rhythm without spending the Drop B reveal
 - `Drop B` gets bigger by harmonic bloom and phrase-end answer
 - `Drop B Lift` gets bigger by alternation and top release
 
 ### Common mistakes
-- making `Transition B` feel like a second break
+- making the `Re-entry Build` feel like a second break
 - adding new harmonic information in `Drop A Lift`
 - letting `Drop B` become “Drop A plus more”
 - muting/unmuting blocks without internal phrase design

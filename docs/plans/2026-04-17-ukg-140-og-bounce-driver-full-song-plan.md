@@ -48,7 +48,7 @@ Build a `140 BPM` `D minor` modern UKG / speed-garage record whose center is:
 
 The record should move from:
 - `Drop A`: restrained, physical, dark
-- `Break / transition_b / Drop B`: wider, more hopeful, more open
+- `Break / re-entry build / Drop B`: wider, more hopeful, more open
 
 It should get bigger through:
 - substitution
@@ -167,10 +167,20 @@ Why:
   - upward voicing spread
 - upper chord tones and reverb tail should do more work than low mids
 
-### Transition B re-entry design
-- Use the extra `16` bars as a dedicated re-entry switch
+### Re-entry Build design (`81–96`)
+- Use the extra `16` bars as a dedicated re-entry build section, not as the only “transition” in the song.
+- Every section handoff is still a transition:
+  - `Intro A -> Intro B`
+  - `Intro B -> Drop A`
+  - `Drop A -> Drop A Lift`
+  - `Drop A Lift -> Break`
+  - `Break -> Re-entry Build`
+  - `Re-entry Build -> Drop B`
+  - `Drop B -> Drop B Lift`
+  - `Drop B Lift -> Outro`
+- The reason this block gets its own section name is that it has its own drum language, bass teaser, chord pulse, and hook pickup behavior.
 - It should have:
-  - different transition drums
+  - different re-entry drums
   - filtered bass teaser
   - rising phrase pressure
   - pulsing restrained chords that sit between break-width and Drop B bloom
@@ -194,7 +204,7 @@ Why:
 
 ### Voicing palette
 - `Dm9`: `D3 A3 C4 E4 F4`
-- `Bb` restrained state for `Intro / Drop A / Drop A Lift / Transition B`: `Bb2 F3 C4`
+- `Bb` restrained state for `Intro / Drop A / Drop A Lift / Re-entry Build`: `Bb2 F3 C4`
 - `Bbmaj7` bloomed state for `Break / Drop B`: `Bb2 F3 A3 C4`
 - `Fadd9`: `F2 C3 G3 A3`
 - `Cadd9`: `C3 G3 D4 E4`
@@ -247,7 +257,7 @@ The bass is the `floor`, not the topline.
 - `Drop A`: full rolling floor, restrained phrase-end release
 - `Drop A Lift`: same pitch vocabulary, bigger only by tone and feel
 - `Break`: occasional root reminders only
-- `Transition B`: filtered teaser with more urgent phrase-end pull
+- `Re-entry Build`: filtered teaser with more urgent phrase-end pull
 - `Drop B`: same rolling shape, but phrase-end lift can touch color tones
 - `Drop B Lift`: strongest phrase-end release bars of the track
 - `Outro`: reduce to root implication and closure
@@ -334,6 +344,46 @@ Practical groove spec:
 - drum-bus high-pass filter moves during intros and transitions
 - increased ghost-hat density in the last `4` bars of big sections
 
+### Boundary transition jobs
+Every section handoff has a transition job, even when there is no dedicated `16`-bar section for it.
+
+Minor handoffs:
+- `16 -> 17`
+  - filtered reveal into `Intro B`
+  - no giant riser
+- `48 -> 49`
+  - phrase-end drum pressure into `Drop A Lift`
+  - more top pressure, no new harmonic reveal
+- `112 -> 113`
+  - phrase-end drum pressure into `Drop B Lift`
+  - more release, no new section identity
+
+Major handoffs:
+- `32 -> 33`
+  - intro-to-drop landing
+  - section riser
+  - drum-bus HP opening off
+  - bass teaser opening into full body
+- `64 -> 65`
+  - lift-to-break release
+  - phrase-end fill
+  - drum thinning
+  - upward chord bloom
+- `80 -> 81`
+  - break into `Re-entry Build`
+  - different re-entry drums
+  - tighter chord pulse
+  - filtered bass re-implication
+- `96 -> 97`
+  - `Re-entry Build` into `Drop B`
+  - pre-drop cut
+  - filtered hook pickup resolving
+  - full body return
+- `128 -> 129`
+  - drop-lift into outro
+  - remove top pressure first
+  - keep the air whisper
+
 ## Frequency and Top-End Plan
 ### Bands
 - `30–90 Hz`: bass-foundation owns center
@@ -352,7 +402,7 @@ Practical groove spec:
 #### Top presence
 - filtered open-hat tease in `Intro B`
 - full open-hat/presence lane in drops
-- sharper transition hats in `transition_b`
+- sharper re-entry hats in the `Re-entry Build`
 - hook attack + phrase-end answer edge
 
 #### Air bed
@@ -425,9 +475,9 @@ Arrangement assignment:
 - chords: `chord_break_stretch_8bar`
 - hook: `hook_break_ghost_4bar`
 
-### 81–96: Transition B
+### 81–96: Re-entry Build
 - dedicated re-entry switch
-- different transition drums
+- different re-entry drums
 - filtered bass return
 - tighter chord pulse
 - filtered hook pickup only near the end
@@ -435,10 +485,10 @@ Arrangement assignment:
 - use the restrained `Bb2 F3 C4` state here, not the bloomed `Bbmaj7` state
 
 Arrangement assignment:
-- drums: `drum_transition_switch_2bar`
-- bass: `bass_transition_b_tease_4bar`
-- chords: `chord_transition_b_pulse_4bar`
-- hook: `hook_transition_b_pickup_4bar`
+- drums: `drum_reentry_build_switch_2bar`
+- bass: `bass_reentry_build_tease_4bar`
+- chords: `chord_reentry_build_pulse_4bar`
+- hook: `hook_reentry_build_pickup_4bar`
 
 ### 97–112: Drop B
 - harmonic bloom arrives
@@ -483,7 +533,7 @@ Arrangement assignment:
 - `drum_drop_core_2bar`: main UKG drop groove with ghost hats
 - `drum_drop_lift_2bar`: second-drop / lift density
 - `drum_break_sparse_2bar`: thinner break support
-- `drum_transition_switch_2bar`: fresh re-entry drum language
+- `drum_reentry_build_switch_2bar`: fresh re-entry drum language
 - `drum_outro_strip_2bar`: stable mix-out groove
 - overlay tools:
   - `drum_phrase_end_fill_1bar`
@@ -495,7 +545,7 @@ Arrangement assignment:
 - `bass_drop_a_core_4bar`: main rolling floor
 - `bass_drop_a_lift_4bar`: same notes, more feel / tone
 - `bass_break_sparse_4bar`: occasional root reminders
-- `bass_transition_b_tease_4bar`: filtered re-entry pull
+- `bass_reentry_build_tease_4bar`: filtered re-entry pull
 - `bass_drop_b_core_4bar`: bloom-phase rolling floor
 - `bass_drop_b_lift_4bar`: strongest release bars
 
@@ -505,7 +555,7 @@ Arrangement assignment:
 - `chord_drop_core_4bar`
 - `chord_drop_a_lift_4bar`
 - `chord_break_stretch_8bar`
-- `chord_transition_b_pulse_4bar`
+- `chord_reentry_build_pulse_4bar`
 - `chord_drop_b_bloom_4bar`
 
 ### Hook / answer
@@ -513,7 +563,7 @@ Arrangement assignment:
 - `hook_drop_a_phrase_4bar`
 - `hook_drop_a_lift_4bar`
 - `hook_break_ghost_4bar`
-- `hook_transition_b_pickup_4bar`
+- `hook_reentry_build_pickup_4bar`
 - `hook_drop_b_phrase_4bar`
 - `hook_drop_b_lift_4bar`
 - answer variants:
@@ -568,7 +618,7 @@ These are inspiration anchors for chain/function, not copying targets.
 - `Drop A`: `7/10`
 - `Drop A Lift`: `8/10`
 - `Break`: `4/10`
-- `Transition B`: `6/10`
+- `Re-entry Build`: `6/10`
 - `Drop B`: `8/10`
 - `Drop B Lift`: `9/10`
 - `Outro`: `5/10`

@@ -91,7 +91,7 @@ Verification note:
 - the emotional effect comes from staging the bloom, not from having every color tone exposed all the time
 
 ### Bb voicing states
-- restrained `Bb` for `Intro / Drop A / Drop A Lift / Transition B`: `Bb2 F3 C4`
+- restrained `Bb` for `Intro / Drop A / Drop A Lift / Re-entry Build`: `Bb2 F3 C4`
 - bloomed `Bbmaj7` for `Break / Drop B`: `Bb2 F3 A3 C4`
 
 ### Voice-leading strategy
@@ -123,7 +123,7 @@ This means:
 - `Drop A`: one-bar-per-chord pulse over sustained emotional bed
 - `Drop A Lift`: same harmony, slightly brighter pulse only
 - `Break`: 2-bar stretched voicings, upward bloom
-- `Transition B`: rhythmic pulse returns, but harmonic density stays restrained
+- `Re-entry Build`: rhythmic pulse returns, but harmonic density stays restrained
 - `Drop B`: same loop, obvious bloom
 - `Drop B Lift`: same harmony, more width and top release, not reharmonization
 
@@ -444,7 +444,7 @@ Starting width targets:
 - `Drop A`: force, restraint
 - `Drop A Lift`: top-end density and pocket only
 - `Break`: upward harmonic bloom and air
-- `Transition B`: rhythmic re-engagement
+- `Re-entry Build`: rhythmic re-engagement
 - `Drop B`: harmonic bloom + answer conversation
 - `Drop B Lift`: widest, most released top end
 
@@ -464,14 +464,14 @@ Starting width targets:
   - widening reverb / chord bloom
 
 #### 80 -> 81
-- break to transition_b
+- break to re-entry build
 - use:
   - re-entry drum switch
   - tighter chord pulse
   - filtered bass re-implication
 
 #### 96 -> 97
-- transition_b to Drop B
+- re-entry build to Drop B
 - use:
   - pre-drop cut
   - filtered hook pickup
