@@ -54,6 +54,13 @@ Timing reminder for this part:
 - positions like `1.1.1`, `2.4.4`, and `8.1.1` are local positions inside the chord clips
 - if a step explicitly says `Arrangement View` and uses bars such as `33.1.1` or `65.1.1`, those are full-song positions
 
+Plain-English routing reminder:
+- a `bus` is just a group channel that several tracks feed into so one EQ, compressor, or volume move can affect them together
+- a `Music bus` or `Chords bus` means: route the `Chords` track into that group before it reaches the master output
+- a `return` is an effect track, usually reverb or delay, that receives a copy of the sound from a send knob
+- a `send` is the knob on the track that decides how much copy goes to that return effect
+- `width` controls how far left/right the sound feels; it should widen the chords without moving the low end out of the center
+
 ## Reference Axis
 Primary A/B for this part:
 - `Sammy Virji - I Guess We're Not the Same`
@@ -119,30 +126,33 @@ Keeping it on one main track first makes:
 1. Load a fresh instance of `Serum 2` on `Chords`.
 2. Initialize the patch.
 3. Set `Osc A` to `Basic Shapes`.
-4. Choose a warm saw / triangle-leaning frame:
-   - somewhere between saw and triangle, not a bright full saw
+4. Choose the `Basic Shapes` frame that is between triangle and saw:
+   - if the frame selector gives you multiple simple-shape positions, pick the frame immediately before the full saw becomes bright and buzzy
+   - do not use the square frame for this patch
 5. Set `Osc A Level` to `85%`.
 6. Set `Osc B` to `Basic Shapes`.
-7. Choose a quieter support shape:
-   - slightly brighter than `Osc A`
+7. Choose a saw-leaning support shape:
+   - use the simple saw frame or the nearest brighter frame after the `Osc A` frame
 8. Set `Osc B Level` to `30%`.
-9. Keep both oscillators in the same octave to start.
+9. Keep both oscillators in the same octave:
+   - `Osc A Octave`: `0`
+   - `Osc B Octave`: `0`
 10. Use restrained unison:
     - `Osc A`: `2 voices`
-    - `Osc B`: `1–2 voices`
-11. Set detune lightly:
-    - set it to `0.04`
-12. Route the patch through a smooth low-pass filter:
+    - `Osc B`: `1 voice`
+11. Set `Osc A Detune` to `0.04` on Serum's `0.00–1.00` detune scale.
+12. Leave `Osc B Detune` at `0.00` on the first pass.
+13. Route the patch through a smooth low-pass filter:
     - `MG Low 12` or equivalent
-13. Set initial filter settings:
+14. Set initial filter settings:
     - cutoff: `2.6 kHz`
     - resonance: `10%`
     - drive: `8%`
-14. Set amp envelope:
-    - attack: `5–15 ms`
-    - decay: `700–1200 ms`
-    - sustain: `55–75%`
-    - release: `250–450 ms`
+15. Set amp envelope:
+    - attack: `10 ms`
+    - decay: `900 ms`
+    - sustain: `65%`
+    - release: `350 ms`
 
 ### Why
 This patch needs to behave like:
@@ -156,19 +166,22 @@ It should not sound like:
 
 ### Final Chord-Bed Starting Spec
 - engine: `Serum 2`
-- Osc A: warm saw / triangle-leaning body
-- Osc B: quieter upper support
-- unison: restrained
-- detune: `0.03–0.05`
+- Osc A: `Basic Shapes`, triangle/saw blend before full saw brightness
+- Osc A Level: `85%`
+- Osc A Unison: `2 voices`
+- Osc A Detune: `0.04`
+- Osc B: `Basic Shapes`, saw-leaning support
+- Osc B Level: `30%`
+- Osc B Unison: `1 voice`
 - filter: smooth low-pass
-- cutoff: `~2.2–3.2 kHz` start
-- resonance: `8–12%`
-- drive: `5–10%`
+- cutoff: `2.6 kHz`
+- resonance: `10%`
+- drive: `8%`
 - amp env:
-  - A `5–15 ms`
-  - D `700–1200 ms`
-  - S `55–75%`
-  - R `250–450 ms`
+  - A `10 ms`
+  - D `900 ms`
+  - S `65%`
+  - R `350 ms`
 
 ### Screenshot Set
 - `chords-02-oscillators`
@@ -176,14 +189,15 @@ It should not sound like:
 
 ## Step 3: Add Width And Glue Inside The Patch
 ### Action
-1. Add a gentle width source:
-   - chorus or subtle hyper/dimension type movement
-2. Keep it restrained:
-   - enough to widen the bed
-   - not enough to hollow the center
-3. Add mild saturation after the width stage:
-   - use one small first-pass setting instead of guessing each time
-4. Do not solve the whole space story with in-patch reverb.
+1. In Serum's FX area, add `Chorus`, `Dimension`, or the closest stock width-style effect available in your build.
+2. Set the width effect mix to `15%`.
+3. Set rate to `0.15 Hz`.
+4. Set depth to `25%`.
+5. Add a saturation/distortion stage after the width effect.
+6. Set saturation drive to this first-pass value:
+   - drive: `+1 dB` or `10%`
+   - output: `-1 dB`
+7. Keep in-patch reverb off on the first pass.
 
 ### Why
 Most of the section-dependent space should come from:
@@ -194,10 +208,13 @@ Most of the section-dependent space should come from:
 If the patch is already huge before the mix, the break has nowhere to open.
 
 ### Starting FX Direction
-- chorus / width: subtle
-- chorus / width mix: start around `15%`
-- saturation: glue, not fuzz
-- in-patch reverb: off or minimal
+- width effect: `Chorus` / `Dimension` / equivalent
+- width mix: `15%`
+- width rate: `0.15 Hz`
+- width depth: `25%`
+- saturation drive: `+1 dB` or `10%`
+- saturation output trim: `-1 dB`
+- in-patch reverb: `off`
 
 ### Screenshot Set
 - `chords-04-width`
@@ -327,7 +344,7 @@ not because a totally different harmony shows up.
 Build these section behaviors from the same chord-bed lane:
 - `Intro B`: tucked, filtered, long enough to feel bed-like
 - `Drop A`: sustained bed plus restrained pulse
-- `Drop A Lift`: same harmony, slightly brighter pulse only
+- `Drop A Lift`: same harmony, brighter pulse only
 - `Break`: stretched sustain, widest voicing state
 - `Re-entry Build`: pulse returns, but keep the restrained `Bb` state
 - `Drop B`: bloomed harmony plus stronger width/reverb support
@@ -335,24 +352,46 @@ Build these section behaviors from the same chord-bed lane:
 Exact first-pass clip behavior:
 1. `Intro B`
    - use the restrained `4`-bar clip
-   - keep note lengths long, ending close to `x.4.4`
-   - darker filter state
+   - set chord note velocity to `70`
+   - set each chord to end at `x.4.4`
+   - set filter cutoff to `2.0 kHz`
+   - set Utility width to `100%`
 2. `Drop A`
    - use the same restrained `4`-bar clip
-   - shorten each chord slightly so they end closer to `x.4.2`
+   - set chord note velocity to `78`
+   - set each chord to end at `x.4.2`
+   - set filter cutoff to `2.6 kHz`
+   - set Utility width to `120%`
    - let sidechain create the pulse feel
 3. `Drop A Lift`
    - keep the same notes and same basic chord-end points as `Drop A`
-   - raise velocity slightly instead of changing harmony
+   - set chord note velocity to `86`
+   - keep each chord ending at `x.4.2`
+   - raise filter cutoff from `2.6 kHz` to `2.9 kHz`
+   - keep Utility width at `120%`
 4. `Break`
    - switch to the `8`-bar bloom clip
    - keep the two-bar sustains exactly as written
+   - set chord note velocity to `80`
+   - set filter cutoff to `3.2 kHz`
+   - set Utility width to `150%`
 5. `Re-entry Build`
    - return to the restrained `4`-bar clip
-   - let chords end a little earlier again, around `x.4.1` or `x.4.2`, so the pulse is clearer
+   - set chord note velocity to `76`
+   - set each chord to end at `x.4.1`
+   - set filter cutoff to `2.4 kHz`
+   - set Utility width to `130%`
 6. `Drop B`
    - return to the bloomed state
    - if using the `4`-bar bloomed clip, make sure the `Bbmaj7` bar is active again before widening the sends
+   - set chord note velocity to `84`
+   - set filter cutoff to `3.0 kHz`
+   - set Utility width to `140%`
+7. `Drop B Lift`
+   - keep the same bloomed notes as `Drop B`
+   - set chord note velocity to `88`
+   - set filter cutoff to `3.2 kHz`
+   - set Utility width to `145%`
 
 ### Why
 This is the “single patch, section-dependent articulation” rule in practice.
@@ -365,12 +404,13 @@ You are not making:
 You are making one harmonic identity that behaves differently by section.
 
 Mechanical changes:
-- `Intro B`: darker filter, lower velocity, longer note lengths
-- `Drop A`: same clip family, but shorten note lengths slightly or increase the sidechain/pulse feel
-- `Drop A Lift`: keep the same notes, raise pulse velocity a little and open the filter slightly
+- `Intro B`: velocity `70`, filter `2.0 kHz`, chords end `x.4.4`
+- `Drop A`: velocity `78`, filter `2.6 kHz`, chords end `x.4.2`
+- `Drop A Lift`: velocity `86`, filter `2.9 kHz`, chords end `x.4.2`
 - `Break`: switch to the bloomed `Bbmaj7` clip, longer note values, wider send/width state
-- `Re-entry Build`: return to restrained `Bb`, shorter pulse values, reduced width and reverb
-- `Drop B`: reopen width/send and use the bloomed `Bbmaj7` state again
+- `Re-entry Build`: velocity `76`, filter `2.4 kHz`, chords end `x.4.1`
+- `Drop B`: velocity `84`, filter `3.0 kHz`, bloomed `Bbmaj7` active
+- `Drop B Lift`: velocity `88`, filter `3.2 kHz`, bloomed `Bbmaj7` active
 
 ### Screenshot
 - `chords-06-section-articulation-map`
@@ -382,24 +422,46 @@ On the `Chords` track or `Music` bus, build this starting chain:
 2. `Compressor` for kick sidechain or groove-ducking
 3. `Utility`
 
-Starting direction:
-- high-pass the chord bed enough to stay out of bass ownership:
-  - start at `180 Hz`, then move up only if low-mid clouds
-- if the low-mid clouds up:
-  - cut a little around `200–300 Hz` before thinning the bass floor
-- sidechain lightly from the kick:
-  - ratio `2:1` to `4:1`
-  - fast attack
-  - release `150 ms` on the first pass
+What the bus means here:
+- if `Chords` is inside a `Music` group, put this chain on the `Chords` track first
+- if later the project has several music tracks, move the same chain to the `Music` group only after the single-track version works
+
+Set `EQ Eight` like this:
+1. Turn on band `1`.
+2. Set band `1` to high-pass.
+3. Set frequency to `180 Hz`.
+4. Set slope to `12 dB/oct`.
+5. Turn on one bell band at `250 Hz`.
+6. Set that bell to `0 dB` on the first pass.
+7. If low-mid mud appears, cut that bell to `-2 dB`, Q `1.0`.
+
+Set the sidechain compressor like this:
+1. Open Ableton `Compressor`.
+2. Click the sidechain triangle to open the sidechain panel.
+3. Turn `Sidechain` on.
+4. Set `Audio From` to the kick lane or drum lane that carries the kick body.
+5. Set ratio to `2:1`.
+6. Set attack to `1 ms`.
+7. Set release to `150 ms`.
+8. Lower threshold until each kick causes about `1–2 dB` of gain reduction on the chord bed.
+
+Set `Utility` like this on the first pass:
+- `Drop A`: width `120%`
+- `Break`: width `150%`
+- `Re-entry Build`: width `130%`
+- `Drop B`: width `140%`
+- `Drop B Lift`: width `145%`
 
 ### Why
 The chords should move with the groove but not collapse.
 
 If the sidechain is too deep:
-- the harmony disappears
+- raise the compressor threshold until gain reduction is only `1 dB` on each kick
+- if the threshold move is not enough, reduce ratio from `2:1` to `1.5:1`
 
 If it is too weak:
-- the track slows down and mud gathers.
+- lower the compressor threshold until each kick creates at least `1 dB` of gain reduction
+- do not exceed `3 dB` of gain reduction on the first pass
 
 ### Screenshot Set
 - `chords-bus-01-eq`
@@ -408,18 +470,38 @@ If it is too weak:
 ## Step 9: Automate Width And Returns By Section
 ### Action
 1. Keep `Drop A` narrower and drier than the break.
-2. Send more to `Return C: long filtered hall` in the break.
-3. Pull some of that space back in the `Re-entry Build`.
-4. Let `Drop B` reopen with:
-   - more width
-   - more air around the bed
-   - but not so much wash that the hook loses its lane
+2. Raise `Return C: long filtered hall` send in the break from `-22 dB` to `-14 dB`.
+3. Pull that send back to `-20 dB` in the `Re-entry Build`.
+4. Let `Drop B` reopen at width `140%` and `Return C` send `-16 dB`.
+5. Let `Drop B Lift` reach width `145%` and `Return C` send `-15 dB`.
 
-Starting width behavior:
-- `Drop A`: around `120%` equivalent width feel
-- `Break`: around `150%`
-- `Re-entry Build`: tighten back toward `130%`
-- `Drop B`: reopen near `140%`, then widen slightly more again in the lift
+Create these first-pass automation values:
+
+Utility `Width`:
+- `Intro B`: `100%`
+- `Drop A`: `120%`
+- `Drop A Lift`: `120%`
+- `Break`: `150%`
+- `Re-entry Build`: `130%`
+- `Drop B`: `140%`
+- `Drop B Lift`: `145%`
+
+`Return C: long filtered hall` send on the `Chords` track:
+- `Intro B`: `-24 dB`
+- `Drop A`: `-22 dB`
+- `Drop A Lift`: `-21 dB`
+- `Break`: `-14 dB`
+- `Re-entry Build`: `-20 dB`
+- `Drop B`: `-16 dB`
+- `Drop B Lift`: `-15 dB`
+
+How to write the automation in Ableton:
+1. Press `A` to show automation lanes.
+2. On the `Chords` track, choose `Utility` -> `Width`.
+3. Draw the width values at the start of each section.
+4. Then choose `Mixer` -> `Send C`.
+5. Draw the send values at the start of each section.
+6. Keep each value flat across the section on the first pass; do not draw constant wiggles yet.
 
 ### Why
 This is where the harmonic staging becomes a physical experience.
@@ -459,33 +541,38 @@ Compare against:
 ### Problem: “Drop A already feels too open.”
 Fix order:
 1. remove the `A` from the restrained `Bb` bar
-2. narrow the chord width
-3. reduce long-hall send
-4. only then darken the patch
+2. set `Drop A` Utility width from `120%` down to `110%`
+3. set `Drop A` `Return C` send from `-22 dB` down to `-26 dB`
+4. only then lower the filter cutoff from `2.6 kHz` to `2.3 kHz`
 
 ### Problem: “The chords feel stiff.”
 Fix order:
-1. check voice leading
-2. lengthen or overlap chord tails slightly
-3. only then soften the patch or increase return space
+1. open the MIDI clip and check that common tones such as `C4` and `F3/F4` do not jump octaves unnecessarily
+2. move note ends from `x.4.2` to `x.4.3`
+3. if that still feels clipped, move note ends to `x.4.4`
+4. only then increase `Return C` by `+2 dB`
 
 ### Problem: “The chords are fighting the bass.”
 Fix order:
-1. high-pass the chord bed a little more
-2. trim `200–300 Hz` before touching the bass floor
-3. reduce return buildup in the low-mid
+1. raise the chord high-pass from `180 Hz` to `200 Hz`
+2. if still cloudy, raise it once more to `220 Hz` maximum on the first pass
+3. cut the `250 Hz` bell to `-2 dB`, Q `1.0`
+4. reduce `Return C` by `-3 dB` in the affected section
 
 ### Problem: “The break got wider, but not more emotional.”
 Fix order:
-1. confirm the `Bbmaj7` bloom actually appears
-2. confirm the upper voicing opens upward
-3. then check width / return automation
+1. open the break MIDI clip and check that bar `3` contains `A3` in the `Bbmaj7` chord
+2. check that the break clip uses two-bar sustains ending at `2.4.4`, `4.4.4`, `6.4.4`, and `8.4.4`
+3. set break Utility width to `150%`
+4. set break `Return C` send to `-14 dB`
 
 ### Problem: “I followed the voicings and it still feels flat.”
 Fix order:
 1. A/B your `Drop A` and break against the references at matched loudness
-2. confirm the restrained `Bb` and bloomed `Bbmaj7` are actually different in your MIDI
-3. verify the chord bed is not too quiet under the hook lane later
+2. open the restrained clip and check that bar `2` is only `Bb2`, `F3`, `C4`
+3. open the bloomed clip and check that the `Bbmaj7` state is `Bb2`, `F3`, `A3`, `C4`
+4. if the difference is present but still inaudible, raise break filter cutoff from `3.2 kHz` to `3.5 kHz`
+5. if it still reads flat after the hook is added later, cut the chord bed `1.5–2.5 kHz` by `-1.5 dB` instead of raising every melodic lane
 
 ## What Must Be Captured For Later Lesson Conversion
 - chord-bed patch screenshots

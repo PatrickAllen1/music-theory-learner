@@ -58,6 +58,13 @@ Timing reminder for this part:
 - positions such as `100.3.4` are full-song Arrangement View positions
 - local `4.3.4` and arrangement `4.3.4` are not the same thing
 
+Plain-English routing reminder:
+- the `dry` hook is the original hook sound before reverb or delay
+- a `return` is a shared effect track, such as a plate reverb or filtered delay
+- a `send` is the amount of copy you send from the hook or answer track into that return effect
+- the hook should stay mostly dry and centered so the rhythm stays clear
+- the return effects should add space after the note, not replace the note
+
 ## Reference Axis
 Primary A/B for this part:
 - `Sammy Virji - I Guess We're Not the Same`
@@ -138,24 +145,27 @@ If they share one MIDI lane too early, it becomes harder to enforce the alternat
 1. Load a fresh instance of `Serum 2` on `Hook`.
 2. Initialize the patch.
 3. Set `Osc A` to `Basic Shapes`.
-4. Choose a sine / triangle-leaning body.
+4. Choose the sine / triangle-leaning `Basic Shapes` frame:
+   - use the triangle frame if you can identify it
+   - if not, use the simple frame immediately brighter than sine and darker than saw
 5. Set `Osc A Level` to `85%`.
 6. Set `Osc B` to `Basic Shapes`.
-7. Choose a brighter support shape:
-   - saw-leaning or slightly sharper than `Osc A`
+7. Choose a saw-leaning support shape:
+   - use the simple saw frame or the nearest bright simple-shape frame
 8. Set `Osc B Level` to `25%`.
-9. Apply light FM from `Osc B` to `Osc A`:
-   - enough to get organ woodiness
-   - not enough to ring like a bell
-10. Route the patch through a smooth low-pass or softening filter:
+9. On `Osc A`, set the warp/FM mode to `FM from B`.
+10. Set the FM amount to `18%`.
+11. Route the patch through a smooth low-pass or softening filter:
     - `MG Low 12` or similar
-11. Start the filter around:
-    - `2.2 kHz`
-12. Set amp envelope:
-    - attack: `0–3 ms`
-    - decay: `120–160 ms`
-    - sustain: `25–35%`
-    - release: `80–110 ms`
+12. Set filter values:
+    - cutoff: `2.2 kHz`
+    - resonance: `10%`
+    - drive: `8%`
+13. Set amp envelope:
+    - attack: `2 ms`
+    - decay: `140 ms`
+    - sustain: `30%`
+    - release: `95 ms`
 
 ### Why
 The hook should feel:
@@ -170,15 +180,20 @@ If the patch sounds too glossy, too wide, or too bell-like, it will stop feeling
 - engine: `Serum 2`
 - family: `FM-organ / woody garage stab`
 - Osc A: sine / triangle-leaning body
-- Osc B: brighter support for FM color
-- FM: light
-- filter: smooth low-pass
-- cutoff: `~1.8–2.8 kHz`
+- Osc A Level: `85%`
+- Osc B: saw-leaning support for FM color
+- Osc B Level: `25%`
+- FM mode: `FM from B`
+- FM amount: `18%`
+- filter: `MG Low 12`
+- cutoff: `2.2 kHz`
+- resonance: `10%`
+- drive: `8%`
 - amp env:
-  - A `0–3 ms`
-  - D `120–160 ms`
-  - S `25–35%`
-  - R `80–110 ms`
+  - A `2 ms`
+  - D `140 ms`
+  - S `30%`
+  - R `95 ms`
 
 ### Screenshot Set
 - `identity-02-hook-oscillators`
@@ -186,11 +201,25 @@ If the patch sounds too glossy, too wide, or too bell-like, it will stop feeling
 
 ## Step 3: Add Hook Character Processing
 ### Action
-1. Add light saturation inside the patch or immediately after it.
-2. High-pass enough that the hook never competes with bass warmth:
-   - start at `220 Hz`
-3. Leave compressor off on the first pass unless the raw patch is obviously spiking.
-4. Keep the dry signal mostly centered.
+1. After `Serum 2`, add `Saturator`.
+2. Set `Saturator` like this:
+   - mode: `Analog Clip`
+   - drive: `+1 dB`
+   - output: `-1 dB`
+   - soft clip: `On`
+3. Add `EQ Eight` after `Saturator`.
+4. Turn on band `1`.
+5. Set band `1` to high-pass.
+6. Set the high-pass frequency to `220 Hz`.
+7. Set the high-pass slope to `12 dB/oct`.
+8. Leave compressor off on the first pass.
+9. Add `Utility` after `EQ Eight`.
+10. Set `Utility Width` to `105%`.
+11. Keep the track pan centered.
+
+Compressor rule:
+- only add a compressor if one hook note peaks more than `6 dB` louder than the other hook notes
+- if that happens, add `Compressor` after `EQ Eight`, ratio `2:1`, attack `5 ms`, release `80 ms`, and lower threshold until the loudest note dips `1–2 dB`
 
 ### Why
 The hook should speak clearly in the middle of the mix.
@@ -209,30 +238,38 @@ not from smearing the dry signal left-right.
 ## Step 4: Build The Answer Patch From The Hook
 ### Action
 1. Duplicate the hook patch onto the `Answer` track.
-2. Shorten the envelope:
-   - decay and release clearly shorter than the hook
-3. Increase bite or saturation slightly:
-   - use one small but obvious step above the hook
-4. Keep the answer in the same instrument family.
-5. Do not widen it into a separate cinematic layer.
-
-Suggested starting values if the hook is at the midpoint of its range:
-- hook decay `140 ms` -> answer decay `80–95 ms`
-- hook release `95 ms` -> answer release `55–70 ms`
-- if the hook saturation is at its first useful setting, move the answer up one small step above that rather than jumping multiple big increments
+2. On the `Answer` Serum patch, keep the same oscillators and FM routing.
+3. Change the amp envelope:
+   - attack: `2 ms`
+   - decay: `90 ms`
+   - sustain: `20%`
+   - release: `60 ms`
+4. Raise filter cutoff from `2.2 kHz` to `2.4 kHz`.
+5. Keep filter resonance at `10%`.
+6. Keep filter drive at `8%`.
+7. On the `Answer` Saturator, set:
+   - drive: `+1.5 dB`
+   - output: `-1.5 dB`
+   - soft clip: `On`
+8. On the `Answer` EQ Eight, keep the high-pass at `220 Hz`.
+9. On the `Answer` Utility, set width to `115%`.
+10. Keep the answer in the same instrument family.
+11. Do not widen it into a separate cinematic layer.
 
 ### Why
 The answer should feel like:
 - the same family
 - a shorter reply
-- slightly rougher
+- rougher by `+0.5 dB` more saturation drive than the hook
 
 not a second lead synth.
 
 ### Final Answer Starting Spec
 - same patch family as the hook
-- shorter envelope
-- slightly dirtier saturation
+- envelope: A `2 ms`, D `90 ms`, S `20%`, R `60 ms`
+- filter cutoff: `2.4 kHz`
+- saturation drive: `+1.5 dB`
+- Utility width: `115%`
 - phrase-end punctuation only
 
 ### Screenshot Set
@@ -253,7 +290,8 @@ Starting density rule:
 - use the hook as phrase-end punctuation, not every bar
 - first pass:
   - place it in the last bar of the `4`-bar phrase
-  - only expand if the section still feels too empty
+  - do not add hook notes to bars `1`, `2`, or `3` during the first pass
+  - only after the full `Drop A` A/B check may you copy the same bar-`4` phrase to bar `2`
   
 Exact first-pass MIDI placement inside the `4`-bar clip:
 1. Leave bars `1`, `2`, and `3` empty.
@@ -306,11 +344,11 @@ Exact first-pass placement for the first hook-owned `Drop B` phrase in Arrangeme
 3. Place `C5` at `100.4.1`.
 4. Place `D5` at `100.4.4`.
 5. Place `F5` at `101.1.1`.
-6. Start with the same note lengths as the `Drop A` phrase:
-   - `A4` short
-   - `C5` slightly longer
-   - `D5` short
-   - `F5` short-to-medium so it feels like a bloom accent, not a new held melody
+6. Use these exact note lengths:
+   - `A4`: `1/16`, ending at `100.4.1`
+   - `C5`: `1/8`, ending at `100.4.3`
+   - `D5`: `1/16`, ending at `101.1.1`
+   - `F5`: `1/8`, ending at `101.1.3`
 7. If you are sketching this in a loop clip instead of Arrangement View, temporarily extend the clip long enough to place the `F5` on the following bar, then trim and duplicate once the phrase reads correctly.
 
 ### Why
@@ -349,7 +387,10 @@ Exact first-pass MIDI placement for the first answer-owned phrase ending:
 6. Give `A4` a `1/16` length so it ends at `104.4.2`.
 7. Place `C5` at `104.4.4`.
 8. Give `C5` a `1/16` length on the first pass so it ends at `105.1.1`.
-9. Repeat the same rhythmic idea at bar `112` for the second answer-owned phrase ending unless later A/B checks prove a better variation.
+9. Repeat the same rhythmic idea at bar `112` for the second answer-owned phrase ending:
+   - `G4` at `112.3.3`, length `1/16`
+   - `A4` at `112.4.1`, length `1/16`
+   - `C5` at `112.4.4`, length `1/16`
 
 ### Why
 The answer should make `Drop B` feel more conversational, not denser for density’s sake.
@@ -369,20 +410,32 @@ If the answer feels like a second full hook, it is too long, too frequent, or to
 1. Send both lanes to `Return B: short plate`.
 2. Use `Return D: filtered delay` sparingly for phrase-end throws.
 3. Keep the hook’s dry center stronger than the return signal.
-4. Let the answer have slightly more edge or throw support than the hook, but not more center weight.
+4. Let the answer have more throw support than the hook, but not more center weight.
 
-First-pass send rule:
-1. Turn `Return B` on for both hook and answer.
-2. Leave `Return D` off on the first pass.
-3. Add `Return D` only after the dry hook and answer are already reading in context.
+First-pass constant send values:
+1. On the `Hook` track, set `Send B` to `-18 dB`.
+2. On the `Answer` track, set `Send B` to `-16 dB`.
+3. On both tracks, set `Send D` to `-inf` / fully off by default.
+
+First-pass delay throws:
+1. Press `A` in Ableton to show automation.
+2. On the `Hook` track, choose `Mixer` -> `Send D`.
+3. Draw `Send D` up to `-20 dB` from `100.4.4` to `101.1.2`.
+4. Draw it back to `-inf` at `101.1.3`.
+5. Repeat the same hook throw from `108.4.4` to `109.1.2`.
+6. On the `Answer` track, choose `Mixer` -> `Send D`.
+7. Draw `Send D` up to `-18 dB` from `104.4.4` to `105.1.2`.
+8. Draw it back to `-inf` at `105.1.3`.
+9. Repeat the same answer throw from `112.4.4` to `113.1.2`.
 
 Starting direction:
 - hook:
   - cleaner dry center
-  - short plate support
+  - `Send B` at `-18 dB`
   - occasional filtered delay only at bigger phrase endings
 - answer:
-  - slightly more saturation or throw support
+  - `Send B` at `-16 dB`
+  - `Send D` throws at answer-owned phrase endings
   - shorter dry body
 
 ### Why
@@ -398,9 +451,19 @@ The FX should reinforce that difference.
 ## Step 9: Check Register And Density Against The Chords
 ### Action
 1. Play `drums + bass + chords + hook`.
-2. Confirm the hook sits above the chord bed enough to read.
-3. Play the `Drop B` phrase with answer.
-4. Confirm the hook and answer alternate instead of stacking at full density.
+2. Mute the `Chords` track and listen to the hook for one pass.
+3. Unmute the `Chords` track.
+4. The hook should still read without raising the `Hook` track fader by more than `+1 dB`.
+5. If the hook disappears, cut the `Chords` track with `EQ Eight`:
+   - bell frequency: `2.0 kHz`
+   - gain: `-1.5 dB`
+   - Q: `1.0`
+6. Only after that carve should you raise the `Hook` fader.
+7. Play the `Drop B` phrase with answer.
+8. Check the full-song bars:
+   - hook-owned phrase endings: `100` and `108`
+   - answer-owned phrase endings: `104` and `112`
+9. If both `Hook` and `Answer` contain notes at the same phrase ending, delete the weaker phrase instead of lowering it.
 
 ### Why
 This is the main integration test for the identity lane.
@@ -414,6 +477,14 @@ If the answer makes the section smaller:
 - it is too continuous
 - too loud
 - or too similar in density to the hook
+
+First correction for each failure:
+- hook too dark: raise hook filter cutoff from `2.2 kHz` to `2.5 kHz`
+- hook too low: raise the `Hook` fader by `+1 dB` maximum before changing anything else
+- chords too open: cut the `Chords` track at `2.0 kHz` by `-1.5 dB`, Q `1.0`
+- answer too continuous: delete any answer notes outside bars `104` and `112`
+- answer too loud: lower the `Answer` fader by `-1.5 dB`
+- answer too similar: shorten answer decay from `90 ms` to `75 ms`
 
 ### Screenshot
 - `identity-10-lane-balance`
@@ -446,33 +517,40 @@ Compare against:
 ## Troubleshooting
 ### Problem: “The hook feels generic.”
 Fix order:
-1. check the rhythm before adding notes
-2. brighten or sharpen the patch slightly
-3. only then consider a small timing variation at the phrase end
+1. open the MIDI clip and check the note starts are exactly `4.3.4`, `4.4.1`, and `4.4.4`
+2. raise hook filter cutoff from `2.2 kHz` to `2.5 kHz`
+3. if still dull, raise Saturator drive from `+1 dB` to `+1.5 dB`
+4. only then consider one phrase-end timing variation; do not add a fourth note to `Drop A`
 
 ### Problem: “The hook is fighting the chords.”
 Fix order:
-1. high-pass or narrow the hook slightly
-2. darken or carve the chord bed
-3. only then reduce the hook level
+1. raise the hook high-pass from `220 Hz` to `250 Hz`
+2. set hook Utility width from `105%` to `100%`
+3. cut the chord bed at `2.0 kHz` by `-1.5 dB`, Q `1.0`
+4. only then reduce the hook level by `-1 dB`
 
 ### Problem: “The answer sounds like another song.”
 Fix order:
-1. reduce its saturation difference
-2. shorten the envelope
-3. reduce how often it appears
+1. reduce answer Saturator drive from `+1.5 dB` to `+1.0 dB`
+2. set answer Utility width from `115%` to `105%`
+3. set answer decay to `75 ms` and release to `50 ms`
+4. remove any answer notes outside bars `104` and `112`
 
 ### Problem: “Drop B got busier but not bigger.”
 Fix order:
 1. thin the hook to half density
 2. keep the answer phrase-end only
-3. remove any phrase where both speak too much at once
+3. check that hook owns bars `100` and `108`
+4. check that answer owns bars `104` and `112`
+5. remove any phrase where both speak at the same ending
 
 ### Problem: “I followed the notes and it still doesn’t stick.”
 Fix order:
 1. A/B against the references at matched loudness
-2. confirm the rhythm lands late in the phrase
-3. confirm the hook patch has enough bite to read in the midrange
+2. open the hook clip and check the rhythm lands at `4.3.4`, `4.4.1`, and `4.4.4`
+3. check that the hook patch has `FM from B` at `18%`
+4. check that the filter cutoff is at least `2.2 kHz`
+5. if the hook is audible but bland, raise filter cutoff to `2.5 kHz` before adding notes
 
 ## What Must Be Captured For Later Lesson Conversion
 - hook patch screenshots
