@@ -1,3 +1,6 @@
+import ReactMarkdown from "react-markdown";
+import remarkGfm from "remark-gfm";
+
 function BulletSection({ title, items, accent = "text-zinc-500" }) {
   if (!items || items.length === 0) return null;
 
@@ -20,6 +23,93 @@ function BulletSection({ title, items, accent = "text-zinc-500" }) {
   );
 }
 
+function MarkdownLesson({ content }) {
+  if (!content) return null;
+
+  return (
+    <div className="mb-6 rounded-lg border border-zinc-800 bg-zinc-950 px-5 py-4">
+      <ReactMarkdown
+        remarkPlugins={[remarkGfm]}
+        components={{
+          h1: ({ children }) => (
+            <h2 className="mb-4 text-xl font-mono font-bold text-zinc-100">
+              {children}
+            </h2>
+          ),
+          h2: ({ children }) => (
+            <h3 className="mb-3 mt-6 text-sm font-mono uppercase tracking-wider text-zinc-400 first:mt-0">
+              {children}
+            </h3>
+          ),
+          h3: ({ children }) => (
+            <h4 className="mb-2 mt-5 text-sm font-mono font-semibold text-zinc-200">
+              {children}
+            </h4>
+          ),
+          p: ({ children }) => (
+            <p className="mb-4 text-sm leading-relaxed text-zinc-300 last:mb-0">
+              {children}
+            </p>
+          ),
+          ul: ({ children }) => (
+            <ul className="mb-4 space-y-2 text-sm text-zinc-300">
+              {children}
+            </ul>
+          ),
+          ol: ({ children }) => (
+            <ol className="mb-4 list-decimal space-y-2 pl-5 text-sm text-zinc-300">
+              {children}
+            </ol>
+          ),
+          li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+          strong: ({ children }) => (
+            <strong className="font-semibold text-zinc-100">{children}</strong>
+          ),
+          code: ({ inline, children }) =>
+            inline ? (
+              <code className="rounded bg-zinc-900 px-1 py-0.5 font-mono text-[0.9em] text-zinc-200">
+                {children}
+              </code>
+            ) : (
+              <code className="block overflow-x-auto rounded bg-zinc-900 p-3 font-mono text-xs leading-relaxed text-zinc-200">
+                {children}
+              </code>
+            ),
+          pre: ({ children }) => <div className="mb-4">{children}</div>,
+          hr: () => <hr className="my-6 border-zinc-800" />,
+          a: ({ href, children }) => {
+            if (!href || href.startsWith("/Users/")) {
+              return (
+                <span className="font-mono text-zinc-400 underline decoration-dotted">
+                  {children}
+                </span>
+              );
+            }
+
+            return (
+              <a
+                href={href}
+                target="_blank"
+                rel="noreferrer"
+                className="text-zinc-300 underline decoration-zinc-600 underline-offset-2 hover:text-white"
+              >
+                {children}
+              </a>
+            );
+          },
+          blockquote: ({ children }) => (
+            <blockquote className="mb-4 border-l-2 border-zinc-700 pl-4 text-sm text-zinc-400">
+              {children}
+            </blockquote>
+          ),
+        }}
+      >
+        {content}
+      </ReactMarkdown>
+    </div>
+  );
+}
+
 export default function BuildStep({
   step,
   stepNumber,
@@ -30,12 +120,15 @@ export default function BuildStep({
   onNext,
   onPrev,
   onOpenRef,
+  stepLabel = "Step",
 }) {
+  const hasMarkdown = Boolean(step.content_markdown);
+
   return (
     <div className="max-w-2xl">
       <div className="flex justify-between items-center mb-6">
         <span className="text-xs font-mono text-zinc-500">
-          Step {stepNumber} of {total}
+          {stepLabel} {stepNumber} of {total}
         </span>
         <span className="text-xs font-mono text-zinc-600 uppercase">
           {step.category}
@@ -70,41 +163,52 @@ export default function BuildStep({
         </div>
       )}
 
-      <div className="p-5 bg-zinc-900 border border-zinc-700 rounded-lg mb-6">
-        <p className="text-zinc-200 leading-relaxed">{step.instruction}</p>
-      </div>
+      {step.instruction && (
+        <div className="p-5 bg-zinc-900 border border-zinc-700 rounded-lg mb-6">
+          <p className="text-zinc-200 leading-relaxed">{step.instruction}</p>
+        </div>
+      )}
 
-      {step.instruction_sections?.map((section, index) => (
+      {hasMarkdown && <MarkdownLesson content={step.content_markdown} />}
+
+      {!hasMarkdown &&
+        step.instruction_sections?.map((section, index) => (
         <BulletSection
           key={`${section.title}-${index}`}
           title={section.title}
           items={section.items}
         />
-      ))}
+        ))}
 
-      <div className="mb-6">
-        <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">
-          Why this works
-        </h3>
-        <p className="text-zinc-400 text-sm leading-relaxed">{step.why}</p>
-      </div>
+      {!hasMarkdown && step.why && (
+        <div className="mb-6">
+          <h3 className="text-xs font-mono text-zinc-500 uppercase tracking-wider mb-2">
+            Why this works
+          </h3>
+          <p className="text-zinc-400 text-sm leading-relaxed">{step.why}</p>
+        </div>
+      )}
 
-      <BulletSection title="Checklist" items={step.checklist} />
-      <BulletSection
-        title="Verify Before Moving On"
-        items={step.verify}
-        accent="text-green-500"
-      />
-      <BulletSection
-        title="Common Mistakes"
-        items={step.common_mistakes}
-        accent="text-amber-500"
-      />
-      <BulletSection
-        title="Save These Artifacts"
-        items={step.save_artifacts}
-        accent="text-blue-500"
-      />
+      {!hasMarkdown && (
+        <>
+          <BulletSection title="Checklist" items={step.checklist} />
+          <BulletSection
+            title="Verify Before Moving On"
+            items={step.verify}
+            accent="text-green-500"
+          />
+          <BulletSection
+            title="Common Mistakes"
+            items={step.common_mistakes}
+            accent="text-amber-500"
+          />
+          <BulletSection
+            title="Save These Artifacts"
+            items={step.save_artifacts}
+            accent="text-blue-500"
+          />
+        </>
+      )}
 
       {step.tip && (
         <div className="px-4 py-3 bg-zinc-900 border-l-2 border-zinc-600 rounded mb-6">

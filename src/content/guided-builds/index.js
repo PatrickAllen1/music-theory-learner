@@ -41,7 +41,7 @@ import original13 from "./originals/original-13-slow-ember.json";
 import original14 from "./originals/original-14-evening-run.json";
 import original15 from "./originals/original-15-pressure-drop.json";
 import original16 from "./originals/original-16-your-sound.json";
-import original17 from "./originals/original-17-ukg-140-og-bounce-driver.json";
+import original17 from "./originals/original-17-ukg-140-og-bounce-driver.js";
 
 export const builds = [
   rep01,

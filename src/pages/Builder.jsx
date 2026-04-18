@@ -55,6 +55,7 @@ export default function Builder() {
 
   const step = build.steps[stepIndex];
   const stepDone = isStepComplete(build.id, step.id);
+  const stepLabel = build.step_label ?? "Step";
 
   return (
     <div className="flex gap-8">
@@ -79,7 +80,7 @@ export default function Builder() {
                 >
                   <div className="flex items-start justify-between gap-3 mb-1">
                     <span className="text-[11px] font-mono text-zinc-500">
-                      Step {index + 1}
+                      {stepLabel} {index + 1}
                     </span>
                     {done && (
                       <span className="text-[11px] font-mono text-green-400">
@@ -146,6 +147,7 @@ export default function Builder() {
           step={step}
           stepNumber={stepIndex + 1}
           total={build.steps.length}
+          stepLabel={stepLabel}
           buildId={build.id}
           isComplete={stepDone}
           onMark={() =>
