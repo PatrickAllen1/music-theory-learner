@@ -27,60 +27,73 @@ function MarkdownLesson({ content }) {
   if (!content) return null;
 
   return (
-    <div className="mb-6 rounded-lg border border-zinc-800 bg-zinc-950 px-5 py-4">
+    <div className="mb-8 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 px-6 py-6 shadow-[0_0_0_1px_rgba(255,255,255,0.01)]">
       <ReactMarkdown
         remarkPlugins={[remarkGfm]}
         components={{
           h1: ({ children }) => (
-            <h2 className="mb-4 text-xl font-mono font-bold text-zinc-100">
+            <h2 className="mb-6 text-2xl font-mono font-bold tracking-tight text-zinc-50">
               {children}
             </h2>
           ),
           h2: ({ children }) => (
-            <h3 className="mb-3 mt-6 text-sm font-mono uppercase tracking-wider text-zinc-400 first:mt-0">
+            <h3 className="mb-4 mt-8 border-t border-zinc-800 pt-5 text-xs font-mono uppercase tracking-[0.18em] text-zinc-500 first:mt-0 first:border-t-0 first:pt-0">
               {children}
             </h3>
           ),
           h3: ({ children }) => (
-            <h4 className="mb-2 mt-5 text-sm font-mono font-semibold text-zinc-200">
+            <h4 className="mb-3 mt-6 text-base font-mono font-semibold text-zinc-100">
               {children}
             </h4>
           ),
           p: ({ children }) => (
-            <p className="mb-4 text-sm leading-relaxed text-zinc-300 last:mb-0">
+            <p className="mb-4 text-[15px] leading-7 text-zinc-300 last:mb-0">
               {children}
             </p>
           ),
           ul: ({ children }) => (
-            <ul className="mb-4 space-y-2 text-sm text-zinc-300">
+            <ul className="mb-5 list-disc space-y-2 pl-6 text-[15px] leading-7 text-zinc-300 marker:text-zinc-500">
               {children}
             </ul>
           ),
           ol: ({ children }) => (
-            <ol className="mb-4 list-decimal space-y-2 pl-5 text-sm text-zinc-300">
+            <ol className="mb-5 list-decimal space-y-2 pl-6 text-[15px] leading-7 text-zinc-300 marker:font-mono marker:text-zinc-500">
               {children}
             </ol>
           ),
-          li: ({ children }) => <li className="leading-relaxed">{children}</li>,
+          li: ({ children }) => <li className="pl-1 leading-7">{children}</li>,
           strong: ({ children }) => (
             <strong className="font-semibold text-zinc-100">{children}</strong>
           ),
-          code: ({ inline, children }) =>
-            inline ? (
-              <code className="rounded bg-zinc-900 px-1 py-0.5 font-mono text-[0.9em] text-zinc-200">
+          code: ({ node, className, children }) => {
+            const text = String(children).replace(/\n$/, "");
+            const isInline =
+              !className &&
+              node?.position?.start?.line === node?.position?.end?.line &&
+              !text.includes("\n");
+
+            return isInline ? (
+              <code className="rounded-md border border-zinc-800 bg-zinc-900 px-1.5 py-0.5 font-mono text-[0.9em] text-zinc-100">
                 {children}
               </code>
             ) : (
-              <code className="block overflow-x-auto rounded bg-zinc-900 p-3 font-mono text-xs leading-relaxed text-zinc-200">
-                {children}
+              <code
+                className={`block font-mono text-sm leading-6 text-zinc-100 ${className ?? ""}`}
+              >
+                {text}
               </code>
-            ),
-          pre: ({ children }) => <div className="mb-4">{children}</div>,
-          hr: () => <hr className="my-6 border-zinc-800" />,
+            );
+          },
+          pre: ({ children }) => (
+            <pre className="mb-5 overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900/80 p-4">
+              {children}
+            </pre>
+          ),
+          hr: () => <hr className="my-8 border-zinc-800" />,
           a: ({ href, children }) => {
             if (!href || href.startsWith("/Users/")) {
               return (
-                <span className="font-mono text-zinc-400 underline decoration-dotted">
+                <span className="font-mono text-zinc-300 underline decoration-zinc-700 decoration-dotted underline-offset-2">
                   {children}
                 </span>
               );
@@ -91,16 +104,34 @@ function MarkdownLesson({ content }) {
                 href={href}
                 target="_blank"
                 rel="noreferrer"
-                className="text-zinc-300 underline decoration-zinc-600 underline-offset-2 hover:text-white"
+                className="text-zinc-200 underline decoration-zinc-600 underline-offset-2 hover:text-white"
               >
                 {children}
               </a>
             );
           },
           blockquote: ({ children }) => (
-            <blockquote className="mb-4 border-l-2 border-zinc-700 pl-4 text-sm text-zinc-400">
+            <blockquote className="mb-5 rounded-r-lg border-l-2 border-zinc-700 bg-zinc-900/50 py-1 pl-4 text-[15px] leading-7 text-zinc-400">
               {children}
             </blockquote>
+          ),
+          table: ({ children }) => (
+            <div className="mb-5 overflow-x-auto rounded-xl border border-zinc-800">
+              <table className="min-w-full border-collapse text-left text-sm text-zinc-300">
+                {children}
+              </table>
+            </div>
+          ),
+          thead: ({ children }) => <thead className="bg-zinc-900/80">{children}</thead>,
+          th: ({ children }) => (
+            <th className="border-b border-zinc-800 px-3 py-2 font-mono text-xs uppercase tracking-wider text-zinc-400">
+              {children}
+            </th>
+          ),
+          td: ({ children }) => (
+            <td className="border-t border-zinc-800 px-3 py-2 align-top leading-6">
+              {children}
+            </td>
           ),
         }}
       >
@@ -125,7 +156,7 @@ export default function BuildStep({
   const hasMarkdown = Boolean(step.content_markdown);
 
   return (
-    <div className="max-w-2xl">
+    <div className="max-w-4xl">
       <div className="flex justify-between items-center mb-6">
         <span className="text-xs font-mono text-zinc-500">
           {stepLabel} {stepNumber} of {total}
@@ -150,7 +181,9 @@ export default function BuildStep({
         </div>
       )}
 
-      <h2 className="text-xl font-mono font-bold mb-4">{step.title}</h2>
+      <h2 className="mb-4 text-2xl font-mono font-bold tracking-tight text-zinc-50">
+        {step.title}
+      </h2>
 
       {(step.focus || step.estimated_minutes) && (
         <div className="flex flex-wrap gap-2 mb-4">
