@@ -96,7 +96,7 @@ If they live on one track:
 9. Set `Voices` / unison to `1`.
 10. Set `Mono` to `On`.
 11. Set portamento / glide to a very small value:
-    - start around `8 ms`
+    - set it to `8 ms` on the first pass
 12. Set amp envelope:
     - attack: `0 ms`
     - decay: `0`
@@ -147,11 +147,11 @@ The sub should not provide excitement. It should provide authority.
     - `Osc A`: `1 voice`
     - `Osc B`: `2 voices`
 11. Set `Osc B Detune` lightly:
-    - start around `0.05` on Serum's `0.00–1.00` detune scale
+    - set it to `0.05` on Serum's `0.00–1.00` detune scale on the first pass
 12. Route both through a low-pass filter:
     - type: `MG Low 12`
 13. Set initial filter settings:
-    - cutoff: start around `160 Hz`
+    - cutoff: `160 Hz`
     - resonance: low, around `10–15%`
     - drive: light, around `10–20%`
 14. Set amp envelope:
@@ -197,7 +197,7 @@ It does **not** need:
 ### Action
 1. Create `LFO 1` as a slow, smooth breathing shape.
 2. Set the rate so it breathes over phrase motion, not per note:
-   - start around `1/2 bar` or `1 bar` synced
+   - set it to `1 bar` synced on the first pass
 3. Drag `LFO 1` onto the filter cutoff.
 4. Set the modulation amount by dragging the modulation ring to a small value.
 4. Keep the modulation small:
@@ -218,9 +218,9 @@ If the learner hears “wobble,” the movement is too deep.
 - `LFO 1`
   - shape: gentle rise/fall
   - sync: on
-  - rate: `1/2 bar` to `1 bar`
+  - rate: `1 bar`
   - destination: filter cutoff
-  - depth: start around `10–20%`
+  - depth: `15%`
 
 ### Screenshot Set
 - `mid-04-lfo-shape`
@@ -229,9 +229,9 @@ If the learner hears “wobble,” the movement is too deep.
 ## Step 5: Add In-Patch Character FX
 ### Action
 1. Add light distortion in Serum 2 FX:
-   - keep it subtle
-2. Add EQ if needed:
-   - trim extra low-mid buildup
+   - set a small amount first, around the lowest useful audible setting
+2. Add EQ after distortion:
+   - trim a little extra low-mid buildup
    - leave true sub to the sub track
 3. Avoid reverb, delay, chorus, or wide imaging on the mid-bass patch itself at this stage.
 
@@ -375,7 +375,7 @@ If the answer is no, the rhythm is not doing enough work.
 On the `Bass` group, build this starting chain:
 1. `EQ Eight`
 2. `Saturator`
-3. `Compressor` or sidechain stage for glue if needed
+3. `Compressor` or sidechain stage for glue
 4. `Utility`
 
 ### Starting Settings

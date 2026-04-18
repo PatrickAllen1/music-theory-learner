@@ -9,7 +9,7 @@ Teach the learner how to take the finished premaster of `ukg-140-og-bounce-drive
 
 This part should keep the master stage small and disciplined:
 - trim
-- gentle glue if needed
+- gentle glue
 - subtle saturation / soft clip
 - limiter
 - translation and export checks
@@ -74,7 +74,7 @@ Use the same reference set as the mix chapter, but judge different things:
 
 ## Master Targets
 - keep the ceiling around `-1 dBTP`
-- use only small glue compression if needed
+- use only small glue compression
 - keep punch and low-end relationship intact
 - do not force loudness until the premaster survives:
   - mono
@@ -119,7 +119,7 @@ Starting direction:
 
 Ableton action order:
 1. On the `Premaster` lane, place the devices in that exact order.
-2. Rename any plugin or rack labels if needed so the chain reads clearly from left to right.
+2. Rename any plugin or rack labels so the chain reads clearly from left to right.
 3. Keep every device bypassed at first.
 4. Turn them on one by one from left to right after the whole chain is in place.
 
@@ -143,7 +143,7 @@ Starting values:
 1. Start with ratio `2:1`.
 2. Use a slower attack rather than a very fast one so the kick still gets through.
 3. Use auto release or a moderate release first, then adjust by ear.
-4. Aim for only a small amount of gain reduction, not multiple dB of constant squeeze.
+4. Aim for about `1 dB` of gain reduction on the first pass, not multiple dB of constant squeeze.
 
 ### Why
 The drum pocket and hook punctuation are easy to damage here.
@@ -159,7 +159,7 @@ The drum pocket and hook punctuation are easy to damage here.
 Use subtle saturation or soft clipping only to add a little density before the limiter.
 
 Target:
-- slightly firmer body
+- firmer body
 - no brittle top-end
 - no blurry kick/bass relationship
 

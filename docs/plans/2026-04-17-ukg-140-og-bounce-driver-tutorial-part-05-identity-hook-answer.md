@@ -134,18 +134,18 @@ If they share one MIDI lane too early, it becomes harder to enforce the alternat
 2. Initialize the patch.
 3. Set `Osc A` to `Basic Shapes`.
 4. Choose a sine / triangle-leaning body.
-5. Set `Osc A Level` around `80–90%`.
+5. Set `Osc A Level` to `85%`.
 6. Set `Osc B` to `Basic Shapes`.
 7. Choose a brighter support shape:
    - saw-leaning or slightly sharper than `Osc A`
-8. Set `Osc B Level` around `20–30%`.
+8. Set `Osc B Level` to `25%`.
 9. Apply light FM from `Osc B` to `Osc A`:
    - enough to get organ woodiness
    - not enough to ring like a bell
 10. Route the patch through a smooth low-pass or softening filter:
     - `MG Low 12` or similar
 11. Start the filter around:
-    - `1.8–2.8 kHz`
+    - `2.2 kHz`
 12. Set amp envelope:
     - attack: `0–3 ms`
     - decay: `120–160 ms`
@@ -183,8 +183,8 @@ If the patch sounds too glossy, too wide, or too bell-like, it will stop feeling
 ### Action
 1. Add light saturation inside the patch or immediately after it.
 2. High-pass enough that the hook never competes with bass warmth:
-   - start somewhere above `180–250 Hz`
-3. Add a controlled compressor only if the patch spikes too unevenly.
+   - start at `220 Hz`
+3. Leave compressor off on the first pass unless the raw patch is obviously spiking.
 4. Keep the dry signal mostly centered.
 
 ### Why
@@ -205,15 +205,16 @@ not from smearing the dry signal left-right.
 ### Action
 1. Duplicate the hook patch onto the `Answer` track.
 2. Shorten the envelope:
-   - decay and release roughly `30–50%` shorter than the hook
+   - decay and release clearly shorter than the hook
 3. Increase bite or saturation slightly:
-   - roughly `20–40%` more than the hook
+   - use one small but obvious step above the hook
 4. Keep the answer in the same instrument family.
 5. Do not widen it into a separate cinematic layer.
 
 Suggested starting values if the hook is at the midpoint of its range:
 - hook decay `140 ms` -> answer decay `80–95 ms`
 - hook release `95 ms` -> answer release `55–70 ms`
+- if the hook saturation is at its first useful setting, move the answer up one small step above that rather than jumping multiple big increments
 
 ### Why
 The answer should feel like:
@@ -364,6 +365,11 @@ If the answer feels like a second full hook, it is too long, too frequent, or to
 2. Use `Return D: filtered delay` sparingly for phrase-end throws.
 3. Keep the hook’s dry center stronger than the return signal.
 4. Let the answer have slightly more edge or throw support than the hook, but not more center weight.
+
+First-pass send rule:
+1. Turn `Return B` on for both hook and answer.
+2. Leave `Return D` off on the first pass.
+3. Add `Return D` only after the dry hook and answer are already reading in context.
 
 Starting direction:
 - hook:

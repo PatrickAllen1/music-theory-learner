@@ -196,7 +196,7 @@ Build the `Drum Bus` in this order:
 
 Starting direction:
 - `EQ Eight`
-  - remove obvious sub spill below the kick lane if needed
+  - remove obvious sub spill below the kick lane only if it is really there
 - `Glue Compressor`
   - ratio `2:1` or `4:1`
   - slower attack so the transients still punch
@@ -204,6 +204,14 @@ Starting direction:
 - `Saturator`
   - enough to add density
   - not enough to flatten hats and clap movement
+
+First-pass settings:
+- `Glue Compressor`
+  - ratio `2:1`
+  - attack: use a slower setting
+  - release: start on `Auto`
+- `Saturator`
+  - start at the first clearly audible step above zero, not a heavy drive move
 
 ### Why
 The drum bus should feel denser and more unified, but the groove still needs to breathe.
@@ -217,7 +225,7 @@ The drum bus should feel denser and more unified, but the groove still needs to 
 Build the `Bass Bus` in this order:
 1. `EQ Eight`
 2. `Saturator`
-3. sidechain / control compression if needed
+3. sidechain / control compression
 4. `Utility`
 
 Starting direction:
@@ -241,8 +249,8 @@ The bass bus should add character and cohesion without blurring the sub.
 ### Action
 Build the `Music Bus` in this order:
 1. `EQ Eight`
-2. `Glue Compressor` or light bus compression if needed
-3. tonal saturation if needed
+2. `Glue Compressor` or light bus compression
+3. tonal saturation
 4. `Utility`
 
 Starting direction:
@@ -251,6 +259,10 @@ Starting direction:
   - chord bloom
   - hook punctuation
   - answer clarity
+
+First-pass settings:
+- keep compression extremely light on the `Music Bus`
+- if the bus already feels glued without compression, leave the compressor bypassed on the first pass and only use EQ + Utility
 
 ### Why
 The music bus is where the emotional layers become one world without becoming one slab.
@@ -392,7 +404,7 @@ The returns create depth and section state. They should not cover up weak lane b
 Loudness-match the references before judging tone or weight.
 
 Practical method:
-1. pull references down with `Utility` until they feel subjectively matched to the current premaster
+1. start by pulling the references down around `-10 dB` on `Utility`
 2. compare at the same monitoring level every time
 3. judge one axis at a time:
   - pressure

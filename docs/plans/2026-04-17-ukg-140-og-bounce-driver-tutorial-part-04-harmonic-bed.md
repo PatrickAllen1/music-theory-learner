@@ -117,23 +117,23 @@ Keeping it on one main track first makes:
 3. Set `Osc A` to `Basic Shapes`.
 4. Choose a warm saw / triangle-leaning frame:
    - somewhere between saw and triangle, not a bright full saw
-5. Set `Osc A Level` around `85%`.
+5. Set `Osc A Level` to `85%`.
 6. Set `Osc B` to `Basic Shapes`.
 7. Choose a quieter support shape:
    - slightly brighter than `Osc A`
-8. Set `Osc B Level` around `25–35%`.
+8. Set `Osc B Level` to `30%`.
 9. Keep both oscillators in the same octave to start.
 10. Use restrained unison:
     - `Osc A`: `2 voices`
     - `Osc B`: `1–2 voices`
 11. Set detune lightly:
-    - start around `0.03–0.05`
+    - set it to `0.04`
 12. Route the patch through a smooth low-pass filter:
     - `MG Low 12` or equivalent
 13. Set initial filter settings:
-    - cutoff: start around `2.2–3.2 kHz`
-    - resonance: `8–12%`
-    - drive: `5–10%`
+    - cutoff: `2.6 kHz`
+    - resonance: `10%`
+    - drive: `8%`
 14. Set amp envelope:
     - attack: `5–15 ms`
     - decay: `700–1200 ms`
@@ -177,7 +177,8 @@ It should not sound like:
 2. Keep it restrained:
    - enough to widen the bed
    - not enough to hollow the center
-3. Add mild saturation if needed.
+3. Add mild saturation after the width stage:
+   - use one small first-pass setting instead of guessing each time
 4. Do not solve the whole space story with in-patch reverb.
 
 ### Why
@@ -190,6 +191,7 @@ If the patch is already huge before the mix, the break has nowhere to open.
 
 ### Starting FX Direction
 - chorus / width: subtle
+- chorus / width mix: start around `15%`
 - saturation: glue, not fuzz
 - in-patch reverb: off or minimal
 
@@ -378,13 +380,13 @@ On the `Chords` track or `Music` bus, build this starting chain:
 
 Starting direction:
 - high-pass the chord bed enough to stay out of bass ownership:
-  - start around `180 Hz`, then move up if low-mid clouds
+  - start at `180 Hz`, then move up only if low-mid clouds
 - if the low-mid clouds up:
   - cut a little around `200–300 Hz` before thinning the bass floor
 - sidechain lightly from the kick:
   - ratio `2:1` to `4:1`
   - fast attack
-  - release roughly `120–180 ms`
+  - release `150 ms` on the first pass
 
 ### Why
 The chords should move with the groove but not collapse.

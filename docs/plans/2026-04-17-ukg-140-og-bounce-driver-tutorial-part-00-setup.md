@@ -153,7 +153,10 @@ The tutorial later mixes by bus. If the routing is improvised halfway through th
 1. Create one reference group or dedicated reference tracks.
 2. Load the four reference tracks.
 3. Put a `Utility` on each reference lane.
-4. Pull them down until they feel roughly subjectively matched to the eventual premaster workflow.
+4. Start by pulling each reference down by about `-10 dB` on its `Utility`.
+5. Solo one reference at a time and compare it against your empty session at the same monitor volume.
+6. If a reference still feels obviously too loud, pull it down another `2–3 dB`.
+7. Leave a note in the track name if one reference needed noticeably more trim than the others.
 
 ### Why
 References only help if they are in the session and usable from the start.
@@ -213,9 +216,14 @@ Even before writing parts, the project should already know what song shape it is
 ## Step 8: Run The Zero-Music Checkpoint
 ### Action
 With no real music written yet:
-- play a few bars with the references ready
-- confirm the buses and returns are visible
-- confirm the learner knows what each reference is for
+1. Press play from bar `1.1.1` for a few empty bars so you can see the session moving.
+2. Stop playback and visually confirm the buses and returns are visible in the mixer.
+3. Click each reference track once and say its job out loud:
+   - `KETTAMA` = pressure
+   - `IC` = groove pocket
+   - `Y U QT` = bass roll
+   - `Virji` = hook / harmony readability
+4. Make sure no limiter is active on the premaster.
 
 ### Expected Answer
 - the session feels organized, not improvised

@@ -100,9 +100,10 @@ Trying to get both from one badly chosen sample usually creates a kick that soun
 ## Step 2: Tune The Kick Body To `D`
 ### Action
 1. Load the kick body sample into `Simpler`.
-2. Use `Transpose` to get the kick body close to `D`.
-3. Use `Detune` for the last fine adjustment.
-4. Check the kick against a `D` reference note if needed.
+2. Add Ableton `Tuner` after `Simpler` on the `Kick Body` track.
+3. Use `Transpose` first to get the kick body near `D`.
+4. Use `Detune` for the last small adjustment.
+5. Watch the tuner while repeatedly triggering the kick and stop when the body is reading closest to `D`, not `C#` or `D#`.
 5. Keep the click layer unpitched unless it obviously fights the body.
 
 ### Why
@@ -121,9 +122,11 @@ The kick does not need to sing a melody, but it should reinforce the key center 
 Shape the kick so the body tail lands around `90–120 ms`.
 
 Practical method:
-- adjust sample start / fade if needed
-- shorten the sustain / decay behavior only enough to keep the tail controlled
-- keep enough body that the kick still feels physical
+1. In `Simpler`, leave the sample start alone first unless there is obvious silence before the transient.
+2. Use the amp envelope or fade controls to shorten the tail.
+3. Start by trimming only a small amount.
+4. Replay the kick on loop after every small move.
+5. Stop when the kick no longer overruns the next bass lane mentally, but still has weight.
 
 Do not over-shorten it into a papery click.
 
@@ -215,7 +218,7 @@ Create an air layer in `Serum 2`:
 - noise oscillator only
 - no tonal oscillators by default
 - high-pass aggressively so it behaves like ceiling, not a pad
-- keep any movement tiny and slow if needed
+- leave modulation off on the first pass unless the noise is so static that it sounds broken
 
 Route most of the sense of space from:
 - `Return C: long filtered hall`
@@ -235,6 +238,7 @@ Exact first-pass setup:
 10. Use a middle-register trigger note such as `C3`.
 11. Drag that note all the way to `4.4.4` so the noise source stays open across the whole clip.
 12. Send the `Air` track to `Return C` and keep the dry channel quiet.
+13. On the very first pass, do not add LFO movement yet. Get the ceiling working as a static layer before adding motion.
 
 ### Why
 The air layer should create:
