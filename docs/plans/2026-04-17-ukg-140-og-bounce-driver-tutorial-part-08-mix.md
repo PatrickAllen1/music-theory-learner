@@ -153,7 +153,7 @@ Ableton action order:
 4. Bring the loudest individual lanes down first:
    - kick
    - bass
-   - hook if needed
+   - hook only if its peak is still above the target range after kick and bass are set
 5. Only after track levels are reasonable, adjust the bus levels.
 
 ### Why
@@ -217,24 +217,24 @@ Exact Ableton click path:
 5. Drag `Saturator` to the right of that.
 6. Drag `Utility` last.
 
-Starting direction:
-- `EQ Eight`
-  - remove obvious sub spill below the kick lane only if it is really there
-- `Glue Compressor`
-  - ratio `2:1` or `4:1`
-  - slower attack so the transients still punch
-  - release timed to groove, not maximum pumping
-- `Saturator`
-  - enough to add density
-  - not enough to flatten hats and clap movement
-
 First-pass settings:
+- `EQ Eight`
+  - leave the drum bus flat first
+  - only if the drum bus has real low rumble, turn on band `1` as a high-pass at `25 Hz` with a `24 dB` slope
 - `Glue Compressor`
   - ratio `2:1`
-  - attack: use a slower setting
+  - attack: `10 ms`
   - release: start on `Auto`
+  - threshold: lower it only until the loudest section shows about `1–2 dB` of gain reduction
+  - makeup gain: `off`
 - `Saturator`
-  - start at the first clearly audible step above zero, not a heavy drive move
+  - mode: `Analog Clip`
+  - drive: `+1.5 dB`
+  - output: `-1.5 dB`
+  - soft clip: `on`
+- `Utility`
+  - width: `100%`
+  - gain: `0 dB`
 
 ### Why
 The drum bus should feel denser and more unified, but the groove still needs to breathe.
@@ -269,6 +269,19 @@ Starting direction:
 - `Utility`
   - keep the low end centered
 
+First-pass settings:
+- `EQ Eight`
+  - band `1`: high-pass at `25 Hz` with a `12 dB` slope
+  - leave the rest flat on the first pass
+- `Saturator`
+  - mode: `Analog Clip`
+  - drive: `+2 dB`
+  - output: `-2 dB`
+  - soft clip: `on`
+- `Utility`
+  - width: `100%`
+  - gain: `0 dB`
+
 ### Why
 The bass bus should add character and cohesion without blurring the sub.
 
@@ -300,7 +313,17 @@ Starting direction:
   - answer clarity
 
 First-pass settings:
-- keep compression extremely light on the `Music Bus`
+- `EQ Eight`
+  - leave flat on the first pass unless the whole music bus is clearly low-mid heavy
+- `Glue Compressor`
+  - ratio `2:1`
+  - attack `30 ms`
+  - release `Auto`
+  - threshold lowered only until the loudest section shows about `0.5–1 dB` of gain reduction
+- tonal saturation device
+  - drive `+1 dB`
+- `Utility`
+  - width `100%`
 - if the bus already feels glued without compression, leave the compressor bypassed on the first pass and only use EQ + Utility
 
 ### Why
@@ -324,8 +347,8 @@ Plain-English sidechain translation:
 - in Ableton this usually means putting a compressor on the lane you want to duck, opening its sidechain panel, and choosing the kick track as the source
 
 Starting direction:
-- sub release roughly matched to the kick tail:
-  - around `90–120 ms`
+- sub release matched to the kick tail:
+  - `105 ms` on the first pass
 - bass mid:
   - enough duck that kick and bass breathe together
   - not so much that the bass loses rhythmic life between kicks
@@ -337,18 +360,25 @@ Ableton action order:
 2. Open the sidechain panel.
 3. Choose the kick track as the sidechain input.
 4. Start with:
-   - ratio around `4:1`
-   - fast attack
-   - release around `100 ms`
+   - ratio `4:1`
+   - attack `1 ms`
+   - release `105 ms`
+   - threshold lowered only until the kick creates obvious space without collapsing the note
 5. Repeat on `Bass Mid`, but start lighter:
-   - ratio around `2:1`
-   - similar attack
-   - release around `90–110 ms`
+   - ratio `2:1`
+   - attack `1 ms`
+   - release `100 ms`
+   - threshold lowered only until the kick clears the phrase
 6. On `Chords`, start gentler still:
-   - ratio around `2:1`
-   - release around `120–180 ms`
+   - ratio `2:1`
+   - attack `1 ms`
+   - release `150 ms`
+   - aim for only a small visible gain dip
 7. On `Air`, use the lightest version of all:
-   - enough that the ceiling breathes, not enough that it audibly pumps
+   - ratio `2:1`
+   - attack `1 ms`
+   - release `140 ms`
+   - aim for barely visible gain reduction
 8. Solo-check each lane with the kick and then return to full mix context before deciding the setting is done.
 
 ### Why
@@ -371,9 +401,11 @@ Practical move order:
 
 Exact first-pass move:
 1. Put `EQ Eight` on the chord bed or `Music Bus`.
-2. Start by trimming a little around `220–280 Hz`.
-3. Re-listen with bass and chords together.
-4. Only if the cloud is still there, trim the bass mid slightly lower in the range rather than gutting the whole chord layer.
+2. Turn on one bell band at `250 Hz`.
+3. Set it to about `-2.5 dB` with a `Q` around `1.0`.
+4. Re-listen with bass and chords together.
+5. Only if the cloud is still there, put `EQ Eight` on `Bass Mid`.
+6. Add one bell at `170 Hz` and cut about `-1.5 dB` before cutting anything else.
 
 ### Why
 The low-mid is where warmth and mud live in the same room.
@@ -389,15 +421,21 @@ The low-mid is where warmth and mud live in the same room.
 Set the stereo image according to the frozen map:
 - kick: mono / center
 - sub: mono / center
-- mid-bass: mono to narrow stereo above the crossover
+- mid-bass: mono / center on the first pass
 - chords:
-  - `Drop A` around `120%`
-  - `Break` around `150%`
-  - `Re-entry Build` around `130%`
-  - `Drop B` around `140%`
-- hook: center to slight stereo
-- answer: slightly wider than hook
+  - `Drop A` `120%`
+  - `Break` `150%`
+  - `Re-entry Build` `130%`
+  - `Drop B` `140%`
+- hook: `105%`
+- answer: `115%`
 - air: wide but quiet
+
+Exact Ableton move:
+1. Put `Utility` on each lane that needs width control.
+2. Set the width directly on that `Utility`.
+3. Leave kick, sub, and bass mid at `100%`.
+4. Only automate width on chords and air for section changes.
 
 ### Why
 Width should reinforce the arrangement, not overwrite it.
@@ -430,11 +468,25 @@ Use the returns for support, not wash.
 
 Ableton action order:
 1. Mute all sends first.
-2. Bring `Return A` in gently on drums.
-3. Bring `Return B` in on hook and answer.
-4. Bring `Return C` in on chords and air.
+2. Bring `Return A` in on drums:
+   - start around `-20 dB`
+3. Bring `Return B` in on hook and answer:
+   - start around `-18 dB` on `Hook`
+   - start around `-16 dB` on `Answer`
+4. Bring `Return C` in on chords and air:
+   - start around `-14 dB` on `Chords`
+   - start around `-12 dB` on `Air`
 5. Leave `Return D` off until phrase-end moments are working.
-6. If a return sounds exciting in solo but clouds the full mix, lower the send before touching the return plugin.
+6. When you finally use `Return D`, start around `-20 dB` on the phrase-end lane.
+7. If a return sounds exciting in solo but clouds the full mix, lower the send before touching the return plugin.
+
+Return starting filters:
+- `Return C`
+  - high-pass around `250 Hz`
+  - low-pass around `7 kHz`
+- `Return D`
+  - high-pass around `350 Hz`
+  - low-pass around `5 kHz`
 
 ### Why
 The returns create depth and section state. They should not cover up weak lane balances.
@@ -448,8 +500,9 @@ The returns create depth and section state. They should not cover up weak lane b
 Loudness-match the references before judging tone or weight.
 
 Practical method:
-1. start by pulling the references down around `-10 dB` on `Utility`
-2. compare at the same monitoring level every time
+1. start by pulling the references down to `-10 dB` on `Utility`
+2. play your own section first
+3. switch to the reference without touching the speaker volume
 3. judge one axis at a time:
   - pressure
   - groove pocket
@@ -465,6 +518,7 @@ Exact Ableton mono-check action:
 2. Use the `Mono` button on that `Utility`.
 3. Turn `Mono` on for the check.
 4. Turn `Mono` back off before normal balancing continues.
+5. Make sure `Mono` is off again before returning to stereo balance decisions.
 
 ### Why
 Without loudness matching, the loudest master wins every argument whether it deserves to or not.

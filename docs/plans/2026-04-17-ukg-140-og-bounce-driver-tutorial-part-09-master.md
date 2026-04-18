@@ -89,12 +89,18 @@ Use the same reference set as the mix chapter, but judge different things:
 ### Action
 Play the premaster with the master chain bypassed.
 
-Confirm:
-- the kick still lands cleanly
-- the bass still breathes with it
-- the hook still reads
-- the low-mid is not collapsing
-- the premaster still has usable headroom
+Exact first-pass check:
+1. Bypass the whole master chain.
+2. Start playback from `97.1.1`.
+3. Watch the `Premaster` meter.
+4. Make sure the premaster peak is still around `-6 dBFS`, not already near `0 dBFS`.
+5. Turn `Mono` on with the last `Utility` if it is available.
+6. Listen for:
+   - the kick still landing cleanly
+   - the bass still breathing with it
+   - the hook still reading
+   - the low-mid not collapsing
+7. Turn `Mono` back off before continuing.
 
 ### Why
 If the premaster is already unstable, the master stage only makes the problem louder.
@@ -116,16 +122,35 @@ Build the chain in this order:
 Starting direction:
 - `Glue Compressor`
   - ratio `2:1`
-  - gentle threshold
-  - aim for small gain reduction only
+  - attack `10 ms`
+  - release `Auto`
+  - threshold lowered only until the loudest section shows about `1 dB` of gain reduction
 - limiter ceiling:
-  - around `-1 dBTP`
+  - `-1.0 dB`
 
 Ableton action order:
 1. On the `Premaster` lane, place the devices in that exact order.
 2. Rename any plugin or rack labels so the chain reads clearly from left to right.
 3. Keep every device bypassed at first.
 4. Turn them on one by one from left to right after the whole chain is in place.
+
+Exact first-pass device settings:
+1. `Utility`
+   - gain `0 dB`
+   - width `100%`
+2. `Glue Compressor`
+   - ratio `2:1`
+   - attack `10 ms`
+   - release `Auto`
+   - soft clip `off`
+3. `Saturator`
+   - mode `Analog Clip`
+   - drive `+1 dB`
+   - output `-1 dB`
+   - soft clip `on`
+4. `Limiter`
+   - ceiling `-1.0 dB`
+   - leave the stock lookahead/release settings alone on the first pass
 
 ### Why
 The chain should help the record finish, not change its identity.
@@ -145,8 +170,8 @@ Target:
 
 Starting values:
 1. Start with ratio `2:1`.
-2. Use a slower attack rather than a very fast one so the kick still gets through.
-3. Use auto release or a moderate release first, then adjust by ear.
+2. Set attack to `10 ms`.
+3. Set release to `Auto`.
 4. Aim for about `1 dB` of gain reduction on the first pass, not multiple dB of constant squeeze.
 
 ### Why
@@ -169,9 +194,10 @@ Target:
 
 Ableton action order:
 1. Turn the clip / saturation stage on after the glue compressor is behaving.
-2. Increase it in very small increments.
-3. After each move, replay the same loud drop section instead of jumping around the song.
-4. Stop the moment the kick starts sounding flatter or the hats get grainy.
+2. Start with drive at `+1 dB` and output at `-1 dB`.
+3. If the track still feels too soft, raise drive in `+0.5 dB` steps only.
+4. After each move, replay the same loud drop section instead of jumping around the song.
+5. Stop the moment the kick starts sounding flatter or the hats get grainy.
 
 ### Why
 This stage should reduce limiter strain, not become a tone-design experiment.
@@ -191,10 +217,11 @@ Keep the ceiling around `-1 dBTP`.
 Exact first-pass action:
 1. Start playback from the loudest section of the song:
    - usually around `97.1.1` to `113.1.1`
-2. Set the limiter output ceiling to around `-1 dBTP`.
-3. Raise the limiter input / gain slowly while listening, not in one big jump.
-4. Stop the moment the kick starts sounding flatter or the bass loses movement.
-5. If you cannot get enough level without damage, go back to `Part 8` instead of forcing the limiter harder.
+2. Set the limiter output ceiling to `-1.0 dB`.
+3. Raise the limiter input / gain in `+1 dB` steps at first.
+4. Once the level is close, move in `+0.5 dB` steps only.
+5. Stop the moment the kick starts sounding flatter or the bass loses movement.
+6. If you cannot get enough level without damage, go back to `Part 8` instead of forcing the limiter harder.
 
 ### Why
 Loudness is the last move, not the first.
@@ -208,6 +235,14 @@ Loudness is the last move, not the first.
 ## Step 6: Compare Premaster vs Master
 ### Action
 Level-match the premaster and final master as closely as possible for comparison.
+
+Exact first-pass method:
+1. Put a `Utility` on the comparison lane if needed.
+2. Pull the mastered file down until it feels subjectively similar in loudness to the premaster.
+3. Toggle between them every `2–4` bars, not every beat.
+4. Use the same section for both:
+   - first `Drop B`
+   - then the break
 
 What to listen for:
 - did the kick get blurrier?
@@ -234,6 +269,15 @@ Check the final master in:
 
 Then compare against loudness-matched references again.
 
+Exact mono-check action:
+1. Put `Utility` last on the master lane if it is not already there.
+2. Turn `Mono` on.
+3. Listen through:
+   - `33.1.1` to `49.1.1`
+   - `65.1.1` to `81.1.1`
+   - `97.1.1` to `113.1.1`
+4. Turn `Mono` back off before normal playback.
+
 ### Why
 The limiter can expose problems that were hidden in the premaster.
 
@@ -258,12 +302,17 @@ Exact first-pass export workflow:
    - start `1.1.1`
    - end `145.1.1`
 2. Export the premaster first with the master chain bypassed.
-3. Name it clearly, for example:
+3. Use these export settings on the first pass:
+   - `WAV`
+   - `24-bit`
+   - normalize `off`
+   - dither `off`
+4. Name it clearly, for example:
    - `ukg-140-og-bounce-driver-premaster.wav`
-4. Then export the mastered version with the chain active.
-5. Name it clearly, for example:
+5. Then export the mastered version with the chain active.
+6. Name it clearly, for example:
    - `ukg-140-og-bounce-driver-master.wav`
-6. Put each file in the correct folder immediately instead of leaving exports on the desktop or downloads folder.
+7. Put each file in the correct folder immediately instead of leaving exports on the desktop or downloads folder.
 
 ### Why
 Keeping the premaster and final master side by side is useful for:
