@@ -149,6 +149,18 @@ Create locators or text notes at:
 Add the transition job next to each boundary:
 - e.g. `96->97 = pre-drop cut + full body return`
 
+Exact locator placement:
+1. Add locators at:
+   - `16.1.1`
+   - `32.1.1`
+   - `48.1.1`
+   - `64.1.1`
+   - `80.1.1`
+   - `96.1.1`
+   - `112.1.1`
+   - `128.1.1`
+2. Rename each one with the job written directly into the locator name so the transition role is visible while you edit automation.
+
 ### Why
 Every boundary needs its own reason.
 
@@ -231,6 +243,19 @@ On bars `31–33`:
 - allow a very short pre-drop subtraction only if the landing gets bigger, not weaker
 - stop the riser cleanly at the downbeat of `33`
 
+Exact first-pass timing:
+1. Place the riser clip from `32.1.1` to `33.1.1`.
+2. On the drum-bus high-pass filter, create automation points at:
+   - `31.1.1`
+   - `32.1.1`
+   - `32.4.4`
+   - `33.1.1`
+3. Start the filter mostly open at `31.1.1`.
+4. Push the high-pass effect strongest at `32.4.4`.
+5. Return the filter to fully open again at `33.1.1`.
+6. If you use a pre-drop cut, make it happen only in the last beat:
+   - `32.4.1` to `33.1.1`
+
 ### Why
 This is the first full landing of the track.
 
@@ -254,6 +279,13 @@ On bars `63–65`:
 - let any downshifter or reverse reverb support the release, not dominate it
 - keep the first beat of `65` feeling open upward, not empty downward
 
+Exact first-pass timing:
+1. Start the fill move late in bar `63` or at `64.1.1`, not two bars early.
+2. Begin thinning drums at `64.3.1`.
+3. Increase chord width / hall send through `64.4.4`.
+4. Let the wider break state be fully in place by `65.1.1`.
+5. If using a downshifter, place it so its tail lands into `65.1.1`, not after it.
+
 ### Why
 The break transition should feel like a release of pressure.
 
@@ -275,6 +307,13 @@ On bars `79–81`:
 - tighten the chord pulse back in from break-width to `Transition B` control
 - reintroduce filtered bass implication at `81`
 - keep the hook pickup out until later in the section
+
+Exact first-pass timing:
+1. Keep the final fully wide break state intact through `79.4.4`.
+2. Start the re-entry pressure at `80.1.1`.
+3. Switch to the tighter drum language exactly at `81.1.1`.
+4. Bring the filtered bass implication back at `81.1.1`, not mid-bar.
+5. Do not let the hook pickup enter before bar `93`; `Transition B` should wake up rhythm first.
 
 ### Why
 `Transition B` is not another break and not `Drop B` early.
@@ -303,6 +342,14 @@ On bars `95–97`:
   - full bass
   - reopened harmonic bloom
   - restored drop drum weight
+
+Exact first-pass timing:
+1. Let the filtered hook pickup begin around `93.1.1` and continue through `94`.
+2. Make bar `95` feel tense without cutting the body away yet.
+3. Start the true pre-drop subtraction at `96.4.1`.
+4. If the cut is too weak, extend it only to `96.3.3`, not earlier.
+5. Kill the riser and release the cut exactly at `97.1.1`.
+6. Make sure the full bass, drums, and bloom chord state all return on `97.1.1`, not staggered loosely across the bar.
 
 ### Why
 This is the most important transition after the first drop.
@@ -346,6 +393,13 @@ On bars `127–129`:
 - keep the air whisper alive
 - preserve enough drum / bass identity that the outro still feels mixable
 
+Exact first-pass timing:
+1. Let the last strongest top-pressure state run through `127.4.4`.
+2. Start removing top pressure at `128.1.1`.
+3. Reduce the most energetic hats or shakers further by `128.3.1`.
+4. Land the stripped outro state at `129.1.1`.
+5. Keep the air lane audible past `129.1.1` instead of muting it at the boundary.
+
 ### Why
 The outro should feel like controlled release, not like the session stopped.
 
@@ -381,6 +435,15 @@ Chord width / brightness:
 
 Volume / mute cuts:
 - use only where the boundary job requires subtraction
+
+Ableton action reminder:
+1. Press `A` to show automation lanes in Arrangement View.
+2. Write automation directly on:
+   - `Drum Bus`
+   - `Chords`
+   - `Hook`
+   - `Air`
+3. Name your automation target before drawing points so you do not accidentally write volume automation when you meant to write filter or send automation.
 
 ### Why
 Transitions are not only FX clips. Most of the excitement comes from controlled automation on the existing lanes.

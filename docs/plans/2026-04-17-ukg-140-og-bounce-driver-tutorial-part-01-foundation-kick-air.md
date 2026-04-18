@@ -73,14 +73,16 @@ Secondary check:
 
 ## Step 1: Choose The Kick Body And Click
 ### Action
-Choose:
-- one short, tunable 909/garage-compatible kick body
-- one short upper click / transient layer
-
-Selection rules:
-- body sample should carry the low-end weight
-- click layer should help the kick read on smaller systems
-- neither sample should have a long baked-in reverb tail
+1. On the `Kick Body` track, load one short, tunable 909/garage-compatible kick body sample.
+2. On the `Kick Click` track, load one short upper click / transient sample.
+3. Solo `Kick Body` and reject any sample that already has:
+   - a long roomy tail
+   - obvious stereo width
+   - a click that is already too bright to layer
+4. Solo `Kick Click` and reject any click sample that has:
+   - obvious low end
+   - a long noisy tail
+5. Leave both tracks on their own channels. Do not combine them into one rack for this tutorial.
 
 ### Why
 The kick needs two jobs:
@@ -171,6 +173,29 @@ Use short MIDI notes:
 
 Keep the kick perfectly on-grid.
 
+Exact first-pass clip entry in the piano roll:
+1. Create one `4`-bar MIDI clip on `Kick Body`.
+2. Set the piano-roll grid to `1/16`.
+3. Place the kick notes at:
+   - `1.1.1`
+   - `1.2.1`
+   - `1.3.1`
+   - `1.4.1`
+   - `2.1.1`
+   - `2.2.1`
+   - `2.3.1`
+   - `2.4.1`
+   - `3.1.1`
+   - `3.2.1`
+   - `3.3.1`
+   - `3.4.1`
+   - `4.1.1`
+   - `4.2.1`
+   - `4.3.1`
+   - `4.4.1`
+4. Make every MIDI note `1/16` long.
+5. Duplicate that same MIDI clip or copy the same MIDI note positions onto `Kick Click`.
+
 ### Why
 This chapter is not where the garage feel gets created.
 This chapter is where the fixed center gets established.
@@ -196,6 +221,20 @@ Route most of the sense of space from:
 - `Return C: long filtered hall`
 
 not from drowning the patch itself in wet reverb.
+
+Exact first-pass setup:
+1. On the `Air` track, insert `Serum 2`.
+2. Initialize the patch.
+3. Turn `Osc A` off.
+4. Turn `Osc B` off.
+5. Turn the `Noise` oscillator on.
+6. Choose a broad noise source rather than a tonal or pitched noise source.
+7. Add a high-pass filter so the air behaves like top ceiling only.
+8. Create one `4`-bar MIDI clip on the `Air` track.
+9. In that clip, place one long note starting at `1.1.1`.
+10. Use a middle-register trigger note such as `C3`.
+11. Drag that note all the way to `4.4.4` so the noise source stays open across the whole clip.
+12. Send the `Air` track to `Return C` and keep the dry channel quiet.
 
 ### Why
 The air layer should create:
@@ -230,6 +269,12 @@ Target feeling:
 Check it in context:
 - with kick only
 - then with the reference playing quietly afterward
+
+Starting level move:
+1. Pull the `Air` track down until it is obviously too quiet.
+2. Bring it back up slowly.
+3. Stop when muting it makes the session feel flatter, but unmuting it does not sound like “a new instrument appeared.”
+4. As a rough first-pass level, expect the `Air` track to sit far below the kick, often around the low `-20 dB` region or quieter before bus processing.
 
 ### Why
 Air is a support layer.

@@ -138,6 +138,16 @@ Do this before:
 - saturation
 - premaster processing
 
+Ableton action order:
+1. Disable or bypass any non-essential loudness plugins on the premaster first.
+2. Play the loudest drop section, usually around `97.1.1` to `113.1.1`.
+3. Watch the channel meters while adjusting the plain track faders, not the master fader.
+4. Bring the loudest individual lanes down first:
+   - kick
+   - bass
+   - hook if needed
+5. Only after track levels are reasonable, adjust the bus levels.
+
 ### Why
 If the session is already too hot before the buses exist, every later decision gets biased by level.
 
@@ -158,6 +168,17 @@ Bus membership:
 - `Music Bus`: chords, hook, answer, air
 
 If the learner wants `Air` on its own group, that is acceptable, but the first-pass tutorial route should still feed it into the `Music Bus`.
+
+Ableton action order:
+1. Select the relevant tracks.
+2. Group them with `Cmd+G` on Mac or `Ctrl+G` on Windows if the buses do not already exist.
+3. Rename each bus immediately with `Cmd+R` / `Ctrl+R`.
+4. Drag the buses so they appear in this order:
+   - `Drum Bus`
+   - `Bass Bus`
+   - `Music Bus`
+   - `Premaster`
+5. Collapse and expand each bus once so you can visually confirm the right lanes are inside it.
 
 ### Why
 The buses are where the track starts behaving like a record instead of a stack of channels.
@@ -345,6 +366,10 @@ Practical method:
   - groove pocket
   - bass roll
   - hook / harmony clarity
+4. Do the comparison from the same song location each time:
+   - use `Drop A` against the first-drop section of the reference
+   - use `Drop B` against a full-drop section of the reference
+5. Write down one short note per reference instead of trying to remember all four judgments in your head.
 
 ### Why
 Without loudness matching, the loudest master wins every argument whether it deserves to or not.
@@ -358,6 +383,15 @@ Check the premaster in:
 - mono
 - small speaker / phone
 - everyday playback if possible
+
+Exact mono-check action:
+1. Put `Utility` last on the premaster if it is not already there.
+2. Turn `Mono` on.
+3. Listen through:
+   - a drop
+   - the break
+   - the `96 -> 97` re-entry
+4. Turn `Mono` back off before making stereo decisions again.
 
 Mono tool:
 - put `Utility` last on the premaster

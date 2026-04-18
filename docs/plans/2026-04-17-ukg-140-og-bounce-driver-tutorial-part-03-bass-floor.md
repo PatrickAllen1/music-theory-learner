@@ -65,7 +65,9 @@ Secondary check:
 ## Step 1: Create The Bass Group
 ### Action
 1. Create two MIDI tracks.
-2. Name them `Bass Sub` and `Bass Mid`.
+2. Rename them:
+   - click the first track header and press `Cmd+R` / `Ctrl+R`, then type `Bass Sub`
+   - click the second track header and press `Cmd+R` / `Ctrl+R`, then type `Bass Mid`
 3. Group them into a folder named `Bass`.
 4. Route both tracks to the `Bass` group.
 5. Color the `Bass` group differently from drums so bass edits are visually obvious.
@@ -261,6 +263,15 @@ Starting placement:
 - let each root sustain for roughly `2` beats to just under `3` beats at first
 - this should feel like the `50–70%` gate target once the loop is playing at speed
 
+Exact first-pass MIDI entry in the `4`-bar clip:
+1. Open the bass clip on both `Bass Sub` and `Bass Mid`.
+2. Set the piano-roll grid to `1/16`.
+3. Place `D2` at `1.1.1` and drag it to `1.3.3`.
+4. Place `Bb1` at `2.1.1` and drag it to `2.3.2`.
+5. Place `F2` at `3.1.1` and drag it to `3.3.3`.
+6. Place `C2` at `4.1.1` and drag it to `4.3.2`.
+7. Copy the same note positions onto both bass tracks first, then change sound design later if needed.
+
 ### Gate Strategy
 Start with body notes in roughly this range:
 - `50–70%` gate feel for the main sustaining notes
@@ -299,6 +310,13 @@ Starting placement:
 - do not add one to every bar automatically
 - this step is meant to fill the end-of-bar gap left by Step `6`
 
+Exact first-pass release-note example:
+1. In bar `1`, place `A2` at `1.4.3` with `1/16` length.
+2. In bar `2`, place `F2` at `2.4.3` with `1/16` length.
+3. In bar `3`, place `G3` at `3.4.4` with `1/16` length.
+4. In bar `4`, place `D3` at `4.4.3` with `1/16` length.
+5. Play the loop and remove any release note that suddenly makes the next bar feel like a different chord family.
+
 ### Rule
 If a release note makes the chord feel like it changed, delete it.
 
@@ -319,6 +337,17 @@ Starting rhythm rule:
 - if you do add a second note-on inside a bar, keep it the same pitch before trying a new pitch
 - let phrase-end release notes be the first place a different pitch appears
 - keep this internal pulse earlier in the bar than the Step `7` release note so they do not collide at the bar end
+
+Exact first-pass internal-pulse example:
+1. Leave bars `2` and `4` as single sustaining roots on the first pass.
+2. In bar `1`, split the `D2` note into:
+   - `D2` from `1.1.1` to `1.2.4`
+   - `D2` again from `1.3.1` to `1.3.3`
+3. In bar `3`, split the `F2` note into:
+   - `F2` from `3.1.1` to `3.2.4`
+   - `F2` again from `3.3.1` to `3.3.3`
+4. Leave the release notes at the end of the bar where they are.
+5. If the phrase already rolls correctly at this point, do not add more pulse notes just because the lane looks sparse.
 
 ### Why
 This is the main style-defining choice:

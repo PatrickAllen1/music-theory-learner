@@ -137,6 +137,21 @@ Use short MIDI notes:
 
 Keep the kick on-grid.
 
+Exact first-pass `2`-bar clip entry:
+1. Create one `2`-bar MIDI clip on `Kick Body`.
+2. Set the piano-roll grid to `1/16`.
+3. Place kick notes at:
+   - `1.1.1`
+   - `1.2.1`
+   - `1.3.1`
+   - `1.4.1`
+   - `2.1.1`
+   - `2.2.1`
+   - `2.3.1`
+   - `2.4.1`
+4. Make every MIDI note `1/16` long.
+5. Copy that MIDI to `Kick Click` if the click is running on a separate MIDI track.
+
 ### Why
 The whole groove will lean against this fixed center.
 
@@ -154,6 +169,16 @@ Do not try to “make it more garage” by changing the kick rhythm. The garage 
 1. Put the clap on beats `2` and `4`.
 2. If needed, add a tighter snare/rim under it.
 3. Keep the support quieter than the main clap.
+
+Exact first-pass `2`-bar clip entry:
+1. Create one `2`-bar MIDI clip on `Clap`.
+2. Set the grid to `1/16`.
+3. Place clap notes at:
+   - `1.2.1`
+   - `1.4.1`
+   - `2.2.1`
+   - `2.4.1`
+4. If a support rim/snare exists, place it at the exact same positions on its own lane.
 
 ### Why
 The clap is the second fixed anchor after the kick.
@@ -176,6 +201,20 @@ The clap is the second fixed anchor after the kick.
 1. Add a short closed hat on the offbeats.
 2. Start simple.
 3. Keep it on-grid.
+
+Exact first-pass `2`-bar scaffold:
+1. Create one `2`-bar MIDI clip on `Closed Hat`.
+2. Set the grid to `1/16`.
+3. Place hats at these offbeat `1/8` positions:
+   - `1.1.3`
+   - `1.2.3`
+   - `1.3.3`
+   - `1.4.3`
+   - `2.1.3`
+   - `2.2.3`
+   - `2.3.3`
+   - `2.4.3`
+4. Start with those placements only before adding ghost hats.
 
 ### Why
 This is not the swing layer. It is the stable top scaffold that lets the later ghost hats read clearly.
@@ -205,6 +244,26 @@ This is not the swing layer. It is the stable top scaffold that lets the later g
   - in Ableton's note properties this is the same small note-offset field, roughly `2–7 ms` at `140 BPM`
 4. Keep them quiet enough that they are felt before they are consciously heard.
 
+Exact starter placements in the same `2`-bar clip:
+1. Create or open the `Ghost Hat` clip.
+2. Set the grid to `1/16`.
+3. Place the starter ghost hats at:
+   - `1.2.2`
+   - `1.2.4`
+   - `1.4.2`
+   - `1.4.4`
+   - `2.2.2`
+   - `2.2.4`
+   - `2.4.2`
+   - `2.4.4`
+4. If the groove still feels too empty later, add the next two optional placements:
+   - `1.1.2`
+   - `1.3.4`
+5. Then mirror those in bar `2`:
+   - `2.1.2`
+   - `2.3.4`
+6. After placing them, open the Note or Clip properties and nudge only the ghost hats late, not the main closed hats.
+
 ### Why
 This is the main source of bounce.
 
@@ -230,6 +289,17 @@ If the ghost hats are not intentionally late, the track will sound like house wi
 2. Start with restrained use:
    - not every possible offbeat
 3. Let it act as a phrase-lift marker.
+
+Exact first-pass placement:
+1. Create one `2`-bar MIDI clip on `Open Hat`.
+2. Set the grid to `1/16`.
+3. Start with the highest-priority placement only:
+   - `1.4.3`
+   - `2.4.3`
+4. If the section still needs more openness, add:
+   - `1.2.3`
+   - `2.2.3`
+5. If an open hat lands on the same exact slot as a closed hat, mute or remove the closed hat at that slot so the two hats do not stack awkwardly.
 
 ### Why
 The open hat should help signal lift and openness.
@@ -263,6 +333,21 @@ Starting pattern:
 - begin with continuous `1/8` notes
 - only move to `1/16` density if the section needs more lift later
 - if the phrase still feels too empty, add single extra `1/16` pickups near the phrase boundary rather than converting the whole lane too early
+
+Exact first-pass `1`-bar shaker pattern:
+1. Create one `1`-bar MIDI clip on `Shaker`.
+2. Set the grid to `1/16`.
+3. Place shaker notes at:
+   - `1.1.1`
+   - `1.1.3`
+   - `1.2.1`
+   - `1.2.3`
+   - `1.3.1`
+   - `1.3.3`
+   - `1.4.1`
+   - `1.4.3`
+4. Duplicate that bar into bar `2` if you are building a `2`-bar loop.
+5. Start the later phrase-lift pickup by testing one extra note at `2.4.4`, not by filling the entire clip with `1/16` notes immediately.
 
 ### Why
 The shaker often carries the `5–8 kHz` lift that makes drops feel more alive without adding new low-mid clutter.
@@ -348,6 +433,22 @@ Inside one `16`-bar drop section, give each four-bar block a job:
 - `Bars 13–16`
   - use a fill, riser, or brief cut
   - allow the densest ghost-hat version here only
+
+Mechanical first-pass build:
+1. Duplicate your `2`-bar drum loop until it fills bars `1–16`.
+2. Leave bars `1–4` unchanged.
+3. In bars `5–8`, add these extra ghost hats if they were not already present:
+   - `5.1.2`, `5.3.4`
+   - `6.1.2`, `6.3.4`
+   - `7.1.2`, `7.3.4`
+   - `8.1.2`, `8.3.4`
+4. In bars `9–12`, keep the bar `5–8` ghost hats and add the open hat on `& of 2` every second bar:
+   - `10.2.3`
+   - `12.2.3`
+5. In bars `13–16`, keep the denser ghost-hat version and place a simple phrase-end fill at the very end of bar `16`:
+   - add one short clap or rim hit at `16.4.3`
+   - add one shorter follow-up hit at `16.4.4`
+6. Play bars `13–16` into the next section and make sure the fill sounds like a push, not a complete reset.
 
 ### Why
 If the drums repeat identically for all `16` bars, the section is not finished.

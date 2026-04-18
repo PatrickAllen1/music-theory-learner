@@ -117,6 +117,12 @@ Starting direction:
 - limiter ceiling:
   - around `-1 dBTP`
 
+Ableton action order:
+1. On the `Premaster` lane, place the devices in that exact order.
+2. Rename any plugin or rack labels if needed so the chain reads clearly from left to right.
+3. Keep every device bypassed at first.
+4. Turn them on one by one from left to right after the whole chain is in place.
+
 ### Why
 The chain should help the record finish, not change its identity.
 
@@ -165,6 +171,14 @@ Raise the limiter until the track reaches controlled club strength without losin
 - hook readability
 
 Keep the ceiling around `-1 dBTP`.
+
+Exact first-pass action:
+1. Start playback from the loudest section of the song:
+   - usually around `97.1.1` to `113.1.1`
+2. Set the limiter output ceiling to around `-1 dBTP`.
+3. Raise the limiter input / gain slowly while listening, not in one big jump.
+4. Stop the moment the kick starts sounding flatter or the bass loses movement.
+5. If you cannot get enough level without damage, go back to `Part 8` instead of forcing the limiter harder.
 
 ### Why
 Loudness is the last move, not the first.
@@ -222,6 +236,18 @@ Keep both in the project export folder so the learner can revisit them later.
 Recommended organization:
 - `Exports / Checkpoints / premaster`
 - `Exports / Final / master`
+
+Exact first-pass export workflow:
+1. Set the Arrangement loop braces or export range so they cover the full song:
+   - start `1.1.1`
+   - end `145.1.1`
+2. Export the premaster first with the master chain bypassed.
+3. Name it clearly, for example:
+   - `ukg-140-og-bounce-driver-premaster.wav`
+4. Then export the mastered version with the chain active.
+5. Name it clearly, for example:
+   - `ukg-140-og-bounce-driver-master.wav`
+6. Put each file in the correct folder immediately instead of leaving exports on the desktop or downloads folder.
 
 ### Why
 Keeping the premaster and final master side by side is useful for:

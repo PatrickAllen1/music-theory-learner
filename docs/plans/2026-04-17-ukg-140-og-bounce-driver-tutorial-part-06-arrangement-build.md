@@ -145,6 +145,18 @@ Do this in `2`-section chunks with playback after each chunk:
 
 If the learner prefers, audition the clip combinations in Session View first, then commit them to Arrangement View. Do not try to place all `144` bars blind with no playback checks.
 
+Exact first-pass arrangement placement:
+1. In Arrangement View, drag or duplicate the `Intro A` clips so they fill `1.1.1` to `17.1.1`.
+2. Place the `Intro B` clips from `17.1.1` to `33.1.1`.
+3. Place the `Drop A` clips from `33.1.1` to `49.1.1`.
+4. Place the `Drop A Lift` clips from `49.1.1` to `65.1.1`.
+5. Place the `Break` clips from `65.1.1` to `81.1.1`.
+6. Place the `Transition B` clips from `81.1.1` to `97.1.1`.
+7. Place the `Drop B` clips from `97.1.1` to `113.1.1`.
+8. Place the `Drop B Lift` clips from `113.1.1` to `129.1.1`.
+9. Place the `Outro` clips from `129.1.1` to `145.1.1`.
+10. After each two-section pass, press play a few bars before the handoff so you hear the transition in motion before moving on.
+
 Section skeleton:
 
 - `Intro A`
@@ -228,6 +240,16 @@ You want to hear the architecture first, before spending an hour polishing one t
   - root authority first
   - octave hint second
   - never a full rolling bass phrase yet
+
+Exact first-pass timing for the teaser:
+1. In `Intro B`, let the bass teaser first appear at `17.1.1`.
+2. Hold the root through the first two beats of the teaser bar:
+   - for example, `17.1.1` to `17.3.1`
+3. Add the octave hint only every second bar at the end of the phrase:
+   - first example at `18.4.3`
+   - next one at `20.4.3`
+   - continue that pattern rather than hinting every bar
+4. Keep the hook pickup out until the back half of `Intro B`, not the first four bars.
 
 ### Why
 The first `32` bars need to feel like:
