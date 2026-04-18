@@ -67,6 +67,12 @@ Arrangement here is:
 - selective removal
 - earned returns
 
+Important terminology:
+- every section handoff in this song is a transition
+- the `Re-entry Build` is only one dedicated section inside the arrangement
+- `Intro A -> Intro B`, `Drop A -> Drop A Lift`, and `Drop B Lift -> Outro` are still transitions even though they do not get their own full `16`-bar blocks
+- `Part 7` is where those boundary transitions get their detailed fill, subtraction, and automation moves
+
 If every section uses the same growth move, the record will flatten out even if the sound design is good.
 
 Timing reminder for this part:

@@ -175,6 +175,15 @@ Exact locator placement:
    - `112.1.1`
    - `128.1.1`
 2. Rename each one with the job written directly into the locator name so the transition role is visible while you edit automation.
+3. Use naming like:
+   - `16->17 intro reveal`
+   - `32->33 first drop land`
+   - `48->49 lift pressure`
+   - `64->65 break release`
+   - `80->81 re-entry wakeup`
+   - `96->97 redrop land`
+   - `112->113 lift pressure 2`
+   - `128->129 outro handoff`
 
 ### Why
 Every boundary needs its own reason.
@@ -280,6 +289,11 @@ Exact first-pass timing:
 5. Return the filter to fully open again at `33.1.1`.
 6. If you use a pre-drop cut, make it happen only in the last beat:
    - `32.4.1` to `33.1.1`
+7. On the drum lanes:
+   - keep `Kick Body` and `Kick Click` active through `32.4.1`
+   - mute `Open Hat` at `32.4.3`
+   - let the phrase-end fill own `32.4.3` and `32.4.4`
+   - if `Shaker` is busy, lower it by about `2 dB` from `32.4.1` to `33.1.1`
 
 ### Why
 This is the first full landing of the track.
@@ -310,6 +324,11 @@ Exact first-pass timing:
 3. Increase chord width / hall send through `64.4.4`.
 4. Let the wider break state be fully in place by `65.1.1`.
 5. If using a downshifter, place it so its tail lands into `65.1.1`, not after it.
+6. On the drum lanes:
+   - keep the kick on `64.1.1`, `64.2.1`, and `64.3.1`
+   - remove the `Open Hat` from `64.4.3`
+   - if the break still feels too busy, mute the final kick at `64.4.1` on the first pass
+   - keep the fill hits at `64.3.3`, `64.4.1`, `64.4.3`, `64.4.4` quieter than the `32 -> 33` landing
 
 ### Why
 The break transition should feel like a release of pressure.
@@ -339,6 +358,12 @@ Exact first-pass timing:
 3. Switch to the tighter drum language exactly at `81.1.1`.
 4. Bring the filtered bass implication back at `81.1.1`, not mid-bar.
 5. Do not let the hook pickup enter before bar `93`; the `Re-entry Build` should wake up rhythm first.
+6. On the drum lanes at `81.1.1`:
+   - unmute or restore `Closed Hat`
+   - unmute or restore `Ghost Hat`
+   - bring `Shaker` back quietly
+   - leave `Open Hat` out for the first phrase if the re-entry feels too open
+7. If the handoff feels dead, add one quiet fill hit at `80.4.3` before changing the whole drum section.
 
 ### Why
 The `Re-entry Build` is not another break and not `Drop B` early.
@@ -375,6 +400,11 @@ Exact first-pass timing:
 4. If the cut is too weak, extend it only to `96.3.3`, not earlier.
 5. Kill the riser and release the cut exactly at `97.1.1`.
 6. Make sure the full bass, drums, and bloom chord state all return on `97.1.1`, not staggered loosely across the bar.
+7. On the drum lanes:
+   - mute `Open Hat` and reduce `Shaker` during the cut from `96.4.1` to `97.1.1`
+   - let the fill lane own `96.4.3` and `96.4.4`
+   - restore `Kick Body`, `Kick Click`, `Clap`, `Closed Hat`, `Ghost Hat`, `Open Hat`, and `Shaker` together at `97.1.1`
+   - mute `Drum Fill FX` again immediately after the landing so the fill does not smear over bar `97`
 
 ### Why
 This is the most important transition after the first drop.
@@ -404,6 +434,7 @@ Exact first-pass move:
 - add the phrase-end fill in bar `48`
 - raise the `Open Hat` or `Shaker` lane by `+1 dB` at `49.1.1`
 - do not touch the chord MIDI or bass MIDI at `49.1.1`
+- if both `Open Hat` and `Shaker` are already busy, raise only one of them, not both
 
 For `112 -> 113`:
 - add phrase-end fill and top release
@@ -413,6 +444,7 @@ Exact first-pass move:
 - add the phrase-end fill in bar `112`
 - raise `Return B` or `Return C` by one small visible automation step at `113.1.1`
 - do not add any new MIDI note at `113.1.1`
+- if the lift still feels flat, add one extra `Open Hat` hit at `113.2.3` before inventing a new FX lane
 
 ### Why
 These boundaries exist to intensify the same world, not replace it.
@@ -434,6 +466,10 @@ Exact first-pass timing:
 3. Reduce the most energetic hats or shakers further by `128.3.1`.
 4. Land the stripped outro state at `129.1.1`.
 5. Keep the air lane audible past `129.1.1` instead of muting it at the boundary.
+6. On the drum lanes:
+   - keep `Kick Body`, `Kick Click`, and `Clap` active at `129.1.1`
+   - lower or remove `Open Hat` before `129.1.1`
+   - keep `Shaker` only if the outro still needs motion after the first pass
 
 ### Why
 The outro should feel like controlled release, not like the session stopped.
