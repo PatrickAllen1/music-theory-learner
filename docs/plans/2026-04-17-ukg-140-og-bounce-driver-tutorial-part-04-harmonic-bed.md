@@ -50,6 +50,10 @@ It is trying to do three jobs:
 
 If the chords sound huge too early, the arrangement loses its staircase.
 
+Timing reminder for this part:
+- positions like `1.1.1`, `2.4.4`, and `8.1.1` are local positions inside the chord clips
+- if a step explicitly says `Arrangement View` and uses bars such as `33.1.1` or `65.1.1`, those are full-song positions
+
 ## Reference Axis
 Primary A/B for this part:
 - `Sammy Virji - I Guess We're Not the Same`

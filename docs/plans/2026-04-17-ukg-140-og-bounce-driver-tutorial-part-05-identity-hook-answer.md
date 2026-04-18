@@ -53,6 +53,11 @@ It exists to:
 - make the section feel bigger by alternation
 - sound related to the hook, not like a different song arriving
 
+Timing reminder for this part:
+- positions such as `4.3.4` are local positions inside a `4`-bar hook or answer clip
+- positions such as `100.3.4` are full-song Arrangement View positions
+- local `4.3.4` and arrangement `4.3.4` are not the same thing
+
 ## Reference Axis
 Primary A/B for this part:
 - `Sammy Virji - I Guess We're Not the Same`
@@ -86,9 +91,9 @@ Use this as the source of truth:
 - answer cell: `G4 -> A4 -> C5`
 
 Rhythmic identity:
-- on the `a` of beat `3`
-- on beat `4`
-- on the `a` of beat `4`
+- on the `a` of beat `3` = `x.3.4`
+- on beat `4` = `x.4.1`
+- on the `a` of beat `4` = `x.4.4`
 - on hook-owned `Drop B` bloom phrases, `F5` lands on beat `1` of the following bar
 
 Kick relationship rule:
@@ -343,7 +348,7 @@ Exact first-pass MIDI placement for the first answer-owned phrase ending:
 5. Place `A4` at `104.4.1`.
 6. Give `A4` a `1/16` length so it ends at `104.4.2`.
 7. Place `C5` at `104.4.4`.
-8. Give `C5` a short `1/16` or slightly longer if needed, but keep the whole answer phrase clearly shorter than the hook phrase.
+8. Give `C5` a `1/16` length on the first pass so it ends at `105.1.1`.
 9. Repeat the same rhythmic idea at bar `112` for the second answer-owned phrase ending unless later A/B checks prove a better variation.
 
 ### Why

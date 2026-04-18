@@ -52,6 +52,11 @@ It should come from:
 
 If the drums feel stiff, the first suspect is usually MIDI timing.
 
+Timing reminder for this part:
+- positions like `1.2.3` are local positions inside the drum clip you are editing
+- if you later paste that clip into Arrangement View at bar `33.1.1`, the clip still starts at local `1.1.1` inside itself
+- do not type a full-song bar number into a `2`-bar clip
+
 ## Reference Axis
 Primary A/B for this part:
 - `Interplanetary Criminal - Slow Burner`
@@ -372,6 +377,14 @@ Apply these timing rules:
 - ghost hats: intentionally late
 - shakers: lightly humanized around the grid
 
+Ableton click path for the late ghost-hat offsets:
+1. Click one ghost-hat note in the piano roll.
+2. Open the lower Note box or note-properties panel.
+3. Find the timing offset / nudge field for that note.
+4. Start by pushing the note later by `+2 ms`.
+5. If the groove is still too stiff, move it later in small steps up to about `+7 ms`.
+6. Do not apply this offset to the kick, clap, or the main closed-hat scaffold.
+
 ### Why
 Asymmetric timing creates groove without destroying impact.
 
@@ -465,6 +478,20 @@ If the drums repeat identically for all `16` bars, the section is not finished.
 1. Create one `1`-bar phrase-end fill.
 2. Use it selectively at `8`- or `16`-bar boundaries.
 3. Keep it short and functional.
+
+Exact first-pass fill you can type in immediately:
+1. Create a new `1`-bar clip on `Drum Fill FX` or on a spare clap/rim lane.
+2. Set the grid to `1/16`.
+3. Place hits at:
+   - `1.3.3`
+   - `1.4.1`
+   - `1.4.3`
+   - `1.4.4`
+4. Keep the notes short.
+5. When you paste this fill to the end of a real section, place the fill clip so its `1.1.1` starts at the first bar of the final phrase-end bar:
+   - start it at `16.1.1` for the `16 -> 17` boundary
+   - start it at `32.1.1` for the `32 -> 33` boundary
+   - follow the same rule for `48`, `64`, `80`, `96`, `112`, and `128`
 
 ### Why
 Transitions feel exciting because the drums acknowledge the phrase boundary.

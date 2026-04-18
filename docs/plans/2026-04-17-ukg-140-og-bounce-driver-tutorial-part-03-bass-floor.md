@@ -45,6 +45,10 @@ That means:
 
 If the bass starts feeling like the hook, the learner has gone too far.
 
+Timing reminder for this part:
+- positions like `1.4.3` and `3.2.4` are local positions inside the `4`-bar bass clip
+- if this chapter mentions a full-song section such as `33–48`, that is Arrangement View timing, not clip timing
+
 ## Reference Axis
 Primary A/B for this part:
 - `Y U QT - U Belong 2 Me (4x4 Mix)`

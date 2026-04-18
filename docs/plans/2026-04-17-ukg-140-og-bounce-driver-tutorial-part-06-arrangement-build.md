@@ -69,6 +69,10 @@ Arrangement here is:
 
 If every section uses the same growth move, the record will flatten out even if the sound design is good.
 
+Timing reminder for this part:
+- every position in this chapter is an Arrangement View position unless the step explicitly tells you to open a local clip
+- that means `17.1.1` and `97.1.1` are full-song bars, not local clip bars
+
 ## Reference Axis
 Primary A/B for this part:
 - `Interplanetary Criminal - Slow Burner`
@@ -234,7 +238,9 @@ You want to hear the architecture first, before spending an hour polishing one t
 - add the bass teaser:
   - held root for the first two beats
   - one short octave hint every second bar
-- let the top-end tease open slightly
+- let the top-end tease open in two visible stages:
+  - first raise hats / air to the `Intro B` state by `17.1.1`
+  - then raise them one more small step by `25.1.1`
 - keep the hook as a filtered pickup only, not a full phrase
 - treat the teaser as one gesture:
   - root authority first
@@ -302,7 +308,7 @@ For `49–64`:
 - do not add new hook notes
 - make the section bigger through:
   - denser ghost-hat / shaker pressure
-  - slightly more open top end
+  - one small top-end increase
   - stronger phrase-end momentum
   - bass tone / feel, not bass reharmonization
 
@@ -319,6 +325,12 @@ they are stealing from `Break` and `Drop B`.
 ### Mechanical checks
 - compare `Drop A` and `Drop A Lift` side by side
 - if the note content changed meaningfully, fix that before changing mix or FX
+
+Exact first-pass growth moves:
+1. Keep the same bass, chord, and hook clips from `33–48`.
+2. At `49.1.1`, swap only to the `drum_drop_lift_2bar` variant.
+3. At `57.1.1`, raise the shaker lane by `+1 dB` or one small visible fader move.
+4. At `61.1.1`, add the phrase-end fill that pushes into bar `65`.
 
 ### Screenshot
 - `arrangement-06-drop-a-lift`
@@ -369,6 +381,12 @@ For `81–96`:
 - let the filtered hook pickup appear only near the end:
   - first appearance around bars `93–94`
   - not at bar `81`
+
+Exact first-pass placement:
+1. Keep the `Hook` lane silent from `81.1.1` through `92.4.4`.
+2. Let the first filtered pickup appear at `93.3.4`.
+3. Repeat it once more at `94.3.4`.
+4. Keep bars `95–96` for the final pre-drop handoff rather than filling them with extra hook notes.
 
 ### Why
 `Transition B` exists so `Drop B` feels earned.

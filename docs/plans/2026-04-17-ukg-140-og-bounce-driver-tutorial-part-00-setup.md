@@ -28,8 +28,9 @@ By the end of this part, the learner should have:
 - `10–20 minutes`
 
 ## Prerequisites
-- learner can create audio tracks, MIDI tracks, groups, and returns in Ableton
-- learner can load audio references and rename tracks
+- learner can open Ableton and save a project
+- learner can drag audio files into Ableton
+- no routing vocabulary is assumed; this chapter defines the words it uses
 
 ## What The Learner Should Understand Before Starting
 This setup chapter is not busywork.
@@ -46,6 +47,14 @@ Timing-language rule used throughout this tutorial:
 - when a step is talking about a clip or piano roll, positions like `1.1.1` mean the start of that clip
 - when a step is talking about the full song in Arrangement View, positions like `100.1.1` mean absolute song bars
 - do not mix those two time systems up while entering MIDI
+
+Plain-English Ableton words used in this tutorial:
+- `track`: one horizontal lane in Ableton
+- `group`: the folder-like parent lane Ableton creates when you select tracks and press `Cmd+G` on Mac or `Ctrl+G` on Windows
+- `bus`: in this tutorial, `bus` means a `group` that several child tracks feed into so you can control them together
+- `return`: one of Ableton's send-effect lanes at the far right, usually named `A`, `B`, `C`, `D`; you feed signal into it with send knobs
+- `premaster`: the last lane before the actual Ableton `Master`; this is where the tutorial keeps headroom under control before mastering
+- `sidechain`: a compressor or level-control device that turns one lane down when another lane, usually the kick, hits
 
 ## Reference Axis
 Load the four references now:
@@ -107,6 +116,13 @@ Tempo and file location are foundational decisions, not details to clean up late
    - type the exact name
    - right-click the header and assign a color
 6. Keep the drum tracks in that exact top-to-bottom order.
+7. If you do not know what a `group` is yet, do this:
+   - create the child tracks first
+   - Shift-click the tracks you want together
+   - press `Cmd+G` on Mac or `Ctrl+G` on Windows
+   - Ableton creates one parent folder lane above them
+   - that parent folder lane is the `group`
+   - later, when that group is used as one shared control lane, the tutorial may also call it a `bus`
 
 ### Why
 This mirrors the lane logic used throughout the tutorial and keeps screenshots and routing readable.
@@ -121,6 +137,11 @@ Create and name these returns:
 - `Return B`: short plate
 - `Return C`: long filtered hall
 - `Return D`: filtered delay
+
+If you do not know what a `return` is yet:
+1. Look at the far right side of Ableton's mixer.
+2. The vertical lanes named `A`, `B`, `C`, `D` are return tracks.
+3. Later, when the tutorial says "send the hook to `Return B`," it means turn up the `B` send knob on the `Hook` lane.
 
 ### Why
 The tutorial expects these returns to exist from the beginning so later chapters can reference them without rebuilding session plumbing.
@@ -141,6 +162,11 @@ If the learner prefers to keep lane groups visible and bus tracks separate, that
 - `Bass Bus`
 - `Music Bus`
 - `Premaster`
+
+Plain-English routing translation:
+- when the tutorial says "put EQ on `Drum Bus`," click the `Drum Bus` parent lane, not `Kick Body`
+- when it says "send signal to `Return C`," use the `C` send knob on the source track or group
+- when it says "route to `Premaster`," make the bus output feed the `Premaster` lane before the real Ableton `Master`
 
 ### Why
 The tutorial later mixes by bus. If the routing is improvised halfway through the build, the learner will end up redoing screenshots and balances.

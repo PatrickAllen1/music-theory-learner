@@ -54,6 +54,10 @@ Mastering here is:
 
 If the mix only works after aggressive limiting, the real problem is still upstream.
 
+Timing reminder for this part:
+- every export range in this chapter is a full Arrangement View range
+- `1.1.1` means the start of the song on the arrangement timeline, not a local clip
+
 ## Reference Axis
 Use the same reference set as the mix chapter, but judge different things:
 

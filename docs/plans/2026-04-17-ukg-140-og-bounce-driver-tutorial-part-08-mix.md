@@ -71,6 +71,14 @@ Mixing here is:
 
 If the learner tries to “win” the mix with mastering tricks before the buses and balances are right, the track will get louder and worse at the same time.
 
+Plain-English Ableton words used in this chapter:
+- `bus`: a parent group track that several child tracks feed into
+- `Drum Bus`: the parent group above the kick, clap, hats, shaker, and fill tracks
+- `Bass Bus`: the parent group above `Bass Sub` and `Bass Mid`
+- `Music Bus`: the parent group above `Chords`, `Hook`, `Answer`, and `Air`
+- `return`: one of the `A/B/C/D` send-effect tracks on the far right side of Ableton
+- `sidechain`: a compressor or level-control device that turns one lane down when the kick hits
+
 ## Reference Axis
 Judge one axis at a time:
 
@@ -169,6 +177,13 @@ Bus membership:
 
 If the learner wants `Air` on its own group, that is acceptable, but the first-pass tutorial route should still feed it into the `Music Bus`.
 
+Exact Ableton translation:
+1. Click the child tracks you want together.
+2. Press `Cmd+G` on Mac or `Ctrl+G` on Windows.
+3. Ableton creates a parent group lane above them.
+4. Rename that parent lane to `Drum Bus`, `Bass Bus`, or `Music Bus`.
+5. When this chapter says "put EQ on the bus," click that parent group lane, not the child track below it.
+
 Ableton action order:
 1. Select the relevant tracks.
 2. Group them with `Cmd+G` on Mac or `Ctrl+G` on Windows if the buses do not already exist.
@@ -193,6 +208,14 @@ Build the `Drum Bus` in this order:
 2. `Glue Compressor`
 3. `Saturator` or soft clip stage
 4. `Utility`
+
+Exact Ableton click path:
+1. Click the `Drum Bus` group lane.
+2. Open the device area at the bottom.
+3. Drag `EQ Eight` onto the lane first.
+4. Drag `Glue Compressor` to the right of it.
+5. Drag `Saturator` to the right of that.
+6. Drag `Utility` last.
 
 Starting direction:
 - `EQ Eight`
@@ -228,6 +251,14 @@ Build the `Bass Bus` in this order:
 3. sidechain / control compression
 4. `Utility`
 
+Exact Ableton click path:
+1. Click the `Bass Bus` group lane.
+2. Add the devices in this order:
+   - `EQ Eight`
+   - `Saturator`
+   - compressor or control device for sidechain
+   - `Utility`
+
 Starting direction:
 - `EQ Eight`
   - keep the sub clean
@@ -252,6 +283,14 @@ Build the `Music Bus` in this order:
 2. `Glue Compressor` or light bus compression
 3. tonal saturation
 4. `Utility`
+
+Exact Ableton click path:
+1. Click the `Music Bus` group lane.
+2. Add the devices in this order:
+   - `EQ Eight`
+   - `Glue Compressor`
+   - tonal saturation device
+   - `Utility`
 
 Starting direction:
 - keep the music bus breathing around the kick
@@ -278,6 +317,11 @@ Use the kick as the source for:
 - kick -> bass mid: lighter duck
 - kick -> chords: gentle duck
 - kick -> air: very light duck
+
+Plain-English sidechain translation:
+- the `kick` is the trigger lane
+- the other lane is the lane being turned down briefly
+- in Ableton this usually means putting a compressor on the lane you want to duck, opening its sidechain panel, and choosing the kick track as the source
 
 Starting direction:
 - sub release roughly matched to the kick tail:
@@ -415,6 +459,12 @@ Practical method:
    - use `Drop A` against the first-drop section of the reference
    - use `Drop B` against a full-drop section of the reference
 5. Write down one short note per reference instead of trying to remember all four judgments in your head.
+
+Exact Ableton mono-check action:
+1. Put `Utility` on the `Premaster` if it is not already there.
+2. Use the `Mono` button on that `Utility`.
+3. Turn `Mono` on for the check.
+4. Turn `Mono` back off before normal balancing continues.
 
 ### Why
 Without loudness matching, the loudest master wins every argument whether it deserves to or not.

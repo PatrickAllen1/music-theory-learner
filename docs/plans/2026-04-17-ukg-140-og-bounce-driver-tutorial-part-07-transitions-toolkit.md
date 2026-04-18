@@ -55,6 +55,10 @@ Transitions here are:
 
 If every transition uses the same timing and same FX, the whole arrangement will flatten out even if the sounds are good.
 
+Timing reminder for this part:
+- every bar number in this chapter is a full Arrangement View position
+- if you open a local fill clip while following this chapter, its internal `1.1.1` starts wherever you place that clip in the arrangement
+
 ## Reference Axis
 Primary A/B for this part:
 - `Interplanetary Criminal - Slow Burner`
@@ -210,6 +214,16 @@ Starting moves:
 - short snare / clap fill in the last `1–2` beats
 - ghost-hat density increase in the last `1` bar
 - optional brief groove drop on the very last beat before the next section
+
+Exact first-pass fill pattern for any boundary bar:
+1. In the final bar before the boundary, add hits at:
+   - `x.3.3`
+   - `x.4.1`
+   - `x.4.3`
+   - `x.4.4`
+2. Replace `x` with the actual boundary bar number:
+   - `16`, `32`, `48`, `64`, `80`, `96`, `112`, or `128`
+3. If the fill feels too loud, lower the fill lane by `2 dB` before deleting notes.
 
 Keep the intensity ranked:
 - smallest fills:
@@ -375,9 +389,19 @@ For `48 -> 49`:
 - do not add a new harmonic reveal
 - do not use a dramatic riser
 
+Exact first-pass move:
+- add the phrase-end fill in bar `48`
+- raise the `Open Hat` or `Shaker` lane by `+1 dB` at `49.1.1`
+- do not touch the chord MIDI or bass MIDI at `49.1.1`
+
 For `112 -> 113`:
 - add phrase-end fill and top release
 - keep the section feeling like `Drop B` becoming more released, not a new song
+
+Exact first-pass move:
+- add the phrase-end fill in bar `112`
+- raise `Return B` or `Return C` by one small visible automation step at `113.1.1`
+- do not add any new MIDI note at `113.1.1`
 
 ### Why
 These boundaries exist to intensify the same world, not replace it.
@@ -428,6 +452,28 @@ Air-bed level:
 - constant but low
 - loudest in the break
 - keep a whisper in the outro
+
+Exact first-pass automation points:
+1. On the drum-bus filter lane, create points at:
+   - `31.1.1`
+   - `32.1.1`
+   - `32.4.4`
+   - `33.1.1`
+   - `80.1.1`
+   - `81.1.1`
+   - `95.1.1`
+   - `96.4.1`
+   - `97.1.1`
+2. On the hook send lane, create phrase-end throw points at:
+   - `100.3.4`
+   - `104.3.3`
+   - `108.3.4`
+   - `112.3.3`
+3. On the air level lane, create points at:
+   - `1.1.1`
+   - `65.1.1`
+   - `81.1.1`
+   - `129.1.1`
 
 Chord width / brightness:
 - follow the section states already defined in `Part 4`

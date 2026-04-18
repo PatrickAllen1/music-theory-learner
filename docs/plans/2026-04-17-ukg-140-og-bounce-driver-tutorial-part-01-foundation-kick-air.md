@@ -54,6 +54,10 @@ If either is wrong:
 - the groove chapter gets built on the wrong foundation
 - the arrangement later feels flat or sealed in
 
+Timing reminder for this part:
+- positions like `1.1.1` are local clip or piano-roll positions
+- later full-song bars such as `33.1.1` or `97.1.1` are Arrangement View positions
+
 ## Reference Axis
 Primary A/B for this part:
 - `KETTAMA - It Gets Better`
@@ -71,18 +75,27 @@ Secondary check:
 - one short click / transient layer
 - `Ableton Core Library` 909-compatible samples are acceptable first-pass choices if exact external packs are not locked yet
 
+Plain-English kick terms used in this chapter:
+- `kick body`: the low thump part of the kick, the part you feel in your chest
+- `kick click`: the short upper tick that helps the kick read on smaller speakers
+- if you only have one usable kick sample right now, load it on `Kick Body` first and leave `Kick Click` empty until Step `4`
+
 ## Step 1: Choose The Kick Body And Click
 ### Action
 1. On the `Kick Body` track, load one short, tunable 909/garage-compatible kick body sample.
 2. On the `Kick Click` track, load one short upper click / transient sample.
-3. Solo `Kick Body` and reject any sample that already has:
+3. Read the jobs in plain English before choosing:
+   - `Kick Body` should sound like the low thump
+   - `Kick Click` should sound like the little tick at the front
+4. If the sample you loaded sounds like a full finished kick with both low thump and bright tick already built in, use it as `Kick Body` first and do not force a second layer yet.
+5. Solo `Kick Body` and reject any sample that already has:
    - a long roomy tail
    - obvious stereo width
    - a click that is already too bright to layer
-4. Solo `Kick Click` and reject any click sample that has:
+6. Solo `Kick Click` and reject any click sample that has:
    - obvious low end
    - a long noisy tail
-5. Leave both tracks on their own channels. Do not combine them into one rack for this tutorial.
+7. Leave both tracks on their own channels. Do not combine them into one rack for this tutorial.
 
 ### Why
 The kick needs two jobs:
@@ -90,6 +103,11 @@ The kick needs two jobs:
 - definition
 
 Trying to get both from one badly chosen sample usually creates a kick that sounds huge in solo and vague in the track.
+
+Quick listening test:
+- if the sample mainly says `thump`, it belongs on `Kick Body`
+- if the sample mainly says `tick`, it belongs on `Kick Click`
+- if it already says both, start with it on `Kick Body` and only add a click later if the kick disappears on small speakers
 
 ### Starting Source Recommendation
 - use `Ableton Core Library` / stock 909-compatible material first if exact external sample packs are not locked yet
@@ -101,10 +119,31 @@ Trying to get both from one badly chosen sample usually creates a kick that soun
 ### Action
 1. Load the kick body sample into `Simpler`.
 2. Add Ableton `Tuner` after `Simpler` on the `Kick Body` track.
-3. Use `Transpose` first to get the kick body near `D`.
-4. Use `Detune` for the last small adjustment.
-5. Watch the tuner while repeatedly triggering the kick and stop when the body is reading closest to `D`, not `C#` or `D#`.
-5. Keep the click layer unpitched unless it obviously fights the body.
+3. Understand what `Transpose` means before touching it:
+   - `Transpose` moves the sample in semitone steps
+   - `+1` means one semitone higher
+   - `-1` means one semitone lower
+   - `12` semitones = one octave
+4. Trigger the kick repeatedly and watch the note name in `Tuner`.
+5. Use `Transpose` first to move the kick body to some version of `D`:
+   - if the tuner reads `C`, move `Transpose` to `+2`
+   - if the tuner reads `C#`, move `Transpose` to `+1`
+   - if the tuner reads `D`, leave `Transpose` where it is
+   - if the tuner reads `D#`, move `Transpose` to `-1`
+   - if the tuner reads `E`, move `Transpose` to `-2`
+6. Do not panic about octave number at this stage:
+   - `D1`, `D2`, or `D3` are all still `D`
+   - the important thing is the note name first
+7. Once the tuner is showing `D`, use `Detune` for the last small adjustment if the reading still wobbles sharp or flat.
+8. Keep the click layer unpitched unless it obviously fights the body.
+
+Exact first-pass method:
+1. Solo `Kick Body`.
+2. Loop one kick hit so `Tuner` has time to settle.
+3. Read the note name on `Tuner`.
+4. Change `Transpose` in whole-number steps until the note name becomes `D`.
+5. Then move `Detune` in small steps until the reading sits closest to the center of `D`.
+6. Turn solo off and check the kick again in context before moving on.
 
 ### Why
 The kick does not need to sing a melody, but it should reinforce the key center rather than fight it.
@@ -112,6 +151,11 @@ The kick does not need to sing a melody, but it should reinforce the key center 
 ### Rule
 - tune by ear and verification
 - not by guesswork
+
+If the tuner keeps jumping around:
+- ignore the first split-second of the transient
+- watch the body portion of the hit, not the noisy attack
+- if the sample is too noisy to read clearly, pick a simpler kick body sample instead of forcing the tuner
 
 ### Screenshot Set
 - `foundation-02a-kick-simpler-pitch`
