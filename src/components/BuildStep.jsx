@@ -135,6 +135,21 @@ export default function BuildStep({
         </span>
       </div>
 
+      {step.part_heading && (
+        <div className="mb-4 rounded-lg border border-zinc-800 bg-zinc-950 px-4 py-3">
+          <div className="flex flex-wrap items-center gap-2">
+            <span className="text-xs font-mono uppercase tracking-wider text-zinc-500">
+              {step.part_heading}
+            </span>
+            {step.part_step_index && step.part_step_total && (
+              <span className="text-xs font-mono text-zinc-600">
+                {step.short_label} · {step.part_step_index} of {step.part_step_total}
+              </span>
+            )}
+          </div>
+        </div>
+      )}
+
       <h2 className="text-xl font-mono font-bold mb-4">{step.title}</h2>
 
       {(step.focus || step.estimated_minutes) && (

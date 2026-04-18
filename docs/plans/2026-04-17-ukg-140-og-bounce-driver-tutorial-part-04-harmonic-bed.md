@@ -84,9 +84,20 @@ Use this as the source of truth:
 ## Step 1: Create The Chord Lane
 ### Action
 1. Create one MIDI track named `Chords`.
-2. Route it to the `Music` or `Chords` group.
-3. Color it differently from bass and hook lanes.
-4. Create one empty MIDI clip for the drop loop and one empty MIDI clip for the break clip.
+2. Click the track header once.
+3. Press `Cmd+R` on Mac or `Ctrl+R` on Windows.
+4. Type `Chords` and press `Enter`.
+5. Right-click the `Chords` track header and choose a color swatch that is clearly different from:
+   - `Bass`
+   - `Hook`
+   - `Answer`
+6. Route the `Chords` track to the `Music` or `Chords` group.
+7. In Session View, create:
+   - one empty `4`-bar MIDI clip for the restrained drop loop
+   - one empty `8`-bar MIDI clip for the break / bloom state
+8. If you are in Arrangement View instead:
+   - create one blank `4`-bar MIDI clip from bar `33.1.1` to `37.1.1`
+   - create one blank `8`-bar MIDI clip from bar `65.1.1` to `73.1.1`
 
 ### Why
 The chord bed is one identity lane, not three unrelated layers at this stage.
@@ -189,15 +200,30 @@ If the patch is already huge before the mix, the break has nowhere to open.
 ## Step 4: Program The Restrained Drop Loop
 ### Action
 Create a `4`-bar MIDI clip for the drop state:
-- Bar 1: `Dm9` = `D3 A3 C4 E4 F4`
-- Bar 2: restrained `Bb` = `Bb2 F3 C4`
-- Bar 3: `Fadd9` = `F2 C3 G3 A3`
-- Bar 4: `Cadd9` = `C3 G3 D4 E4`
-
-Starting placement:
-- one chord per bar
-- hold each chord long enough to feel like a bed
-- leave enough space at the bar edges that pulse articulation can still speak later
+1. Open the `4`-bar drop clip so the piano roll is visible.
+2. Set the MIDI grid to `1/16`.
+3. In bar `1`, place these notes so they all start at `1.1.1` and all end at `1.4.4`:
+   - `D3`
+   - `A3`
+   - `C4`
+   - `E4`
+   - `F4`
+4. In bar `2`, place these notes so they all start at `2.1.1` and all end at `2.4.4`:
+   - `Bb2`
+   - `F3`
+   - `C4`
+5. In bar `3`, place these notes so they all start at `3.1.1` and all end at `3.4.4`:
+   - `F2`
+   - `C3`
+   - `G3`
+   - `A3`
+6. In bar `4`, place these notes so they all start at `4.1.1` and all end at `4.4.4`:
+   - `C3`
+   - `G3`
+   - `D4`
+   - `E4`
+7. Read the clip left to right and make sure there is exactly one chord per bar.
+8. Leave the final `1/16` of each bar free by stopping each chord at `x.4.4` instead of dragging it all the way into the next bar.
 
 ### Why
 This is the emotional floor of the song.
@@ -246,10 +272,32 @@ without adding more notes.
 ## Step 6: Build The Break / Bloom State
 ### Action
 Create an `8`-bar break clip or duplicate the loop and edit it into the bloom state:
-- keep the same progression
-- switch the `Bb` bar to bloomed `Bbmaj7` = `Bb2 F3 A3 C4`
-- lengthen the chord values into more stretched `2`-bar-feel movement
-- let the upper register breathe more clearly
+1. Open the `8`-bar break clip.
+2. Set the MIDI grid to `1/16`.
+3. Enter the same chord progression, but give each harmony two bars instead of one:
+   - bars `1–2`: `Dm9`
+   - bars `3–4`: bloomed `Bbmaj7`
+   - bars `5–6`: `Fadd9`
+   - bars `7–8`: `Cadd9`
+4. For bars `1–2`, place:
+   - `D3`, `A3`, `C4`, `E4`, `F4`
+   - start all of them at `1.1.1`
+   - end all of them at `2.4.4`
+5. For bars `3–4`, place:
+   - `Bb2`, `F3`, `A3`, `C4`
+   - start all of them at `3.1.1`
+   - end all of them at `4.4.4`
+6. For bars `5–6`, place:
+   - `F2`, `C3`, `G3`, `A3`
+   - start all of them at `5.1.1`
+   - end all of them at `6.4.4`
+7. For bars `7–8`, place:
+   - `C3`, `G3`, `D4`, `E4`
+   - start all of them at `7.1.1`
+   - end all of them at `8.4.4`
+8. Double-check bar `3` specifically:
+   - this is where the `A3` enters
+   - if `A3` is missing, the break has not actually bloomed
 
 ### Why
 The break should feel wider because:

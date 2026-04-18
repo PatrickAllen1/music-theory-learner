@@ -102,10 +102,20 @@ Conversation rule:
 
 ## Step 1: Create The Identity Lanes
 ### Action
-1. Create two MIDI tracks named `Hook` and `Answer`.
-2. Route them to an `Identity` group if the session is already organized by lane families.
-3. Color them differently from `Chords`.
-4. Add one `4`-bar clip slot or region on each lane for `Drop A`, and another for `Drop B`.
+1. Create two MIDI tracks.
+2. Rename the first one:
+   - click the track header
+   - press `Cmd+R` on Mac or `Ctrl+R` on Windows
+   - type `Hook`
+   - press `Enter`
+3. Rename the second one the same way, but type `Answer`.
+4. Right-click each track header and assign colors that are clearly different from:
+   - `Chords`
+   - `Bass`
+5. Route both tracks to an `Identity` group if the session is already organized by lane families.
+6. Create one `4`-bar clip slot or arrangement region on `Hook` for `Drop A`.
+7. Create one `4`-bar clip slot or arrangement region on `Hook` for `Drop B`.
+8. Create matching clip slots or regions on `Answer` for `Drop B`.
 
 ### Why
 The hook and answer need:
@@ -238,6 +248,16 @@ Starting density rule:
 - first pass:
   - place it in the last bar of the `4`-bar phrase
   - only expand if the section still feels too empty
+  
+Exact first-pass MIDI placement inside the `4`-bar clip:
+1. Leave bars `1`, `2`, and `3` empty.
+2. In bar `4`, set the piano-roll grid to `1/16`.
+3. Place `A4` at `4.3.4`.
+4. Give `A4` a `1/16` length so it ends at `4.4.1`.
+5. Place `C5` at `4.4.1`.
+6. Give `C5` a `1/8` length so it ends at `4.4.3`.
+7. Place `D5` at `4.4.4`.
+8. Give `D5` a short `1/16` length so it acts like a phrase-end jab rather than a long held note.
 
 ### Why
 The hook has to feel memorable because of:
@@ -274,6 +294,19 @@ Starting density rule:
 - keep the hook at half density in `Drop B`
 - do not simply add the `F5` to every phrase ending
 
+Exact first-pass placement for the first hook-owned `Drop B` phrase in Arrangement View:
+1. Use the first hook-owned `Drop B` phrase at bar `100` as your model.
+2. Place `A4` at `100.3.4`.
+3. Place `C5` at `100.4.1`.
+4. Place `D5` at `100.4.4`.
+5. Place `F5` at `101.1.1`.
+6. Start with the same note lengths as the `Drop A` phrase:
+   - `A4` short
+   - `C5` slightly longer
+   - `D5` short
+   - `F5` short-to-medium so it feels like a bloom accent, not a new held melody
+7. If you are sketching this in a loop clip instead of Arrangement View, temporarily extend the clip long enough to place the `F5` on the following bar, then trim and duplicate once the phrase reads correctly.
+
 ### Why
 `Drop B` gets bigger because:
 - the harmony blooms
@@ -300,6 +333,17 @@ Starting placement:
   - let the hook own bars `4` and `12`
   - let the answer own bars `8` and `16`
 - treat the answer as punctuation after the groove has already spoken
+
+Exact first-pass MIDI placement for the first answer-owned phrase ending:
+1. Use bar `104` as the first answer-owned phrase ending in the full song.
+2. Set the piano-roll grid to `1/16`.
+3. Place `G4` at `104.3.3`.
+4. Give `G4` a `1/16` length so it ends at `104.3.4`.
+5. Place `A4` at `104.4.1`.
+6. Give `A4` a `1/16` length so it ends at `104.4.2`.
+7. Place `C5` at `104.4.4`.
+8. Give `C5` a short `1/16` or slightly longer if needed, but keep the whole answer phrase clearly shorter than the hook phrase.
+9. Repeat the same rhythmic idea at bar `112` for the second answer-owned phrase ending unless later A/B checks prove a better variation.
 
 ### Why
 The answer should make `Drop B` feel more conversational, not denser for density’s sake.

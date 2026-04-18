@@ -19,6 +19,7 @@ Related documents:
 By the end of this part, the learner should have:
 - a `140 BPM` Ableton 12 session
 - organized groups for the major lanes
+- separate drum lanes ready from the start for later mixing
 - all four returns named and ready
 - references loaded and gain-trimmed
 - a clean premaster lane with headroom
@@ -40,6 +41,11 @@ If the session is vague at the start:
 - export organization becomes a problem right when the project gets good
 
 The point is to remove friction before creativity starts.
+
+Timing-language rule used throughout this tutorial:
+- when a step is talking about a clip or piano roll, positions like `1.1.1` mean the start of that clip
+- when a step is talking about the full song in Arrangement View, positions like `100.1.1` mean absolute song bars
+- do not mix those two time systems up while entering MIDI
 
 ## Reference Axis
 Load the four references now:
@@ -68,17 +74,39 @@ Tempo and file location are foundational decisions, not details to clean up late
 
 ## Step 2: Create The Core Groups
 ### Action
-Create groups or clearly named lane tracks for:
-- `Drums`
-- `Bass`
-- `Chords`
-- `Hook`
-- `Answer`
-- `Air`
-- `FX`
-- `Premaster`
-
-Keep them in that order.
+1. Create the top-level lane groups or clearly named lane tracks in this order:
+   - `Drums`
+   - `Bass`
+   - `Chords`
+   - `Hook`
+   - `Answer`
+   - `Air`
+   - `FX`
+   - `Premaster`
+2. Rename each one immediately:
+   - click the track or group header once
+   - press `Cmd+R` on Mac or `Ctrl+R` on Windows
+   - type the exact lane name
+   - press `Enter`
+3. Color each lane header now so the session is readable later:
+   - right-click the track or group header
+   - choose a color swatch
+   - keep one color family per lane so screenshots stay readable
+4. Inside the `Drums` group, create separate tracks from the start:
+   - `Kick Body`
+   - `Kick Click`
+   - `Clap`
+   - `Closed Hat`
+   - `Ghost Hat`
+   - `Open Hat`
+   - `Shaker`
+   - `Drum Fill FX`
+5. Rename and color those drum tracks the same way:
+   - single-click the track header
+   - `Cmd+R` / `Ctrl+R`
+   - type the exact name
+   - right-click the header and assign a color
+6. Keep the drum tracks in that exact top-to-bottom order.
 
 ### Why
 This mirrors the lane logic used throughout the tutorial and keeps screenshots and routing readable.
@@ -154,16 +182,27 @@ The session should start with headroom discipline, not loudness chasing.
 
 ## Step 7: Add Timeline Markers For The Frozen Section Map
 ### Action
-Add locators or markers for:
-- `1–16 Intro A`
-- `17–32 Intro B`
-- `33–48 Drop A`
-- `49–64 Drop A Lift`
-- `65–80 Break`
-- `81–96 Transition B`
-- `97–112 Drop B`
-- `113–128 Drop B Lift`
-- `129–144 Outro`
+1. Switch to Arrangement View if you are not already there.
+2. Move the playhead to bar `1.1.1`.
+3. Right-click in the scrub area above the timeline and choose `Add Locator`.
+4. Click the new locator flag once.
+5. Press `Cmd+R` on Mac or `Ctrl+R` on Windows.
+6. Rename it exactly:
+   - `1–16 Intro A`
+7. Repeat that process at these exact bar starts:
+   - `17.1.1` -> `17–32 Intro B`
+   - `33.1.1` -> `33–48 Drop A`
+   - `49.1.1` -> `49–64 Drop A Lift`
+   - `65.1.1` -> `65–80 Break`
+   - `81.1.1` -> `81–96 Transition B`
+   - `97.1.1` -> `97–112 Drop B`
+   - `113.1.1` -> `113–128 Drop B Lift`
+   - `129.1.1` -> `129–144 Outro`
+8. After each locator is created and renamed, color it:
+   - right-click the locator flag
+   - choose a color swatch
+   - keep warm colors for drop sections and cooler colors for intro/break sections if that helps you read the song faster
+9. Read the locator list back to yourself from top to bottom and make sure there are exactly `9` locators.
 
 ### Why
 Even before writing parts, the project should already know what song shape it is aiming toward.

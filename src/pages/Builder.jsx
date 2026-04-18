@@ -68,40 +68,49 @@ export default function Builder() {
             {build.steps.map((buildStep, index) => {
               const active = index === stepIndex;
               const done = isStepComplete(build.id, buildStep.id);
+              const prevStep = index > 0 ? build.steps[index - 1] : null;
+              const showPartHeader =
+                !prevStep || prevStep.part_id !== buildStep.part_id;
               return (
-                <button
-                  key={buildStep.id}
-                  onClick={() => setStepIndex(index)}
-                  className={`w-full text-left p-3 rounded border transition-colors ${
-                    active
-                      ? "border-zinc-500 bg-zinc-800"
-                      : "border-zinc-800 bg-zinc-950 hover:border-zinc-700"
-                  }`}
-                >
-                  <div className="flex items-start justify-between gap-3 mb-1">
-                    <span className="text-[11px] font-mono text-zinc-500">
-                      {stepLabel} {index + 1}
-                    </span>
-                    {done && (
-                      <span className="text-[11px] font-mono text-green-400">
-                        done
+                <div key={buildStep.id}>
+                  {showPartHeader && buildStep.part_heading && (
+                    <div className="px-1 pt-2 pb-1 text-[11px] font-mono uppercase tracking-wider text-zinc-500">
+                      {buildStep.part_heading}
+                    </div>
+                  )}
+                  <button
+                    onClick={() => setStepIndex(index)}
+                    className={`w-full text-left p-3 rounded border transition-colors ${
+                      active
+                        ? "border-zinc-500 bg-zinc-800"
+                        : "border-zinc-800 bg-zinc-950 hover:border-zinc-700"
+                    }`}
+                  >
+                    <div className="flex items-start justify-between gap-3 mb-1">
+                      <span className="text-[11px] font-mono text-zinc-500">
+                        {buildStep.short_label ?? `${stepLabel} ${index + 1}`}
                       </span>
-                    )}
-                  </div>
-                  <div className="text-sm font-mono text-zinc-100 leading-snug mb-1">
-                    {buildStep.title}
-                  </div>
-                  <div className="flex flex-wrap gap-2">
-                    <span className="text-[11px] font-mono text-zinc-600 uppercase">
-                      {buildStep.category}
-                    </span>
-                    {buildStep.estimated_minutes && (
-                      <span className="text-[11px] font-mono text-zinc-600">
-                        ~{buildStep.estimated_minutes} min
+                      {done && (
+                        <span className="text-[11px] font-mono text-green-400">
+                          done
+                        </span>
+                      )}
+                    </div>
+                    <div className="text-sm font-mono text-zinc-100 leading-snug mb-1">
+                      {buildStep.title}
+                    </div>
+                    <div className="flex flex-wrap gap-2">
+                      <span className="text-[11px] font-mono text-zinc-600 uppercase">
+                        {buildStep.category}
                       </span>
-                    )}
-                  </div>
-                </button>
+                      {buildStep.estimated_minutes && (
+                        <span className="text-[11px] font-mono text-zinc-600">
+                          ~{buildStep.estimated_minutes} min
+                        </span>
+                      )}
+                    </div>
+                  </button>
+                </div>
               );
             })}
           </div>
