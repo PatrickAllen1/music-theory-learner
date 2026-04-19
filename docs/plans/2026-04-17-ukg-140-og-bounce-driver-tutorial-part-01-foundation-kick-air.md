@@ -241,23 +241,41 @@ Shape the kick so the body tail lands inside `90–120 ms`.
 Practical method:
 1. In `Simpler`, leave the sample start alone first unless there is obvious silence before the transient.
 2. Set `Simpler` playback so one MIDI note triggers one kick hit cleanly.
-3. If using `Simpler Classic`, enable the volume envelope.
-4. Set volume envelope first pass:
+3. Understand what the `volume envelope` means before changing it:
+   - it is the shape of the sample's loudness after the MIDI note triggers it
+   - it does **not** choose the sample
+   - it does **not** tune the sample
+   - it only controls how quickly the sound starts, fades, holds, and stops
+4. In `Simpler`, look for the envelope section. It may be labeled `Volume`, `Amp`, or show the letters `A D S R`.
+5. The letters mean:
+   - `A / Attack`: how long the sound takes to start
+   - `D / Decay`: how quickly it falls after the hit
+   - `S / Sustain`: how loud it stays if the MIDI note keeps holding
+   - `R / Release`: how long it takes to fade after the MIDI note ends
+6. If using `Simpler Classic`, enable the volume envelope.
+7. Set volume envelope first pass:
    - attack: `0 ms`
    - decay: `110 ms`
    - sustain: `0%`
    - release: `20 ms`
-5. If the audio file itself has a long ringing tail, use the visible sample end / fade handle first, not the amp release:
+8. If the audio file itself has a long ringing tail, use the visible sample end / fade handle first, not the amp release:
    - open the sample display in `Simpler`
    - drag the sample end or fade so the visible waveform body ends near `100 ms`
    - use the envelope release only for the final click-free fade after the sample end is correct
    - do this before relying on release time
-6. Use the volume envelope to control how the MIDI note triggers the sample.
-7. Do not rely on `Release` to fix a long sample file:
+9. Use the volume envelope to control how the MIDI note triggers the sample.
+10. Do not rely on `Release` to fix a long sample file:
    - release controls what happens after note-off
    - the sample end / fade controls how much long tail exists in the audio
-8. Replay the kick on loop after each tail move.
-9. Stop when the body ends before the next kick at `1/4` timing but still has a low thump.
+11. Replay the kick on loop after each tail move.
+12. Stop when the body ends before the next kick at `1/4` timing but still has a low thump.
+
+If you cannot find the volume envelope:
+1. Click the `Simpler` device title bar so its full device panel is visible.
+2. Make the bottom device panel taller if the controls are hidden.
+3. Look for `Classic`, `One-Shot`, or `Slice` mode tabs.
+4. Use `Classic` mode for this first pass if you need ADSR control.
+5. If you still cannot find ADSR, skip envelope editing for now and use the sample end / fade handle to shorten the kick tail.
 
 Do not over-shorten it into a papery click.
 
