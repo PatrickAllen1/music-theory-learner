@@ -96,17 +96,26 @@ If they live on one track:
 5. Turn the `Sub` oscillator on.
 6. Set the sub waveform to `Sine`.
 7. Set `Sub Level` to `100%` while designing.
-8. In the `Sub` oscillator section, set `Direct Out` to `On` so the sub bypasses unnecessary in-patch coloration.
-9. Set `Voices` / unison to `1`.
-10. Set `Mono` to `On`.
-11. Set portamento / glide to `8 ms` on the first pass.
-12. Set amp envelope:
+8. If Serum exposes a `Direct Out` switch in the `Sub` oscillator section, turn it `On`.
+9. If you do **not** see `Direct Out`, skip it and continue:
+   - do not search menus for it
+   - do not stop the tutorial
+   - the important first-pass requirement is that only the `Sub` oscillator is making sound
+10. Set `Voices` / unison to `1`.
+11. Set `Mono` to `On`.
+12. Set portamento / glide to `8 ms` on the first pass.
+13. Set amp envelope:
     - attack: `0 ms`
     - decay: `0`
     - sustain: `100%`
     - release: `45 ms`
-13. Open the modulation matrix and confirm there is no `Velocity -> Level` routing on the sub.
-14. If there is one, right-click the routing amount and delete that modulation before continuing.
+14. Open the modulation matrix and confirm there is no `Velocity -> Level` routing on the sub.
+15. If there is one, right-click the routing amount and delete that modulation before continuing.
+
+Where `Direct Out` usually is:
+- it is normally a small switch or button inside the `Sub` oscillator area
+- it may be near the sub oscillator's routing/output controls
+- if the interface does not show it, treat it as unavailable in your current Serum 2 view
 
 ### Why
 This keeps the sub:
