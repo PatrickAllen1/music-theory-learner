@@ -106,14 +106,31 @@ If they live on one track:
     - that is normal
     - leave the sub as a single clean sine source
 11. Set `Mono` to `On` in the voicing section if available.
-12. Set portamento / glide to `8 ms` on the first pass.
-13. Set amp envelope:
+12. In the voicing section, use these first-pass states:
+    - `Mono`: `On`
+    - `Legato`: `Off`
+    - `Always`: `Off`
+    - `Scaled`: `Off`
+13. Set portamento / glide to `8 ms` on the first pass.
+    - if Serum shows a `Porta` knob, set it to `8 ms`
+    - do not turn on extra porta modes for this first pass
+    - the sub should slide only a tiny amount, not swoop between notes
+14. Set amp envelope:
     - attack: `0 ms`
     - decay: `0`
     - sustain: `100%`
     - release: `45 ms`
-14. Open the modulation matrix and confirm there is no `Velocity -> Level` routing on the sub.
-15. If there is one, right-click the routing amount and delete that modulation before continuing.
+15. Open the modulation matrix only as a quick check:
+    - an initialized patch may show no `Velocity -> Level` row at all
+    - if you do not see `Velocity -> Level`, that is correct; continue
+    - if you do see `Velocity -> Level` or `Vel -> Level`, delete that modulation row or set its amount to `0`
+    - do not inspect every matrix row; the only problem you are checking for is velocity changing the sub volume
+
+What `Velocity -> Level` means:
+- MIDI velocity is how hard a note is played
+- `Level` is volume
+- `Velocity -> Level` would make some sub notes louder than others
+- for this clean sub, we do not want that behavior
 
 Where `Direct Out` usually is:
 - it is normally a small switch or button inside the `Sub` oscillator area
