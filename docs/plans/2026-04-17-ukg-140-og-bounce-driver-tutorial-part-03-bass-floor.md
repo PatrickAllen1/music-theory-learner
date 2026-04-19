@@ -101,8 +101,11 @@ If they live on one track:
    - do not search menus for it
    - do not stop the tutorial
    - the important first-pass requirement is that only the `Sub` oscillator is making sound
-10. Set `Voices` / unison to `1`.
-11. Set `Mono` to `On`.
+10. Do not look for `Voices` or `Unison` on the `Sub` oscillator:
+    - in this Serum 2 view, the `Sub` oscillator does not expose the same unison controls as `Osc A/B/C`
+    - that is normal
+    - leave the sub as a single clean sine source
+11. Set `Mono` to `On` in the voicing section if available.
 12. Set portamento / glide to `8 ms` on the first pass.
 13. Set amp envelope:
     - attack: `0 ms`
@@ -130,7 +133,7 @@ The sub should not provide excitement. It should provide authority.
 - oscillator: `Sub only`
 - waveform: `Sine`
 - main oscillators: `Off`
-- unison: `1`
+- sub unison: no setting required in this Serum 2 view
 - mono: `On`
 - glide: `8 ms` starting point
 - amp env:

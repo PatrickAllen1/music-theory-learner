@@ -173,7 +173,7 @@ This means:
 - source: `Sub oscillator` on sine
 - main oscillators: `off`
 - sub level: `100%` while designing, trim later at track level
-- unison: `1`
+- sub unison: no setting required in the Serum 2 sub oscillator view
 - mono: `on`
 - velocity sensitivity: `off`
 - glide: start at `8 ms`; keep allowed adjustment range inside `5–20 ms`
