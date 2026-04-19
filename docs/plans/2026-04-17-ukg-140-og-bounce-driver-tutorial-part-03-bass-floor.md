@@ -320,23 +320,31 @@ If the learner hears “wobble,” the movement is too deep.
 
 ## Step 5: Add In-Patch Character FX
 ### Action
-1. Add light distortion in Serum 2 FX:
+1. In Serum 2's `FX` tab, turn off every FX module except the one this step explicitly uses.
+   - `Compressor`: off
+   - `Reverb`: off
+   - `Delay`: off
+   - `Chorus` / `Hyper` / `Dimension`: off
+   - Serum `Equalizer`: off for the first pass
+2. Add light distortion in Serum 2 FX:
    - set drive to `8%` on the first pass
-2. Do **not** use Serum 2's internal `Equalizer` for the first pass.
+   - if that sounds gritty, staticy, or noisy, lower it to `4–6%`
+3. Do **not** use Serum 2's internal `Equalizer` for the first pass.
    - Serum's EQ shows two bands at once, which makes this simple cleanup cut harder to read
    - if you already opened Serum's `Equalizer`, either turn that EQ module off or set both visible band gains back to `0.0 dB`
-3. On the Ableton `Bass Mid` track, add `EQ Eight` **after** Serum 2.
-4. In `EQ Eight`, make one small bell cut:
+4. On the Ableton `Bass Mid` track, add `EQ Eight` **after** Serum 2.
+5. In `EQ Eight`, make one small bell cut:
    - set one bell cut at `220 Hz`, `-1.5 dB`, `Q 1.0`
    - leave true sub to the sub track
-5. Leave all other EQ bands flat unless a later mix step tells you otherwise.
-6. Avoid reverb, delay, chorus, or wide imaging on the mid-bass patch itself at this stage.
+6. Leave all other EQ bands flat unless a later mix step tells you otherwise.
+7. Avoid reverb, delay, chorus, compressor, or wide imaging on the mid-bass patch itself at this stage.
 
 Plain-English version:
 - Serum 2 makes the mid-bass sound
 - Ableton `EQ Eight` cleans a little mud after that sound leaves Serum
 - the Serum EQ screen has left and right band controls; that does **not** mean you need two EQ moves here
 - this step needs one cleanup cut only
+- bass should be dry and centered here; space and width come from later music layers, not this bass patch
 
 ### Why
 The bass needs attitude, but the width and space belong elsewhere in the mix.
@@ -344,7 +352,14 @@ The bass needs attitude, but the width and space belong elsewhere in the mix.
 ### Starting FX Spec
 - distortion:
   - drive `8%` first pass
+  - if the tone gets gritty or staticy, use `4–6%`
   - do not raise above `15%` before checking against drums
+- Serum FX modules that should be off:
+  - `Compressor`
+  - `Reverb`
+  - `Delay`
+  - `Chorus` / `Hyper` / `Dimension`
+  - Serum `Equalizer`
 - EQ:
   - device: Ableton `EQ Eight` after Serum 2 on `Bass Mid`
   - `220 Hz`
@@ -404,6 +419,12 @@ This is the first source of rolling motion:
 ### Action
 Add short release gestures only at phrase ends or controlled turn points.
 
+Lane rule:
+- add these release notes to `Bass Mid` only on the first pass
+- do **not** copy the release notes to `Bass Sub`
+- leave `Bass Sub` playing the Step `6` root notes only
+- the sub is the floor; the mid-bass is where the little pickup gestures live
+
 Allowed vocabulary:
 - over `Dm9`: `D2`, `D3`, `A2`, `C3`
 - over `Bb`: `Bb1`, `Bb2`, `F2`, `D2`
@@ -421,11 +442,15 @@ Starting placement:
 - this step is meant to fill the end-of-bar gap left by Step `6`
 
 Exact first-pass release-note example:
-1. In bar `1`, place `A2` at `1.4.3` with `1/16` length.
-2. In bar `2`, place `F2` at `2.4.3` with `1/16` length.
-3. In bar `3`, place `G3` at `3.4.4` with `1/16` length.
-4. In bar `4`, place `D3` at `4.4.3` with `1/16` length.
-5. Play the loop and remove any release note that suddenly makes the next bar feel like a different chord family.
+1. Open the `Bass Mid` MIDI clip.
+2. Leave the `Bass Sub` MIDI clip closed for this step so you do not accidentally edit it.
+3. In bar `1`, place `A2` at `1.4.3` with `1/16` length.
+4. In bar `2`, place `F2` at `2.4.3` with `1/16` length.
+5. In bar `3`, place `G3` at `3.4.4` with `1/16` length.
+6. In bar `4`, place `D3` at `4.4.3` with `1/16` length.
+7. Play `Bass Mid` with `Bass Sub` muted, then unmute `Bass Sub` and play both together.
+8. If the release notes make the low end sound cluttered, check that they were not copied onto `Bass Sub`.
+9. Play the loop and remove any release note that suddenly makes the next bar feel like a different chord family.
 
 ### Rule
 If a release note makes the chord feel like it changed, delete it.
@@ -438,9 +463,16 @@ The release notes are punctuation, not reharmonization.
 
 ## Step 8: Program Internal Pulse Without Extra Melody
 ### Action
-1. Inside the 4-bar phrase, add small note-length differences.
-2. Split only the exact notes listed in the first-pass example below before inventing any other internal pulse.
-3. Do **not** add a bunch of new pitches to create movement.
+1. Work on `Bass Mid` first.
+2. Leave `Bass Sub` as the Step `6` root-floor clip unless the sub feels too disconnected later.
+3. Inside the 4-bar phrase, add small note-length differences.
+4. Split only the exact notes listed in the first-pass example below before inventing any other internal pulse.
+5. Do **not** add a bunch of new pitches to create movement.
+
+Sub rule:
+- do not put Step `7` release notes on `Bass Sub`
+- if the sub feels too flat later, copy only same-pitch root splits from `Bass Mid` to `Bass Sub`
+- never copy upper pickup notes like `G3` or `D3` to the sub lane
 
 Starting rhythm rule:
 - first try pulse by changing note lengths before adding extra note-ons
@@ -586,6 +618,19 @@ Fix order:
 1. vary gate lengths
 2. add or refine internal pulse
 3. only then deepen small filter movement
+
+### Problem: “The Bass Mid sounds gritty, noisy, or staticy.”
+Fix order:
+1. confirm `Noise` is off in the `Bass Mid` Serum patch
+2. confirm `Sub` and `Osc C` are off in the `Bass Mid` Serum patch
+3. bypass Serum FX distortion and listen again
+4. if bypassing distortion fixes it, bring distortion back at `4–6%`, not `8–15%`
+5. lower `Filter 1 Drive` from `15%` to `5–8%`
+6. lower Osc B level from `30%` to `15–20%`
+7. reduce Osc B detune from `0.05` to `0.02`
+8. reduce LFO-to-cutoff depth from `15%` to `10%`
+
+If it still sounds like static after those checks, the wrong source is probably active. For this patch the active sound sources should be `Osc A` and `Osc B` only.
 
 ### Problem: “The bass feels too melodic.”
 Fix order:
