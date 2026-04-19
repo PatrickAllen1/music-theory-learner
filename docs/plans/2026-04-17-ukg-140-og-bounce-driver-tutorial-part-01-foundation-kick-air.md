@@ -104,6 +104,13 @@ Plain-English kick terms used in this chapter:
    - a long noisy tail
 7. Leave both tracks on their own channels. Do not combine them into one rack for this tutorial.
 
+What a `fader` is:
+- the fader is the track volume control
+- in Ableton Session View, it is the vertical slider near the bottom of each track
+- the number beside or under it is the level in `dB`
+- when this tutorial says "set the `Kick Body` fader to `-10 dB`," click the volume number/slider on the `Kick Body` track and drag until it reads `-10.0 dB`
+- if dragging is too sensitive, click the number and type `-10`, then press `Enter`
+
 Concrete first-pass sample test:
 1. Solo `Kick Body`.
 2. Turn your monitor volume down before auditioning.
