@@ -440,6 +440,22 @@ Exact first-pass setup:
 22. Set `Air` `Send C` to `-18 dB`.
 23. On the very first pass, do not add LFO movement yet. Get the ceiling working as a static layer before adding motion.
 
+What `Send C` means:
+- sends are the small knobs in the `Sends` area of each track
+- each send knob sends a copy of that track to one return effect
+- `Send C` means the knob labeled `C`
+- in this tutorial, `C` should feed `Return C long hall`
+- turning up `Send C` on `Air` sends some of the air layer into the long hall return
+
+Ableton Live 11 exact send move:
+1. In Session View, find the `Air` track.
+2. Find the `Sends` section on that track.
+3. Look for the knob labeled `C`.
+4. If you cannot see send knobs, press `Cmd+Option+S` on Mac or `Ctrl+Alt+S` on Windows.
+5. Click the `C` send knob and drag up until the value reads `-18 dB`.
+6. If dragging is too sensitive, click the send value box if Ableton exposes it, type `-18`, and press `Enter`.
+7. Leave sends `A`, `B`, and `D` at `-inf` on the `Air` track for this first pass.
+
 Screenshot self-check:
 - `Osc A`: off
 - `Osc B`: off
