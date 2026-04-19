@@ -379,6 +379,19 @@ Create an air layer in `Serum 2`:
 - high-pass aggressively so it behaves like ceiling, not a pad
 - leave modulation off on the first pass
 
+What this sound is supposed to be:
+- a quiet layer of filtered hiss / air
+- not a melody
+- not a chord
+- not a pad
+- not something you clearly hear as "a synth part"
+
+In plain English:
+- the `Noise` oscillator creates the hiss
+- the MIDI note only opens the synth so the hiss can play
+- the note `C3` does **not** mean the air layer should sound like the pitch `C`
+- the high-pass filter removes low and mid junk so only the top-air layer remains
+
 Route most of the sense of space from:
 - `Return C: long filtered hall`
 
@@ -389,26 +402,52 @@ Exact first-pass setup:
 2. Initialize the patch.
 3. Turn `Osc A` off.
 4. Turn `Osc B` off.
-5. In Serum 2's main oscillator panel, find the `Noise` section beside or below `Osc A` / `Osc B`.
-6. Click the `Noise` section power button so the noise oscillator is on.
-7. Choose a broad white-noise or bright-noise source.
-8. Set `Noise Level` to `35%`.
-9. Add a high-pass filter so the air behaves like top ceiling only.
-10. Set filter first pass:
+5. If Serum 2 shows `Osc C`, turn `Osc C` off too.
+6. In Serum 2's main oscillator panel, find the `Noise` section beside or below the oscillator sections.
+7. Click the `Noise` section power button so the noise oscillator is on.
+8. Choose a broad white-noise or bright-noise source:
+   - if you see `White Noise`, use it
+   - if not, use the brightest neutral noise source available
+   - avoid tonal or percussive noise sources for this first pass
+9. Set `Noise Level` to `35%`.
+10. Route the noise through `Filter 1` if Serum does not do it automatically:
+   - make sure the filter routing includes `N` / `Noise`
+   - if there is a small `N` routing button near the filter, turn it on
+11. Set `Filter 1` to a high-pass filter:
+   - click the filter type dropdown that may currently say something like `MG Low 18`
+   - do **not** leave it on `Low`, `Low Pass`, or `MG Low`
+   - choose a high-pass type such as `High 12`, `High 24`, `HP 12`, or `HP 24`
+12. Set filter first pass:
    - type: high-pass
    - cutoff: `7 kHz`
    - resonance: `0–5%`
    - drive: `0%`
-11. Create one `4`-bar MIDI clip on the `Air` track.
-12. In that clip, place one long note starting at `1.1.1`.
-13. Use a middle-register trigger note such as `C3`.
-14. Drag that note all the way to `4.4.4` so the noise source stays open across the whole clip.
-15. In Clip View, turn `Loop` on.
-16. Set loop start to `1.1.1`.
-17. Set loop end to `5.1.1`.
-18. Set the `Air` track fader to `-28 dB`.
-19. Set `Air` `Send C` to `-18 dB`.
-20. On the very first pass, do not add LFO movement yet. Get the ceiling working as a static layer before adding motion.
+13. If the Serum filter menu is confusing, use this fallback:
+   - leave Serum noise on
+   - put Ableton `EQ Eight` after Serum on the `Air` track
+   - turn on band `1`
+   - set band `1` to high-pass
+   - set frequency to `7 kHz`
+   - set slope to `24 dB/oct`
+14. Create one `4`-bar MIDI clip on the `Air` track.
+15. In that clip, place one long note starting at `1.1.1`.
+16. Use a middle-register trigger note such as `C3`.
+17. Drag that note all the way to `4.4.4` so the noise source stays open across the whole clip.
+18. In Clip View, turn `Loop` on.
+19. Set loop start to `1.1.1`.
+20. Set loop end to `5.1.1`.
+21. Set the `Air` track fader to `-28 dB`.
+22. Set `Air` `Send C` to `-18 dB`.
+23. On the very first pass, do not add LFO movement yet. Get the ceiling working as a static layer before adding motion.
+
+Screenshot self-check:
+- `Osc A`: off
+- `Osc B`: off
+- `Osc C`: off if present
+- `Noise`: on
+- `Filter 1`: high-pass, not low-pass
+- filter cutoff: `7 kHz`
+- `Air` fader: `-28 dB`
 
 Arrangement note:
 - this `4`-bar air loop is enough for the checkpoint
