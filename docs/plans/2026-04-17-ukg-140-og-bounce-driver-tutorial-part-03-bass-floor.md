@@ -140,10 +140,19 @@ The sub should not provide excitement. It should provide authority.
 1. Load a fresh instance of `Serum 2` on `Bass Mid`.
 2. Initialize the patch.
 3. Set `Osc A` to `Basic Shapes`.
-4. Choose the `square-leaning` shape.
+4. Choose a square wave for `Osc A`:
+   - open the `Basic Shapes` wavetable view
+   - move the wavetable position until the displayed shape looks like a blocky square wave
+   - a square wave looks mostly flat on top, drops straight down, stays flat on the bottom, then jumps back up
+   - if Serum shows named shapes, choose `Square`
+   - if you cannot find a perfect square, choose the most blocky shape available
 5. Set `Osc A Level` to `75%`.
 6. Set `Osc B` to `Basic Shapes`.
-7. Choose the `saw-leaning` shape.
+7. Choose a saw wave for `Osc B`:
+   - move the wavetable position until the displayed shape looks like a ramp or diagonal slope
+   - a saw wave usually rises or falls in a straight diagonal line, then jumps back to the start
+   - if Serum shows named shapes, choose `Saw`
+   - if you cannot find a perfect saw, choose the closest ramp-shaped option
 8. Set `Osc B Level` to `30%`.
 9. Leave both at the same octave to start.
 10. Set unison conservatively:
@@ -177,8 +186,8 @@ It does **not** need:
 
 ### Final Mid-Bass Starting Spec
 - engine: `Serum 2`
-- Osc A: `Basic Shapes`, square-leaning
-- Osc B: `Basic Shapes`, saw-leaning
+- Osc A: `Basic Shapes`, square wave or closest blocky square shape
+- Osc B: `Basic Shapes`, saw wave or closest ramp-shaped saw shape
 - A/B balance: `Osc A 75%` / `Osc B 30%`
 - detune: `0.05` on Serum's `0.00–1.00` scale, on Osc B only
 - filter: `MG Low 12`

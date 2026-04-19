@@ -555,20 +555,37 @@ Inside one `16`-bar drop section, give each four-bar block a job:
   - allow the densest ghost-hat version here only
 
 Mechanical first-pass build:
-1. Duplicate your `2`-bar drum loop until it fills bars `1–16`.
-2. Leave bars `1–4` unchanged.
-3. In bars `5–8`, add these extra ghost hats if they were not already present:
+1. First make sure you have a working `2`-bar drum loop from the earlier steps.
+2. Copy that `2`-bar loop until the section covers bars `1–16`:
+   - copy loop `1` to bars `1–2`
+   - copy loop `2` to bars `3–4`
+   - copy loop `3` to bars `5–6`
+   - copy loop `4` to bars `7–8`
+   - copy loop `5` to bars `9–10`
+   - copy loop `6` to bars `11–12`
+   - copy loop `7` to bars `13–14`
+   - copy loop `8` to bars `15–16`
+3. Do not change bars `1–4`. They are the plain version.
+4. In bars `5–8`, add these extra ghost hats if they were not already present:
    - `5.1.2`, `5.3.4`
    - `6.1.2`, `6.3.4`
    - `7.1.2`, `7.3.4`
    - `8.1.2`, `8.3.4`
-4. In bars `9–12`, keep the bar `5–8` ghost hats, raise existing shaker velocities by `+6`, and add the open hat on `& of 2` every second bar:
+5. In bars `9–12`, keep the bar `5–8` ghost hats, raise existing shaker velocities by `+6`, and add the open hat on `& of 2` every second bar:
    - `10.2.3`
    - `12.2.3`
-5. In bars `13–16`, keep the denser ghost-hat version and place a simple phrase-end fill at the very end of bar `16`:
+6. In bars `13–16`, keep the denser ghost-hat version and place a simple phrase-end fill at the very end of bar `16`:
    - add one short clap or rim hit at `16.4.3`
    - add one shorter follow-up hit at `16.4.4`
-6. Play bars `13–16` into the next section and make sure the fill sounds like a push, not a complete reset.
+7. Play bars `13–16` into the next section and make sure the fill sounds like a push, not a complete reset.
+
+What this section is doing in plain English:
+- bars `1–4`: "here is the groove"
+- bars `5–8`: "same groove, a little more pocket"
+- bars `9–12`: "same groove, slightly more lift"
+- bars `13–16`: "same groove, now push into the next section"
+
+Do not rebuild the drums from scratch in each four-bar block. Copy the same loop first, then make small edits.
 
 ### Why
 If the drums repeat identically for all `16` bars, the section is not finished.
