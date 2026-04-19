@@ -462,6 +462,19 @@ The release notes are punctuation, not reharmonization.
 - `bass-midi-02-release-vocabulary`
 
 ## Step 8: Program Internal Pulse Without Extra Melody
+### Where This Happens
+This is not a new song section.
+
+Work inside the same `4`-bar `Bass Mid` MIDI clip you edited in Steps `6` and `7`.
+
+Use clip-view piano-roll timing:
+- bar `1` starts at `1.1.1`
+- bar `2` starts at `2.1.1`
+- bar `3` starts at `3.1.1`
+- bar `4` starts at `4.1.1`
+
+This `4`-bar pattern becomes the core bass pattern used later in the drop sections. You are not placing it at full-song arrangement bars yet.
+
 ### Action
 1. Work on `Bass Mid` first.
 2. Leave `Bass Sub` as the Step `6` root-floor clip unless the sub feels too disconnected later.
