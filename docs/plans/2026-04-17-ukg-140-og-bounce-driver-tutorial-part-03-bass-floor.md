@@ -322,10 +322,21 @@ If the learner hears “wobble,” the movement is too deep.
 ### Action
 1. Add light distortion in Serum 2 FX:
    - set drive to `8%` on the first pass
-2. Add EQ after distortion:
+2. Do **not** use Serum 2's internal `Equalizer` for the first pass.
+   - Serum's EQ shows two bands at once, which makes this simple cleanup cut harder to read
+   - if you already opened Serum's `Equalizer`, either turn that EQ module off or set both visible band gains back to `0.0 dB`
+3. On the Ableton `Bass Mid` track, add `EQ Eight` **after** Serum 2.
+4. In `EQ Eight`, make one small bell cut:
    - set one bell cut at `220 Hz`, `-1.5 dB`, `Q 1.0`
    - leave true sub to the sub track
-3. Avoid reverb, delay, chorus, or wide imaging on the mid-bass patch itself at this stage.
+5. Leave all other EQ bands flat unless a later mix step tells you otherwise.
+6. Avoid reverb, delay, chorus, or wide imaging on the mid-bass patch itself at this stage.
+
+Plain-English version:
+- Serum 2 makes the mid-bass sound
+- Ableton `EQ Eight` cleans a little mud after that sound leaves Serum
+- the Serum EQ screen has left and right band controls; that does **not** mean you need two EQ moves here
+- this step needs one cleanup cut only
 
 ### Why
 The bass needs attitude, but the width and space belong elsewhere in the mix.
@@ -335,6 +346,7 @@ The bass needs attitude, but the width and space belong elsewhere in the mix.
   - drive `8%` first pass
   - do not raise above `15%` before checking against drums
 - EQ:
+  - device: Ableton `EQ Eight` after Serum 2 on `Bass Mid`
   - `220 Hz`
   - `-1.5 dB`
   - `Q 1.0`
