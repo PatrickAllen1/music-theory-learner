@@ -143,6 +143,31 @@ If you do not know what a `return` is yet:
 2. The vertical lanes named `A`, `B`, `C`, `D` are return tracks.
 3. Later, when the tutorial says "send the hook to `Return B`," it means turn up the `B` send knob on the `Hook` lane.
 
+Ableton Live 11 exact click path:
+1. Press `Tab` until you are in `Session View`.
+2. Look all the way to the far right, just before the `Master` track.
+3. You will usually already see two return tracks named `A Return` and `B Return`.
+4. Rename the existing `A` and `B` returns first. Do **not** leave the default `A Reverb` / `B Delay` names in place, because later tutorial steps use letters `A–D` as fixed effect jobs.
+5. If you only see `A` and `B`, create two more:
+   - go to the top menu
+   - click `Create`
+   - click `Insert Return Track`
+   - repeat once so you have `A`, `B`, `C`, and `D`
+6. Rename each return:
+   - click the return track title
+   - press `Cmd+R` on Mac or `Ctrl+R` on Windows
+   - name them:
+     - `Return A short room`
+     - `Return B short plate`
+     - `Return C long hall`
+     - `Return D filtered delay`
+7. If you accidentally created extra returns, do this cleanup before continuing:
+   - keep only the first four effect jobs mapped to `A`, `B`, `C`, and `D`
+   - delete extra unused returns, or leave them empty and do not use them
+   - the important part is that `A` equals short room, `B` equals short plate, `C` equals long hall, and `D` equals filtered delay
+8. If you cannot see the send knobs on your normal tracks, press `Cmd+Option+S` on Mac or `Ctrl+Alt+S` on Windows to show sends.
+9. Do not put audio or MIDI clips on return tracks. They are effect lanes that receive signal from the send knobs on other tracks.
+
 ### Why
 The tutorial expects these returns to exist from the beginning so later chapters can reference them without rebuilding session plumbing.
 
