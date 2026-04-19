@@ -130,36 +130,38 @@ This means:
 ### Chord-bed patch
 - engine: `Serum 2`
 - oscillator direction:
-  - Osc A: warm saw / triangle-leaning main body
-  - Osc B: quieter support oscillator for upper tone or gentle motion
+  - Osc A: warm saw / triangle-saw main body
+  - Osc B: quieter triangle / rounded support oscillator
   - restrained unison only
   - starting levels:
-    - `Osc A`: `85%`
-    - `Osc B`: `30%`
+    - `Osc A`: `70%`
+    - `Osc B`: `15–20%`
   - starting detune:
-    - `0.03–0.05`
+    - `Osc A`: `0.03–0.04`
+    - `Osc B`: `0.00`
 - filter:
-  - smooth low-pass or band-softening filter
+  - smooth low-pass, not a band-pass or notch for the first pass
   - tucked lower in `Drop A`
   - opened and widened in `Break / Drop B`
   - starting values:
-    - cutoff range `2.2–3.2 kHz`
-    - resonance range `8–12%`
-    - drive range `5–10%`
+    - cutoff range `1.8–2.2 kHz`
+    - resonance range `5–8%`
+    - drive range `0–3%`
 - envelope direction:
   - enough sustain to feel like a bed
   - enough decay / articulation that the pulse layer can still speak
   - starting values:
-    - attack `5–15 ms`
-    - decay `700–1200 ms`
-    - sustain `55–75%`
-    - release `250–450 ms`
+    - attack `30–45 ms`
+    - hold `0.0 ms`
+    - decay `1.0–1.3 s`
+    - sustain `-5 to -7 dB` if shown in dB, or `60–70%`
+    - release `400–550 ms`
 - FX direction:
-  - chorus or gentle width source
+  - chorus or gentle width source only after the dry chord works
   - filtered reverb send
-  - mild saturation for glue
+  - no in-patch reverb, delay, compressor, or distortion on the first pass
 - role:
-  - emotional bed first
+  - warm sustained chord layer first
   - rhythmic pulse second
 
 ## Bass Spec

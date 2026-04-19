@@ -203,7 +203,7 @@ Why:
 - `Cadd9`: suspended pre-return tension
 
 ### Voicing palette
-- `Dm9`: `D3 A3 C4 E4 F4`
+- `Dm9`: `D3 F3 A3 C4 E4`
 - `Bb` restrained state for `Intro / Drop A / Drop A Lift / Re-entry Build`: `Bb2 F3 C4`
 - `Bbmaj7` bloomed state for `Break / Drop B`: `Bb2 F3 A3 C4`
 - `Fadd9`: `F2 C3 G3 A3`

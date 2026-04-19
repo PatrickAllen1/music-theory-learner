@@ -86,7 +86,7 @@ Secondary check:
 
 ## Voicing Palette
 Use this as the source of truth:
-- `Dm9`: `D3 A3 C4 E4 F4`
+- `Dm9`: `D3 F3 A3 C4 E4`
 - restrained `Bb`: `Bb2 F3 C4`
 - bloomed `Bbmaj7`: `Bb2 F3 A3 C4`
 - `Fadd9`: `F2 C3 G3 A3`
@@ -125,34 +125,71 @@ Keeping it on one main track first makes:
 ### Action
 1. Load a fresh instance of `Serum 2` on `Chords`.
 2. Initialize the patch.
-3. Set `Osc A` to `Basic Shapes`.
-4. Choose the `Basic Shapes` frame that is between triangle and saw:
-   - if the frame selector gives you multiple simple-shape positions, pick the frame immediately before the full saw becomes bright and buzzy
-   - do not use the square frame for this patch
-5. Set `Osc A Level` to `85%`.
-6. Set `Osc B` to `Basic Shapes`.
-7. Choose a saw-leaning support shape:
-   - use the simple saw frame or the nearest brighter frame after the `Osc A` frame
-8. Set `Osc B Level` to `30%`.
-9. Keep both oscillators in the same octave:
-   - `Osc A Octave`: `0`
-   - `Osc B Octave`: `0`
-10. Use restrained unison:
-    - `Osc A`: `2 voices`
-    - `Osc B`: `1 voice`
-11. Set `Osc A Detune` to `0.04` on Serum's `0.00–1.00` detune scale.
-12. Leave `Osc B Detune` at `0.00` on the first pass.
-13. Route the patch through a smooth low-pass filter:
-    - `MG Low 12` or equivalent
-14. Set initial filter settings:
-    - cutoff: `2.6 kHz`
-    - resonance: `10%`
-    - drive: `8%`
-15. Set amp envelope:
-    - attack: `10 ms`
-    - decay: `900 ms`
-    - sustain: `65%`
-    - release: `350 ms`
+3. Before choosing a sound, enter one test chord in the MIDI clip:
+   - place `D3`, `F3`, `A3`, `C4`, and `E4`
+   - all five notes start at `1.1.1`
+   - all five notes end at `1.4.4`
+4. Loop that bar while you build the sound.
+5. In Serum 2, turn these sources off:
+   - `Sub`: off
+   - `Osc C`: off
+   - `Noise`: off
+6. In Serum 2, turn these FX modules off for now:
+   - `Reverb`: off
+   - `Delay`: off
+   - `Compressor`: off
+   - `Distortion`: off
+   - `EQ`: off
+7. Set `Osc A` to `Basic Shapes`.
+8. Choose a warm saw-based frame:
+   - do not choose the pure sine shape
+   - do not choose the pure square shape
+   - choose a saw or triangle-saw blend with enough harmonics to sound like a chord, not a single beep
+9. Set `Osc A`:
+   - octave: `0`
+   - level: about `70%`
+   - unison / voices: `3`
+   - detune: `0.03–0.04` on Serum's `0.00–1.00` detune scale
+   - blend: middle / default first-pass
+10. Set `Osc B` to `Basic Shapes`.
+11. Choose a softer support shape:
+   - triangle or rounded triangle first
+   - avoid a bright saw here on the first pass
+12. Set `Osc B`:
+   - octave: `0`
+   - level: `15–20%`
+   - unison / voices: `1`
+   - detune: `0.00`
+13. Route `Osc A` and `Osc B` into `Filter 1`.
+14. Set `Filter 1`:
+   - type: `MG Low 12` first-pass
+   - cutoff: `1.8–2.2 kHz`
+   - resonance: `5–8%`
+   - drive: `0–3%`
+15. Set `ENV 1`, the amp envelope:
+   - attack: `30–45 ms`
+   - hold: `0.0 ms`
+   - decay: `1.0–1.3 s`
+   - sustain: around `-5 to -7 dB` if Serum shows dB, or around `60–70%` if it shows percent
+   - release: `400–550 ms`
+16. Play the test chord.
+17. Do not continue until the test chord passes the sound check below.
+
+Sound check before moving on:
+- it should sound like several notes forming one warm chord
+- it should have a soft front edge, not a click
+- it should not sound like one high beep
+- it should not sound like a huge trance pad
+- it should not need reverb to feel acceptable
+
+If it still sounds like a dull beep:
+- confirm all five test-chord notes are present
+- confirm the `Dm9` notes are `D3 F3 A3 C4 E4`, not the old `D3 A3 C4 E4 F4`
+- lower `Osc B` level to `0%` temporarily and listen to `Osc A` alone
+- open cutoff slightly toward `2.4 kHz` if the sound is too dull
+- lower cutoff toward `1.6 kHz` if the sound is too piercing
+- increase `Osc A` unison to `4` only if it sounds too narrow
+- do not add reverb yet
 
 ### Why
 This patch needs to behave like:
@@ -179,22 +216,23 @@ If it sounds like a high beep:
 
 ### Final Chord-Bed Starting Spec
 - engine: `Serum 2`
-- Osc A: `Basic Shapes`, triangle/saw blend before full saw brightness
-- Osc A Level: `85%`
-- Osc A Unison: `2 voices`
-- Osc A Detune: `0.04`
-- Osc B: `Basic Shapes`, saw-leaning support
-- Osc B Level: `30%`
+- Osc A: `Basic Shapes`, warm saw or triangle-saw blend
+- Osc A Level: `70%`
+- Osc A Unison: `3 voices`
+- Osc A Detune: `0.03–0.04`
+- Osc B: `Basic Shapes`, triangle / rounded triangle support
+- Osc B Level: `15–20%`
 - Osc B Unison: `1 voice`
 - filter: smooth low-pass
-- cutoff: `2.6 kHz`
-- resonance: `10%`
-- drive: `8%`
+- cutoff: `1.8–2.2 kHz`
+- resonance: `5–8%`
+- drive: `0–3%`
 - amp env:
-  - A `10 ms`
-  - D `900 ms`
-  - S `65%`
-  - R `350 ms`
+  - A `30–45 ms`
+  - H `0.0 ms`
+  - D `1.0–1.3 s`
+  - S `-5 to -7 dB`, or `60–70%`
+  - R `400–550 ms`
 
 ### Screenshot Set
 - `chords-02-oscillators`
@@ -202,23 +240,21 @@ If it sounds like a high beep:
 
 ## Step 3: Add Width And Glue Inside The Patch
 ### Action
-1. In Serum's FX area, add `Chorus`, `Dimension`, or the closest stock width-style effect available in your build.
-2. Set the width effect mix to `15%`.
-3. Set rate to `0.15 Hz`.
-4. Set depth to `25%`.
-5. Add a saturation/distortion stage after the width effect.
-6. Set saturation drive to this first-pass value:
-   - drive: `+1 dB` or `10%`
-   - output: `-1 dB`
-7. Keep in-patch reverb off on the first pass.
-8. Play the `Dm9` chord from Step `4` before moving on.
-9. If it still sounds like a high beep:
-   - lower the filter cutoff from `2.6 kHz` to `1.8–2.2 kHz`
-   - increase attack from `10 ms` to `25–40 ms`
-   - reduce `Osc B Level` from `30%` to `15–20%`
-   - confirm you are playing the full chord notes, not only the top note
-   - confirm the chord is not accidentally an octave too high
-10. If it becomes too dull after those fixes, raise cutoff slowly by `200–300 Hz`, not all the way back open.
+Only do this after Step `2` passes the sound check.
+
+1. In Serum's FX area, add one gentle width effect:
+   - use `Chorus`, `Dimension`, or the closest stock width-style effect available in your Serum build
+2. Set the width effect lightly:
+   - mix: `8–12%`
+   - rate: slow, around `0.10–0.20 Hz`
+   - depth: `15–25%`
+3. Do not add in-patch reverb.
+4. Do not add delay.
+5. Do not add compressor.
+6. Do not add distortion yet.
+7. Play the `Dm9` test chord again.
+8. If the width effect makes the chord phasey, seasick, or fake-wide, lower mix to `5%` or bypass it.
+9. If the chord still feels too plain after the MIDI and section automation are added later, use return reverb and width automation first. Do not fix it by loading a huge preset.
 
 ### Why
 Most of the section-dependent space should come from:
@@ -230,11 +266,11 @@ If the patch is already huge before the mix, the break has nowhere to open.
 
 ### Starting FX Direction
 - width effect: `Chorus` / `Dimension` / equivalent
-- width mix: `15%`
-- width rate: `0.15 Hz`
-- width depth: `25%`
-- saturation drive: `+1 dB` or `10%`
-- saturation output trim: `-1 dB`
+- width mix: `8–12%`
+- width rate: `0.10–0.20 Hz`
+- width depth: `15–25%`
+- saturation drive: off for the first pass
+- compressor: off
 - in-patch reverb: `off`
 
 ### Screenshot Set
@@ -248,10 +284,10 @@ Create a `4`-bar MIDI clip for the drop state:
 2. Set the MIDI grid to `1/16`.
 3. In bar `1`, place these notes so they all start at `1.1.1` and all end at `1.4.4`:
    - `D3`
+   - `F3`
    - `A3`
    - `C4`
    - `E4`
-   - `F4`
 4. In bar `2`, place these notes so they all start at `2.1.1` and all end at `2.4.4`:
    - `Bb2`
    - `F3`
@@ -271,6 +307,10 @@ Create a `4`-bar MIDI clip for the drop state:
 
 ### Why
 This is the emotional floor of the song.
+
+The `Dm9` voicing is intentionally `D3 F3 A3 C4 E4`.
+
+Do not use the older test voicing `D3 A3 C4 E4 F4` here. Putting `E4` and `F4` next to each other at the top can make this patch sound like a sterile high beep instead of a warm chord bed.
 
 The crucial move is bar 2:
 - restrained `Bb`
@@ -583,12 +623,13 @@ Fix order:
 ### Problem: “The chords sound like a high hospital monitor beep.”
 Fix order:
 1. confirm the MIDI clip contains all chord notes, not just one top note
-2. for the first chord, confirm `D3`, `A3`, `C4`, `E4`, and `F4` all start at `1.1.1`
-3. lower filter cutoff from `2.6 kHz` to `1.8–2.2 kHz`
-4. increase amp attack from `10 ms` to `25–40 ms`
-5. reduce `Osc B Level` from `30%` to `15–20%`
-6. reduce saturation drive to `0` temporarily
-7. if the chord is still piercing, move the highest note down an octave only as a diagnostic, then decide whether the voicing is too high
+2. for the first chord, confirm `D3`, `F3`, `A3`, `C4`, and `E4` all start at `1.1.1`
+3. make sure you are not using the old `D3 A3 C4 E4 F4` voicing
+4. lower filter cutoff toward `1.6–2.0 kHz`
+5. increase amp attack toward `35–45 ms`
+6. reduce `Osc B Level` to `0%` temporarily and judge `Osc A` alone
+7. reduce saturation drive to `0` temporarily
+8. if the chord is still piercing, lower velocity on the highest note or move only `E4` down to `E3` as a diagnostic
 
 Do not solve the beep by adding reverb. Reverb makes a bad beep wider; it does not turn it into a warm chord bed.
 
