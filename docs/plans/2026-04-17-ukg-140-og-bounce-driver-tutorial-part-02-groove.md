@@ -603,16 +603,45 @@ If the drums repeat identically for all `16` bars, the section is not finished.
 2. Use it selectively at `8`- or `16`-bar boundaries.
 3. Keep it short and functional.
 
+What `Drum Fill FX` means:
+- it is a separate drum lane used only for little transition hits
+- it is **not** a full drum rack
+- it is **not** the main kick / clap / hat groove
+- it can hold either:
+  - one short fill sample, or
+  - a few copied hits from existing drum sounds
+
+Use one of these two beginner-safe options:
+1. Existing-drum option:
+   - use the same clap/rim sound you already have
+   - place the fill hits on a spare clap/rim lane
+   - this is the safest first pass if you do not have a fill sample
+2. FX-sample option:
+   - use one short snare fill, rim fill, noise tick, or reverse-tail sample
+   - put it on the `Drum Fill FX` lane
+   - reject any fill sample with a long tail that spills into the next section
+
+Recommended first pass:
+- use the existing-drum option
+- copy your clap/rim sound to a spare fill lane
+- make the fill from short hits, not a premade loop
+
 Exact first-pass fill you can type in immediately:
-1. Create a new `1`-bar clip on `Drum Fill FX` or on a spare clap/rim lane.
-2. Set the grid to `1/16`.
-3. Place hits at:
+1. Create a new `1`-bar MIDI clip on a spare clap/rim lane or `Drum Fill FX` lane.
+2. Load or reuse one short sound:
+   - safest: existing clap/rim
+   - alternate: one short fill FX sample
+3. Set the grid to `1/16`.
+4. Place hits at:
    - `1.3.3`
    - `1.4.1`
    - `1.4.3`
    - `1.4.4`
-4. Keep the notes short.
-5. When you paste this fill to the end of a real section, place the fill clip so its `1.1.1` starts at the first bar of the final phrase-end bar:
+5. Keep the MIDI notes `1/16` long or shorter.
+6. Set fill velocity lower than the main clap first:
+   - start at velocity `70`
+   - raise only if the fill disappears in context
+7. When you paste this fill to the end of a real section, place the fill clip so its `1.1.1` starts at the first bar of the final phrase-end bar:
    - start it at `16.1.1` for the `16 -> 17` boundary
    - start it at `32.1.1` for the `32 -> 33` boundary
    - follow the same rule for `48`, `64`, `80`, `96`, `112`, and `128`
