@@ -252,8 +252,27 @@ References only help if they are in the session and usable from the start.
 5. Click the `Premaster` mixer output dropdown.
 6. Make sure `Premaster` is routed to Ableton's real `Master`.
 7. Do not route `References` to `Premaster`; references should bypass your mix processing.
-8. Put a `Utility` on the premaster.
-9. Leave headroom; do not place a limiter here yet unless it is clearly bypassed and documented as later-stage only.
+8. Try to put a `Utility` audio effect on the `Premaster` lane:
+   - open the left Browser
+   - click `Audio Effects` under `Categories`
+   - click the Browser search field
+   - type `Utility`
+   - drag the device named exactly `Utility` onto the empty device area at the bottom of the `Premaster` lane
+9. If you see an empty folder or no device appears:
+   - clear the Browser search field
+   - click `Audio Effects` again, not `Places`, `Packs`, or your User Library
+   - search `Utility` one more time
+10. If `Utility` still does not appear after that, do **not** stop the tutorial:
+   - leave the `Premaster` device area empty for now
+   - use the `Premaster` track fader for headroom control
+   - add a note to yourself: `TODO: add Utility to Premaster when found`
+   - continue to the next setup step
+11. Leave headroom; do not place a limiter here yet unless it is clearly bypassed and documented as later-stage only.
+
+What `Utility` is doing here:
+- it is only a helper device for gain, width, and mono checks later
+- it is not required to make routing work
+- if you cannot find it in Ableton 11 Standard right now, the session can still be built
 
 ### Why
 The session should start with headroom discipline, not loudness chasing.
