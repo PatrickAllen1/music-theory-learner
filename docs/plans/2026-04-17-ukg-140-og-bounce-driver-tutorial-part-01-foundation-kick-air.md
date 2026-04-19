@@ -176,6 +176,11 @@ Quick listening test:
    - the important thing is the note name first
    - the next check decides whether that `D` is low enough to function as kick body
 7. Once the tuner is showing `D`, use `Detune` for the last small adjustment if the reading still wobbles sharp or flat.
+   - `Detune` is **not** inside `Tuner`
+   - click the `Simpler` device on the `Kick Body` track
+   - look for the pitch controls inside `Simpler`
+   - `Transpose` is the coarse pitch control in semitones
+   - `Detune` is the fine pitch control in cents
 8. Keep the click layer unpitched unless it obviously fights the body.
 
 If Ableton `Tuner` is not available:
@@ -198,10 +203,20 @@ Exact first-pass method:
 7. Turn solo off and check the kick again in context before moving on.
 
 What `Detune` means here:
+- `Detune` lives on `Simpler`, not on `Tuner`
+- `Tuner` only tells you what note it hears
+- `Simpler` is where you change the sample pitch
 - if `Tuner` shows `D` but the needle leans sharp, move `Detune` down in `-5` cent steps
 - if `Tuner` shows `D` but the needle leans flat, move `Detune` up in `+5` cent steps
 - stop once the body portion of the kick sits close to the center of `D`
 - do not chase every tiny tuner flicker during the click/transient; watch the lower body after the first attack
+
+If you cannot see `Detune` in `Simpler`:
+1. Click the `Simpler` device title bar so its controls are visible in the bottom device panel.
+2. Look for a pitch section with `Transpose` and `Detune`.
+3. If the pitch section is collapsed, expand the device view or make the bottom device panel taller.
+4. If you still cannot find it, skip fine detuning for now as long as `Tuner` already reads `D`.
+5. Do not stop the tutorial over `Detune`; getting the note name to `D` with `Transpose` is the important first pass.
 
 ### Why
 The kick does not need to sing a melody, but it should reinforce the key center rather than fight it.
