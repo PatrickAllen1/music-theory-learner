@@ -751,6 +751,20 @@ Fix order:
 
 Do not fix mud by making the whole bass bus brighter. That usually hides the problem instead of separating the two layers.
 
+### Problem: “The lower Bass Mid notes sound like a deep fart.”
+This usually means `Bass Mid` is acting like a second sub on the low notes instead of a mid-bass character layer.
+
+Fix order:
+1. on `Bass Mid`, raise the Ableton `EQ Eight` high-pass from `120 Hz` toward `180–250 Hz`
+2. if the bad note is mainly `Bb1`, try moving only the `Bass Mid` `Bb1` up to `Bb2`
+3. keep `Bass Sub` on `Bb1`; only the mid layer moves up
+4. lower `Filter 1 Drive` to `5–8%`
+5. lower Serum distortion to `4–6%` or bypass it
+6. lower `Osc B` level to `15–20%`
+7. if the note still flaps, shorten that `Bass Mid` note slightly so it releases before it blooms into mud
+
+Do not move the `Bass Sub` note up to fix this. The sub still owns the low root. The mid layer is the one that can move octaves or lose low weight.
+
 ### Problem: “The bass sounds wide and weak.”
 Fix order:
 1. center the bass group harder
