@@ -580,12 +580,28 @@ The ducking should feel like part of the groove, not punishment.
 1. Bring up the `Bass Sub` until the floor feels stable.
 2. Bring up the `Bass Mid` until the phrase becomes readable.
 3. Stop before the mid layer sounds like the hook.
+4. If `Bass Sub` and `Bass Mid` sound muddy together, do not raise either fader yet.
+5. Solo `Bass Sub` and confirm it sounds like a clean low sine/floor, not a fuzzy bass patch.
+6. Solo `Bass Mid` and confirm it sounds readable without huge low-end weight.
+7. Play both together and make the split clearer:
+   - on `Bass Mid`, use Ableton `EQ Eight`
+   - add a gentle high-pass around `120 Hz` on the first pass
+   - if the mud remains, move the high-pass up slowly toward `150–180 Hz`
+   - stop before the bass loses its body entirely
+8. If the mud is still there, lower `Bass Mid` by `2–4 dB` before touching `Bass Sub`.
 
 ### Practical Listening Rule
 - if the sub is muted and the phrase still works, the mid layer has enough definition
 - if the mid layer is muted and the groove collapses, the sub was never enough on its own
 
 You need both.
+
+### Mud Check
+The two bass lanes have different jobs:
+- `Bass Sub`: weight below the track
+- `Bass Mid`: rhythm, tone, and phrase readability
+
+If both lanes are trying to be heavy in the same low area, the combined bass will sound cloudy. The first fix is usually to remove low weight from `Bass Mid`, not to make the sub quieter.
 
 ## Step 12: A/B Against References
 ### Action
@@ -643,6 +659,17 @@ Fix order:
 1. shorten the kick tail
 2. reduce low content in the mid-bass layer
 3. increase sidechain slightly
+
+### Problem: “Bass Sub and Bass Mid sound muddy together.”
+Fix order:
+1. mute `Bass Mid` and make sure `Bass Sub` alone is clean, centered, and not distorted
+2. mute `Bass Sub` and make sure `Bass Mid` alone has character but not huge low-end weight
+3. on `Bass Mid`, add or adjust an `EQ Eight` high-pass at `120 Hz`
+4. move that high-pass up toward `150–180 Hz` only if the two layers still cloud each other
+5. lower `Bass Mid` by `2–4 dB` if it still fights the sub
+6. reduce `Bass Mid` filter drive before reducing `Bass Sub`
+
+Do not fix mud by making the whole bass bus brighter. That usually hides the problem instead of separating the two layers.
 
 ### Problem: “The bass sounds wide and weak.”
 Fix order:
