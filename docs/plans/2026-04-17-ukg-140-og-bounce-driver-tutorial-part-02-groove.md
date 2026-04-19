@@ -277,6 +277,28 @@ This is not the swing layer. It is the stable top scaffold that lets the later g
 5. Do not push them later than `+7 ms` during the first build.
 6. Keep them quieter than the main closed hats.
 
+How to read the placement numbers:
+- Ableton's piano-roll position format is `bar.beat.sixteenth`
+- `1.2.2` means:
+  - bar `1`
+  - beat `2`
+  - second sixteenth slot inside beat `2`
+- Count one beat as four sixteenth slots:
+  - `.1` = the beat itself
+  - `.2` = the `e`
+  - `.3` = the `&`
+  - `.4` = the `a`
+- So `1.2.2` is the `e` of beat `2`
+- `1.2.4` is the `a` of beat `2`
+- `1.4.2` is the `e` of beat `4`
+- `1.4.4` is the `a` of beat `4`
+
+What a ghost hat is:
+- a ghost hat is a quiet extra hat hit
+- it is felt more than heard
+- it should sit behind the main closed hat scaffold
+- if it sounds like a main hat, its velocity is too high
+
 Exact starter placements in the same `2`-bar clip:
 1. Create or open the `Ghost Hat` clip.
 2. Set the grid to `1/16`.
