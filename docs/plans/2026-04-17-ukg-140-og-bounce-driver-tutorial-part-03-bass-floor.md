@@ -533,27 +533,64 @@ If the answer is no, the rhythm is not doing enough work.
   - roots + release notes + internal pulse
 
 ## Step 9: Create The Bass Bus Chain
+### What A Bass Bus Means Here
+A `bus` is a group track that receives audio from other tracks.
+
+In this part:
+- `Bass Sub` is one child track
+- `Bass Mid` is one child track
+- `Bass` is the parent group / bus that both of those tracks feed into
+
+When the tutorial says “put a device on the `Bass` bus,” do **not** put it on `Bass Sub` or `Bass Mid`.
+
+Put it on the parent group track named `Bass`.
+
 ### Action
-On the `Bass` group, build this starting chain:
-1. `EQ Eight`
-2. `Saturator`
-3. `Compressor` or sidechain stage for glue
-4. `Utility`
+1. Find the parent group track named `Bass`.
+   - it should contain `Bass Sub`
+   - it should contain `Bass Mid`
+   - if you do not see those two tracks inside it, select `Bass Sub` and `Bass Mid`, press `Cmd+G`, and rename the new group `Bass`
+2. Click the `Bass` group header so Ableton's device panel shows devices for the group, not one child track.
+3. Add these devices to the `Bass` group in this exact order:
+   - `EQ Eight`
+   - `Saturator`
+   - `Utility`
+4. Do **not** add the sidechain compressor here yet.
+   - Step `10` adds sidechain to the individual `Bass Sub` and `Bass Mid` tracks
+   - the bus chain in this step is for shared tone and control
+5. Leave the `Bass Sub` and `Bass Mid` track devices as they are.
+   - do not move their Serum patches onto the bus
+   - do not delete the individual track EQs
+   - do not combine the two bass tracks into one rack
+6. Route check:
+   - `Bass Sub` audio should feed the `Bass` group
+   - `Bass Mid` audio should feed the `Bass` group
+   - `Bass` group output should go to `Premaster`
+   - if your setup still routes `Bass` to `Master`, change `Audio To` on `Bass` to `Premaster`
 
 ### Starting Settings
 #### EQ Eight
-- low cut only if a layer is spilling into the wrong range
-- use this mainly to separate sub and mid layers, not as a tone crutch
+- leave it flat at first
+- do not high-pass the whole `Bass` group yet
+- the sub lives inside this group, so a bus high-pass can accidentally remove the low floor
+- use this bus EQ later only for tiny shared cleanup
 
 #### Saturator
-- set drive to `8%` on the first pass
-- if the bass still feels too clean after balancing, raise drive to `12%`
-- do not go above `15%` during this part
+- mode: `Analog Clip` if available
+- drive: start at `1–2 dB`
+- output: lower by the same amount you added on drive
+  - if drive is `+1 dB`, set output around `-1 dB`
+  - if drive is `+2 dB`, set output around `-2 dB`
+- soft clip: on if available
+- do not use `8%` here; that value belongs to the earlier Serum patch distortion, not the Ableton bus Saturator
 - stop before saturation blurs the phrase
 
 #### Utility
-- keep the bass group centered
-- mono-safe low end
+- width: `100%`
+- gain: `0 dB`
+- balance/pan: centered
+- do not widen the bass bus
+- if your Utility has a `Bass Mono` option, leave it off for now unless Part `8` tells you to use it
 
 ### Why
 The bass bus should:
@@ -561,9 +598,16 @@ The bass bus should:
 - add attitude
 - preserve center stability
 
+It should not:
+- replace the individual bass-track sound design
+- fix a bad sub/mid split
+- add reverb or width
+- become a second mastering chain
+
 ### Screenshot Set
 - `bass-bus-01-overview`
 - `bass-bus-02-saturator`
+- `bass-bus-03-routing`
 
 ## Step 10: Add Sidechain
 ### Action
