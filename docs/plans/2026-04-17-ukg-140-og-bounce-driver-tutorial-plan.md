@@ -640,8 +640,8 @@ Suggested session split:
 - saturation / soft clipping
 - limiter setup
 - loudness targets:
-  - around `-8` to `-10 LUFS integrated`
-  - limiter ceiling around `-1 dBTP`
+  - `-8` to `-10 LUFS integrated`
+  - limiter ceiling `-1 dBTP`
 - monitoring checks
 - export settings
 

@@ -201,7 +201,7 @@ The tutorial later mixes by bus. If the routing is improvised halfway through th
 6. Route the `References` group directly to Ableton's real `Master`, not to `Premaster`.
 7. Load the four reference tracks onto the four reference lanes.
 8. Put a `Utility` on each reference lane.
-9. Start by pulling each reference down by about `-10 dB` on its `Utility`.
+9. Start by setting each reference lane's `Utility Gain` to `-10 dB`.
 10. Solo one reference at a time and compare it against your empty session at the same monitor volume.
 11. If a reference still feels obviously too loud, pull it down another `2–3 dB`.
 12. Leave a note in the track name if one reference needed noticeably more trim than the others.

@@ -384,8 +384,9 @@ For `81–96`:
 - bring back the bass as a filtered implication, not full body yet
 - pulse the chords rhythmically
 - return to the restrained `Bb2 F3 C4` state
-- let the filtered hook pickup appear only near the end:
-  - first appearance around bars `93–94`
+- let the filtered hook pickup appear only in the late pickup window:
+  - first pickup at `93.3.4`
+  - second pickup at `94.3.4`
   - not at bar `81`
 
 Exact first-pass placement:

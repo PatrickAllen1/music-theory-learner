@@ -96,7 +96,7 @@ Plain-English drum terms used in this chapter:
 ### Kick
 - choose one short, tunable 909/garage-compatible body sample
 - choose one short click/transient layer
-- kick tail should stay around `90–120 ms`
+- kick tail should stay inside `90–120 ms`
 - the low body must still feel controllable once bass arrives
 
 ### Clap
@@ -154,7 +154,7 @@ Program the kick on every quarter note for the drop groove:
 - beats `1`, `2`, `3`, `4`
 
 Use short MIDI notes:
-- start with roughly `1/16` note MIDI length
+- make every kick MIDI note exactly `1/16` long on the first pass
 - let the sample tail do the real sustain work
 
 Keep the kick on-grid.
@@ -296,13 +296,16 @@ Exact starter placements in the same `2`-bar clip:
    - `2.1.2`
    - `2.3.4`
 6. After placing them, open the Note or Clip properties and nudge only the ghost hats late, not the main closed hats.
-7. Set starter ghost-hat velocities:
+7. Set every starter ghost-hat offset to `+4 ms`.
+8. If Ableton shows offsets in ticks instead of milliseconds, use `+9 ticks` as the first pass.
+9. If you added the optional ghost hats, give those the same `+4 ms` / `+9 ticks` late offset.
+10. Set starter ghost-hat velocities:
    - `1.2.2`: `42`
    - `1.2.4`: `56`
    - `1.4.2`: `46`
    - `1.4.4`: `62`
    - repeat the same values in bar `2`
-8. If you add the optional ghost hats later, set them to velocity `38` first.
+11. If you add the optional ghost hats later, set them to velocity `38` first.
 
 ### Why
 This is the main source of bounce.
@@ -403,6 +406,16 @@ Exact first-pass `1`-bar shaker pattern:
    - `1.4.1`: `78`
    - `1.4.3`: `94`
 7. If you add the pickup at `2.4.4`, set its velocity to `82`.
+8. If you duplicate this `1`-bar shaker pattern into a `2`-bar clip, use the same base placements in bar `2`:
+   - `2.1.1`
+   - `2.1.3`
+   - `2.2.1`
+   - `2.2.3`
+   - `2.3.1`
+   - `2.3.3`
+   - `2.4.1`
+   - `2.4.3`
+9. Copy the same velocity shape into bar `2`, then add only the pickup at `2.4.4`.
 
 ### Why
 The shaker often carries the `5–8 kHz` lift that makes drops feel more alive without adding new low-mid clutter.
@@ -432,9 +445,14 @@ Ableton click path for the late ghost-hat offsets:
 1. Click one ghost-hat note in the piano roll.
 2. Open the lower Note box or note-properties panel.
 3. Find the timing offset / nudge field for that note.
-4. Start by pushing the note later by `+2 ms`.
-5. If the groove is still too stiff, move it later in small steps up to about `+7 ms`.
+4. Start by pushing the note later by `+4 ms`.
+5. If the groove is still too stiff after listening in context, test `+6 ms`, then `+7 ms`.
 6. Do not apply this offset to the kick, clap, or the main closed-hat scaffold.
+7. For this tutorial's first pass, use `+4 ms` on all starter ghost hats before testing other values.
+8. If Ableton shows ticks instead of milliseconds, use this conversion at `140 BPM`:
+   - `+4 ms` is about `+9 ticks`
+   - `+6 ms` is about `+13 ticks`
+   - `+7 ms` is about `+16 ticks`
 
 ### Why
 Asymmetric timing creates groove without destroying impact.
@@ -499,7 +517,7 @@ Inside one `16`-bar drop section, give each four-bar block a job:
 - `Bars 5–8`
   - add the `e` of beat `1` and the `a` of beat `3` if they were not present yet
 - `Bars 9–12`
-  - raise shaker velocity by roughly `5–10` points
+  - raise existing shaker velocities by `+6` points, capped at velocity `100`
   - consider adding one extra open-hat emphasis on `& of 2` every second bar
 - `Bars 13–16`
   - use a fill, riser, or brief cut
@@ -513,7 +531,7 @@ Mechanical first-pass build:
    - `6.1.2`, `6.3.4`
    - `7.1.2`, `7.3.4`
    - `8.1.2`, `8.3.4`
-4. In bars `9–12`, keep the bar `5–8` ghost hats and add the open hat on `& of 2` every second bar:
+4. In bars `9–12`, keep the bar `5–8` ghost hats, raise existing shaker velocities by `+6`, and add the open hat on `& of 2` every second bar:
    - `10.2.3`
    - `12.2.3`
 5. In bars `13–16`, keep the denser ghost-hat version and place a simple phrase-end fill at the very end of bar `16`:
@@ -616,6 +634,30 @@ Concrete lift changes:
 - raise last-bar shaker velocity by `+6`, capped at `100`
 - add open hat `& of 2` at velocity `96`
 - if a top loop exists, raise it by `+1.5 dB` in the lift before adding another percussion lane
+
+Exact lift-variant MIDI changes in a `2`-bar clip:
+1. On `Ghost Hat`, add:
+   - `1.1.2`
+   - `1.3.4`
+   - `2.1.2`
+   - `2.3.4`
+2. Set those added ghost hats to velocity `38`.
+3. Nudge those added ghost hats late by the same amount as the starter ghosts:
+   - `+4 ms`
+   - or `+9 ticks`
+4. On `Open Hat`, add:
+   - `1.2.3` at velocity `96`
+   - `2.2.3` at velocity `96`
+5. On `Shaker`, raise only the final bar's existing hits by `+6` velocity points:
+   - `2.1.1`
+   - `2.1.3`
+   - `2.2.1`
+   - `2.2.3`
+   - `2.3.1`
+   - `2.3.3`
+   - `2.4.1`
+   - `2.4.3`
+6. Do not change `Kick Body`, `Kick Click`, or `Clap` MIDI in the lift variant.
 
 ### Screenshot
 - `drums-15-drop-core-vs-lift`

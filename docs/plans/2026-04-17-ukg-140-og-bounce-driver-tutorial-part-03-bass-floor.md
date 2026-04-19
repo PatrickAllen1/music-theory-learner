@@ -99,8 +99,7 @@ If they live on one track:
 8. In the `Sub` oscillator section, set `Direct Out` to `On` so the sub bypasses unnecessary in-patch coloration.
 9. Set `Voices` / unison to `1`.
 10. Set `Mono` to `On`.
-11. Set portamento / glide to a very small value:
-    - set it to `8 ms` on the first pass
+11. Set portamento / glide to `8 ms` on the first pass.
 12. Set amp envelope:
     - attack: `0 ms`
     - decay: `0`
@@ -124,7 +123,7 @@ The sub should not provide excitement. It should provide authority.
 - main oscillators: `Off`
 - unison: `1`
 - mono: `On`
-- glide: `~8 ms` starting point
+- glide: `8 ms` starting point
 - amp env:
   - A `0`
   - D `0`
@@ -142,22 +141,22 @@ The sub should not provide excitement. It should provide authority.
 2. Initialize the patch.
 3. Set `Osc A` to `Basic Shapes`.
 4. Choose the `square-leaning` shape.
-5. Set `Osc A Level` around `75%`.
+5. Set `Osc A Level` to `75%`.
 6. Set `Osc B` to `Basic Shapes`.
 7. Choose the `saw-leaning` shape.
-8. Set `Osc B Level` around `30%`.
+8. Set `Osc B Level` to `30%`.
 9. Leave both at the same octave to start.
 10. Set unison conservatively:
     - `Osc A`: `1 voice`
     - `Osc B`: `2 voices`
-11. Set `Osc B Detune` lightly:
+11. Set `Osc B Detune` to a tiny fixed amount:
     - set it to `0.05` on Serum's `0.00–1.00` detune scale on the first pass
 12. Route both through a low-pass filter:
     - type: `MG Low 12`
 13. Set initial filter settings:
     - cutoff: `160 Hz`
-    - resonance: low, around `10–15%`
-    - drive: light, around `10–20%`
+    - resonance: `12%`
+    - drive: `15%`
 14. Set amp envelope:
     - attack: `0–3 ms`
     - decay: `~250 ms`
@@ -180,12 +179,12 @@ It does **not** need:
 - engine: `Serum 2`
 - Osc A: `Basic Shapes`, square-leaning
 - Osc B: `Basic Shapes`, saw-leaning
-- A/B balance: roughly `70/30`
-- detune: `~0.05` on Osc B only
+- A/B balance: `Osc A 75%` / `Osc B 30%`
+- detune: `0.05` on Serum's `0.00–1.00` scale, on Osc B only
 - filter: `MG Low 12`
-- cutoff: `~160 Hz` initial
-- resonance: `~12%`
-- drive: `~15%`
+- cutoff: `160 Hz` initial
+- resonance: `12%`
+- drive: `15%`
 - amp env:
   - A `0–3 ms`
   - D `250 ms`
@@ -203,11 +202,10 @@ It does **not** need:
 2. Set the rate so it breathes over phrase motion, not per note:
    - set it to `1 bar` synced on the first pass
 3. Drag `LFO 1` onto the filter cutoff.
-4. Set the modulation amount by dragging the modulation ring to a small value.
-4. Keep the modulation small:
-   - enough to feel movement
-   - not enough to sound like wobble bass
-5. If needed, add a second tiny modulation to distortion drive or oscillator mix, but only after the cutoff movement works.
+4. Set the modulation amount by dragging the modulation ring to `15%`.
+5. If the bass still sounds completely static in context, raise the depth to `18%`.
+6. If it starts sounding like wobble bass, lower the depth to `10%`.
+7. Do not add a second modulation target until the `15%` cutoff movement works against the drums.
 
 ### Why
 The mid layer is `tonal-secondary`.
@@ -233,9 +231,9 @@ If the learner hears “wobble,” the movement is too deep.
 ## Step 5: Add In-Patch Character FX
 ### Action
 1. Add light distortion in Serum 2 FX:
-   - set a small amount first, around the lowest useful audible setting
+   - set drive to `8%` on the first pass
 2. Add EQ after distortion:
-   - trim a little extra low-mid buildup
+   - set one bell cut at `220 Hz`, `-1.5 dB`, `Q 1.0`
    - leave true sub to the sub track
 3. Avoid reverb, delay, chorus, or wide imaging on the mid-bass patch itself at this stage.
 
@@ -244,10 +242,12 @@ The bass needs attitude, but the width and space belong elsewhere in the mix.
 
 ### Starting FX Spec
 - distortion:
-  - subtle
-  - enough to help note identity
+  - drive `8%` first pass
+  - do not raise above `15%` before checking against drums
 - EQ:
-  - cleanup only
+  - `220 Hz`
+  - `-1.5 dB`
+  - `Q 1.0`
   - do not master the tone inside the patch
 
 ### Screenshot Set
@@ -264,7 +264,7 @@ Create a `4`-bar MIDI clip on both bass tracks with these roots:
 
 Starting placement:
 - put each root on beat `1`
-- let each root sustain for roughly `2` beats to just under `3` beats at first
+- use the exact note lengths in the first-pass MIDI entry below
 - this should feel like the `50–70%` gate target once the loop is playing at speed
 
 Exact first-pass MIDI entry in the `4`-bar clip:
@@ -274,11 +274,14 @@ Exact first-pass MIDI entry in the `4`-bar clip:
 4. Place `Bb1` at `2.1.1` and drag it to `2.3.2`.
 5. Place `F2` at `3.1.1` and drag it to `3.3.3`.
 6. Place `C2` at `4.1.1` and drag it to `4.3.2`.
-7. Copy the same note positions onto both bass tracks first, then change sound design later if needed.
+7. Copy the same note positions onto both bass tracks first. Do not change sound design until both lanes play the same MIDI correctly.
 
 ### Gate Strategy
-Start with body notes in roughly this range:
-- `50–70%` gate feel for the main sustaining notes
+Start with these body-note lengths:
+- `D2`: `1.1.1` to `1.3.3`
+- `Bb1`: `2.1.1` to `2.3.2`
+- `F2`: `3.1.1` to `3.3.3`
+- `C2`: `4.1.1` to `4.3.2`
 
 Do **not** make every note the same length.
 
@@ -306,7 +309,8 @@ Allowed vocabulary:
 - over `Cadd9`: `C2`, `C3`, `G2`, `D3`
 
 Release-note gate feel:
-- roughly `15–35%`
+- use `1/16` length on the first pass
+- that gives a short pickup gesture without becoming a new sustained bass event
 
 Starting placement:
 - first try the release note in the last `1/8` or `1/16` of the bar
@@ -333,7 +337,7 @@ The release notes are punctuation, not reharmonization.
 ## Step 8: Program Internal Pulse Without Extra Melody
 ### Action
 1. Inside the 4-bar phrase, add small note-length differences.
-2. If needed, split one sustaining note into two tied-feel notes around beat `2.5` or beat `3` so the phrase breathes before the phrase-end release note.
+2. Split only the exact notes listed in the first-pass example below before inventing any other internal pulse.
 3. Do **not** add a bunch of new pitches to create movement.
 
 Starting rhythm rule:
@@ -388,9 +392,10 @@ On the `Bass` group, build this starting chain:
 - use this mainly to separate sub and mid layers, not as a tone crutch
 
 #### Saturator
-- drive lightly
-- enough to make the bass feel more solid in context
-- not enough to blur the phrase
+- set drive to `8%` on the first pass
+- if the bass still feels too clean after balancing, raise drive to `12%`
+- do not go above `15%` during this part
+- stop before saturation blurs the phrase
 
 #### Utility
 - keep the bass group centered
@@ -424,7 +429,7 @@ Use the kick as the sidechain source.
 #### Mid
 - ratio: `2:1` to `4:1`
 - attack: fast
-- release: similar or slightly shorter than sub
+- release: start at `95 ms`, slightly shorter than the `Sub` first-pass release
 - aim: breathing motion, not heavy pumping
 
 ### Why
@@ -471,7 +476,7 @@ Expected answer:
 - the main root pitch changes `4` times across the `4`-bar loop
 - across a `16`-bar drop span, expect `16` main root events if the loop repeats four times
 - extra pitch movement should come mainly from phrase-end release notes, not constant interior rewrites
-- a healthy first pass usually adds roughly `4–8` extra release-note pitch events across those `16` bars, not dozens of interior rewrites
+- a healthy first pass should add `4–8` extra release-note pitch events across those `16` bars, not dozens of interior rewrites
 
 ## Troubleshooting
 ### Problem: “The bass feels static.”
@@ -509,7 +514,7 @@ Fix order:
 1. check kick and bass together in mono
 2. loudness-match the reference before judging tone
 3. solo the mid-bass without the sub and make sure Steps `6–8` are actually producing rhythmic life
-4. if needed, reduce modulation depth before changing the MIDI again
+4. reduce LFO-to-filter depth from `15%` to `10%` before changing the MIDI again
 
 ## Checkpoint Deliverables
 At the end of Part 3, save:

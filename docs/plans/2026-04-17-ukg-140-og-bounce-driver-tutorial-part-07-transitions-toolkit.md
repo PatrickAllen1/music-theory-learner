@@ -298,7 +298,7 @@ Exact first-pass timing:
    - keep `Kick Body` and `Kick Click` active through `32.4.1`
    - mute `Open Hat` at `32.4.3`
    - let the phrase-end fill own `32.4.3` and `32.4.4`
-   - if `Shaker` is busy, lower it by about `2 dB` from `32.4.1` to `33.1.1`
+   - if `Shaker` is busy, lower it by exactly `2 dB` from `32.4.1` to `33.1.1`
 
 ### Why
 This is the first full landing of the track.
@@ -390,7 +390,7 @@ It is the rhythmic wake-up section.
 ## Step 7: Write The Main Re-Entry (`96 -> 97`)
 ### Action
 On bars `95–97`:
-- keep the filtered hook pickup visible from around bars `93–94`
+- keep the filtered hook pickup visible only from `93.1.1` through `94.4.4`
 - use a pre-drop cut on the last beat or last half-bar of `96`
 - stop any riser before `97`, do not smear over the landing
 - let full body return on `97`:
@@ -399,7 +399,7 @@ On bars `95–97`:
   - restored drop drum weight
 
 Exact first-pass timing:
-1. Let the filtered hook pickup begin around `93.1.1` and continue through `94`.
+1. Let the filtered hook pickup clip begin at `93.1.1` and end before `95.1.1`.
 2. Make bar `95` feel tense without cutting the body away yet.
 3. Start the true pre-drop subtraction at `96.4.1`.
 4. If the cut is too weak, extend it only to `96.3.3`, not earlier.

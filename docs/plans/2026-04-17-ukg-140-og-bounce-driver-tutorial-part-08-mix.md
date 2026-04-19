@@ -117,9 +117,9 @@ Judge one axis at a time:
 
 ## Mix Targets
 ### Gain staging
-- individual tracks generally around `-12` to `-8 dBFS` peak before major bus work
-- buses around `-8` to `-6 dBFS` peak
-- premaster around `-6 dBFS` peak headroom
+- individual tracks should peak between `-12` and `-8 dBFS` before major bus work
+- buses should peak between `-8` and `-6 dBFS`
+- premaster should peak near `-6 dBFS`
 
 ### Band ownership
 - `30–90 Hz`: kick + sub
@@ -141,9 +141,9 @@ Judge one axis at a time:
 ## Step 1: Set Gain Staging Before Processing
 ### Action
 Pull all track and group levels into the working range:
-- track peaks around `-12` to `-8 dBFS`
-- buses around `-8` to `-6 dBFS`
-- premaster around `-6 dBFS`
+- track peaks between `-12` and `-8 dBFS`
+- buses peak between `-8` and `-6 dBFS`
+- premaster peaks near `-6 dBFS`
 
 Do this before:
 - bus compression
@@ -152,7 +152,7 @@ Do this before:
 
 Ableton action order:
 1. Disable or bypass any non-essential loudness plugins on the premaster first.
-2. Play the loudest drop section, usually around `97.1.1` to `113.1.1`.
+2. Play the first `Drop B` section from `97.1.1` to `113.1.1`.
 3. Watch the channel meters while adjusting the plain track faders, not the master fader.
 4. Bring the loudest individual lanes down first:
    - kick
@@ -162,7 +162,7 @@ Ableton action order:
 
 If a track is already too loud:
 1. Pull down the normal channel fader first.
-2. If the fader has to sit below about `-12 dB` and the track still peaks above `-8 dBFS`, add `Utility` as the first device on that track.
+2. If the fader has to sit below `-12 dB` and the track still peaks above `-8 dBFS`, add `Utility` as the first device on that track.
 3. Use `Utility Gain` to trim the track before it hits the rest of its devices.
 4. Avoid clip-gain edits unless the sample itself is clipping or one audio clip is wildly louder than the rest of the lane.
 
@@ -242,7 +242,7 @@ First-pass settings:
   - ratio `2:1`
   - attack: `10 ms`
   - release: start on `Auto`
-  - threshold: lower it only until the loudest section shows about `1–2 dB` of gain reduction
+  - threshold: lower it only until the loudest section shows `1–2 dB` of gain reduction
   - makeup gain: `off`
 - `Saturator`
   - mode: `Analog Clip`
@@ -259,7 +259,7 @@ The drum bus should feel denser and more unified, but the groove still needs to 
 ### Saturation Warning
 - this drum-bus saturation is separate from the master saturation in `Part 9`
 - the two stages add up
-- keep this stage subtle and do not push the drum-bus drive past about `+2 dB` before mastering
+- keep this stage subtle and do not push the drum-bus drive past `+2 dB` before mastering
 
 ### Screenshot Set
 - `mix-03a-drum-bus-overview`
@@ -341,7 +341,7 @@ First-pass settings:
   - ratio `2:1`
   - attack `30 ms`
   - release `Auto`
-  - threshold lowered only until the loudest section shows about `0.5–1 dB` of gain reduction
+  - threshold lowered only until the loudest section shows `0.5–1 dB` of gain reduction
 - tonal saturation device
   - drive `+1 dB`
 - `Utility`
@@ -398,17 +398,17 @@ Ableton action order:
    - ratio `2:1`
    - attack `1 ms`
    - release `150 ms`
-   - aim for only a small visible gain dip
+   - threshold target: `0.5–1 dB` of visible gain dip
 7. On `Answer`, use a very light duck:
    - ratio `2:1`
    - attack `1 ms`
    - release `110 ms`
-   - threshold lowered only until the kick creates about `0.5–1 dB` of visible dip
+   - threshold lowered only until the kick creates `0.5–1 dB` of visible dip
 8. On `Air`, use the lightest version of all:
    - ratio `2:1`
    - attack `1 ms`
    - release `140 ms`
-   - aim for barely visible gain reduction
+   - threshold target: `0.5 dB` of visible gain reduction
 9. Solo-check each lane with the kick and then return to full mix context before deciding the setting is done.
 
 ### Why
@@ -434,10 +434,10 @@ Practical move order:
 Exact first-pass move:
 1. Put `EQ Eight` on the chord bed or `Music Bus`.
 2. Turn on one bell band at `250 Hz`.
-3. Set it to about `-2.5 dB` with a `Q` around `1.0`.
+3. Set gain to `-2.5 dB` and `Q` to `1.0`.
 4. Re-listen with bass and chords together.
 5. Only if the cloud is still there, put `EQ Eight` on `Bass Mid`.
-6. Add one bell at `170 Hz` and cut about `-1.5 dB` before cutting anything else.
+6. Add one bell at `170 Hz` and cut `-1.5 dB` with `Q 1.0` before cutting anything else.
 
 ### Why
 The low-mid is where warmth and mud live in the same room.
@@ -502,24 +502,24 @@ Use the returns for support, not wash.
 Ableton action order:
 1. Mute all sends first.
 2. Bring `Return A` in on drums:
-   - start around `-20 dB`
+   - set the send to `-20 dB`
 3. Bring `Return B` in on hook and answer:
-   - start around `-18 dB` on `Hook`
-   - start around `-16 dB` on `Answer`
+   - set `Hook` send to `-18 dB`
+   - set `Answer` send to `-16 dB`
 4. Bring `Return C` in on chords and air:
-   - start around `-14 dB` on `Chords`
-   - start around `-12 dB` on `Air`
+   - set `Chords` send to `-14 dB`
+   - set `Air` send to `-12 dB`
 5. Leave `Return D` off until phrase-end moments are working.
-6. When you finally use `Return D`, start around `-20 dB` on the phrase-end lane.
+6. When you finally use `Return D`, set the phrase-end lane send to `-20 dB`.
 7. If a return sounds exciting in solo but clouds the full mix, lower the send before touching the return plugin.
 
 Return starting filters:
 - `Return C`
-  - high-pass around `250 Hz`
-  - low-pass around `7 kHz`
+  - high-pass at `250 Hz`
+  - low-pass at `7 kHz`
 - `Return D`
-  - high-pass around `350 Hz`
-  - low-pass around `5 kHz`
+  - high-pass at `350 Hz`
+  - low-pass at `5 kHz`
 
 ### Why
 The returns create depth and section state. They should not cover up weak lane balances.
@@ -589,7 +589,7 @@ Mono tool:
 Volume automation policy:
 - do not automate `Premaster` volume in this first mix pass
 - section energy should mostly come from arrangement and transition design
-- if a section still needs a tiny correction after A/B, automate individual lanes by about `+/-1 dB`, not the premaster
+- if a section still needs a tiny correction after A/B, automate individual lanes by `+/-1 dB`, not the premaster
 
 What to listen for:
 - does the kick still land with authority?

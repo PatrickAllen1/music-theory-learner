@@ -443,7 +443,7 @@ Set the sidechain compressor like this:
 5. Set ratio to `2:1`.
 6. Set attack to `1 ms`.
 7. Set release to `150 ms`.
-8. Lower threshold until each kick causes about `1–2 dB` of gain reduction on the chord bed.
+8. Lower threshold until each kick causes `1–2 dB` of gain reduction on the chord bed.
 
 Set `Utility` like this on the first pass:
 - `Drop A`: width `120%`

@@ -22,7 +22,7 @@ By the end of this part, the learner should have:
   - body sample
   - click layer
   - tuned to `D`
-  - tail controlled around `90–120 ms`
+  - tail controlled inside `90–120 ms`
 - one quiet air layer that can live across the full track
 - one simple `4`-bar checkpoint bounce of kick + air
 
@@ -117,7 +117,7 @@ Concrete first-pass sample test:
 10. Keep both panned center.
 
 Low-frequency body check:
-- after tuning, the kick body should have its main low thump below about `80 Hz`
+- after tuning, the kick body should have its main low thump below `80 Hz`
 - `D1` is about `36.7 Hz`
 - `D2` is about `73.4 Hz`
 - if the tuner or analyzer mostly shows a high `D` like `D3` or `D4`, that sample is probably too high to be the kick body
@@ -151,7 +151,7 @@ Quick listening test:
    - `-1` means one semitone lower
    - `12` semitones = one octave
 4. Trigger the kick repeatedly and watch the note name in `Tuner`.
-5. Use `Transpose` first to move the kick body to some version of `D`:
+5. Use `Transpose` first to move the kick body until the tuner note name reads `D`:
    - if the tuner reads `C`, move `Transpose` to `+2`
    - if the tuner reads `C#`, move `Transpose` to `+1`
    - if the tuner reads `D`, leave `Transpose` where it is
@@ -214,7 +214,7 @@ If the tuner keeps jumping around:
 
 ## Step 3: Set The Kick Tail
 ### Action
-Shape the kick so the body tail lands around `90–120 ms`.
+Shape the kick so the body tail lands inside `90–120 ms`.
 
 Practical method:
 1. In `Simpler`, leave the sample start alone first unless there is obvious silence before the transient.
@@ -225,9 +225,10 @@ Practical method:
    - decay: `110 ms`
    - sustain: `0%`
    - release: `20 ms`
-5. If the audio file itself has a long ringing tail, use the visible sample end / fade handle first:
+5. If the audio file itself has a long ringing tail, use the visible sample end / fade handle first, not the amp release:
    - open the sample display in `Simpler`
-   - drag the sample end or fade so the audible body is about `100 ms`
+   - drag the sample end or fade so the visible waveform body ends near `100 ms`
+   - use the envelope release only for the final click-free fade after the sample end is correct
    - do this before relying on release time
 6. Use the volume envelope to control how the MIDI note triggers the sample.
 7. Do not rely on `Release` to fix a long sample file:
@@ -289,7 +290,7 @@ Program the kick on every quarter note for a simple `4`-bar foundation loop:
 - beats `1`, `2`, `3`, `4`
 
 Use short MIDI notes:
-- start around `1/16` MIDI length
+- make every kick MIDI note exactly `1/16` long on the first pass
 - let the sample tail do the real sustain
 
 Keep the kick perfectly on-grid.

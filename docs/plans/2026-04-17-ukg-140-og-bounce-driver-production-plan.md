@@ -134,8 +134,8 @@ This means:
   - Osc B: quieter support oscillator for upper tone or gentle motion
   - restrained unison only
   - starting levels:
-    - `Osc A`: around `85%`
-    - `Osc B`: around `25–35%`
+    - `Osc A`: `85%`
+    - `Osc B`: `30%`
   - starting detune:
     - `0.03–0.05`
 - filter:
@@ -143,9 +143,9 @@ This means:
   - tucked lower in `Drop A`
   - opened and widened in `Break / Drop B`
   - starting values:
-    - cutoff `~2.2–3.2 kHz`
-    - resonance `8–12%`
-    - drive `5–10%`
+    - cutoff range `2.2–3.2 kHz`
+    - resonance range `8–12%`
+    - drive range `5–10%`
 - envelope direction:
   - enough sustain to feel like a bed
   - enough decay / articulation that the pulse layer can still speak
@@ -176,7 +176,7 @@ This means:
 - unison: `1`
 - mono: `on`
 - velocity sensitivity: `off`
-- glide: only tiny if needed, `~5–20ms`
+- glide: start at `8 ms`; keep allowed adjustment range inside `5–20 ms`
 - amp envelope:
   - attack `0`
   - sustain `full`
@@ -190,8 +190,8 @@ This means:
 - source direction:
   - Osc A: `Basic Shapes`, square-leaning frame
   - Osc B: `Basic Shapes`, saw-leaning support
-  - start blend roughly `70/30` in favor of Osc A
-  - keep detune light, roughly `0.03–0.07`
+  - start blend at `Osc A 75%` / `Osc B 30%`
+  - keep detune inside `0.03–0.07` on Serum's `0.00–1.00` scale
 - filter:
   - `MG Low 12` or similar smooth low-pass
   - cutoff as the main motion lane
@@ -205,18 +205,18 @@ This means:
   - does not become a second hook
 
 ### Sub / mid crossover
-- keep most sub authority below roughly `120–150 Hz`
+- keep most sub authority below `120–150 Hz`
 - keep most character motion above that
 
 ### Gate / note-length behavior
-- on-grid body notes: roughly `50–70%` gate feel
-- phrase-end releases: shorter and more punctuating, roughly `15–35%` gate feel
+- on-grid body notes: `50–70%` gate feel
+- phrase-end releases: shorter and more punctuating, `15–35%` gate feel
 - note-length variation is one of the main roll mechanisms
 
 ### Sidechain behavior
 - kick -> sub: strongest duck
   - fast attack
-  - release matched to kick tail, roughly `90–120ms`
+  - release matched to kick tail, `90–120 ms`
   - ratio direction: `4:1` to `6:1`
   - aim for clear but not collapsing ducking
 - kick -> mid-bass:
@@ -247,7 +247,7 @@ This means:
 - layer:
   - body/sub layer
   - short click/attack layer
-- tail: short, roughly `90–120ms`
+- tail: target `100 ms`; acceptable first-pass window `90–120 ms`
 - role: heavy, physical, not harsh
 
 ### Clap
@@ -258,7 +258,7 @@ This means:
 ### Hats
 - closed/offbeat hats provide stable scaffold
 - ghost hats create the real swing
-- ghost hats should be intentionally late by roughly `5–15 ticks`
+- ghost hats should be intentionally late by `+9 ticks` / `+4 ms` on the first pass
 - no single global swing preset
 
 ### Open hats
@@ -316,7 +316,7 @@ Capture requirement:
 ### Exact rhythmic identity
 - hook enters late and avoids the bar's beat-`1` downbeat
 - collisions on beat `4` and next-bar beat `1` are intentional accent points, not mistakes
-- in the current plan the core cell lands around:
+- in the current plan the core cell lands at:
   - on the `a` of beat `3`
   - on beat `4`
   - on the `a` of beat `4`
@@ -356,7 +356,7 @@ Starting ranges:
 - decay: `80–200 ms`
 - sustain: `20–40%`
 - release: `60–150 ms`
-- filter cutoff starting zone: roughly `1.2–3.5 kHz` depending on oscillator brightness
+- filter cutoff starting zone: `1.2–3.5 kHz` depending on oscillator brightness
 
 Processing direction:
 - light saturation
@@ -372,8 +372,8 @@ Processing direction:
 - phrase-end only
 
 Starting deltas from the hook:
-- decay and release roughly `30–50%` shorter than the hook
-- saturation / bite roughly `20–40%` stronger than the hook
+- decay and release `30–50%` shorter than the hook
+- saturation / bite `20–40%` stronger than the hook
 - keep the dry signal slightly shorter before reaching for more FX
 
 ### Register relationship
@@ -504,9 +504,9 @@ Starting width targets:
 
 ## Mix and Master Spec
 ### Gain staging
-- individual tracks generally around `-12` to `-8 dBFS` peak before major bus work
-- buses around `-8` to `-6 dBFS` peak
-- premaster around `-6 dBFS` peak headroom
+- individual tracks should peak between `-12` and `-8 dBFS` before major bus work
+- buses should peak between `-8` and `-6 dBFS`
+- premaster should peak near `-6 dBFS`
 
 ### Bus structure
 - Drum bus
@@ -640,8 +640,8 @@ Mono tool:
 - keep the working session responsive enough that timing edits stay trustworthy
 
 Working expectation:
-- assume roughly `30–40` active tracks by the time the arrangement and returns are all present
-- expect to start freezing once there are more than roughly `8–12` active Serum instances or the timing edits stop feeling immediate
+- assume `30–40` active tracks by the time the arrangement and returns are all present
+- expect to start freezing once there are more than `8–12` active Serum instances or the timing edits stop feeling immediate
 
 ### Bounce workflow
 - export checkpoint bounces after:
@@ -685,16 +685,16 @@ Working expectation:
   - gentle threshold
   - aim for small gain reduction only
 - Limiter ceiling:
-  - around `-1 dBTP` ceiling target
+  - `-1 dBTP` ceiling target
 
 ### Loudness direction
 - build stage:
   - prioritize translation and punch
 - final stage:
   - aim for modern club strength only after the mix works
-  - target around `-8` to `-10 LUFS integrated` for the final club-ready master
+  - target `-8` to `-10 LUFS integrated` for the final club-ready master
 - do not force loudness until kick/bass balance survives mono and small speakers
-- keep limiter ceiling around `-1 dBTP`
+- keep limiter ceiling at `-1 dBTP`
 
 ## Reference Calibration
 ### Pressure

@@ -130,7 +130,7 @@ Why:
 
 ### Break sample lane target
 - Reserve the break center lane for a narrow future vocal/chop or phrase-end texture
-- Safe range: roughly `A3–F5`
+- Safe range: `A3–F5`
 - Avoid long tonal samples that introduce new thirds outside the progression
 
 ### Hook voice identity
@@ -306,7 +306,7 @@ The bass is the `floor`, not the topline.
 Practical spec:
 - tune the kick body to `D`
 - layer a body/sub sample with a shorter click/attack layer
-- keep the tail short, roughly `90–120ms`
+- keep the tail short inside `90–120 ms`
 - let the kick and bass breathe together instead of relying on extreme sidechain
 
 ### Tops
@@ -334,7 +334,7 @@ Practical groove spec:
 ### Drum micro-architecture
 - `Bars 1–4`: establish groove
 - `Bars 5–8`: deepen the pocket with ghost-hat / loop life
-- `Bars 9–12`: increase shaker / open-hat energy slightly
+- `Bars 9–12`: raise existing shaker velocities by `+6` and add selected `& of 2` open-hat energy where the section needs lift
 - `Bars 13–16`: phrase-end fill, riser, or short groove drop into the next section
 
 ### Drum transition toolkit
@@ -480,7 +480,9 @@ Arrangement assignment:
 - different re-entry drums
 - filtered bass return
 - tighter chord pulse
-- filtered hook pickup only near the end
+- filtered hook pickup only in the late pickup window:
+  - first pickup at `93.3.4`
+  - second pickup at `94.3.4`
 - chord state should stay more restrained than `Drop B`, even while the rhythm re-engages
 - use the restrained `Bb2 F3 C4` state here, not the bloomed `Bbmaj7` state
 
@@ -577,7 +579,7 @@ Arrangement assignment:
 - if a sample appears later:
   - keep it narrow
   - phrase-end based
-  - keep it roughly inside `A3–F5`
+  - keep it inside `A3–F5`
   - avoid a long dominant topline
 - in the instrumental:
   - hook pocket

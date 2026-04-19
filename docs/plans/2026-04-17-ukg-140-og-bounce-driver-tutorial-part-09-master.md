@@ -80,8 +80,8 @@ Use the same reference set as the mix chapter, but judge different things:
   - or a third-party loudness meter such as `Youlean Loudness Meter 2`
 
 ## Master Targets
-- keep the ceiling around `-1 dBTP`
-- integrated LUFS target: around `-8` to `-10 LUFS` for a club-ready final
+- keep the ceiling at `-1.0 dBTP`
+- integrated LUFS target range: `-8` to `-10 LUFS` for a club-ready final
 - use only small glue compression
 - keep punch and low-end relationship intact
 - do not force loudness until the premaster survives:
@@ -97,7 +97,7 @@ Exact first-pass check:
 1. Bypass the whole master chain.
 2. Start playback from `97.1.1`.
 3. Watch the `Premaster` meter.
-4. Make sure the premaster peak is still around `-6 dBFS`, not already near `0 dBFS`.
+4. Make sure the premaster peak is between `-8 dBFS` and `-6 dBFS`, not already near `0 dBFS`.
 5. Turn `Mono` on with the last `Utility` on the `Premaster` lane.
 6. Listen for:
    - the kick still landing cleanly
@@ -133,7 +133,7 @@ Starting direction:
   - ratio `2:1`
   - attack `10 ms`
   - release `Auto`
-  - threshold lowered only until the loudest section shows about `1 dB` of gain reduction
+  - threshold lowered only until the loudest section shows `1 dB` of gain reduction
 - limiter ceiling:
   - `-1.0 dB`
 
@@ -181,9 +181,9 @@ Starting values:
 1. Start with ratio `2:1`.
 2. Set attack to `10 ms`.
 3. Set release to `Auto`.
-4. Aim for about `1 dB` of gain reduction on the first pass, not multiple dB of constant squeeze.
+4. Aim for `1 dB` of gain reduction on the first pass, not multiple dB of constant squeeze.
 5. Watch the gain-reduction meter on `Glue Compressor`.
-6. On the loudest sections, the needle or bar should move around `-1 dB`.
+6. On the loudest sections, the needle or bar should move to `-1 dB`.
 7. Between strong hits, it should return toward `0 dB` instead of staying pinned down.
 
 ### Why
@@ -229,11 +229,11 @@ Raise the limiter until the track reaches controlled club strength without losin
 - groove
 - hook readability
 
-Keep the ceiling around `-1 dBTP`.
+Keep the ceiling at `-1.0 dBTP`.
 
 Exact first-pass action:
 1. Start playback from the loudest section of the song:
-   - usually around `97.1.1` to `113.1.1`
+   - use `97.1.1` to `113.1.1` for the first-pass limiter check
 2. Set the limiter output ceiling to `-1.0 dB`.
 3. Raise the limiter input / gain in `+1 dB` steps at first.
 4. Once the level is close, move in `+0.5 dB` steps only.
