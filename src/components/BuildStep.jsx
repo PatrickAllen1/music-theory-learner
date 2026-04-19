@@ -1,5 +1,240 @@
+/* eslint-disable react/prop-types */
 import ReactMarkdown from "react-markdown";
 import remarkGfm from "remark-gfm";
+
+const SECTION_TREATMENTS = {
+  action: {
+    eyebrow: "Do this",
+    className: "border-sky-500/30 bg-sky-950/20",
+    heading: "text-sky-200",
+    accent: "bg-sky-400",
+  },
+  why: {
+    eyebrow: "Reason",
+    className: "border-emerald-500/30 bg-emerald-950/20",
+    heading: "text-emerald-200",
+    accent: "bg-emerald-400",
+  },
+  rule: {
+    eyebrow: "Rule",
+    className: "border-amber-500/30 bg-amber-950/20",
+    heading: "text-amber-200",
+    accent: "bg-amber-400",
+  },
+  "expected answer": {
+    eyebrow: "Checkpoint",
+    className: "border-green-500/30 bg-green-950/20",
+    heading: "text-green-200",
+    accent: "bg-green-400",
+  },
+  screenshot: {
+    eyebrow: "Capture",
+    className: "border-blue-500/30 bg-blue-950/20",
+    heading: "text-blue-200",
+    accent: "bg-blue-400",
+  },
+  "screenshot set": {
+    eyebrow: "Capture",
+    className: "border-blue-500/30 bg-blue-950/20",
+    heading: "text-blue-200",
+    accent: "bg-blue-400",
+  },
+  "visual requirement": {
+    eyebrow: "Visual check",
+    className: "border-violet-500/30 bg-violet-950/20",
+    heading: "text-violet-200",
+    accent: "bg-violet-400",
+  },
+  troubleshooting: {
+    eyebrow: "Fix path",
+    className: "border-rose-500/30 bg-rose-950/20",
+    heading: "text-rose-200",
+    accent: "bg-rose-400",
+  },
+};
+
+const DEFAULT_SECTION_TREATMENT = {
+  eyebrow: "Detail",
+  className: "border-zinc-800 bg-zinc-950/70",
+  heading: "text-zinc-100",
+  accent: "bg-zinc-500",
+};
+
+function normalizeHeading(title) {
+  return title.trim().toLowerCase().replace(/:$/, "");
+}
+
+function getSectionTreatment(title) {
+  const normalized = normalizeHeading(title);
+  return SECTION_TREATMENTS[normalized] ?? DEFAULT_SECTION_TREATMENT;
+}
+
+function splitByH3(markdown) {
+  const regex = /^### (.+)$/gm;
+  const matches = [...markdown.matchAll(regex)];
+
+  if (matches.length === 0) {
+    return {
+      intro: markdown.trim(),
+      sections: [],
+    };
+  }
+
+  const intro = markdown.slice(0, matches[0].index).trim();
+  const sections = matches.map((match, index) => {
+    const title = match[1].trim();
+    const bodyStart = match.index + match[0].length;
+    const bodyEnd =
+      index + 1 < matches.length ? matches[index + 1].index : markdown.length;
+
+    return {
+      title,
+      body: markdown.slice(bodyStart, bodyEnd).trim(),
+    };
+  });
+
+  return { intro, sections };
+}
+
+const markdownComponents = {
+  h1: ({ children }) => (
+    <h2 className="mb-6 text-2xl font-mono font-bold tracking-tight text-zinc-50">
+      {children}
+    </h2>
+  ),
+  h2: ({ children }) => (
+    <h3 className="mb-4 mt-8 rounded-xl border border-zinc-800 bg-zinc-900/70 px-4 py-3 text-sm font-mono font-semibold uppercase tracking-[0.12em] text-zinc-300 first:mt-0">
+      {children}
+    </h3>
+  ),
+  h3: ({ children }) => (
+    <h4 className="mb-3 mt-6 text-base font-mono font-semibold text-zinc-100">
+      {children}
+    </h4>
+  ),
+  h4: ({ children }) => (
+    <h5 className="mb-2 mt-5 text-sm font-mono font-semibold text-zinc-200">
+      {children}
+    </h5>
+  ),
+  p: ({ children }) => (
+    <p className="mb-4 max-w-3xl text-[15px] leading-7 text-zinc-300 last:mb-0">
+      {children}
+    </p>
+  ),
+  ul: ({ children }) => (
+    <ul className="mb-5 max-w-3xl list-disc space-y-2 pl-6 text-[15px] leading-7 text-zinc-300 marker:text-zinc-500">
+      {children}
+    </ul>
+  ),
+  ol: ({ children }) => (
+    <ol className="mb-5 max-w-3xl list-decimal space-y-3 pl-6 text-[15px] leading-7 text-zinc-300 marker:font-mono marker:text-zinc-500">
+      {children}
+    </ol>
+  ),
+  li: ({ children }) => <li className="pl-1 leading-7">{children}</li>,
+  strong: ({ children }) => (
+    <strong className="font-semibold text-zinc-100">{children}</strong>
+  ),
+  code: ({ className, children }) => {
+    const text = String(children).replace(/\n$/, "");
+    const isInline = !className && !text.includes("\n");
+
+    return isInline ? (
+      <code className="rounded-md border border-zinc-700/80 bg-zinc-900/90 px-1.5 py-0.5 font-mono text-[0.9em] text-zinc-100">
+        {children}
+      </code>
+    ) : (
+      <code
+        className={`block font-mono text-sm leading-6 text-zinc-100 ${className ?? ""}`}
+      >
+        {text}
+      </code>
+    );
+  },
+  pre: ({ children }) => (
+    <pre className="mb-5 max-w-full overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-950 p-4">
+      {children}
+    </pre>
+  ),
+  hr: () => <hr className="my-8 border-zinc-800" />,
+  a: ({ href, children }) => {
+    if (!href || href.startsWith("/Users/")) {
+      return (
+        <span className="font-mono text-zinc-300 underline decoration-zinc-700 decoration-dotted underline-offset-2">
+          {children}
+        </span>
+      );
+    }
+
+    return (
+      <a
+        href={href}
+        target="_blank"
+        rel="noreferrer"
+        className="text-zinc-200 underline decoration-zinc-600 underline-offset-2 hover:text-white"
+      >
+        {children}
+      </a>
+    );
+  },
+  blockquote: ({ children }) => (
+    <blockquote className="mb-5 max-w-3xl rounded-r-lg border-l-2 border-zinc-700 bg-zinc-900/50 py-1 pl-4 text-[15px] leading-7 text-zinc-400">
+      {children}
+    </blockquote>
+  ),
+  table: ({ children }) => (
+    <div className="mb-5 overflow-x-auto rounded-xl border border-zinc-800">
+      <table className="min-w-full border-collapse text-left text-sm text-zinc-300">
+        {children}
+      </table>
+    </div>
+  ),
+  thead: ({ children }) => <thead className="bg-zinc-900/80">{children}</thead>,
+  th: ({ children }) => (
+    <th className="border-b border-zinc-800 px-3 py-2 font-mono text-xs uppercase tracking-wider text-zinc-400">
+      {children}
+    </th>
+  ),
+  td: ({ children }) => (
+    <td className="border-t border-zinc-800 px-3 py-2 align-top leading-6">
+      {children}
+    </td>
+  ),
+};
+
+function MarkdownContent({ children }) {
+  if (!children) return null;
+
+  return (
+    <ReactMarkdown remarkPlugins={[remarkGfm]} components={markdownComponents}>
+      {children}
+    </ReactMarkdown>
+  );
+}
+
+function LessonSection({ title, body }) {
+  const treatment = getSectionTreatment(title);
+
+  return (
+    <section
+      className={`rounded-2xl border px-5 py-5 shadow-[0_0_0_1px_rgba(255,255,255,0.015)] ${treatment.className}`}
+    >
+      <div className="mb-4 flex items-center gap-3">
+        <span className={`h-2.5 w-2.5 rounded-full ${treatment.accent}`} />
+        <div>
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-zinc-500">
+            {treatment.eyebrow}
+          </p>
+          <h3 className={`font-mono text-lg font-bold ${treatment.heading}`}>
+            {title}
+          </h3>
+        </div>
+      </div>
+      <MarkdownContent>{body}</MarkdownContent>
+    </section>
+  );
+}
 
 function BulletSection({ title, items, accent = "text-zinc-500" }) {
   if (!items || items.length === 0) return null;
@@ -25,118 +260,29 @@ function BulletSection({ title, items, accent = "text-zinc-500" }) {
 
 function MarkdownLesson({ content }) {
   if (!content) return null;
+  const { intro, sections } = splitByH3(content);
 
   return (
-    <div className="mb-8 rounded-2xl border border-zinc-800/80 bg-zinc-950/80 px-6 py-6 shadow-[0_0_0_1px_rgba(255,255,255,0.01)]">
-      <ReactMarkdown
-        remarkPlugins={[remarkGfm]}
-        components={{
-          h1: ({ children }) => (
-            <h2 className="mb-6 text-2xl font-mono font-bold tracking-tight text-zinc-50">
-              {children}
-            </h2>
-          ),
-          h2: ({ children }) => (
-            <h3 className="mb-4 mt-8 border-t border-zinc-800 pt-5 text-xs font-mono uppercase tracking-[0.18em] text-zinc-500 first:mt-0 first:border-t-0 first:pt-0">
-              {children}
-            </h3>
-          ),
-          h3: ({ children }) => (
-            <h4 className="mb-3 mt-6 text-base font-mono font-semibold text-zinc-100">
-              {children}
-            </h4>
-          ),
-          p: ({ children }) => (
-            <p className="mb-4 text-[15px] leading-7 text-zinc-300 last:mb-0">
-              {children}
-            </p>
-          ),
-          ul: ({ children }) => (
-            <ul className="mb-5 list-disc space-y-2 pl-6 text-[15px] leading-7 text-zinc-300 marker:text-zinc-500">
-              {children}
-            </ul>
-          ),
-          ol: ({ children }) => (
-            <ol className="mb-5 list-decimal space-y-2 pl-6 text-[15px] leading-7 text-zinc-300 marker:font-mono marker:text-zinc-500">
-              {children}
-            </ol>
-          ),
-          li: ({ children }) => <li className="pl-1 leading-7">{children}</li>,
-          strong: ({ children }) => (
-            <strong className="font-semibold text-zinc-100">{children}</strong>
-          ),
-          code: ({ node, className, children }) => {
-            const text = String(children).replace(/\n$/, "");
-            const isInline =
-              !className &&
-              node?.position?.start?.line === node?.position?.end?.line &&
-              !text.includes("\n");
+    <div className="mb-8 space-y-5 rounded-3xl border border-zinc-800/80 bg-zinc-950/80 p-4 shadow-[0_0_0_1px_rgba(255,255,255,0.01)] sm:p-6">
+      {intro && (
+        <div className="rounded-2xl border border-zinc-800 bg-zinc-900/35 px-5 py-5">
+          <MarkdownContent>{intro}</MarkdownContent>
+        </div>
+      )}
 
-            return isInline ? (
-              <code className="rounded-md border border-zinc-800 bg-zinc-900 px-1.5 py-0.5 font-mono text-[0.9em] text-zinc-100">
-                {children}
-              </code>
-            ) : (
-              <code
-                className={`block font-mono text-sm leading-6 text-zinc-100 ${className ?? ""}`}
-              >
-                {text}
-              </code>
-            );
-          },
-          pre: ({ children }) => (
-            <pre className="mb-5 overflow-x-auto rounded-xl border border-zinc-800 bg-zinc-900/80 p-4">
-              {children}
-            </pre>
-          ),
-          hr: () => <hr className="my-8 border-zinc-800" />,
-          a: ({ href, children }) => {
-            if (!href || href.startsWith("/Users/")) {
-              return (
-                <span className="font-mono text-zinc-300 underline decoration-zinc-700 decoration-dotted underline-offset-2">
-                  {children}
-                </span>
-              );
-            }
-
-            return (
-              <a
-                href={href}
-                target="_blank"
-                rel="noreferrer"
-                className="text-zinc-200 underline decoration-zinc-600 underline-offset-2 hover:text-white"
-              >
-                {children}
-              </a>
-            );
-          },
-          blockquote: ({ children }) => (
-            <blockquote className="mb-5 rounded-r-lg border-l-2 border-zinc-700 bg-zinc-900/50 py-1 pl-4 text-[15px] leading-7 text-zinc-400">
-              {children}
-            </blockquote>
-          ),
-          table: ({ children }) => (
-            <div className="mb-5 overflow-x-auto rounded-xl border border-zinc-800">
-              <table className="min-w-full border-collapse text-left text-sm text-zinc-300">
-                {children}
-              </table>
-            </div>
-          ),
-          thead: ({ children }) => <thead className="bg-zinc-900/80">{children}</thead>,
-          th: ({ children }) => (
-            <th className="border-b border-zinc-800 px-3 py-2 font-mono text-xs uppercase tracking-wider text-zinc-400">
-              {children}
-            </th>
-          ),
-          td: ({ children }) => (
-            <td className="border-t border-zinc-800 px-3 py-2 align-top leading-6">
-              {children}
-            </td>
-          ),
-        }}
-      >
-        {content}
-      </ReactMarkdown>
+      {sections.length > 0 ? (
+        <div className="space-y-4">
+          {sections.map((section) => (
+            <LessonSection
+              key={`${section.title}-${section.body.slice(0, 24)}`}
+              title={section.title}
+              body={section.body}
+            />
+          ))}
+        </div>
+      ) : (
+        !intro && <MarkdownContent>{content}</MarkdownContent>
+      )}
     </div>
   );
 }
@@ -145,7 +291,6 @@ export default function BuildStep({
   step,
   stepNumber,
   total,
-  buildId,
   isComplete,
   onMark,
   onNext,
@@ -156,7 +301,7 @@ export default function BuildStep({
   const hasMarkdown = Boolean(step.content_markdown);
 
   return (
-    <div className="max-w-4xl">
+    <div className="max-w-5xl">
       <div className="flex justify-between items-center mb-6">
         <span className="text-xs font-mono text-zinc-500">
           {stepLabel} {stepNumber} of {total}
@@ -197,6 +342,19 @@ export default function BuildStep({
               ~{step.estimated_minutes} min
             </span>
           )}
+        </div>
+      )}
+
+      {hasMarkdown && (
+        <div className="mb-5 rounded-2xl border border-zinc-800 bg-zinc-950/80 px-4 py-3">
+          <p className="text-sm leading-6 text-zinc-400">
+            Work through this page from top to bottom. The blue{" "}
+            <span className="font-mono text-sky-200">Action</span> cards are
+            the clicks and placements; the green{" "}
+            <span className="font-mono text-emerald-200">Why</span> cards
+            explain the design reason; checkpoint and screenshot cards tell you
+            what must be true before moving on.
+          </p>
         </div>
       )}
 
@@ -270,7 +428,7 @@ export default function BuildStep({
             Splice Search
           </h3>
           <span className="font-mono text-sm text-zinc-300 bg-zinc-900 px-3 py-1 rounded">
-            "{step.splice_search}"
+            Search term: {step.splice_search}
           </span>
         </div>
       )}
