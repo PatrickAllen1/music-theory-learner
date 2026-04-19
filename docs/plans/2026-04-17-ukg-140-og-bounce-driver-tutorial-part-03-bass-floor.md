@@ -615,7 +615,23 @@ Put a sidechain compressor on:
 - `Bass Sub`
 - `Bass Mid`
 
-Use the kick as the sidechain source.
+Use `Kick Body` as the sidechain source.
+
+Do **not** use `Kick Click` as the sidechain source.
+
+Why:
+- `Kick Body` is the low punch that needs room against the bass
+- `Kick Click` is only the upper transient / attack layer
+- if the bass ducks from `Kick Click`, the ducking can feel twitchy and disconnected from the low-end groove
+
+Ableton 11 setup:
+1. On `Bass Sub`, add Ableton `Compressor`.
+2. Open the compressor's sidechain section.
+3. Turn `Sidechain` on.
+4. In `Audio From`, choose `Kick Body`.
+5. If Ableton shows a second dropdown underneath, choose `Post FX` first-pass.
+6. Repeat the same setup on `Bass Mid`.
+7. Leave `Kick Click` out of the sidechain setup.
 
 ### Starting Sidechain Settings
 #### Sub
