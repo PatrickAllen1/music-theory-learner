@@ -473,6 +473,13 @@ Use clip-view piano-roll timing:
 - bar `3` starts at `3.1.1`
 - bar `4` starts at `4.1.1`
 
+Timing language rule:
+- `from 1.1.1 to 1.2.4` means the note **starts** at `1.1.1` and **stops** at `1.2.4`
+- the note fills up to the stop point
+- the stop point itself is not another filled hit
+- if you wanted the note to also cover `1.2.4`, you would drag the end later to `1.3.1`
+- in this tutorial, always treat the second number as the note-end position
+
 This `4`-bar pattern becomes the core bass pattern used later in the drop sections. You are not placing it at full-song arrangement bars yet.
 
 ### Action
