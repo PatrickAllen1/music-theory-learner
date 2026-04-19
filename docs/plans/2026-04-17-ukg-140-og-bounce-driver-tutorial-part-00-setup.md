@@ -301,10 +301,10 @@ The session should start with headroom discipline, not loudness chasing.
    - `97.1.1` -> `97–112 Drop B`
    - `113.1.1` -> `113–128 Drop B Lift`
    - `129.1.1` -> `129–144 Outro`
-8. After each locator is created and renamed, color it:
-   - right-click the locator flag
-   - choose a color swatch
-   - keep warm colors for drop sections and cooler colors for intro/break sections if that helps you read the song faster
+8. Locator color is optional:
+   - if right-clicking the locator flag shows a color swatch, choose one if it helps you read the song faster
+   - if there is no color option, skip coloring completely
+   - do **not** waste time hunting for locator colors; the locator names are the important part
 9. Read the locator list back to yourself from top to bottom and make sure there are exactly `9` locators.
 
 ### Why
