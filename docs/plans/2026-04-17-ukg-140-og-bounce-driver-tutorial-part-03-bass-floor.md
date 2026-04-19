@@ -168,38 +168,50 @@ The sub should not provide excitement. It should provide authority.
 ### Action
 1. Load a fresh instance of `Serum 2` on `Bass Mid`.
 2. Initialize the patch.
-3. Set `Osc A` to `Basic Shapes`.
-4. Choose a square wave for `Osc A`:
+3. Set the oscillator power states first:
+   - `Sub`: off
+   - `Osc A`: on
+   - `Osc B`: on
+   - `Osc C`: off if Serum shows it
+   - `Noise`: off
+4. Set `Osc A` to `Basic Shapes`.
+5. Choose a square wave for `Osc A`:
    - open the `Basic Shapes` wavetable view
    - move the wavetable position until the displayed shape looks like a blocky square wave
    - a square wave looks mostly flat on top, drops straight down, stays flat on the bottom, then jumps back up
    - if Serum shows named shapes, choose `Square`
    - if you cannot find a perfect square, choose the most blocky shape available
-5. Set `Osc A Level` to `75%`.
-6. Set `Osc B` to `Basic Shapes`.
-7. Choose a saw wave for `Osc B`:
+6. Set `Osc A Level` to `75%`.
+7. Set `Osc B` to `Basic Shapes`.
+8. Choose a saw wave for `Osc B`:
    - move the wavetable position until the displayed shape looks like a ramp or diagonal slope
    - a saw wave usually rises or falls in a straight diagonal line, then jumps back to the start
    - if Serum shows named shapes, choose `Saw`
    - if you cannot find a perfect saw, choose the closest ramp-shaped option
-8. Set `Osc B Level` to `30%`.
-9. Leave both at the same octave to start.
-10. Set unison conservatively:
+9. Set `Osc B Level` to `30%`.
+10. Leave both at the same octave to start.
+11. Set unison conservatively:
     - `Osc A`: `1 voice`
     - `Osc B`: `2 voices`
-11. Set `Osc B Detune` to a tiny fixed amount:
+12. Set `Osc B Detune` to a tiny fixed amount:
     - set it to `0.05` on Serum's `0.00–1.00` detune scale on the first pass
-12. Route both through a low-pass filter:
+13. Route both through a low-pass filter:
     - type: `MG Low 12`
-13. Set initial filter settings:
+14. Set initial filter settings:
     - cutoff: `160 Hz`
     - resonance: `12%`
     - drive: `15%`
-14. Set amp envelope:
+15. Set amp envelope:
     - attack: `0–3 ms`
     - decay: `~250 ms`
-    - sustain: `70–80%`
+    - sustain: around `-2 dB` to `-4 dB` in Serum's envelope readout
     - release: `50–70 ms`
+
+Serum sustain note:
+- Serum may show envelope sustain as `dB`, not `%`
+- `0.0 dB` means full sustain
+- for this mid-bass patch, pull sustain slightly below full level
+- use `-3 dB` as the first-pass target if you want one exact value
 
 ### Why
 This layer needs:
@@ -215,6 +227,8 @@ It does **not** need:
 
 ### Final Mid-Bass Starting Spec
 - engine: `Serum 2`
+- active sources: `Osc A` and `Osc B` only
+- off sources: `Sub`, `Osc C`, `Noise`
 - Osc A: `Basic Shapes`, square wave or closest blocky square shape
 - Osc B: `Basic Shapes`, saw wave or closest ramp-shaped saw shape
 - A/B balance: `Osc A 75%` / `Osc B 30%`
@@ -226,7 +240,7 @@ It does **not** need:
 - amp env:
   - A `0–3 ms`
   - D `250 ms`
-  - S `75%`
+  - S `-3 dB`
   - R `60 ms`
 
 ### Screenshot Set
@@ -236,14 +250,29 @@ It does **not** need:
 
 ## Step 4: Add Rhythmic-Primary Motion
 ### Action
-1. Create `LFO 1` as a slow, smooth breathing shape.
-2. Set the rate so it breathes over phrase motion, not per note:
+1. Stay on the `Bass Mid` Serum 2 patch you just built in Step `3`.
+2. Do **not** do this on `Bass Sub`.
+3. Do **not** load a new blank Serum patch.
+4. Confirm the sound you are modulating:
+   - track: `Bass Mid`
+   - active oscillators: `Osc A` square + `Osc B` saw
+   - inactive sources: `Sub`, `Osc C`, `Noise`
+   - filter: `MG Low 12`
+   - cutoff: `160 Hz`
+5. Create `LFO 1` as a slow, smooth breathing shape.
+6. Set the rate so it breathes over phrase motion, not per note:
    - set it to `1 bar` synced on the first pass
-3. Drag `LFO 1` onto the filter cutoff.
-4. Set the modulation amount by dragging the modulation ring to `15%`.
-5. If the bass still sounds completely static in context, raise the depth to `18%`.
-6. If it starts sounding like wobble bass, lower the depth to `10%`.
-7. Do not add a second modulation target until the `15%` cutoff movement works against the drums.
+7. Drag `LFO 1` onto the `Filter 1 Cutoff` knob on that same `Bass Mid` patch.
+8. Set the modulation amount by dragging the modulation ring to `15%`.
+9. If the bass still sounds completely static in context, raise the depth to `18%`.
+10. If it starts sounding like wobble bass, lower the depth to `10%`.
+11. Do not add a second modulation target until the `15%` cutoff movement works against the drums.
+
+Plain-English version:
+- Step `3` built the mid-bass tone
+- Step `4` makes that same mid-bass tone breathe slightly
+- the LFO is only moving the filter cutoff
+- the LFO should not create a new melody or a wobble-bass hook
 
 ### Why
 The mid layer is `tonal-secondary`.
