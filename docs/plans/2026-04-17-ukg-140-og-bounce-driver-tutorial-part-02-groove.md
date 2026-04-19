@@ -272,10 +272,11 @@ This is not the swing layer. It is the stable top scaffold that lets the later g
 2. Place ghost hats on `1/16` subdivisions around the beat:
    - starter loop: use the `e` and `a` of beats `2` and `4` in both bars of the first `2`-bar loop
    - later additions can include the `e` of beat `1` and the `a` of beat `3`
-3. Push them late by `+4 ms` on the first pass.
-4. Do not push them earlier than the grid.
-5. Do not push them later than `+7 ms` during the first build.
-6. Keep them quieter than the main closed hats.
+3. If Ableton exposes timing offsets, push them late by `+4 ms` or `+9 ticks` on the first pass.
+4. If Ableton does not expose timing offsets, leave the ghost hats on-grid for now and continue.
+5. Do not push them earlier than the grid.
+6. Do not push them later than `+7 ms` / `+16 ticks` during the first build.
+7. Keep them quieter than the main closed hats.
 
 How to read the placement numbers:
 - Ableton's piano-roll position format is `bar.beat.sixteenth`
@@ -317,17 +318,20 @@ Exact starter placements in the same `2`-bar clip:
 5. Then mirror those in bar `2`:
    - `2.1.2`
    - `2.3.4`
-6. After placing them, open the Note or Clip properties and nudge only the ghost hats late, not the main closed hats.
-7. Set every starter ghost-hat offset to `+4 ms`.
-8. If Ableton shows offsets in ticks instead of milliseconds, use `+9 ticks` as the first pass.
-9. If you added the optional ghost hats, give those the same `+4 ms` / `+9 ticks` late offset.
-10. Set starter ghost-hat velocities:
+6. After placing them, try to open the Note or Clip properties and nudge only the ghost hats late, not the main closed hats.
+7. Do not gauge milliseconds by eye. Use one of these first-pass methods:
+   - if Ableton shows milliseconds, set every starter ghost-hat offset to `+4 ms`
+   - if Ableton shows ticks, set every starter ghost-hat offset to `+9 ticks`
+   - if Ableton only lets you drag notes, zoom in and move each ghost hat a tiny amount to the right, less than a `1/64` note
+   - if none of that is clear, leave ghost hats on-grid and continue
+8. If you added the optional ghost hats, give those the same late offset only if you successfully offset the starter ghost hats.
+9. Set starter ghost-hat velocities:
    - `1.2.2`: `42`
    - `1.2.4`: `56`
    - `1.4.2`: `46`
    - `1.4.4`: `62`
    - repeat the same values in bar `2`
-11. If you add the optional ghost hats later, set them to velocity `38` first.
+10. If you add the optional ghost hats later, set them to velocity `38` first.
 
 ### Why
 This is the main source of bounce.
@@ -467,14 +471,19 @@ Ableton click path for the late ghost-hat offsets:
 1. Click one ghost-hat note in the piano roll.
 2. Open the lower Note box or note-properties panel.
 3. Find the timing offset / nudge field for that note.
-4. Start by pushing the note later by `+4 ms`.
-5. If the groove is still too stiff after listening in context, test `+6 ms`, then `+7 ms`.
+4. If the field exists, start by pushing the note later by `+4 ms` or `+9 ticks`.
+5. If the groove is still too stiff after listening in context, test `+6 ms` / `+13 ticks`, then `+7 ms` / `+16 ticks`.
 6. Do not apply this offset to the kick, clap, or the main closed-hat scaffold.
-7. For this tutorial's first pass, use `+4 ms` on all starter ghost hats before testing other values.
+7. For this tutorial's first pass, use `+4 ms` / `+9 ticks` on all starter ghost hats before testing other values.
 8. If Ableton shows ticks instead of milliseconds, use this conversion at `140 BPM`:
    - `+4 ms` is about `+9 ticks`
    - `+6 ms` is about `+13 ticks`
    - `+7 ms` is about `+16 ticks`
+9. If Ableton does not expose milliseconds or ticks, do not guess a number:
+   - zoom in horizontally in the piano roll
+   - turn the grid to `1/64`
+   - drag each ghost hat just slightly to the right, less than one `1/64` grid step
+   - if that feels imprecise, undo it and leave ghost hats on-grid until the rest of the groove is built
 
 ### Why
 Asymmetric timing creates groove without destroying impact.
