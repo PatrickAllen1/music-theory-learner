@@ -156,13 +156,26 @@ Keeping it on one main track first makes:
 
 ### Why
 This patch needs to behave like:
-- an emotional bed first
+- a warm sustained chord layer first
 - a pulse-capable layer second
 
 It should not sound like:
 - a huge trance supersaw
 - a dry organ stab
 - a long washy pad with no front edge
+- a hospital monitor beep
+
+Plain-English sound target:
+- when you hold one chord, it should sound like warm harmonic support underneath the track
+- it should not sound like a single thin note
+- it should not sound like a lead synth
+- it should not poke out harder than the kick or hook
+- if you mute it, the track should feel less warm; if you unmute it, the track should feel wider and more musical without becoming busier
+
+If it sounds like a high beep:
+- the patch is too narrow, too high, too clean, or too percussive
+- do not keep building on that sound
+- fix the patch before programming the full chord progression
 
 ### Final Chord-Bed Starting Spec
 - engine: `Serum 2`
@@ -198,6 +211,14 @@ It should not sound like:
    - drive: `+1 dB` or `10%`
    - output: `-1 dB`
 7. Keep in-patch reverb off on the first pass.
+8. Play the `Dm9` chord from Step `4` before moving on.
+9. If it still sounds like a high beep:
+   - lower the filter cutoff from `2.6 kHz` to `1.8–2.2 kHz`
+   - increase attack from `10 ms` to `25–40 ms`
+   - reduce `Osc B Level` from `30%` to `15–20%`
+   - confirm you are playing the full chord notes, not only the top note
+   - confirm the chord is not accidentally an octave too high
+10. If it becomes too dull after those fixes, raise cutoff slowly by `200–300 Hz`, not all the way back open.
 
 ### Why
 Most of the section-dependent space should come from:
@@ -558,6 +579,18 @@ Fix order:
 2. if still cloudy, raise it once more to `220 Hz` maximum on the first pass
 3. cut the `250 Hz` bell to `-2 dB`, Q `1.0`
 4. reduce `Return C` by `-3 dB` in the affected section
+
+### Problem: “The chords sound like a high hospital monitor beep.”
+Fix order:
+1. confirm the MIDI clip contains all chord notes, not just one top note
+2. for the first chord, confirm `D3`, `A3`, `C4`, `E4`, and `F4` all start at `1.1.1`
+3. lower filter cutoff from `2.6 kHz` to `1.8–2.2 kHz`
+4. increase amp attack from `10 ms` to `25–40 ms`
+5. reduce `Osc B Level` from `30%` to `15–20%`
+6. reduce saturation drive to `0` temporarily
+7. if the chord is still piercing, move the highest note down an octave only as a diagnostic, then decide whether the voicing is too high
+
+Do not solve the beep by adding reverb. Reverb makes a bad beep wider; it does not turn it into a warm chord bed.
 
 ### Problem: “The break got wider, but not more emotional.”
 Fix order:
