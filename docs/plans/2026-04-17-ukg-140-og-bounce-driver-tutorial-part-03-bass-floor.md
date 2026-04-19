@@ -259,14 +259,37 @@ It does **not** need:
    - inactive sources: `Sub`, `Osc C`, `Noise`
    - filter: `MG Low 12`
    - cutoff: `160 Hz`
-5. Create `LFO 1` as a slow, smooth breathing shape.
-6. Set the rate so it breathes over phrase motion, not per note:
-   - set it to `1 bar` synced on the first pass
-7. Drag `LFO 1` onto the `Filter 1 Cutoff` knob on that same `Bass Mid` patch.
-8. Set the modulation amount by dragging the modulation ring to `15%`.
-9. If the bass still sounds completely static in context, raise the depth to `18%`.
-10. If it starts sounding like wobble bass, lower the depth to `10%`.
-11. Do not add a second modulation target until the `15%` cutoff movement works against the drums.
+5. Click the `LFO 1` tab at the bottom of Serum 2.
+6. Look at the big blue LFO drawing area:
+   - if it already looks like one smooth hill that starts low, rises in the middle, and falls back down, keep it
+   - if it looks like a sharp stepped pattern, replace it with a smooth triangle / hump shape
+   - do not draw lots of little steps or repeated spikes here
+7. Set the LFO timing:
+   - make sure `BPM` sync is on
+   - change the rate from `1/4` to `1 bar` if Serum shows that option
+   - if Serum shows fractions instead of words, use `1/1`
+   - leave `TRIP` off
+   - leave `DOT` off
+   - leave direction on `Forward`
+8. Do not panic about `FREE`, `TRIG`, or `RETRIG` yet.
+   - if your screen already says `FREE`, leave it on `FREE` for the first pass
+   - the important first-pass setting is the slow `1 bar` / `1/1` rate
+9. Drag from the `LFO 1` label/tab onto the `Filter 1 Cutoff` knob on that same `Bass Mid` patch.
+10. After you drop it on `Cutoff`, look for the blue modulation arc/ring around the `Cutoff` knob.
+11. Set the modulation amount on the `Cutoff` knob:
+   - drag the blue modulation arc until the amount is about `15%`
+   - if Serum does not show a clear percentage, use a small arc, not a huge sweep
+   - the cutoff should move slightly while the note plays
+   - it should not open from fully dark to fully bright every beat
+12. If the bass still sounds completely static in context, raise the cutoff modulation amount to `18%`.
+13. If it starts sounding like wobble bass, lower the cutoff modulation amount to `10%`.
+14. Do not add a second modulation target until the `15%` cutoff movement works against the drums.
+
+What this is not:
+- you are not setting the LFO volume to `15%`
+- you are not changing the bass notes
+- you are not adding wobble bass
+- you are only making the existing `Bass Mid` filter breathe a little
 
 Plain-English version:
 - Step `3` built the mid-bass tone
