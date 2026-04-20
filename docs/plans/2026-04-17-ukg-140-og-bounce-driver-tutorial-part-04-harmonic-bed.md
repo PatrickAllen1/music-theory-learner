@@ -87,12 +87,52 @@ Secondary check:
   - `Top-End, Air, and Stereo`
 
 ## Voicing Palette
-Use this as the source of truth:
+Use this as the instrumental source of truth before the vocal is active:
 - `Dm9`: `D3 F3 A3 C4 E4`
 - restrained `Bb`: `Bb2 F3 C4`
 - bloomed `Bbmaj7`: `Bb2 F3 A3 C4`
 - `Fadd9`: `F2 C3 G3 A3`
 - `Cadd9`: `C3 G3 D4 E4`
+
+## Vocal-Aware Voicing Palette
+Once the vocal is in the session, the chord bed must dodge the singer.
+
+The extracted vocal MIDI shows this useful range:
+- setup / verse material: mostly `G#3-F4`
+- full hook material: mostly `F4-C5`
+
+The notes most likely to collide are:
+- `F`
+- `Bb`
+- `A`
+- `G`
+
+Plain-English rule:
+- do not let the pad sustain around the same octave as the vocal
+- put the chord body below the vocal
+- add only small octave-5 air notes above the vocal
+- leave most of octave `4` empty when the full chorus is playing
+
+First-pass `Break A` / lower-vocal setup voicings:
+- `Dm9`: `D2 A2 C3 E3`
+- restrained `Bb`: `Bb2 F3 C4`
+- `Fadd9`: `F2 C3 A3`
+- `Cadd9`: `C3 E3 G3`
+
+First-pass full-hook-safe voicings for `Drop A` and `Drop B`:
+- `Dm9`: `D2 A2 E3`
+- restrained `Bb`: `Bb2 F3 C4`
+- bloomed `Bbmaj7`: `Bb2 F3 A3 C4`
+- `Fadd9`: `F2 C3 A3`
+- `Cadd9`: `C3 G3 E4`
+
+Optional air notes:
+- add `E5` over `Dm9` only if the vocal does not hold the same space
+- add `F5` over `Bb` / `Bbmaj7` only if it sounds like shimmer, not a second melody
+- add `C5` or `G5` over `Fadd9` only if it sits above the vocal phrase
+- add `E5` over `Cadd9` if the C bar needs lift
+
+If the chords sound like a wall behind the vocal, delete the optional air notes first.
 
 ## Step 1: Create The Chord Lane
 ### Action
@@ -327,9 +367,9 @@ Create a `4`-bar MIDI clip for the drop state:
 ### Why
 This is the emotional floor of the song.
 
-The `Dm9` voicing is intentionally `D3 F3 A3 C4 E4`.
+The instrumental `Dm9` voicing is intentionally `D3 F3 A3 C4 E4`.
 
-Use this safer voicing for the first pass even if the old `D3 A3 C4 E4 F4` voicing sounded bad mainly because `Mono` was accidentally on.
+Use this safer instrumental voicing for the first patch check even if the old `D3 A3 C4 E4 F4` voicing sounded bad mainly because `Mono` was accidentally on.
 
 The old `E4/F4` top cluster is not banned forever. It is an optional color audition after:
 - the patch is confirmed polyphonic
@@ -337,6 +377,8 @@ The old `E4/F4` top cluster is not banned forever. It is an optional color audit
 - the chords are playing in context with drums and bass
 
 Do not use the old `D3 A3 C4 E4 F4` voicing as the default. Putting `E4` and `F4` next to each other at the top can still make this patch feel tense, whistly, or over-focused.
+
+After the vocal is active, use the vocal-aware voicings above instead of treating this instrumental check voicing as final.
 
 The crucial move is bar 2:
 - restrained `Bb`
@@ -378,6 +420,60 @@ without adding more notes.
 
 ### Screenshot
 - `chords-midi-02-voice-leading-pass`
+
+## Step 5A: Check The Chords Against The Vocal MIDI
+### Action
+Do this after the vocal has been imported or after you have an extracted vocal MIDI guide.
+
+1. Create or locate a muted MIDI track named `Vocal Guide`.
+2. Put the extracted vocal MIDI on `Vocal Guide`.
+3. Mute `Vocal Guide` so it does not make sound.
+4. Put `Vocal Guide` directly above `Chords` in Arrangement View.
+5. Open the `Chords` MIDI clip.
+6. Hold `Shift` and click the `Vocal Guide` clip if Ableton lets you view both clips together.
+7. If Ableton does not show both clips at once, alternate between the two clips and compare the note names manually.
+8. Look for sustained chord notes in the same octave as sustained vocal notes.
+9. Start with the full-hook sections:
+   - `Drop A`: `49.1.1-65.1.1`
+   - `Drop B`: `113.1.1-129.1.1`
+10. If the vocal is holding `F4`, `G4`, `A4`, or `Bb4`, do not sustain a pad note at that same pitch underneath it.
+11. Move the pad note to the nearest safe octave:
+   - if the pad note is in octave `4`, try moving it down to octave `3`
+   - if it still masks the vocal, move it down to octave `2`
+   - if it needs shimmer, move only one copy up to octave `5`
+12. Do not move the vocal MIDI to fit the pad.
+
+### Why
+The vocal is the lead.
+
+The pad should frame the vocal, not compete with it.
+
+If the vocal and pad both sustain the same note in the same octave, the mix usually sounds cloudy, phasey, or strangely flat.
+
+### Exact Collision Fix Examples
+- If the pad has `F4` under a sung `F4`, move the pad to `F3` or delete it.
+- If the pad has `A4` under a sung `A4`, move the pad to `A3` or use `E5` as air instead.
+- If the pad has `G4` under a sung `G4`, move the pad to `G3` or use `G5` only as a very quiet shimmer.
+- If the pad has `Bb4` under a sung `Bb4`, move the pad to `Bb2` / `Bb3` depending on the chord.
+
+### Checkpoint
+Loop `49.1.1-65.1.1`.
+
+Play only:
+- `Vocal Full Chorus`
+- `Chords`
+
+The vocal should feel like it sits in a hole in the middle of the pad.
+
+If the vocal feels swallowed, thin the pad voicing before touching vocal EQ.
+
+### Screenshot
+- `chords-midi-02b-vocal-collision-check`
+
+### Visual MIDI Requirement
+- show `Vocal Guide` above `Chords`
+- show the full-hook area where the vocal lives mostly `F4-C5`
+- circle or label at least one chord note that was moved away from the vocal
 
 ## Step 6: Build The Break / Bloom State
 ### Action
@@ -445,7 +541,8 @@ Exact first-pass clip behavior:
    - set filter cutoff to `2.0 kHz`
    - set Utility width to `100%`
 2. `Drop A`
-   - use the same restrained `4`-bar clip
+   - use the full-hook-safe restrained clip if the full chorus is present
+   - if you only have the earlier restrained `4`-bar clip, duplicate it and move any octave-4 pad notes away from the vocal before arranging it
    - set chord note velocity to `78`
    - set each chord to end at `x.4.2`
    - set filter cutoff to `2.0 kHz`
@@ -459,6 +556,7 @@ Exact first-pass clip behavior:
    - keep Utility width at `120%`
 4. `Break B`
    - switch to the `8`-bar bloom clip
+   - use the vocal-aware bloom voicing if the vocal returns in this section
    - keep the two-bar sustains exactly as written
    - set chord note velocity to `80`
    - set filter cutoff to `2.5 kHz`
@@ -470,7 +568,7 @@ Exact first-pass clip behavior:
    - set filter cutoff to `1.9 kHz`
    - set Utility width to `130%`
 6. `Drop B`
-   - use the `8`-bar bloom clip from Step 6, not the restrained `4`-bar clip
+   - use the full-hook-safe bloomed clip from Step 6, not the restrained `4`-bar clip
    - in the full arrangement, place that `8`-bar bloom clip twice:
      - first copy: `113.1.1` to `121.1.1`
      - second copy: `121.1.1` to `129.1.1`
@@ -709,7 +807,7 @@ Fix order:
 
 ### Problem: “The chords feel stiff.”
 Fix order:
-1. open the MIDI clip and check that common tones such as `C4` and `F3/F4` do not jump octaves unnecessarily
+1. open the MIDI clip and check that common tones such as `C4` and `F3` do not jump octaves unnecessarily
 2. move note ends from `x.4.2` to `x.4.3`
 3. if that still feels clipped, move note ends to `x.4.4`
 4. only then increase `Return C` by `+2 dB`
@@ -726,7 +824,7 @@ Fix order:
 1. confirm the MIDI clip contains all chord notes, not just one top note
 2. for the first chord, confirm `D3`, `F3`, `A3`, `C4`, and `E4` all start at `1.1.1`
 3. in Serum voicing, confirm `Mono` is off and `Poly` is at least `8`
-4. make sure you are using the safe first-pass voicing before auditioning the old `D3 A3 C4 E4 F4` color
+4. make sure you are using the safe instrumental first-pass voicing before auditioning the old `D3 A3 C4 E4 F4` color
 5. lower filter cutoff toward `1.6–2.0 kHz`
 6. increase amp attack toward `35–45 ms`
 7. reduce `Osc B Level` to `0%` temporarily and judge `Osc A` alone
@@ -750,9 +848,23 @@ Fix order:
 4. if the difference is present but still inaudible, raise break filter cutoff from `2.5 kHz` to `2.7 kHz`
 5. if it still reads flat after the vocal is added later, cut the chord bed `1.5–2.5 kHz` by `-1.5 dB` instead of raising every melodic lane
 
+### Problem: “The chords sound good alone but the vocal disappears.”
+Fix order:
+1. mute every lane except `Vocal Full Chorus` and `Chords`
+2. loop `49.1.1-65.1.1`
+3. open the `Chords` MIDI clip
+4. find any sustained chord notes at `F4`, `G4`, `A4`, `Bb4`, or `C5`
+5. move those chord notes down one octave first
+6. if the pad gets too dull, add one quiet octave-5 air note instead of putting octave-4 notes back
+7. only after the voicing is clear, use EQ to make a small `1.5–2.5 kHz` dip in the chord bed
+
+Do not solve this by turning the vocal up `6 dB`.
+That makes the vocal loud, not integrated.
+
 ## What Must Be Captured For Later Lesson Conversion
 - chord-bed patch screenshots
 - restrained vs bloomed `Bb` MIDI screenshots
+- vocal-aware chord collision screenshot
 - one full `4`-bar drop chord screenshot
 - one full break bloom screenshot
 - chord bus chain screenshot

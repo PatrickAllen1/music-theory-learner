@@ -48,6 +48,56 @@ If you later test a vocal in a different key, use this quick transpose guide:
 - `E minor` to `D minor`: transpose `-2`
 - `C minor` to `D minor`: transpose `+2`
 
+## Current Vocal MIDI Facts
+The extracted vocal MIDI gives us arrangement data.
+
+Use it.
+
+Do not treat the vocal as a random audio clip once you have MIDI pitch information.
+
+Current useful vocal range:
+- setup / verse-like material: mostly `G#3-F4`
+- full hook material: mostly `F4-C5`
+
+Most-used pitch classes:
+- `F`
+- `Bb`
+- `A`
+- `G`
+
+These notes fit the chord progression, so the issue is not key clash.
+
+The issue is register collision.
+
+If the vocal holds `F4`, `G4`, `A4`, or `Bb4`, do not let the chord pad sustain that same note in the same octave underneath it.
+
+### Breath-Bar Planning
+The extracted guide shows low-content or breath bars around local bars:
+- `4`
+- `7-8`
+- `10`
+- `12`
+
+When the full chorus starts at `49.1.1`, those become:
+- local bar `4` -> arrangement bar `52`
+- local bars `7-8` -> arrangement bars `55-56`
+- local bar `10` -> arrangement bar `58`
+- local bar `12` -> arrangement bar `60`
+
+When the full chorus returns at `113.1.1`, those become:
+- local bar `4` -> arrangement bar `116`
+- local bars `7-8` -> arrangement bars `119-120`
+- local bar `10` -> arrangement bar `122`
+- local bar `12` -> arrangement bar `124`
+
+Use those bars for:
+- short bass fills
+- vocal throws
+- delay answers
+- tiny drum turnarounds
+
+Do not put those fills under the strongest sung notes.
+
 ## Copyright-Safe Clip Labels
 Do not name the public tutorial clips with full copyrighted lyric lines.
 

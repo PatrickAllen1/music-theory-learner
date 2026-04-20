@@ -101,6 +101,37 @@ Practical voice-leading rule:
 - let `A` and/or `C` act as anchors where possible from `Dm9` into the restrained `Bb` state
 - let top-voice motion step into `Fadd9` and `Cadd9`
 
+### Vocal-aware chord register strategy
+The current vocal analysis shows the useful singer range is roughly `G#3-C5`.
+
+The setup / verse-like material mostly lives `G#3-F4`.
+The full chorus mostly lives `F4-C5`.
+
+The danger pitch classes are `F`, `Bb`, `A`, and `G` because those are the notes the vocal holds most often.
+
+Production rule:
+- do not solve vocal masking by making the vocal thin
+- first move the sustained pad note away from the active vocal register
+- keep chord body below the vocal and use only deliberate octave-5 shimmer above it
+
+First-pass register-safe chord variants:
+- lower vocal setup variant for `Break A`:
+  - `Dm9`: `D2 A2 C3 E3`
+  - restrained `Bb`: `Bb2 F3 C4`
+  - `Fadd9`: `F2 C3 A3`
+  - `Cadd9`: `C3 E3 G3`
+- hook-safe variant for `Drop A`, `Drop B`, and any full-chorus placement:
+  - `Dm9`: `D2 A2 E3`, optional `E5` air
+  - restrained `Bb`: `Bb2 F3 C4`, optional `F5` air only if the vocal leaves space
+  - bloomed `Bbmaj7`: `Bb2 F3 A3 C4`, optional `F5` air
+  - `Fadd9`: `F2 C3 A3`, optional `C5` or `G5` air only if it does not mask the lead
+  - `Cadd9`: `C3 G3 E4`, optional `E5` air
+
+Universal fallback if the pad still fights the vocal:
+- keep chord body in octaves `2-3`
+- keep color shimmer in octave `5`
+- leave octave `4` mostly empty
+
 ### Chord delivery mode
 - hybrid
 - sustained emotional bed
@@ -394,6 +425,20 @@ Why:
 - second question setup: filtered pickup at `109.3.4` or `110.3.4`, then `VOC question pre-drop` at `112.3.3`
 - final answer: `VOC full chorus clean` returns at `113.1.1`
 - peak edit: strongest cuts / stacks at `132.3.4`, `136.3.4`, `140.3.4`, and optionally `144.3.4`
+
+### Current vocal MIDI arrangement facts
+- useful vocal range: roughly `G#3-C5`
+- setup / verse-like material: mostly `G#3-F4`
+- full chorus material: mostly `F4-C5`
+- longest-held pitch classes: `F`, `Bb`, `A`, `G`
+- low-content / breath bars inside the full chorus: local bars `4`, `7-8`, `10`, and `12`
+
+Arrangement translation:
+- `Drop A` full-chorus breath windows: bars `52`, `55-56`, `58`, and `60`
+- `Drop B` full-chorus breath windows: bars `116`, `119-120`, `122`, and `124`
+
+Use those windows for fills, throws, and bass answers.
+Do not add busy fills under the densest sung lines.
 
 ### Processing direction
 - high-pass enough to stay out of the bass lane

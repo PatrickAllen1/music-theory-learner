@@ -405,11 +405,13 @@ Suggested session split:
 ### Learning objectives
 - write a loop that feels emotional without spending the bloom too early
 - understand why the `Bb` chord has restrained and bloomed states
+- learn how to re-voice the chord bed around the extracted vocal MIDI instead of EQing the vocal into thinness
 
 ### What the learner builds
 - chord-bed Serum 2 patch
 - Drop A chord voicings
 - Break / Drop B chord voicings
+- vocal-aware chord voicing variants for `Break A`, `Drop A`, `Drop B`, and `Drop B Lift`
 - chord bus and returns
 
 ### What must be shown
@@ -427,6 +429,9 @@ Suggested session split:
   - `Fadd9`
   - `Cadd9`
 - voice-leading strategy
+- vocal collision check against muted `Vocal Guide` MIDI
+- first-pass danger notes: `F4`, `G4`, `A4`, `Bb4`, and `C5`
+- full-hook-safe pad strategy: chord body below the vocal, optional octave-5 air above it, octave 4 mostly clear
 - chord rhythm / pulse behavior by section
 - sidechain and EQ carve decisions
 - widening automation
@@ -436,6 +441,7 @@ Suggested session split:
 - the restrained `Bb` keeps hope latent
 - the bloomed `Bbmaj7` reveals hope later
 - chord delivery can be hybrid: sustained bed + pulse layer
+- the vocal is the lead; the pad should bracket it, not fight it
 
 ### Common mistakes
 - exposing the `Bbmaj7` too early
@@ -443,6 +449,7 @@ Suggested session split:
 - widening the chords before the break
 - forgetting to carve room for bass and vocal
 - leaving Serum in `Mono`, which collapses the chord into a single-note beep
+- leaving sustained pad notes in the same octave as the singer's strongest notes
 
 ### Listening checkpoint
 - drums + bass + chords
@@ -466,6 +473,7 @@ Suggested session split:
 - learn how to search for a vocal sample that fits the track
 - test vocal samples against drums, bass, and chords
 - build one clean intact chorus lane and one dry chop lane
+- use extracted vocal MIDI to identify range, collision notes, and breath bars
 - place the first vocal setup in `Break A`
 - place the intact chorus in `Drop A` before deconstructing it into chops
 - preserve vocal space when the final sample is not found yet
@@ -488,6 +496,8 @@ Suggested session split:
 - how to keep the full chorus intact for the first drop
 - how to cut dry fragments from the same source for later chop sections
 - how to test key safety against the chord progression
+- how to read the extracted vocal MIDI as arrangement data
+- how to map local breath bars `4`, `7-8`, `10`, and `12` to `Drop A` / `Drop B` fill windows
 - exact vocal placement states:
   - `Intro A`: no vocal
   - `Intro B`: no vocal

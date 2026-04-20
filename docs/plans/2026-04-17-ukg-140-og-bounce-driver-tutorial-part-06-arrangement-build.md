@@ -330,6 +330,15 @@ If you have both restrained and bloomed clips:
 - use restrained clips in `Intro`, `Break A`, `Drop A`, `Drop A Lift`, and `Re-entry Build`
 - use bloomed clips in `Break B`, `Drop B`, and `Drop B Lift`
 
+If you have vocal-aware chord clips from Part `4`, use them here:
+- `Break A`: lower-vocal setup voicing
+- `Drop A`: full-hook-safe restrained voicing
+- `Break B`: bloom voicing that still leaves the active vocal range clear
+- `Drop B`: full-hook-safe bloomed voicing
+- `Drop B Lift`: same full-hook-safe bloomed voicing, plus only optional octave-5 air
+
+Do not use the old instrumental-only chord voicing under the full chorus if it masks the singer.
+
 ### Chord Placement By Section
 `Intro A`, `1.1.1-17.1.1`:
 - `chord_intro_hint_4bar`
@@ -342,20 +351,24 @@ If you have both restrained and bloomed clips:
 
 `Break A`, `33.1.1-49.1.1`:
 - restrained chord bed
+- use the lower-vocal setup voicing if the vocal sits in the lower octave here
 - no `Bbmaj7` bloom yet
 - keep space for the first vocal
 
 `Drop A`, `49.1.1-65.1.1`:
 - restrained drop chord clip
+- use the full-hook-safe voicing
 - same harmonic restraint as the original plan
 - no early `Bbmaj7` bloom
 
 `Drop A Lift`, `65.1.1-81.1.1`:
 - same harmony as `Drop A`
+- keep the same full-hook-safe register strategy
 - slightly brighter pulse only
 
 `Break B`, `81.1.1-97.1.1`:
 - bloomed / stretched chord clip
+- check the vocal MIDI before leaving any `F4`, `G4`, `A4`, or `Bb4` pad note sustained
 - this is where the upward chord width opens
 
 `Re-entry Build`, `97.1.1-113.1.1`:
@@ -364,9 +377,11 @@ If you have both restrained and bloomed clips:
 
 `Drop B`, `113.1.1-129.1.1`:
 - bloomed drop chord clip
+- use the full-hook-safe bloomed voicing
 
 `Drop B Lift`, `129.1.1-145.1.1`:
 - bloomed drop chord clip
+- keep octave `4` mostly clear for the vocal
 - slightly wider / brighter than `Drop B`
 
 `Outro`, `145.1.1-161.1.1`:
@@ -474,6 +489,43 @@ Target curve:
 If a section is more than `1` point away from target, check the growth mechanism:
 - too quiet: missing core lane or vocal placement
 - too loud: too many layers too early
+
+## Step 8A: Use Vocal Breath Bars For Fills
+### Action
+Use the extracted vocal MIDI to find low-content bars before adding busy fills.
+
+For the current vocal guide, the useful low-content bars inside each full chorus are local bars:
+- `4`
+- `7-8`
+- `10`
+- `12`
+
+In `Drop A`, because the full chorus starts at `49.1.1`, the first-pass fill windows are:
+- `52.1.1-53.1.1`
+- `55.1.1-57.1.1`
+- `58.1.1-59.1.1`
+- `60.1.1-61.1.1`
+
+In `Drop B`, because the full chorus starts at `113.1.1`, the first-pass fill windows are:
+- `116.1.1-117.1.1`
+- `119.1.1-121.1.1`
+- `122.1.1-123.1.1`
+- `124.1.1-125.1.1`
+
+Use these windows for:
+- one bass fill
+- one short drum fill
+- one vocal throw
+- one delay answer
+
+Do not use all four fill types in the same window on the first pass.
+
+### Why
+The vocal already tells you where the arrangement can breathe.
+
+If you add fills under dense vocal lines, the record sounds busy.
+
+If you add fills in the breath bars, the edit feels intentional.
 - too flat: no phrase-end change
 - too busy: too many vocals or hats
 

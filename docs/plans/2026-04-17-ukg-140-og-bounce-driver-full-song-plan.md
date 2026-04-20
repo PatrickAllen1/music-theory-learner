@@ -218,6 +218,42 @@ Why:
 - `Fadd9`: `F2 C3 G3 A3`
 - `Cadd9`: `C3 G3 D4 E4`
 
+### Vocal-aware pad voicing update
+The extracted vocal MIDI changes the chord-writing rule.
+
+The singer's main useful range is approximately `G#3-C5`:
+- setup / verse material sits mostly `G#3-F4`
+- full hook material lifts mostly `F4-C5`
+
+The most collision-prone pitch classes are:
+- `F`
+- `Bb`
+- `A`
+- `G`
+
+Use the default voicing palette above only when checking the instrumental chord identity.
+
+Once the vocal is present, voice the pad as a bracket around the vocal:
+- lower chord body in octave `2` / low octave `3`
+- optional air notes in octave `5`
+- very little sustained pad material in the active vocal range
+
+First-pass vocal-aware voicings:
+- `Break A` / lower vocal setup:
+  - `Dm9`: `D2 A2 C3 E3`
+  - restrained `Bb`: `Bb2 F3 C4`
+  - `Fadd9`: `F2 C3 A3`
+  - `Cadd9`: `C3 E3 G3`
+- `Drop A` / `Drop B` full-hook sections:
+  - `Dm9`: `D2 A2 E3`, optional `E5` air
+  - restrained `Bb`: `Bb2 F3 C4`, optional `F5` air if the chorus has room
+  - bloomed `Bbmaj7`: `Bb2 F3 A3 C4`, optional `F5` air
+  - `Fadd9`: `F2 C3 A3`, optional `C5` or `G5` air only if it does not mask the lead
+  - `Cadd9`: `C3 G3 E4`, optional `E5` air
+
+If the vocal and chords fight, move the chord note first.
+Do not EQ the vocal into thinness to save a bad pad voicing.
+
 ### Harmonic restraint rule
 - `Drop A`: keep `Bb` triad/add9-led, no obvious major-7 bloom
 - `Break B / Drop B`: let the `Bbmaj7` color open up
