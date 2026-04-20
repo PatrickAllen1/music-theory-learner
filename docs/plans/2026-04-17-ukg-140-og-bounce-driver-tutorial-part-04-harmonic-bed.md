@@ -135,6 +135,7 @@ Keeping it on one main track first makes:
    - `Legato`: off
    - `Poly`: at least `8`
    - if only one note sounds when five MIDI notes are present, stop and fix this before changing the oscillator tone
+   - this was the real cause of the earlier “dull beep” failure mode: a mono patch cannot play a chord bed
 6. In Serum 2, turn these sources off:
    - `Sub`: off
    - `Osc C`: off
@@ -325,7 +326,14 @@ This is the emotional floor of the song.
 
 The `Dm9` voicing is intentionally `D3 F3 A3 C4 E4`.
 
-Do not use the older test voicing `D3 A3 C4 E4 F4` here. Putting `E4` and `F4` next to each other at the top can make this patch sound like a sterile high beep instead of a warm chord bed.
+Use this safer voicing for the first pass even if the old `D3 A3 C4 E4 F4` voicing sounded bad mainly because `Mono` was accidentally on.
+
+The old `E4/F4` top cluster is not banned forever. It is an optional color audition after:
+- the patch is confirmed polyphonic
+- the safe voicing works
+- the chords are playing in context with drums and bass
+
+Do not use the old `D3 A3 C4 E4 F4` voicing as the default. Putting `E4` and `F4` next to each other at the top can still make this patch feel tense, whistly, or over-focused.
 
 The crucial move is bar 2:
 - restrained `Bb`
@@ -640,7 +648,7 @@ Fix order:
 1. confirm the MIDI clip contains all chord notes, not just one top note
 2. for the first chord, confirm `D3`, `F3`, `A3`, `C4`, and `E4` all start at `1.1.1`
 3. in Serum voicing, confirm `Mono` is off and `Poly` is at least `8`
-4. make sure you are not using the old `D3 A3 C4 E4 F4` voicing
+4. make sure you are using the safe first-pass voicing before auditioning the old `D3 A3 C4 E4 F4` color
 5. lower filter cutoff toward `1.6–2.0 kHz`
 6. increase amp attack toward `35–45 ms`
 7. reduce `Osc B Level` to `0%` temporarily and judge `Osc A` alone
