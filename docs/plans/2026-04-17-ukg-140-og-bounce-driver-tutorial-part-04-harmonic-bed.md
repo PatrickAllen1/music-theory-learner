@@ -477,6 +477,37 @@ Exact first-pass clip behavior:
    - set filter cutoff to `2.6 kHz`
    - set Utility width to `145%`
 
+How to set different filter cutoffs on the same `Chords` track:
+1. Keep one `Chords` track and one Serum 2 chord patch.
+2. Do not duplicate the track just to get a different cutoff per section.
+3. Go to `Arrangement View`.
+4. Press `A` to show automation.
+5. On the `Chords` track, use the automation dropdowns:
+   - first dropdown: choose `Serum 2`
+   - second dropdown: choose the filter cutoff parameter
+6. The parameter name may appear as one of these, depending on the plugin wrapper:
+   - `Filter 1 Cutoff`
+   - `Fil Cutoff`
+   - `Cutoff`
+   - `Filter 1 Freq`
+7. If you cannot find it in the dropdown, move the Serum `Filter 1 Cutoff` knob once with the mouse.
+   - Ableton often exposes the last-touched plugin parameter in the automation chooser
+8. Draw flat automation values by section:
+   - `Intro B` starts at `17.1.1`: `2.0 kHz`
+   - `Drop A` starts at `33.1.1`: `2.0 kHz`
+   - `Drop A Lift` starts at `49.1.1`: `2.2 kHz`
+   - `Break` starts at `65.1.1`: `2.5 kHz`
+   - `Re-entry Build` starts at `81.1.1`: `1.9 kHz`
+   - `Drop B` starts at `97.1.1`: `2.4 kHz`
+   - `Drop B Lift` starts at `113.1.1`: `2.6 kHz`
+9. Keep each cutoff flat across the section on the first pass.
+10. Do not draw sweeps yet; Part `7` handles transition sweeps.
+
+Plain-English version:
+- the clips give each section different notes and note lengths
+- the automation gives the same Serum patch different cutoff values by song section
+- one `Chords` track is still correct
+
 ### Why
 This is the “single patch, section-dependent articulation” rule in practice.
 
