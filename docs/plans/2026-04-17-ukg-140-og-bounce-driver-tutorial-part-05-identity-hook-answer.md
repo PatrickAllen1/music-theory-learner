@@ -1,4 +1,4 @@
-# UKG 140 OG Bounce Driver: Tutorial Part 5 — Vocal Sample Search + Placeholder
+# UKG 140 OG Bounce Driver: Tutorial Part 5 — Vocal Sample Search + Chop Vocabulary
 
 ## Purpose
 Teach the learner how to find, test, prepare, and place a vocal sample lane for `ukg-140-og-bounce-driver`.
@@ -11,8 +11,9 @@ The goal is:
 - learn what kind of vocal sample fits this record
 - build an Ableton audition workflow
 - test samples against drums, bass, and chords
-- place only safe vocal placeholders in the arrangement
-- keep the song moving even if the final vocal sample is not chosen yet
+- cut the sample into a small vocabulary of usable chops
+- place different chop types across the arrangement
+- keep the song moving even if the final vocal treatment changes later
 
 This part should not make a beepy organ hook.
 
@@ -29,10 +30,11 @@ By the end of this part, the learner should have:
 - one muted `Vocal Guide MIDI` track, used only as a placement ruler
 - one written sample-search log
 - up to `3` vocal candidates, ranked `A`, `B`, and `C`
-- one first-pass vocal placeholder arrangement
+- one first-pass vocal chop vocabulary
+- one first-pass vocal chop arrangement across the song
 - one bounce of:
   - `Drop A` with the vocal lane muted
-  - `Drop B` with the vocal placeholder active
+  - `Drop B` with the vocal chop vocabulary active
   - `Break -> Re-entry Build -> Drop B` with vocal space preserved
 
 ## Time Estimate
@@ -90,6 +92,92 @@ It should not act like:
 
 The track still needs space.
 The vocal should make the best moments feel intentional, not fill every empty bar.
+
+## Vocal Chop Vocabulary
+Do not think of the sample as one long vocal clip.
+
+Think of it as raw material that can become several smaller tools.
+
+For this track, build these chop types:
+
+| Chop type | What it is | Where it belongs | Example from `I just wanna give you something to believe in` |
+|---|---|---|---|
+| `Main chop` | the strongest memorable word or phrase fragment | `Drop B`, `Drop B Lift` | `believe in` |
+| `Long phrase chop` | a longer emotional fragment that still does not become a full vocal loop | `Drop B Lift` or one special break moment | `to believe in` / `something to believe in` |
+| `Teaser chop` | a quieter, filtered hint of the vocal before the main reveal | `Intro B`, `Drop A`, `Drop A Lift`, late `Re-entry Build` | `I just wanna` / `give you` |
+| `Throw` | a short answer after a phrase, usually quieter and more delayed | phrase endings in `Drop B` / `Drop B Lift` | `in` |
+| `Reverse` | a reversed vocal tail that pulls into a new section | before `65.1.1`, `81.1.1`, or `97.1.1` | reversed tail of `believe in` |
+| `Texture bed` | stretched or faded vocal atmosphere, not a readable lyric | `Break` only | washed tail from `believe in` |
+| `Repeat chop` | a tiny syllable repeated for rhythm | only if it improves bounce | `give`, `you`, or `in` |
+
+Plain-English rule:
+- `Main chop` is what the listener remembers.
+- `Teaser chop` is what makes the listener feel something is coming.
+- `Throw` is punctuation.
+- `Reverse` is transition glue.
+- `Texture bed` is atmosphere.
+
+Do not use the same chop at the same strength in every section.
+
+The same source phrase can appear throughout the whole track, but its role must change:
+- earlier sections use less lyric, more filtering, and lower volume
+- the break uses texture, not the hook
+- the re-entry uses pickup hints
+- `Drop B` gives the first clear identity
+- `Drop B Lift` can use the most complete phrase if the record still has space
+
+## Working Example: Current Source Phrase
+Current source phrase:
+
+```text
+I just wanna give you something to believe in
+```
+
+Current source facts:
+- original key: `D# minor`
+- target key: `D minor`
+- transpose starting point: `-1 semitone`
+- original tempo: `150 BPM`
+- project tempo: `140 BPM`
+- current usable length: about `3.2` bars
+
+Use this phrase as a source phrase, not as one finished loop.
+
+First-pass clip vocabulary:
+
+| Clip name | Source words | Track | Role |
+|---|---|---|---|
+| `VOC i just wanna tease` | `I just wanna` | `Vocal Main` | intro / re-entry teaser |
+| `VOC give you stab` | `give you` | `Vocal Main` | short rhythmic stab |
+| `VOC something mid` | `something` | `Vocal Main` | optional mid phrase fragment |
+| `VOC to believe in long` | `to believe in` | `Vocal Main` | longer emotional phrase |
+| `VOC believe in main` | `believe in` | `Vocal Main` | main `Drop B` chop |
+| `VOC in throw` | `in` | `Vocal Throw` | phrase-end throw |
+| `VOC believe reverse` | reversed tail of `believe in` | `Vocal Throw` or transition FX lane | transition pull |
+
+How to make each clip from the full source phrase:
+1. Put the full source phrase on `Vocal Audition`.
+2. Duplicate the full source phrase onto `Vocal Main`.
+3. Click the duplicate.
+4. Drag the left edge right until the chosen word starts.
+5. Drag the right edge left until the chosen word or phrase ends.
+6. Add a tiny fade-in if the start clicks.
+7. Add a tiny fade-out if the end clicks.
+8. Rename the clip:
+   - click the clip
+   - press `Cmd+R` / `Ctrl+R` if Ableton lets you rename clips in your view
+   - if not, right-click the clip and choose `Rename`
+   - type the exact clip name from the table
+9. Repeat for each useful word group.
+
+If you cannot rename the clip in Ableton:
+- leave the audio clip name alone
+- rename the track lane temporarily instead
+- write the clip name in your project notes
+
+The exact word boundaries are allowed to move by ear.
+
+The important rule is that each clip has one job.
 
 ## Vocal States Across The Song
 The vocal lane has a role in the whole arrangement.
@@ -513,6 +601,33 @@ Ableton fade basics:
 - drag the fade handle inward
 - keep fades tiny on vocal chops unless the sample clicks
 
+If using the current phrase, make these clips first:
+
+1. `VOC believe in main`
+   - source words: `believe in`
+   - role: main memorable chop
+   - first destination: `Drop B`
+2. `VOC in throw`
+   - source word: `in`
+   - role: phrase-end reply
+   - first destination: `Vocal Throw`
+3. `VOC i just wanna tease`
+   - source words: `I just wanna`
+   - role: earlier filtered teaser
+   - first destination: `Intro B` or `Re-entry Build`
+4. `VOC to believe in long`
+   - source words: `to believe in`
+   - role: larger emotional version
+   - first destination: `Drop B Lift`, not `Drop A`
+5. `VOC believe reverse`
+   - source: tail of `believe in`
+   - role: reverse pull into a section
+   - first destination: before `97.1.1`
+
+Do not make the full `I just wanna give you something to believe in` phrase the default drop loop.
+
+That full phrase can be tested later, but the first-pass arrangement should be built from smaller chops.
+
 ### Why
 The first chop should prove the vocal identity.
 
@@ -522,7 +637,7 @@ It does not need to carry every phrase yet.
 ### Action
 Use `Vocal Main`.
 
-First-pass placements:
+First-pass placements for `VOC believe in main`:
 - `100.3.4`
 - `108.3.4`
 
@@ -542,6 +657,12 @@ Exact placement:
 3. Put the duplicate so its first vocal attack starts at `108.3.4`.
 4. Play `97.1.1–113.1.1`.
 5. If the repeats feel too obvious, delete the `108.3.4` copy and try `112.4.1` instead.
+
+Phrase-specific map:
+- put `VOC believe in main` at `100.3.4`
+- put `VOC believe in main` again at `108.3.4`
+- do not put `VOC to believe in long` in `Drop B` yet
+- save `VOC to believe in long` for `Drop B Lift` if the shorter main chop works
 
 ### Why
 This keeps the vocal memorable without turning the whole drop into a sample loop.
@@ -571,6 +692,13 @@ How to make a throw:
 4. Send it to `Return D` filtered delay if available.
 5. Keep the dry throw quieter than the main vocal.
 
+For the current phrase:
+1. Use `VOC in throw` first.
+2. Place it at `104.4.4`.
+3. Duplicate it to `112.4.4`.
+4. Keep the clip short enough that only `in` or the tail of `in` speaks.
+5. If the `in` tail feels too obvious, reverse it and use it as a transition pull instead.
+
 If the throw sounds cheesy:
 - delete it
 - leave the space empty
@@ -587,8 +715,8 @@ Do not put the main vocal across all of `Drop A`.
 
 Allowed first-pass Drop A vocal behavior:
 - no vocal at all
-- one filtered teaser at `40.3.4`
-- one filtered teaser at `48.3.4`
+- one filtered `VOC give you stab` at `40.3.4`
+- one filtered `VOC give you stab` or `VOC i just wanna tease` at `48.3.4`
 
 If using a teaser:
 1. Duplicate the main vocal chop onto `Vocal Main`.
@@ -598,6 +726,10 @@ If using a teaser:
 5. Duplicate to `48.3.4` only if the first teaser works.
 
 Do not reveal the best vocal phrase in `Drop A`.
+
+For the current phrase, do not use `believe in` in `Drop A`.
+
+That lyric is the emotional payoff.
 
 ### Why
 `Drop A` should still feel austere.
@@ -620,8 +752,13 @@ Avoid:
 
 First-pass break placement:
 1. Leave the break empty.
-2. If it feels too empty, add one vocal texture at `76.4.4`.
+2. If it feels too empty, add one quiet `VOC to believe in long` texture at `76.4.4`.
 3. Keep it lower than the chord bloom.
+
+Better break option for the current phrase:
+- reverse the tail of `believe in`
+- place the reversed clip so it ends exactly at `65.1.1` or `97.1.1`
+- keep it low enough that it feels like a pull, not a readable lyric
 
 ### Why
 The break should open space.
@@ -640,6 +777,12 @@ Only allow vocal pickup hints in the last `4` bars:
 Use filtered or quiet versions only.
 
 Do not use the full main vocal here.
+
+For the current phrase:
+- first try `VOC i just wanna tease` at `93.3.4`
+- optionally repeat it at `94.3.4`
+- optionally place a reversed `VOC believe reverse` so the reverse ends at `97.1.1`
+- do not place `VOC believe in main` before `Drop B`
 
 ### Why
 The `Re-entry Build` should re-engage rhythm first.
@@ -696,15 +839,15 @@ Bad samples often look exciting in the session and sound wrong in the bounce.
 ## Final Vocal Placement Spec
 First-pass core:
 - `Intro A`: no vocal
-- `Intro B`: optional filtered teaser at `29.3.4` and `30.3.4`
-- `Drop A`: no main vocal, or very quiet teaser at `40.3.4` and `48.3.4`
-- `Drop A Lift`: optional quiet teaser at `56.3.4` and `64.3.4`; do not reveal the main phrase
-- `Break`: mostly empty vocal space; optional texture at `76.4.4`
-- `Re-entry Build`: late filtered pickups at `93.3.4`, `94.3.4`, and optionally `96.4.4`
-- `Drop B`: main vocal appears at `100.3.4` and `108.3.4`
-- `Drop B`: throw appears at `104.4.4` and `112.4.4`
-- `Drop B Lift`: main vocal can return at `116.3.4` and `124.3.4`
-- `Drop B Lift`: throw can return at `120.4.4` and `128.4.4`
+- `Intro B`: optional filtered `VOC i just wanna tease` at `29.3.4` and `30.3.4`
+- `Drop A`: no main vocal, or very quiet `VOC give you stab` at `40.3.4` and `48.3.4`
+- `Drop A Lift`: optional quiet `VOC i just wanna tease` or `VOC give you stab` at `56.3.4` and `64.3.4`; do not reveal `believe in`
+- `Break`: mostly empty vocal space; optional reversed `VOC believe reverse` into `65.1.1` or quiet texture at `76.4.4`
+- `Re-entry Build`: late filtered `VOC i just wanna tease` pickups at `93.3.4`, `94.3.4`, and optionally a reverse ending at `97.1.1`
+- `Drop B`: `VOC believe in main` appears at `100.3.4` and `108.3.4`
+- `Drop B`: `VOC in throw` appears at `104.4.4` and `112.4.4`
+- `Drop B Lift`: `VOC to believe in long` or `VOC something to believe in` can appear at `116.3.4` and `124.3.4`
+- `Drop B Lift`: `VOC in throw` can return at `120.4.4` and `128.4.4`
 - `Outro`: no new vocal ideas; use only a tail if it helps the exit
 
 The old synth hook/answer is not part of the core arrangement.

@@ -58,7 +58,7 @@ const PARTS = [
   {
     id: "part-05",
     part_number: 5,
-    title: "Vocal Sample Search + Placeholder",
+    title: "Vocal Sample Search + Chop Vocabulary",
     category: "sampling",
     estimated_minutes: 120,
     focus: "Vocal identity lane",

@@ -205,7 +205,7 @@ Suggested session split:
   - setup through bass floor
   - by the end, the lane identity should already be clear
 - `Session 2a`: Parts `4–5`
-  - harmony plus vocal sample search / placeholder
+  - harmony plus vocal sample search / chop vocabulary
   - by the end, the harmonic bed and vocal identity lane should exist
 - `Session 2b`: Part `6`
   - arrangement build
@@ -452,7 +452,7 @@ Suggested session split:
 - if Drop A already feels “open,” the restrained `Bb` state is probably too bloomed
 - if the chords feel stiff, check voice leading before changing the patch
 
-## Part 5: Identity (Vocal Sample Search + Placeholder)
+## Part 5: Identity (Vocal Sample Search + Chop Vocabulary)
 ### Prerequisites
 - the learner can drag audio samples into Ableton
 - the learner can mute, solo, trim, and move audio clips

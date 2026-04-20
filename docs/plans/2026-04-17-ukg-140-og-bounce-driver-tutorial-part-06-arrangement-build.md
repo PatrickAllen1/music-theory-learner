@@ -582,6 +582,24 @@ If you have found a sample:
 - both should feel human and sample-led
 - neither should sound like a beepy keyboard
 
+If you are using the current source phrase:
+
+```text
+I just wanna give you something to believe in
+```
+
+Use this arrangement vocabulary:
+- `VOC i just wanna tease`: filtered teaser before the main vocal reveal
+- `VOC give you stab`: small rhythmic hint for restrained sections
+- `VOC believe in main`: main `Drop B` vocal identity
+- `VOC in throw`: short phrase-end punctuation
+- `VOC to believe in long`: bigger `Drop B Lift` phrase
+- `VOC believe reverse`: reverse pull into a section
+
+Do not place the full `3.2`-bar source phrase across the whole arrangement on the first pass.
+
+The arrangement is built from small clips with different jobs.
+
 `Intro A`:
 - keep `Vocal Main` empty
 - keep `Vocal Throw` empty
@@ -589,62 +607,66 @@ If you have found a sample:
 `Intro B`:
 - keep `Vocal Main` empty until the back half
 - optional filtered vocal teaser only:
-  - first teaser: clip attack starts at `29.3.4`
-  - second teaser: clip attack starts at `30.3.4`
+  - first teaser: `VOC i just wanna tease` attack starts at `29.3.4`
+  - second teaser: duplicate `VOC i just wanna tease` at `30.3.4` only if the first one works
 - keep these teasers quieter than the final `Drop B` vocal
 - keep `Vocal Throw` empty
 
 `Drop A`:
 - keep the main vocal out on the first pass
 - optional quiet teaser only:
-  - `Vocal Main` attack starts at `40.3.4`
+  - `VOC give you stab` attack starts at `40.3.4`
   - duplicate only if it works at `48.3.4`
 - keep `Vocal Throw` empty
 - if the vocal teaser makes `Drop A` feel like the main drop, delete it
+- do not use `VOC believe in main` here
 
 `Drop A Lift`:
 - keep the main vocal out on the first pass
 - optional quiet teaser only:
-  - `Vocal Main` attack starts at `56.3.4`
+  - `VOC i just wanna tease` or `VOC give you stab` attack starts at `56.3.4`
   - duplicate only if it works at `64.3.4`
 - do not reveal the best vocal phrase here
 - keep `Vocal Throw` empty
 
 `Break`:
 - keep the full vocal phrase out
-- if the break needs human texture, use one quiet vocal tail at `76.4.4`
+- if the break needs human texture, use one quiet `VOC to believe in long` texture at `76.4.4`
+- optional reverse pull: place `VOC believe reverse` so the reversed tail ends exactly at `65.1.1`
 - keep `Vocal Throw` empty unless the throw is a very quiet reverse or breath
+- if the lyric becomes readable and dominant in the break, lower it or delete it
 
 `Re-entry Build`:
 - keep `81.1.1–93.1.1` vocal-empty
 - optional filtered pickups only:
-  - `Vocal Main` attack starts at `93.3.4`
-  - optional second pickup starts at `94.3.4`
-  - optional final pickup starts at `96.4.4`
+  - `VOC i just wanna tease` attack starts at `93.3.4`
+  - optional second `VOC i just wanna tease` starts at `94.3.4`
+  - optional `VOC believe reverse` ends at `97.1.1`
 - keep `Vocal Throw` empty unless the final pickup needs a tiny delay tail
 
 `Drop B`:
 - this is the first real vocal identity section
 - first-pass `Vocal Main` placements:
-  - main chop attack starts at `100.3.4`
-  - repeat main chop attack starts at `108.3.4`
+  - `VOC believe in main` attack starts at `100.3.4`
+  - repeat `VOC believe in main` attack starts at `108.3.4`
 - optional `Vocal Main` alternates if those feel wrong:
   - `104.4.1`
   - `112.4.1`
 - first-pass `Vocal Throw` placements:
-  - throw attack starts at `104.4.4`
-  - throw attack starts at `112.4.4`
+  - `VOC in throw` attack starts at `104.4.4`
+  - `VOC in throw` attack starts at `112.4.4`
 - do not place the vocal on every listed point
 - use `100.3.4` and `108.3.4` first, then add throws only if the phrase needs them
+- if `VOC believe in main` feels too short, test `VOC to believe in long` only once at `108.3.4`, then compare
 
 `Drop B Lift`:
 - continue the `Drop B` vocal logic
 - first-pass `Vocal Main` placements:
-  - `116.3.4`
-  - `124.3.4`
+  - `VOC to believe in long` or `VOC something to believe in` at `116.3.4`
+  - repeat at `124.3.4` only if the first one works
 - first-pass `Vocal Throw` placements:
-  - `120.4.4`
-  - `128.4.4`
+  - `VOC in throw` at `120.4.4`
+  - `VOC in throw` at `128.4.4`
 - only add extra vocal chops if `Drop B` still feels too empty after drums, chords, and top-end lift are working
 
 `Outro`:
