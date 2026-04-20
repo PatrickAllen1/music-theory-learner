@@ -182,6 +182,13 @@ Exact first-pass arrangement placement:
 9. Place the `Outro` clips from `129.1.1` to `145.1.1`.
 10. After each two-section pass, press play a few bars before the handoff so you hear the transition in motion before moving on.
 
+Chord clip placement clarification:
+- `Drop A`, `Drop A Lift`, and `Re-entry Build` use the restrained `4`-bar chord clip repeated across their sections.
+- `Break`, `Drop B`, and `Drop B Lift` use the `8`-bar bloom chord clip.
+- For `Drop B`, place the `8`-bar bloom chord clip from `97.1.1` to `105.1.1`, then duplicate it from `105.1.1` to `113.1.1`.
+- For `Drop B Lift`, place the same `8`-bar bloom chord clip from `113.1.1` to `121.1.1`, then duplicate it from `121.1.1` to `129.1.1`.
+- Do not use the restrained `4`-bar chord clip for `Drop B` unless you have made a separate bloomed `4`-bar fallback clip with the `Bbmaj7` notes active.
+
 Section skeleton:
 
 - `Intro A`
@@ -370,6 +377,9 @@ For `65–80`:
 - thin the drums
 - stretch the chords
 - switch to the bloomed `Bbmaj7` state
+- use the `8`-bar bloom chord clip twice:
+  - first copy: `65.1.1` to `73.1.1`
+  - second copy: `73.1.1` to `81.1.1`
 - let upward voicing and air become obvious
 - keep the bass sparse:
   - root reminders only
@@ -434,6 +444,9 @@ It should not feel like:
 For `97–112`:
 - bring back full bass body
 - reopen the harmonic bloom
+- use the `8`-bar bloom chord clip twice:
+  - first copy: `97.1.1` to `105.1.1`
+  - second copy: `105.1.1` to `113.1.1`
 - let the hook drop to half density
 - introduce the answer at phrase ends only
 - keep the section bigger by:
@@ -468,6 +481,9 @@ It should feel clearly bigger than `Drop A`, but still disciplined.
 ### Action
 `Drop B Lift` (`113–128`):
 - keep the same harmonic world as `Drop B`
+- keep using the `8`-bar bloom chord clip:
+  - first copy: `113.1.1` to `121.1.1`
+  - second copy: `121.1.1` to `129.1.1`
 - let tops and widened chords carry more of the release
 - keep hook and answer alternating by phrase
 - allow the greatest phrase density here without turning the section into clutter

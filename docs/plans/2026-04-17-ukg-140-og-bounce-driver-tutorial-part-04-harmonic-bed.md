@@ -387,7 +387,7 @@ Create an `8`-bar break clip or duplicate the loop and edit it into the bloom st
    - bars `5–6`: `Fadd9`
    - bars `7–8`: `Cadd9`
 4. For bars `1–2`, place:
-   - `D3`, `A3`, `C4`, `E4`, `F4`
+   - `D3`, `F3`, `A3`, `C4`, `E4`
    - start all of them at `1.1.1`
    - end all of them at `2.4.4`
 5. For bars `3–4`, place:
@@ -466,13 +466,19 @@ Exact first-pass clip behavior:
    - set filter cutoff to `1.9 kHz`
    - set Utility width to `130%`
 6. `Drop B`
-   - return to the bloomed state
-   - if using the `4`-bar bloomed clip, make sure the `Bbmaj7` bar is active again before widening the sends
+   - use the `8`-bar bloom clip from Step 6, not the restrained `4`-bar clip
+   - in the full arrangement, place that `8`-bar bloom clip twice:
+     - first copy: `97.1.1` to `105.1.1`
+     - second copy: `105.1.1` to `113.1.1`
+   - if your Ableton set contains a separate `4`-bar bloomed fallback clip, that fallback is allowed, but only if its `Bbmaj7` bar contains `Bb2`, `F3`, `A3`, and `C4`
    - set chord note velocity to `84`
    - set filter cutoff to `2.4 kHz`
    - set Utility width to `140%`
 7. `Drop B Lift`
    - keep the same bloomed notes as `Drop B`
+   - easiest first pass: reuse the same `8`-bar bloom clip twice again:
+     - first copy: `113.1.1` to `121.1.1`
+     - second copy: `121.1.1` to `129.1.1`
    - set chord note velocity to `88`
    - set filter cutoff to `2.6 kHz`
    - set Utility width to `145%`
@@ -522,10 +528,10 @@ Mechanical changes:
 - `Intro B`: velocity `70`, filter `2.0 kHz`, chords end `x.4.4`
 - `Drop A`: velocity `78`, filter `2.0 kHz`, chords end `x.4.2`
 - `Drop A Lift`: velocity `86`, filter `2.2 kHz`, chords end `x.4.2`
-- `Break`: switch to the bloomed `Bbmaj7` clip, longer note values, wider send/width state
+- `Break`: switch to the `8`-bar bloom clip, longer note values, wider send/width state
 - `Re-entry Build`: velocity `76`, filter `1.9 kHz`, chords end `x.4.1`
-- `Drop B`: velocity `84`, filter `2.4 kHz`, bloomed `Bbmaj7` active
-- `Drop B Lift`: velocity `88`, filter `2.6 kHz`, bloomed `Bbmaj7` active
+- `Drop B`: use the `8`-bar bloom clip twice, velocity `84`, filter `2.4 kHz`, bloomed `Bbmaj7` active
+- `Drop B Lift`: use the same `8`-bar bloom clip twice, velocity `88`, filter `2.6 kHz`, bloomed `Bbmaj7` active
 
 ### Screenshot
 - `chords-06-section-articulation-map`
