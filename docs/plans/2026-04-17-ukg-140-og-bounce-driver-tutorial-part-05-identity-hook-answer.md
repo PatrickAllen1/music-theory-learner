@@ -105,15 +105,17 @@ Secondary check:
 
 ## Core Musical Material
 Use this as the source of truth:
-- `Drop A` hook cell: `A4 -> C5 -> D5`
-- `Drop B` hook cell: `A4 -> C5 -> D5 -> F5`
-- answer cell: `G4 -> A4 -> C5`
+- `Drop A` hook cell: `A3 -> C4 -> D4`
+- `Drop B` hook cell: `A3 -> C4 -> D4 -> F4`
+- answer cell: `G3 -> A3 -> C4`
+- the old higher register `A4 -> C5 -> D5 -> F5` is no longer the default
+- only audition the higher octave later if the lower organ hook gets buried after drums, bass, and chords are all playing
 
 Rhythmic identity:
 - on the `a` of beat `3` = `x.3.4`
 - on beat `4` = `x.4.1`
 - on the `a` of beat `4` = `x.4.4`
-- on hook-owned `Drop B` bloom phrases, `F5` lands on beat `1` of the following bar
+- on hook-owned `Drop B` bloom phrases, `F4` lands on beat `1` of the following bar
 
 Kick relationship rule:
 - do not start the hook on beat `1` of its own bar
@@ -156,28 +158,58 @@ If they share one MIDI lane too early, it becomes harder to enforce the alternat
 ### Action
 1. Load a fresh instance of `Serum 2` on `Hook`.
 2. Initialize the patch.
-3. Set `Osc A` to `Basic Shapes`.
-4. Choose the sine / triangle-leaning `Basic Shapes` frame:
-   - use the triangle frame if you can identify it
-   - if not, use the simple frame immediately brighter than sine and darker than saw
-5. Set `Osc A Level` to `85%`.
-6. Set `Osc B` to `Basic Shapes`.
-7. Choose a saw-leaning support shape:
-   - use the simple saw frame or the nearest bright simple-shape frame
-8. Set `Osc B Level` to `25%`.
-9. On `Osc A`, set the warp/FM mode to `FM from B`.
-10. Set the FM amount to `18%`.
-11. Route the patch through a smooth low-pass or softening filter:
+3. Turn `Sub` off.
+4. Turn `Noise` off.
+5. Turn `Osc C` off if your Serum version shows it.
+6. Keep `Osc A` on.
+7. Keep `Osc B` on, but treat it as quiet color only.
+8. Set `Mono` off.
+9. Set `Poly` to at least `8`.
+10. Set `Legato` off.
+11. Set `Porta` off or leave it at `0`.
+12. Set `Osc A` to `Basic Shapes`.
+13. Choose a square-leaning or triangle-square frame:
+    - do not use a pure sine frame
+    - do not use a pure triangle frame if it sounds like a beep
+    - do not use a bright saw frame on the first pass
+    - if you are unsure, move the wavetable position until the note says `duh` more than `ding`
+14. Set `Osc A Level` to `90%`.
+15. Set `Osc B` to `Basic Shapes`.
+16. Choose a soft triangle or soft square support shape:
+    - avoid bright saw on the first pass
+    - avoid metallic / glassy frames
+17. Set `Osc B Level` to `10%`.
+18. Leave FM off on the first pass.
+19. If the patch feels too plain after the lower octave hook is programmed, turn on `FM from B` and keep it very low:
+    - starting amount: `0–6%`
+    - hard first-pass maximum: `10%`
+20. Route the patch through a smooth low-pass or softening filter:
     - `MG Low 12` or similar
-12. Set filter values:
-    - cutoff: `2.2 kHz`
-    - resonance: `10%`
-    - drive: `8%`
-13. Set amp envelope:
-    - attack: `2 ms`
-    - decay: `140 ms`
-    - sustain: `30%`
-    - release: `95 ms`
+21. Set filter values:
+    - cutoff: `1.4 kHz`
+    - resonance: `0–5%`
+    - drive: `0–4%`
+22. Set amp envelope:
+    - attack: `2–5 ms`
+    - hold: `0 ms`
+    - decay: `260 ms`
+    - sustain: about `-10 dB` to `-7 dB`
+    - release: `150 ms`
+23. Do not turn on Serum reverb, delay, chorus, hyper, or compressor while building the dry hook.
+
+Immediate sound check:
+1. Play `A3 -> C4 -> D4`.
+2. The sound should read as `duh-duh-duh`, not `ding-ding-ding`.
+3. If it sounds like an electric notification:
+   - turn FM off
+   - lower `Osc B Level` to `5–8%`
+   - lower filter cutoff toward `1.2 kHz`
+   - use a more square-leaning `Osc A` frame
+4. If it sounds like a plain beep:
+   - move `Osc A` away from sine/triangle toward square
+   - raise decay toward `300 ms`
+   - raise sustain slightly, but do not turn it into a pad
+5. If the lower octave sounds organ-like and the higher octave sounds like a beep, keep the lower octave.
 
 ### Why
 The hook should feel:
@@ -190,22 +222,30 @@ If the patch sounds too glossy, too wide, or too bell-like, it will stop feeling
 
 ### Final Hook Starting Spec
 - engine: `Serum 2`
-- family: `FM-organ / woody garage stab`
-- Osc A: sine / triangle-leaning body
-- Osc A Level: `85%`
-- Osc B: saw-leaning support for FM color
-- Osc B Level: `25%`
-- FM mode: `FM from B`
-- FM amount: `18%`
+- family: warm organ-pluck / woody garage stab
+- Sub: `Off`
+- Noise: `Off`
+- Osc A: square-leaning or triangle-square body
+- Osc A Level: `90%`
+- Osc B: soft triangle/square support
+- Osc B Level: `10%`
+- FM mode: `Off` first pass, optional `FM from B` only if needed
+- FM amount: `0–6%`, hard first-pass maximum `10%`
 - filter: `MG Low 12`
-- cutoff: `2.2 kHz`
-- resonance: `10%`
-- drive: `8%`
+- cutoff: `1.2–1.6 kHz`
+- resonance: `0–5%`
+- drive: `0–4%`
 - amp env:
-  - A `2 ms`
-  - D `140 ms`
-  - S `30%`
-  - R `95 ms`
+  - A `2–5 ms`
+  - H `0 ms`
+  - D `240–320 ms`
+  - S about `-10 dB` to `-7 dB`
+  - R `140–180 ms`
+- voicing:
+  - Mono `Off`
+  - Poly at least `8`
+  - Legato `Off`
+  - Porta `Off`
 
 ### Screenshot Set
 - `identity-02-hook-oscillators`
@@ -250,23 +290,31 @@ not from smearing the dry signal left-right.
 ## Step 4: Build The Answer Patch From The Hook
 ### Action
 1. Duplicate the hook patch onto the `Answer` track.
-2. On the `Answer` Serum patch, keep the same oscillators and FM routing.
-3. Change the amp envelope:
+2. On the `Answer` Serum patch, keep the same oscillator choices as the hook.
+3. Keep `Sub` off and `Noise` off.
+4. Keep FM off unless you already turned on a very low FM amount for the hook.
+5. If FM is on, keep the answer FM amount at or below the hook amount.
+6. Change the amp envelope:
    - attack: `2 ms`
-   - decay: `90 ms`
-   - sustain: `20%`
-   - release: `60 ms`
-4. Raise filter cutoff from `2.2 kHz` to `2.4 kHz`.
-5. Keep filter resonance at `10%`.
-6. Keep filter drive at `8%`.
-7. On the `Answer` Saturator, set:
+   - hold: `0 ms`
+   - decay: `100 ms`
+   - sustain: about `-12 dB`
+   - release: `70 ms`
+7. Raise filter cutoff slightly above the hook, but keep it warm:
+   - if the hook is at `1.4 kHz`, start the answer around `1.6 kHz`
+   - do not jump straight to `2.4 kHz` unless the answer is buried
+8. Keep filter resonance low:
+   - `0–5%`
+9. Keep filter drive low:
+   - `0–4%`
+10. On the `Answer` Saturator, set:
    - drive: `+1.5 dB`
    - output: `-1.5 dB`
    - soft clip: `On`
-8. On the `Answer` EQ Eight, keep the high-pass at `220 Hz`.
-9. On the `Answer` Utility, set width to `115%`.
-10. Keep the answer in the same instrument family.
-11. Do not widen it into a separate cinematic layer.
+11. On the `Answer` EQ Eight, keep the high-pass at `220 Hz`.
+12. On the `Answer` Utility, set width to `105–110%`.
+13. Keep the answer in the same instrument family.
+14. Do not widen it into a separate cinematic layer.
 
 ### Why
 The answer should feel like:
@@ -278,10 +326,13 @@ not a second lead synth.
 
 ### Final Answer Starting Spec
 - same patch family as the hook
-- envelope: A `2 ms`, D `90 ms`, S `20%`, R `60 ms`
-- filter cutoff: `2.4 kHz`
+- Sub and Noise: `Off`
+- envelope: A `2 ms`, H `0 ms`, D `100 ms`, S about `-12 dB`, R `70 ms`
+- filter cutoff: about `1.6 kHz`
+- resonance: `0–5%`
+- drive: `0–4%`
 - saturation drive: `+1.5 dB`
-- Utility width: `115%`
+- Utility width: `105–110%`
 - phrase-end punctuation only
 
 ### Screenshot Set
@@ -291,7 +342,7 @@ not a second lead synth.
 ## Step 5: Program The Drop A Hook Phrase
 ### Action
 Create one `4`-bar `Drop A` hook clip using:
-- `A4 -> C5 -> D5`
+- `A3 -> C4 -> D4`
 
 Starting rhythm:
 - on the `a` of beat `3`
@@ -308,12 +359,13 @@ Starting density rule:
 Exact first-pass MIDI placement inside the `4`-bar clip:
 1. Leave bars `1`, `2`, and `3` empty.
 2. In bar `4`, set the piano-roll grid to `1/16`.
-3. Place `A4` at `4.3.4`.
-4. Give `A4` a `1/16` length so it ends at `4.4.1`.
-5. Place `C5` at `4.4.1`.
-6. Give `C5` a `1/8` length so it ends at `4.4.3`.
-7. Place `D5` at `4.4.4`.
-8. Give `D5` a short `1/16` length so it acts like a phrase-end jab rather than a long held note.
+3. Place `A3` at `4.3.4`.
+4. Give `A3` a `1/16` length so it ends at `4.4.1`.
+5. Place `C4` at `4.4.1`.
+6. Give `C4` a `1/8` length so it ends at `4.4.3`.
+7. Place `D4` at `4.4.4`.
+8. Give `D4` a short `1/16` length so it acts like a phrase-end jab rather than a long held note.
+9. Do not move this phrase up to `A4 -> C5 -> D5` unless the lower register disappears in the full mix.
 
 ### Why
 The hook has to feel memorable because of:
@@ -325,43 +377,43 @@ not because it has lots of notes.
 
 This phrase is allowed to collide with selected kicks:
 - beat `4` is a deliberate accent
-- `F5` on the next bar's beat `1` is the bloom accent
+- `F4` on the next bar's beat `1` is the bloom accent
 
 ### Screenshot
 - `identity-midi-01-drop-a-hook`
 
 ### Visual MIDI Requirement
 - show the full `4`-bar clip
-- label the `A4`, `C5`, and `D5`
+- label the `A3`, `C4`, and `D4`
 - annotate the `3a -> 4 -> 4a` rhythm clearly
 
 ## Step 6: Program The Drop B Hook Variant
 ### Action
 Duplicate the `Drop A` hook clip and edit it for `Drop B`:
-- `A4 -> C5 -> D5 -> F5`
+- `A3 -> C4 -> D4 -> F4`
 
 Rules:
-- `F5` is the bloom note
+- `F4` is the bloom note
 - it should not appear in `Drop A` or `Drop A Lift`
 - keep the same rhythmic identity
-- when used, `F5` lands on beat `1` of the following bar as the phrase re-opens
+- when used, `F4` lands on beat `1` of the following bar as the phrase re-opens
 
 Starting density rule:
 - keep the hook at half density in `Drop B`
-- do not simply add the `F5` to every phrase ending
+- do not simply add the `F4` to every phrase ending
 
 Exact first-pass placement for the first hook-owned `Drop B` phrase in Arrangement View:
 1. Use the first hook-owned `Drop B` phrase at bar `100` as your model.
-2. Place `A4` at `100.3.4`.
-3. Place `C5` at `100.4.1`.
-4. Place `D5` at `100.4.4`.
-5. Place `F5` at `101.1.1`.
+2. Place `A3` at `100.3.4`.
+3. Place `C4` at `100.4.1`.
+4. Place `D4` at `100.4.4`.
+5. Place `F4` at `101.1.1`.
 6. Use these exact note lengths:
-   - `A4`: `1/16`, ending at `100.4.1`
-   - `C5`: `1/8`, ending at `100.4.3`
-   - `D5`: `1/16`, ending at `101.1.1`
-   - `F5`: `1/8`, ending at `101.1.3`
-7. If you are sketching this in a loop clip instead of Arrangement View, temporarily extend the clip long enough to place the `F5` on the following bar, then trim and duplicate once the phrase reads correctly.
+   - `A3`: `1/16`, ending at `100.4.1`
+   - `C4`: `1/8`, ending at `100.4.3`
+   - `D4`: `1/16`, ending at `101.1.1`
+   - `F4`: `1/8`, ending at `101.1.3`
+7. If you are sketching this in a loop clip instead of Arrangement View, temporarily extend the clip long enough to place the `F4` on the following bar, then trim and duplicate once the phrase reads correctly.
 
 ### Why
 `Drop B` gets bigger because:
@@ -377,7 +429,7 @@ But if the hook keeps full density while the answer arrives, the section will fe
 ## Step 7: Program The Phrase-End Answer
 ### Action
 Create one `4`-bar `Drop B` answer clip using:
-- `G4 -> A4 -> C5`
+- `G3 -> A3 -> C4`
 
 Placement rules:
 - answer lives at phrase ends only
@@ -393,16 +445,16 @@ Starting placement:
 Exact first-pass MIDI placement for the first answer-owned phrase ending:
 1. Use bar `104` as the first answer-owned phrase ending in the full song.
 2. Set the piano-roll grid to `1/16`.
-3. Place `G4` at `104.3.3`.
-4. Give `G4` a `1/16` length so it ends at `104.3.4`.
-5. Place `A4` at `104.4.1`.
-6. Give `A4` a `1/16` length so it ends at `104.4.2`.
-7. Place `C5` at `104.4.4`.
-8. Give `C5` a `1/16` length on the first pass so it ends at `105.1.1`.
+3. Place `G3` at `104.3.3`.
+4. Give `G3` a `1/16` length so it ends at `104.3.4`.
+5. Place `A3` at `104.4.1`.
+6. Give `A3` a `1/16` length so it ends at `104.4.2`.
+7. Place `C4` at `104.4.4`.
+8. Give `C4` a `1/16` length on the first pass so it ends at `105.1.1`.
 9. Repeat the same rhythmic idea at bar `112` for the second answer-owned phrase ending:
-   - `G4` at `112.3.3`, length `1/16`
-   - `A4` at `112.4.1`, length `1/16`
-   - `C5` at `112.4.4`, length `1/16`
+   - `G3` at `112.3.3`, length `1/16`
+   - `A3` at `112.4.1`, length `1/16`
+   - `C4` at `112.4.4`, length `1/16`
 
 ### Why
 The answer should make `Drop B` feel more conversational, not denser for density’s sake.
@@ -497,12 +549,12 @@ If the answer makes the section smaller:
 - or too similar in density to the hook
 
 First correction for each failure:
-- hook too dark: raise hook filter cutoff from `2.2 kHz` to `2.5 kHz`
+- hook too dark: raise hook filter cutoff from `1.4 kHz` toward `1.8 kHz`
 - hook too low: raise the `Hook` fader by `+1 dB` maximum before changing anything else
 - chords too open: cut the `Chords` track at `2.0 kHz` by `-1.5 dB`, Q `1.0`
 - answer too continuous: delete any answer notes outside bars `104` and `112`
 - answer too loud: lower the `Answer` fader by `-1.5 dB`
-- answer too similar: shorten answer decay from `90 ms` to `75 ms`
+- answer too similar: shorten answer decay from `100 ms` to `75 ms`
 
 ### Screenshot
 - `identity-10-lane-balance`
@@ -523,22 +575,23 @@ Compare against:
 
 ### What To Listen For
 - does the hook read on first listen without sounding like a full vocal topline?
-- does the `F5` feel like a real bloom when it appears?
+- does the `F4` feel like a real bloom when it appears?
 - does the answer feel like family, not a new instrument?
 - does `Drop B` get bigger by alternation rather than by pile-up?
 
 ### Expected Answer
-- `Drop A` should feel identifiable with only `A4 -> C5 -> D5`
-- `Drop B` should feel more open when `F5` appears, but still disciplined
+- `Drop A` should feel identifiable with only `A3 -> C4 -> D4`
+- `Drop B` should feel more open when `F4` appears, but still disciplined
 - the answer should sound like a reply, not a second lead
 
 ## Troubleshooting
 ### Problem: “The hook feels generic.”
 Fix order:
 1. open the MIDI clip and check the note starts are exactly `4.3.4`, `4.4.1`, and `4.4.4`
-2. raise hook filter cutoff from `2.2 kHz` to `2.5 kHz`
-3. if still dull, raise Saturator drive from `+1 dB` to `+1.5 dB`
-4. only then consider one phrase-end timing variation; do not add a fourth note to `Drop A`
+2. confirm the hook notes are in the lower organ register: `A3`, `C4`, `D4`
+3. raise hook filter cutoff from `1.4 kHz` toward `1.8 kHz`
+4. if still dull, raise Saturator drive from `+1 dB` to `+1.5 dB`
+5. only then consider one phrase-end timing variation; do not add a fourth note to `Drop A`
 
 ### Problem: “The hook is fighting the chords.”
 Fix order:
@@ -552,7 +605,7 @@ Fix order:
 ### Problem: “The answer sounds like another song.”
 Fix order:
 1. reduce answer Saturator drive from `+1.5 dB` to `+1.0 dB`
-2. set answer Utility width from `115%` to `105%`
+2. if answer Utility width is above `110%`, bring it down to `105%`
 3. set answer decay to `75 ms` and release to `50 ms`
 4. remove any answer notes outside bars `104` and `112`
 
@@ -568,9 +621,24 @@ Fix order:
 Fix order:
 1. A/B against the references at matched loudness
 2. open the hook clip and check the rhythm lands at `4.3.4`, `4.4.1`, and `4.4.4`
-3. check that the hook patch has `FM from B` at `18%`
-4. check that the filter cutoff is at least `2.2 kHz`
-5. if the hook is audible but bland, raise filter cutoff to `2.5 kHz` before adding notes
+3. check that the hook notes are `A3`, `C4`, and `D4`, not the higher `A4`, `C5`, and `D5`
+4. check that the hook patch is not in beep mode:
+   - Sub off
+   - Noise off
+   - FM off or below `6%`
+   - Osc A square-leaning, not pure sine
+5. check that the filter cutoff is around `1.2–1.8 kHz`
+6. if the lower octave hook is audible but still bland, raise filter cutoff slightly before adding notes
+
+### Problem: “The hook sounds like a bell, beep, or phone notification.”
+Fix order:
+1. keep the MIDI in the lower register: `A3 -> C4 -> D4`
+2. turn FM off
+3. lower `Osc B Level` to `5–8%`
+4. make sure `Sub` and `Noise` are off
+5. move `Osc A` away from sine/triangle toward a square-leaning `Basic Shapes` frame
+6. lower filter cutoff toward `1.2 kHz`
+7. set envelope hold to `0 ms`, decay around `260–320 ms`, sustain around `-10 dB` to `-7 dB`, and release around `140–180 ms`
 
 ## What Must Be Captured For Later Lesson Conversion
 - hook patch screenshots
