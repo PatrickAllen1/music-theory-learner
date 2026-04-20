@@ -147,6 +147,7 @@ This means:
     - cutoff range `1.8–2.2 kHz`
     - resonance range `5–8%`
     - drive range `0–3%`
+  - section automation may open as high as roughly `2.6 kHz` for `Drop B Lift`, but do not return to the old `3 kHz+` chord-bed values unless the patch is clearly too dull in context
 - envelope direction:
   - enough sustain to feel like a bed
   - enough decay / articulation that the pulse layer can still speak

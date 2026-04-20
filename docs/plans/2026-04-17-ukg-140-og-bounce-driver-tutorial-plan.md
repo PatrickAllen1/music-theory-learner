@@ -411,6 +411,12 @@ Suggested session split:
 
 ### What must be shown
 - chord-bed patch direction from the Production Plan `Chord-bed patch` and `Chord duality mechanism` sections as the starting source of truth
+- Serum 2 chord-bed voicing check:
+  - `Mono` off
+  - `Legato` off
+  - `Poly` at least `8`
+- safe first-pass `Dm9`: `D3 F3 A3 C4 E4`
+- old `D3 A3 C4 E4 F4` color is optional later audition only, not default
 - voicing palette:
   - `Dm9`
   - restrained `Bb`
@@ -433,6 +439,7 @@ Suggested session split:
 - bouncing the top voice around with root-position voicings
 - widening the chords before the break
 - forgetting to carve room for bass and hook
+- leaving Serum in `Mono`, which collapses the chord into a single-note beep
 
 ### Listening checkpoint
 - drums + bass + chords
@@ -445,6 +452,11 @@ Suggested session split:
 ## Part 5: Identity (Hook + Answer)
 ### Prerequisites
 - the learner can program short melodic clips and automate send effects
+- Part `4` chord bed passes the handoff check:
+  - `Mono` off
+  - `Poly` at least `8`
+  - safe `Dm9` voicing active
+  - no single-note beep
 
 ### Learning objectives
 - build an instrumental-first hook that carries the track

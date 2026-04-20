@@ -39,6 +39,18 @@ By the end of this part, the learner should have:
 - learner can duplicate a Serum patch and edit it without losing the original
 
 ## What The Learner Should Understand Before Starting
+Part `5` depends on the Part `4` chord bed being basically correct.
+
+Before writing the hook, verify the chord lane:
+- `Chords` Serum patch has `Mono` off
+- `Legato` is off
+- `Poly` is at least `8`
+- the safe first-pass `Dm9` is `D3 F3 A3 C4 E4`
+- the chord sound is a soft garage organ/pad hybrid, not a single-note beep
+- the old `D3 A3 C4 E4 F4` color is not the default; save it for a later audition only
+
+If the chord bed still sounds like a beep, stop and fix Part `4` before continuing. Do not build a brighter or louder hook to compensate for a broken chord bed.
+
 The hook is not a full topline.
 
 It exists to:
@@ -450,20 +462,26 @@ The FX should reinforce that difference.
 
 ## Step 9: Check Register And Density Against The Chords
 ### Action
-1. Play `drums + bass + chords + hook`.
-2. Mute the `Chords` track and listen to the hook for one pass.
-3. Unmute the `Chords` track.
-4. The hook should still read without raising the `Hook` track fader by more than `+1 dB`.
-5. If the hook disappears, cut the `Chords` track with `EQ Eight`:
+1. Before judging the hook, check the `Chords` lane again:
+   - `Mono`: off
+   - `Poly`: at least `8`
+   - first chord: `D3 F3 A3 C4 E4`
+   - no single-note beep
+2. Play `drums + bass + chords + hook`.
+3. Mute the `Chords` track and listen to the hook for one pass.
+4. Unmute the `Chords` track.
+5. The hook should still read without raising the `Hook` track fader by more than `+1 dB`.
+6. If the hook disappears and the chords still sound beepy or mono, go back to Part `4`; do not EQ around a broken chord sound.
+7. If the chord bed is healthy but the hook disappears, cut the `Chords` track with `EQ Eight`:
    - bell frequency: `2.0 kHz`
    - gain: `-1.5 dB`
    - Q: `1.0`
-6. Only after that carve should you raise the `Hook` fader.
-7. Play the `Drop B` phrase with answer.
-8. Check the full-song bars:
+8. Only after that carve should you raise the `Hook` fader.
+9. Play the `Drop B` phrase with answer.
+10. Check the full-song bars:
    - hook-owned phrase endings: `100` and `108`
    - answer-owned phrase endings: `104` and `112`
-9. If both `Hook` and `Answer` contain notes at the same phrase ending, delete the weaker phrase instead of lowering it.
+11. If both `Hook` and `Answer` contain notes at the same phrase ending, delete the weaker phrase instead of lowering it.
 
 ### Why
 This is the main integration test for the identity lane.
@@ -524,10 +542,12 @@ Fix order:
 
 ### Problem: “The hook is fighting the chords.”
 Fix order:
-1. raise the hook high-pass from `220 Hz` to `250 Hz`
-2. set hook Utility width from `105%` to `100%`
-3. cut the chord bed at `2.0 kHz` by `-1.5 dB`, Q `1.0`
-4. only then reduce the hook level by `-1 dB`
+1. confirm the chord bed is polyphonic: `Mono` off, `Poly` at least `8`
+2. confirm the first chord is the safe `D3 F3 A3 C4 E4` voicing
+3. raise the hook high-pass from `220 Hz` to `250 Hz`
+4. set hook Utility width from `105%` to `100%`
+5. cut the chord bed at `2.0 kHz` by `-1.5 dB`, Q `1.0`
+6. only then reduce the hook level by `-1 dB`
 
 ### Problem: “The answer sounds like another song.”
 Fix order:

@@ -56,6 +56,21 @@ By the end of this part, the learner should have:
 - learner can duplicate clips, create locators, and automate mutes or arrangement edits in Ableton
 
 ## What The Learner Should Understand Before Starting
+Before arranging, run one carryover check from Parts `4` and `5`.
+
+Do not arrange around broken lane sounds.
+
+Chord lane must pass:
+- `Chords` Serum patch has `Mono` off
+- `Legato` is off
+- `Poly` is at least `8`
+- safe first-pass `Dm9` is `D3 F3 A3 C4 E4`
+- the chord bed sounds like a soft garage organ/pad hybrid, not a single-note beep
+
+Hook lane must pass:
+- hook reads against the healthy chord bed without raising the `Hook` fader by more than `+1 dB`
+- if the hook only works because the chords are muted, fix the chord/hook balance in Part `5` first
+
 Arrangement here is not:
 - copy-pasting one 4-bar loop for 4 minutes
 - muting and unmuting entire lanes with no phrase design

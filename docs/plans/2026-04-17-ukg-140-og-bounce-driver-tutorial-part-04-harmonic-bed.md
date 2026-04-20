@@ -444,37 +444,37 @@ Exact first-pass clip behavior:
    - use the same restrained `4`-bar clip
    - set chord note velocity to `78`
    - set each chord to end at `x.4.2`
-   - set filter cutoff to `2.6 kHz`
+   - set filter cutoff to `2.0 kHz`
    - set Utility width to `120%`
    - let sidechain create the pulse feel
 3. `Drop A Lift`
    - keep the same notes and same basic chord-end points as `Drop A`
    - set chord note velocity to `86`
    - keep each chord ending at `x.4.2`
-   - raise filter cutoff from `2.6 kHz` to `2.9 kHz`
+   - raise filter cutoff from `2.0 kHz` to `2.2 kHz`
    - keep Utility width at `120%`
 4. `Break`
    - switch to the `8`-bar bloom clip
    - keep the two-bar sustains exactly as written
    - set chord note velocity to `80`
-   - set filter cutoff to `3.2 kHz`
+   - set filter cutoff to `2.5 kHz`
    - set Utility width to `150%`
 5. `Re-entry Build`
    - return to the restrained `4`-bar clip
    - set chord note velocity to `76`
    - set each chord to end at `x.4.1`
-   - set filter cutoff to `2.4 kHz`
+   - set filter cutoff to `1.9 kHz`
    - set Utility width to `130%`
 6. `Drop B`
    - return to the bloomed state
    - if using the `4`-bar bloomed clip, make sure the `Bbmaj7` bar is active again before widening the sends
    - set chord note velocity to `84`
-   - set filter cutoff to `3.0 kHz`
+   - set filter cutoff to `2.4 kHz`
    - set Utility width to `140%`
 7. `Drop B Lift`
    - keep the same bloomed notes as `Drop B`
    - set chord note velocity to `88`
-   - set filter cutoff to `3.2 kHz`
+   - set filter cutoff to `2.6 kHz`
    - set Utility width to `145%`
 
 ### Why
@@ -489,12 +489,12 @@ You are making one harmonic identity that behaves differently by section.
 
 Mechanical changes:
 - `Intro B`: velocity `70`, filter `2.0 kHz`, chords end `x.4.4`
-- `Drop A`: velocity `78`, filter `2.6 kHz`, chords end `x.4.2`
-- `Drop A Lift`: velocity `86`, filter `2.9 kHz`, chords end `x.4.2`
+- `Drop A`: velocity `78`, filter `2.0 kHz`, chords end `x.4.2`
+- `Drop A Lift`: velocity `86`, filter `2.2 kHz`, chords end `x.4.2`
 - `Break`: switch to the bloomed `Bbmaj7` clip, longer note values, wider send/width state
-- `Re-entry Build`: velocity `76`, filter `2.4 kHz`, chords end `x.4.1`
-- `Drop B`: velocity `84`, filter `3.0 kHz`, bloomed `Bbmaj7` active
-- `Drop B Lift`: velocity `88`, filter `3.2 kHz`, bloomed `Bbmaj7` active
+- `Re-entry Build`: velocity `76`, filter `1.9 kHz`, chords end `x.4.1`
+- `Drop B`: velocity `84`, filter `2.4 kHz`, bloomed `Bbmaj7` active
+- `Drop B Lift`: velocity `88`, filter `2.6 kHz`, bloomed `Bbmaj7` active
 
 ### Screenshot
 - `chords-06-section-articulation-map`
@@ -627,7 +627,7 @@ Fix order:
 1. remove the `A` from the restrained `Bb` bar
 2. set `Drop A` Utility width from `120%` down to `110%`
 3. set `Drop A` `Return C` send from `-22 dB` down to `-26 dB`
-4. only then lower the filter cutoff from `2.6 kHz` to `2.3 kHz`
+4. only then lower the filter cutoff from `2.0 kHz` to `1.8 kHz`
 
 ### Problem: “The chords feel stiff.”
 Fix order:
@@ -669,7 +669,7 @@ Fix order:
 1. A/B your `Drop A` and break against the references at matched loudness
 2. open the restrained clip and check that bar `2` is only `Bb2`, `F3`, `C4`
 3. open the bloomed clip and check that the `Bbmaj7` state is `Bb2`, `F3`, `A3`, `C4`
-4. if the difference is present but still inaudible, raise break filter cutoff from `3.2 kHz` to `3.5 kHz`
+4. if the difference is present but still inaudible, raise break filter cutoff from `2.5 kHz` to `2.7 kHz`
 5. if it still reads flat after the hook is added later, cut the chord bed `1.5–2.5 kHz` by `-1.5 dB` instead of raising every melodic lane
 
 ## What Must Be Captured For Later Lesson Conversion
