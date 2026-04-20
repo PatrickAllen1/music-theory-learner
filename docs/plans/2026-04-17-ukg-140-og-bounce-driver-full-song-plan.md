@@ -155,6 +155,8 @@ Why:
 - `Vocal Throw` is phrase-end only.
 - The main vocal and throw should not crowd the same phrase ending.
 - If the vocal is not found yet, preserve the empty lane rather than adding a synth replacement.
+- If the source has two open-vowel devotional phrases, test them as an intercut `A/B/A/B` loop before defaulting to one repeated phrase.
+- If the intercut loop is too busy, keep only the stronger phrase at `100.3.4` and `108.3.4` and use throws at phrase endings.
 
 ### Break chord widening
 - “Stretch the chords” means:
@@ -276,6 +278,13 @@ The bass is the `floor`, not the topline.
 - `Drop B`: vocal throw at `104.4.4` and `112.4.4`
 - `Drop B Lift`: longer hook phrase can appear at `116.3.4` and `124.3.4`
 - `Drop B Lift`: vocal throw at `120.4.4` and `128.4.4`
+
+### D-minor trance vocal alternate
+- `Break`: emotional consonant-ending phrase at `72.1.1`; optional open-vowel devotional phrase at `76.1.1`
+- `Re-entry Build`: question phrase at `96.3.3`, ending before `97.1.1`
+- `Drop B`: devotional `A/B/A/B` intercut test at `100.3.4`, `104.3.4`, `108.3.4`, `112.3.4`
+- `Drop B`: if the `A/B/A/B` intercut is too dense, delete the `104.3.4` and `112.3.4` phrase clips and use throws instead
+- `Drop B Lift`: stronger phrase alone with tighter cuts before adding more lyric
 
 ### Sample search criteria
 - euphoric phrase, one-shot, breath, ad-lib, or chop

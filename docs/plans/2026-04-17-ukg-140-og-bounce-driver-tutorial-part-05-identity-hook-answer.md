@@ -209,6 +209,99 @@ The break phrase creates emotion.
 
 The hook phrase creates memory.
 
+## D-Minor Trance Vocal Map
+If the vocal source is already in `D minor`, do not transpose it first.
+
+Start with:
+- clip `Transpose`: `0`
+- warp mode: `Complex Pro` for full phrases, `Beats` or `Complex` for tiny chops if they sound tighter
+- formant shift: untouched on the first pass
+- clip gain: lower until the vocal sits with the drums, not above them
+
+Use functional clip names instead of full copyrighted lyric text.
+
+### Functional Clip Names
+Create these clips from the source if the phrases exist:
+
+| Clip name | What to cut | Why it matters | Loop risk |
+|---|---|---|---|
+| `VOC mystery seed` | the short mystery/setup phrase with the nasal ending | good for build, intro, and filtered punctuation | medium; nasal endings can feel flat if looped too much |
+| `VOC hopeful missing line` | the hopeful communication line after the mystery seed, if available | adds emotional duality instead of pure uncertainty | medium |
+| `VOC question pre-drop` | the question phrase ending on an open vowel | best pre-drop tension phrase | low if used once |
+| `VOC devotional A` | first open-`oh` devotional phrase | best pure loop candidate | low |
+| `VOC devotional B` | second open-`oh` devotional phrase | pairs with `VOC devotional A` | low |
+| `VOC eyes statement` | the longer statement phrase ending with a consonant | good as a one-time declaration | high if looped |
+| `VOC arms phrase` | the emotional arms/holding phrase ending with a consonant cluster | good for break emotion | high unless crossfaded or gated tightly |
+| `VOC reverse tail` | reversed tail from `VOC devotional A` or `VOC devotional B` | pulls into drops | low |
+
+### Phonetic Loop Rule
+Open vowels loop more cleanly than consonant endings.
+
+Use this ranking:
+1. Open-`oh` endings: best for repeated drop hooks.
+2. Open-`eye` endings: good for pre-drop or one-time tension.
+3. Nasal `-ing` endings: good for punctuation and build, weaker for the main loop.
+4. Consonant clusters: use once, crossfade, reverse, or gate tightly.
+
+This is not music-theory decoration.
+
+It directly affects whether the vocal loop feels smooth or chopped-off.
+
+### Recommended Emotional Arc
+Use this story order:
+1. mystery setup
+2. question before the drop
+3. devotional hook answer
+4. bigger devotional loop in the lift
+
+That arc works because the setup creates uncertainty, the pre-drop asks the question, and the drop answers with need/devotion.
+
+Do not start the track with the full devotional hook.
+
+Save it.
+
+### D-Minor Trance Source First-Pass Placement
+Use this map if the source has the phrase types above:
+
+- `Intro B`: filtered `VOC mystery seed` or `VOC reverse tail` at `29.3.4`
+- `Drop A`: optional very quiet `VOC mystery seed` at `40.3.4`
+- `Drop A Lift`: optional `VOC hopeful missing line` or filtered `VOC mystery seed` at `56.3.4`
+- `Break`: `VOC arms phrase` at `72.1.1`, then `VOC devotional A` or `VOC devotional B` at `76.1.1`
+- `Re-entry Build`: `VOC question pre-drop` starts at `96.3.3` and must end before `97.1.1`
+- `Drop B`: intercut `VOC devotional A` and `VOC devotional B`:
+  - `VOC devotional A` at `100.3.4`
+  - `VOC devotional B` at `104.3.4`
+  - `VOC devotional A` at `108.3.4`
+  - optional `VOC devotional B` at `112.3.4`
+- `Drop B throws`: if the intercut loop is too busy, replace `112.3.4` with `VOC isolation throw` at `112.4.4`
+- `Drop B Lift`: use `VOC devotional A` alone with tighter/faster cuts, or continue the `A/B` intercut if it still feels emotional
+
+### Missing Fragment To Check
+If the source has a hopeful communication phrase between the mystery setup and the darker distrust line, cut it as `VOC hopeful missing line`.
+
+Use it before using any accusatory or distrust-heavy line.
+
+The track wants longing and release, not bitterness.
+
+### Intercut Loop Test
+Test this before committing to a single repeated hook:
+
+1. Put `VOC devotional A` at `100.3.4`.
+2. Put `VOC devotional B` at `104.3.4`.
+3. Put `VOC devotional A` at `108.3.4`.
+4. Put `VOC devotional B` at `112.3.4`.
+5. Loop `97.1.1–113.1.1`.
+6. Mute `VOC devotional B`.
+7. Listen to `VOC devotional A` alone.
+8. Unmute `VOC devotional B`.
+9. Keep the intercut version only if it feels like one continuous sung idea.
+
+If the intercut version feels too vocal-heavy:
+- keep `VOC devotional A` at `100.3.4`
+- keep `VOC devotional A` at `108.3.4`
+- move `VOC devotional B` to `Drop B Lift`
+- keep only a throw at `104.4.4` and `112.4.4`
+
 ## Working Example: Current Source Phrase
 Current source phrase:
 
@@ -731,6 +824,27 @@ If using a big trance vocal stem, make these clips first:
    - source: tail of the hook phrase, reversed
    - role: pull into `Drop B`
 
+If using a `D minor` trance vocal with devotional/open-vowel phrases, make these clips first:
+
+1. `VOC devotional A`
+   - source: the first open-vowel devotional phrase
+   - role: main loop candidate
+2. `VOC devotional B`
+   - source: the second open-vowel devotional phrase
+   - role: call-response partner
+3. `VOC question pre-drop`
+   - source: the question phrase
+   - role: half-bar pre-drop tease
+4. `VOC mystery seed`
+   - source: the short mystery/setup phrase
+   - role: intro/build punctuation
+5. `VOC arms phrase`
+   - source: the emotional break phrase with the consonant ending
+   - role: break lyric moment
+6. `VOC reverse tail`
+   - source: tail from `VOC devotional A` or `VOC devotional B`
+   - role: pull into `Drop B`
+
 ### Why
 The first chop should prove the vocal identity.
 
@@ -743,6 +857,12 @@ Use `Vocal Main`.
 First-pass placements for `VOC believe in main`:
 - `100.3.4`
 - `108.3.4`
+
+If using the `D minor` trance vocal map, first-pass placements for the hook are:
+- `VOC devotional A` at `100.3.4`
+- `VOC devotional B` at `104.3.4`
+- `VOC devotional A` at `108.3.4`
+- optional `VOC devotional B` at `112.3.4`
 
 Optional second-pass placements if the sample is clearly working:
 - `104.4.1`
@@ -766,6 +886,11 @@ Phrase-specific map:
 - put `VOC believe in main` again at `108.3.4`
 - do not put `VOC to believe in long` in `Drop B` yet
 - save `VOC to believe in long` for `Drop B Lift` if the shorter main chop works
+
+D-minor trance source map:
+- if `VOC devotional A/B` intercut sounds natural, it becomes the main `Drop B` hook system
+- if it sounds too busy, keep only `VOC devotional A` at `100.3.4` and `108.3.4`
+- if `VOC devotional B` is stronger than `VOC devotional A`, swap their roles
 
 ### Why
 This keeps the vocal memorable without turning the whole drop into a sample loop.
@@ -959,6 +1084,13 @@ First-pass core:
 - `Drop B Lift`: longer `VOC hook phrase`, `VOC to believe in long`, or `VOC something to believe in` can appear at `116.3.4` and `124.3.4`
 - `Drop B Lift`: `VOC in throw` can return at `120.4.4` and `128.4.4`
 - `Outro`: no new vocal ideas; use only a tail if it helps the exit
+
+D-minor trance source alternate:
+- `Break`: `VOC arms phrase` at `72.1.1`, then `VOC devotional A` or `VOC devotional B` at `76.1.1`
+- `Re-entry Build`: `VOC question pre-drop` at `96.3.3`, ending before `97.1.1`
+- `Drop B`: `VOC devotional A` at `100.3.4`, `VOC devotional B` at `104.3.4`, `VOC devotional A` at `108.3.4`
+- `Drop B`: optional `VOC devotional B` at `112.3.4`, or replace with a short throw at `112.4.4`
+- `Drop B Lift`: `VOC devotional A` alone with tighter cuts, or the same `A/B` intercut if it still feels clean
 
 The old synth hook/answer is not part of the core arrangement.
 

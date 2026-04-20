@@ -590,6 +590,14 @@ If you are using a big trance / rave vocal stem:
 - `VOC reverse tail` is the transition pull into a section
 - do not paste the full acapella across the track
 
+If you are using a `D minor` trance vocal with two open-vowel devotional phrases:
+- `VOC devotional A` is the first main drop loop phrase
+- `VOC devotional B` is the call-response partner
+- `VOC question pre-drop` is the half-bar question before `Drop B`
+- `VOC mystery seed` is the setup / build fragment
+- `VOC arms phrase` is the break emotional phrase
+- `VOC reverse tail` pulls into `Drop B`
+
 If you are using the current source phrase:
 
 ```text
@@ -617,6 +625,7 @@ The arrangement is built from small clips with different jobs.
 - optional filtered vocal teaser only:
   - first teaser: `VOC i just wanna tease` attack starts at `29.3.4`
   - second teaser: duplicate `VOC i just wanna tease` at `30.3.4` only if the first one works
+- if using the `D minor` trance vocal map, use filtered `VOC mystery seed` instead of the current-source teaser
 - keep these teasers quieter than the final `Drop B` vocal
 - keep `Vocal Throw` empty
 
@@ -640,6 +649,8 @@ The arrangement is built from small clips with different jobs.
 `Break`:
 - keep the drop hook phrase out
 - if using a phrase-led vocal, place `VOC break lyric phrase` at `72.1.1` or `76.1.1`
+- if using the `D minor` trance vocal map, place `VOC arms phrase` at `72.1.1`
+- then place `VOC devotional A` or `VOC devotional B` at `76.1.1` only if it does not make the break feel like the drop
 - if using the current source phrase, one quiet `VOC to believe in long` texture can sit at `76.4.4`
 - optional reverse pull: place `VOC believe reverse` so the reversed tail ends exactly at `65.1.1`
 - keep `Vocal Throw` empty unless the throw is a very quiet reverse or breath
@@ -652,6 +663,8 @@ The arrangement is built from small clips with different jobs.
   - `VOC i just wanna tease` attack starts at `93.3.4`
   - optional second `VOC i just wanna tease` starts at `94.3.4`
   - optional `VOC believe reverse` ends at `97.1.1`
+- if using the `D minor` trance vocal map, place `VOC question pre-drop` at `96.3.3` and make sure it ends before `97.1.1`
+- if `VOC question pre-drop` starts earlier than `96.3.3`, it is no longer a half-bar tease; trim it or move it later
 - keep `Vocal Throw` empty unless the final pickup needs a tiny delay tail
 
 `Drop B`:
@@ -659,6 +672,11 @@ The arrangement is built from small clips with different jobs.
 - first-pass `Vocal Main` placements:
   - `VOC hook phrase`, `VOC hook title chop`, or `VOC believe in main` attack starts at `100.3.4`
   - repeat the same clip at `108.3.4`
+- if using the `D minor` trance vocal intercut:
+  - `VOC devotional A` attack starts at `100.3.4`
+  - `VOC devotional B` attack starts at `104.3.4`
+  - `VOC devotional A` attack starts at `108.3.4`
+  - optional `VOC devotional B` attack starts at `112.3.4`
 - optional `Vocal Main` alternates if those feel wrong:
   - `104.4.1`
   - `112.4.1`
@@ -668,12 +686,14 @@ The arrangement is built from small clips with different jobs.
 - do not place the vocal on every listed point
 - use `100.3.4` and `108.3.4` first, then add throws only if the phrase needs them
 - if `VOC believe in main` feels too short, test `VOC to believe in long` only once at `108.3.4`, then compare
+- if the intercut loop feels too busy, delete the `104.3.4` and `112.3.4` phrase clips and use throws instead
 
 `Drop B Lift`:
 - continue the `Drop B` vocal logic
 - first-pass `Vocal Main` placements:
   - longer `VOC hook phrase`, `VOC to believe in long`, or `VOC something to believe in` at `116.3.4`
   - repeat at `124.3.4` only if the first one works
+- if using the `D minor` trance vocal map, test `VOC devotional A` alone with tighter cuts before adding more lyric
 - first-pass `Vocal Throw` placements:
   - `VOC isolation throw` or `VOC in throw` at `120.4.4`
   - repeat the throw at `128.4.4`

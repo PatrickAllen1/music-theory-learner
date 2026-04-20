@@ -330,6 +330,13 @@ Capture requirement:
 - Chops, tails, reverses, and throws are still needed, but they support the phrase instead of replacing it.
 - If using a commercial stem for a private sketch, keep the lesson labels functional and do not publish lyric text in the public tutorial unless the vocal is cleared.
 
+### Phonetic loop policy
+- Open-`oh` endings are best for repeated drop hooks.
+- Open-`eye` endings are strong for one-time pre-drop tension.
+- Nasal endings are useful for punctuation and build, but can feel flat if looped.
+- Consonant clusters should be used once, crossfaded, reversed, or gated tightly.
+- If two open-`oh` phrases exist, test them as an intercut `A/B/A/B` loop before looping one phrase alone.
+
 ### First-pass placement states
 - `Intro B`: filtered teaser at `29.3.4` and `30.3.4`
 - `Drop A`: optional quiet teaser at `40.3.4` and `48.3.4`
@@ -340,6 +347,14 @@ Capture requirement:
 - `Drop B`: vocal throw at `104.4.4` and `112.4.4`
 - `Drop B Lift`: longer hook phrase at `116.3.4` and `124.3.4`
 - `Drop B Lift`: vocal throw at `120.4.4` and `128.4.4`
+
+### D-minor trance vocal alternate
+- `VOC mystery seed`: filtered intro / build punctuation
+- `VOC question pre-drop`: starts at `96.3.3`, ends before `97.1.1`
+- `VOC devotional A`: starts at `100.3.4` and `108.3.4`
+- `VOC devotional B`: starts at `104.3.4` and optionally `112.3.4`
+- if `VOC devotional B` crowds the drop, move it to `Drop B Lift` and keep `Drop B` simpler
+- `VOC arms phrase`: break-only unless the consonant ending is crossfaded cleanly
 
 ### Processing direction
 - high-pass enough to stay out of the bass lane

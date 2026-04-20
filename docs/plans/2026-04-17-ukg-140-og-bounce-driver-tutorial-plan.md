@@ -499,6 +499,8 @@ Suggested session split:
 - the break can carry a readable lyric phrase if it feels suspended and does not become a full chorus loop
 - earlier sections can use absence, filtering, teaser fragments, or texture
 - if no sample is found yet, use empty/muted placeholders instead of forcing a synth hook
+- open-vowel phrases loop more cleanly than consonant-ending phrases
+- if the source has two compatible open-vowel phrases, test an intercut call-response loop before choosing one phrase
 
 ### Common mistakes
 - accepting a sample because it is loud
@@ -506,6 +508,7 @@ Suggested session split:
 - choosing a sample that fights the `Bbmaj7` bloom
 - filling every gap with vocal chops
 - pasting a full chorus over the track without section design
+- looping a consonant-ending phrase and wondering why it sounds chopped off
 - replacing the missing sample with a beepy organ hook
 
 ### Listening checkpoint
