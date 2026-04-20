@@ -534,58 +534,197 @@ The drums need to feel glued, not flattened.
 
 ## Step 10: Build A 16-Bar Micro-Architecture
 ### Action
-Inside one `16`-bar drop section, give each four-bar block a job:
-- `Bars 1–4`: establish groove
-- `Bars 5–8`: deepen pocket
-- `Bars 9–12`: add slight top motion
-- `Bars 13–16`: push into the next section
+Build this as a `16`-bar drum section starting at local clip position `1.1.1`.
 
-### Practical Moves
-- `Bars 1–4`
-  - keep the top loop and shaker support restrained
-  - use only the starter ghost-hat pattern
-  - keep the open hat to `& of 4` only if possible
-- `Bars 5–8`
-  - add the `e` of beat `1` and the `a` of beat `3` if they were not present yet
-- `Bars 9–12`
-  - raise existing shaker velocities by `+6` points, capped at velocity `100`
-  - consider adding one extra open-hat emphasis on `& of 2` every second bar
-- `Bars 13–16`
-  - use a fill, riser, or brief cut
-  - allow the densest ghost-hat version here only
+If this clip later lives at `Drop A` in Arrangement View, local bar `1` becomes full timeline bar `33`.
+Do the programming in the clip first so the piano roll still reads `1.1.1`, `5.1.2`, `16.4.4`, etc.
 
-Mechanical first-pass build:
-1. First make sure you have a working `2`-bar drum loop from the earlier steps.
-2. Copy that `2`-bar loop until the section covers bars `1–16`:
-   - copy loop `1` to bars `1–2`
-   - copy loop `2` to bars `3–4`
-   - copy loop `3` to bars `5–6`
-   - copy loop `4` to bars `7–8`
-   - copy loop `5` to bars `9–10`
-   - copy loop `6` to bars `11–12`
-   - copy loop `7` to bars `13–14`
-   - copy loop `8` to bars `15–16`
-3. Do not change bars `1–4`. They are the plain version.
-4. In bars `5–8`, add these extra ghost hats if they were not already present:
-   - `5.1.2`, `5.3.4`
-   - `6.1.2`, `6.3.4`
-   - `7.1.2`, `7.3.4`
-   - `8.1.2`, `8.3.4`
-5. In bars `9–12`, keep the bar `5–8` ghost hats, raise existing shaker velocities by `+6`, and add the open hat on `& of 2` every second bar:
-   - `10.2.3`
-   - `12.2.3`
-6. In bars `13–16`, keep the denser ghost-hat version and place a simple phrase-end fill at the very end of bar `16`:
-   - add one short clap or rim hit at `16.4.3`
-   - add one shorter follow-up hit at `16.4.4`
-7. Play bars `13–16` into the next section and make sure the fill sounds like a push, not a complete reset.
+What "micro-architecture" means here:
+- the same basic groove repeats for `16` bars
+- each `4`-bar block gets one small extra detail
+- the section grows without sounding like four unrelated drum loops
 
-What this section is doing in plain English:
-- bars `1–4`: "here is the groove"
-- bars `5–8`: "same groove, a little more pocket"
-- bars `9–12`: "same groove, slightly more lift"
-- bars `13–16`: "same groove, now push into the next section"
+Do not invent a new drum pattern for each block.
+Copy the same `2`-bar loop first, then make the exact edits below.
 
-Do not rebuild the drums from scratch in each four-bar block. Copy the same loop first, then make small edits.
+Before you start, your lanes should be separate:
+- `Kick Body`
+- `Kick Click`
+- `Clap`
+- `Closed Hat`
+- `Ghost Hat`
+- `Open Hat`
+- `Shaker`
+- optional `Top Loop`
+- optional `Drum Fill FX`
+
+If you do not have a `Top Loop` lane yet, skip every `Top Loop` instruction in this step.
+Do not create a top loop just because this step mentions it.
+
+In this step, "restrained" means this exactly:
+- no `Top Loop` clip in bars `1–12`
+- no constant `1/16` shaker pattern
+- no shaker pickup notes in bars `1–4`
+- open hat only on `x.4.3` until bars `9–12`
+- ghost hats start sparse and get denser later
+
+### Build The 16-Bar Copy First
+1. Make sure the `2`-bar drum loop from Steps 2–7 works.
+2. Duplicate that `2`-bar loop until every drum lane covers bars `1–16`.
+3. The copies should cover:
+   - loop copy `1`: bars `1–2`
+   - loop copy `2`: bars `3–4`
+   - loop copy `3`: bars `5–6`
+   - loop copy `4`: bars `7–8`
+   - loop copy `5`: bars `9–10`
+   - loop copy `6`: bars `11–12`
+   - loop copy `7`: bars `13–14`
+   - loop copy `8`: bars `15–16`
+4. Leave the kick, kick click, clap, and closed-hat placements unchanged across all `16` bars on the first pass.
+5. The changing lanes in this step are only:
+   - `Ghost Hat`
+   - `Open Hat`
+   - `Shaker`
+   - optional `Top Loop`
+   - optional `Drum Fill FX`
+
+### Bars 1-4: Plain Groove
+Use bars `1–4` to state the groove without extra lift.
+
+Do this:
+1. Keep the starter ghost hats only.
+2. For every bar `1–4`, the `Ghost Hat` lane should only have:
+   - `x.2.2`
+   - `x.2.4`
+   - `x.4.2`
+   - `x.4.4`
+3. Written out, that means:
+   - bar `1`: `1.2.2`, `1.2.4`, `1.4.2`, `1.4.4`
+   - bar `2`: `2.2.2`, `2.2.4`, `2.4.2`, `2.4.4`
+   - bar `3`: `3.2.2`, `3.2.4`, `3.4.2`, `3.4.4`
+   - bar `4`: `4.2.2`, `4.2.4`, `4.4.2`, `4.4.4`
+4. Keep the `Open Hat` only on the `&` of beat `4`:
+   - `1.4.3`
+   - `2.4.3`
+   - `3.4.3`
+   - `4.4.3`
+5. Keep the `Shaker` on the `1/8` pattern only:
+   - in every bar, use `x.1.1`, `x.1.3`, `x.2.1`, `x.2.3`, `x.3.1`, `x.3.3`, `x.4.1`, `x.4.3`
+6. Delete shaker pickup notes such as `2.4.4` or `4.4.4` from bars `1–4` if they are already there.
+7. Do not place any `Top Loop` clip in bars `1–4`.
+8. Do not place any `Drum Fill FX` hit in bars `1–4`.
+
+### Bars 5-8: Deepen The Pocket
+Bars `5–8` should still be the same groove, but with a little more ghost-hat bounce.
+
+Add these extra `Ghost Hat` notes:
+- `5.1.2`, `5.3.4`
+- `6.1.2`, `6.3.4`
+- `7.1.2`, `7.3.4`
+- `8.1.2`, `8.3.4`
+
+Set these added ghost hats to velocity `38` first.
+If you successfully delayed the earlier ghost hats by `+4 ms` or `+9 ticks`, delay these added ghost hats by the same amount.
+If you did not delay the earlier ghost hats, leave these on-grid too.
+
+Keep these lanes unchanged in bars `5–8`:
+- `Kick Body`
+- `Kick Click`
+- `Clap`
+- `Closed Hat`
+- `Open Hat`
+
+For `Shaker`:
+- keep the same `1/8` pattern as bars `1–4`
+- add one phrase pickup only at `8.4.4`
+- set `8.4.4` to velocity `82`
+
+For `Top Loop`:
+- keep it empty or muted in bars `5–8`
+
+For `Drum Fill FX`:
+- keep it empty in bars `5–8`
+
+### Bars 9-12: Add Slight Top Motion
+Bars `9–12` should lift slightly without becoming the final push.
+
+Keep all the ghost hats from bars `5–8`.
+That means each bar keeps:
+- starter ghosts at `x.2.2`, `x.2.4`, `x.4.2`, `x.4.4`
+- added ghosts at `x.1.2` and `x.3.4`
+
+On `Open Hat`, add `& of 2` only every second bar:
+- add `10.2.3`
+- add `12.2.3`
+
+Do not add `9.2.3` or `11.2.3` on the first pass.
+
+On `Shaker`:
+- keep the same `1/8` note placements
+- raise the existing shaker velocities in bars `9–12` by `+6`, capped at velocity `100`
+- add one phrase pickup at `12.4.4`
+- set `12.4.4` to velocity `88`
+
+For `Top Loop`:
+- first pass: still keep it empty or muted in bars `9–12`
+- if the groove sounds too empty after everything else is working, add a quiet high-passed top loop from `9.1.1` to `13.1.1`
+- if you add it, set its track fader around `-24 dB` and high-pass it around `300 Hz`
+
+For `Drum Fill FX`:
+- keep it empty in bars `9–12`
+
+### Bars 13-16: Push Into The Next Section
+Bars `13–16` are the only place this `16`-bar phrase should feel clearly like it is pushing forward.
+
+Keep the denser ghost-hat version:
+- starter ghosts at `x.2.2`, `x.2.4`, `x.4.2`, `x.4.4`
+- added ghosts at `x.1.2` and `x.3.4`
+
+Add one more pair of ghost hats only in bars `15–16`:
+- `15.1.4`
+- `15.3.2`
+- `16.1.4`
+- `16.3.2`
+
+Set those four final-push ghost hats to velocity `34`.
+They should be felt, not heard as new main hats.
+
+On `Open Hat`:
+- keep `x.4.3` in every bar
+- keep `14.2.3`
+- keep `16.2.3`
+- do not add `13.2.3` or `15.2.3` on the first pass
+
+On `Shaker`:
+- keep the same `1/8` note placements
+- use the same `+6` velocity lift as bars `9–12`
+- add one final pickup at `16.4.4`
+- set `16.4.4` to velocity `92`
+
+For optional `Top Loop`:
+- if you have no `Top Loop`, skip this
+- if you have a `Top Loop`, place it only from `13.1.1` to `17.1.1`
+- set its track fader around `-24 dB`
+- high-pass it around `300 Hz`
+- if it makes the section sound busy, mute it again
+
+For `Drum Fill FX` or a spare clap/rim lane:
+- place one short hit at `16.4.3`
+- place one shorter follow-up hit at `16.4.4`
+- set both fill hits to velocity `70` first
+- if the fill clashes with the open hat at `16.4.3`, mute the `Open Hat` at `16.4.3` and let the fill own that slot
+
+### Check The Shape
+Play bars `1–16`, then loop only bars `13–16` into the next section.
+
+The section should read like this:
+- bars `1–4`: basic groove
+- bars `5–8`: same groove with more pocket
+- bars `9–12`: same groove with a little more top lift
+- bars `13–16`: same groove pushing into the next section
+
+If bars `1–4` already sound as busy as bars `13–16`, remove notes from bars `1–4`.
+If bars `13–16` do not feel more energetic than bars `1–4`, add level or velocity to the existing shaker/fill before adding a new instrument.
 
 ### Why
 If the drums repeat identically for all `16` bars, the section is not finished.
