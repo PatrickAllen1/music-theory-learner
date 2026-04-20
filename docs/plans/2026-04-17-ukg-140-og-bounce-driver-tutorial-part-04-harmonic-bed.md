@@ -130,50 +130,55 @@ Keeping it on one main track first makes:
    - all five notes start at `1.1.1`
    - all five notes end at `1.4.4`
 4. Loop that bar while you build the sound.
-5. In Serum 2, turn these sources off:
+5. In Serum 2's voicing area, confirm the patch can play chords:
+   - `Mono`: off
+   - `Legato`: off
+   - `Poly`: at least `8`
+   - if only one note sounds when five MIDI notes are present, stop and fix this before changing the oscillator tone
+6. In Serum 2, turn these sources off:
    - `Sub`: off
    - `Osc C`: off
    - `Noise`: off
-6. In Serum 2, turn these FX modules off for now:
+7. In Serum 2, turn these FX modules off for now:
    - `Reverb`: off
    - `Delay`: off
    - `Compressor`: off
    - `Distortion`: off
    - `EQ`: off
-7. Set `Osc A` to `Basic Shapes`.
-8. Choose a warm saw-based frame:
+8. Set `Osc A` to `Basic Shapes`.
+9. Choose a warm saw-based frame:
    - do not choose the pure sine shape
    - do not choose the pure square shape
    - choose a saw or triangle-saw blend with enough harmonics to sound like a chord, not a single beep
-9. Set `Osc A`:
+10. Set `Osc A`:
    - octave: `0`
    - level: about `70%`
    - unison / voices: `3`
    - detune: `0.03–0.04` on Serum's `0.00–1.00` detune scale
    - blend: middle / default first-pass
-10. Set `Osc B` to `Basic Shapes`.
-11. Choose a softer support shape:
+11. Set `Osc B` to `Basic Shapes`.
+12. Choose a softer support shape:
    - triangle or rounded triangle first
    - avoid a bright saw here on the first pass
-12. Set `Osc B`:
+13. Set `Osc B`:
    - octave: `0`
    - level: `15–20%`
    - unison / voices: `1`
    - detune: `0.00`
-13. Route `Osc A` and `Osc B` into `Filter 1`.
-14. Set `Filter 1`:
+14. Route `Osc A` and `Osc B` into `Filter 1`.
+15. Set `Filter 1`:
    - type: `MG Low 12` first-pass
    - cutoff: `1.8–2.2 kHz`
    - resonance: `5–8%`
    - drive: `0–3%`
-15. Set `ENV 1`, the amp envelope:
+16. Set `ENV 1`, the amp envelope:
    - attack: `30–45 ms`
    - hold: `0.0 ms`
    - decay: `1.0–1.3 s`
    - sustain: around `-5 to -7 dB` if Serum shows dB, or around `60–70%` if it shows percent
    - release: `400–550 ms`
-16. Play the test chord.
-17. Do not continue until the test chord passes the sound check below.
+17. Play the test chord.
+18. Do not continue until the test chord passes the sound check below.
 
 Sound check before moving on:
 - it should sound like several notes forming one warm chord
@@ -182,8 +187,18 @@ Sound check before moving on:
 - it should not sound like a huge trance pad
 - it should not need reverb to feel acceptable
 
+Reference description:
+- closest mental model: a soft garage organ/pad hybrid sitting behind the drums
+- not a piano
+- not a lead
+- not a pluck
+- not a cinematic pad
+- it should feel like a warm block of harmony that the bass and hook can sit in front of
+
 If it still sounds like a dull beep:
 - confirm all five test-chord notes are present
+- confirm `Mono` is off and `Poly` is at least `8`
+- watch Serum's mini keyboard or Ableton's MIDI note display; five notes should trigger together
 - confirm the `Dm9` notes are `D3 F3 A3 C4 E4`, not the old `D3 A3 C4 E4 F4`
 - lower `Osc B` level to `0%` temporarily and listen to `Osc A` alone
 - open cutoff slightly toward `2.4 kHz` if the sound is too dull
@@ -624,12 +639,13 @@ Fix order:
 Fix order:
 1. confirm the MIDI clip contains all chord notes, not just one top note
 2. for the first chord, confirm `D3`, `F3`, `A3`, `C4`, and `E4` all start at `1.1.1`
-3. make sure you are not using the old `D3 A3 C4 E4 F4` voicing
-4. lower filter cutoff toward `1.6–2.0 kHz`
-5. increase amp attack toward `35–45 ms`
-6. reduce `Osc B Level` to `0%` temporarily and judge `Osc A` alone
-7. reduce saturation drive to `0` temporarily
-8. if the chord is still piercing, lower velocity on the highest note or move only `E4` down to `E3` as a diagnostic
+3. in Serum voicing, confirm `Mono` is off and `Poly` is at least `8`
+4. make sure you are not using the old `D3 A3 C4 E4 F4` voicing
+5. lower filter cutoff toward `1.6–2.0 kHz`
+6. increase amp attack toward `35–45 ms`
+7. reduce `Osc B Level` to `0%` temporarily and judge `Osc A` alone
+8. reduce saturation drive to `0` temporarily
+9. if the chord is still piercing, lower velocity on the highest note or move only `E4` down to `E3` as a diagnostic
 
 Do not solve the beep by adding reverb. Reverb makes a bad beep wider; it does not turn it into a warm chord bed.
 
