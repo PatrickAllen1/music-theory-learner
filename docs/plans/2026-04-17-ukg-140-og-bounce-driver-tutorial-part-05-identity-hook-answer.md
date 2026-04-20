@@ -1,13 +1,20 @@
-# UKG 140 OG Bounce Driver: Tutorial Part 5 — Identity (Hook + Answer)
+# UKG 140 OG Bounce Driver: Tutorial Part 5 — Vocal Sample Search + Placeholder
 
 ## Purpose
-Teach the learner how to build the hook and answer lanes for `ukg-140-og-bounce-driver` so they:
-- carry the instrumental without a vocal
-- stay rhythm-first and phrase-end-led
-- feel like one instrument family in conversation
-- get bigger in `Drop B` by substitution, not stacking
+Teach the learner how to find, test, prepare, and place a vocal sample lane for `ukg-140-og-bounce-driver`.
 
-This part should turn the identity plan into exact patch, MIDI, and send/automation choices.
+This part replaces the old synth `Hook` / `Answer` plan.
+
+The track should now leave a real lane for a future vocal sample instead of forcing an organ hook to carry the song.
+
+The goal is:
+- learn what kind of vocal sample fits this record
+- build an Ableton audition workflow
+- test samples against drums, bass, and chords
+- place only safe vocal placeholders in the arrangement
+- keep the song moving even if the final vocal sample is not chosen yet
+
+This part should not make a beepy organ hook.
 
 Related documents:
 - [2026-04-17-ukg-140-og-bounce-driver-full-song-plan.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-full-song-plan.md)
@@ -16,636 +23,750 @@ Related documents:
 
 ## Outcome
 By the end of this part, the learner should have:
-- one `Serum 2` hook patch
-- one derived `Serum 2` answer patch
-- one `Hook` MIDI lane
-- one `Answer` MIDI lane
-- one `4`-bar `Drop A` hook phrase
-- one `4`-bar `Drop B` hook/answer conversation phrase
-- one hook/answer bus or processing lane
+- one `Vocal Audition` audio track
+- one `Vocal Main` audio track
+- one `Vocal Throw` audio track
+- one muted `Vocal Guide MIDI` track, used only as a placement ruler
+- one written sample-search log
+- up to `3` vocal candidates, ranked `A`, `B`, and `C`
+- one first-pass vocal placeholder arrangement
 - one bounce of:
-  - `drums + bass + chords + hook`
-  - `Drop B` phrase with answer included
+  - `Drop A` with the vocal lane muted
+  - `Drop B` with the vocal placeholder active
+  - `Break -> Re-entry Build -> Drop B` with vocal space preserved
 
 ## Time Estimate
-- `40–60 minutes`
+- `75–120 minutes`
+
+Do not rush this part.
+
+Finding the right vocal is an identity decision.
+The wrong sample will make the record feel cheap even if the drums and bass are strong.
 
 ## Prerequisites
 - learner has completed or can reference:
   - `Part 2` groove
   - `Part 3` bass floor
   - `Part 4` harmonic bed
-- learner can program short MIDI phrases and automate return sends
-- learner can duplicate a Serum patch and edit it without losing the original
+- learner can drag an audio file into Ableton
+- learner can mute and solo tracks
+- learner does not need to know advanced sampling yet
 
-## What The Learner Should Understand Before Starting
-Part `5` depends on the Part `4` chord bed being basically correct.
+This part explains:
+- what kind of sample to search for
+- how to audition a sample
+- how to tell if it fights the key
+- how to tell if it fights the groove
+- where to place first-pass chops
 
-Before writing the hook, verify the chord lane:
-- `Chords` Serum patch has `Mono` off
-- `Legato` is off
-- `Poly` is at least `8`
-- the safe first-pass `Dm9` is `D3 F3 A3 C4 E4`
-- the chord sound is a soft garage organ/pad hybrid, not a single-note beep
-- the old `D3 A3 C4 E4 F4` color is not the default; save it for a later audition only
+## Legal / Source Rule
+For a real release, only use:
+- a cleared vocal sample
+- a royalty-free sample that allows commercial use
+- your own recorded vocal
+- a collaborator's vocal that you have permission to use
 
-If the chord bed still sounds like a beep, stop and fix Part `4` before continuing. Do not build a brighter or louder hook to compensate for a broken chord bed.
+Do not build a release around a ripped commercial vocal unless this is only a private practice version.
 
-The hook is not a full topline.
+For learning, you can audition anything privately.
+For release, the source must be cleared.
 
-It exists to:
-- give the instrumental a recognisable center
-- speak late in the phrase
-- leave room for the drums and bass to remain the real physical engine
+## What This Vocal Lane Is Supposed To Do
+The vocal is not a full verse.
 
-The answer is not a second melody.
+It should act like:
+- a hook fragment
+- a phrase-end chop
+- a breath or ad-lib
+- a short emotional phrase
+- a texture that answers the chords
 
-It exists to:
-- punctuate phrase endings in `Drop B`
-- make the section feel bigger by alternation
-- sound related to the hook, not like a different song arriving
+It should not act like:
+- a full topline
+- a full chorus
+- a long acapella section
+- a melody that rewrites the chord progression
+- a busy sample loop that plays all the way through every drop
 
-Timing reminder for this part:
-- positions such as `4.3.4` are local positions inside a `4`-bar hook or answer clip
-- positions such as `100.3.4` are full-song Arrangement View positions
-- local `4.3.4` and arrangement `4.3.4` are not the same thing
+The track still needs space.
+The vocal should make the best moments feel intentional, not fill every empty bar.
 
-Plain-English routing reminder:
-- the `dry` hook is the original hook sound before reverb or delay
-- a `return` is a shared effect track, such as a plate reverb or filtered delay
-- a `send` is the amount of copy you send from the hook or answer track into that return effect
-- the hook should stay mostly dry and centered so the rhythm stays clear
-- the return effects should add space after the note, not replace the note
+## Vocal States Across The Song
+The vocal lane has a role in the whole arrangement.
 
-## Reference Axis
-Primary A/B for this part:
-- `Sammy Virji - I Guess We're Not the Same`
-  - listen for low-note-count hook clarity
-  - listen for how the hook stays readable without swallowing the groove
-- `Y U QT - U Belong 2 Me (4x4 Mix)`
-  - listen for how hook energy can sit inside a rolling bass-led track
+It does not mean the vocal plays constantly.
 
-Secondary check:
-- `Interplanetary Criminal - Slow Burner`
-  - listen for phrase-end punctuation and how little can still feel memorable
+Use these states:
+- `Intro A`: no vocal, or only an inaudible atmosphere if the final sample has useful air
+- `Intro B`: filtered teaser only near the end
+- `Drop A`: no main vocal; optional quiet teaser at phrase endings only
+- `Drop A Lift`: same as `Drop A`, not a bigger vocal reveal
+- `Break`: vocal space / texture, not the main phrase
+- `Re-entry Build`: late vocal pickup hints only
+- `Drop B`: first real main vocal identity
+- `Drop B Lift`: strongest vocal presence, but still not a nonstop vocal loop
+- `Outro`: vocal leaves or becomes a tiny tail; no new vocal idea
 
-## Files / Assets Needed
-- current project with:
-  - `Drums`
-  - `Bass`
-  - `Chords`
-- one MIDI track named `Hook`
-- one MIDI track named `Answer`
-- one group named `Identity` if the project does not already group these lanes
-- access to the Production Plan sections:
-  - `Hook and Answer Spec`
-  - `Top-End, Air, and Stereo`
-  - `Return B: short plate`
-  - `Return D: filtered delay`
+The vocal should feel designed across the whole song.
 
-## Core Musical Material
-Use this as the source of truth:
-- `Drop A` hook cell: `A3 -> C4 -> D4`
-- `Drop B` hook cell: `A3 -> C4 -> D4 -> F4`
-- answer cell: `G3 -> A3 -> C4`
-- the old higher register `A4 -> C5 -> D5 -> F5` is no longer the default
-- only audition the higher octave later if the lower organ hook gets buried after drums, bass, and chords are all playing
+The main phrase is still saved for `Drop B`.
+The earlier sections use absence, filtering, fragments, or texture so the sample has somewhere to arrive.
 
-Rhythmic identity:
-- on the `a` of beat `3` = `x.3.4`
-- on beat `4` = `x.4.1`
-- on the `a` of beat `4` = `x.4.4`
-- on hook-owned `Drop B` bloom phrases, `F4` lands on beat `1` of the following bar
+## What To Do With The Old Hook / Answer Tracks
+If your session already has `Hook` and `Answer` tracks:
+1. Mute them.
+2. Do not delete them yet.
+3. Rename `Hook` to `Vocal Guide MIDI`.
+4. Rename `Answer` to `Vocal Throw Guide`.
+5. Set both tracks to a grey color if possible.
+6. Leave them muted.
 
-Kick relationship rule:
-- do not start the hook on beat `1` of its own bar
-- beat `4` and the following bar's beat `1` are allowed accent collisions when they make the phrase hit harder
+These tracks are no longer final musical parts.
 
-Conversation rule:
-- `Drop B`: hook at half density
-- answer phrase-end only
-- hook and answer alternate rather than stack
+They are only rulers that show where a vocal might speak.
 
-## Step 1: Create The Identity Lanes
+If your session does not have `Hook` and `Answer` tracks yet:
+1. Create one MIDI track called `Vocal Guide MIDI`.
+2. Create one MIDI track called `Vocal Throw Guide`.
+3. Keep both muted.
+
+## Sample Target
+Search for a vocal sample with these traits:
+- short phrase or chop
+- emotionally human
+- not too many notes
+- not too bright
+- not too busy
+- easy to cut into one-shot pieces
+- works around `D minor`
+- does not expose a strong major third over the wrong chord
+- leaves room for drums and bass
+
+Best first-pass sample types:
+- one-word vocal shot
+- short phrase ending
+- breathy ad-lib
+- soulful syllable
+- garage-style vocal chop
+- R&B-style one-shot phrase
+- pitched `ah`, `oh`, `yeah`, `why`, `you`, `me`, `stay`, `feel`
+
+Avoid first:
+- full sung chorus loops
+- full acapellas
+- long melodic phrases
+- obvious pop vocals
+- samples with huge reverb already printed
+- samples with loud drums underneath
+- samples that already have bass or chords baked in
+
+## Search Terms
+Use search terms like:
+- `garage vocal one shot`
+- `ukg vocal chop`
+- `soul vocal chop`
+- `rnb vocal one shot`
+- `female vocal adlib dry`
+- `male vocal adlib dry`
+- `breathy vocal chop`
+- `minor vocal phrase`
+- `vocal hook phrase dry`
+- `90s garage vocal`
+
+Prefer dry samples.
+
+Dry means:
+- little or no reverb
+- little or no delay
+- easy to place in your own space
+
+Wet means:
+- reverb already printed
+- delay already printed
+- harder to fit into the track
+
+## Yosemite / Kettama-Esque Vocal Search Recipe
+Do not search for a full vocal song first.
+
+Search for a tiny human moment.
+
+The target is:
+- emotional but not theatrical
+- clubby but not cheesy
+- short enough to chop
+- dry enough to process yourself
+- phrase-led, not melody-led
+- slightly raw, not glossy pop
+
+In plain English, you are looking for something like:
+- one soulful word
+- one breathy syllable
+- one spoken phrase ending
+- one rave / garage shout
+- one pitched `ah`, `oh`, `yeah`, `you`, `me`, `stay`, `feel`, or similar fragment
+- one phrase that feels like it could become a hook after repetition
+
+Better search terms for that lane:
+- `rave vocal stab`
+- `garage vocal stab`
+- `uk garage vocal one shot`
+- `club vocal one shot dry`
+- `90s house vocal chop`
+- `soulful vocal phrase dry`
+- `minor vocal adlib`
+- `rnb vocal chop dry`
+- `female vocal phrase dry`
+- `male vocal phrase dry`
+- `spoken vocal one shot`
+- `warehouse vocal shout`
+- `vocal texture breath`
+
+If the sample site has filters, start with:
+- type: `vocal`
+- format: `one shot` before `loop`
+- length: under `2` seconds if possible
+- key: `D minor`, `F major`, `A minor`, or unknown
+- effects: dry / minimal FX
+- genre tags: `UKG`, `garage`, `house`, `rave`, `soul`, `R&B`
+
+Avoid these on the first search pass:
+- full acapella
+- full chorus
+- obvious pop hook
+- vocal loop with drums printed underneath
+- vocal loop with chords printed underneath
+- sample that already has huge reverb
+- sample that already sounds like a finished song section
+
+### Fast Search Loop
+Use this loop so you do not waste an hour on one sample.
+
+For each sample:
+1. Play it once by itself.
+2. If it sounds cheesy alone, reject it.
+3. Drag it into `Vocal Audition`.
+4. Put it at `100.3.4`.
+5. Loop `97.1.1–105.1.1`.
+6. Listen with drums, bass, and chords.
+7. If it fights the chords, try `Transpose +1`, `-1`, `+2`, and `-2`.
+8. If it still fights the chords after `2` minutes, reject it.
+9. If it works, duplicate it to `108.3.4`.
+10. If the repeat feels memorable instead of annoying, mark it as a candidate.
+
+### Candidate Scoring
+Score each sample quickly:
+
+```text
+Emotion: 1-5
+Rhythm fit: 1-5
+Key fit: 1-5
+Dryness / mixability: 1-5
+Cheese risk: 1-5, lower is better
+```
+
+Keep a sample only if:
+- emotion is at least `3`
+- rhythm fit is at least `3`
+- key fit is at least `3`
+- cheese risk is `3` or lower
+
+Do not keep a sample just because it is loud, bright, or exciting on first listen.
+
+## Ableton Track Setup
 ### Action
-1. Create two MIDI tracks.
-2. Rename the first one:
-   - click the track header
-   - press `Cmd+R` on Mac or `Ctrl+R` on Windows
-   - type `Hook`
-   - press `Enter`
-3. Rename the second one the same way, but type `Answer`.
-4. Right-click each track header and assign colors that are clearly different from:
-   - `Chords`
-   - `Bass`
-5. Route both tracks to an `Identity` group if the session is already organized by lane families.
-6. Create one `4`-bar clip slot or arrangement region on `Hook` for `Drop A`.
-7. Create one `4`-bar clip slot or arrangement region on `Hook` for `Drop B`.
-8. Create matching clip slots or regions on `Answer` for `Drop B`.
+Create these audio tracks:
+1. `Vocal Audition`
+2. `Vocal Main`
+3. `Vocal Throw`
+
+How to create an audio track:
+1. In Ableton, press `Cmd+T` on Mac or `Ctrl+T` on Windows.
+2. Click the new track name.
+3. Press `Cmd+R` / `Ctrl+R`.
+4. Type the exact track name.
+5. Press `Enter`.
+
+Route these tracks:
+- `Vocal Audition` -> `Music Bus`
+- `Vocal Main` -> `Music Bus`
+- `Vocal Throw` -> `Music Bus`
+
+If you do not know how to route:
+1. Look at the track's mixer area.
+2. Find the dropdown labeled `Audio To`.
+3. Click it.
+4. Choose `Music Bus`.
+
+Set first-pass faders:
+- `Vocal Audition`: `-12 dB`
+- `Vocal Main`: `-14 dB`
+- `Vocal Throw`: `-18 dB`
+
+If the vocal is too loud while auditioning, lower the track fader.
+Do not lower the entire Music Bus just because one vocal sample is loud.
 
 ### Why
-The hook and answer need:
-- shared family logic
-- separate MIDI behavior
-- separate send and density control
+The audition track is a workbench.
 
-If they share one MIDI lane too early, it becomes harder to enforce the alternation rule later.
+The main and throw tracks are arrangement lanes.
 
-### Screenshot
-- `identity-01-lane-setup`
+Keeping them separate prevents messy edits later.
 
-## Step 2: Build The Hook Patch In Serum 2
+## Step 1: Build A Sample Search Log
 ### Action
-1. Load a fresh instance of `Serum 2` on `Hook`.
-2. Initialize the patch.
-3. Turn `Sub` off.
-4. Turn `Noise` off.
-5. Turn `Osc C` off if your Serum version shows it.
-6. Keep `Osc A` on.
-7. Keep `Osc B` on, but treat it as quiet color only.
-8. Set `Mono` off.
-9. Set `Poly` to at least `8`.
-10. Set `Legato` off.
-11. Set `Porta` off or leave it at `0`.
-12. Set `Osc A` to `Basic Shapes`.
-13. Choose a square-leaning or triangle-square frame:
-    - do not use a pure sine frame
-    - do not use a pure triangle frame if it sounds like a beep
-    - do not use a bright saw frame on the first pass
-    - if you are unsure, move the wavetable position until the note says `duh` more than `ding`
-14. Set `Osc A Level` to `90%`.
-15. Set `Osc B` to `Basic Shapes`.
-16. Choose a soft triangle or soft square support shape:
-    - avoid bright saw on the first pass
-    - avoid metallic / glassy frames
-17. Set `Osc B Level` to `10%`.
-18. Leave FM off on the first pass.
-19. If the patch feels too plain after the lower octave hook is programmed, turn on `FM from B` and keep it very low:
-    - starting amount: `0–6%`
-    - hard first-pass maximum: `10%`
-20. Route the patch through a smooth low-pass or softening filter:
-    - `MG Low 12` or similar
-21. Set filter values:
-    - cutoff: `1.4 kHz`
-    - resonance: `0–5%`
-    - drive: `0–4%`
-22. Set amp envelope:
-    - attack: `2–5 ms`
-    - hold: `0 ms`
-    - decay: `260 ms`
-    - sustain: about `-10 dB` to `-7 dB`
-    - release: `150 ms`
-23. Do not turn on Serum reverb, delay, chorus, hyper, or compressor while building the dry hook.
+Create a text note called `vocal-sample-search-log`.
 
-Immediate sound check:
-1. Play `A3 -> C4 -> D4`.
-2. The sound should read as `duh-duh-duh`, not `ding-ding-ding`.
-3. If it sounds like an electric notification:
-   - turn FM off
-   - lower `Osc B Level` to `5–8%`
-   - lower filter cutoff toward `1.2 kHz`
-   - use a more square-leaning `Osc A` frame
-4. If it sounds like a plain beep:
-   - move `Osc A` away from sine/triangle toward square
-   - raise decay toward `300 ms`
-   - raise sustain slightly, but do not turn it into a pad
-5. If the lower octave sounds organ-like and the higher octave sounds like a beep, keep the lower octave.
+Put it in the project folder if possible.
+
+For every candidate, write:
+- sample name
+- source / pack / site
+- cleared for release: `yes`, `no`, or `unknown`
+- original tempo if known
+- original key if known
+- why it might work
+- why it might fail
+- rating from `1–5`
+
+Use this format:
+
+```text
+Candidate 01
+Name:
+Source:
+Cleared for release:
+Original BPM:
+Original Key:
+Type: one-shot / phrase / ad-lib / loop
+Works because:
+Fails because:
+Rating:
+```
 
 ### Why
-The hook should feel:
-- warm
-- woody
-- readable
-- not vocal-dependent
+When you audition vocals quickly, every sample feels exciting for `30` seconds.
 
-If the patch sounds too glossy, too wide, or too bell-like, it will stop feeling like garage identity and start feeling like pop garnish.
+The log stops you from losing track of which samples actually fit.
 
-### Final Hook Starting Spec
-- engine: `Serum 2`
-- family: warm organ-pluck / woody garage stab
-- Sub: `Off`
-- Noise: `Off`
-- Osc A: square-leaning or triangle-square body
-- Osc A Level: `90%`
-- Osc B: soft triangle/square support
-- Osc B Level: `10%`
-- FM mode: `Off` first pass, optional `FM from B` only if needed
-- FM amount: `0–6%`, hard first-pass maximum `10%`
-- filter: `MG Low 12`
-- cutoff: `1.2–1.6 kHz`
-- resonance: `0–5%`
-- drive: `0–4%`
-- amp env:
-  - A `2–5 ms`
-  - H `0 ms`
-  - D `240–320 ms`
-  - S about `-10 dB` to `-7 dB`
-  - R `140–180 ms`
-- voicing:
-  - Mono `Off`
-  - Poly at least `8`
-  - Legato `Off`
-  - Porta `Off`
-
-### Screenshot Set
-- `identity-02-hook-oscillators`
-- `identity-03-hook-filter-env`
-
-## Step 3: Add Hook Character Processing
+## Step 2: Import One Sample Into Ableton
 ### Action
-1. After `Serum 2`, add `Saturator`.
-2. Set `Saturator` like this:
-   - mode: `Analog Clip`
-   - drive: `+1 dB`
-   - output: `-1 dB`
-   - soft clip: `On`
-3. Add `EQ Eight` after `Saturator`.
-4. Turn on band `1`.
-5. Set band `1` to high-pass.
-6. Set the high-pass frequency to `220 Hz`.
-7. Set the high-pass slope to `12 dB/oct`.
-8. Leave compressor off on the first pass.
-9. Add `Utility` after `EQ Eight`.
-10. Set `Utility Width` to `105%`.
-11. Keep the track pan centered.
+1. Drag the audio sample onto the `Vocal Audition` track.
+2. Place it at `97.1.1` first.
+3. This puts the sample at the start of `Drop B`.
+4. Solo is not needed yet.
+5. Loop `97.1.1–105.1.1`.
+6. Play the loop with:
+   - drums
+   - bass
+   - chords
+   - vocal audition sample
 
-Compressor rule:
-- only add a compressor if one hook note peaks more than `6 dB` louder than the other hook notes
-- if that happens, add `Compressor` after `EQ Eight`, ratio `2:1`, attack `5 ms`, release `80 ms`, and lower threshold until the loudest note dips `1–2 dB`
+If the sample is too long:
+1. Click the audio clip.
+2. Drag the right edge left until only the useful word / phrase remains.
+3. Do not worry about perfect chopping yet.
+
+If the sample starts late:
+1. Zoom in on the clip.
+2. Drag the clip left so the first clear vocal transient starts on the intended grid point.
+
+Plain-English transient:
+- the transient is the first obvious attack of the sound
+- for a vocal, it is usually the first consonant or breath
 
 ### Why
-The hook should speak clearly in the middle of the mix.
+Start testing the vocal where the song has its full harmonic identity.
 
-Its width should mostly come from:
-- returns
-- filtered delay throws
-- short plate support
+If it cannot survive `Drop B`, it is probably not the right vocal.
 
-not from smearing the dry signal left-right.
-
-### Screenshot Set
-- `identity-04-hook-fx`
-- `identity-05-hook-eq`
-
-## Step 4: Build The Answer Patch From The Hook
+## Step 3: Check If The Sample Is Rhythmically Usable
 ### Action
-1. Duplicate the hook patch onto the `Answer` track.
-2. On the `Answer` Serum patch, keep the same oscillator choices as the hook.
-3. Keep `Sub` off and `Noise` off.
-4. Keep FM off unless you already turned on a very low FM amount for the hook.
-5. If FM is on, keep the answer FM amount at or below the hook amount.
-6. Change the amp envelope:
-   - attack: `2 ms`
-   - hold: `0 ms`
-   - decay: `100 ms`
-   - sustain: about `-12 dB`
-   - release: `70 ms`
-7. Raise filter cutoff slightly above the hook, but keep it warm:
-   - if the hook is at `1.4 kHz`, start the answer around `1.6 kHz`
-   - do not jump straight to `2.4 kHz` unless the answer is buried
-8. Keep filter resonance low:
-   - `0–5%`
-9. Keep filter drive low:
-   - `0–4%`
-10. On the `Answer` Saturator, set:
-   - drive: `+1.5 dB`
-   - output: `-1.5 dB`
-   - soft clip: `On`
-11. On the `Answer` EQ Eight, keep the high-pass at `220 Hz`.
-12. On the `Answer` Utility, set width to `105–110%`.
-13. Keep the answer in the same instrument family.
-14. Do not widen it into a separate cinematic layer.
+Listen to the sample against `97.1.1–105.1.1`.
+
+Ask these checks in order:
+1. Does the first word land cleanly?
+2. Does the sample fight the snare/clap on beats `2` and `4`?
+3. Does it cover the bass movement?
+4. Does it feel like a hook, or just random sound?
+
+Test these first-pass placements:
+- `100.3.4`
+- `100.4.1`
+- `100.4.4`
+- `104.3.3`
+- `104.4.1`
+- `104.4.4`
+- `108.3.4`
+- `108.4.1`
+- `108.4.4`
+- `112.3.3`
+- `112.4.1`
+- `112.4.4`
+
+How to test a placement:
+1. Duplicate the sample clip.
+2. Drag the duplicate so its first vocal sound starts on the target position.
+3. Play `2` bars before the target.
+4. If it feels late, move it slightly earlier.
+5. If it steps on the groove, move it later or delete it.
+
+Do not place the vocal on every listed position.
+
+The list is a test menu.
+
+The first-pass arrangement should use only a few positions.
 
 ### Why
-The answer should feel like:
-- the same family
-- a shorter reply
-- rougher by `+0.5 dB` more saturation drive than the hook
+The vocal must fit the pocket.
 
-not a second lead synth.
+If the vocal timing is wrong, no amount of reverb will fix it.
 
-### Final Answer Starting Spec
-- same patch family as the hook
-- Sub and Noise: `Off`
-- envelope: A `2 ms`, H `0 ms`, D `100 ms`, S about `-12 dB`, R `70 ms`
-- filter cutoff: about `1.6 kHz`
-- resonance: `0–5%`
-- drive: `0–4%`
-- saturation drive: `+1.5 dB`
-- Utility width: `105–110%`
-- phrase-end punctuation only
-
-### Screenshot Set
-- `identity-06-answer-deltas`
-- `identity-07-hook-vs-answer`
-
-## Step 5: Program The Drop A Hook Phrase
+## Step 4: Check If The Sample Is Harmonically Safe
 ### Action
-Create one `4`-bar `Drop A` hook clip using:
-- `A3 -> C4 -> D4`
+Loop `97.1.1–105.1.1`.
 
-Starting rhythm:
-- on the `a` of beat `3`
-- on beat `4`
-- on the `a` of beat `4`
+Test the sample over the chord progression:
+- `97.1.1–98.1.1`: `Dm9`
+- `98.1.1–99.1.1`: `Bbmaj7` bloom
+- `99.1.1–100.1.1`: `Fadd9`
+- `100.1.1–101.1.1`: `Cadd9`
 
-Starting density rule:
-- use the hook as phrase-end punctuation, not every bar
-- first pass:
-  - place it in the last bar of the `4`-bar phrase
-  - do not add hook notes to bars `1`, `2`, or `3` during the first pass
-  - only after the full `Drop A` A/B check may you copy the same bar-`4` phrase to bar `2`
-  
-Exact first-pass MIDI placement inside the `4`-bar clip:
-1. Leave bars `1`, `2`, and `3` empty.
-2. In bar `4`, set the piano-roll grid to `1/16`.
-3. Place `A3` at `4.3.4`.
-4. Give `A3` a `1/16` length so it ends at `4.4.1`.
-5. Place `C4` at `4.4.1`.
-6. Give `C4` a `1/8` length so it ends at `4.4.3`.
-7. Place `D4` at `4.4.4`.
-8. Give `D4` a short `1/16` length so it acts like a phrase-end jab rather than a long held note.
-9. Do not move this phrase up to `A4 -> C5 -> D5` unless the lower register disappears in the full mix.
+Listen for bad notes:
+- if the sample sounds fine over `Dm9` but wrong over `Bbmaj7`, it may contain a note that clashes with the bloom
+- if it sounds wrong over every chord, it is probably out of key
+- if it sounds good only when the chords are muted, reject it or save it for a different track
+
+Fast Ableton check:
+1. Put the sample at `100.3.4`.
+2. Play from `97.1.1`.
+3. Let the progression cycle underneath it.
+4. Mute `Chords`.
+5. Unmute `Chords`.
+6. If the sample only works when chords are muted, it is not harmonically safe yet.
+
+If the sample is close but not quite right:
+1. Open the clip detail view.
+2. Find `Transpose`.
+3. Try `+1`, `-1`, `+2`, and `-2` semitones.
+4. Stop if the vocal starts sounding fake or chipmunk-like.
+
+Do not spend more than `5` minutes rescuing one sample.
+
+If it fights the key, move on.
 
 ### Why
-The hook has to feel memorable because of:
-- timing
-- timbre
-- repetition discipline
+The chords are already doing emotional work.
 
-not because it has lots of notes.
+A vocal that introduces the wrong implied chord will wreck the bloom.
 
-This phrase is allowed to collide with selected kicks:
-- beat `4` is a deliberate accent
-- `F4` on the next bar's beat `1` is the bloom accent
-
-### Screenshot
-- `identity-midi-01-drop-a-hook`
-
-### Visual MIDI Requirement
-- show the full `4`-bar clip
-- label the `A3`, `C4`, and `D4`
-- annotate the `3a -> 4 -> 4a` rhythm clearly
-
-## Step 6: Program The Drop B Hook Variant
+## Step 5: Choose Candidate A / B / C
 ### Action
-Duplicate the `Drop A` hook clip and edit it for `Drop B`:
-- `A3 -> C4 -> D4 -> F4`
+After auditioning at least `10` samples, choose up to `3`:
+- `Candidate A`: best emotional fit
+- `Candidate B`: best rhythmic fit
+- `Candidate C`: wild card
 
-Rules:
-- `F4` is the bloom note
-- it should not appear in `Drop A` or `Drop A Lift`
-- keep the same rhythmic identity
-- when used, `F4` lands on beat `1` of the following bar as the phrase re-opens
+Create three audio tracks:
+1. `Vocal Candidate A`
+2. `Vocal Candidate B`
+3. `Vocal Candidate C`
 
-Starting density rule:
-- keep the hook at half density in `Drop B`
-- do not simply add the `F4` to every phrase ending
+Place each candidate at `97.1.1`.
 
-Exact first-pass placement for the first hook-owned `Drop B` phrase in Arrangement View:
-1. Use the first hook-owned `Drop B` phrase at bar `100` as your model.
-2. Place `A3` at `100.3.4`.
-3. Place `C4` at `100.4.1`.
-4. Place `D4` at `100.4.4`.
-5. Place `F4` at `101.1.1`.
-6. Use these exact note lengths:
-   - `A3`: `1/16`, ending at `100.4.1`
-   - `C4`: `1/8`, ending at `100.4.3`
-   - `D4`: `1/16`, ending at `101.1.1`
-   - `F4`: `1/8`, ending at `101.1.3`
-7. If you are sketching this in a loop clip instead of Arrangement View, temporarily extend the clip long enough to place the `F4` on the following bar, then trim and duplicate once the phrase reads correctly.
+Mute `B` and `C`.
+Only one candidate should play at a time.
+
+Level-match them:
+- start each candidate fader at `-14 dB`
+- if one candidate is much louder, lower that candidate
+- do not decide based only on loudness
 
 ### Why
-`Drop B` gets bigger because:
-- the harmony blooms
-- the hook blooms
-- the answer enters
+Three candidates are enough.
 
-But if the hook keeps full density while the answer arrives, the section will feel crowded instead of bigger.
+More than three creates decision fog.
 
-### Screenshot
-- `identity-midi-02-drop-b-hook`
-
-## Step 7: Program The Phrase-End Answer
+## Step 6: Cut A First-Pass Main Vocal Chop
 ### Action
-Create one `4`-bar `Drop B` answer clip using:
-- `G3 -> A3 -> C4`
+Work on `Vocal Main`.
 
-Placement rules:
-- answer lives at phrase ends only
-- it should land on alternate phrase endings from the hook
-- do not let it speak in every bar
+Pick the best one-word or short-phrase part of `Candidate A`.
 
-Starting placement:
-- in a first `16`-bar `Drop B` pass:
-  - let the hook own bars `4` and `12`
-  - let the answer own bars `8` and `16`
-- treat the answer as punctuation after the groove has already spoken
+Create one short audio clip.
 
-Exact first-pass MIDI placement for the first answer-owned phrase ending:
-1. Use bar `104` as the first answer-owned phrase ending in the full song.
-2. Set the piano-roll grid to `1/16`.
-3. Place `G3` at `104.3.3`.
-4. Give `G3` a `1/16` length so it ends at `104.3.4`.
-5. Place `A3` at `104.4.1`.
-6. Give `A3` a `1/16` length so it ends at `104.4.2`.
-7. Place `C4` at `104.4.4`.
-8. Give `C4` a `1/16` length on the first pass so it ends at `105.1.1`.
-9. Repeat the same rhythmic idea at bar `112` for the second answer-owned phrase ending:
-   - `G3` at `112.3.3`, length `1/16`
-   - `A3` at `112.4.1`, length `1/16`
-   - `C4` at `112.4.4`, length `1/16`
+Target clip length:
+- shortest useful chop: `1/16`
+- common useful chop: `1/8`
+- longer phrase chop: `1/4` to `1/2` bar
+- avoid anything longer than `1` bar on the first pass
+
+How to cut:
+1. Duplicate the candidate clip onto `Vocal Main`.
+2. Zoom in.
+3. Drag the left edge until the useful vocal starts cleanly.
+4. Drag the right edge until the chop stops before it becomes a full phrase.
+5. Add a tiny fade-in if there is a click.
+6. Add a tiny fade-out if the clip cuts off harshly.
+
+Ableton fade basics:
+- hover near the top corner of the audio clip
+- drag the fade handle inward
+- keep fades tiny on vocal chops unless the sample clicks
 
 ### Why
-The answer should make `Drop B` feel more conversational, not denser for density’s sake.
+The first chop should prove the vocal identity.
 
-### Rule
-If the answer feels like a second full hook, it is too long, too frequent, or too loud.
+It does not need to carry every phrase yet.
 
-### Screenshot
-- `identity-midi-03-answer-placement`
-
-### Visual MIDI Requirement
-- show one `4`-bar `Drop B` phrase with both hook and answer lanes visible
-- annotate where the hook yields and where the answer takes over
-
-## Step 8: Build Hook / Answer Sends And Throws
+## Step 7: Place The Vocal Main Chop
 ### Action
-1. Send both lanes to `Return B: short plate`.
-2. Use `Return D: filtered delay` sparingly for phrase-end throws.
-3. Keep the hook’s dry center stronger than the return signal.
-4. Let the answer have more throw support than the hook, but not more center weight.
+Use `Vocal Main`.
 
-First-pass constant send values:
-1. On the `Hook` track, set `Send B` to `-18 dB`.
-2. On the `Answer` track, set `Send B` to `-16 dB`.
-3. On both tracks, set `Send D` to `-inf` / fully off by default.
+First-pass placements:
+- `100.3.4`
+- `108.3.4`
 
-First-pass delay throws:
-1. Press `A` in Ableton to show automation.
-2. On the `Hook` track, choose `Mixer` -> `Send D`.
-3. Draw `Send D` up to `-20 dB` from `100.4.4` to `101.1.2`.
-4. Draw it back to `-inf` at `101.1.3`.
-5. Repeat the same hook throw from `108.4.4` to `109.1.2`.
-6. On the `Answer` track, choose `Mixer` -> `Send D`.
-7. Draw `Send D` up to `-18 dB` from `104.4.4` to `105.1.2`.
-8. Draw it back to `-inf` at `105.1.3`.
-9. Repeat the same answer throw from `112.4.4` to `113.1.2`.
+Optional second-pass placements if the sample is clearly working:
+- `104.4.1`
+- `112.4.1`
 
-Starting direction:
-- hook:
-  - cleaner dry center
-  - `Send B` at `-18 dB`
-  - occasional filtered delay only at bigger phrase endings
-- answer:
-  - `Send B` at `-16 dB`
-  - `Send D` throws at answer-owned phrase endings
-  - shorter dry body
+Do not place the main vocal at every phrase ending yet.
+
+Start with:
+1. one main vocal moment in the first half of `Drop B`
+2. one repeat in the second half of `Drop B`
+
+Exact placement:
+1. Put the first chop so its first vocal attack starts at `100.3.4`.
+2. Duplicate it.
+3. Put the duplicate so its first vocal attack starts at `108.3.4`.
+4. Play `97.1.1–113.1.1`.
+5. If the repeats feel too obvious, delete the `108.3.4` copy and try `112.4.1` instead.
 
 ### Why
-The hook carries identity.
-The answer carries punctuation.
+This keeps the vocal memorable without turning the whole drop into a sample loop.
 
-The FX should reinforce that difference.
-
-### Screenshot Set
-- `identity-08-plate-send`
-- `identity-09-delay-throw`
-
-## Step 9: Check Register And Density Against The Chords
+## Step 8: Place The Vocal Throw
 ### Action
-1. Before judging the hook, check the `Chords` lane again:
-   - `Mono`: off
-   - `Poly`: at least `8`
-   - first chord: `D3 F3 A3 C4 E4`
-   - no single-note beep
-2. Play `drums + bass + chords + hook`.
-3. Mute the `Chords` track and listen to the hook for one pass.
-4. Unmute the `Chords` track.
-5. The hook should still read without raising the `Hook` track fader by more than `+1 dB`.
-6. If the hook disappears and the chords still sound beepy or mono, go back to Part `4`; do not EQ around a broken chord sound.
-7. If the chord bed is healthy but the hook disappears, cut the `Chords` track with `EQ Eight`:
-   - bell frequency: `2.0 kHz`
-   - gain: `-1.5 dB`
-   - Q: `1.0`
-8. Only after that carve should you raise the `Hook` fader.
-9. Play the `Drop B` phrase with answer.
-10. Check the full-song bars:
-   - hook-owned phrase endings: `100` and `108`
-   - answer-owned phrase endings: `104` and `112`
-11. If both `Hook` and `Answer` contain notes at the same phrase ending, delete the weaker phrase instead of lowering it.
+Use `Vocal Throw`.
+
+The throw is a smaller reply, not the main sample.
+
+Good throw material:
+- breath
+- last syllable
+- pitched tail
+- chopped consonant
+- reversed vocal tail
+- tiny delay-print style moment
+
+First-pass placements:
+- `104.4.4`
+- `112.4.4`
+
+How to make a throw:
+1. Duplicate the main vocal chop onto `Vocal Throw`.
+2. Shorten it to the best syllable or tail.
+3. Lower the `Vocal Throw` fader to around `-18 dB`.
+4. Send it to `Return D` filtered delay if available.
+5. Keep the dry throw quieter than the main vocal.
+
+If the throw sounds cheesy:
+- delete it
+- leave the space empty
+- do not force a reply
 
 ### Why
-This is the main integration test for the identity lane.
+The throw replaces the old synth answer idea.
 
-If the hook disappears:
-- it is either too dark
-- too low in level
-- or the chords are too open in the same register
+It should be human and sample-led, not a second keyboard phrase.
 
-If the answer makes the section smaller:
-- it is too continuous
-- too loud
-- or too similar in density to the hook
-
-First correction for each failure:
-- hook too dark: raise hook filter cutoff from `1.4 kHz` toward `1.8 kHz`
-- hook too low: raise the `Hook` fader by `+1 dB` maximum before changing anything else
-- chords too open: cut the `Chords` track at `2.0 kHz` by `-1.5 dB`, Q `1.0`
-- answer too continuous: delete any answer notes outside bars `104` and `112`
-- answer too loud: lower the `Answer` fader by `-1.5 dB`
-- answer too similar: shorten answer decay from `100 ms` to `75 ms`
-
-### Screenshot
-- `identity-10-lane-balance`
-
-## Step 10: A/B Against References
+## Step 9: Preserve Drop A Restraint
 ### Action
-Bounce:
-- `drums + bass + chords + hook`
-- one `Drop B` phrase including answer
+Do not put the main vocal across all of `Drop A`.
 
-Compare against:
-- `Sammy Virji - I Guess We're Not the Same`
-  - listen for low-note-count hook clarity
-- `Y U QT - U Belong 2 Me (4x4 Mix)`
-  - listen for identity living inside a bass-led track
-- `Interplanetary Criminal - Slow Burner`
-  - listen for phrase-end punctuation and restraint
+Allowed first-pass Drop A vocal behavior:
+- no vocal at all
+- one filtered teaser at `40.3.4`
+- one filtered teaser at `48.3.4`
 
-### What To Listen For
-- does the hook read on first listen without sounding like a full vocal topline?
-- does the `F4` feel like a real bloom when it appears?
-- does the answer feel like family, not a new instrument?
-- does `Drop B` get bigger by alternation rather than by pile-up?
+If using a teaser:
+1. Duplicate the main vocal chop onto `Vocal Main`.
+2. Place it at `40.3.4`.
+3. Lower clip gain or track fader until it feels like a hint.
+4. Add a low-pass or filter if needed.
+5. Duplicate to `48.3.4` only if the first teaser works.
 
-### Expected Answer
-- `Drop A` should feel identifiable with only `A3 -> C4 -> D4`
-- `Drop B` should feel more open when `F4` appears, but still disciplined
-- the answer should sound like a reply, not a second lead
+Do not reveal the best vocal phrase in `Drop A`.
+
+### Why
+`Drop A` should still feel austere.
+
+The strongest vocal identity belongs in `Drop B`.
+
+## Step 10: Treat The Break As Vocal Space
+### Action
+The break can hold a vocal atmosphere, but not a full hook phrase.
+
+Allowed break vocal behavior:
+- one reversed vocal tail into `65.1.1`
+- one airy vocal texture at `72.4.4`
+- one quiet phrase fragment at `76.4.4`
+
+Avoid:
+- full repeated vocal hook
+- busy chops
+- lyrics that dominate the chord bloom
+
+First-pass break placement:
+1. Leave the break empty.
+2. If it feels too empty, add one vocal texture at `76.4.4`.
+3. Keep it lower than the chord bloom.
+
+### Why
+The break should open space.
+
+If the vocal takes over the break too early, `Drop B` has less to reveal.
+
+## Step 11: Re-entry Build Vocal Rule
+### Action
+Keep `81.1.1–93.1.1` vocal-empty on the first pass.
+
+Only allow vocal pickup hints in the last `4` bars:
+- `93.3.4`
+- `94.3.4`
+- `96.4.4`
+
+Use filtered or quiet versions only.
+
+Do not use the full main vocal here.
+
+### Why
+The `Re-entry Build` should re-engage rhythm first.
+
+The vocal should point toward `Drop B`, not arrive early.
+
+## Step 12: Check The Vocal Against The Arrangement
+### Action
+Run this mute test:
+1. Play `97.1.1–113.1.1`.
+2. Mute `Vocal Main` and `Vocal Throw`.
+3. The track should still work instrumentally.
+4. Unmute `Vocal Main`.
+5. The track should feel more memorable.
+6. Unmute `Vocal Throw`.
+7. The track should gain phrase-end personality without becoming crowded.
+
+If the track collapses when the vocal is muted:
+- the vocal is doing too much
+- strengthen drums, bass, or chords instead of adding more vocal
+
+If the vocal makes the drop feel smaller:
+- lower vocal level
+- reduce placements
+- remove the throw
+- try a less melodic sample
+
+### Why
+The vocal should enhance the track.
+
+It should not be a crutch.
+
+## Step 13: Bounce The Vocal Test
+### Action
+Create these bounces:
+1. `part05-drop-a-no-vocal.wav`
+   - range: `33.1.1–49.1.1`
+2. `part05-drop-b-vocal-test.wav`
+   - range: `97.1.1–113.1.1`
+3. `part05-break-reentry-dropb-vocal-space.wav`
+   - range: `65.1.1–113.1.1`
+
+Export settings:
+- WAV
+- `24-bit`
+- normalize off
+- same master / premaster settings as the rest of the tutorial
+
+### Why
+You need to judge vocal fit away from the editing screen.
+
+Bad samples often look exciting in the session and sound wrong in the bounce.
+
+## Final Vocal Placement Spec
+First-pass core:
+- `Intro A`: no vocal
+- `Intro B`: optional filtered teaser at `29.3.4` and `30.3.4`
+- `Drop A`: no main vocal, or very quiet teaser at `40.3.4` and `48.3.4`
+- `Drop A Lift`: optional quiet teaser at `56.3.4` and `64.3.4`; do not reveal the main phrase
+- `Break`: mostly empty vocal space; optional texture at `76.4.4`
+- `Re-entry Build`: late filtered pickups at `93.3.4`, `94.3.4`, and optionally `96.4.4`
+- `Drop B`: main vocal appears at `100.3.4` and `108.3.4`
+- `Drop B`: throw appears at `104.4.4` and `112.4.4`
+- `Drop B Lift`: main vocal can return at `116.3.4` and `124.3.4`
+- `Drop B Lift`: throw can return at `120.4.4` and `128.4.4`
+- `Outro`: no new vocal ideas; use only a tail if it helps the exit
+
+The old synth hook/answer is not part of the core arrangement.
 
 ## Troubleshooting
-### Problem: “The hook feels generic.”
-Fix order:
-1. open the MIDI clip and check the note starts are exactly `4.3.4`, `4.4.1`, and `4.4.4`
-2. confirm the hook notes are in the lower organ register: `A3`, `C4`, `D4`
-3. raise hook filter cutoff from `1.4 kHz` toward `1.8 kHz`
-4. if still dull, raise Saturator drive from `+1 dB` to `+1.5 dB`
-5. only then consider one phrase-end timing variation; do not add a fourth note to `Drop A`
+### Problem: "Every sample sounds wrong."
+Likely causes:
+- samples are too long
+- samples are too wet
+- samples are in the wrong key
+- samples are too pop/topline-focused
 
-### Problem: “The hook is fighting the chords.”
-Fix order:
-1. confirm the chord bed is polyphonic: `Mono` off, `Poly` at least `8`
-2. confirm the first chord is the safe `D3 F3 A3 C4 E4` voicing
-3. raise the hook high-pass from `220 Hz` to `250 Hz`
-4. set hook Utility width from `105%` to `100%`
-5. cut the chord bed at `2.0 kHz` by `-1.5 dB`, Q `1.0`
-6. only then reduce the hook level by `-1 dB`
+Fix:
+1. Search for shorter one-shots.
+2. Search for dry vocals.
+3. Try samples with fewer notes.
+4. Test only one word or syllable, not the full phrase.
 
-### Problem: “The answer sounds like another song.”
-Fix order:
-1. reduce answer Saturator drive from `+1.5 dB` to `+1.0 dB`
-2. if answer Utility width is above `110%`, bring it down to `105%`
-3. set answer decay to `75 ms` and release to `50 ms`
-4. remove any answer notes outside bars `104` and `112`
+### Problem: "The sample sounds good alone but bad with chords."
+Likely cause:
+- the sample implies a different harmony.
 
-### Problem: “Drop B got busier but not bigger.”
-Fix order:
-1. thin the hook to half density
-2. keep the answer phrase-end only
-3. check that hook owns bars `100` and `108`
-4. check that answer owns bars `104` and `112`
-5. remove any phrase where both speak at the same ending
+Fix:
+1. Try `Transpose +1`.
+2. Try `Transpose -1`.
+3. Try `Transpose +2`.
+4. Try `Transpose -2`.
+5. If none work quickly, reject the sample.
 
-### Problem: “I followed the notes and it still doesn’t stick.”
-Fix order:
-1. A/B against the references at matched loudness
-2. open the hook clip and check the rhythm lands at `4.3.4`, `4.4.1`, and `4.4.4`
-3. check that the hook notes are `A3`, `C4`, and `D4`, not the higher `A4`, `C5`, and `D5`
-4. check that the hook patch is not in beep mode:
-   - Sub off
-   - Noise off
-   - FM off or below `6%`
-   - Osc A square-leaning, not pure sine
-5. check that the filter cutoff is around `1.2–1.8 kHz`
-6. if the lower octave hook is audible but still bland, raise filter cutoff slightly before adding notes
+### Problem: "The sample sounds good with drums but crowds the drop."
+Fix:
+1. Use fewer placements.
+2. Lower `Vocal Main`.
+3. Delete `Vocal Throw`.
+4. Move the vocal later in the phrase.
 
-### Problem: “The hook sounds like a bell, beep, or phone notification.”
-Fix order:
-1. keep the MIDI in the lower register: `A3 -> C4 -> D4`
-2. turn FM off
-3. lower `Osc B Level` to `5–8%`
-4. make sure `Sub` and `Noise` are off
-5. move `Osc A` away from sine/triangle toward a square-leaning `Basic Shapes` frame
-6. lower filter cutoff toward `1.2 kHz`
-7. set envelope hold to `0 ms`, decay around `260–320 ms`, sustain around `-10 dB` to `-7 dB`, and release around `140–180 ms`
+### Problem: "The vocal feels cheesy."
+Fix:
+1. Remove long phrases.
+2. Use breath / texture / one-word chops.
+3. Avoid obvious pop hooks.
+4. Keep the best vocal moment for `Drop B`, not `Drop A`.
 
-## What Must Be Captured For Later Lesson Conversion
-- hook patch screenshots
-- answer patch delta screenshots
-- `Drop A` hook MIDI screenshot
-- `Drop B` hook + answer MIDI screenshot
-- plate and delay throw screenshots
-- one bounce of:
-  - `drums + bass + chords + hook`
-  - `Drop B` with answer
+### Problem: "I still want a guide while searching."
+Use muted guide clips only.
+
+Guide positions:
+- `100.3.4`
+- `104.4.4`
+- `108.3.4`
+- `112.4.4`
+
+Do not use guide synth audio in the final bounce unless you deliberately decide the track no longer needs a vocal.
+
+## Lesson Conversion Notes
+When turning this into the final site lesson:
+- show exactly how to create the `Vocal Audition`, `Vocal Main`, and `Vocal Throw` tracks
+- show how to drag in a sample
+- show how to trim an audio clip
+- show how to place the first vocal attack at `100.3.4`
+- show a sample-search log example
+- show a rejected sample and explain why it fails
+- show a working sample and explain why it passes
+- do not teach synth hook design in this part
+- do not call the vocal lane optional decoration; it is the intended identity lane

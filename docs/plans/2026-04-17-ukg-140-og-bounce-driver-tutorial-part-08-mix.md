@@ -75,7 +75,7 @@ Plain-English Ableton words used in this chapter:
 - `bus`: a parent group track that several child tracks feed into
 - `Drum Bus`: the parent group above the kick, clap, hats, shaker, and fill tracks
 - `Bass Bus`: the parent group above `Bass Sub` and `Bass Mid`
-- `Music Bus`: the parent group above `Chords`, `Hook`, `Answer`, and `Air`
+- `Music Bus`: the parent group above `Chords`, `Vocal Main`, `Vocal Throw`, `Vocal Audition`, and `Air`
 - `return`: one of the `A/B/C/D` send-effect tracks on the far right side of Ableton
 - `sidechain`: a compressor or level-control device that turns one lane down when the kick hits
 
@@ -94,7 +94,7 @@ Judge one axis at a time:
   - rhythmic-first bass roll
   - stable sub underneath
 - `Sammy Virji - I Guess We're Not the Same`
-  - hook clarity
+  - vocal/hook clarity
   - harmonic readability
 
 ## Files / Assets Needed
@@ -125,7 +125,7 @@ Judge one axis at a time:
 - `30–90 Hz`: kick + sub
 - `120–200 Hz`: bass character leads
 - `200–300 Hz`: chord warmth can live more confidently
-- `300 Hz–2 kHz`: chord emotion + hook readability
+- `300 Hz–2 kHz`: chord emotion + vocal intelligibility
 - `2–6 kHz`: presence owner
 - `8 kHz+`: air
 
@@ -134,8 +134,8 @@ Judge one axis at a time:
 - sub: mono / center
 - mid-bass: mono to narrow stereo above crossover
 - chords: medium-wide to wide depending on section state
-- hook: center to slight stereo
-- answer: slightly wider than hook, still controlled
+- vocal main: center to slight stereo
+- vocal throw: slightly wider than vocal main, still controlled
 - air: wide but quiet
 
 ## Step 1: Set Gain Staging Before Processing
@@ -189,7 +189,7 @@ First action:
 Bus membership:
 - `Drum Bus`: kick, clap, hats, shaker, loops
 - `Bass Bus`: sub + mid-bass / bass harmonic layer
-- `Music Bus`: chords, hook, answer, air
+- `Music Bus`: chords, vocal main, vocal throw, vocal audition, air
 
 If the learner wants `Air` on its own group, that is acceptable, but the first-pass tutorial route should still feed it into the `Music Bus`.
 
@@ -331,8 +331,8 @@ Starting direction:
 - keep the music bus breathing around the kick
 - avoid flattening:
   - chord bloom
-  - hook punctuation
-  - answer clarity
+  - vocal main attack
+  - vocal throw clarity
 
 First-pass settings:
 - `EQ Eight`
@@ -361,7 +361,8 @@ Use the kick as the source for:
 - kick -> sub: deepest duck
 - kick -> bass mid: lighter duck
 - kick -> chords: gentle duck
-- kick -> answer: very light duck
+- kick -> vocal main: very light duck if needed
+- kick -> vocal throw: very light duck if needed
 - kick -> air: very light duck
 
 Plain-English sidechain translation:
@@ -399,7 +400,7 @@ Ableton action order:
    - attack `1 ms`
    - release `150 ms`
    - threshold target: `0.5–1 dB` of visible gain dip
-7. On `Answer`, use a very light duck:
+7. On `Vocal Main` and `Vocal Throw`, use a very light duck only if the vocal hits fight the kick:
    - ratio `2:1`
    - attack `1 ms`
    - release `110 ms`
@@ -422,7 +423,7 @@ Sidechain here is for breathing and lane clarity, not for theatrical pumping.
 ### Action
 Use the band split as the first-pass ownership map:
 - `120–200 Hz`: let bass character lead
-- `200–300 Hz`: let chord warmth and some hook body live more confidently
+- `200–300 Hz`: let chord warmth live here, but keep vocal mud controlled
 
 Practical move order:
 1. solo-check the low-mid relationship between bass mid and chord bed
@@ -460,8 +461,8 @@ Set the stereo image according to the frozen map:
   - `Break` `150%`
   - `Re-entry Build` `130%`
   - `Drop B` `140%`
-- hook: `105%`
-- answer: `115%`
+- vocal main: `105%`
+- vocal throw: `115%`
 - air: wide but quiet
 
 Exact Ableton move:
@@ -488,7 +489,7 @@ Use the returns for support, not wash.
 - light drum glue only
 
 `Return B: short plate`
-- hook / answer family
+- vocal main / vocal throw family
 - keep pre-delay short enough that the attack stays readable
 
 `Return C: long filtered hall`
@@ -503,9 +504,9 @@ Ableton action order:
 1. Mute all sends first.
 2. Bring `Return A` in on drums:
    - set the send to `-20 dB`
-3. Bring `Return B` in on hook and answer:
-   - set `Hook` send to `-18 dB`
-   - set `Answer` send to `-16 dB`
+3. Bring `Return B` in on vocal main and vocal throw:
+   - set `Vocal Main` send to `-18 dB`
+   - set `Vocal Throw` send to `-16 dB`
 4. Bring `Return C` in on chords and air:
    - set `Chords` send to `-14 dB`
    - set `Air` send to `-12 dB`
@@ -645,10 +646,10 @@ Fix order:
 2. reduce parallel density
 3. check whether hats and clap got flattened by saturation
 
-### Problem: “The hook is hard to read.”
+### Problem: “The vocal is hard to read.”
 Fix order:
 1. reduce chord midrange around it
-2. reduce answer density
+2. reduce vocal throw density
 3. check plate / delay is not washing the attack
 
 ### Problem: “The mix folds in mono.”

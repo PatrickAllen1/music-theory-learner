@@ -38,8 +38,8 @@ By the end of this part, the learner should have:
   - drums
   - bass
   - chords
-  - hook
-  - answer
+  - vocal main
+  - vocal throw
   - air
 - phrase-level changes inside each `16`-bar section
 - one full-song rough arrangement bounce
@@ -68,9 +68,10 @@ Chord lane must pass:
 - safe first-pass `Dm9` is `D3 F3 A3 C4 E4`
 - the chord bed sounds like a soft garage organ/pad hybrid, not a single-note beep
 
-Hook lane must pass:
-- hook reads against the healthy chord bed without raising the `Hook` fader by more than `+1 dB`
-- if the hook only works because the chords are muted, fix the chord/hook balance in Part `5` first
+Vocal lane must pass:
+- if a vocal sample is already chosen, it works against the healthy chord bed without muting the chords
+- if no vocal sample is chosen yet, `Vocal Main` and `Vocal Throw` stay empty or muted while the arrangement preserves the vocal space
+- do not replace the missing vocal with a synth hook just because the sample is not chosen yet
 
 Arrangement here is not:
 - copy-pasting one 4-bar loop for 4 minutes
@@ -119,9 +120,9 @@ Use this when a lane is missing the clip you need.
 6. Double-click the clip to open the piano roll.
 
 Example:
-- select `33.1.1` to `37.1.1` on `Hook`
+- select `97.1.1` to `101.1.1` on `Vocal Guide MIDI`
 - press `Cmd+Shift+M`
-- now you have one empty `4`-bar `Hook` clip for the first `Drop A` phrase
+- now you have one empty `4`-bar guide clip for marking vocal placement
 
 ### Duplicate A Clip
 Use this when the lesson says a clip repeats.
@@ -179,15 +180,15 @@ Primary A/B for this part:
 
 Secondary check:
 - `Sammy Virji - I Guess We're Not the Same`
-  - listen for how harmonic and hook information arrive in controlled stages
+  - listen for how harmonic and vocal information arrive in controlled stages
 
 ## Files / Assets Needed
 - current project with:
   - working drums
   - bass
   - chords
-  - hook
-  - answer
+  - vocal main
+  - vocal throw
   - air
 - one full arrangement timeline ready to place locators / markers
 - access to the Full Song Plan sections:
@@ -213,8 +214,8 @@ Growth rule by section:
 - `Drop A Lift`: top-end density and pocket only
 - `Break`: upward harmonic bloom and air
 - `Re-entry Build`: rhythmic re-engagement
-- `Drop B`: harmonic bloom plus answer conversation
-- `Drop B Lift`: strongest release through alternation and top-end opening
+- `Drop B`: harmonic bloom plus first real vocal sample identity
+- `Drop B Lift`: strongest release through vocal placement, top-end opening, and chord bloom
 
 ## Step 0: Run The Sound-Health Gate
 ### Action
@@ -258,12 +259,12 @@ Test `3`: add `Chords`.
 5. If the stack still muddies after chord cleanup, raise the `Bass Mid` high-pass toward `300–500 Hz`.
 6. Do not arrange until `Kick + Bass Sub + Bass Mid + Chords` works as a `4`-bar loop.
 
-Test `4`: add `Hook`.
-1. Unmute `Hook`.
-2. Use the lower hook register from Part `5`:
-   - `A3 -> C4 -> D4`
-3. The hook should read without sounding like a phone notification.
-4. If it sounds bell-like, return to Part `5` and fix the patch before arranging.
+Test `4`: check the vocal lane.
+1. If you already chose a vocal sample in Part `5`, unmute `Vocal Main`.
+2. Play the loop with drums, bass, and chords.
+3. The vocal should feel human and phrase-led, not like a keyboard placeholder.
+4. If the vocal fights the chords, mute it and keep the vocal lane empty until you find a better sample.
+5. If you do not have a sample yet, continue with `Vocal Main` and `Vocal Throw` muted. The arrangement can still be built as long as the vocal space is preserved.
 
 ### Why
 Arrangement will not fix a broken sound stack.
@@ -277,7 +278,7 @@ Continue only when this stack works:
 - `Bass Sub`
 - `Bass Mid`
 - `Chords`
-- `Hook`
+- `Vocal Main` if a sample has already passed Part `5`
 
 The stack does not need to be mixed perfectly.
 It must be musically readable and not muddy.
@@ -338,8 +339,8 @@ Work one lane family at a time:
 2. `Drums`
 3. `Bass`
 4. `Chords`
-5. `Hook`
-6. `Answer`
+5. `Vocal Main`
+6. `Vocal Throw`
 
 After each lane family is placed, press play from `4` bars before the next section boundary.
 Example: after placing `Intro A` and `Intro B`, play from `13.1.1` through `37.1.1`.
@@ -504,7 +505,7 @@ The two lanes should use the same timing unless the step says otherwise.
 - duplicate the `Drop B` bass from `97.1.1–113.1.1`
 - paste it from `113.1.1–129.1.1`
 - keep the sub stable
-- do not change bass notes; drums, chords, hook, and answer create the lift
+- do not change bass notes; drums, chords, vocal placement, and top-end create the lift
 
 `Outro`:
 - use the sparse teaser/break bass from `129.1.1–145.1.1`
@@ -565,87 +566,90 @@ Do not make separate chord tracks for every section.
 - use the restrained `4`-bar chord clip from `129.1.1–137.1.1`
 - leave `Chords` empty from `137.1.1–145.1.1`
 
-### 2E: Place Hook And Answer
-Use the lower register from Part `5`.
+### 2E: Place Vocal Main And Vocal Throw
+Use the vocal sample workflow from Part `5`.
 
-Hook notes:
-- `Drop A`: `A3 -> C4 -> D4`
-- `Drop B`: `A3 -> C4 -> D4 -> F4`
+Do not place the old synth hook/answer here.
 
-Answer notes:
-- `G3 -> A3 -> C4`
+If you have not found a sample yet:
+- keep `Vocal Main` empty
+- keep `Vocal Throw` empty
+- optionally place muted placeholder clips at the listed positions so the vocal space is visible
+
+If you have found a sample:
+- `Vocal Main` is the main word / chop / phrase fragment
+- `Vocal Throw` is the shorter tail, breath, syllable, or delayed response
+- both should feel human and sample-led
+- neither should sound like a beepy keyboard
 
 `Intro A`:
-- keep `Hook` empty
-- keep `Answer` empty
+- keep `Vocal Main` empty
+- keep `Vocal Throw` empty
 
 `Intro B`:
-- keep `Hook` empty until the back half
-- add one filtered pickup at `29.3.4`:
-  - `A3` at `29.3.4`, length `1/16`
-- add one filtered pickup at `30.3.4`:
-  - `A3` at `30.3.4`, length `1/16`
-- keep `Answer` empty
+- keep `Vocal Main` empty until the back half
+- optional filtered vocal teaser only:
+  - first teaser: clip attack starts at `29.3.4`
+  - second teaser: clip attack starts at `30.3.4`
+- keep these teasers quieter than the final `Drop B` vocal
+- keep `Vocal Throw` empty
 
 `Drop A`:
-- place the hook only at bars `40` and `48` on the first pass
-- at `40`:
-  - `A3` at `40.3.4`, length `1/16`
-  - `C4` at `40.4.1`, length `1/8`
-  - `D4` at `40.4.4`, length `1/16`
-- at `48`:
-  - `A3` at `48.3.4`, length `1/16`
-  - `C4` at `48.4.1`, length `1/8`
-  - `D4` at `48.4.4`, length `1/16`
-- keep `Answer` empty on the first pass
+- keep the main vocal out on the first pass
+- optional quiet teaser only:
+  - `Vocal Main` attack starts at `40.3.4`
+  - duplicate only if it works at `48.3.4`
+- keep `Vocal Throw` empty
+- if the vocal teaser makes `Drop A` feel like the main drop, delete it
 
 `Drop A Lift`:
-- repeat the same hook phrase at bars `56` and `64`
-- do not add `F4`
-- keep `Answer` empty on the first pass
+- keep the main vocal out on the first pass
+- optional quiet teaser only:
+  - `Vocal Main` attack starts at `56.3.4`
+  - duplicate only if it works at `64.3.4`
+- do not reveal the best vocal phrase here
+- keep `Vocal Throw` empty
 
 `Break`:
-- keep the full hook phrase out
-- if you need hook texture, use only one quiet/reversed/filtered `A3` tail at `76.4.4`
-- keep `Answer` empty
+- keep the full vocal phrase out
+- if the break needs human texture, use one quiet vocal tail at `76.4.4`
+- keep `Vocal Throw` empty unless the throw is a very quiet reverse or breath
 
 `Re-entry Build`:
-- use only pickups:
-  - `A3` at `93.3.4`, length `1/16`
-  - `A3` at `94.3.4`, length `1/16`
-- keep `Answer` empty
+- keep `81.1.1–93.1.1` vocal-empty
+- optional filtered pickups only:
+  - `Vocal Main` attack starts at `93.3.4`
+  - optional second pickup starts at `94.3.4`
+  - optional final pickup starts at `96.4.4`
+- keep `Vocal Throw` empty unless the final pickup needs a tiny delay tail
 
 `Drop B`:
-- hook owns bars `100` and `108`
-- answer owns bars `104` and `112`
-- at `100`:
-  - `A3` at `100.3.4`, length `1/16`
-  - `C4` at `100.4.1`, length `1/8`
-  - `D4` at `100.4.4`, length `1/16`
-  - `F4` at `101.1.1`, length `1/8`
-- at `104`, answer:
-  - `G3` at `104.3.3`, length `1/16`
-  - `A3` at `104.4.1`, length `1/16`
-  - `C4` at `104.4.4`, length `1/16`
-- at `108`, hook:
-  - `A3` at `108.3.4`, length `1/16`
-  - `C4` at `108.4.1`, length `1/8`
-  - `D4` at `108.4.4`, length `1/16`
-  - `F4` at `109.1.1`, length `1/8`
-- at `112`, answer:
-  - `G3` at `112.3.3`, length `1/16`
-  - `A3` at `112.4.1`, length `1/16`
-  - `C4` at `112.4.4`, length `1/16`
+- this is the first real vocal identity section
+- first-pass `Vocal Main` placements:
+  - main chop attack starts at `100.3.4`
+  - repeat main chop attack starts at `108.3.4`
+- optional `Vocal Main` alternates if those feel wrong:
+  - `104.4.1`
+  - `112.4.1`
+- first-pass `Vocal Throw` placements:
+  - throw attack starts at `104.4.4`
+  - throw attack starts at `112.4.4`
+- do not place the vocal on every listed point
+- use `100.3.4` and `108.3.4` first, then add throws only if the phrase needs them
 
 `Drop B Lift`:
-- keep hook and answer alternating
-- hook at bars `116` and `124`
-- answer at bars `120` and `128`
-- use the same note placements as `Drop B`, shifted to those bars
+- continue the `Drop B` vocal logic
+- first-pass `Vocal Main` placements:
+  - `116.3.4`
+  - `124.3.4`
+- first-pass `Vocal Throw` placements:
+  - `120.4.4`
+  - `128.4.4`
+- only add extra vocal chops if `Drop B` still feels too empty after drums, chords, and top-end lift are working
 
 `Outro`:
-- keep `Hook` empty from `129.1.1–145.1.1`
-- keep `Answer` empty from `129.1.1–145.1.1`
+- keep `Vocal Main` empty from `129.1.1–145.1.1`
+- keep `Vocal Throw` empty from `129.1.1–145.1.1`
 
 ### Why
 This gets the whole song on the page fast.
@@ -662,7 +666,7 @@ You want to hear the architecture first, before spending an hour polishing one t
 - otherwise show:
   - `Intro A` through `Break`
   - `Re-entry Build` through `Outro`
-- keep drums, bass, chords, hook, answer, and air lanes visible in each capture
+- keep drums, bass, chords, vocal main, vocal throw, and air lanes visible in each capture
 
 ## Step 3: Verify Intro A And Intro B
 ### Action
@@ -672,8 +676,8 @@ Check `Intro A` from `1.1.1–17.1.1`:
 1. `Air` is present the whole time.
 2. `Bass Sub` is empty.
 3. `Bass Mid` is empty.
-4. `Hook` is empty.
-5. `Answer` is empty.
+4. `Vocal Main` is empty.
+5. `Vocal Throw` is empty.
 6. `Chords` only enter from `9.1.1`.
 7. `Open Hat` is empty.
 8. `Drum Fill FX` only appears at `16.4.3` and `16.4.4`.
@@ -683,8 +687,8 @@ Check `Intro B` from `17.1.1–33.1.1`:
 2. `Chords` are present from `17.1.1–33.1.1`.
 3. `Bass Sub` and `Bass Mid` use the teaser pattern.
 4. `Open Hat` appears only from `25.1.1–33.1.1`.
-5. `Hook` has only the two pickups at `29.3.4` and `30.3.4`.
-6. `Answer` is empty.
+5. `Vocal Main` is empty or has only filtered teasers at `29.3.4` and `30.3.4`.
+6. `Vocal Throw` is empty.
 7. `Drum Fill FX` appears at `32.4.3` and `32.4.4`.
 
 Playback check:
@@ -713,14 +717,14 @@ Check every required lane:
 5. `Bass Mid` uses the same rhythm as `Bass Sub`, with the cleaned-up mid patch.
 6. `Chords` use the restrained `4`-bar chord clip four times.
 7. The `Bb` chord in `Drop A` is restrained: `Bb2 F3 C4`.
-8. `Hook` appears only at bars `40` and `48`.
-9. `Answer` is empty on the first pass.
+8. `Vocal Main` is empty, or has only quiet filtered teasers at `40.3.4` and `48.3.4`.
+9. `Vocal Throw` is empty on the first pass.
 10. `Air` is present.
 
-Hook check:
-- bar `40` contains `A3` at `40.3.4`, `C4` at `40.4.1`, and `D4` at `40.4.4`
-- bar `48` contains `A3` at `48.3.4`, `C4` at `48.4.1`, and `D4` at `48.4.4`
-- there is no `F4` in `Drop A`
+Vocal check:
+- if using a teaser, the first vocal attack starts at `40.3.4`
+- if repeating the teaser, the second vocal attack starts at `48.3.4`
+- the best vocal phrase is not revealed in `Drop A`
 
 Playback check:
 1. Set the loop brace from `33.1.1` to `49.1.1`.
@@ -749,17 +753,17 @@ Check:
 2. `Bass Mid` notes match `Drop A`.
 3. `Chords` notes match `Drop A`.
 4. The `Bb` chord is still restrained: `Bb2 F3 C4`.
-5. `Hook` uses the same `A3 -> C4 -> D4` cell.
-6. `Hook` appears at bars `56` and `64`.
-7. `Answer` is empty on the first pass.
+5. `Vocal Main` is empty, or has only quiet filtered teasers at `56.3.4` and `64.3.4`.
+6. `Vocal Throw` is empty on the first pass.
+7. The full vocal sample is still saved for later.
 8. Drums use the denser/lift version from Part `2`.
 9. `Drum Fill FX` pushes into the break at `64.4.3` and `64.4.4`.
 
 Do not do these in `Drop A Lift`:
-- do not add `F4` to the hook
+- do not reveal the main vocal phrase
 - do not add `A3` to the restrained `Bb` chord
 - do not add a new bass melody
-- do not add the answer conversation yet
+- do not add the vocal throw conversation yet
 
 Playback check:
 1. Loop `45.1.1–69.1.1`.
@@ -785,8 +789,8 @@ Check:
 5. The `Bbmaj7` bloom appears in the chord clip as `Bb2 F3 A3 C4`.
 6. `Kick Body` is empty from `65.1.1–73.1.1`.
 7. `Kick Body` returns only at `73.1.1`, `75.1.1`, `77.1.1`, and `79.1.1`.
-8. `Hook` is empty except optional texture at `76.4.4`.
-9. `Answer` is empty.
+8. `Vocal Main` is empty except optional texture at `76.4.4`.
+9. `Vocal Throw` is empty or a very quiet reverse/breath only.
 10. `Air` is present.
 
 Playback check:
@@ -811,17 +815,18 @@ Check:
 5. `Bass Sub` and `Bass Mid` use the teaser pattern, not the full drop bass.
 6. `Chords` return to the restrained `4`-bar clip.
 7. The `Bb` chord is back to `Bb2 F3 C4`.
-8. `Hook` only has:
-   - `A3` at `93.3.4`
-   - `A3` at `94.3.4`
-9. `Answer` is empty.
+8. `Vocal Main` is empty until the late pickup window:
+   - optional pickup at `93.3.4`
+   - optional pickup at `94.3.4`
+   - optional pickup at `96.4.4`
+9. `Vocal Throw` is empty unless the final pickup needs a small delay tail.
 10. `Drum Fill FX` pushes into `97.1.1` at `96.4.3` and `96.4.4`.
 
 Playback check:
 1. Loop `77.1.1–101.1.1`.
 2. Listen through `Break -> Re-entry Build -> Drop B`.
 3. If `Re-entry Build` feels like another break, restore more drums earlier.
-4. If it feels like `Drop B` has already arrived, remove hook notes before `93.3.4` and keep chords restrained.
+4. If it feels like `Drop B` has already arrived, remove vocal pickups before `93.3.4` and keep chords restrained.
 
 ### Screenshot
 - `arrangement-08-reentry-build`
@@ -837,28 +842,30 @@ Check:
 3. `Chords` use the `8`-bar bloom clip twice:
    - `97.1.1–105.1.1`
    - `105.1.1–113.1.1`
-4. `Hook` owns bars `100` and `108`.
-5. `Answer` owns bars `104` and `112`.
-6. `Hook` and `Answer` do not speak on the same phrase ending.
+4. `Vocal Main` carries the first real vocal identity.
+5. `Vocal Throw` punctuates phrase endings only if it helps.
+6. `Vocal Main` and `Vocal Throw` do not crowd the same phrase ending.
 
-Hook placements:
-- at `100`: `A3` at `100.3.4`, `C4` at `100.4.1`, `D4` at `100.4.4`, `F4` at `101.1.1`
-- at `108`: `A3` at `108.3.4`, `C4` at `108.4.1`, `D4` at `108.4.4`, `F4` at `109.1.1`
+Vocal Main placements:
+- first main vocal attack starts at `100.3.4`
+- second main vocal attack starts at `108.3.4`
+- optional alternate main placements are `104.4.1` and `112.4.1`
 
-Answer placements:
-- at `104`: `G3` at `104.3.3`, `A3` at `104.4.1`, `C4` at `104.4.4`
-- at `112`: `G3` at `112.3.3`, `A3` at `112.4.1`, `C4` at `112.4.4`
+Vocal Throw placements:
+- first throw attack starts at `104.4.4`
+- second throw attack starts at `112.4.4`
+- if the throw sounds cheesy, delete it and keep only `Vocal Main`
 
 Playback check:
 1. Loop `97.1.1–113.1.1`.
-2. Listen once with `Hook` muted.
-3. Listen once with `Answer` muted.
+2. Listen once with `Vocal Main` muted.
+3. Listen once with `Vocal Throw` muted.
 4. Listen once with both active.
-5. If both together feel crowded, delete extra hook phrases before lowering both faders.
+5. If both together feel crowded, delete extra vocal placements before lowering both faders.
 
 ### Screenshot
 - `arrangement-09-drop-b`
-- `arrangement-09b-drop-b-hook-answer-map`
+- `arrangement-09b-drop-b-vocal-map`
 
 ## Step 9: Verify Drop B Lift And Outro
 ### Action
@@ -870,13 +877,13 @@ Check `Drop B Lift` from `113.1.1–129.1.1`:
 3. Chords keep the `8`-bar bloom clip twice:
    - `113.1.1–121.1.1`
    - `121.1.1–129.1.1`
-4. Hook owns bars `116` and `124`.
-5. Answer owns bars `120` and `128`.
+4. `Vocal Main` can return at bars `116` and `124`.
+5. `Vocal Throw` can return at bars `120` and `128`.
 6. This is the biggest section, but it should not be the messiest section.
 
 Check `Outro` from `129.1.1–145.1.1`:
-1. `Hook` is empty.
-2. `Answer` is empty.
+1. `Vocal Main` is empty.
+2. `Vocal Throw` is empty.
 3. `Chords` play from `129.1.1–137.1.1`, then stop.
 4. `Air` continues.
 5. `Kick Body`, `Kick Click`, and `Closed Hat` continue to `145.1.1`.
@@ -908,7 +915,7 @@ Use this checklist:
 4. `49–64`: `Drop A Lift` gets more energetic without new harmonic material.
 5. `65–80`: break opens upward and does not feel like a mistake.
 6. `81–96`: `Re-entry Build` wakes the rhythm back up.
-7. `97–112`: `Drop B` blooms and introduces answer conversation.
+7. `97–112`: `Drop B` blooms and introduces the main vocal sample identity.
 8. `113–128`: `Drop B Lift` is the peak.
 9. `129–144`: outro strips back without killing the mixable groove.
 
@@ -961,8 +968,8 @@ Compare against:
   - listen for sustained pressure across stripped and full sections
   - check whether your stripped sections still feel physically connected to the club record, not like demos
 - `Sammy Virji - I Guess We're Not the Same`
-  - listen for how hook and harmonic information arrive in stages
-  - check whether your hook / harmony reveals are landing in distinct phases rather than all at once
+  - listen for how vocal and harmonic information arrive in stages
+  - check whether your vocal / harmony reveals are landing in distinct phases rather than all at once
 
 ### What To Listen For
 - does `Drop A` hit hard enough without spending bloom?
@@ -987,13 +994,13 @@ Fix order:
 Fix order:
 1. restore more rhythmic motion
 2. reduce harmonic openness
-3. push the hook pickup later
+3. push the vocal pickup later
 
 ### Problem: “Drop B doesn’t feel bigger than Drop A.”
 Fix order:
 1. check whether bloom leaked in `Drop A Lift`
-2. thin the hook to half density
-3. make the answer phrase-end only
+2. save the main vocal phrase for `Drop B`
+3. make the vocal throw phrase-end only
 4. reopen width / air around the chords
 
 ### Problem: “The outro feels dead.”

@@ -47,7 +47,7 @@ Reference role split:
 - `KETTAMA - It Gets Better`: pressure, weight, density
 - `Interplanetary Criminal - Slow Burner`: swing, hat drag, phrase-end groove
 - `Y U QT - U Belong 2 Me (4x4 Mix)`: public rolling-bass proxy
-- `Sammy Virji - I Guess We're Not the Same`: hook clarity, harmonic readability
+- `Sammy Virji - I Guess We're Not the Same`: vocal/hook clarity, harmonic readability
 
 Verification note:
 - public track names checked against public catalog / press results on `2026-04-17`
@@ -62,22 +62,20 @@ Verification note:
 - `chord-bed`
   - current anchor: `bl3ss-camrinwatsin-kisses:pad-1:i7`
   - issue: `mix_only` fallback, no actionable mutation suggestions
-- `hook-response`
-  - current anchor: `interplanetary-criminal-slow-burner:organ:i4`
-  - issue: `mix_only` fallback, involved in `1` remaining conflict
-- `og-reese-answer`
-  - current anchor: `bl3ss-camrinwatsin-kisses:organ-bass:i1`
-  - issue: `mix_only` fallback, involved in `2` remaining conflicts, no actionable mutation suggestions
+- `vocal-sample-source`
+  - current anchor: none selected yet
+  - issue: final vocal sample must be found, cleared, key-checked, time-checked, and placed
 
 ### Active pairwise conflicts
-- `bass-foundation` vs `og-reese-answer`
-  - both read as `low_end_anchor`, so the low end stacks too heavily
-- `hook-response` vs `og-reese-answer`
-  - both want the forward midrange position
+- `bass-foundation` vs `vocal-sample-source`
+  - a low / muddy vocal chop can mask the rolling bass if it is not filtered or chosen carefully
+- `chord-bed` vs `vocal-sample-source`
+  - a melodic vocal can imply notes that fight the staged chord bloom
 
 ### Resolution direction
-- `og-reese-answer` is the most replaceable lane because the composition plan now wants a warm phrase-end answer rather than a second bass-heavy voice
-- `hook-response` should stay in the plan, but needs a stronger non-fallback patch choice
+- remove the old synth hook/answer from the core production path
+- build `Vocal Audition`, `Vocal Main`, and `Vocal Throw` audio lanes instead
+- if no vocal is found yet, keep muted guide clips rather than filling the lane with a synth
 - `chord-bed` needs a real final pad/stab patch instead of a fallback wide pad placeholder
 
 ## Harmony Spec
@@ -311,77 +309,37 @@ Starting source recommendation:
 Capture requirement:
 - once the exact files are chosen in the real build, record the file names verbatim for the later tutorial
 
-## Hook and Answer Spec
-### Hook notes
-- `Drop A`: `A4 C5 D5`
-- `Drop B`: `A4 C5 D5 F5`
+## Vocal Sample Spec
+### Lane design
+- `Vocal Audition`: workbench track for testing candidates
+- `Vocal Main`: final main chop / phrase lane
+- `Vocal Throw`: shorter tail / breath / syllable / delayed response lane
+- muted `Vocal Guide MIDI`: optional visual ruler only, not final audio
 
-### Exact rhythmic identity
-- hook enters late and avoids the bar's beat-`1` downbeat
-- collisions on beat `4` and next-bar beat `1` are intentional accent points, not mistakes
-- in the current plan the core cell lands at:
-  - on the `a` of beat `3`
-  - on beat `4`
-  - on the `a` of beat `4`
-- on hook-owned `Drop B` bloom phrases, `F5` lands on beat `1` of the following bar
+### Sample selection target
+- dry or mostly dry
+- short phrase, one-shot, breath, ad-lib, or chop
+- harmonically safe against `D minor`
+- does not fight the `Bbmaj7` bloom
+- no printed bass / drums / huge reverb that cannot be removed
+- human enough to replace the old synth hook identity
 
-### Repetition pattern
-- `Drop A`: phrase-end only, not every bar
-- `Drop A Lift`: same hook language, no new melodic reveal
-- `Drop B`: half density when the answer enters
-- `Drop B Lift`: strongest answer behavior, but still alternating
+### First-pass placement states
+- `Intro B`: filtered teaser at `29.3.4` and `30.3.4`
+- `Drop A`: optional quiet teaser at `40.3.4` and `48.3.4`
+- `Drop A Lift`: optional quiet teaser at `56.3.4` and `64.3.4`
+- `Break`: optional texture at `76.4.4`
+- `Re-entry Build`: pickups at `93.3.4`, `94.3.4`, and optionally `96.4.4`
+- `Drop B`: main vocal at `100.3.4` and `108.3.4`
+- `Drop B`: vocal throw at `104.4.4` and `112.4.4`
+- `Drop B Lift`: main vocal at `116.3.4` and `124.3.4`
+- `Drop B Lift`: vocal throw at `120.4.4` and `128.4.4`
 
-### Hook synth
-- engine: `Serum 2`
-- family: `FM-organ / woody garage stab`
-- not:
-  - supersaw
-  - vocal placeholder
-
-Oscillator direction:
-- Osc A: sine / triangle-leaning body
-- Osc B: brighter harmonic support for FM color
-- use FM from B onto A lightly, just enough to get organ woodiness rather than bell harshness
-
-Filter direction:
-- smooth low-pass or gentle band-softening filter
-- keep enough upper-mid bite for the hook to read
-- starting cutoff should stay in the zone where the hook speaks clearly without getting fizzy
-
-Envelope direction:
-- fast attack
-- medium-short decay
-- low sustain
-- short release
-
-Starting ranges:
-- attack: `0–5 ms`
-- decay: `80–200 ms`
-- sustain: `20–40%`
-- release: `60–150 ms`
-- filter cutoff starting zone: `1.2–3.5 kHz` depending on oscillator brightness
-
-Processing direction:
-- light saturation
-- controlled compression
-- short plate reverb send
-- filtered delay throws only where useful
+### Processing direction
 - high-pass enough to stay out of the bass lane
-
-### Answer synth
-- same family as hook
-- shorter envelope
-- slightly dirtier tone
-- phrase-end only
-
-Starting deltas from the hook:
-- decay and release `30–50%` shorter than the hook
-- saturation / bite `20–40%` stronger than the hook
-- keep the dry signal slightly shorter before reaching for more FX
-
-### Register relationship
-- hook should sit above the core chord bed enough to read clearly
-- answer should feel related, not like a different instrument family
+- short plate on `Return B` only if it helps the vocal sit
+- filtered delay on `Return D` for throws
+- keep the main vocal more forward and dry than the throw
 
 ## Top-End, Air, and Stereo
 ### Air source
@@ -407,27 +365,27 @@ Starting deltas from the hook:
 - combination of:
   - open hats
   - top loop bite
-  - hook attack
-  - answer edge
+  - vocal attack
+  - vocal throw edge
 
 ### EQ ownership direction
 - `30–90 Hz`: sub / kick
 - `120–300 Hz`: carefully split between bass character and chord warmth
-- `300 Hz–2 kHz`: emotion + hook readability
+- `300 Hz–2 kHz`: emotion + vocal intelligibility
 - `2–6 kHz`: presence
 - `8 kHz+`: air
 
 Starting split:
 - `120–200 Hz`: let bass character lead here
-- `200–300 Hz`: let chord warmth and some hook body live here more confidently
+- `200–300 Hz`: let chord warmth live here, but keep vocal mud controlled
 - if the low-mid feels cloudy, cut the chord bed first before thinning the bass floor
 
 ### Stereo map
 - kick: mono / center
 - sub: mono / center
 - mid-bass: mono to narrow stereo above crossover
-- hook: mostly center with stereo support from returns
-- answer: a little wider than hook via returns
+- vocal main: mostly center with stereo support from returns
+- vocal throw: wider than vocal main via returns
 - chords: wide stereo
 - air: widest layer
 - loops/tops: stereo but controlled
@@ -436,8 +394,8 @@ Starting width targets:
 - kick: `0–20%`
 - sub: `0%`
 - mid-bass: `0–40%` above the crossover only
-- hook dry signal: `0–30%`
-- answer dry signal: `20–40%`
+- vocal main dry signal: `0–20%`
+- vocal throw dry signal: `20–50%`
 - chords: `120–150%` equivalent width feel
 - air: `140–170%` equivalent width feel
 - loops/tops: `90–120%`
@@ -448,7 +406,7 @@ Starting width targets:
 - `Drop A Lift`: top-end density and pocket only
 - `Break`: upward harmonic bloom and air
 - `Re-entry Build`: rhythmic re-engagement
-- `Drop B`: harmonic bloom + answer conversation
+- `Drop B`: harmonic bloom + first real vocal sample identity
 - `Drop B Lift`: widest, most released top end
 
 ### Transition inventory
@@ -477,7 +435,7 @@ Starting width targets:
 - re-entry build to Drop B
 - use:
   - pre-drop cut
-  - filtered hook pickup
+  - filtered vocal pickup
   - full body return
 
 #### 128 -> 129
@@ -496,9 +454,9 @@ Starting width targets:
   - tucked in Drop A
   - widened in break
   - bloomed in Drop B
-- hook send levels:
-  - mostly readable and dry
-  - selected phrase-end throws only
+- vocal send levels:
+  - `Vocal Main` mostly readable and dry
+  - `Vocal Throw` selected phrase-end throws only
 - air-bed level:
   - constant but low
   - loudest in break
@@ -558,15 +516,16 @@ Starting direction:
 
 Starting direction:
 - keep the music bus breathing around the kick
-- avoid flattening chord bloom and hook punctuation into one slab
+- avoid flattening chord bloom and vocal punctuation into one slab
 
 ### Track / file organization
 - keep one Ableton group per major lane:
   - `Drums`
   - `Bass`
   - `Chords`
-  - `Hook`
-  - `Answer`
+  - `Vocal Main`
+  - `Vocal Throw`
+  - `Vocal Audition`
   - `Air`
   - `FX`
 - keep sample folders inside the project for:
@@ -591,17 +550,17 @@ Starting direction:
 - kick: subtle body
 - bass mid: main saturation character
 - chords: warmth only
-- hook/answer: identity tone, not fuzz
+- vocal main / vocal throw: intelligibility and texture, not fuzz
 
 ### Reverb
 - short room / ambience if drums need glue
-- short plate for hook/answer
+- short plate for vocal main / vocal throw
 - longer hall/plate for chords + air, filtered
 
 ### Delay
 - filtered delays as throws
 - avoid constant wash
-- hook can take short rhythmic delay if it strengthens identity
+- vocal throw can take short rhythmic delay if it strengthens identity
 
 ### Master bus
 - Utility / trim
@@ -664,7 +623,7 @@ Working expectation:
 - low send level
 
 ### Return B: short plate
-- use for hook / answer family
+- use for vocal main / vocal throw family
 - keep pre-delay short enough that the attack stays readable
 
 ### Return C: long filtered hall
@@ -721,14 +680,14 @@ Working expectation:
   - stable sub underneath
   - how much movement the mid layer carries
 
-### Hook and harmony readability
+### Vocal and harmony readability
 - `Sammy Virji - I Guess We're Not the Same`
 - check:
-  - low-note-count hook clarity
+  - vocal/hook clarity
   - harmonic readability in a club mix
 
 ## Originality Tests
-- if you hum your hook next to a source hook, it should diverge in contour or rhythm within the first `4` notes
+- if the vocal chop feels too close to a source hook, change placement, chop length, filtering, or source sample
 - if a bass phrase feels too source-like, change gate length, phrase-end note choice, or register emphasis
 - if a transition feels recognizable, keep the role and change the timing or FX combination
 
@@ -737,5 +696,5 @@ Working expectation:
 - resolve pairwise sound conflicts before mixing around them
 - ensure no `16`-bar section loops identically
 - verify `Drop A Lift` adds no new harmonic information
-- verify `Drop B` answer stays phrase-end only
-- verify the break ghost is textural, not a hidden phrase
+- verify `Drop B` vocal throw stays phrase-end only
+- verify the break vocal texture is textural, not a hidden full phrase

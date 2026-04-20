@@ -28,16 +28,14 @@ These are now production-readiness issues, not composition-architecture issues. 
 Named production blockers:
 - `chord-bed`: `bl3ss-camrinwatsin-kisses:pad-1:i7`
   - reason: selected under `mix_only` fallback, no actionable mutation suggestions yet
-- `hook-response`: `interplanetary-criminal-slow-burner:organ:i4`
-  - reason: selected under `mix_only` fallback, involved in `1` remaining pairwise conflict
-- `og-reese-answer`: `bl3ss-camrinwatsin-kisses:organ-bass:i1`
-  - reason: selected under `mix_only` fallback, involved in `2` remaining pairwise conflicts, no actionable mutation suggestions yet
+- `vocal-sample-source`: not selected yet
+  - reason: the track identity is now vocal-sample-led; the final vocal must be found, cleared, tested against the key, and placed intentionally
 
 Named sound conflicts:
-- `bass-foundation` vs `og-reese-answer`
-  - issue: both read as `low_end_anchor`, so the low end may stack too heavily
-- `hook-response` vs `og-reese-answer`
-  - issue: both want the forward midrange position
+- `bass-foundation` vs `vocal-sample-source`
+  - issue: a low or muddy vocal chop can mask the rolling bass if the sample is not filtered / chosen carefully
+- `chord-bed` vs `vocal-sample-source`
+  - issue: a melodic vocal can imply notes that fight the staged chord bloom
 
 ## Core Thesis
 Build a `140 BPM` `D minor` modern UKG / speed-garage record whose center is:
@@ -54,7 +52,7 @@ It should get bigger through:
 - substitution
 - harmonic bloom
 - top-end release
-- phrase-end conversation
+- vocal sample reveal / phrase-end human punctuation
 
 It should **not** get bigger through:
 - stacking more and more layers
@@ -84,7 +82,7 @@ Local sound/chain anchors are separate:
 - no OG speed-garage bass-hook writing
 - no second melodic bass voice in `Drop B`
 - no over-clipped techno-hard drum attitude
-- no sample dependency for `v1`
+- no forced synth hook/answer replacing the vocal lane
 - no direct lifting of full note paths, section logic, or hook contours from ALS/transcript sources
 - no robotic “if this then that” arrangement feel
 
@@ -120,32 +118,27 @@ Meaning:
 - rhythmic pulse should do most of the rolling work
 - tonal movement should support the pulse, not replace it
 
-### Drop B answer architecture
-- No second melodic bass voice
-- Recast the answer lane as a short warm organ / piano-family phrase-end stab above the sub
+### Vocal sample lane architecture
+- The old synth hook/answer idea is removed from the core plan.
+- The identity lane is now a vocal sample lane.
+- The track should teach sample search, auditioning, chopping, and placement rather than forcing a beepy organ hook.
+- Until a final sample is found, use muted guide clips or empty space rather than a substitute synth hook.
+
+Vocal lane states:
+- `Intro A`: no vocal
+- `Intro B`: filtered teaser near the end only
+- `Drop A`: no main vocal; optional quiet teaser only
+- `Drop A Lift`: same restraint as `Drop A`
+- `Break`: vocal space / texture, not the main phrase
+- `Re-entry Build`: late filtered pickup hints only
+- `Drop B`: first real main vocal sample identity
+- `Drop B Lift`: strongest vocal presence
+- `Outro`: no new vocal idea
 
 Why:
-- keeps `Drop B` bigger by color and punctuation
-- avoids turning it into `Drop A` plus more low-mid weight
-
-### Break sample lane target
-- Reserve the break center lane for a narrow future vocal/chop or phrase-end texture
-- Safe range: `A3–F5`
-- Avoid long tonal samples that introduce new thirds outside the progression
-
-### Hook voice identity
-- Clipped organ-pluck / woody garage stab
-- Late-entry phrase with selective kick-aligned accents
-- Enough transient bite to read through the drums
-- Core rhythmic placement:
-  - on the `a` of beat `3`
-  - on beat `4`
-  - on the `a` of beat `4`
-  - in `Drop B`, `F5` lands on beat `1` of the following bar on hook-owned bloom phrases
-- Drop B answer is:
-  - same family
-  - shorter
-  - slightly dirtier
+- the vocal becomes a designed presence across the whole arrangement
+- the strongest vocal reveal is saved for `Drop B`
+- earlier sections create anticipation without making the song feel empty
 
 ### Top-end section map
 - `Intro A`: quiet air only
@@ -156,10 +149,11 @@ Why:
 - `Drop B Lift`: strongest top-end release
 - `Outro`: whisper of air remains
 
-### Drop B conversation rule
-- Answer is phrase-end only
-- Hook drops to half density in `Drop B`
-- Hook and answer alternate rather than stack
+### Drop B vocal rule
+- `Vocal Main` appears first at phrase-defining moments.
+- `Vocal Throw` is phrase-end only.
+- The main vocal and throw should not crowd the same phrase ending.
+- If the vocal is not found yet, preserve the empty lane rather than adding a synth replacement.
 
 ### Break chord widening
 - “Stretch the chords” means:
@@ -262,34 +256,31 @@ The bass is the `floor`, not the topline.
 - `Drop B Lift`: strongest phrase-end release bars of the track
 - `Outro`: reduce to root implication and closure
 
-## Hook and Answer Plan
-### Hook thesis
-- small, memorable, late-offbeat identity lane
-- carries the instrumental without becoming a full topline
+## Vocal Sample Plan
+### Vocal thesis
+- sample-led identity lane
+- human phrase / chop / ad-lib preferred over synth hook
+- vocal is part of the whole arrangement, but not active constantly
+- earlier sections use absence, filtering, texture, or short teasers
+- `Drop B` gets the first real main vocal reveal
 
-### Hook cells
-- `Drop A`: `A4 -> C5 -> D5`
-- `Drop B`: `A4 -> C5 -> D5 -> F5`
-- secondary answer cell: `G4 -> A4 -> C5`
+### First-pass placements
+- `Intro B`: optional filtered teaser at `29.3.4` and `30.3.4`
+- `Drop A`: optional quiet teaser at `40.3.4` and `48.3.4`
+- `Drop A Lift`: optional quiet teaser at `56.3.4` and `64.3.4`
+- `Break`: optional texture at `76.4.4`
+- `Re-entry Build`: optional pickups at `93.3.4`, `94.3.4`, and `96.4.4`
+- `Drop B`: main vocal at `100.3.4` and `108.3.4`
+- `Drop B`: vocal throw at `104.4.4` and `112.4.4`
+- `Drop B Lift`: main vocal at `116.3.4` and `124.3.4`
+- `Drop B Lift`: vocal throw at `120.4.4` and `128.4.4`
 
-### Rhythmic behavior
-- avoid the downbeat of beat `1` as the hook entry point
-- selective kick collisions on beat `4` and next-bar beat `1` are intentional accents
-- enter:
-  - on the `a` of beat `3`
-  - on beat `4`
-  - on the `a` of beat `4`
-- in `Drop B`, `F5` lands on beat `1` of the following bar on hook-owned bloom phrases
-- phrase-end punctuation is the identity
-
-### Drop B conversation
-- answer is phrase-end only
-- hook is half-density
-- hook and answer alternate by phrase
-
-### Timbral relationship
-- hook = cleaner, slightly longer tail
-- answer = shorter, slightly dirtier
+### Sample search criteria
+- short phrase, one-shot, breath, ad-lib, or chop
+- dry enough to place in the mix
+- harmonically safe against `D minor`
+- does not fight the `Bbmaj7` bloom
+- does not contain printed drums / bass / wide reverb that cannot be removed
 
 ## Drum Philosophy
 - 4x4 body-forward kick core
@@ -377,7 +368,7 @@ Major handoffs:
 - `96 -> 97`
   - `Re-entry Build` into `Drop B`
   - pre-drop cut
-  - filtered hook pickup resolving
+  - filtered vocal pickup resolving
   - full body return
 - `128 -> 129`
   - drop-lift into outro
@@ -388,7 +379,7 @@ Major handoffs:
 ### Bands
 - `30–90 Hz`: bass-foundation owns center
 - `120–300 Hz`: bass character and harmonic warmth, carefully carved
-- `300 Hz–2 kHz`: chord emotion + hook identity
+- `300 Hz–2 kHz`: chord emotion + vocal intelligibility
 - `2–6 kHz`: presence owner
 - `8 kHz+`: quiet constant air owner
 
@@ -403,7 +394,7 @@ Major handoffs:
 - filtered open-hat tease in `Intro B`
 - full open-hat/presence lane in drops
 - sharper re-entry hats in the `Re-entry Build`
-- hook attack + phrase-end answer edge
+- vocal attack + phrase-end throw edge
 
 #### Air bed
 - quiet shimmer/noise bed from `Intro A` onward
@@ -416,7 +407,7 @@ Major handoffs:
 - chord hint only
 - no full bass line yet
 - whisper of air already present
-- one delayed / filtered hook pickup only near end
+- no main vocal yet; optional tiny vocal atmosphere only if the sample has usable air
 
 Arrangement assignment:
 - drums: `drum_intro_core_2bar`
@@ -426,63 +417,62 @@ Arrangement assignment:
 - full progression appears but tucked
 - bass teaser starts
 - top end is only teased
-- hook uses only a filtered pickup fragment
+- vocal uses only a filtered pickup fragment near the end
 
 Arrangement assignment:
 - drums: `drum_intro_b_tease_2bar`
 - bass: `bass_intro_b_tease_4bar`
 - chords: `chord_intro_full_4bar`
-- hook: `hook_intro_pickup_4bar`
+- vocal: `vocal_intro_b_teaser`
 
 ### 33–48: Drop A
 - full rolling bass foundation
-- restrained hook punctuation
+- vocal mostly withheld; optional quiet teaser only
 - no exposed harmonic bloom yet
 - bass owns the section
 
 Arrangement assignment:
 - drums: `drum_drop_core_2bar`
 - bass: `bass_drop_a_core_4bar`
-- answer support: `answer_drop_a_tail_4bar`
 - chords: `chord_drop_core_4bar`
-- hook: `hook_drop_a_phrase_4bar`
+- vocal: `vocal_drop_a_teaser_optional`
 
 ### 49–64: Drop A Lift
 - bigger by top-end density and tighter pocket only
 - no new bass harmonic content
-- no new hook melodic reveal
+- no main vocal reveal
 - same harmonic content as `Drop A`, only brighter pulse / dynamics
 - chord variant here must not add new harmonic color; it only tightens rhythm / dynamics
 
 Arrangement assignment:
 - drums: `drum_drop_lift_2bar`
 - bass: `bass_drop_a_lift_4bar`
-- answer support: `answer_drop_a_tail_4bar`
 - chords: `chord_drop_a_lift_4bar`
-- hook: `hook_drop_a_lift_4bar`
+- vocal: `vocal_drop_a_lift_teaser_optional`
 
 ### 65–80: Break
 - stretched chords
 - upward voicing bloom
 - drums thinned
 - air most audible here
-- center lane should still feel intentional without a sample
-- any hook ghost here should be texture, not a real phrase
+- center lane should feel like intentional vocal space
+- any vocal here should be texture, not the main phrase
 
 Arrangement assignment:
 - drums: `drum_break_sparse_2bar`
 - bass: `bass_break_sparse_4bar`
 - chords: `chord_break_stretch_8bar`
-- hook: `hook_break_ghost_4bar`
+- vocal: `vocal_break_texture_optional`
 
 ### 81–96: Re-entry Build
 - dedicated re-entry switch
 - different re-entry drums
 - filtered bass return
 - tighter chord pulse
-- filtered hook pickup only in the late pickup window:
+- filtered vocal pickup only in the late pickup window:
   - first pickup at `93.3.4`
   - second pickup at `94.3.4`
+  - optional final pickup at `96.4.4`
 - chord state should stay more restrained than `Drop B`, even while the rhythm re-engages
 - use the restrained `Bb2 F3 C4` state here, not the bloomed `Bbmaj7` state
 
@@ -490,32 +480,32 @@ Arrangement assignment:
 - drums: `drum_reentry_build_switch_2bar`
 - bass: `bass_reentry_build_tease_4bar`
 - chords: `chord_reentry_build_pulse_4bar`
-- hook: `hook_reentry_build_pickup_4bar`
+- vocal: `vocal_reentry_build_pickup`
 
 ### 97–112: Drop B
 - harmonic bloom arrives
-- phrase-end warm answer arrives
-- hook steps back to half density
-- bigger by color and dialogue, not low-end stacking
+- first real main vocal sample identity arrives
+- phrase-end vocal throw can answer the main chop
+- bigger by color, human phrase, and punctuation, not low-end stacking
 
 Arrangement assignment:
 - drums: `drum_drop_core_2bar`
 - bass: `bass_drop_b_core_4bar`
-- answer: `answer_drop_b_conversation_4bar`
 - chords: `chord_drop_b_bloom_4bar`
-- hook: `hook_drop_b_phrase_4bar`
+- vocal main: `vocal_drop_b_main`
+- vocal throw: `vocal_drop_b_throw`
 
 ### 113–128: Drop B Lift
 - strongest energy point
 - tops and widened chords carry most of the lift
-- hook and answer alternate by phrase
+- vocal main and throw can become more present, but should not become a nonstop loop
 
 Arrangement assignment:
 - drums: `drum_drop_lift_2bar`
 - bass: `bass_drop_b_lift_4bar`
-- answer: `answer_drop_b_lift_4bar`
 - chords: `chord_drop_b_bloom_4bar`
-- hook: `hook_drop_b_lift_4bar`
+- vocal main: `vocal_drop_b_lift_main`
+- vocal throw: `vocal_drop_b_lift_throw`
 
 ### 129–144: Outro
 - DJ-safe stripdown
@@ -560,29 +550,23 @@ Arrangement assignment:
 - `chord_reentry_build_pulse_4bar`
 - `chord_drop_b_bloom_4bar`
 
-### Hook / answer
-- `hook_intro_pickup_4bar`
-- `hook_drop_a_phrase_4bar`
-- `hook_drop_a_lift_4bar`
-- `hook_break_ghost_4bar`
-- `hook_reentry_build_pickup_4bar`
-- `hook_drop_b_phrase_4bar`
-- `hook_drop_b_lift_4bar`
-- answer variants:
-  - `answer_drop_a_tail_4bar`
-  - `answer_drop_b_conversation_4bar`
-  - `answer_drop_b_lift_4bar`
+### Vocal sample lane
+- `vocal_intro_b_teaser`
+- `vocal_drop_a_teaser_optional`
+- `vocal_drop_a_lift_teaser_optional`
+- `vocal_break_texture_optional`
+- `vocal_reentry_build_pickup`
+- `vocal_drop_b_main`
+- `vocal_drop_b_throw`
+- `vocal_drop_b_lift_main`
+- `vocal_drop_b_lift_throw`
 
 ## Sample Strategy
-- `v1` must work instrumentally
-- a future sample version is a re-version, not a dependency
-- if a sample appears later:
-  - keep it narrow
-  - phrase-end based
-  - keep it inside `A3–F5`
-  - avoid a long dominant topline
-- in the instrumental:
-  - hook pocket
+- `v1` is vocal-sample-led, but can be arranged with muted placeholders until the final sample is found
+- the sample must be found, cleared, and tested before final release
+- keep the sample narrow enough to leave the bass/chord architecture intact
+- phrase-end and short-chop behavior is preferred over long topline behavior
+- avoid a long dominant vocal loop that rewrites the chord progression
   - air bed
   - chord spread
   - arrangement discipline
@@ -593,7 +577,7 @@ Arrangement assignment:
 - do not lift:
   - full note paths
   - bar-length phrase shapes
-  - exact hook contours
+  - exact vocal chop contours
 - when a useful move comes from a source, change at least two of:
   - root path
   - interval contour
@@ -608,9 +592,8 @@ Arrangement assignment:
 
 ## Sound-Function Anchors (Inspiration Only)
 - `bass-foundation`: `interplanetary-criminal-slow-burner:bass:i1`
-- `hook/organ support`: `interplanetary-criminal-slow-burner:organ:i4`
 - `chord-bed`: `bl3ss-camrinwatsin-kisses:pad-1:i7`
-- `hook-support / answer support`: `bl3ss-camrinwatsin-kisses:organ-bass:i1`
+- `vocal-space support`: reference tracks and future vocal sample searches, not the removed organ hook
 
 These are inspiration anchors for chain/function, not copying targets.
 
@@ -647,10 +630,10 @@ Rule:
 - keep Drop A restrained
 - save the harmonic bloom for break / Drop B
 
-### 4. Hook identity and conversation logic
-- warm organ-stab hook
-- phrase-end answer in same family
-- hook steps back in Drop B
+### 4. Vocal sample search and placement logic
+- find and test a real vocal sample
+- preserve vocal space across intro, drops, break, and re-entry
+- save the first real main vocal identity for `Drop B`
 
 ### 5. Section writing and variant placement
 - place exact variants section by section
@@ -666,17 +649,17 @@ Rule:
 - resolve fallback-heavy synth choices and pairwise sound conflicts before the main Ableton build
 - the bass roll must feel rhythmic-primary
 - `Drop A Lift` must not reveal new harmonic information
-- when the `Drop B` answer arrives, the hook must step back to half density
+- when the `Drop B` vocal arrives, it must feel earned by earlier restraint
 - the break must widen upward, not only sustain longer
 - if a section loops identically for all `16` bars, it is not finished
 - the top-end map must stay intact across sections
 - if a phrase sounds too close to a source, change contour/register/rhythm immediately
-- the break sample lane must remain harmonically safe
+- the vocal sample lane must remain harmonically safe
 
 ## Reviewer Focus
 1. Does the bass read as a proper modern rolling UKG floor?
 2. Does `Drop A` stay restrained enough for `Drop B` to bloom?
-3. Is the hook / answer conversation strong enough for an instrumental-first version?
+3. Is the vocal sample lane designed across the whole song without revealing the main phrase too early?
 4. Does the track grow by substitution and opening instead of stacking?
 5. Is the top-end map believable enough to avoid a closed-in mix?
 6. Does the overall lane feel right:
@@ -688,6 +671,6 @@ Rule:
 
 ## Later Handoff Notes
 - when the track is built later, bounce each major section and compare it to the section targets before changing the arrangement
-- capture final MIDI for bass, chords, hook, and answer so the guided lesson can point to exact note decisions
+- capture final MIDI for bass and chords, plus exact vocal audio placements, so the guided lesson can point to exact decisions
 - keep the composition pass and MIDI plan beside the Ableton session; they are the authority, not late-session instinct
-- if a future sample arrives, treat it as a re-version decision, not a reason to reopen the whole composition
+- the vocal sample is now part of the intended version, not a future re-version add-on

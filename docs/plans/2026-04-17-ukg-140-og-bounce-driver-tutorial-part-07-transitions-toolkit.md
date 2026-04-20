@@ -129,7 +129,7 @@ Major boundaries:
 - `96 -> 97`
   - `Re-entry Build` to `Drop B`
   - pre-drop cut
-  - filtered hook pickup resolving
+  - filtered vocal pickup resolving
   - full body return
 - `128 -> 129`
   - `Drop B Lift` to outro
@@ -139,7 +139,7 @@ Major boundaries:
 ## Automation Ownership In This Part
 Write these here:
 - drum-bus high-pass moves at intros and transitions
-- hook phrase-end throws
+- vocal phrase-end throws
 - air-bed level moves around break and outro
 - obvious width handoffs already defined in `Part 4`
 - boundary mutes / cuts / returns
@@ -205,7 +205,7 @@ Create or label the exact tools you will use:
 Then confirm:
 - drum bus has a high-pass filter ready
 - `Return B`, `Return C`, and `Return D` are visible
-- the hook / answer lanes can automate send levels
+- the `Vocal Main` / `Vocal Throw` lanes can automate send levels
 - the chord lane can automate width and brightness if needed
 
 ### Why
@@ -355,14 +355,14 @@ On bars `79–81`:
 - switch the drum language at `81` so the section feels newly awake
 - tighten the chord pulse back in from break-width to `Re-entry Build` control
 - reintroduce filtered bass implication at `81`
-- keep the hook pickup out until later in the section
+- keep the vocal pickup out until later in the section
 
 Exact first-pass timing:
 1. Keep the final fully wide break state intact through `79.4.4`.
 2. Start the re-entry pressure at `80.1.1`.
 3. Switch to the tighter drum language exactly at `81.1.1`.
 4. Bring the filtered bass implication back at `81.1.1`, not mid-bar.
-5. Do not let the hook pickup enter before bar `93`; the `Re-entry Build` should wake up rhythm first.
+5. Do not let the vocal pickup enter before bar `93`; the `Re-entry Build` should wake up rhythm first.
 6. On the drum lanes at `81.1.1`:
    - unmute or restore `Closed Hat`
    - unmute or restore `Ghost Hat`
@@ -390,7 +390,7 @@ It is the rhythmic wake-up section.
 ## Step 7: Write The Main Re-Entry (`96 -> 97`)
 ### Action
 On bars `95–97`:
-- keep the filtered hook pickup visible only from `93.1.1` through `94.4.4`
+- keep the filtered vocal pickup visible only from `93.1.1` through `94.4.4`
 - use a pre-drop cut on the last beat or last half-bar of `96`
 - stop any riser before `97`, do not smear over the landing
 - let full body return on `97`:
@@ -399,7 +399,7 @@ On bars `95–97`:
   - restored drop drum weight
 
 Exact first-pass timing:
-1. Let the filtered hook pickup clip begin at `93.1.1` and end before `95.1.1`.
+1. Let the filtered vocal pickup clip begin at `93.1.1` and end before `95.1.1`.
 2. Make bar `95` feel tense without cutting the body away yet.
 3. Start the true pre-drop subtraction at `96.4.1`.
 4. If the cut is too weak, extend it only to `96.3.3`, not earlier.
@@ -420,7 +420,7 @@ This is the most important transition after the first drop.
 If it is weak, the whole second half feels like a repeat instead of a payoff.
 
 ### Mechanical shape
-- bars `93–94`: filtered hook pickup appears
+- bars `93–94`: filtered vocal pickup appears
 - bar `95`: tension is already visible
 - bar `96`: subtraction and final push
 - beat `1` of `97`: full body return
@@ -450,12 +450,12 @@ For `112 -> 113`:
 
 Exact first-pass move:
 - add the phrase-end fill in bar `112`
-- raise the hook / answer `Return B` sends by `+2 dB` at `113.1.1`
+- raise the `Vocal Main` / `Vocal Throw` `Return B` sends by `+2 dB` at `113.1.1`
 - keep that lift through `115.1.1`, then return the sends to their previous levels
 - first-pass values:
-  - `Hook` Send B: `-18 dB` -> `-16 dB`
-  - `Answer` Send B: `-16 dB` -> `-14 dB`
-- leave `Return C` unchanged on the first pass so the lift comes from hook / answer release, not extra chord wash
+  - `Vocal Main` Send B: `-18 dB` -> `-16 dB`
+  - `Vocal Throw` Send B: `-16 dB` -> `-14 dB`
+- leave `Return C` unchanged on the first pass so the lift comes from vocal release, not extra chord wash
 - do not add any new MIDI note at `113.1.1`
 - if the lift still feels flat, add one extra `Open Hat` hit at `113.2.3` before inventing a new FX lane
 
@@ -504,9 +504,9 @@ Drum-bus high-pass:
 - filtered intros and transitions
 - fully open in main drops
 
-Hook send levels:
-- mostly readable and dry
-- selected phrase-end throws only
+Vocal send levels:
+- `Vocal Main` mostly readable and dry
+- `Vocal Throw` gets selected phrase-end throws only
 
 Air-bed level:
 - constant but low
@@ -524,7 +524,7 @@ Exact first-pass automation points:
    - `95.1.1`: `20 Hz`
    - `96.4.1`: `160 Hz`
    - `97.1.1`: `20 Hz`
-2. On the hook send lane, create phrase-end throw points at:
+2. On the vocal send lanes, create phrase-end throw points at:
    - `100.3.4`
    - `104.3.3`
    - `108.3.4`
@@ -547,7 +547,8 @@ Ableton action reminder:
 2. Write automation directly on:
    - `Drum Bus`
    - `Chords`
-   - `Hook`
+   - `Vocal Main`
+   - `Vocal Throw`
    - `Air`
 3. Name your automation target before drawing points so you do not accidentally write volume automation when you meant to write filter or send automation.
 
@@ -556,13 +557,13 @@ Transitions are not only FX clips. Most of the excitement comes from controlled 
 
 ### Screenshot Set
 - `transitions-10a-drum-bus-hp-automation`
-- `transitions-10b-hook-send-automation`
+- `transitions-10b-vocal-send-automation`
 - `transitions-10c-air-width-automation`
 
 ### Visual Automation Requirement
 - show the drum-bus high-pass automation lane across bars `30–35` so the `31.1.1`, `32.1.1`, `32.4.4`, and `33.1.1` values are visible
 - show the re-entry high-pass automation lane across bars `95–97` so the `95.1.1`, `96.4.1`, and `97.1.1` values are visible
-- show the hook / answer send automation around bars `112–115` so the `+2 dB` lift and return are visible
+- show the vocal send automation around bars `112–115` so the `+2 dB` lift and return are visible
 
 ## Step 11: Boundary-Only A/B
 ### Action
@@ -611,7 +612,7 @@ Fix order:
 Fix order:
 1. increase rhythmic motion at `81`
 2. reduce harmonic openness
-3. push the hook pickup later
+3. push the vocal pickup later
 
 ### Problem: “The break handoff feels empty instead of open.”
 Fix order:

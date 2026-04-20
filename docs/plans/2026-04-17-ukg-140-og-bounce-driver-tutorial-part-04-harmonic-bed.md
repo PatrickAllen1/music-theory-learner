@@ -64,7 +64,7 @@ Plain-English routing reminder:
 ## Reference Axis
 Primary A/B for this part:
 - `Sammy Virji - I Guess We're Not the Same`
-  - listen for harmonic readability and hook/chord coexistence
+  - listen for harmonic readability and vocal/chord coexistence
 - `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for how harmonic support stays present without swallowing the groove
 
@@ -100,8 +100,8 @@ Use this as the source of truth:
 4. Type `Chords` and press `Enter`.
 5. Right-click the `Chords` track header and choose a color swatch that is clearly different from:
    - `Bass`
-   - `Hook`
-   - `Answer`
+   - `Vocal Main`
+   - `Vocal Throw`
 6. Route the `Chords` track to the `Music` or `Chords` group.
 7. In Session View, create:
    - one empty `4`-bar MIDI clip for the restrained drop loop
@@ -194,7 +194,7 @@ Reference description:
 - not a lead
 - not a pluck
 - not a cinematic pad
-- it should feel like a warm block of harmony that the bass and hook can sit in front of
+- it should feel like a warm block of harmony that the bass and vocal can sit in front of
 
 If it still sounds like a dull beep:
 - confirm all five test-chord notes are present
@@ -222,7 +222,7 @@ Plain-English sound target:
 - when you hold one chord, it should sound like warm harmonic support underneath the track
 - it should not sound like a single thin note
 - it should not sound like a lead synth
-- it should not poke out harder than the kick or hook
+- it should not poke out harder than the kick or vocal
 - if you mute it, the track should feel less warm; if you unmute it, the track should feel wider and more musical without becoming busier
 
 If it sounds like a high beep:
@@ -739,7 +739,7 @@ Fix order:
 2. open the restrained clip and check that bar `2` is only `Bb2`, `F3`, `C4`
 3. open the bloomed clip and check that the `Bbmaj7` state is `Bb2`, `F3`, `A3`, `C4`
 4. if the difference is present but still inaudible, raise break filter cutoff from `2.5 kHz` to `2.7 kHz`
-5. if it still reads flat after the hook is added later, cut the chord bed `1.5–2.5 kHz` by `-1.5 dB` instead of raising every melodic lane
+5. if it still reads flat after the vocal is added later, cut the chord bed `1.5–2.5 kHz` by `-1.5 dB` instead of raising every melodic lane
 
 ## What Must Be Captured For Later Lesson Conversion
 - chord-bed patch screenshots

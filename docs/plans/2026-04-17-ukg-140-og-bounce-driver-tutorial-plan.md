@@ -89,7 +89,7 @@ This means every important move should be:
 By the end, the learner should be able to:
 - build a modern rolling UKG floor without turning the bass into the lead
 - stage harmonic bloom so `Drop B` feels earned
-- write a low-note-count hook that still carries an instrumental
+- find, test, and place a vocal sample that carries the identity
 - program drums with real groove rather than generic global swing
 - arrange a `144`-bar club track that grows by substitution, not just stacking
 - mix the track so it feels open, heavy, and club-readable
@@ -108,14 +108,16 @@ At the end of the tutorial, the learner should have:
   - bass sub
   - bass mid
   - chord bed
-  - hook
-  - answer
   - air layer
+- vocal sample lanes for:
+  - vocal audition
+  - vocal main
+  - vocal throw
 - all core MIDI:
   - drums
   - bass
   - chords
-  - hook / answer
+- exact vocal audio placements
 - bounced checkpoints:
   - drums only
   - drums + bass
@@ -147,7 +149,7 @@ Use these references consistently during the tutorial:
 - `Y U QT - U Belong 2 Me (4x4 Mix)`
   - listen for rhythmic-first bass roll and stable sub support
 - `Sammy Virji - I Guess We're Not the Same`
-  - listen for hook clarity and harmonic readability
+  - listen for vocal/hook clarity and harmonic readability
 
 Use loudness-matched references in the project so the learner is not fooled by master volume.
 
@@ -189,7 +191,7 @@ Detailed template available now:
 - `Part 2`: `45–75 min`
 - `Part 3`: `60–90 min`
 - `Part 4`: `45–75 min`
-- `Part 5`: `40–60 min`
+- `Part 5`: `75–120 min`
 - `Part 6`: `60–90 min`
 - `Part 7`: `45–60 min`
 - `Part 8`: `60–90 min`
@@ -203,8 +205,8 @@ Suggested session split:
   - setup through bass floor
   - by the end, the lane identity should already be clear
 - `Session 2a`: Parts `4–5`
-  - harmony plus hook/answer
-  - by the end, the emotional and melodic identity should exist
+  - harmony plus vocal sample search / placeholder
+  - by the end, the harmonic bed and vocal identity lane should exist
 - `Session 2b`: Part `6`
   - arrangement build
   - by the end, the song should fully exist
@@ -231,8 +233,9 @@ Suggested session split:
   - drums
   - bass
   - chords
-  - hook
-  - answer
+  - vocal main
+  - vocal throw
+  - vocal audition
   - air
   - FX
   - premaster
@@ -438,7 +441,7 @@ Suggested session split:
 - exposing the `Bbmaj7` too early
 - bouncing the top voice around with root-position voicings
 - widening the chords before the break
-- forgetting to carve room for bass and hook
+- forgetting to carve room for bass and vocal
 - leaving Serum in `Mono`, which collapses the chord into a single-note beep
 
 ### Listening checkpoint
@@ -449,9 +452,10 @@ Suggested session split:
 - if Drop A already feels “open,” the restrained `Bb` state is probably too bloomed
 - if the chords feel stiff, check voice leading before changing the patch
 
-## Part 5: Identity (Hook + Answer)
+## Part 5: Identity (Vocal Sample Search + Placeholder)
 ### Prerequisites
-- the learner can program short melodic clips and automate send effects
+- the learner can drag audio samples into Ableton
+- the learner can mute, solo, trim, and move audio clips
 - Part `4` chord bed passes the handoff check:
   - `Mono` off
   - `Poly` at least `8`
@@ -459,46 +463,57 @@ Suggested session split:
   - no single-note beep
 
 ### Learning objectives
-- build an instrumental-first hook that carries the track
-- use conversation by substitution, not stacking
+- learn how to search for a vocal sample that fits the track
+- test vocal samples against drums, bass, and chords
+- build vocal teaser, main, throw, and texture placements across the arrangement
+- preserve vocal space when the final sample is not found yet
 
 ### What the learner builds
-- Serum 2 hook patch
-- Serum 2 answer patch
-- hook MIDI
-- answer MIDI
-- hook/answer processing chain
+- `Vocal Audition` audio track
+- `Vocal Main` audio track
+- `Vocal Throw` audio track
+- muted `Vocal Guide MIDI` track if needed
+- sample-search log
+- up to `3` vocal candidates
+- first-pass vocal placement map
 
 ### What must be shown
-- hook and answer patch direction from the Production Plan `Hook and Answer Spec` section as the starting source of truth
-- exact rhythmic placement of:
-  - `A4`
-  - `C5`
-  - `D5`
-  - and `F5` when bloom arrives
-- repetition pattern across a `16`-bar drop
-- answer placement at phrase ends only
-- send automation / throws
+- how to search for usable vocal one-shots / phrases
+- how to reject bad samples
+- how to drag a sample into Ableton
+- how to trim the useful word or syllable
+- how to test key safety against the chord progression
+- exact vocal placement states:
+  - `Intro B`: teaser at `29.3.4` / `30.3.4`
+  - `Drop A`: quiet teaser only at `40.3.4` / `48.3.4`
+  - `Break`: optional texture at `76.4.4`
+  - `Re-entry Build`: pickups at `93.3.4`, `94.3.4`, `96.4.4`
+  - `Drop B`: main vocal at `100.3.4` / `108.3.4`
+  - `Drop B`: throw at `104.4.4` / `112.4.4`
+  - `Drop B Lift`: main at `116.3.4` / `124.3.4`, throw at `120.4.4` / `128.4.4`
 
 ### Core teaching points
-- low note count can still be memorable if rhythm and timbre are strong
-- the hook should stay readable by avoiding kick collisions
-- the answer should feel like family, not a different song
-- when the answer enters, the hook yields space
+- the vocal is part of the whole song, not only the final drop
+- the main vocal phrase should not appear too early
+- earlier sections can use absence, filtering, teaser fragments, or texture
+- if no sample is found yet, use empty/muted placeholders instead of forcing a synth hook
 
 ### Common mistakes
-- making the hook too busy
-- giving the answer full-phrase density
-- using the same patch at the same envelope and register for hook and answer
-- making the hook feel like a placeholder waiting for vocals
+- accepting a sample because it is loud
+- choosing a wet sample that cannot sit in the mix
+- choosing a sample that fights the `Bbmaj7` bloom
+- filling every gap with vocal chops
+- replacing the missing sample with a beepy organ hook
 
 ### Listening checkpoint
-- full Drop A
-- A/B against Y U QT / Virji lane for hook clarity
+- `Drop A` with little or no vocal
+- `Drop B` with vocal main and throw
+- `Break -> Re-entry Build -> Drop B` to check whether the vocal reveal feels earned
 
 ### Troubleshooting
-- if the hook feels generic, fix rhythm first, not note count
-- if the answer makes Drop B smaller, it is probably too dense or too continuous
+- if every sample sounds wrong, search for shorter, drier one-shots
+- if a sample sounds good alone but wrong with chords, reject it or transpose by small semitone moves
+- if the vocal makes `Drop A` too complete, save it for `Drop B`
 
 ## Part 6: Arrangement Build
 ### Prerequisites
@@ -523,8 +538,8 @@ Suggested session split:
 ### What must be shown
 - section goals
 - section-specific removals and additions
-- where the hook appears
-- where the answer appears
+- where the vocal teaser appears
+- where the vocal main and vocal throw appear
 - how the top-end opens/closes
 - where the bass is full, teased, or implied
 
@@ -532,8 +547,8 @@ Suggested session split:
 - `Drop A Lift` gets bigger by pocket and top-end only
 - `Break` gets bigger by upward harmonic bloom and air
 - the `Re-entry Build` re-engages rhythm without spending the Drop B reveal
-- `Drop B` gets bigger by harmonic bloom and phrase-end answer
-- `Drop B Lift` gets bigger by alternation and top release
+- `Drop B` gets bigger by harmonic bloom and the first real vocal identity
+- `Drop B Lift` gets bigger by vocal return, throw placement, and top release
 
 ### Common mistakes
 - making the `Re-entry Build` feel like a second break
@@ -628,7 +643,7 @@ Suggested session split:
   - pressure
   - swing
   - bass roll
-  - hook clarity
+  - vocal/hook clarity
 
 ### Troubleshooting
 - if the track only works loud, the balances are wrong
@@ -685,13 +700,13 @@ Suggested session split:
   - minor-center low-end restraint
   - delayed `Bbmaj7` bloom
   - upward voicing spread in break / Drop B
-- `instrumental-first identity`
-  - warm organ hook
-  - phrase-end answer
-  - no vocal dependency
+- `vocal-sample-led identity`
+  - sample search and selection
+  - vocal teaser / main / throw states
+  - no forced synth hook replacement
 - `section growth by substitution`
-  - hook half-density in Drop B
-  - answer on alternate phrase endings
+  - main vocal saved for Drop B
+  - vocal throw on alternate phrase endings
   - top-end release mapped by section
 
 ## Required Capture Checklist
@@ -702,7 +717,10 @@ During the actual build session, capture:
   - drum pocket
   - bass phrase
   - chord voicings
-  - hook / answer alternation
+- audio screenshots for:
+  - vocal teaser placements
+  - vocal main placements
+  - vocal throw placements
 - audio bounces at every listening checkpoint
 - note on what changed between each major checkpoint
 
@@ -723,13 +741,12 @@ When this becomes the guided lesson:
 - references should become “listen for this” prompts, not hidden background context
 
 ## Remaining Blockers Before Final Tutorial Draft
-- lock exact final synth choices in place of fallback-heavy matches:
+- lock exact final synth/sample choices in place of fallback-heavy matches:
   - `chord-bed`
-  - `hook-response`
-  - `og-reese-answer`
+  - `vocal-sample-source`
 - resolve the remaining pairwise sound conflicts:
-  - `bass-foundation` vs `og-reese-answer`
-  - `hook-response` vs `og-reese-answer`
+  - `bass-foundation` vs `vocal-sample-source`
+  - `chord-bed` vs `vocal-sample-source`
 - do one audio verification pass so the tutorial reflects what actually works in sound, not only on paper
 
 These are not architecture blockers anymore. They are fidelity blockers for the final handheld lesson.

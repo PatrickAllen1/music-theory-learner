@@ -58,10 +58,10 @@ const PARTS = [
   {
     id: "part-05",
     part_number: 5,
-    title: "Identity (Hook + Answer)",
-    category: "melody",
-    estimated_minutes: 60,
-    focus: "Instrumental identity",
+    title: "Vocal Sample Search + Placeholder",
+    category: "sampling",
+    estimated_minutes: 120,
+    focus: "Vocal identity lane",
     content: part05,
   },
   {

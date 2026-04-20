@@ -68,7 +68,7 @@ Use the same reference set as the mix chapter, but judge different things:
 - `Y U QT - U Belong 2 Me (4x4 Mix)`
   - whether the low end stays stable under level
 - `Sammy Virji - I Guess We're Not the Same`
-  - whether hook and harmony remain readable after limiting
+  - whether vocal/hook and harmony remain readable after limiting
 
 ## Files / Assets Needed
 - final premaster
@@ -102,7 +102,7 @@ Exact first-pass check:
 6. Listen for:
    - the kick still landing cleanly
    - the bass still breathing with it
-   - the hook still reading
+   - the vocal still reading if a vocal sample is present
    - the low-mid not collapsing
 7. Turn `Mono` back off before continuing.
 
@@ -187,7 +187,7 @@ Starting values:
 7. Between strong hits, it should return toward `0 dB` instead of staying pinned down.
 
 ### Why
-The drum pocket and hook punctuation are easy to damage here.
+The drum pocket and vocal punctuation are easy to damage here.
 
 ### Rule
 - if the groove gets smaller, back off immediately
@@ -227,7 +227,7 @@ This stage should reduce limiter strain, not become a tone-design experiment.
 Raise the limiter until the track reaches controlled club strength without losing:
 - punch
 - groove
-- hook readability
+- vocal readability if a vocal sample is present
 
 Keep the ceiling at `-1.0 dBTP`.
 
@@ -267,7 +267,7 @@ Exact first-pass method:
 What to listen for:
 - did the kick get blurrier?
 - did the sub get smaller or less stable?
-- did the hook get less readable?
+- did the vocal get less readable?
 - did the groove get flatter?
 
 ### Why

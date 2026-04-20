@@ -87,8 +87,9 @@ Tempo and file location are foundational decisions, not details to clean up late
    - `Drums`
    - `Bass`
    - `Chords`
-   - `Hook`
-   - `Answer`
+   - `Vocal Main`
+   - `Vocal Throw`
+   - `Vocal Audition`
    - `Air`
    - `FX`
    - `Premaster`
@@ -141,7 +142,7 @@ Create and name these returns:
 If you do not know what a `return` is yet:
 1. Look at the far right side of Ableton's mixer.
 2. The vertical lanes named `A`, `B`, `C`, `D` are return tracks.
-3. Later, when the tutorial says "send the hook to `Return B`," it means turn up the `B` send knob on the `Hook` lane.
+3. Later, when the tutorial says "send `Vocal Main` to `Return B`," it means turn up the `B` send knob on the `Vocal Main` lane.
 
 Ableton Live 11 exact click path:
 1. Press `Tab` until you are in `Session View`.
@@ -181,7 +182,7 @@ Build the bus structure explicitly.
 First, create the buses:
 1. If the `Drums` parent group is not already named `Drum Bus`, click the parent group header, press `Cmd+R` on Mac or `Ctrl+R` on Windows, and rename it `Drum Bus`.
 2. If the `Bass` parent group is not already named `Bass Bus`, click the parent group header, press `Cmd+R` / `Ctrl+R`, and rename it `Bass Bus`.
-3. Select the `Chords`, `Hook`, `Answer`, and `Air` groups together.
+3. Select the `Chords`, `Vocal Main`, `Vocal Throw`, `Vocal Audition`, and `Air` groups together.
 4. Press `Cmd+G` on Mac or `Ctrl+G` on Windows.
 5. Ableton creates one new parent group around those four groups.
 6. Rename that new parent group `Music Bus`.
@@ -197,7 +198,7 @@ Then route the buses:
 The result should be:
 - `Kick Body`, `Kick Click`, `Clap`, hats, shaker, and fills live inside `Drum Bus`
 - bass layers live inside `Bass Bus`
-- `Chords`, `Hook`, `Answer`, and `Air` live inside `Music Bus`
+- `Chords`, `Vocal Main`, `Vocal Throw`, `Vocal Audition`, and `Air` live inside `Music Bus`
 - `Drum Bus`, `Bass Bus`, and `Music Bus` all feed `Premaster`
 - `Premaster` feeds Ableton's real `Master`
 
