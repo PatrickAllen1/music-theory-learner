@@ -452,7 +452,7 @@ Suggested session split:
 - if Drop A already feels “open,” the restrained `Bb` state is probably too bloomed
 - if the chords feel stiff, check voice leading before changing the patch
 
-## Part 5: Identity (Vocal Sample Search + Chop Vocabulary)
+## Part 5: Identity (Vocal Phrase + Chop Vocabulary)
 ### Prerequisites
 - the learner can drag audio samples into Ableton
 - the learner can mute, solo, trim, and move audio clips
@@ -465,7 +465,7 @@ Suggested session split:
 ### Learning objectives
 - learn how to search for a vocal sample that fits the track
 - test vocal samples against drums, bass, and chords
-- build vocal teaser, main, throw, and texture placements across the arrangement
+- build vocal teaser, break phrase, hook phrase, throw, and texture placements across the arrangement
 - preserve vocal space when the final sample is not found yet
 
 ### What the learner builds
@@ -475,26 +475,28 @@ Suggested session split:
 - muted `Vocal Guide MIDI` track if needed
 - sample-search log
 - up to `3` vocal candidates
-- first-pass vocal placement map
+- first-pass vocal phrase/chop placement map
 
 ### What must be shown
 - how to search for usable vocal one-shots / phrases
 - how to reject bad samples
 - how to drag a sample into Ableton
 - how to trim the useful word or syllable
+- how to keep one readable phrase for the break or hook
 - how to test key safety against the chord progression
 - exact vocal placement states:
   - `Intro B`: teaser at `29.3.4` / `30.3.4`
   - `Drop A`: quiet teaser only at `40.3.4` / `48.3.4`
-  - `Break`: optional texture at `76.4.4`
+  - `Break`: readable phrase or texture at `72.1.1` / `76.4.4`
   - `Re-entry Build`: pickups at `93.3.4`, `94.3.4`, `96.4.4`
-  - `Drop B`: main vocal at `100.3.4` / `108.3.4`
+  - `Drop B`: main hook phrase / title chop at `100.3.4` / `108.3.4`
   - `Drop B`: throw at `104.4.4` / `112.4.4`
-  - `Drop B Lift`: main at `116.3.4` / `124.3.4`, throw at `120.4.4` / `128.4.4`
+  - `Drop B Lift`: longer hook phrase at `116.3.4` / `124.3.4`, throw at `120.4.4` / `128.4.4`
 
 ### Core teaching points
 - the vocal is part of the whole song, not only the final drop
-- the main vocal phrase should not appear too early
+- the main hook phrase should not appear too early
+- the break can carry a readable lyric phrase if it feels suspended and does not become a full chorus loop
 - earlier sections can use absence, filtering, teaser fragments, or texture
 - if no sample is found yet, use empty/muted placeholders instead of forcing a synth hook
 
@@ -503,11 +505,13 @@ Suggested session split:
 - choosing a wet sample that cannot sit in the mix
 - choosing a sample that fights the `Bbmaj7` bloom
 - filling every gap with vocal chops
+- pasting a full chorus over the track without section design
 - replacing the missing sample with a beepy organ hook
 
 ### Listening checkpoint
 - `Drop A` with little or no vocal
-- `Drop B` with vocal main and throw
+- `Break` with phrase or texture
+- `Drop B` with hook phrase / title chop and throw
 - `Break -> Re-entry Build -> Drop B` to check whether the vocal reveal feels earned
 
 ### Troubleshooting

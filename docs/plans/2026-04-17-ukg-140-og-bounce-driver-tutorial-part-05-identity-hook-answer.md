@@ -1,4 +1,4 @@
-# UKG 140 OG Bounce Driver: Tutorial Part 5 — Vocal Sample Search + Chop Vocabulary
+# UKG 140 OG Bounce Driver: Tutorial Part 5 — Vocal Sample Search + Phrase/Chop Vocabulary
 
 ## Purpose
 Teach the learner how to find, test, prepare, and place a vocal sample lane for `ukg-140-og-bounce-driver`.
@@ -11,8 +11,9 @@ The goal is:
 - learn what kind of vocal sample fits this record
 - build an Ableton audition workflow
 - test samples against drums, bass, and chords
-- cut the sample into a small vocabulary of usable chops
-- place different chop types across the arrangement
+- decide which parts should be readable phrase and which parts should be chopped
+- cut the sample into a small vocabulary of usable phrases, chops, tails, and reverses
+- place different vocal types across the arrangement
 - keep the song moving even if the final vocal treatment changes later
 
 This part should not make a beepy organ hook.
@@ -30,8 +31,8 @@ By the end of this part, the learner should have:
 - one muted `Vocal Guide MIDI` track, used only as a placement ruler
 - one written sample-search log
 - up to `3` vocal candidates, ranked `A`, `B`, and `C`
-- one first-pass vocal chop vocabulary
-- one first-pass vocal chop arrangement across the song
+- one first-pass vocal phrase/chop vocabulary
+- one first-pass vocal phrase/chop arrangement across the song
 - one bounce of:
   - `Drop A` with the vocal lane muted
   - `Drop B` with the vocal chop vocabulary active
@@ -83,15 +84,59 @@ It should act like:
 - a short emotional phrase
 - a texture that answers the chords
 
+It can act like:
+- a readable break phrase
+- a clear hook phrase in `Drop B`
+- a phrase-end chop
+- a reverb tail
+- a reverse pull into a section
+
 It should not act like:
-- a full topline
-- a full chorus
-- a long acapella section
+- a full topline running across the whole track
+- a full chorus pasted over every drop
+- a long acapella section with no arrangement discipline
 - a melody that rewrites the chord progression
 - a busy sample loop that plays all the way through every drop
 
 The track still needs space.
 The vocal should make the best moments feel intentional, not fill every empty bar.
+
+## Vocal Phrase Modes
+There are now three valid vocal modes.
+
+Use all three if the sample is strong enough.
+
+| Mode | What it means | Where it belongs | What to avoid |
+|---|---|---|---|
+| `Break lyric phrase` | a readable emotional line or half-line | `Break`, especially after the chords open | making it feel like a full chorus pasted in |
+| `Hook phrase` | the clearest memorable vocal identity | `Drop B`, then bigger in `Drop B Lift` | revealing it in `Drop A` |
+| `Support chop` | short word, syllable, breath, tail, reverse, or repeat | intro, drops, transitions, phrase ends | filling every empty bar |
+
+This means the vocal does not need to be chopped into tiny pieces everywhere.
+
+The key is section role:
+- `Break` can speak in a longer, more emotional way.
+- `Drop B` can speak clearly as the hook.
+- `Intro B`, `Drop A`, and `Re-entry Build` should hint.
+- `Vocal Throw` should answer and create space, not become another lead vocal.
+
+## Commercial Stem Sketch Rule
+If you use an extracted stem from a commercial record:
+- treat it as private-sketch material unless it is cleared
+- do not publish the tutorial with unlicensed lyric text
+- label clips by function instead of copying full lyric names
+- later, either clear the vocal, replace it with a royalty-free vocal, or record/interpolate a new vocal
+
+Functional clip names:
+- `VOC break lyric phrase`
+- `VOC hook phrase`
+- `VOC hook title chop`
+- `VOC isolation throw`
+- `VOC fade texture`
+- `VOC dark prehook`
+- `VOC reverse tail`
+
+This keeps the Ableton project usable while avoiding locking the lesson to one copyrighted lyric.
 
 ## Vocal Chop Vocabulary
 Do not think of the sample as one long vocal clip.
@@ -121,10 +166,48 @@ Do not use the same chop at the same strength in every section.
 
 The same source phrase can appear throughout the whole track, but its role must change:
 - earlier sections use less lyric, more filtering, and lower volume
-- the break uses texture, not the hook
+- the break can use texture or a readable lyric phrase
 - the re-entry uses pickup hints
 - `Drop B` gives the first clear identity
 - `Drop B Lift` can use the most complete phrase if the record still has space
+
+## Big Trance Vocal Source Option
+For a `Pretty Green Eyes` / `Yosemite`-style emotional lane, the best source is often not a tiny one-shot.
+
+It can be a big trance / big-room / rave vocal stem.
+
+That is valid if you treat it correctly:
+- use one phrase as the emotional break moment
+- use one clear hook phrase or title chop as the drop identity
+- use tails, reverses, and short chops as arrangement glue
+- do not let the whole acapella play over the whole track
+
+First-pass clip vocabulary for this type of vocal:
+
+| Clip name | Source type | Track | Role |
+|---|---|---|---|
+| `VOC break lyric phrase` | one readable emotional line or half-line | `Vocal Main` | break lyric moment |
+| `VOC hook phrase` | the clearest hook phrase | `Vocal Main` | `Drop B` identity |
+| `VOC hook title chop` | the shortest memorable hook fragment | `Vocal Main` | repeatable drop chop |
+| `VOC isolation throw` | one isolated ending word or tail | `Vocal Throw` | phrase-end response |
+| `VOC fade texture` | breath, vowel, or faded word | `Vocal Throw` or transition FX | intro / break atmosphere |
+| `VOC dark prehook` | darker tension phrase | `Vocal Main` | break or late re-entry tension |
+| `VOC reverse tail` | reversed tail from the hook phrase | `Vocal Throw` or transition FX | pull into `Drop B` |
+
+First-pass placement map for this type:
+- `Intro B`: `VOC fade texture` or filtered `VOC hook title chop` at `29.3.4`
+- `Drop A`: very quiet `VOC hook title chop` at `40.3.4` only if it does not reveal the full hook
+- `Break`: `VOC break lyric phrase` at `72.1.1` or `76.1.1`
+- `Re-entry Build`: `VOC reverse tail` ending at `97.1.1`
+- `Drop B`: `VOC hook phrase` or `VOC hook title chop` at `100.3.4` and `108.3.4`
+- `Drop B`: `VOC isolation throw` at `104.4.4` and `112.4.4`
+- `Drop B Lift`: longer `VOC hook phrase` at `116.3.4` and `124.3.4`
+
+If the break phrase and hook phrase are both strong, use both.
+
+The break phrase creates emotion.
+
+The hook phrase creates memory.
 
 ## Working Example: Current Source Phrase
 Current source phrase:
@@ -189,7 +272,7 @@ Use these states:
 - `Intro B`: filtered teaser only near the end
 - `Drop A`: no main vocal; optional quiet teaser at phrase endings only
 - `Drop A Lift`: same as `Drop A`, not a bigger vocal reveal
-- `Break`: vocal space / texture, not the main phrase
+- `Break`: readable lyric phrase or vocal texture; not the final drop hook phrase
 - `Re-entry Build`: late vocal pickup hints only
 - `Drop B`: first real main vocal identity
 - `Drop B Lift`: strongest vocal presence, but still not a nonstop vocal loop
@@ -578,7 +661,7 @@ More than three creates decision fog.
 ### Action
 Work on `Vocal Main`.
 
-Pick the best one-word or short-phrase part of `Candidate A`.
+Pick the best one-word, short-phrase, or hook-phrase part of `Candidate A`.
 
 Create one short audio clip.
 
@@ -586,7 +669,9 @@ Target clip length:
 - shortest useful chop: `1/16`
 - common useful chop: `1/8`
 - longer phrase chop: `1/4` to `1/2` bar
-- avoid anything longer than `1` bar on the first pass
+- hook phrase: `1/2` to `2` bars if it is clearly the identity
+- break lyric phrase: `1` to `4` bars if it is spacious and does not fight the chords
+- avoid anything longer than `4` bars on the first pass
 
 How to cut:
 1. Duplicate the candidate clip onto `Vocal Main`.
@@ -628,10 +713,28 @@ Do not make the full `I just wanna give you something to believe in` phrase the 
 
 That full phrase can be tested later, but the first-pass arrangement should be built from smaller chops.
 
+If using a big trance vocal stem, make these clips first:
+
+1. `VOC hook phrase`
+   - source: clearest hook phrase
+   - role: main `Drop B` identity
+2. `VOC hook title chop`
+   - source: shortest memorable hook fragment
+   - role: repeatable drop marker
+3. `VOC break lyric phrase`
+   - source: one emotional line or half-line
+   - role: break moment
+4. `VOC isolation throw`
+   - source: one ending word, vowel, or tail
+   - role: phrase-end punctuation
+5. `VOC reverse tail`
+   - source: tail of the hook phrase, reversed
+   - role: pull into `Drop B`
+
 ### Why
 The first chop should prove the vocal identity.
 
-It does not need to carry every phrase yet.
+The first phrase or chop does not need to carry every phrase yet.
 
 ## Step 7: Place The Vocal Main Chop
 ### Action
@@ -738,22 +841,29 @@ The strongest vocal identity belongs in `Drop B`.
 
 ## Step 10: Treat The Break As Vocal Space
 ### Action
-The break can hold a vocal atmosphere, but not a full hook phrase.
+The break can hold a vocal atmosphere or a readable lyric phrase.
+
+It should not use the same hook phrase that will define `Drop B`.
 
 Allowed break vocal behavior:
 - one reversed vocal tail into `65.1.1`
 - one airy vocal texture at `72.4.4`
 - one quiet phrase fragment at `76.4.4`
+- one readable `VOC break lyric phrase` starting at `72.1.1` or `76.1.1`
 
 Avoid:
-- full repeated vocal hook
+- full repeated drop hook
 - busy chops
 - lyrics that dominate the chord bloom
 
 First-pass break placement:
-1. Leave the break empty.
-2. If it feels too empty, add one quiet `VOC to believe in long` texture at `76.4.4`.
-3. Keep it lower than the chord bloom.
+1. Start with one of two choices:
+   - sparse version: leave the break empty
+   - phrase-led version: place `VOC break lyric phrase` at `72.1.1`
+2. If using the phrase-led version, keep drums thin enough that the lyric is readable.
+3. If the phrase fights the chords, move it to `76.1.1` or shorten it.
+4. If it still fights, use texture instead of readable lyric.
+5. Keep it lower than the later `Drop B` hook phrase.
 
 Better break option for the current phrase:
 - reverse the tail of `believe in`
@@ -842,11 +952,11 @@ First-pass core:
 - `Intro B`: optional filtered `VOC i just wanna tease` at `29.3.4` and `30.3.4`
 - `Drop A`: no main vocal, or very quiet `VOC give you stab` at `40.3.4` and `48.3.4`
 - `Drop A Lift`: optional quiet `VOC i just wanna tease` or `VOC give you stab` at `56.3.4` and `64.3.4`; do not reveal `believe in`
-- `Break`: mostly empty vocal space; optional reversed `VOC believe reverse` into `65.1.1` or quiet texture at `76.4.4`
+- `Break`: `VOC break lyric phrase` at `72.1.1` or `76.1.1`, or optional reversed `VOC believe reverse` into `65.1.1`
 - `Re-entry Build`: late filtered `VOC i just wanna tease` pickups at `93.3.4`, `94.3.4`, and optionally a reverse ending at `97.1.1`
-- `Drop B`: `VOC believe in main` appears at `100.3.4` and `108.3.4`
+- `Drop B`: `VOC hook phrase`, `VOC hook title chop`, or `VOC believe in main` appears at `100.3.4` and `108.3.4`
 - `Drop B`: `VOC in throw` appears at `104.4.4` and `112.4.4`
-- `Drop B Lift`: `VOC to believe in long` or `VOC something to believe in` can appear at `116.3.4` and `124.3.4`
+- `Drop B Lift`: longer `VOC hook phrase`, `VOC to believe in long`, or `VOC something to believe in` can appear at `116.3.4` and `124.3.4`
 - `Drop B Lift`: `VOC in throw` can return at `120.4.4` and `128.4.4`
 - `Outro`: no new vocal ideas; use only a tail if it helps the exit
 

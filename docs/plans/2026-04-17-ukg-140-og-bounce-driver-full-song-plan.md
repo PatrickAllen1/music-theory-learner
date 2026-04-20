@@ -121,7 +121,7 @@ Meaning:
 ### Vocal sample lane architecture
 - The old synth hook/answer idea is removed from the core plan.
 - The identity lane is now a vocal sample lane.
-- The track should teach sample search, auditioning, chopping, and placement rather than forcing a beepy organ hook.
+- The track should teach sample search, auditioning, phrase placement, chopping, and vocal staging rather than forcing a beepy organ hook.
 - Until a final sample is found, use muted guide clips or empty space rather than a substitute synth hook.
 
 Vocal lane states:
@@ -129,15 +129,16 @@ Vocal lane states:
 - `Intro B`: filtered teaser near the end only
 - `Drop A`: no main vocal; optional quiet teaser only
 - `Drop A Lift`: same restraint as `Drop A`
-- `Break`: vocal space / texture, not the main phrase
+- `Break`: readable lyric phrase or vocal texture is allowed, but it should feel suspended and spacious
 - `Re-entry Build`: late filtered pickup hints only
-- `Drop B`: first real main vocal sample identity
-- `Drop B Lift`: strongest vocal presence
+- `Drop B`: first clear hook phrase / title-chop identity
+- `Drop B Lift`: strongest vocal presence, with the most complete phrase if it still leaves groove room
 - `Outro`: no new vocal idea
 
 Why:
 - the vocal becomes a designed presence across the whole arrangement
-- the strongest vocal reveal is saved for `Drop B`
+- the strongest hook reveal is saved for `Drop B`
+- the break can carry emotional lyric content before the drop payoff
 - earlier sections create anticipation without making the song feel empty
 
 ### Top-end section map
@@ -262,21 +263,22 @@ The bass is the `floor`, not the topline.
 - human phrase / chop / ad-lib preferred over synth hook
 - vocal is part of the whole arrangement, but not active constantly
 - earlier sections use absence, filtering, texture, or short teasers
-- `Drop B` gets the first real main vocal reveal
+- `Break` can hold a readable lyric phrase if the phrase is spacious and not drum-looped
+- `Drop B` gets the first real hook phrase / title-chop reveal
 
 ### First-pass placements
 - `Intro B`: optional filtered teaser at `29.3.4` and `30.3.4`
 - `Drop A`: optional quiet teaser at `40.3.4` and `48.3.4`
 - `Drop A Lift`: optional quiet teaser at `56.3.4` and `64.3.4`
-- `Break`: optional texture at `76.4.4`
+- `Break`: lyric phrase or texture at `72.1.1` or `76.4.4`
 - `Re-entry Build`: optional pickups at `93.3.4`, `94.3.4`, and `96.4.4`
-- `Drop B`: main vocal at `100.3.4` and `108.3.4`
+- `Drop B`: main hook phrase / title chop at `100.3.4` and `108.3.4`
 - `Drop B`: vocal throw at `104.4.4` and `112.4.4`
-- `Drop B Lift`: main vocal at `116.3.4` and `124.3.4`
+- `Drop B Lift`: longer hook phrase can appear at `116.3.4` and `124.3.4`
 - `Drop B Lift`: vocal throw at `120.4.4` and `128.4.4`
 
 ### Sample search criteria
-- short phrase, one-shot, breath, ad-lib, or chop
+- euphoric phrase, one-shot, breath, ad-lib, or chop
 - dry enough to place in the mix
 - harmonically safe against `D minor`
 - does not fight the `Bbmaj7` bloom
@@ -456,7 +458,7 @@ Arrangement assignment:
 - drums thinned
 - air most audible here
 - center lane should feel like intentional vocal space
-- any vocal here should be texture, not the main phrase
+- any vocal here should be a suspended break phrase or texture, not the final drop hook phrase
 
 Arrangement assignment:
 - drums: `drum_break_sparse_2bar`

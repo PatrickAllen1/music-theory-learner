@@ -312,27 +312,33 @@ Capture requirement:
 ## Vocal Sample Spec
 ### Lane design
 - `Vocal Audition`: workbench track for testing candidates
-- `Vocal Main`: final main chop / phrase lane
+- `Vocal Main`: final hook phrase / main chop lane
 - `Vocal Throw`: shorter tail / breath / syllable / delayed response lane
 - muted `Vocal Guide MIDI`: optional visual ruler only, not final audio
 
 ### Sample selection target
 - dry or mostly dry
-- short phrase, one-shot, breath, ad-lib, or chop
+- euphoric phrase, one-shot, breath, ad-lib, or chop
 - harmonically safe against `D minor`
 - does not fight the `Bbmaj7` bloom
 - no printed bass / drums / huge reverb that cannot be removed
 - human enough to replace the old synth hook identity
 
+### Phrase-led mode
+- A full or near-full vocal phrase is allowed in the `Break` if it feels suspended, spacious, and emotionally intentional.
+- A clear hook phrase is allowed in `Drop B`; it should be the first moment where the listener understands the vocal identity.
+- Chops, tails, reverses, and throws are still needed, but they support the phrase instead of replacing it.
+- If using a commercial stem for a private sketch, keep the lesson labels functional and do not publish lyric text in the public tutorial unless the vocal is cleared.
+
 ### First-pass placement states
 - `Intro B`: filtered teaser at `29.3.4` and `30.3.4`
 - `Drop A`: optional quiet teaser at `40.3.4` and `48.3.4`
 - `Drop A Lift`: optional quiet teaser at `56.3.4` and `64.3.4`
-- `Break`: optional texture at `76.4.4`
+- `Break`: readable lyric phrase or texture at `72.1.1` or `76.4.4`
 - `Re-entry Build`: pickups at `93.3.4`, `94.3.4`, and optionally `96.4.4`
-- `Drop B`: main vocal at `100.3.4` and `108.3.4`
+- `Drop B`: main hook phrase / title chop at `100.3.4` and `108.3.4`
 - `Drop B`: vocal throw at `104.4.4` and `112.4.4`
-- `Drop B Lift`: main vocal at `116.3.4` and `124.3.4`
+- `Drop B Lift`: longer hook phrase at `116.3.4` and `124.3.4`
 - `Drop B Lift`: vocal throw at `120.4.4` and `128.4.4`
 
 ### Processing direction
@@ -688,6 +694,7 @@ Working expectation:
 
 ## Originality Tests
 - if the vocal chop feels too close to a source hook, change placement, chop length, filtering, or source sample
+- if the vocal phrase is from a commercial stem, treat it as private-sketch material unless it is cleared, recreated, or replaced
 - if a bass phrase feels too source-like, change gate length, phrase-end note choice, or register emphasis
 - if a transition feels recognizable, keep the role and change the timing or FX combination
 
@@ -697,4 +704,4 @@ Working expectation:
 - ensure no `16`-bar section loops identically
 - verify `Drop A Lift` adds no new harmonic information
 - verify `Drop B` vocal throw stays phrase-end only
-- verify the break vocal texture is textural, not a hidden full phrase
+- verify the break vocal phrase feels suspended and intentional, not like a full chorus pasted over the break

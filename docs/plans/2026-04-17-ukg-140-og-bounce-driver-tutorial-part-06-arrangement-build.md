@@ -577,10 +577,18 @@ If you have not found a sample yet:
 - optionally place muted placeholder clips at the listed positions so the vocal space is visible
 
 If you have found a sample:
-- `Vocal Main` is the main word / chop / phrase fragment
+- `Vocal Main` is the main hook phrase, title chop, or phrase fragment
 - `Vocal Throw` is the shorter tail, breath, syllable, or delayed response
 - both should feel human and sample-led
 - neither should sound like a beepy keyboard
+
+If you are using a big trance / rave vocal stem:
+- `VOC break lyric phrase` is the readable lyric moment for the break
+- `VOC hook phrase` is the main `Drop B` identity
+- `VOC hook title chop` is the shortest repeatable version of the hook
+- `VOC isolation throw` is the ending word, tail, or breath used as punctuation
+- `VOC reverse tail` is the transition pull into a section
+- do not paste the full acapella across the track
 
 If you are using the current source phrase:
 
@@ -630,11 +638,13 @@ The arrangement is built from small clips with different jobs.
 - keep `Vocal Throw` empty
 
 `Break`:
-- keep the full vocal phrase out
-- if the break needs human texture, use one quiet `VOC to believe in long` texture at `76.4.4`
+- keep the drop hook phrase out
+- if using a phrase-led vocal, place `VOC break lyric phrase` at `72.1.1` or `76.1.1`
+- if using the current source phrase, one quiet `VOC to believe in long` texture can sit at `76.4.4`
 - optional reverse pull: place `VOC believe reverse` so the reversed tail ends exactly at `65.1.1`
 - keep `Vocal Throw` empty unless the throw is a very quiet reverse or breath
 - if the lyric becomes readable and dominant in the break, lower it or delete it
+- if the break phrase feels like the full chorus has arrived, shorten it or move the clearest hook phrase back to `Drop B`
 
 `Re-entry Build`:
 - keep `81.1.1–93.1.1` vocal-empty
@@ -647,14 +657,14 @@ The arrangement is built from small clips with different jobs.
 `Drop B`:
 - this is the first real vocal identity section
 - first-pass `Vocal Main` placements:
-  - `VOC believe in main` attack starts at `100.3.4`
-  - repeat `VOC believe in main` attack starts at `108.3.4`
+  - `VOC hook phrase`, `VOC hook title chop`, or `VOC believe in main` attack starts at `100.3.4`
+  - repeat the same clip at `108.3.4`
 - optional `Vocal Main` alternates if those feel wrong:
   - `104.4.1`
   - `112.4.1`
 - first-pass `Vocal Throw` placements:
-  - `VOC in throw` attack starts at `104.4.4`
-  - `VOC in throw` attack starts at `112.4.4`
+  - `VOC isolation throw` or `VOC in throw` attack starts at `104.4.4`
+  - repeat the throw at `112.4.4`
 - do not place the vocal on every listed point
 - use `100.3.4` and `108.3.4` first, then add throws only if the phrase needs them
 - if `VOC believe in main` feels too short, test `VOC to believe in long` only once at `108.3.4`, then compare
@@ -662,11 +672,11 @@ The arrangement is built from small clips with different jobs.
 `Drop B Lift`:
 - continue the `Drop B` vocal logic
 - first-pass `Vocal Main` placements:
-  - `VOC to believe in long` or `VOC something to believe in` at `116.3.4`
+  - longer `VOC hook phrase`, `VOC to believe in long`, or `VOC something to believe in` at `116.3.4`
   - repeat at `124.3.4` only if the first one works
 - first-pass `Vocal Throw` placements:
-  - `VOC in throw` at `120.4.4`
-  - `VOC in throw` at `128.4.4`
+  - `VOC isolation throw` or `VOC in throw` at `120.4.4`
+  - repeat the throw at `128.4.4`
 - only add extra vocal chops if `Drop B` still feels too empty after drums, chords, and top-end lift are working
 
 `Outro`:

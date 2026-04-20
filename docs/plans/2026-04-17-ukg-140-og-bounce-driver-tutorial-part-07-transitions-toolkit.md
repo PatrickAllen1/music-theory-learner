@@ -211,6 +211,10 @@ Then confirm:
   - `VOC i just wanna tease`
   - `VOC believe reverse`
   - `VOC in throw`
+- if using a big trance / rave vocal stem, the transition-ready clips exist:
+  - `VOC hook title chop`
+  - `VOC isolation throw`
+  - `VOC reverse tail`
 
 ### Why
 Transitions become slow and messy when the tools are not prepared before writing automation.
@@ -404,20 +408,21 @@ On bars `95–97`:
 
 Exact first-pass timing:
 1. If using the current phrase, place `VOC i just wanna tease` so the first clear vocal attack starts at `93.3.4`.
-2. Optional repeat: duplicate `VOC i just wanna tease` so the next attack starts at `94.3.4`.
-3. Keep both teaser clips filtered and quieter than the `Drop B` vocal.
-4. Optional reverse pull: place `VOC believe reverse` so the reversed tail ends exactly at `97.1.1`.
-5. Do not place `VOC believe in main` anywhere before `97.1.1`.
-6. Let the filtered vocal pickup region end before `95.1.1`.
-7. Make bar `95` feel tense without cutting the body away yet.
-8. Start the true pre-drop subtraction at `96.4.1`.
-9. If the cut is too weak, extend it only to `96.3.3`, not earlier.
-10. Kill the riser and release the cut exactly at `97.1.1`.
-11. Make the riser clip itself end at `97.1.1`.
-12. If the riser audio has a tail that smears past the drop, crop or fade it so the audible tail is gone by `96.4.4`.
-13. If the riser is too long to crop cleanly, automate the `FX-Riser` lane volume to drop to `-inf` at `97.1.1`.
-14. Make sure the full bass, drums, and bloom chord state all return on `97.1.1`, not staggered loosely across the bar.
-15. On the drum lanes:
+2. If using a big trance / rave vocal stem, place filtered `VOC hook title chop` so the first clear vocal attack starts at `93.3.4`.
+3. Optional repeat: duplicate the teaser so the next attack starts at `94.3.4`.
+4. Keep both teaser clips filtered and quieter than the `Drop B` vocal.
+5. Optional reverse pull: place `VOC believe reverse` or `VOC reverse tail` so the reversed tail ends exactly at `97.1.1`.
+6. Do not place the full `VOC hook phrase` anywhere before `97.1.1`.
+7. Let the filtered vocal pickup region end before `95.1.1`.
+8. Make bar `95` feel tense without cutting the body away yet.
+9. Start the true pre-drop subtraction at `96.4.1`.
+10. If the cut is too weak, extend it only to `96.3.3`, not earlier.
+11. Kill the riser and release the cut exactly at `97.1.1`.
+12. Make the riser clip itself end at `97.1.1`.
+13. If the riser audio has a tail that smears past the drop, crop or fade it so the audible tail is gone by `96.4.4`.
+14. If the riser is too long to crop cleanly, automate the `FX-Riser` lane volume to drop to `-inf` at `97.1.1`.
+15. Make sure the full bass, drums, and bloom chord state all return on `97.1.1`, not staggered loosely across the bar.
+16. On the drum lanes:
    - mute `Open Hat` and reduce `Shaker` during the cut from `96.4.1` to `97.1.1`
    - let the fill lane own `96.4.3` and `96.4.4`
    - restore `Kick Body`, `Kick Click`, `Clap`, `Closed Hat`, `Ghost Hat`, `Open Hat`, and `Shaker` together at `97.1.1`
