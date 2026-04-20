@@ -580,12 +580,44 @@ Utility `Width`:
 - `Drop B Lift`: `-15 dB`
 
 How to write the automation in Ableton:
-1. Press `A` to show automation lanes.
-2. On the `Chords` track, choose `Utility` -> `Width`.
-3. Draw the width values at the start of each section.
-4. Then choose `Mixer` -> `Send C`.
-5. Draw the send values at the start of each section.
-6. Keep each value flat across the section on the first pass; do not draw constant wiggles yet.
+1. Go to `Arrangement View`, not Session View.
+   - press `Tab` if you need to switch views
+2. Find the `Chords` track in the arrangement.
+3. Make sure there is one `Utility` device on the `Chords` track.
+   - the same `Utility` handles all sections
+   - do not create separate chord tracks just to get different width values
+4. Press `A` on the computer keyboard.
+   - this toggles Ableton's automation view
+   - you should see colored automation lines appear across tracks
+5. If the `Chords` track is too short vertically, drag its lower edge downward so you can read the automation lane.
+6. On the `Chords` track, find the automation chooser dropdowns.
+   - the first dropdown chooses the device or category
+   - the second dropdown chooses the exact parameter
+7. In the first dropdown, choose `Utility`.
+8. In the second dropdown, choose `Width`.
+9. Click on the automation line at the start of a section to create a point.
+10. Create another point at the end of that section.
+11. Drag the line between those points until Ableton shows the target width value.
+12. Repeat by section:
+   - `Drop A` starts at `33.1.1`: set `120%`
+   - `Break` starts at `65.1.1`: set `150%`
+   - `Re-entry Build` starts at `81.1.1`: set `130%`
+   - `Drop B` starts at `97.1.1`: set `140%`
+   - `Drop B Lift` starts at `113.1.1`: set `145%`
+13. Keep each value flat across the section on the first pass.
+   - flat means the line stays horizontal until the next section
+   - do not draw constant wiggles yet
+14. Then automate the reverb send:
+   - first dropdown: `Mixer`
+   - second dropdown: `Send C`
+   - draw the `Return C` send values at the start of each section
+15. If pressing `A` makes your MIDI keyboard stop playing notes, press `M` to toggle the computer MIDI keyboard mode, then press `A` again.
+
+Plain-English version:
+- you still have one `Chords` track
+- you still have one `Utility`
+- automation is Ableton changing the `Width` knob for you at different song bars
+- the section values are written on the timeline, not created by making separate tracks
 
 ### Why
 This is where the harmonic staging becomes a physical experience.
