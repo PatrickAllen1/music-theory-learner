@@ -13,8 +13,8 @@ Related documents:
 - `Brief ID`: `ukg-140-og-bounce-driver`
 - `Tempo`: `140 BPM`
 - `Key`: `D minor`
-- `Length`: `144 bars`
-- `Estimated runtime`: `~4.11 minutes`
+- `Length`: `160 bars`
+- `Estimated runtime`: `~4.57 minutes`
 - `Emotional target`: `dark`, `hopeful`
 - `Current readiness`: `needs_work`
 
@@ -45,8 +45,10 @@ Build a `140 BPM` `D minor` modern UKG / speed-garage record whose center is:
 - `Sammy Virji / Y U QT` harmonic clarity and hook readability
 
 The record should move from:
-- `Drop A`: restrained, physical, dark
-- `Break / re-entry build / Drop B`: wider, more hopeful, more open
+- `Intro A / Intro B`: vocal-free physical setup
+- `Break A`: first vocal introduction and pre-drop emotional question
+- `Drop A`: first vocal answer over the restrained physical floor
+- `Break B / Re-entry Build / Drop B`: darker return, wider bloom, fuller vocal payoff
 
 It should get bigger through:
 - substitution
@@ -126,37 +128,46 @@ Meaning:
 
 Vocal lane states:
 - `Intro A`: no vocal
-- `Intro B`: filtered teaser near the end only
-- `Drop A`: no main vocal; optional quiet teaser only
-- `Drop A Lift`: same restraint as `Drop A`
-- `Break`: readable lyric phrase or vocal texture is allowed, but it should feel suspended and spacious
-- `Re-entry Build`: late filtered pickup hints only
-- `Drop B`: first clear hook phrase / title-chop identity
-- `Drop B Lift`: strongest vocal presence, with the most complete phrase if it still leaves groove room
+- `Intro B`: no vocal
+- `Break A`: first readable vocal statement; mystery / observation only, not the drop hook
+- `Break A pre-drop`: short question / unresolved fragment ending before `49.1.1`
+- `Drop A`: first intact chorus landing; clean full-hook take is the spine of the section
+- `Drop A Lift`: deconstruct the chorus into chops / isolated fragments after the listener has heard the intact hook
+- `Break B`: mystery returns darker; optional first appearance of the most vulnerable phrase
+- `Re-entry Build`: late filtered pickup hints only, ending before `113.1.1`
+- `Drop B`: intact chorus returns with fuller production
+- `Drop B Lift`: intact chorus support plus the strongest chop / throw texture
 - `Outro`: no new vocal idea
 
 Why:
 - the vocal becomes a designed presence across the whole arrangement
-- the strongest hook reveal is saved for `Drop B`
-- the break can carry emotional lyric content before the drop payoff
-- earlier sections create anticipation without making the song feel empty
+- the first real lyric lands before `Drop A`, so the first drop has emotional cause and effect
+- `Drop A` answers the question introduced in `Break A` with the intact chorus, not a cold chop loop
+- `Drop A Lift` teaches the listener the chop language after the song hook is already memorable
+- `Break B` can re-open the question before the final intact-hook payoff
+- earlier sections create anticipation without making the intro feel overwritten
 
 ### Top-end section map
 - `Intro A`: quiet air only
 - `Intro B`: filtered tease of open-hat / presence layer
 - `Drop A`: first full opening
-- `Break`: presence steps back, air + widened chords breathe
+- `Break A`: presence steps back so the first vocal can read
+- `Drop A Lift`: top-end density rises without new harmonic bloom
+- `Break B`: air + widened chords breathe
 - `Drop B`: return to first-drop presence level
 - `Drop B Lift`: strongest top-end release
 - `Outro`: whisper of air remains
 
-### Drop B vocal rule
-- `Vocal Main` appears first at phrase-defining moments.
+### Vocal drop rule
+- `Break A` introduces the vocal identity before `Drop A`; do not hide the first real vocal until `Drop B`.
+- `Drop A` uses `VOC full chorus clean` as the first answer to the break question.
+- `Drop A` should be more respectful and readable than the chop sections; the production supports the chorus instead of competing with it.
+- `Drop A Lift` deconstructs the chorus into fragments / chops so the record still feels like a bassline flip, not a polite cover.
+- `Drop B` returns to the intact chorus with fuller production because the listener now knows both the song and the chop language.
 - `Vocal Throw` is phrase-end only.
-- The main vocal and throw should not crowd the same phrase ending.
+- `Vocal Full Chorus`, `Vocal Chops`, and `Vocal Throw` should not crowd the same phrase ending.
 - If the vocal is not found yet, preserve the empty lane rather than adding a synth replacement.
 - If the source has two open-vowel devotional phrases, test them as an intercut `A/B/A/B` loop before defaulting to one repeated phrase.
-- If the intercut loop is too busy, keep only the stronger phrase at `100.3.4` and `108.3.4` and use throws at phrase endings.
 
 ### Break chord widening
 - “Stretch the chords” means:
@@ -164,14 +175,15 @@ Why:
   - upward voicing spread
 - upper chord tones and reverb tail should do more work than low mids
 
-### Re-entry Build design (`81–96`)
+### Re-entry Build design (`97–112`)
 - Use the extra `16` bars as a dedicated re-entry build section, not as the only “transition” in the song.
 - Every section handoff is still a transition:
   - `Intro A -> Intro B`
-  - `Intro B -> Drop A`
+  - `Intro B -> Break A`
+  - `Break A -> Drop A`
   - `Drop A -> Drop A Lift`
-  - `Drop A Lift -> Break`
-  - `Break -> Re-entry Build`
+  - `Drop A Lift -> Break B`
+  - `Break B -> Re-entry Build`
   - `Re-entry Build -> Drop B`
   - `Drop B -> Drop B Lift`
   - `Drop B Lift -> Outro`
@@ -201,14 +213,14 @@ Why:
 
 ### Voicing palette
 - `Dm9`: `D3 F3 A3 C4 E4`
-- `Bb` restrained state for `Intro / Drop A / Drop A Lift / Re-entry Build`: `Bb2 F3 C4`
-- `Bbmaj7` bloomed state for `Break / Drop B`: `Bb2 F3 A3 C4`
+- `Bb` restrained state for `Intro / Break A / Drop A / Drop A Lift / Re-entry Build`: `Bb2 F3 C4`
+- `Bbmaj7` bloomed state for `Break B / Drop B`: `Bb2 F3 A3 C4`
 - `Fadd9`: `F2 C3 G3 A3`
 - `Cadd9`: `C3 G3 D4 E4`
 
 ### Harmonic restraint rule
 - `Drop A`: keep `Bb` triad/add9-led, no obvious major-7 bloom
-- `Break / Drop B`: let the `Bbmaj7` color open up
+- `Break B / Drop B`: let the `Bbmaj7` color open up
 
 ### Voice-leading strategy
 - preserve common tones where possible
@@ -251,9 +263,10 @@ The bass is the `floor`, not the topline.
 ### Section behavior
 - `Intro A`: no full bass line, only implication
 - `Intro B`: held root plus occasional octave hint
+- `Break A`: bass mostly withheld; use only filtered root implication so the first vocal can read
 - `Drop A`: full rolling floor, restrained phrase-end release
 - `Drop A Lift`: same pitch vocabulary, bigger only by tone and feel
-- `Break`: occasional root reminders only
+- `Break B`: occasional root reminders only
 - `Re-entry Build`: filtered teaser with more urgent phrase-end pull
 - `Drop B`: same rolling shape, but phrase-end lift can touch color tones
 - `Drop B Lift`: strongest phrase-end release bars of the track
@@ -265,26 +278,53 @@ The bass is the `floor`, not the topline.
 - human phrase / chop / ad-lib preferred over synth hook
 - vocal is part of the whole arrangement, but not active constantly
 - earlier sections use absence, filtering, texture, or short teasers
-- `Break` can hold a readable lyric phrase if the phrase is spacious and not drum-looped
-- `Drop B` gets the first real hook phrase / title-chop reveal
+- `Break A` introduces the vocal before the first drop
+- `Drop A` gets the first intact full-chorus answer
+- `Break B` reopens the mystery in a darker / more exposed way
+- `Drop B` gets the fuller vocal payoff
 
 ### First-pass placements
-- `Intro B`: optional filtered teaser at `29.3.4` and `30.3.4`
-- `Drop A`: optional quiet teaser at `40.3.4` and `48.3.4`
-- `Drop A Lift`: optional quiet teaser at `56.3.4` and `64.3.4`
-- `Break`: lyric phrase or texture at `72.1.1` or `76.4.4`
-- `Re-entry Build`: optional pickups at `93.3.4`, `94.3.4`, and `96.4.4`
-- `Drop B`: main hook phrase / title chop at `100.3.4` and `108.3.4`
-- `Drop B`: vocal throw at `104.4.4` and `112.4.4`
-- `Drop B Lift`: longer hook phrase can appear at `116.3.4` and `124.3.4`
-- `Drop B Lift`: vocal throw at `120.4.4` and `128.4.4`
+- `Intro A`: no vocal
+- `Intro B`: no vocal
+- `Break A`: `VOC mystery statement` at `40.1.1`
+- `Break A`: optional `VOC mystery seed` at `44.1.1`
+- `Break A`: `VOC question pre-drop` at `48.3.3`, ending before `49.1.1`
+- `Drop A`: `VOC full chorus clean` starts at `49.1.1` and ends before `65.1.1`
+- `Drop A`: keep only short end-of-line throws if the intact chorus has natural gaps
+- `Drop A Lift`: `VOC chop A` at `68.3.4`
+- `Drop A Lift`: `VOC chop B` at `72.3.4`
+- `Drop A Lift`: `VOC exposed core` at `76.3.4`
+- `Break B`: `VOC question pre-drop` or `VOC mystery seed` at `88.1.1`
+- `Break B`: optional `VOC vulnerable phrase` at `92.1.1`
+- `Re-entry Build`: filtered pickup at `109.3.4` or `110.3.4`
+- `Re-entry Build`: `VOC question pre-drop` at `112.3.3`, ending before `113.1.1`
+- `Drop B`: `VOC full chorus clean` returns at `113.1.1` and ends before `129.1.1`
+- `Drop B`: add low-level chop texture only in chorus gaps, not over every sung line
+- `Drop B Lift`: strongest vocal cuts / stacks at `132.3.4`, `136.3.4`, `140.3.4`, and optionally `144.3.4`
+- `Outro`: tails and throws only after `145.1.1`
 
 ### D-minor trance vocal alternate
-- `Break`: emotional consonant-ending phrase at `72.1.1`; optional open-vowel devotional phrase at `76.1.1`
-- `Re-entry Build`: question phrase at `96.3.3`, ending before `97.1.1`
-- `Drop B`: devotional `A/B/A/B` intercut test at `100.3.4`, `104.3.4`, `108.3.4`, `112.3.4`
-- `Drop B`: if the `A/B/A/B` intercut is too dense, delete the `104.3.4` and `112.3.4` phrase clips and use throws instead
-- `Drop B Lift`: stronger phrase alone with tighter cuts before adding more lyric
+- `Break A`: mystery phrase at `40.1.1`; question phrase at `48.3.3`
+- `Drop A`: clean intact chorus at `49.1.1`; do not chop the first chorus landing
+- `Drop A Lift`: devotional chop test at `68.3.4`, `72.3.4`, and `76.3.4`
+- `Break B`: darker question / vulnerable phrase at `88.1.1` or `92.1.1`
+- `Re-entry Build`: question phrase at `112.3.3`, ending before `113.1.1`
+- `Drop B`: clean intact chorus returns at `113.1.1`; fuller production carries the escalation
+- `Drop B Lift`: stronger phrase with tighter cuts before adding more lyric
+
+### Current D-minor trance vocal arc
+- `Intro A` and `Intro B`: vocal-free
+- `Break A`: introduce the vocal with `VOC mystery statement` at `40.1.1`
+- `Break A`: optional `VOC mystery seed` at `44.1.1`
+- `Break A`: place `VOC question pre-drop` at `48.3.3`, ending before `49.1.1`
+- `Drop A`: answer with `VOC full chorus clean` at `49.1.1`; let it run as one intact hook through the section
+- `Drop A Lift`: deconstruct the hook with `VOC chop A` at `68.3.4`, `VOC chop B` at `72.3.4`, and `VOC exposed core` at `76.3.4`
+- `Break B`: return to mystery with `VOC question pre-drop` / `VOC mystery seed` at `88.1.1`
+- `Break B`: optional first appearance of `VOC vulnerable phrase` at `92.1.1`
+- `Re-entry Build`: place filtered pickup at `109.3.4` or `110.3.4`
+- `Re-entry Build`: place `VOC question pre-drop` at `112.3.3`, ending before `113.1.1`
+- `Drop B`: return to `VOC full chorus clean` at `113.1.1` with fuller drums, bass, chord width, and light chop support
+- `Drop B Lift`: strongest cuts / stacks at `132.3.4`, `136.3.4`, `140.3.4`, and optionally `144.3.4`
 
 ### Sample search criteria
 - euphoric phrase, one-shot, breath, ad-lib, or chop
@@ -353,35 +393,39 @@ Minor handoffs:
 - `16 -> 17`
   - filtered reveal into `Intro B`
   - no giant riser
-- `48 -> 49`
+- `64 -> 65`
   - phrase-end drum pressure into `Drop A Lift`
   - more top pressure, no new harmonic reveal
-- `112 -> 113`
+- `128 -> 129`
   - phrase-end drum pressure into `Drop B Lift`
   - more release, no new section identity
 
 Major handoffs:
 - `32 -> 33`
-  - intro-to-drop landing
-  - section riser
-  - drum-bus HP opening off
-  - bass teaser opening into full body
-- `64 -> 65`
-  - lift-to-break release
+  - intro-to-break landing
+  - first vocal-space reveal
+  - drum-bus HP clears only enough to make the vocal readable, not full drop body
+- `48 -> 49`
+  - break-to-drop landing
+  - question phrase resolves into first vocal answer
+  - full bass body enters
+  - section riser / drum cut can be larger than `32 -> 33`
+- `80 -> 81`
+  - lift-to-second-break release
   - phrase-end fill
   - drum thinning
   - upward chord bloom
-- `80 -> 81`
-  - break into `Re-entry Build`
+- `96 -> 97`
+  - `Break B` into `Re-entry Build`
   - different re-entry drums
   - tighter chord pulse
   - filtered bass re-implication
-- `96 -> 97`
+- `112 -> 113`
   - `Re-entry Build` into `Drop B`
   - pre-drop cut
   - filtered vocal pickup resolving
   - full body return
-- `128 -> 129`
+- `144 -> 145`
   - drop-lift into outro
   - remove top pressure first
   - keep the air whisper
@@ -412,13 +456,13 @@ Major handoffs:
 - most audible in the break
 - tucked back in the drops
 
-## Full 144-Bar Arrangement Plan
+## Full 160-Bar Arrangement Plan
 ### 1–16: Intro A
 - filtered groove
 - chord hint only
 - no full bass line yet
 - whisper of air already present
-- no main vocal yet; optional tiny vocal atmosphere only if the sample has usable air
+- no vocal
 
 Arrangement assignment:
 - drums: `drum_intro_core_2bar`
@@ -428,30 +472,47 @@ Arrangement assignment:
 - full progression appears but tucked
 - bass teaser starts
 - top end is only teased
-- vocal uses only a filtered pickup fragment near the end
+- no vocal; let the bass teaser keep the intro moving
 
 Arrangement assignment:
 - drums: `drum_intro_b_tease_2bar`
 - bass: `bass_intro_b_tease_4bar`
 - chords: `chord_intro_full_4bar`
-- vocal: `vocal_intro_b_teaser`
+- vocal: empty
 
-### 33–48: Drop A
-- full rolling bass foundation
-- vocal mostly withheld; optional quiet teaser only
+### 33–48: Break A
+- first dedicated vocal-introduction section
+- drums thin so the vocal can read
+- chords stay restrained, not fully bloomed
+- bass is mostly implication / filtered root support
+- close the section with the pre-drop question
+
+Arrangement assignment:
+- drums: `drum_break_a_sparse_2bar`
+- bass: `bass_break_a_root_hint_4bar`
+- chords: `chord_break_a_restrained_4bar`
+- vocal main: `vocal_break_a_mystery`
+- vocal pickup: `vocal_break_a_question`
+
+### 49–64: Drop A
+- first full rolling bass foundation
+- first intact chorus landing
 - no exposed harmonic bloom yet
-- bass owns the section
+- production should step back enough that the chorus is readable
+- bass and vocal share the section; neither should overcrowd the other
 
 Arrangement assignment:
 - drums: `drum_drop_core_2bar`
 - bass: `bass_drop_a_core_4bar`
 - chords: `chord_drop_core_4bar`
-- vocal: `vocal_drop_a_teaser_optional`
+- vocal main: `vocal_drop_a_full_chorus_clean`
+- vocal throw: `vocal_drop_a_throw_optional`
 
-### 49–64: Drop A Lift
+### 65–80: Drop A Lift
 - bigger by top-end density and tighter pocket only
 - no new bass harmonic content
-- no main vocal reveal
+- no new lyric content
+- deconstruct the just-heard chorus with chops / exposed fragments
 - same harmonic content as `Drop A`, only brighter pulse / dynamics
 - chord variant here must not add new harmonic color; it only tightens rhythm / dynamics
 
@@ -459,31 +520,34 @@ Arrangement assignment:
 - drums: `drum_drop_lift_2bar`
 - bass: `bass_drop_a_lift_4bar`
 - chords: `chord_drop_a_lift_4bar`
-- vocal: `vocal_drop_a_lift_teaser_optional`
+- vocal main: `vocal_drop_a_lift_chops`
+- vocal throw: `vocal_drop_a_lift_throw_optional`
 
-### 65–80: Break
+### 81–96: Break B
 - stretched chords
 - upward voicing bloom
 - drums thinned
 - air most audible here
-- center lane should feel like intentional vocal space
-- any vocal here should be a suspended break phrase or texture, not the final drop hook phrase
+- mystery returns darker
+- optional first appearance of the vulnerable vocal phrase
+- do not repeat `Break A` identically
 
 Arrangement assignment:
 - drums: `drum_break_sparse_2bar`
 - bass: `bass_break_sparse_4bar`
 - chords: `chord_break_stretch_8bar`
-- vocal: `vocal_break_texture_optional`
+- vocal main: `vocal_break_b_mystery`
+- vocal texture: `vocal_break_b_vulnerable_optional`
 
-### 81–96: Re-entry Build
+### 97–112: Re-entry Build
 - dedicated re-entry switch
 - different re-entry drums
 - filtered bass return
 - tighter chord pulse
 - filtered vocal pickup only in the late pickup window:
-  - first pickup at `93.3.4`
-  - second pickup at `94.3.4`
-  - optional final pickup at `96.4.4`
+  - first pickup at `109.3.4`
+  - second pickup at `110.3.4`
+  - required question pickup at `112.3.3`
 - chord state should stay more restrained than `Drop B`, even while the rhythm re-engages
 - use the restrained `Bb2 F3 C4` state here, not the bloomed `Bbmaj7` state
 
@@ -493,9 +557,9 @@ Arrangement assignment:
 - chords: `chord_reentry_build_pulse_4bar`
 - vocal: `vocal_reentry_build_pickup`
 
-### 97–112: Drop B
+### 113–128: Drop B
 - harmonic bloom arrives
-- first real main vocal sample identity arrives
+- intact chorus returns with fuller production
 - phrase-end vocal throw can answer the main chop
 - bigger by color, human phrase, and punctuation, not low-end stacking
 
@@ -503,13 +567,13 @@ Arrangement assignment:
 - drums: `drum_drop_core_2bar`
 - bass: `bass_drop_b_core_4bar`
 - chords: `chord_drop_b_bloom_4bar`
-- vocal main: `vocal_drop_b_main`
+- vocal main: `vocal_drop_b_full_chorus_clean`
 - vocal throw: `vocal_drop_b_throw`
 
-### 113–128: Drop B Lift
+### 129–144: Drop B Lift
 - strongest energy point
 - tops and widened chords carry most of the lift
-- vocal main and throw can become more present, but should not become a nonstop loop
+- vocal chops and throws can become more present, but should not bury the chorus memory
 
 Arrangement assignment:
 - drums: `drum_drop_lift_2bar`
@@ -518,11 +582,12 @@ Arrangement assignment:
 - vocal main: `vocal_drop_b_lift_main`
 - vocal throw: `vocal_drop_b_lift_throw`
 
-### 129–144: Outro
+### 145–160: Outro
 - DJ-safe stripdown
 - stable groove identity remains
 - whisper of air remains
 - no need to hard-seal the record shut
+- no new lyric; only tails or very short throws
 
 Arrangement assignment:
 - drums: `drum_outro_strip_2bar`
@@ -562,10 +627,13 @@ Arrangement assignment:
 - `chord_drop_b_bloom_4bar`
 
 ### Vocal sample lane
-- `vocal_intro_b_teaser`
-- `vocal_drop_a_teaser_optional`
-- `vocal_drop_a_lift_teaser_optional`
-- `vocal_break_texture_optional`
+- `vocal_break_a_mystery`
+- `vocal_break_a_question`
+- `vocal_drop_a_main`
+- `vocal_drop_a_throw_optional`
+- `vocal_drop_a_lift_exposed_core`
+- `vocal_break_b_mystery`
+- `vocal_break_b_vulnerable_optional`
 - `vocal_reentry_build_pickup`
 - `vocal_drop_b_main`
 - `vocal_drop_b_throw`
@@ -611,9 +679,10 @@ These are inspiration anchors for chain/function, not copying targets.
 ## Energy Curve
 - `Intro A`: `2/10`
 - `Intro B`: `3/10`
+- `Break A`: `5/10`
 - `Drop A`: `7/10`
 - `Drop A Lift`: `8/10`
-- `Break`: `4/10`
+- `Break B`: `4/10`
 - `Re-entry Build`: `6/10`
 - `Drop B`: `8/10`
 - `Drop B Lift`: `9/10`
@@ -639,12 +708,15 @@ Rule:
 
 ### 3. Chord bed and break bloom
 - keep Drop A restrained
-- save the harmonic bloom for break / Drop B
+- keep `Break A` restrained so the first vocal can read
+- save the big harmonic bloom for `Break B` / `Drop B`
 
 ### 4. Vocal sample search and placement logic
 - find and test a real vocal sample
-- preserve vocal space across intro, drops, break, and re-entry
-- save the first real main vocal identity for `Drop B`
+- preserve vocal silence in `Intro A` / `Intro B`
+- introduce the vocal in `Break A`
+- answer with the first intact `Vocal Full Chorus` hook in `Drop A`
+- save the fuller vocal arsenal for `Drop B`
 
 ### 5. Section writing and variant placement
 - place exact variants section by section

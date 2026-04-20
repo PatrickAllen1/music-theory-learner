@@ -1,1157 +1,663 @@
-# UKG 140 OG Bounce Driver: Tutorial Part 5 — Vocal Sample Search + Phrase/Chop Vocabulary
+# UKG 140 OG Bounce Driver: Tutorial Part 5 - Vocal Sample, Full Chorus, and Chops
 
 ## Purpose
-Teach the learner how to find, test, prepare, and place a vocal sample lane for `ukg-140-og-bounce-driver`.
+Teach the learner how to turn the chosen `D minor` vocal into the emotional identity of the track.
 
-This part replaces the old synth `Hook` / `Answer` plan.
+This part no longer teaches a synth hook or synth answer.
 
-The track should now leave a real lane for a future vocal sample instead of forcing an organ hook to carry the song.
+The current track uses two versions of the same vocal source:
+- a clean intact chorus version
+- a dry chopped-fragment version
 
-The goal is:
-- learn what kind of vocal sample fits this record
-- build an Ableton audition workflow
-- test samples against drums, bass, and chords
-- decide which parts should be readable phrase and which parts should be chopped
-- cut the sample into a small vocabulary of usable phrases, chops, tails, and reverses
-- place different vocal types across the arrangement
-- keep the song moving even if the final vocal treatment changes later
+The intact chorus is the singable payoff.
 
-This part should not make a beepy organ hook.
-
-Related documents:
-- [2026-04-17-ukg-140-og-bounce-driver-full-song-plan.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-full-song-plan.md)
-- [2026-04-17-ukg-140-og-bounce-driver-production-plan.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-production-plan.md)
-- [2026-04-17-ukg-140-og-bounce-driver-tutorial-plan.md](/Users/patrickalfante/music-theory-learner/docs/plans/2026-04-17-ukg-140-og-bounce-driver-tutorial-plan.md)
+The chops are the club edit language around that payoff.
 
 ## Outcome
 By the end of this part, the learner should have:
 - one `Vocal Audition` audio track
-- one `Vocal Main` audio track
+- one `Vocal Full Chorus` audio track
+- one `Vocal Chops` audio track
 - one `Vocal Throw` audio track
-- one muted `Vocal Guide MIDI` track, used only as a placement ruler
-- one written sample-search log
-- up to `3` vocal candidates, ranked `A`, `B`, and `C`
-- one first-pass vocal phrase/chop vocabulary
-- one first-pass vocal phrase/chop arrangement across the song
-- one bounce of:
-  - `Drop A` with the vocal lane muted
-  - `Drop B` with the vocal chop vocabulary active
-  - `Break -> Re-entry Build -> Drop B` with vocal space preserved
+- one muted `Vocal Guide` MIDI track
+- one clean intact chorus clip named `VOC full chorus clean`
+- one set of chopped clips named by function, not by lyric text
+- first-pass vocal placements across `Break A`, `Drop A`, `Drop A Lift`, `Break B`, `Re-entry Build`, `Drop B`, and `Drop B Lift`
 
 ## Time Estimate
-- `75–120 minutes`
+- `90-150 minutes`
 
 Do not rush this part.
 
-Finding the right vocal is an identity decision.
-The wrong sample will make the record feel cheap even if the drums and bass are strong.
+The vocal is now the record's identity lane.
 
-## Prerequisites
-- learner has completed or can reference:
-  - `Part 2` groove
-  - `Part 3` bass floor
-  - `Part 4` harmonic bed
-- learner can drag an audio file into Ableton
-- learner can mute and solo tracks
-- learner does not need to know advanced sampling yet
-
-This part explains:
-- what kind of sample to search for
-- how to audition a sample
-- how to tell if it fights the key
-- how to tell if it fights the groove
-- where to place first-pass chops
-
-## Legal / Source Rule
-For a real release, only use:
-- a cleared vocal sample
-- a royalty-free sample that allows commercial use
-- your own recorded vocal
-- a collaborator's vocal that you have permission to use
-
-Do not build a release around a ripped commercial vocal unless this is only a private practice version.
-
-For learning, you can audition anything privately.
-For release, the source must be cleared.
-
-## What This Vocal Lane Is Supposed To Do
-The vocal is not a full verse.
-
-It should act like:
-- a hook fragment
-- a phrase-end chop
-- a breath or ad-lib
-- a short emotional phrase
-- a texture that answers the chords
-
-It can act like:
-- a readable break phrase
-- a clear hook phrase in `Drop B`
-- a phrase-end chop
-- a reverb tail
-- a reverse pull into a section
-
-It should not act like:
-- a full topline running across the whole track
-- a full chorus pasted over every drop
-- a long acapella section with no arrangement discipline
-- a melody that rewrites the chord progression
-- a busy sample loop that plays all the way through every drop
-
-The track still needs space.
-The vocal should make the best moments feel intentional, not fill every empty bar.
-
-## Vocal Phrase Modes
-There are now three valid vocal modes.
-
-Use all three if the sample is strong enough.
-
-| Mode | What it means | Where it belongs | What to avoid |
-|---|---|---|---|
-| `Break lyric phrase` | a readable emotional line or half-line | `Break`, especially after the chords open | making it feel like a full chorus pasted in |
-| `Hook phrase` | the clearest memorable vocal identity | `Drop B`, then bigger in `Drop B Lift` | revealing it in `Drop A` |
-| `Support chop` | short word, syllable, breath, tail, reverse, or repeat | intro, drops, transitions, phrase ends | filling every empty bar |
-
-This means the vocal does not need to be chopped into tiny pieces everywhere.
-
-The key is section role:
-- `Break` can speak in a longer, more emotional way.
-- `Drop B` can speak clearly as the hook.
-- `Intro B`, `Drop A`, and `Re-entry Build` should hint.
-- `Vocal Throw` should answer and create space, not become another lead vocal.
-
-## Commercial Stem Sketch Rule
-If you use an extracted stem from a commercial record:
-- treat it as private-sketch material unless it is cleared
-- do not publish the tutorial with unlicensed lyric text
-- label clips by function instead of copying full lyric names
-- later, either clear the vocal, replace it with a royalty-free vocal, or record/interpolate a new vocal
-
-Functional clip names:
-- `VOC break lyric phrase`
-- `VOC hook phrase`
-- `VOC hook title chop`
-- `VOC isolation throw`
-- `VOC fade texture`
-- `VOC dark prehook`
-- `VOC reverse tail`
-
-This keeps the Ableton project usable while avoiding locking the lesson to one copyrighted lyric.
-
-## Vocal Chop Vocabulary
-Do not think of the sample as one long vocal clip.
-
-Think of it as raw material that can become several smaller tools.
-
-For this track, build these chop types:
-
-| Chop type | What it is | Where it belongs | Example from `I just wanna give you something to believe in` |
-|---|---|---|---|
-| `Main chop` | the strongest memorable word or phrase fragment | `Drop B`, `Drop B Lift` | `believe in` |
-| `Long phrase chop` | a longer emotional fragment that still does not become a full vocal loop | `Drop B Lift` or one special break moment | `to believe in` / `something to believe in` |
-| `Teaser chop` | a quieter, filtered hint of the vocal before the main reveal | `Intro B`, `Drop A`, `Drop A Lift`, late `Re-entry Build` | `I just wanna` / `give you` |
-| `Throw` | a short answer after a phrase, usually quieter and more delayed | phrase endings in `Drop B` / `Drop B Lift` | `in` |
-| `Reverse` | a reversed vocal tail that pulls into a new section | before `65.1.1`, `81.1.1`, or `97.1.1` | reversed tail of `believe in` |
-| `Texture bed` | stretched or faded vocal atmosphere, not a readable lyric | `Break` only | washed tail from `believe in` |
-| `Repeat chop` | a tiny syllable repeated for rhythm | only if it improves bounce | `give`, `you`, or `in` |
-
-Plain-English rule:
-- `Main chop` is what the listener remembers.
-- `Teaser chop` is what makes the listener feel something is coming.
-- `Throw` is punctuation.
-- `Reverse` is transition glue.
-- `Texture bed` is atmosphere.
-
-Do not use the same chop at the same strength in every section.
-
-The same source phrase can appear throughout the whole track, but its role must change:
-- earlier sections use less lyric, more filtering, and lower volume
-- the break can use texture or a readable lyric phrase
-- the re-entry uses pickup hints
-- `Drop B` gives the first clear identity
-- `Drop B Lift` can use the most complete phrase if the record still has space
-
-## Big Trance Vocal Source Option
-For a `Pretty Green Eyes` / `Yosemite`-style emotional lane, the best source is often not a tiny one-shot.
-
-It can be a big trance / big-room / rave vocal stem.
-
-That is valid if you treat it correctly:
-- use one phrase as the emotional break moment
-- use one clear hook phrase or title chop as the drop identity
-- use tails, reverses, and short chops as arrangement glue
-- do not let the whole acapella play over the whole track
-
-First-pass clip vocabulary for this type of vocal:
-
-| Clip name | Source type | Track | Role |
-|---|---|---|---|
-| `VOC break lyric phrase` | one readable emotional line or half-line | `Vocal Main` | break lyric moment |
-| `VOC hook phrase` | the clearest hook phrase | `Vocal Main` | `Drop B` identity |
-| `VOC hook title chop` | the shortest memorable hook fragment | `Vocal Main` | repeatable drop chop |
-| `VOC isolation throw` | one isolated ending word or tail | `Vocal Throw` | phrase-end response |
-| `VOC fade texture` | breath, vowel, or faded word | `Vocal Throw` or transition FX | intro / break atmosphere |
-| `VOC dark prehook` | darker tension phrase | `Vocal Main` | break or late re-entry tension |
-| `VOC reverse tail` | reversed tail from the hook phrase | `Vocal Throw` or transition FX | pull into `Drop B` |
-
-First-pass placement map for this type:
-- `Intro B`: `VOC fade texture` or filtered `VOC hook title chop` at `29.3.4`
-- `Drop A`: very quiet `VOC hook title chop` at `40.3.4` only if it does not reveal the full hook
-- `Break`: `VOC break lyric phrase` at `72.1.1` or `76.1.1`
-- `Re-entry Build`: `VOC reverse tail` ending at `97.1.1`
-- `Drop B`: `VOC hook phrase` or `VOC hook title chop` at `100.3.4` and `108.3.4`
-- `Drop B`: `VOC isolation throw` at `104.4.4` and `112.4.4`
-- `Drop B Lift`: longer `VOC hook phrase` at `116.3.4` and `124.3.4`
-
-If the break phrase and hook phrase are both strong, use both.
-
-The break phrase creates emotion.
-
-The hook phrase creates memory.
-
-## D-Minor Trance Vocal Map
-If the vocal source is already in `D minor`, do not transpose it first.
-
-Start with:
-- clip `Transpose`: `0`
-- warp mode: `Complex Pro` for full phrases, `Beats` or `Complex` for tiny chops if they sound tighter
-- formant shift: untouched on the first pass
-- clip gain: lower until the vocal sits with the drums, not above them
-
-Use functional clip names instead of full copyrighted lyric text.
-
-### Functional Clip Names
-Create these clips from the source if the phrases exist:
-
-| Clip name | What to cut | Why it matters | Loop risk |
-|---|---|---|---|
-| `VOC mystery seed` | the short mystery/setup phrase with the nasal ending | good for build, intro, and filtered punctuation | medium; nasal endings can feel flat if looped too much |
-| `VOC hopeful missing line` | the hopeful communication line after the mystery seed, if available | adds emotional duality instead of pure uncertainty | medium |
-| `VOC question pre-drop` | the question phrase ending on an open vowel | best pre-drop tension phrase | low if used once |
-| `VOC devotional A` | first open-`oh` devotional phrase | best pure loop candidate | low |
-| `VOC devotional B` | second open-`oh` devotional phrase | pairs with `VOC devotional A` | low |
-| `VOC eyes statement` | the longer statement phrase ending with a consonant | good as a one-time declaration | high if looped |
-| `VOC arms phrase` | the emotional arms/holding phrase ending with a consonant cluster | good for break emotion | high unless crossfaded or gated tightly |
-| `VOC reverse tail` | reversed tail from `VOC devotional A` or `VOC devotional B` | pulls into drops | low |
-
-### Phonetic Loop Rule
-Open vowels loop more cleanly than consonant endings.
-
-Use this ranking:
-1. Open-`oh` endings: best for repeated drop hooks.
-2. Open-`eye` endings: good for pre-drop or one-time tension.
-3. Nasal `-ing` endings: good for punctuation and build, weaker for the main loop.
-4. Consonant clusters: use once, crossfade, reverse, or gate tightly.
-
-This is not music-theory decoration.
-
-It directly affects whether the vocal loop feels smooth or chopped-off.
-
-### Recommended Emotional Arc
-Use this story order:
-1. mystery setup
-2. question before the drop
-3. devotional hook answer
-4. bigger devotional loop in the lift
-
-That arc works because the setup creates uncertainty, the pre-drop asks the question, and the drop answers with need/devotion.
-
-Do not start the track with the full devotional hook.
-
-Save it.
-
-### D-Minor Trance Source First-Pass Placement
-Use this map if the source has the phrase types above:
-
-- `Intro B`: filtered `VOC mystery seed` or `VOC reverse tail` at `29.3.4`
-- `Drop A`: optional very quiet `VOC mystery seed` at `40.3.4`
-- `Drop A Lift`: optional `VOC hopeful missing line` or filtered `VOC mystery seed` at `56.3.4`
-- `Break`: `VOC arms phrase` at `72.1.1`, then `VOC devotional A` or `VOC devotional B` at `76.1.1`
-- `Re-entry Build`: `VOC question pre-drop` starts at `96.3.3` and must end before `97.1.1`
-- `Drop B`: intercut `VOC devotional A` and `VOC devotional B`:
-  - `VOC devotional A` at `100.3.4`
-  - `VOC devotional B` at `104.3.4`
-  - `VOC devotional A` at `108.3.4`
-  - optional `VOC devotional B` at `112.3.4`
-- `Drop B throws`: if the intercut loop is too busy, replace `112.3.4` with `VOC isolation throw` at `112.4.4`
-- `Drop B Lift`: use `VOC devotional A` alone with tighter/faster cuts, or continue the `A/B` intercut if it still feels emotional
-
-### Missing Fragment To Check
-If the source has a hopeful communication phrase between the mystery setup and the darker distrust line, cut it as `VOC hopeful missing line`.
-
-Use it before using any accusatory or distrust-heavy line.
-
-The track wants longing and release, not bitterness.
-
-### Intercut Loop Test
-Test this before committing to a single repeated hook:
-
-1. Put `VOC devotional A` at `100.3.4`.
-2. Put `VOC devotional B` at `104.3.4`.
-3. Put `VOC devotional A` at `108.3.4`.
-4. Put `VOC devotional B` at `112.3.4`.
-5. Loop `97.1.1–113.1.1`.
-6. Mute `VOC devotional B`.
-7. Listen to `VOC devotional A` alone.
-8. Unmute `VOC devotional B`.
-9. Keep the intercut version only if it feels like one continuous sung idea.
-
-If the intercut version feels too vocal-heavy:
-- keep `VOC devotional A` at `100.3.4`
-- keep `VOC devotional A` at `108.3.4`
-- move `VOC devotional B` to `Drop B Lift`
-- keep only a throw at `104.4.4` and `112.4.4`
-
-## Working Example: Current Source Phrase
-Current source phrase:
-
-```text
-I just wanna give you something to believe in
-```
-
-Current source facts:
-- original key: `D# minor`
-- target key: `D minor`
-- transpose starting point: `-1 semitone`
-- original tempo: `150 BPM`
+## Current Vocal Source Assumption
+Use this lesson for the current source choice:
+- source type: lossless vocal / acapella
+- source key: `D minor`
+- project key: `D minor`
 - project tempo: `140 BPM`
-- current usable length: about `3.2` bars
+- vocal role: recognizable chorus plus chopped club edits
 
-Use this phrase as a source phrase, not as one finished loop.
+Because the current vocal is already in `D minor`, the first-pass transpose value is:
+- `0 semitones`
 
-First-pass clip vocabulary:
+If you later test a vocal in a different key, use this quick transpose guide:
+- `D# minor` or `Eb minor` to `D minor`: transpose `-1`
+- `C# minor` or `Db minor` to `D minor`: transpose `+1`
+- `E minor` to `D minor`: transpose `-2`
+- `C minor` to `D minor`: transpose `+2`
 
-| Clip name | Source words | Track | Role |
-|---|---|---|---|
-| `VOC i just wanna tease` | `I just wanna` | `Vocal Main` | intro / re-entry teaser |
-| `VOC give you stab` | `give you` | `Vocal Main` | short rhythmic stab |
-| `VOC something mid` | `something` | `Vocal Main` | optional mid phrase fragment |
-| `VOC to believe in long` | `to believe in` | `Vocal Main` | longer emotional phrase |
-| `VOC believe in main` | `believe in` | `Vocal Main` | main `Drop B` chop |
-| `VOC in throw` | `in` | `Vocal Throw` | phrase-end throw |
-| `VOC believe reverse` | reversed tail of `believe in` | `Vocal Throw` or transition FX lane | transition pull |
+## Copyright-Safe Clip Labels
+Do not name the public tutorial clips with full copyrighted lyric lines.
 
-How to make each clip from the full source phrase:
-1. Put the full source phrase on `Vocal Audition`.
-2. Duplicate the full source phrase onto `Vocal Main`.
-3. Click the duplicate.
-4. Drag the left edge right until the chosen word starts.
-5. Drag the right edge left until the chosen word or phrase ends.
-6. Add a tiny fade-in if the start clicks.
-7. Add a tiny fade-out if the end clicks.
-8. Rename the clip:
-   - click the clip
-   - press `Cmd+R` / `Ctrl+R` if Ableton lets you rename clips in your view
-   - if not, right-click the clip and choose `Rename`
-   - type the exact clip name from the table
-9. Repeat for each useful word group.
+Use functional names:
+- `VOC full chorus clean`
+- `VOC mystery statement`
+- `VOC mystery seed`
+- `VOC question pre-drop`
+- `VOC chop A`
+- `VOC chop B`
+- `VOC exposed core`
+- `VOC vulnerable phrase`
+- `VOC reverse tail`
+- `VOC throw`
 
-If you cannot rename the clip in Ableton:
-- leave the audio clip name alone
-- rename the track lane temporarily instead
-- write the clip name in your project notes
+You can write the actual lyric in your private Ableton session if you want, but the tutorial file should stay functional.
 
-The exact word boundaries are allowed to move by ear.
+## What These Words Mean
+### Vocal Audition
+`Vocal Audition` is a temporary workbench track.
 
-The important rule is that each clip has one job.
+Use it to test:
+- whether the vocal is in time
+- whether the key feels right
+- whether the phrase fights the bass
+- whether the phrase has useful chop points
 
-## Vocal States Across The Song
-The vocal lane has a role in the whole arrangement.
+Do not build the final arrangement on this track.
 
-It does not mean the vocal plays constantly.
+After a clip is approved, copy it to one of the real vocal tracks.
 
-Use these states:
-- `Intro A`: no vocal, or only an inaudible atmosphere if the final sample has useful air
-- `Intro B`: filtered teaser only near the end
-- `Drop A`: no main vocal; optional quiet teaser at phrase endings only
-- `Drop A Lift`: same as `Drop A`, not a bigger vocal reveal
-- `Break`: readable lyric phrase or vocal texture; not the final drop hook phrase
-- `Re-entry Build`: late vocal pickup hints only
-- `Drop B`: first real main vocal identity
-- `Drop B Lift`: strongest vocal presence, but still not a nonstop vocal loop
-- `Outro`: vocal leaves or becomes a tiny tail; no new vocal idea
+### Full Chorus
+`VOC full chorus clean` means the chorus stays intact.
 
-The vocal should feel designed across the whole song.
+You are not slicing every word.
 
-The main phrase is still saved for `Drop B`.
-The earlier sections use absence, filtering, fragments, or texture so the sample has somewhere to arrive.
+The point is that the room can recognize and sing the hook.
 
-## What To Do With The Old Hook / Answer Tracks
-If your session already has `Hook` and `Answer` tracks:
-1. Mute them.
-2. Do not delete them yet.
-3. Rename `Hook` to `Vocal Guide MIDI`.
-4. Rename `Answer` to `Vocal Throw Guide`.
-5. Set both tracks to a grey color if possible.
-6. Leave them muted.
+It should sound:
+- readable
+- emotional
+- forward
+- less aggressive than the chop tracks
 
-These tracks are no longer final musical parts.
+It should not sound:
+- like a random one-word stab
+- like a notification beep
+- like a thin acapella pasted on top with no body
+- like it is being chopped before the listener understands the song
 
-They are only rulers that show where a vocal might speak.
+### Chop
+A chop is a short piece cut out of the vocal.
 
-If your session does not have `Hook` and `Answer` tracks yet:
-1. Create one MIDI track called `Vocal Guide MIDI`.
-2. Create one MIDI track called `Vocal Throw Guide`.
-3. Keep both muted.
+It can be:
+- one word
+- one short phrase
+- the end of a phrase
+- a breath
+- a tail
+- a reversed tail
 
-## Sample Target
-Search for a vocal sample with these traits:
-- short phrase or chop
-- emotionally human
-- not too many notes
-- not too bright
-- not too busy
-- easy to cut into one-shot pieces
-- works around `D minor`
-- does not expose a strong major third over the wrong chord
-- leaves room for drums and bass
+The chop track is allowed to be more edited, dry, gated, pitched, reversed, or delayed.
 
-Best first-pass sample types:
-- one-word vocal shot
-- short phrase ending
-- breathy ad-lib
-- soulful syllable
-- garage-style vocal chop
-- R&B-style one-shot phrase
-- pitched `ah`, `oh`, `yeah`, `why`, `you`, `me`, `stay`, `feel`
+### Throw
+A throw is a short response after a main phrase.
 
-Avoid first:
-- full sung chorus loops
-- full acapellas
-- long melodic phrases
-- obvious pop vocals
-- samples with huge reverb already printed
-- samples with loud drums underneath
-- samples that already have bass or chords baked in
+It usually happens at the end of a phrase.
 
-## Search Terms
-Use search terms like:
-- `garage vocal one shot`
-- `ukg vocal chop`
-- `soul vocal chop`
-- `rnb vocal one shot`
-- `female vocal adlib dry`
-- `male vocal adlib dry`
-- `breathy vocal chop`
-- `minor vocal phrase`
-- `vocal hook phrase dry`
-- `90s garage vocal`
+It is quieter or more delayed than `Vocal Full Chorus`.
 
-Prefer dry samples.
+It should feel like punctuation, not a second lead vocal.
 
-Dry means:
-- little or no reverb
-- little or no delay
-- easy to place in your own space
+### Bar Position
+Arrangement positions like `49.1.1` mean:
+- bar `49`
+- beat `1`
+- first subdivision of the beat
 
-Wet means:
-- reverb already printed
-- delay already printed
-- harder to fit into the track
+These are arrangement timeline positions, not piano-roll note names.
 
-## Yosemite / Kettama-Esque Vocal Search Recipe
-Do not search for a full vocal song first.
-
-Search for a tiny human moment.
-
-The target is:
-- emotional but not theatrical
-- clubby but not cheesy
-- short enough to chop
-- dry enough to process yourself
-- phrase-led, not melody-led
-- slightly raw, not glossy pop
-
-In plain English, you are looking for something like:
-- one soulful word
-- one breathy syllable
-- one spoken phrase ending
-- one rave / garage shout
-- one pitched `ah`, `oh`, `yeah`, `you`, `me`, `stay`, `feel`, or similar fragment
-- one phrase that feels like it could become a hook after repetition
-
-Better search terms for that lane:
-- `rave vocal stab`
-- `garage vocal stab`
-- `uk garage vocal one shot`
-- `club vocal one shot dry`
-- `90s house vocal chop`
-- `soulful vocal phrase dry`
-- `minor vocal adlib`
-- `rnb vocal chop dry`
-- `female vocal phrase dry`
-- `male vocal phrase dry`
-- `spoken vocal one shot`
-- `warehouse vocal shout`
-- `vocal texture breath`
-
-If the sample site has filters, start with:
-- type: `vocal`
-- format: `one shot` before `loop`
-- length: under `2` seconds if possible
-- key: `D minor`, `F major`, `A minor`, or unknown
-- effects: dry / minimal FX
-- genre tags: `UKG`, `garage`, `house`, `rave`, `soul`, `R&B`
-
-Avoid these on the first search pass:
-- full acapella
-- full chorus
-- obvious pop hook
-- vocal loop with drums printed underneath
-- vocal loop with chords printed underneath
-- sample that already has huge reverb
-- sample that already sounds like a finished song section
-
-### Fast Search Loop
-Use this loop so you do not waste an hour on one sample.
-
-For each sample:
-1. Play it once by itself.
-2. If it sounds cheesy alone, reject it.
-3. Drag it into `Vocal Audition`.
-4. Put it at `100.3.4`.
-5. Loop `97.1.1–105.1.1`.
-6. Listen with drums, bass, and chords.
-7. If it fights the chords, try `Transpose +1`, `-1`, `+2`, and `-2`.
-8. If it still fights the chords after `2` minutes, reject it.
-9. If it works, duplicate it to `108.3.4`.
-10. If the repeat feels memorable instead of annoying, mark it as a candidate.
-
-### Candidate Scoring
-Score each sample quickly:
-
-```text
-Emotion: 1-5
-Rhythm fit: 1-5
-Key fit: 1-5
-Dryness / mixability: 1-5
-Cheese risk: 1-5, lower is better
-```
-
-Keep a sample only if:
-- emotion is at least `3`
-- rhythm fit is at least `3`
-- key fit is at least `3`
-- cheese risk is `3` or lower
-
-Do not keep a sample just because it is loud, bright, or exciting on first listen.
-
-## Ableton Track Setup
+## Step 1: Create The Vocal Tracks
 ### Action
-Create these audio tracks:
-1. `Vocal Audition`
-2. `Vocal Main`
-3. `Vocal Throw`
+Create four audio tracks and one MIDI guide track.
 
-How to create an audio track:
-1. In Ableton, press `Cmd+T` on Mac or `Ctrl+T` on Windows.
-2. Click the new track name.
-3. Press `Cmd+R` / `Ctrl+R`.
-4. Type the exact track name.
-5. Press `Enter`.
+In Ableton:
+1. Press `Cmd+T` on Mac or `Ctrl+T` on Windows to create an audio track.
+2. Rename it `Vocal Audition`.
+3. Press `Cmd+T` / `Ctrl+T` again.
+4. Rename it `Vocal Full Chorus`.
+5. Press `Cmd+T` / `Ctrl+T` again.
+6. Rename it `Vocal Chops`.
+7. Press `Cmd+T` / `Ctrl+T` again.
+8. Rename it `Vocal Throw`.
+9. Press `Cmd+Shift+T` on Mac or `Ctrl+Shift+T` on Windows to create a MIDI track.
+10. Rename it `Vocal Guide`.
+11. Mute `Vocal Guide`; it is only a visual ruler.
 
-Route these tracks:
-- `Vocal Audition` -> `Music Bus`
-- `Vocal Main` -> `Music Bus`
-- `Vocal Throw` -> `Music Bus`
-
-If you do not know how to route:
-1. Look at the track's mixer area.
-2. Find the dropdown labeled `Audio To`.
-3. Click it.
-4. Choose `Music Bus`.
+Route the audio tracks:
+1. On `Vocal Audition`, set `Audio To` to `Music Bus`.
+2. On `Vocal Full Chorus`, set `Audio To` to `Music Bus`.
+3. On `Vocal Chops`, set `Audio To` to `Music Bus`.
+4. On `Vocal Throw`, set `Audio To` to `Music Bus`.
 
 Set first-pass faders:
 - `Vocal Audition`: `-12 dB`
-- `Vocal Main`: `-14 dB`
+- `Vocal Full Chorus`: `-10 dB`
+- `Vocal Chops`: `-14 dB`
 - `Vocal Throw`: `-18 dB`
 
-If the vocal is too loud while auditioning, lower the track fader.
-Do not lower the entire Music Bus just because one vocal sample is loud.
+If you do not know what a fader is:
+- it is the vertical volume control at the bottom of the track in Ableton's mixer
+- numbers like `-10 dB` are track volume values
+- click the number under the track meter and type the value
 
 ### Why
-The audition track is a workbench.
+Separate vocal tracks let you process the intact chorus differently from the chopped fragments.
 
-The main and throw tracks are arrangement lanes.
+The clean chorus needs to be readable.
 
-Keeping them separate prevents messy edits later.
+The chops need to be tighter and more aggressive.
 
-## Step 1: Build A Sample Search Log
+### Checkpoint
+You should now see:
+- `Vocal Audition`
+- `Vocal Full Chorus`
+- `Vocal Chops`
+- `Vocal Throw`
+- `Vocal Guide`
+
+## Step 2: Import The Vocal Onto The Audition Track
 ### Action
-Create a text note called `vocal-sample-search-log`.
+1. Drag the lossless vocal file into Arrangement View.
+2. Drop it on `Vocal Audition`.
+3. Put the first clip start at `1.1.1`.
+4. Double-click the clip to open Clip View.
+5. Turn `Warp` on.
+6. Set Warp Mode to `Complex` or `Complex Pro`.
+7. If `Complex Pro` is available, use it for full phrases.
+8. If `Complex Pro` is not available, use `Complex`.
+9. Set `Transpose` to `0 st`.
 
-Put it in the project folder if possible.
-
-For every candidate, write:
-- sample name
-- source / pack / site
-- cleared for release: `yes`, `no`, or `unknown`
-- original tempo if known
-- original key if known
-- why it might work
-- why it might fail
-- rating from `1–5`
-
-Use this format:
-
-```text
-Candidate 01
-Name:
-Source:
-Cleared for release:
-Original BPM:
-Original Key:
-Type: one-shot / phrase / ad-lib / loop
-Works because:
-Fails because:
-Rating:
-```
+If the clip plays too early or too late:
+1. Find the first real vocal attack in the waveform.
+2. Right-click that point.
+3. Choose `Set 1.1.1 Here` if Ableton offers it.
+4. If not, drag the clip start marker so the first vocal attack lines up with the grid.
 
 ### Why
-When you audition vocals quickly, every sample feels exciting for `30` seconds.
+The vocal has to be grid-aware before you chop it.
 
-The log stops you from losing track of which samples actually fit.
+If the vocal is not aligned before chopping, every later chop placement becomes confusing.
 
-## Step 2: Import One Sample Into Ableton
+### Checkpoint
+Loop `1.1.1-5.1.1`.
+
+The vocal should stay in time for at least `4` bars.
+
+It does not need to sound mixed yet.
+
+## Step 3: Build Two Processing Chains
 ### Action
-1. Drag the audio sample onto the `Vocal Audition` track.
-2. Place it at `97.1.1` first.
-3. This puts the sample at the start of `Drop B`.
-4. Solo is not needed yet.
-5. Loop `97.1.1–105.1.1`.
-6. Play the loop with:
-   - drums
-   - bass
-   - chords
-   - vocal audition sample
+On `Vocal Full Chorus`, start clean.
 
-If the sample is too long:
-1. Click the audio clip.
-2. Drag the right edge left until only the useful word / phrase remains.
-3. Do not worry about perfect chopping yet.
+Put these devices in this order:
+1. `EQ Eight`
+2. `Compressor`
+3. optional `De-Esser` if you have one
 
-If the sample starts late:
-1. Zoom in on the clip.
-2. Drag the clip left so the first clear vocal transient starts on the intended grid point.
+First-pass `EQ Eight` settings:
+- high-pass around `120 Hz`
+- do not boost anything yet
+- if the vocal is muddy, cut around `250-400 Hz` by `1-3 dB`
 
-Plain-English transient:
-- the transient is the first obvious attack of the sound
-- for a vocal, it is usually the first consonant or breath
+First-pass `Compressor` settings:
+- ratio: `2:1`
+- attack: `10-20 ms`
+- release: `80-150 ms`
+- aim for `2-4 dB` gain reduction only on louder phrases
+
+On `Vocal Chops`, make the chain tighter.
+
+Put these devices in this order:
+1. `EQ Eight`
+2. `Compressor`
+3. optional `Saturator`
+4. optional `Gate`
+
+First-pass `Vocal Chops` settings:
+- high-pass around `150 Hz`
+- cut mud around `250-500 Hz` if needed
+- keep the dry chop more forward than the reverb
+- add drive only if the chop needs bite
+
+On `Vocal Throw`, make the chain wider and more delayed later.
+
+For now:
+- high-pass around `180 Hz`
+- fader stays lower than `Vocal Full Chorus`
+- sends can be added after the dry placement works
 
 ### Why
-Start testing the vocal where the song has its full harmonic identity.
+The full chorus and the chops have different jobs.
 
-If it cannot survive `Drop B`, it is probably not the right vocal.
+One chain cannot do both jobs well.
 
-## Step 3: Check If The Sample Is Rhythmically Usable
+## Step 4: Cut The Full Chorus Clean Clip
 ### Action
-Listen to the sample against `97.1.1–105.1.1`.
+On `Vocal Audition`, find the complete chorus section you want the room to recognize.
 
-Ask these checks in order:
-1. Does the first word land cleanly?
-2. Does the sample fight the snare/clap on beats `2` and `4`?
-3. Does it cover the bass movement?
-4. Does it feel like a hook, or just random sound?
+Do not chop it word-by-word.
 
-Test these first-pass placements:
-- `100.3.4`
-- `100.4.1`
-- `100.4.4`
-- `104.3.3`
-- `104.4.1`
-- `104.4.4`
-- `108.3.4`
-- `108.4.1`
-- `108.4.4`
-- `112.3.3`
-- `112.4.1`
-- `112.4.4`
+Make one clean clip:
+1. Put the playhead at the start of the chorus.
+2. Press `Cmd+E` / `Ctrl+E` to split.
+3. Put the playhead just after the end of the chorus tail.
+4. Press `Cmd+E` / `Ctrl+E` again.
+5. Click the chorus clip.
+6. Duplicate or copy it to `Vocal Full Chorus`.
+7. Rename the clip `VOC full chorus clean`.
 
-How to test a placement:
-1. Duplicate the sample clip.
-2. Drag the duplicate so its first vocal sound starts on the target position.
-3. Play `2` bars before the target.
-4. If it feels late, move it slightly earlier.
-5. If it steps on the groove, move it later or delete it.
+If you cannot rename the audio clip directly:
+- rename the track region or add a locator note
+- the important part is that you can identify it later
 
-Do not place the vocal on every listed position.
+### Full-Chorus Timing Target
+The first clean chorus should occupy `Drop A`:
+- start at `49.1.1`
+- end before `65.1.1`
 
-The list is a test menu.
+If the chorus has four clear internal lines, use this first-pass anchor map:
+- line `1` attack near `49.1.1`
+- line `2` attack near `53.1.1`
+- line `3` attack near `57.1.1`
+- line `4` attack near `61.1.1`
 
-The first-pass arrangement should use only a few positions.
+Do not force the line anchors if the natural vocal phrasing is slightly ahead or behind.
+
+The important rule:
+- the chorus begins cleanly at `49.1.1`
+- the final tail does not spill messily over `65.1.1`
 
 ### Why
-The vocal must fit the pocket.
+The first drop should let the song arrive.
 
-If the vocal timing is wrong, no amount of reverb will fix it.
+This is where the track becomes singable.
 
-## Step 4: Check If The Sample Is Harmonically Safe
+## Step 5: Cut The Chop Vocabulary
 ### Action
-Loop `97.1.1–105.1.1`.
+Return to `Vocal Audition`.
 
-Test the sample over the chord progression:
-- `97.1.1–98.1.1`: `Dm9`
-- `98.1.1–99.1.1`: `Bbmaj7` bloom
-- `99.1.1–100.1.1`: `Fadd9`
-- `100.1.1–101.1.1`: `Cadd9`
+Cut shorter clips and copy them to `Vocal Chops` or `Vocal Throw`.
 
-Listen for bad notes:
-- if the sample sounds fine over `Dm9` but wrong over `Bbmaj7`, it may contain a note that clashes with the bloom
-- if it sounds wrong over every chord, it is probably out of key
-- if it sounds good only when the chords are muted, reject it or save it for a different track
+Create these functional clips:
 
-Fast Ableton check:
-1. Put the sample at `100.3.4`.
-2. Play from `97.1.1`.
-3. Let the progression cycle underneath it.
-4. Mute `Chords`.
-5. Unmute `Chords`.
-6. If the sample only works when chords are muted, it is not harmonically safe yet.
+| Clip name | Track | Function |
+|---|---|---|
+| `VOC mystery statement` | `Vocal Chops` | first readable setup phrase |
+| `VOC mystery seed` | `Vocal Chops` | shorter unresolved setup fragment |
+| `VOC question pre-drop` | `Vocal Chops` | phrase that asks for the drop |
+| `VOC chop A` | `Vocal Chops` | first devotional hook fragment |
+| `VOC chop B` | `Vocal Chops` | second devotional hook fragment |
+| `VOC exposed core` | `Vocal Chops` | most emotionally direct short phrase |
+| `VOC vulnerable phrase` | `Vocal Chops` | intimate phrase for `Break B` |
+| `VOC reverse tail` | `Vocal Throw` | reversed pull into a drop |
+| `VOC throw` | `Vocal Throw` | short phrase-end answer |
 
-If the sample is close but not quite right:
-1. Open the clip detail view.
-2. Find `Transpose`.
-3. Try `+1`, `-1`, `+2`, and `-2` semitones.
-4. Stop if the vocal starts sounding fake or chipmunk-like.
+How to make each chop:
+1. On `Vocal Audition`, find the phrase.
+2. Put the playhead just before the phrase attack.
+3. Press `Cmd+E` / `Ctrl+E`.
+4. Put the playhead just after the phrase ends.
+5. Press `Cmd+E` / `Ctrl+E`.
+6. Copy the new clip to the correct vocal track.
+7. Drag the clip start so the first consonant or vowel attack is clean.
+8. Add a tiny fade-in if the clip clicks.
+9. Add a tiny fade-out if the clip ends abruptly.
 
-Do not spend more than `5` minutes rescuing one sample.
-
-If it fights the key, move on.
+If a phrase ends on a hard consonant:
+- do not loop it as the main hook
+- use it once
+- crossfade it
+- reverse it
+- or make it a tight throw
 
 ### Why
-The chords are already doing emotional work.
+You are building a vocabulary, not randomly dragging phrases around.
 
-A vocal that introduces the wrong implied chord will wreck the bloom.
+The intact chorus is the anthem.
 
-## Step 5: Choose Candidate A / B / C
+The chops are the editing language.
+
+## Step 6: Place The Break A Vocal Setup
 ### Action
-After auditioning at least `10` samples, choose up to `3`:
-- `Candidate A`: best emotional fit
-- `Candidate B`: best rhythmic fit
-- `Candidate C`: wild card
+Go to Arrangement View.
 
-Create three audio tracks:
-1. `Vocal Candidate A`
-2. `Vocal Candidate B`
-3. `Vocal Candidate C`
+Zoom to `33.1.1-49.1.1`.
 
-Place each candidate at `97.1.1`.
+This is `Break A`.
 
-Mute `B` and `C`.
-Only one candidate should play at a time.
+Place these clips:
+1. Put `VOC mystery statement` on `Vocal Chops` at `40.1.1`.
+2. Optional: put `VOC mystery seed` on `Vocal Chops` at `44.1.1`.
+3. Put `VOC question pre-drop` on `Vocal Chops` at `48.3.3`.
+4. Trim `VOC question pre-drop` so it ends before `49.1.1`.
 
-Level-match them:
-- start each candidate fader at `-14 dB`
-- if one candidate is much louder, lower that candidate
-- do not decide based only on loudness
+Do not put the full chorus in `Break A`.
+
+Do not put `VOC chop A` or `VOC chop B` here.
 
 ### Why
-Three candidates are enough.
+`Break A` is the setup.
 
-More than three creates decision fog.
+The listener should hear the voice and feel the question, but the chorus should not arrive until the drop.
 
-## Step 6: Cut A First-Pass Main Vocal Chop
+### Checkpoint
+Loop `33.1.1-49.1.1`.
+
+You should hear:
+- space
+- first vocal identity
+- a question or unresolved phrase before the drop
+
+You should not hear:
+- the full chorus
+- a busy chop loop
+- a second drop pretending to be a break
+
+## Step 7: Place The First Intact Chorus In Drop A
 ### Action
-Work on `Vocal Main`.
+Zoom to `49.1.1-65.1.1`.
 
-Pick the best one-word, short-phrase, or hook-phrase part of `Candidate A`.
+Place `VOC full chorus clean` on `Vocal Full Chorus`:
+- start: `49.1.1`
+- end: before `65.1.1`
 
-Create one short audio clip.
+If the chorus is shorter than `16` bars:
+- do not stretch it until it sounds fake
+- leave a controlled gap after the chorus tail
+- use drums and bass to carry the end of the section
 
-Target clip length:
-- shortest useful chop: `1/16`
-- common useful chop: `1/8`
-- longer phrase chop: `1/4` to `1/2` bar
-- hook phrase: `1/2` to `2` bars if it is clearly the identity
-- break lyric phrase: `1` to `4` bars if it is spacious and does not fight the chords
-- avoid anything longer than `4` bars on the first pass
+If the chorus is longer than `16` bars:
+- choose the strongest `16`-bar section
+- or trim the tail so the next section can enter cleanly at `65.1.1`
 
-How to cut:
-1. Duplicate the candidate clip onto `Vocal Main`.
-2. Zoom in.
-3. Drag the left edge until the useful vocal starts cleanly.
-4. Drag the right edge until the chop stops before it becomes a full phrase.
-5. Add a tiny fade-in if there is a click.
-6. Add a tiny fade-out if the clip cuts off harshly.
-
-Ableton fade basics:
-- hover near the top corner of the audio clip
-- drag the fade handle inward
-- keep fades tiny on vocal chops unless the sample clicks
-
-If using the current phrase, make these clips first:
-
-1. `VOC believe in main`
-   - source words: `believe in`
-   - role: main memorable chop
-   - first destination: `Drop B`
-2. `VOC in throw`
-   - source word: `in`
-   - role: phrase-end reply
-   - first destination: `Vocal Throw`
-3. `VOC i just wanna tease`
-   - source words: `I just wanna`
-   - role: earlier filtered teaser
-   - first destination: `Intro B` or `Re-entry Build`
-4. `VOC to believe in long`
-   - source words: `to believe in`
-   - role: larger emotional version
-   - first destination: `Drop B Lift`, not `Drop A`
-5. `VOC believe reverse`
-   - source: tail of `believe in`
-   - role: reverse pull into a section
-   - first destination: before `97.1.1`
-
-Do not make the full `I just wanna give you something to believe in` phrase the default drop loop.
-
-That full phrase can be tested later, but the first-pass arrangement should be built from smaller chops.
-
-If using a big trance vocal stem, make these clips first:
-
-1. `VOC hook phrase`
-   - source: clearest hook phrase
-   - role: main `Drop B` identity
-2. `VOC hook title chop`
-   - source: shortest memorable hook fragment
-   - role: repeatable drop marker
-3. `VOC break lyric phrase`
-   - source: one emotional line or half-line
-   - role: break moment
-4. `VOC isolation throw`
-   - source: one ending word, vowel, or tail
-   - role: phrase-end punctuation
-5. `VOC reverse tail`
-   - source: tail of the hook phrase, reversed
-   - role: pull into `Drop B`
-
-If using a `D minor` trance vocal with devotional/open-vowel phrases, make these clips first:
-
-1. `VOC devotional A`
-   - source: the first open-vowel devotional phrase
-   - role: main loop candidate
-2. `VOC devotional B`
-   - source: the second open-vowel devotional phrase
-   - role: call-response partner
-3. `VOC question pre-drop`
-   - source: the question phrase
-   - role: half-bar pre-drop tease
-4. `VOC mystery seed`
-   - source: the short mystery/setup phrase
-   - role: intro/build punctuation
-5. `VOC arms phrase`
-   - source: the emotional break phrase with the consonant ending
-   - role: break lyric moment
-6. `VOC reverse tail`
-   - source: tail from `VOC devotional A` or `VOC devotional B`
-   - role: pull into `Drop B`
+Keep these first-pass support rules:
+- no extra vocal chop over the first line
+- no constant throw track
+- no big delay throws until the dry chorus placement works
+- bass should support the chorus, not fight it
 
 ### Why
-The first chop should prove the vocal identity.
+This is the first big payoff.
 
-The first phrase or chop does not need to carry every phrase yet.
+The room needs to understand the song before you deconstruct it.
 
-## Step 7: Place The Vocal Main Chop
+### Checkpoint
+Loop `49.1.1-65.1.1`.
+
+The chorus should feel:
+- readable
+- singable
+- supported by the groove
+
+If it feels buried:
+- lower chords first
+- lower bass mid second
+- raise vocal only after checking those two
+
+If it feels pasted on:
+- reduce reverb
+- high-pass mud
+- make sure the first attack starts exactly where intended
+
+## Step 8: Deconstruct The Chorus In Drop A Lift
 ### Action
-Use `Vocal Main`.
+Zoom to `65.1.1-81.1.1`.
 
-First-pass placements for `VOC believe in main`:
-- `100.3.4`
-- `108.3.4`
+This section is where the chops finally appear.
 
-If using the `D minor` trance vocal map, first-pass placements for the hook are:
-- `VOC devotional A` at `100.3.4`
-- `VOC devotional B` at `104.3.4`
-- `VOC devotional A` at `108.3.4`
-- optional `VOC devotional B` at `112.3.4`
+Place:
+1. `VOC chop A` at `68.3.4`.
+2. `VOC chop B` at `72.3.4`.
+3. `VOC exposed core` at `76.3.4`.
 
-Optional second-pass placements if the sample is clearly working:
-- `104.4.1`
-- `112.4.1`
+Optional:
+- add `VOC throw` at `80.4.4` if the transition into `Break B` needs a final answer
 
-Do not place the main vocal at every phrase ending yet.
-
-Start with:
-1. one main vocal moment in the first half of `Drop B`
-2. one repeat in the second half of `Drop B`
-
-Exact placement:
-1. Put the first chop so its first vocal attack starts at `100.3.4`.
-2. Duplicate it.
-3. Put the duplicate so its first vocal attack starts at `108.3.4`.
-4. Play `97.1.1–113.1.1`.
-5. If the repeats feel too obvious, delete the `108.3.4` copy and try `112.4.1` instead.
-
-Phrase-specific map:
-- put `VOC believe in main` at `100.3.4`
-- put `VOC believe in main` again at `108.3.4`
-- do not put `VOC to believe in long` in `Drop B` yet
-- save `VOC to believe in long` for `Drop B Lift` if the shorter main chop works
-
-D-minor trance source map:
-- if `VOC devotional A/B` intercut sounds natural, it becomes the main `Drop B` hook system
-- if it sounds too busy, keep only `VOC devotional A` at `100.3.4` and `108.3.4`
-- if `VOC devotional B` is stronger than `VOC devotional A`, swap their roles
+Do not run the full chorus again in this section on the first pass.
 
 ### Why
-This keeps the vocal memorable without turning the whole drop into a sample loop.
+The listener just heard the intact chorus.
 
-## Step 8: Place The Vocal Throw
+Now you can chop it because the source idea is already in their head.
+
+This is the difference between:
+- clever chop with context
+- random vocal edit with no meaning
+
+### Checkpoint
+Loop `65.1.1-81.1.1`.
+
+The section should feel more edited than `Drop A`.
+
+It should not feel like a brand-new lyric section.
+
+## Step 9: Place Break B As The Darker Return
 ### Action
-Use `Vocal Throw`.
+Zoom to `81.1.1-97.1.1`.
 
-The throw is a smaller reply, not the main sample.
+Place:
+1. `VOC question pre-drop` or `VOC mystery seed` at `88.1.1`.
+2. Optional: place `VOC vulnerable phrase` at `92.1.1`.
 
-Good throw material:
-- breath
-- last syllable
-- pitched tail
-- chopped consonant
-- reversed vocal tail
-- tiny delay-print style moment
+If `VOC vulnerable phrase` has a hard consonant ending:
+- add a short fade-out
+- or crossfade the tail
+- or use it once and do not loop it
 
-First-pass placements:
-- `104.4.4`
-- `112.4.4`
-
-How to make a throw:
-1. Duplicate the main vocal chop onto `Vocal Throw`.
-2. Shorten it to the best syllable or tail.
-3. Lower the `Vocal Throw` fader to around `-18 dB`.
-4. Send it to `Return D` filtered delay if available.
-5. Keep the dry throw quieter than the main vocal.
-
-For the current phrase:
-1. Use `VOC in throw` first.
-2. Place it at `104.4.4`.
-3. Duplicate it to `112.4.4`.
-4. Keep the clip short enough that only `in` or the tail of `in` speaks.
-5. If the `in` tail feels too obvious, reverse it and use it as a transition pull instead.
-
-If the throw sounds cheesy:
-- delete it
-- leave the space empty
-- do not force a reply
+Do not place the full chorus here.
 
 ### Why
-The throw replaces the old synth answer idea.
+`Break B` reminds the listener of the doubt before the final answer.
 
-It should be human and sample-led, not a second keyboard phrase.
+It should feel darker than `Break A`.
 
-## Step 9: Preserve Drop A Restraint
+## Step 10: Build The Re-entry Pickup
 ### Action
-Do not put the main vocal across all of `Drop A`.
+Zoom to `97.1.1-113.1.1`.
 
-Allowed first-pass Drop A vocal behavior:
-- no vocal at all
-- one filtered `VOC give you stab` at `40.3.4`
-- one filtered `VOC give you stab` or `VOC i just wanna tease` at `48.3.4`
+Place:
+1. optional `VOC reverse tail` ending at `109.3.4`
+2. optional short filtered pickup at `110.3.4`
+3. `VOC question pre-drop` at `112.3.3`
+4. trim the question so it ends before `113.1.1`
 
-If using a teaser:
-1. Duplicate the main vocal chop onto `Vocal Main`.
-2. Place it at `40.3.4`.
-3. Lower clip gain or track fader until it feels like a hint.
-4. Add a low-pass or filter if needed.
-5. Duplicate to `48.3.4` only if the first teaser works.
-
-Do not reveal the best vocal phrase in `Drop A`.
-
-For the current phrase, do not use `believe in` in `Drop A`.
-
-That lyric is the emotional payoff.
+The pickup should not overlap messily with the first word of the next chorus.
 
 ### Why
-`Drop A` should still feel austere.
+The re-entry pickup should pull the listener into `Drop B`.
 
-The strongest vocal identity belongs in `Drop B`.
+It should not become another chorus before the chorus.
 
-## Step 10: Treat The Break As Vocal Space
+## Step 11: Return The Intact Chorus In Drop B
 ### Action
-The break can hold a vocal atmosphere or a readable lyric phrase.
+Zoom to `113.1.1-129.1.1`.
 
-It should not use the same hook phrase that will define `Drop B`.
+Place `VOC full chorus clean` on `Vocal Full Chorus`:
+- start: `113.1.1`
+- end: before `129.1.1`
 
-Allowed break vocal behavior:
-- one reversed vocal tail into `65.1.1`
-- one airy vocal texture at `72.4.4`
-- one quiet phrase fragment at `76.4.4`
-- one readable `VOC break lyric phrase` starting at `72.1.1` or `76.1.1`
+This time the production can be bigger than `Drop A`:
+- fuller bass tone
+- wider chords
+- stronger tops
+- light chop texture in gaps
 
-Avoid:
-- full repeated drop hook
-- busy chops
-- lyrics that dominate the chord bloom
+But keep the lead vocal readable.
 
-First-pass break placement:
-1. Start with one of two choices:
-   - sparse version: leave the break empty
-   - phrase-led version: place `VOC break lyric phrase` at `72.1.1`
-2. If using the phrase-led version, keep drums thin enough that the lyric is readable.
-3. If the phrase fights the chords, move it to `76.1.1` or shorten it.
-4. If it still fights, use texture instead of readable lyric.
-5. Keep it lower than the later `Drop B` hook phrase.
+Allowed support:
+- short `VOC throw` in natural gaps
+- low-level `VOC chop A` or `VOC chop B` tucked under the chorus tail
+- reverse tail into the section start
 
-Better break option for the current phrase:
-- reverse the tail of `believe in`
-- place the reversed clip so it ends exactly at `65.1.1` or `97.1.1`
-- keep it low enough that it feels like a pull, not a readable lyric
+Not allowed on the first pass:
+- chops over every chorus line
+- delay throws that cover the next line
+- full chorus plus nonstop chop loop at the same level
 
 ### Why
-The break should open space.
+This is the final intact-hook payoff.
 
-If the vocal takes over the break too early, `Drop B` has less to reveal.
+It should feel like the first chorus returned with more context and more power.
 
-## Step 11: Re-entry Build Vocal Rule
+## Step 12: Use Drop B Lift For Peak Chop Energy
 ### Action
-Keep `81.1.1–93.1.1` vocal-empty on the first pass.
+Zoom to `129.1.1-145.1.1`.
 
-Only allow vocal pickup hints in the last `4` bars:
-- `93.3.4`
-- `94.3.4`
-- `96.4.4`
+Place the strongest chop / throw moments:
+- `VOC chop A` at `132.3.4`
+- `VOC chop B` at `136.3.4`
+- `VOC exposed core` or `VOC throw` at `140.3.4`
+- optional final `VOC throw` at `144.3.4`
 
-Use filtered or quiet versions only.
-
-Do not use the full main vocal here.
-
-For the current phrase:
-- first try `VOC i just wanna tease` at `93.3.4`
-- optionally repeat it at `94.3.4`
-- optionally place a reversed `VOC believe reverse` so the reverse ends at `97.1.1`
-- do not place `VOC believe in main` before `Drop B`
+If you want to stack:
+- keep the main dry chop centered
+- keep the throw lower
+- send the throw to delay instead of turning it up
 
 ### Why
-The `Re-entry Build` should re-engage rhythm first.
+The peak is allowed to sound more edited.
 
-The vocal should point toward `Drop B`, not arrive early.
+But it should still be built from the chorus the listener already knows.
 
-## Step 12: Check The Vocal Against The Arrangement
+## Step 13: Keep The Outro Clean
 ### Action
-Run this mute test:
-1. Play `97.1.1–113.1.1`.
-2. Mute `Vocal Main` and `Vocal Throw`.
-3. The track should still work instrumentally.
-4. Unmute `Vocal Main`.
-5. The track should feel more memorable.
-6. Unmute `Vocal Throw`.
-7. The track should gain phrase-end personality without becoming crowded.
+Zoom to `145.1.1-161.1.1`.
 
-If the track collapses when the vocal is muted:
-- the vocal is doing too much
-- strengthen drums, bass, or chords instead of adding more vocal
+First pass:
+- no new lyric
+- no new chop idea
+- only tails or very short throws if needed
 
-If the vocal makes the drop feel smaller:
-- lower vocal level
-- reduce placements
-- remove the throw
-- try a less melodic sample
+If a vocal tail spills into the outro:
+- fade it down by `149.1.1`
+- keep the DJ-safe groove readable
 
 ### Why
-The vocal should enhance the track.
+The outro should help the track mix out.
 
-It should not be a crutch.
+It should not introduce a new vocal story.
 
-## Step 13: Bounce The Vocal Test
-### Action
-Create these bounces:
-1. `part05-drop-a-no-vocal.wav`
-   - range: `33.1.1–49.1.1`
-2. `part05-drop-b-vocal-test.wav`
-   - range: `97.1.1–113.1.1`
-3. `part05-break-reentry-dropb-vocal-space.wav`
-   - range: `65.1.1–113.1.1`
+## First-Pass Arrangement Map
+Use this as the placement authority for the current vocal direction:
 
-Export settings:
-- WAV
-- `24-bit`
-- normalize off
-- same master / premaster settings as the rest of the tutorial
+| Section | Bars | Vocal role | First-pass placement |
+|---|---:|---|---|
+| `Intro A` | `1-16` | silence | no vocal |
+| `Intro B` | `17-32` | silence | no vocal |
+| `Break A` | `33-48` | setup | `VOC mystery statement` at `40.1.1`; `VOC question pre-drop` at `48.3.3` |
+| `Drop A` | `49-64` | first intact chorus | `VOC full chorus clean` at `49.1.1` |
+| `Drop A Lift` | `65-80` | first chop deconstruction | chops at `68.3.4`, `72.3.4`, `76.3.4` |
+| `Break B` | `81-96` | darker return | question / vulnerable phrase at `88.1.1` and `92.1.1` |
+| `Re-entry Build` | `97-112` | pickup | reverse / question at `109.3.4`, `110.3.4`, `112.3.3` |
+| `Drop B` | `113-128` | intact chorus return | `VOC full chorus clean` at `113.1.1` |
+| `Drop B Lift` | `129-144` | peak chop edit | chops / throws at `132.3.4`, `136.3.4`, `140.3.4`, `144.3.4` |
+| `Outro` | `145-160` | exit | tails only |
 
-### Why
-You need to judge vocal fit away from the editing screen.
+## What It Should Sound Like
+`Break A` should sound like the vocal has entered the room, but the song has not arrived yet.
 
-Bad samples often look exciting in the session and sound wrong in the bounce.
+`Drop A` should sound like the recognizable chorus finally lands.
 
-## Final Vocal Placement Spec
-First-pass core:
-- `Intro A`: no vocal
-- `Intro B`: optional filtered `VOC i just wanna tease` at `29.3.4` and `30.3.4`
-- `Drop A`: no main vocal, or very quiet `VOC give you stab` at `40.3.4` and `48.3.4`
-- `Drop A Lift`: optional quiet `VOC i just wanna tease` or `VOC give you stab` at `56.3.4` and `64.3.4`; do not reveal `believe in`
-- `Break`: `VOC break lyric phrase` at `72.1.1` or `76.1.1`, or optional reversed `VOC believe reverse` into `65.1.1`
-- `Re-entry Build`: late filtered `VOC i just wanna tease` pickups at `93.3.4`, `94.3.4`, and optionally a reverse ending at `97.1.1`
-- `Drop B`: `VOC hook phrase`, `VOC hook title chop`, or `VOC believe in main` appears at `100.3.4` and `108.3.4`
-- `Drop B`: `VOC in throw` appears at `104.4.4` and `112.4.4`
-- `Drop B Lift`: longer `VOC hook phrase`, `VOC to believe in long`, or `VOC something to believe in` can appear at `116.3.4` and `124.3.4`
-- `Drop B Lift`: `VOC in throw` can return at `120.4.4` and `128.4.4`
-- `Outro`: no new vocal ideas; use only a tail if it helps the exit
+`Drop A Lift` should sound like a club edit of the chorus, not a new chorus.
 
-D-minor trance source alternate:
-- `Break`: `VOC arms phrase` at `72.1.1`, then `VOC devotional A` or `VOC devotional B` at `76.1.1`
-- `Re-entry Build`: `VOC question pre-drop` at `96.3.3`, ending before `97.1.1`
-- `Drop B`: `VOC devotional A` at `100.3.4`, `VOC devotional B` at `104.3.4`, `VOC devotional A` at `108.3.4`
-- `Drop B`: optional `VOC devotional B` at `112.3.4`, or replace with a short throw at `112.4.4`
-- `Drop B Lift`: `VOC devotional A` alone with tighter cuts, or the same `A/B` intercut if it still feels clean
+`Break B` should sound more exposed and doubtful.
 
-The old synth hook/answer is not part of the core arrangement.
+`Drop B` should sound like the chorus comes back with more production weight.
+
+`Drop B Lift` should sound like the most edited version of the vocal, but still connected to the hook.
 
 ## Troubleshooting
-### Problem: "Every sample sounds wrong."
-Likely causes:
-- samples are too long
-- samples are too wet
-- samples are in the wrong key
-- samples are too pop/topline-focused
+### The full chorus sounds pasted on
+Check in this order:
+1. Is the first attack exactly at `49.1.1` or `113.1.1`?
+2. Is the clip warped cleanly?
+3. Is the vocal too wet?
+4. Are the chords too loud in `300 Hz-2 kHz`?
+5. Is the bass mid masking the lower part of the vocal?
 
-Fix:
-1. Search for shorter one-shots.
-2. Search for dry vocals.
-3. Try samples with fewer notes.
-4. Test only one word or syllable, not the full phrase.
+### The chops sound random
+Fix the story order:
+1. `Break A` sets up mystery.
+2. `Drop A` gives the intact chorus.
+3. `Drop A Lift` chops the chorus after the listener knows it.
+4. `Break B` returns to the question.
+5. `Drop B` brings the intact chorus back.
 
-### Problem: "The sample sounds good alone but bad with chords."
-Likely cause:
-- the sample implies a different harmony.
+If the listener has not heard the intact chorus yet, aggressive chops will feel random.
 
-Fix:
-1. Try `Transpose +1`.
-2. Try `Transpose -1`.
-3. Try `Transpose +2`.
-4. Try `Transpose -2`.
-5. If none work quickly, reject the sample.
+### The track sounds like a cover, not a flip
+Make the sections between intact choruses more edited.
 
-### Problem: "The sample sounds good with drums but crowds the drop."
-Fix:
-1. Use fewer placements.
-2. Lower `Vocal Main`.
-3. Delete `Vocal Throw`.
-4. Move the vocal later in the phrase.
+Do not destroy the chorus itself first.
 
-### Problem: "The vocal feels cheesy."
-Fix:
-1. Remove long phrases.
-2. Use breath / texture / one-word chops.
-3. Avoid obvious pop hooks.
-4. Keep the best vocal moment for `Drop B`, not `Drop A`.
+Use:
+- dry chops
+- reverse tails
+- phrase-end throws
+- filtered pickups
+- tighter drum fills
 
-### Problem: "I still want a guide while searching."
-Use muted guide clips only.
+### The vocal fights the bass
+Do this before changing the whole arrangement:
+1. High-pass the vocal a little higher.
+2. Lower `Bass Mid` by `1-2 dB`.
+3. Cut a little `250-400 Hz` from the vocal or chords.
+4. Check the vocal with `Sub` muted.
+5. Check the vocal with `Bass Mid` muted.
 
-Guide positions:
-- `100.3.4`
-- `104.4.4`
-- `108.3.4`
-- `112.4.4`
+### The vocal fights the chords
+Check whether the vocal note implies a different chord.
 
-Do not use guide synth audio in the final bounce unless you deliberately decide the track no longer needs a vocal.
+If it does:
+- move that vocal phrase to a different chord bar
+- or use it as a throw instead of a sustained lead
+- or filter it so the pitch reads less strongly
 
-## Lesson Conversion Notes
-When turning this into the final site lesson:
-- show exactly how to create the `Vocal Audition`, `Vocal Main`, and `Vocal Throw` tracks
-- show how to drag in a sample
-- show how to trim an audio clip
-- show how to place the first vocal attack at `100.3.4`
-- show a sample-search log example
-- show a rejected sample and explain why it fails
-- show a working sample and explain why it passes
-- do not teach synth hook design in this part
-- do not call the vocal lane optional decoration; it is the intended identity lane
+## Screenshot Requirements
+Capture these:
+- `part05-01-vocal-tracks-created`
+- `part05-02-audition-clip-warped`
+- `part05-03-full-chorus-chain`
+- `part05-04-chop-chain`
+- `part05-05-full-chorus-clip-cut`
+- `part05-06-break-a-vocal-placement`
+- `part05-07-drop-a-full-chorus-placement`
+- `part05-08-drop-a-lift-chop-placement`
+- `part05-09-break-b-vocal-placement`
+- `part05-10-reentry-vocal-pickup`
+- `part05-11-drop-b-full-chorus-return`
+- `part05-12-drop-b-lift-chops`
+
+## Completion Check
+Before moving to Part 6, confirm:
+- `Intro A` has no vocal
+- `Intro B` has no vocal
+- `Break A` introduces the vocal before `Drop A`
+- `Drop A` uses the intact chorus, not chopped fragments as the main event
+- `Drop A Lift` uses chops after the chorus has been heard
+- `Break B` reopens the emotional question
+- `Drop B` returns to the intact chorus
+- `Drop B Lift` carries the strongest chop edits
+- no vocal clip spills across a section boundary by accident

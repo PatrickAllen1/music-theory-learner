@@ -39,8 +39,8 @@ Interpretation:
 ## Track Identity
 - `140 BPM`
 - `D minor`
-- `144 bars`
-- `~4.11 minutes`
+- `160 bars`
+- `~4.57 minutes`
 - emotional target: `dark but hopeful`
 
 Reference role split:
@@ -74,7 +74,7 @@ Verification note:
 
 ### Resolution direction
 - remove the old synth hook/answer from the core production path
-- build `Vocal Audition`, `Vocal Main`, and `Vocal Throw` audio lanes instead
+- build `Vocal Audition`, `Vocal Full Chorus`, `Vocal Chops`, and `Vocal Throw` audio lanes instead
 - if no vocal is found yet, keep muted guide clips rather than filling the lane with a synth
 - `chord-bed` needs a real final pad/stab patch instead of a fallback wide pad placeholder
 
@@ -89,8 +89,8 @@ Verification note:
 - the emotional effect comes from staging the bloom, not from having every color tone exposed all the time
 
 ### Bb voicing states
-- restrained `Bb` for `Intro / Drop A / Drop A Lift / Re-entry Build`: `Bb2 F3 C4`
-- bloomed `Bbmaj7` for `Break / Drop B`: `Bb2 F3 A3 C4`
+- restrained `Bb` for `Intro / Break A / Drop A / Drop A Lift / Re-entry Build`: `Bb2 F3 C4`
+- bloomed `Bbmaj7` for `Break B / Drop B`: `Bb2 F3 A3 C4`
 
 ### Voice-leading strategy
 - preserve common tones where possible
@@ -118,9 +118,10 @@ This means:
 ### Chord articulation by section
 - `Intro A`: filtered wash hints only
 - `Intro B`: tucked full progression, long enough to feel bed-like
+- `Break A`: restrained suspended bed that leaves room for first vocal
 - `Drop A`: one-bar-per-chord pulse over sustained emotional bed
 - `Drop A Lift`: same harmony, slightly brighter pulse only
-- `Break`: 2-bar stretched voicings, upward bloom
+- `Break B`: 2-bar stretched voicings, upward bloom
 - `Re-entry Build`: rhythmic pulse returns, but harmonic density stays restrained
 - `Drop B`: same loop, obvious bloom
 - `Drop B Lift`: same harmony, more width and top release, not reharmonization
@@ -312,7 +313,8 @@ Capture requirement:
 ## Vocal Sample Spec
 ### Lane design
 - `Vocal Audition`: workbench track for testing candidates
-- `Vocal Main`: final hook phrase / main chop lane
+- `Vocal Full Chorus`: clean intact hook take lane
+- `Vocal Chops`: dry chopped fragment lane
 - `Vocal Throw`: shorter tail / breath / syllable / delayed response lane
 - muted `Vocal Guide MIDI`: optional visual ruler only, not final audio
 
@@ -325,10 +327,26 @@ Capture requirement:
 - human enough to replace the old synth hook identity
 
 ### Phrase-led mode
-- A full or near-full vocal phrase is allowed in the `Break` if it feels suspended, spacious, and emotionally intentional.
-- A clear hook phrase is allowed in `Drop B`; it should be the first moment where the listener understands the vocal identity.
-- Chops, tails, reverses, and throws are still needed, but they support the phrase instead of replacing it.
+- A full clean chorus is allowed and expected in `Drop A` and `Drop B`.
+- The first intact chorus should land before the aggressive chop deconstruction, not after it.
+- Chops, tails, reverses, and throws are still needed, but they support and deconstruct the chorus instead of replacing it.
 - If using a commercial stem for a private sketch, keep the lesson labels functional and do not publish lyric text in the public tutorial unless the vocal is cleared.
+
+### Two-chain vocal prep
+- `Vocal Full Chorus` chain:
+  - cleaner
+  - more forward
+  - gentle compression / de-essing if needed
+  - short plate or hall only enough to place it in the track
+- `Vocal Chops` chain:
+  - drier
+  - tighter gate / clip fades
+  - stronger EQ cleanup
+  - optional drive, reverse tails, pitch variants, and delay throws
+
+Why:
+- the intact chorus should feel singable and recognizable
+- the chopped sections should feel edited, clubby, and aggressive enough to stop the record becoming a straight cover
 
 ### Phonetic loop policy
 - Open-`oh` endings are best for repeated drop hooks.
@@ -338,29 +356,50 @@ Capture requirement:
 - If two open-`oh` phrases exist, test them as an intercut `A/B/A/B` loop before looping one phrase alone.
 
 ### First-pass placement states
-- `Intro B`: filtered teaser at `29.3.4` and `30.3.4`
-- `Drop A`: optional quiet teaser at `40.3.4` and `48.3.4`
-- `Drop A Lift`: optional quiet teaser at `56.3.4` and `64.3.4`
-- `Break`: readable lyric phrase or texture at `72.1.1` or `76.4.4`
-- `Re-entry Build`: pickups at `93.3.4`, `94.3.4`, and optionally `96.4.4`
-- `Drop B`: main hook phrase / title chop at `100.3.4` and `108.3.4`
-- `Drop B`: vocal throw at `104.4.4` and `112.4.4`
-- `Drop B Lift`: longer hook phrase at `116.3.4` and `124.3.4`
-- `Drop B Lift`: vocal throw at `120.4.4` and `128.4.4`
+- `Intro A`: no vocal
+- `Intro B`: no vocal
+- `Break A`: `VOC mystery statement` at `40.1.1`
+- `Break A`: optional `VOC mystery seed` at `44.1.1`
+- `Break A`: `VOC question pre-drop` at `48.3.3`, ending before `49.1.1`
+- `Drop A`: `VOC full chorus clean` starts at `49.1.1` and ends before `65.1.1`
+- `Drop A`: keep only short end-of-line throws if the intact chorus has natural gaps
+- `Drop A Lift`: `VOC chop A` at `68.3.4`
+- `Drop A Lift`: `VOC chop B` at `72.3.4`
+- `Drop A Lift`: `VOC exposed core` at `76.3.4`
+- `Break B`: `VOC question pre-drop` or `VOC mystery seed` at `88.1.1`
+- `Break B`: optional `VOC vulnerable phrase` at `92.1.1`
+- `Re-entry Build`: filtered pickup at `109.3.4` or `110.3.4`
+- `Re-entry Build`: `VOC question pre-drop` at `112.3.3`, ending before `113.1.1`
+- `Drop B`: `VOC full chorus clean` returns at `113.1.1` and ends before `129.1.1`
+- `Drop B`: add low-level chop texture only in chorus gaps, not over every sung line
+- `Drop B Lift`: strongest cuts / stacks at `132.3.4`, `136.3.4`, `140.3.4`, and optionally `144.3.4`
+- `Outro`: tails and throws only after `145.1.1`
 
 ### D-minor trance vocal alternate
-- `VOC mystery seed`: filtered intro / build punctuation
-- `VOC question pre-drop`: starts at `96.3.3`, ends before `97.1.1`
-- `VOC devotional A`: starts at `100.3.4` and `108.3.4`
-- `VOC devotional B`: starts at `104.3.4` and optionally `112.3.4`
-- if `VOC devotional B` crowds the drop, move it to `Drop B Lift` and keep `Drop B` simpler
-- `VOC arms phrase`: break-only unless the consonant ending is crossfaded cleanly
+- `VOC mystery seed`: filtered build punctuation, strongest in `Break A` and `Break B`
+- `VOC question pre-drop`: starts at `48.3.3` before `Drop A`, then returns at `112.3.3` before `Drop B`
+- `VOC full chorus clean`: starts at `49.1.1` in `Drop A` and returns at `113.1.1` in `Drop B`
+- `VOC chop A`: starts at `68.3.4` in `Drop A Lift`
+- `VOC chop B`: starts at `72.3.4` in `Drop A Lift`
+- if the chop lift crowds the chorus memory, remove `VOC chop B` first and keep `VOC exposed core`
+- `VOC vulnerable phrase`: break-only unless the consonant ending is crossfaded cleanly
+
+### Current D-minor trance vocal arc
+- early restraint: no vocal in `Intro A` or `Intro B`
+- first vocal introduction: `VOC mystery statement` at `40.1.1`, optional `VOC mystery seed` at `44.1.1`
+- first question setup: `VOC question pre-drop` starts at `48.3.3` and ends before `49.1.1`
+- first full-chorus answer: `VOC full chorus clean` at `49.1.1`
+- first lift intensifier: `VOC chop A` at `68.3.4`, `VOC chop B` at `72.3.4`, and `VOC exposed core` at `76.3.4`
+- darker return: `VOC question pre-drop` or `VOC mystery seed` at `88.1.1`; optional `VOC vulnerable phrase` at `92.1.1`
+- second question setup: filtered pickup at `109.3.4` or `110.3.4`, then `VOC question pre-drop` at `112.3.3`
+- final answer: `VOC full chorus clean` returns at `113.1.1`
+- peak edit: strongest cuts / stacks at `132.3.4`, `136.3.4`, `140.3.4`, and optionally `144.3.4`
 
 ### Processing direction
 - high-pass enough to stay out of the bass lane
 - short plate on `Return B` only if it helps the vocal sit
 - filtered delay on `Return D` for throws
-- keep the main vocal more forward and dry than the throw
+- keep `Vocal Full Chorus` more forward and dry than `Vocal Chops` / `Vocal Throw`
 
 ## Top-End, Air, and Stereo
 ### Air source
@@ -423,43 +462,51 @@ Starting width targets:
 
 ## Arrangement and Transition Spec
 ### Growth rule by section
+- `Break A`: first vocal space and pre-drop question
 - `Drop A`: force, restraint
 - `Drop A Lift`: top-end density and pocket only
-- `Break`: upward harmonic bloom and air
+- `Break B`: upward harmonic bloom and darker vocal return
 - `Re-entry Build`: rhythmic re-engagement
-- `Drop B`: harmonic bloom + first real vocal sample identity
+- `Drop B`: harmonic bloom + fuller vocal payoff
 - `Drop B Lift`: widest, most released top end
 
 ### Transition inventory
 #### 32 -> 33
-- intro to first drop
+- intro to `Break A`
 - use:
-  - section riser
-  - filtered bass teaser opening
+  - small section riser
+  - filtered drum thinning
+  - vocal-space opening
+
+#### 48 -> 49
+- `Break A` to first drop
+- use:
+  - pre-drop question cut
+  - full bass body return
   - drum-bus HP clearing off
 
-#### 64 -> 65
+#### 80 -> 81
 - first lift to break
 - use:
   - phrase-end fill
   - drum thinning
   - widening reverb / chord bloom
 
-#### 80 -> 81
-- break to re-entry build
+#### 96 -> 97
+- `Break B` to re-entry build
 - use:
   - re-entry drum switch
   - tighter chord pulse
   - filtered bass re-implication
 
-#### 96 -> 97
+#### 112 -> 113
 - re-entry build to Drop B
 - use:
   - pre-drop cut
   - filtered vocal pickup
   - full body return
 
-#### 128 -> 129
+#### 144 -> 145
 - Drop B Lift to outro
 - remove top pressure first
 - keep the air whisper
@@ -473,10 +520,12 @@ Starting width targets:
   - calmer in the middle of phrases
 - chord width / brightness:
   - tucked in Drop A
-  - widened in break
+  - restrained in Break A
+  - widened in Break B
   - bloomed in Drop B
 - vocal send levels:
-  - `Vocal Main` mostly readable and dry
+  - `Vocal Full Chorus` mostly readable and dry
+  - `Vocal Chops` tighter and slightly more processed
   - `Vocal Throw` selected phrase-end throws only
 - air-bed level:
   - constant but low
@@ -544,7 +593,8 @@ Starting direction:
   - `Drums`
   - `Bass`
   - `Chords`
-  - `Vocal Main`
+  - `Vocal Full Chorus`
+  - `Vocal Chops`
   - `Vocal Throw`
   - `Vocal Audition`
   - `Air`

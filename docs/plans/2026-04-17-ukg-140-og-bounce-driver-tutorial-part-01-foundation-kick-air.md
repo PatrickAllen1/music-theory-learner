@@ -467,7 +467,7 @@ Screenshot self-check:
 
 Arrangement note:
 - this `4`-bar air loop is enough for the checkpoint
-- in `Part 6`, extend or duplicate it so the `Air` track plays continuously from bar `1.1.1` through bar `145.1.1`
+- in `Part 6`, extend or duplicate it so the `Air` track plays continuously from bar `1.1.1` through bar `161.1.1`
 
 ### Why
 The air layer should create:

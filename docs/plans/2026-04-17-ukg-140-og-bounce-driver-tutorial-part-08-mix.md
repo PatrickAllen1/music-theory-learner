@@ -75,7 +75,7 @@ Plain-English Ableton words used in this chapter:
 - `bus`: a parent group track that several child tracks feed into
 - `Drum Bus`: the parent group above the kick, clap, hats, shaker, and fill tracks
 - `Bass Bus`: the parent group above `Bass Sub` and `Bass Mid`
-- `Music Bus`: the parent group above `Chords`, `Vocal Main`, `Vocal Throw`, `Vocal Audition`, and `Air`
+- `Music Bus`: the parent group above `Chords`, `Vocal Full Chorus`, `Vocal Chops`, `Vocal Throw`, `Vocal Audition`, and `Air`
 - `return`: one of the `A/B/C/D` send-effect tracks on the far right side of Ableton
 - `sidechain`: a compressor or level-control device that turns one lane down when the kick hits
 
@@ -152,12 +152,12 @@ Do this before:
 
 Ableton action order:
 1. Disable or bypass any non-essential loudness plugins on the premaster first.
-2. Play the first `Drop B` section from `97.1.1` to `113.1.1`.
+2. Play the first `Drop B` section from `113.1.1` to `129.1.1`.
 3. Watch the channel meters while adjusting the plain track faders, not the master fader.
 4. Bring the loudest individual lanes down first:
    - kick
    - bass
-   - hook only if its peak is still above the target range after kick and bass are set
+   - vocal full chorus only if its peak is still above the target range after kick and bass are set
 5. Only after track levels are reasonable, adjust the bus levels.
 
 If a track is already too loud:
@@ -400,17 +400,22 @@ Ableton action order:
    - attack `1 ms`
    - release `150 ms`
    - threshold target: `0.5–1 dB` of visible gain dip
-7. On `Vocal Main` and `Vocal Throw`, use a very light duck only if the vocal hits fight the kick:
+7. On `Vocal Full Chorus`, use a very light duck only if the intact chorus fights the kick:
    - ratio `2:1`
    - attack `1 ms`
    - release `110 ms`
    - threshold lowered only until the kick creates `0.5–1 dB` of visible dip
-8. On `Air`, use the lightest version of all:
+8. On `Vocal Chops` and `Vocal Throw`, use the same light duck only if phrase-end edits hit directly against the kick:
+   - ratio `2:1`
+   - attack `1 ms`
+   - release `110 ms`
+   - threshold lowered only until the kick creates `0.5–1 dB` of visible dip
+9. On `Air`, use the lightest version of all:
    - ratio `2:1`
    - attack `1 ms`
    - release `140 ms`
    - threshold target: `0.5 dB` of visible gain reduction
-9. Solo-check each lane with the kick and then return to full mix context before deciding the setting is done.
+10. Solo-check each lane with the kick and then return to full mix context before deciding the setting is done.
 
 ### Why
 Sidechain here is for breathing and lane clarity, not for theatrical pumping.
@@ -458,9 +463,10 @@ Set the stereo image according to the frozen map:
 - mid-bass: mono / center on the first pass
 - chords:
   - `Drop A` `120%`
-  - `Break` `150%`
+  - `Break B` `150%`
   - `Re-entry Build` `130%`
   - `Drop B` `140%`
+  - `Drop B Lift` `145%`
 - vocal main: `105%`
 - vocal throw: `115%`
 - air: wide but quiet
@@ -504,8 +510,9 @@ Ableton action order:
 1. Mute all sends first.
 2. Bring `Return A` in on drums:
    - set the send to `-20 dB`
-3. Bring `Return B` in on vocal main and vocal throw:
-   - set `Vocal Main` send to `-18 dB`
+3. Bring `Return B` in on the vocal lanes:
+   - set `Vocal Full Chorus` send to `-22 dB` so the clean chorus stays forward and does not wash out
+   - set `Vocal Chops` send to `-18 dB`
    - set `Vocal Throw` send to `-16 dB`
 4. Bring `Return C` in on chords and air:
    - set `Chords` send to `-14 dB`

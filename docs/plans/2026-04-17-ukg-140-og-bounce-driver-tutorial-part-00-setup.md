@@ -87,7 +87,8 @@ Tempo and file location are foundational decisions, not details to clean up late
    - `Drums`
    - `Bass`
    - `Chords`
-   - `Vocal Main`
+   - `Vocal Full Chorus`
+   - `Vocal Chops`
    - `Vocal Throw`
    - `Vocal Audition`
    - `Air`
@@ -142,7 +143,7 @@ Create and name these returns:
 If you do not know what a `return` is yet:
 1. Look at the far right side of Ableton's mixer.
 2. The vertical lanes named `A`, `B`, `C`, `D` are return tracks.
-3. Later, when the tutorial says "send `Vocal Main` to `Return B`," it means turn up the `B` send knob on the `Vocal Main` lane.
+3. Later, when the tutorial says "send `Vocal Chops` to `Return B`," it means turn up the `B` send knob on the `Vocal Chops` lane.
 
 Ableton Live 11 exact click path:
 1. Press `Tab` until you are in `Session View`.
@@ -182,9 +183,9 @@ Build the bus structure explicitly.
 First, create the buses:
 1. If the `Drums` parent group is not already named `Drum Bus`, click the parent group header, press `Cmd+R` on Mac or `Ctrl+R` on Windows, and rename it `Drum Bus`.
 2. If the `Bass` parent group is not already named `Bass Bus`, click the parent group header, press `Cmd+R` / `Ctrl+R`, and rename it `Bass Bus`.
-3. Select the `Chords`, `Vocal Main`, `Vocal Throw`, `Vocal Audition`, and `Air` groups together.
+3. Select the `Chords`, `Vocal Full Chorus`, `Vocal Chops`, `Vocal Throw`, `Vocal Audition`, and `Air` groups together.
 4. Press `Cmd+G` on Mac or `Ctrl+G` on Windows.
-5. Ableton creates one new parent group around those four groups.
+5. Ableton creates one new parent group around those groups.
 6. Rename that new parent group `Music Bus`.
 7. Keep `Premaster` as its own final audio/group lane before Ableton's real `Master`.
 
@@ -198,7 +199,7 @@ Then route the buses:
 The result should be:
 - `Kick Body`, `Kick Click`, `Clap`, hats, shaker, and fills live inside `Drum Bus`
 - bass layers live inside `Bass Bus`
-- `Chords`, `Vocal Main`, `Vocal Throw`, `Vocal Audition`, and `Air` live inside `Music Bus`
+- `Chords`, `Vocal Full Chorus`, `Vocal Chops`, `Vocal Throw`, `Vocal Audition`, and `Air` live inside `Music Bus`
 - `Drum Bus`, `Bass Bus`, and `Music Bus` all feed `Premaster`
 - `Premaster` feeds Ableton's real `Master`
 
@@ -295,18 +296,19 @@ The session should start with headroom discipline, not loudness chasing.
    - `1–16 Intro A`
 7. Repeat that process at these exact bar starts:
    - `17.1.1` -> `17–32 Intro B`
-   - `33.1.1` -> `33–48 Drop A`
-   - `49.1.1` -> `49–64 Drop A Lift`
-   - `65.1.1` -> `65–80 Break`
-   - `81.1.1` -> `81–96 Re-entry Build`
-   - `97.1.1` -> `97–112 Drop B`
-   - `113.1.1` -> `113–128 Drop B Lift`
-   - `129.1.1` -> `129–144 Outro`
+   - `33.1.1` -> `33–48 Break A`
+   - `49.1.1` -> `49–64 Drop A`
+   - `65.1.1` -> `65–80 Drop A Lift`
+   - `81.1.1` -> `81–96 Break B`
+   - `97.1.1` -> `97–112 Re-entry Build`
+   - `113.1.1` -> `113–128 Drop B`
+   - `129.1.1` -> `129–144 Drop B Lift`
+   - `145.1.1` -> `145–160 Outro`
 8. Locator color is optional:
    - if right-clicking the locator flag shows a color swatch, choose one if it helps you read the song faster
    - if there is no color option, skip coloring completely
    - do **not** waste time hunting for locator colors; the locator names are the important part
-9. Read the locator list back to yourself from top to bottom and make sure there are exactly `9` locators.
+9. Read the locator list back to yourself from top to bottom and make sure there are exactly `10` locators.
 
 ### Why
 Even before writing parts, the project should already know what song shape it is aiming toward.

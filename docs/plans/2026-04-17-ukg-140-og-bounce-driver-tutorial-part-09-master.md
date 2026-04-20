@@ -95,7 +95,7 @@ Play the premaster with the master chain bypassed.
 
 Exact first-pass check:
 1. Bypass the whole master chain.
-2. Start playback from `97.1.1`.
+2. Start playback from `113.1.1`.
 3. Watch the `Premaster` meter.
 4. Make sure the premaster peak is between `-8 dBFS` and `-6 dBFS`, not already near `0 dBFS`.
 5. Turn `Mono` on with the last `Utility` on the `Premaster` lane.
@@ -233,7 +233,7 @@ Keep the ceiling at `-1.0 dBTP`.
 
 Exact first-pass action:
 1. Start playback from the loudest section of the song:
-   - use `97.1.1` to `113.1.1` for the first-pass limiter check
+   - use `113.1.1` to `129.1.1` for the first-pass limiter check
 2. Set the limiter output ceiling to `-1.0 dB`.
 3. Raise the limiter input / gain in `+1 dB` steps at first.
 4. Once the level is close, move in `+0.5 dB` steps only.
@@ -294,9 +294,9 @@ Exact mono-check action:
 2. If it is not last in the chain, drag it to the last position for this check.
 3. Turn `Mono` on.
 4. Listen through:
-   - `33.1.1` to `49.1.1`
-   - `65.1.1` to `81.1.1`
-   - `97.1.1` to `113.1.1`
+   - `49.1.1` to `65.1.1`
+   - `81.1.1` to `97.1.1`
+   - `113.1.1` to `129.1.1`
 5. Turn `Mono` back off before normal playback.
 
 ### Why
@@ -321,7 +321,7 @@ Recommended organization:
 Exact first-pass export workflow:
 1. Set the Arrangement loop braces or export range so they cover the full song:
    - start `1.1.1`
-   - end `145.1.1`
+   - end `161.1.1`
 2. Export the premaster first with the master chain bypassed.
 3. Use these export settings on the first pass:
    - `WAV`

@@ -91,7 +91,7 @@ By the end, the learner should be able to:
 - stage harmonic bloom so `Drop B` feels earned
 - find, test, and place a vocal sample that carries the identity
 - program drums with real groove rather than generic global swing
-- arrange a `144`-bar club track that grows by substitution, not just stacking
+- arrange a `160`-bar club track that grows by substitution, not just stacking
 - mix the track so it feels open, heavy, and club-readable
 
 ## Teaching Principles
@@ -452,7 +452,7 @@ Suggested session split:
 - if Drop A already feels “open,” the restrained `Bb` state is probably too bloomed
 - if the chords feel stiff, check voice leading before changing the patch
 
-## Part 5: Identity (Vocal Phrase + Chop Vocabulary)
+## Part 5: Identity (Vocal Full Chorus + Chop Vocabulary)
 ### Prerequisites
 - the learner can drag audio samples into Ableton
 - the learner can mute, solo, trim, and move audio clips
@@ -465,12 +465,15 @@ Suggested session split:
 ### Learning objectives
 - learn how to search for a vocal sample that fits the track
 - test vocal samples against drums, bass, and chords
-- build vocal teaser, break phrase, hook phrase, throw, and texture placements across the arrangement
+- build one clean intact chorus lane and one dry chop lane
+- place the first vocal setup in `Break A`
+- place the intact chorus in `Drop A` before deconstructing it into chops
 - preserve vocal space when the final sample is not found yet
 
 ### What the learner builds
 - `Vocal Audition` audio track
-- `Vocal Main` audio track
+- `Vocal Full Chorus` audio track
+- `Vocal Chops` audio track
 - `Vocal Throw` audio track
 - muted `Vocal Guide MIDI` track if needed
 - sample-search log
@@ -482,22 +485,26 @@ Suggested session split:
 - how to reject bad samples
 - how to drag a sample into Ableton
 - how to trim the useful word or syllable
-- how to keep one readable phrase for the break or hook
+- how to keep the full chorus intact for the first drop
+- how to cut dry fragments from the same source for later chop sections
 - how to test key safety against the chord progression
 - exact vocal placement states:
-  - `Intro B`: teaser at `29.3.4` / `30.3.4`
-  - `Drop A`: quiet teaser only at `40.3.4` / `48.3.4`
-  - `Break`: readable phrase or texture at `72.1.1` / `76.4.4`
-  - `Re-entry Build`: pickups at `93.3.4`, `94.3.4`, `96.4.4`
-  - `Drop B`: main hook phrase / title chop at `100.3.4` / `108.3.4`
-  - `Drop B`: throw at `104.4.4` / `112.4.4`
-  - `Drop B Lift`: longer hook phrase at `116.3.4` / `124.3.4`, throw at `120.4.4` / `128.4.4`
+  - `Intro A`: no vocal
+  - `Intro B`: no vocal
+  - `Break A`: vocal setup at `40.1.1` and question at `48.3.3`
+  - `Drop A`: clean intact chorus at `49.1.1`
+  - `Drop A Lift`: chops at `68.3.4`, `72.3.4`, and `76.3.4`
+  - `Break B`: darker setup at `88.1.1` and optional vulnerable phrase at `92.1.1`
+  - `Re-entry Build`: pickup at `109.3.4` / `110.3.4` and question at `112.3.3`
+  - `Drop B`: clean intact chorus returns at `113.1.1`
+  - `Drop B Lift`: peak chops / throws at `132.3.4`, `136.3.4`, `140.3.4`, and `144.3.4`
 
 ### Core teaching points
 - the vocal is part of the whole song, not only the final drop
-- the main hook phrase should not appear too early
-- the break can carry a readable lyric phrase if it feels suspended and does not become a full chorus loop
-- earlier sections can use absence, filtering, teaser fragments, or texture
+- the intact chorus should appear before the aggressive chop deconstruction
+- `Break A` sets up the question; `Drop A` answers with the intact chorus
+- `Drop A Lift` chops the chorus after the listener knows it
+- earlier intro sections should use absence, not teaser clutter
 - if no sample is found yet, use empty/muted placeholders instead of forcing a synth hook
 - open-vowel phrases loop more cleanly than consonant-ending phrases
 - if the source has two compatible open-vowel phrases, test an intercut call-response loop before choosing one phrase
@@ -507,37 +514,39 @@ Suggested session split:
 - choosing a wet sample that cannot sit in the mix
 - choosing a sample that fights the `Bbmaj7` bloom
 - filling every gap with vocal chops
-- pasting a full chorus over the track without section design
+- pasting the full chorus into every section
+- chopping the chorus before the listener has heard it intact
 - looping a consonant-ending phrase and wondering why it sounds chopped off
 - replacing the missing sample with a beepy organ hook
 
 ### Listening checkpoint
-- `Drop A` with little or no vocal
-- `Break` with phrase or texture
-- `Drop B` with hook phrase / title chop and throw
-- `Break -> Re-entry Build -> Drop B` to check whether the vocal reveal feels earned
+- `Break A -> Drop A` to check whether the first full chorus feels earned
+- `Drop A -> Drop A Lift` to check whether the chops feel like deconstruction, not random edits
+- `Break B -> Re-entry Build -> Drop B` to check whether the full chorus return feels earned
 
 ### Troubleshooting
 - if every sample sounds wrong, search for shorter, drier one-shots
 - if a sample sounds good alone but wrong with chords, reject it or transpose by small semitone moves
-- if the vocal makes `Drop A` too complete, save it for `Drop B`
+- if `Drop A` sounds like karaoke, make the drums and bass stronger before chopping the chorus
+- if `Drop A Lift` sounds random, the listener probably has not heard the intact chorus clearly enough
 
 ## Part 6: Arrangement Build
 ### Prerequisites
 - all core MIDI and sound lanes exist, even if some sounds are still placeholders
 
 ### Learning objectives
-- shape a `144`-bar club record with distinct growth mechanisms by section
+- shape a `160`-bar club record with distinct growth mechanisms by section
 - understand why section growth must not all come from adding layers
 
 ### What the learner builds
-- all nine sections:
+- all ten sections:
   - Intro A
   - Intro B
+  - Break A
   - Drop A
   - Drop A Lift
-  - Break
-  - Re-entry Build (`81–96`)
+  - Break B
+  - Re-entry Build (`97–112`)
   - Drop B
   - Drop B Lift
   - Outro
@@ -546,22 +555,27 @@ Suggested session split:
 - section goals
 - section-specific removals and additions
 - where the vocal teaser appears
-- where the vocal main and vocal throw appear
+- where the clean full chorus appears
+- where the vocal chops and throws appear
 - how the top-end opens/closes
 - where the bass is full, teased, or implied
 
 ### Core teaching points
+- `Break A` introduces the vocal before `Drop A`
+- `Drop A` carries the first intact chorus
 - `Drop A Lift` gets bigger by pocket and top-end only
-- `Break` gets bigger by upward harmonic bloom and air
+- `Drop A Lift` also deconstructs the chorus with chops
+- `Break B` gets bigger by upward harmonic bloom and air
 - the `Re-entry Build` re-engages rhythm without spending the Drop B reveal
-- `Drop B` gets bigger by harmonic bloom and the first real vocal identity
-- `Drop B Lift` gets bigger by vocal return, throw placement, and top release
+- `Drop B` gets bigger by harmonic bloom and intact chorus return
+- `Drop B Lift` gets bigger by chop / throw placement and top release
 
 ### Common mistakes
 - making the `Re-entry Build` feel like a second break
 - adding new harmonic information in `Drop A Lift`
 - letting `Drop B` become “Drop A plus more”
 - muting/unmuting blocks without internal phrase design
+- forgetting that `Break A` exists before the first drop
 
 ### Listening checkpoint
 - full arrangement bounce
@@ -706,14 +720,17 @@ Suggested session split:
 - `dark but hopeful`
   - minor-center low-end restraint
   - delayed `Bbmaj7` bloom
-  - upward voicing spread in break / Drop B
+- upward voicing spread in break / Drop B
 - `vocal-sample-led identity`
   - sample search and selection
-  - vocal teaser / main / throw states
+  - clean full chorus lane
+  - dry chop lane
+  - throw states
   - no forced synth hook replacement
 - `section growth by substitution`
-  - main vocal saved for Drop B
-  - vocal throw on alternate phrase endings
+  - first vocal setup in `Break A`
+  - intact chorus in `Drop A` and `Drop B`
+  - chops after the chorus has been established
   - top-end release mapped by section
 
 ## Required Capture Checklist

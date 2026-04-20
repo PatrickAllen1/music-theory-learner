@@ -23,10 +23,12 @@ By the end of this part, the learner should have:
 - clear restrained and bloomed `Bb` voicing states
 - chord-bus EQ and sidechain routing
 - width and reverb-send automation for:
+  - `Break A`
   - `Drop A`
-  - `Break`
+  - `Break B`
   - `Re-entry Build`
   - `Drop B`
+  - `Drop B Lift`
 - one bounce of `drums + bass + chords`
 
 ## Time Estimate
@@ -100,7 +102,8 @@ Use this as the source of truth:
 4. Type `Chords` and press `Enter`.
 5. Right-click the `Chords` track header and choose a color swatch that is clearly different from:
    - `Bass`
-   - `Vocal Main`
+   - `Vocal Full Chorus`
+   - `Vocal Chops`
    - `Vocal Throw`
 6. Route the `Chords` track to the `Music` or `Chords` group.
 7. In Session View, create:
@@ -427,9 +430,10 @@ not because a totally different harmony shows up.
 ### Action
 Build these section behaviors from the same chord-bed lane:
 - `Intro B`: tucked, filtered, long enough to feel bed-like
+- `Break A`: restrained and spacious so the first vocal setup can read
 - `Drop A`: sustained bed plus restrained pulse
 - `Drop A Lift`: same harmony, brighter pulse only
-- `Break`: stretched sustain, widest voicing state
+- `Break B`: stretched sustain, widest voicing state
 - `Re-entry Build`: pulse returns, but keep the restrained `Bb` state
 - `Drop B`: bloomed harmony plus stronger width/reverb support
 
@@ -453,7 +457,7 @@ Exact first-pass clip behavior:
    - keep each chord ending at `x.4.2`
    - raise filter cutoff from `2.0 kHz` to `2.2 kHz`
    - keep Utility width at `120%`
-4. `Break`
+4. `Break B`
    - switch to the `8`-bar bloom clip
    - keep the two-bar sustains exactly as written
    - set chord note velocity to `80`
@@ -468,8 +472,8 @@ Exact first-pass clip behavior:
 6. `Drop B`
    - use the `8`-bar bloom clip from Step 6, not the restrained `4`-bar clip
    - in the full arrangement, place that `8`-bar bloom clip twice:
-     - first copy: `97.1.1` to `105.1.1`
-     - second copy: `105.1.1` to `113.1.1`
+     - first copy: `113.1.1` to `121.1.1`
+     - second copy: `121.1.1` to `129.1.1`
    - if your Ableton set contains a separate `4`-bar bloomed fallback clip, that fallback is allowed, but only if its `Bbmaj7` bar contains `Bb2`, `F3`, `A3`, and `C4`
    - set chord note velocity to `84`
    - set filter cutoff to `2.4 kHz`
@@ -477,8 +481,8 @@ Exact first-pass clip behavior:
 7. `Drop B Lift`
    - keep the same bloomed notes as `Drop B`
    - easiest first pass: reuse the same `8`-bar bloom clip twice again:
-     - first copy: `113.1.1` to `121.1.1`
-     - second copy: `121.1.1` to `129.1.1`
+     - first copy: `129.1.1` to `137.1.1`
+     - second copy: `137.1.1` to `145.1.1`
    - set chord note velocity to `88`
    - set filter cutoff to `2.6 kHz`
    - set Utility width to `145%`
@@ -500,12 +504,13 @@ How to set different filter cutoffs on the same `Chords` track:
    - Ableton often exposes the last-touched plugin parameter in the automation chooser
 8. Draw flat automation values by section:
    - `Intro B` starts at `17.1.1`: `2.0 kHz`
-   - `Drop A` starts at `33.1.1`: `2.0 kHz`
-   - `Drop A Lift` starts at `49.1.1`: `2.2 kHz`
-   - `Break` starts at `65.1.1`: `2.5 kHz`
-   - `Re-entry Build` starts at `81.1.1`: `1.9 kHz`
-   - `Drop B` starts at `97.1.1`: `2.4 kHz`
-   - `Drop B Lift` starts at `113.1.1`: `2.6 kHz`
+   - `Break A` starts at `33.1.1`: `2.0 kHz`
+   - `Drop A` starts at `49.1.1`: `2.0 kHz`
+   - `Drop A Lift` starts at `65.1.1`: `2.2 kHz`
+   - `Break B` starts at `81.1.1`: `2.5 kHz`
+   - `Re-entry Build` starts at `97.1.1`: `1.9 kHz`
+   - `Drop B` starts at `113.1.1`: `2.4 kHz`
+   - `Drop B Lift` starts at `129.1.1`: `2.6 kHz`
 9. Keep each cutoff flat across the section on the first pass.
 10. Do not draw sweeps yet; Part `7` handles transition sweeps.
 
@@ -526,9 +531,10 @@ You are making one harmonic identity that behaves differently by section.
 
 Mechanical changes:
 - `Intro B`: velocity `70`, filter `2.0 kHz`, chords end `x.4.4`
+- `Break A`: restrained, spacious, no bloom
 - `Drop A`: velocity `78`, filter `2.0 kHz`, chords end `x.4.2`
 - `Drop A Lift`: velocity `86`, filter `2.2 kHz`, chords end `x.4.2`
-- `Break`: switch to the `8`-bar bloom clip, longer note values, wider send/width state
+- `Break B`: switch to the `8`-bar bloom clip, longer note values, wider send/width state
 - `Re-entry Build`: velocity `76`, filter `1.9 kHz`, chords end `x.4.1`
 - `Drop B`: use the `8`-bar bloom clip twice, velocity `84`, filter `2.4 kHz`, bloomed `Bbmaj7` active
 - `Drop B Lift`: use the same `8`-bar bloom clip twice, velocity `88`, filter `2.6 kHz`, bloomed `Bbmaj7` active
@@ -568,7 +574,7 @@ Set the sidechain compressor like this:
 
 Set `Utility` like this on the first pass:
 - `Drop A`: width `120%`
-- `Break`: width `150%`
+- `Break B`: width `150%`
 - `Re-entry Build`: width `130%`
 - `Drop B`: width `140%`
 - `Drop B Lift`: width `145%`
@@ -600,18 +606,20 @@ Create these first-pass automation values:
 
 Utility `Width`:
 - `Intro B`: `100%`
+- `Break A`: `115%`
 - `Drop A`: `120%`
 - `Drop A Lift`: `120%`
-- `Break`: `150%`
+- `Break B`: `150%`
 - `Re-entry Build`: `130%`
 - `Drop B`: `140%`
 - `Drop B Lift`: `145%`
 
 `Return C: long filtered hall` send on the `Chords` track:
 - `Intro B`: `-24 dB`
+- `Break A`: `-20 dB`
 - `Drop A`: `-22 dB`
 - `Drop A Lift`: `-21 dB`
-- `Break`: `-14 dB`
+- `Break B`: `-14 dB`
 - `Re-entry Build`: `-20 dB`
 - `Drop B`: `-16 dB`
 - `Drop B Lift`: `-15 dB`
@@ -636,11 +644,12 @@ How to write the automation in Ableton:
 10. Create another point at the end of that section.
 11. Drag the line between those points until Ableton shows the target width value.
 12. Repeat by section:
-   - `Drop A` starts at `33.1.1`: set `120%`
-   - `Break` starts at `65.1.1`: set `150%`
-   - `Re-entry Build` starts at `81.1.1`: set `130%`
-   - `Drop B` starts at `97.1.1`: set `140%`
-   - `Drop B Lift` starts at `113.1.1`: set `145%`
+   - `Break A` starts at `33.1.1`: set `115%`
+   - `Drop A` starts at `49.1.1`: set `120%`
+   - `Break B` starts at `81.1.1`: set `150%`
+   - `Re-entry Build` starts at `97.1.1`: set `130%`
+   - `Drop B` starts at `113.1.1`: set `140%`
+   - `Drop B Lift` starts at `129.1.1`: set `145%`
 13. Keep each value flat across the section on the first pass.
    - flat means the line stays horizontal until the next section
    - do not draw constant wiggles yet

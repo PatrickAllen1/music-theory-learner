@@ -783,7 +783,7 @@ Exact first-pass fill you can type in immediately:
 7. When you paste this fill to the end of a real section, place the fill clip so its `1.1.1` starts at the first bar of the final phrase-end bar:
    - start it at `16.1.1` for the `16 -> 17` boundary
    - start it at `32.1.1` for the `32 -> 33` boundary
-   - follow the same rule for `48`, `64`, `80`, `96`, `112`, and `128`
+   - follow the same rule for `48`, `64`, `80`, `96`, `112`, `128`, and `144`
 
 Arrangement placement rule:
 - the fill clip itself still uses local positions such as `1.3.3` and `1.4.4`
@@ -798,19 +798,20 @@ Arrangement placement rule:
 Boundary strength map:
 1. Small reveal boundaries:
    - `16 -> 17`
-   - `48 -> 49`
-   - `112 -> 113`
+   - `64 -> 65`
+   - `128 -> 129`
+   - `144 -> 145`
    Use only the shorter two-hit ending:
    - `1.4.1`
    - `1.4.3`
 2. Medium boundaries:
-   - `64 -> 65`
+   - `32 -> 33`
    - `80 -> 81`
-   - `128 -> 129`
+   - `96 -> 97`
    Use the full four-hit pattern, but keep the hits quieter than the main redrops.
 3. Main landing boundaries:
-   - `32 -> 33`
-   - `96 -> 97`
+   - `48 -> 49`
+   - `112 -> 113`
    Use the full four-hit pattern and clear a little more top-end space right after it:
    - mute the `Open Hat` at `x.4.3`
    - let the fill own `x.4.3` and `x.4.4`
